@@ -79,7 +79,7 @@ def main():
     p = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
-    p.add_argument("--split", required=True, choices=["train", "test", "dev"])
+    p.add_argument("--split", required=True, choices=["train", "test"])
     p.add_argument(
         "--overwrite", action="store_true", help="replace existing <split>_valid files"
     )

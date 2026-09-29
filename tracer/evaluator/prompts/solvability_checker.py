@@ -1,6 +1,7 @@
 """Prompts for the solvability evaluator — Layer B (LLM fallback).
 
-Layer B is only invoked when the existing `solvable` field is absent/null
+evaluator.runner and multi_runner call Layer B for every task (force_llm=True).
+Without force_llm it runs only when the existing `solvable` field is absent/null
 and the `task_checker_action_replay` has no detectable errors, so the
 deterministic layer could not produce a verdict.
 

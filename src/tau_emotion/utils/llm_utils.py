@@ -28,7 +28,6 @@ from tau_emotion.config import (
     REDIS_PASSWORD,
     REDIS_PORT,
     REDIS_PREFIX,
-    TAU_BENCH_SEND_REASONING,
     USE_LANGFUSE,
 )
 from tau_emotion.data_model.message import (
@@ -181,8 +180,8 @@ def to_tau_emotion_messages(
 def _reasoning_content(message: AssistantMessage) -> Optional[str]:
     """The reasoning the server returned with this message, if it returned any.
 
-    It is not a field of AssistantMessage; it stays in the raw response, which is
-    where τ-bench reads it from too.
+    It is not a field of AssistantMessage; it stays in the raw response. τ-bench
+    gets it the same way, since it replays the response message as litellm dumps it.
     """
     try:
         return message.raw_data["choices"][0]["message"].get("reasoning_content")
@@ -221,9 +220,7 @@ def to_litellm_messages(messages: list[Message]) -> list[dict]:
             # τ-bench replays litellm's own message dump, so a model's reasoning
             # goes back to the server with the next request. Chat templates that render
             # past reasoning (Qwen3, GLM, MiniMax) see a different prompt without it.
-            reasoning = (
-                _reasoning_content(message) if TAU_BENCH_SEND_REASONING else None
-            )
+            reasoning = _reasoning_content(message)
             if reasoning:
                 litellm_message["reasoning_content"] = reasoning
             litellm_messages.append(litellm_message)
@@ -256,7 +253,7 @@ def validate_message(message: Message) -> None:
         Check if the message has content or tool calls.
 
         An empty string counts: a model that replies with nothing still gets its
-        turn, as it does in τ-bench (see TAU_BENCH_EMPTY_AGENT_REPLY), and the turn
+        turn, as it does in τ-bench, and the turn
         has to stay in the history the next request sends.
         """
         return message.has_content() or message.is_tool_call() or message.content == ""

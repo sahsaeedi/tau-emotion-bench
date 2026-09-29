@@ -1,7 +1,8 @@
 """Toolkit for the basketball domain, ported from TRACER's environment
 (tracer/tracer/envs/basketball/).
 
-19 tools mirroring TRACER's `ALL_TOOLS`. Conversion rules from TRACER's tools:
+20 tools: one per tool module in tracer/tracer/envs/basketball/tools/, plus
+`think`. Conversion rules from TRACER's tools:
 
 - `data["clubs"]` → `self.db.clubs`.
 - `return json.dumps(x)` → return the pydantic record.

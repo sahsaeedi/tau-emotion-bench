@@ -1,3 +1,4 @@
+from tau_emotion.config import DEFAULT_LLM_USER
 from tau_emotion.data_model.simulation import TextRunConfig
 from tau_emotion.runner.helpers import make_run_name
 
@@ -62,3 +63,41 @@ def test_run_name_includes_reasoning_effort():
         },
     )
     assert make_run_name(config) == "airline/my-model_effort-max"
+
+
+def test_run_name_includes_non_default_user_model():
+    config = TextRunConfig(
+        domain="airline",
+        llm_agent="gpt-4.1",
+        llm_user="openai/gpt-4.1",
+    )
+    assert make_run_name(config) == "airline/gpt-4.1_user-openai_gpt-4.1"
+
+
+def test_run_name_leaves_out_default_user_model():
+    config = TextRunConfig(
+        domain="airline", llm_agent="gpt-4.1", llm_user=DEFAULT_LLM_USER
+    )
+    assert make_run_name(config) == "airline/gpt-4.1"
+
+
+def test_run_name_includes_train_split():
+    config = TextRunConfig(domain="bank", llm_agent="gpt-4.1", task_split_name="train")
+    assert make_run_name(config) == "bank/gpt-4.1_train"
+
+
+def test_run_name_suffix_order():
+    config = TextRunConfig(
+        domain="bank",
+        agent="llm_agent_gt",
+        llm_agent="qwen3-8b",
+        llm_args_agent={
+            "extra_body": {"chat_template_kwargs": {"enable_thinking": True}}
+        },
+        llm_user="gpt-4.1",
+        task_split_name="train",
+    )
+    assert (
+        make_run_name(config)
+        == "bank/llm_agent_gt_qwen3-8b_thinking_user-gpt-4.1_train"
+    )

@@ -10,8 +10,10 @@
 # Results go to <output>/results.json, with the console log in <output>/run.log.
 # A relative --output is taken from the directory you run the script in.
 # Rerunning with the same --output resumes: finished rows are kept and only
-# infrastructure-error rows are rerun. A changed setting is NOT refused on
-# resume - it is mixed into the same file - so use a new --output for that.
+# infrastructure-error rows are rerun. A higher --trials or --num-tasks adds
+# trials or tasks. A changed model, temperature, seed or max steps is refused on
+# resume, and so are removed tasks (a lower --num-tasks, another --split): use a
+# new --output for those.
 set -euo pipefail
 
 # ---- settings --------------------------------------------------------------
@@ -37,7 +39,7 @@ SPLIT="test"                                # test or train
 # ----------------------------------------------------------------------------
 
 while [ $# -gt 0 ]; do
-    case "$1" in -h|--help) sed -n '2,14p' "$0"; exit 0 ;; esac
+    case "$1" in -h|--help) sed -n '2,16p' "$0"; exit 0 ;; esac
     [ $# -ge 2 ] || { echo "$1 needs a value" >&2; exit 2; }
     case "$1" in
         --domain)            DOMAIN=$2 ;;
@@ -63,13 +65,27 @@ done
 
 [ -n "$DOMAIN" ] || { echo "--domain is required" >&2; exit 2; }
 [ -n "$OUTPUT" ] || { echo "--output is required" >&2; exit 2; }
-OUTPUT=$(realpath -m "$OUTPUT")   # before the cd below, so relative means "from here"
+
+case "$AGENT_THINKING" in
+    on)  THINKING=(--agent-enable-thinking) ;;
+    off) THINKING=(--no-agent-enable-thinking) ;;
+    "")  THINKING=() ;;
+    *)   echo "--agent-thinking must be on, off or empty" >&2; exit 2 ;;
+esac
+
+case "$SPLIT" in
+    test|train) ;;
+    *) echo "--split must be test or train" >&2; exit 2 ;;
+esac
+
+mkdir -p "$OUTPUT"
+OUTPUT=$(cd "$OUTPUT" && pwd)   # before the cd below, so relative means "from here"
 
 HERE=$(cd "$(dirname "$0")" && pwd)
 cd "$HERE"
 
 # .env can't be sourced (it has <placeholder> values), so read the key directly.
-env_value() { grep -m1 "^$1=" .env 2>/dev/null | cut -d= -f2- | tr -d '"'; }
+env_value() { { grep -m1 "^$1=" .env 2>/dev/null || true; } | cut -d= -f2- | tr -d '"'; }
 AGENT_API_KEY=${AGENT_API_KEY:-$(env_value OPENAI_API_KEY)}
 USER_API_KEY=${USER_API_KEY:-$(env_value OPENAI_API_KEY)}
 
@@ -87,24 +103,11 @@ if [ -n "$USER_API_BASE" ]; then
     USER_ENDPOINT=(--user-api-base "$USER_API_BASE" --user-api-key "$USER_API_KEY")
 fi
 
-case "$AGENT_THINKING" in
-    on)  THINKING=(--agent-enable-thinking) ;;
-    off) THINKING=(--no-agent-enable-thinking) ;;
-    "")  THINKING=() ;;
-    *)   echo "--agent-thinking must be on, off or empty" >&2; exit 2 ;;
-esac
-
 TASKS=()
 if [ -n "$NUM_TASKS" ]; then
     TASKS=(--num-tasks "$NUM_TASKS")
 fi
 
-case "$SPLIT" in
-    test|train) ;;
-    *) echo "--split must be test or train" >&2; exit 2 ;;
-esac
-
-mkdir -p "$OUTPUT"
 echo "[$(date '+%F %T')] domain=$DOMAIN agent=$AGENT_MODEL temp=${AGENT_TEMPERATURE:-unset} thinking=${AGENT_THINKING:-default} user=$USER_MODEL temp=${USER_TEMPERATURE:-unset} trials=$TRIALS tasks=${NUM_TASKS:-all} concurrency=$CONCURRENCY max_steps=$MAX_STEPS split=$SPLIT -> $OUTPUT" \
     | tee -a "$OUTPUT/run.log"
 
@@ -113,13 +116,13 @@ echo "[$(date '+%F %T')] domain=$DOMAIN agent=$AGENT_MODEL temp=${AGENT_TEMPERAT
     --task-split-name "$SPLIT" \
     --agent-llm "$AGENT_MODEL" \
     --agent-llm-args "$(llm_args "$AGENT_TEMPERATURE")" \
-    "${AGENT_ENDPOINT[@]}" \
-    "${THINKING[@]}" \
+    ${AGENT_ENDPOINT[@]+"${AGENT_ENDPOINT[@]}"} \
+    ${THINKING[@]+"${THINKING[@]}"} \
     --user-llm "$USER_MODEL" \
     --user-llm-args "$(llm_args "$USER_TEMPERATURE")" \
-    "${USER_ENDPOINT[@]}" \
+    ${USER_ENDPOINT[@]+"${USER_ENDPOINT[@]}"} \
     --num-trials "$TRIALS" \
-    "${TASKS[@]}" \
+    ${TASKS[@]+"${TASKS[@]}"} \
     --max-concurrency "$CONCURRENCY" \
     --max-steps "$MAX_STEPS" \
     --auto-resume \

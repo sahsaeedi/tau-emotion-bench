@@ -3,7 +3,6 @@ from typing import Generic, Optional, Tuple, TypeVar
 from loguru import logger
 
 from tau_emotion.agent.base.llm_config import LLMConfigMixin
-from tau_emotion.config import TAU_BENCH_PROMPTS
 from tau_emotion.data_model.message import (
     Message,
     MultiToolMessage,
@@ -12,7 +11,6 @@ from tau_emotion.data_model.message import (
     ToolMessage,
     UserMessage,
 )
-from tau_emotion.data_model.persona import PersonaConfig
 from tau_emotion.environment.tool import Tool
 from tau_emotion.user.user_simulator_base import (
     OUT_OF_SCOPE,
@@ -24,50 +22,10 @@ from tau_emotion.user.user_simulator_base import (
     ValidUserInputMessage,
     is_valid_user_history_message,
 )
-from tau_emotion.utils import DATA_DIR
 from tau_emotion.utils.llm_utils import generate
 
-GLOBAL_USER_SIM_GUIDELINES_DIR = DATA_DIR / "tau_emotion" / "user_simulator"
-
-
-GLOBAL_USER_SIM_GUIDELINES_PATH = (
-    GLOBAL_USER_SIM_GUIDELINES_DIR / "simulation_guidelines.md"
-)
-
-GLOBAL_USER_SIM_GUIDELINES_PATH_TOOLS = (
-    GLOBAL_USER_SIM_GUIDELINES_DIR / "simulation_guidelines_tools.md"
-)
-
-
-def get_global_user_sim_guidelines(use_tools: bool = False) -> str:
-    """
-    Get the global user simulator guidelines.
-
-    Args:
-        use_tools: Whether to use the tools guidelines.
-
-    Returns:
-        The global user simulator guidelines.
-    """
-    if use_tools:
-        with open(GLOBAL_USER_SIM_GUIDELINES_PATH_TOOLS, "r") as fp:
-            user_sim_guidelines = fp.read()
-    else:
-        with open(GLOBAL_USER_SIM_GUIDELINES_PATH, "r") as fp:
-            user_sim_guidelines = fp.read()
-    return user_sim_guidelines
-
-
-SYSTEM_PROMPT = """
-{global_user_sim_guidelines_with_persona}
-
-<scenario>
-{instructions}
-</scenario>
-""".strip()
-
 # τ-bench's user prompt (as in tracer/tracer/envs/user.py), extended with the
-# emotion rules and ###UNSATISFIED###. Used when config.TAU_BENCH_PROMPTS is set.
+# emotion rules and ###UNSATISFIED###.
 TAU_BENCH_SYSTEM_PROMPT = """You are a user interacting with an agent.{instruction_display}
 Rules:
 - Just generate one line at a time to simulate the user's message.
@@ -84,6 +42,17 @@ Rules:
 """
 
 
+def get_global_user_sim_guidelines() -> str:
+    """τ-bench's user prompt without a task's instruction.
+
+    The results record it, and the review judge reads it; each task's own
+    instruction is stored with the task.
+    """
+    return TAU_BENCH_SYSTEM_PROMPT.format(
+        instruction_display="", stop=STOP, unsatisfied=UNSATISFIED
+    )
+
+
 UserStateType = TypeVar("UserStateType", bound="UserState")
 
 
@@ -92,12 +61,8 @@ class UserSimulator(
 ):
     """A half-duplex LLM-based user simulator for turn-based conversations.
 
-    The runtime persona_config adds additional behavioral guidelines on top of the global
-    and task-specific settings.
-    Note: User behavior/persona is controlled in THREE places, and they need to be consistent / non-overlapping.
-    1. Global simulation guidelines (data/tau_emotion/user_simulator/*.md) - Base behavior for all users
-    2. Task-specific persona (UserScenario.persona field) - Baked into task JSON at creation time
-    3. Runtime persona config (persona_config parameter) - Configurable at simulation time
+    Its system prompt is τ-bench's user prompt (TAU_BENCH_SYSTEM_PROMPT) with the
+    task's instruction.
     """
 
     def __init__(
@@ -106,10 +71,6 @@ class UserSimulator(
         instructions: Optional[str] = None,
         tools: Optional[list[Tool]] = None,
         llm_args: Optional[dict] = None,
-        persona_config: Optional[
-            PersonaConfig
-        ] = None,  # TODO: Should this be pushed to the base class?
-        tau_bench_prompts: Optional[bool] = None,
     ):
         super().__init__(
             instructions=instructions,
@@ -117,19 +78,6 @@ class UserSimulator(
             llm=llm,
             llm_args=llm_args,
         )
-        self.persona_config = persona_config or PersonaConfig()
-        # Use τ-bench's prompt; None means config.TAU_BENCH_PROMPTS.
-        self.tau_bench_prompts = (
-            TAU_BENCH_PROMPTS if tau_bench_prompts is None else tau_bench_prompts
-        )
-
-    @property
-    def global_simulation_guidelines(self) -> str:
-        """
-        The simulation guidelines for the user simulator.
-        """
-        use_tools = self.tools is not None
-        return get_global_user_sim_guidelines(use_tools=use_tools)
 
     @property
     def system_prompt(self) -> str:
@@ -139,35 +87,16 @@ class UserSimulator(
         if self.instructions is None:
             logger.warning("No instructions provided for user simulator")
 
-        if self.tau_bench_prompts:
-            instruction_display = (
-                f"\n\nInstruction: {self.instructions}\n"
-                if self.instructions is not None
-                else ""
-            )
-            return TAU_BENCH_SYSTEM_PROMPT.format(
-                instruction_display=instruction_display,
-                stop=STOP,
-                unsatisfied=UNSATISFIED,
-            )
-
-        guidelines = self.global_simulation_guidelines
-
-        # Check if persona config adds any guidelines
-        persona_guidelines = self.persona_config.to_guidelines_text()
-        if persona_guidelines is None:
-            persona_guidelines = ""
-        if persona_guidelines:
-            persona_guidelines = f"\n\n{persona_guidelines}\n"
-        guidelines_with_persona = guidelines.replace(
-            "<PERSONA_GUIDELINES>", persona_guidelines
+        instruction_display = (
+            f"\n\nInstruction: {self.instructions}\n"
+            if self.instructions is not None
+            else ""
         )
-
-        system_prompt = SYSTEM_PROMPT.format(
-            global_user_sim_guidelines_with_persona=guidelines_with_persona,
-            instructions=self.instructions,
+        return TAU_BENCH_SYSTEM_PROMPT.format(
+            instruction_display=instruction_display,
+            stop=STOP,
+            unsatisfied=UNSATISFIED,
         )
-        return system_prompt
 
     def get_init_state(
         self, message_history: Optional[list[Message]] = None

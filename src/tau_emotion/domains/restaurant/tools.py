@@ -1,7 +1,8 @@
 """Toolkit for the restaurant domain, ported from TRACER's environment
 (tracer/tracer/envs/restaurant/).
 
-14 tools mirroring TRACER's `ALL_TOOLS`. Conversion rules from TRACER's tools:
+15 tools: one per tool module in tracer/tracer/envs/restaurant/tools/, plus
+`think`. Conversion rules from TRACER's tools:
 
 - `data["service_tickets"]` → `self.db.service_tickets`.
 - `return json.dumps(x)` → return the pydantic record.

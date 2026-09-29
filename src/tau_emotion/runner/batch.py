@@ -23,7 +23,6 @@ from typing import Optional
 
 from loguru import logger
 
-from tau_emotion.data_model.persona import PersonaConfig
 from tau_emotion.data_model.simulation import (
     Results,
     RunConfig,
@@ -126,7 +125,6 @@ def run_auto_review(
     user: str,
     llm_user: Optional[str],
     llm_args_user: Optional[dict],
-    user_persona_config: Optional[PersonaConfig],
     policy: str,
 ) -> None:
     """Run LLM conversation review on a simulation and attach results.
@@ -138,7 +136,6 @@ def run_auto_review(
         user: User implementation name.
         llm_user: LLM used by user simulator.
         llm_args_user: LLM args for user simulator.
-        user_persona_config: Persona config for user.
         policy: Environment policy string.
     """
     from tau_emotion.evaluator.reviewer import ReviewMode, review_simulation
@@ -152,7 +149,6 @@ def run_auto_review(
         llm=llm_user,
         llm_args=llm_args_user,
         global_simulation_guidelines=review_guidelines,
-        persona_config=user_persona_config,
     )
 
     logger.info(f"Starting review for task {task.id} (mode: {review_mode})...")
@@ -269,7 +265,6 @@ def run_single_task(
     seed: Optional[int] = None,
     evaluation_type: EvaluationType = EvaluationType.ALL,
     save_dir: Optional[Path] = None,
-    user_persona_config: Optional[PersonaConfig] = None,
     verbose_logs: bool = False,
     auto_review: bool = False,
     review_mode: str = "full",
@@ -289,7 +284,6 @@ def run_single_task(
         seed: Random seed for this trial.
         evaluation_type: Evaluation type to use.
         save_dir: Directory for saving logs.
-        user_persona_config: Pre-computed persona config (run-level).
         verbose_logs: Enable per-task log files.
         auto_review: Run LLM conversation review after simulation.
         review_mode: Review mode ("full" or "user").
@@ -311,7 +305,6 @@ def run_single_task(
             task,
             seed=seed,
             simulation_id=simulation_id,
-            user_persona_config=user_persona_config,
         )
 
         # Layer 1: Run the simulation
@@ -329,7 +322,6 @@ def run_single_task(
                 user=config.effective_user,
                 llm_user=config.llm_user,
                 llm_args_user=config.llm_args_user,
-                user_persona_config=user_persona_config,
                 policy=orchestrator.environment.get_policy(),
             )
 
@@ -411,13 +403,10 @@ def run_tasks(
 
     lock = multiprocessing.Lock()
 
-    user_persona_config = None
-
     # Build Info and initial Results
     policy_override = None
     info = get_info(
         config,
-        user_persona_config=user_persona_config,
         policy_override=policy_override,
     )
     simulation_results = Results(
@@ -492,7 +481,6 @@ def run_tasks(
                 seed=run_seed,
                 evaluation_type=evaluation_type,
                 save_dir=save_dir,
-                user_persona_config=user_persona_config,
                 verbose_logs=config.verbose_logs,
                 auto_review=config.auto_review,
                 review_mode=config.review_mode,

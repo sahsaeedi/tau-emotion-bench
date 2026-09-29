@@ -48,7 +48,9 @@ class AgentMetrics(BaseModel):
     # Termination reason counts
     termination_user_stop: int = 0
     termination_agent_stop: int = 0
+    termination_user_unsatisfied: int = 0  # the user gave up (reward -1)
     termination_max_steps: int = 0
+    termination_timeout: int = 0
     termination_error: int = 0
     termination_infrastructure_error: int = 0
 
@@ -283,7 +285,9 @@ def compute_metrics(results: Results) -> AgentMetrics:
     # Termination
     termination_user_stop = 0
     termination_agent_stop = 0
+    termination_user_unsatisfied = 0
     termination_max_steps = 0
+    termination_timeout = 0
     termination_error = 0
 
     # Review errors
@@ -336,12 +340,18 @@ def compute_metrics(results: Results) -> AgentMetrics:
             termination_user_stop += 1
         elif sim.termination_reason == TerminationReason.AGENT_STOP:
             termination_agent_stop += 1
+        elif sim.termination_reason == TerminationReason.USER_UNSATISFIED:
+            termination_user_unsatisfied += 1
         elif sim.termination_reason == TerminationReason.MAX_STEPS:
             termination_max_steps += 1
+        elif sim.termination_reason == TerminationReason.TIMEOUT:
+            termination_timeout += 1
         elif sim.termination_reason in (
             TerminationReason.TOO_MANY_ERRORS,
             TerminationReason.AGENT_ERROR,
             TerminationReason.USER_ERROR,
+            TerminationReason.CONTEXT_WINDOW_EXCEEDED,
+            TerminationReason.UNEXPECTED_ERROR,
         ):
             termination_error += 1
 
@@ -467,7 +477,9 @@ def compute_metrics(results: Results) -> AgentMetrics:
         auth_not_checked=auth_not_checked,
         termination_user_stop=termination_user_stop,
         termination_agent_stop=termination_agent_stop,
+        termination_user_unsatisfied=termination_user_unsatisfied,
         termination_max_steps=termination_max_steps,
+        termination_timeout=termination_timeout,
         termination_error=termination_error,
         termination_infrastructure_error=infra_error_count,
         agent_errors_by_severity=dict(agent_errors_by_severity),
@@ -493,6 +505,7 @@ def display_metrics(metrics: AgentMetrics) -> None:
     for k, pass_at in metrics.pass_at_ks.items():
         print(f"  k={k}: {pass_at}")
     print(f"💰 Average agent cost: {metrics.avg_agent_cost}")
+    print(f"😤 User gave up: {metrics.termination_user_unsatisfied}")
 
 
 if __name__ == "__main__":

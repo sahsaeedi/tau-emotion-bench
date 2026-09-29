@@ -1,8 +1,8 @@
 """Toolkit for the telecom domain (account-management CRM), ported from TRACER's
 environment (tracer/tracer/envs/telecom/).
 
-The 18 tools below mirror TRACER's telecom `ALL_TOOLS`, including
-its validation rules and return values. Conversion rules from TRACER's tools:
+18 tools, one per tool module in tracer/tracer/envs/telecom/tools/, including
+their validation rules and return values. Conversion rules from TRACER's tools:
 
 - `data.get("customers", {})` → `self.db.customers` (typed pydantic).
 - `return json.dumps(record)` → `_record_json(record)`, which leaves out

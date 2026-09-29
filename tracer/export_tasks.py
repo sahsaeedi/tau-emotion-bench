@@ -1,7 +1,7 @@
 """Export TRACER-generated tasks into the benchmark's task files.
 
-    python export_to_tau2.py <generated_tasks.json> --domain bank --split test
-    python export_to_tau2.py <generated_tasks.json> --domain bank --split train --dry-run
+    python export_tasks.py <generated_tasks.json> --domain bank --split test
+    python export_tasks.py <generated_tasks.json> --domain bank --split train --dry-run
 
 Reads a generated-task JSON list (the generator's output after emotion_analysis has
 added `novel_emotion_prediction` to each task) and writes

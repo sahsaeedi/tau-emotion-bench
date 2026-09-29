@@ -7,10 +7,12 @@ Two-layer approach:
   Layer B (LLM): only invoked when Layer A is inconclusive (e.g. both
     `solvable` is null and no replay errors are detected). Uses a
     ChatReActAgent to re-verify solvability from the instruction and the
-    ground-truth action list.
+    ground-truth action list. evaluator.runner (and multi_runner) pass
+    force_llm=True, so Layer B always runs, with the replay as context.
 
 Violation: any of (a) solvable == False, (b) a replay error is present,
-           (c) Layer-B verdict is false.
+           (c) Layer-B verdict is false. With force_llm=True (as evaluator.runner
+           and multi_runner use) only (c) applies.
 """
 
 from __future__ import annotations

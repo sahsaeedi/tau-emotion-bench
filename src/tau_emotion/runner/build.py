@@ -12,14 +12,12 @@ from typing import Optional
 from loguru import logger
 
 from tau_emotion.agent.base_agent import HalfDuplexAgent
-from tau_emotion.config import TAU_BENCH_PROMPTS
-from tau_emotion.data_model.persona import PersonaConfig
 from tau_emotion.data_model.simulation import RunConfig, TextRunConfig
 from tau_emotion.data_model.tasks import Task
 from tau_emotion.environment.environment import Environment
 from tau_emotion.orchestrator.orchestrator import Orchestrator
 from tau_emotion.registry import registry
-from tau_emotion.user.user_simulator import DummyUser, UserSimulator
+from tau_emotion.user.user_simulator import DummyUser
 from tau_emotion.user.user_simulator_base import HalfDuplexUser
 
 # =============================================================================
@@ -62,7 +60,6 @@ def build_agent(
     llm_args: Optional[dict] = None,
     task: Optional[Task] = None,
     solo_mode: bool = False,
-    tau_bench_prompts: Optional[bool] = None,
 ) -> HalfDuplexAgent:
     """Build an agent from a registered name and an environment.
 
@@ -107,7 +104,6 @@ def build_agent(
         llm=llm,
         llm_args=llm_args,
         task=task,
-        tau_bench_prompts=tau_bench_prompts,
     )
 
 
@@ -118,9 +114,7 @@ def build_user(
     *,
     llm: Optional[str] = None,
     llm_args: Optional[dict] = None,
-    persona_config: Optional[PersonaConfig] = None,
     solo_mode: bool = False,
-    tau_bench_prompts: Optional[bool] = None,
 ) -> HalfDuplexUser:
     """Build a half-duplex user from a registered name.
 
@@ -132,7 +126,6 @@ def build_user(
         task: The task (used for user instructions).
         llm: LLM model name for the user simulator.
         llm_args: LLM arguments for the user simulator.
-        persona_config: Persona configuration (verbosity, interrupt tendency).
         solo_mode: If True, validates that DummyUser is used appropriately.
 
     Returns:
@@ -152,23 +145,12 @@ def build_user(
     if issubclass(UserConstructor, DummyUser):
         assert solo_mode, "Dummy user can only be used with solo agent"
 
-    if tau_bench_prompts is None:
-        tau_bench_prompts = TAU_BENCH_PROMPTS
-    user_kwargs = {
-        "tools": user_tools,
-        "instructions": (
-            task.user_scenario.to_tau_bench_instruction()
-            if tau_bench_prompts
-            else str(task.user_scenario)
-        ),
-        "llm": llm,
-        "llm_args": llm_args,
-    }
-    if issubclass(UserConstructor, UserSimulator):
-        user_kwargs["persona_config"] = persona_config
-        user_kwargs["tau_bench_prompts"] = tau_bench_prompts
-
-    return UserConstructor(**user_kwargs)
+    return UserConstructor(
+        tools=user_tools,
+        instructions=task.user_scenario.to_tau_bench_instruction(),
+        llm=llm,
+        llm_args=llm_args,
+    )
 
 
 # =============================================================================
@@ -194,7 +176,6 @@ def build_text_orchestrator(
     *,
     seed: Optional[int] = None,
     simulation_id: Optional[str] = None,
-    user_persona_config: Optional[PersonaConfig] = None,
 ) -> Orchestrator:
     """Build a half-duplex (text) orchestrator from a TextRunConfig.
 
@@ -203,7 +184,6 @@ def build_text_orchestrator(
         task: The task to run.
         seed: Per-trial seed. If None, uses config.seed.
         simulation_id: Unique simulation ID. If None, a UUID is generated.
-        user_persona_config: Persona config for the user simulator.
 
     Returns:
         A fully constructed Orchestrator, ready for run_simulation().
@@ -234,7 +214,6 @@ def build_text_orchestrator(
         llm_args=config.llm_args_agent,
         task=task,
         solo_mode=solo_mode,
-        tau_bench_prompts=config.agent_tau_bench_prompts,
     )
 
     user = build_user(
@@ -243,9 +222,7 @@ def build_text_orchestrator(
         task,
         llm=config.llm_user,
         llm_args=config.llm_args_user,
-        persona_config=user_persona_config,
         solo_mode=solo_mode,
-        tau_bench_prompts=config.tau_bench_prompts,
     )
 
     orchestrator = Orchestrator(
@@ -261,7 +238,6 @@ def build_text_orchestrator(
         simulation_id=simulation_id,
         validate_communication=config.enforce_communication_protocol,
         timeout=config.timeout,
-        tau_bench_prompts=config.tau_bench_prompts,
     )
 
     logger.debug(
@@ -278,7 +254,6 @@ def build_orchestrator(
     *,
     seed: Optional[int] = None,
     simulation_id: Optional[str] = None,
-    user_persona_config: Optional[PersonaConfig] = None,
 ) -> Orchestrator:
     """Build a ready-to-run orchestrator from a RunConfig and task.
 
@@ -287,7 +262,6 @@ def build_orchestrator(
         task: The task to run.
         seed: Per-trial seed. If None, uses config.seed.
         simulation_id: Unique simulation ID. If None, a UUID is generated.
-        user_persona_config: Pre-computed persona config.
 
     Returns:
         A fully constructed Orchestrator.
@@ -297,5 +271,4 @@ def build_orchestrator(
         task,
         seed=seed,
         simulation_id=simulation_id,
-        user_persona_config=user_persona_config,
     )

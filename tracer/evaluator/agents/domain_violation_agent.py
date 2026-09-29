@@ -13,13 +13,13 @@ Two-layer approach:
   Layer B (LLM):
     Confirms whether the in-domain classification was correct and whether
     the GT truly should have handed off instead of proceeding.
+evaluator.runner (and multi_runner) pass force_llm=True, so Layer B always runs.
 
-Handoff tool names per domain:
-  airline, retail, bank, basketball,
-  movie, restaurant, travel : transfer_to_human_agents
-  telehealth                : transfer_to_human_support
-  telecom                   : transfer_to_human_support  (registered but not implemented)
-  school                    : none, so an out-of-domain school task always goes to Layer B
+Handoff tool names per domain (only tools in the domain's ALL_TOOLS):
+  airline, retail, bank : transfer_to_human_agents
+  telehealth            : transfer_to_human_support
+  telecom, basketball, movie,
+  restaurant, school, travel : none, so an out-of-domain task always goes to Layer B
 """
 
 from __future__ import annotations
@@ -45,14 +45,14 @@ from evaluator.prompts.domain_violation import SYSTEM_PROMPT, format_user_prompt
 HANDOFF_TOOLS: Dict[str, Set[str]] = {
     "airline": {"transfer_to_human_agents"},
     "retail": {"transfer_to_human_agents"},
-    "telecom": {"transfer_to_human_support"},
+    "telecom": set(),
     "telehealth": {"transfer_to_human_support"},
     "bank": {"transfer_to_human_agents"},
-    "basketball": {"transfer_to_human_agents"},
-    "movie": {"transfer_to_human_agents"},
-    "restaurant": {"transfer_to_human_agents"},
+    "basketball": set(),
+    "movie": set(),
+    "restaurant": set(),
     "school": set(),
-    "travel": {"transfer_to_human_agents"},
+    "travel": set(),
 }
 _ALL_HANDOFF_TOOLS: Set[str] = {"transfer_to_human_agents", "transfer_to_human_support"}
 

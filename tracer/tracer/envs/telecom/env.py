@@ -25,8 +25,6 @@ class MockTelecomDomainEnv(Env):
                 from tracer.envs.telecom.tasks_test import TASKS_TEST as tasks
             case "train":
                 from tracer.envs.telecom.tasks_train import TASKS_TRAIN as tasks
-            case "dev":
-                from tracer.envs.telecom.tasks_dev import TASKS_TEST as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
         super().__init__(

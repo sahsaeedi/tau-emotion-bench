@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Script to recombine rewards in results.json using updated reward_basis from tasks.json.
+Script to recombine rewards in results.json using updated reward_basis from
+tasks.json and tasks_train.json.
 
 This script does NOT re-run evaluators - it just recombines existing component rewards
 using the new reward_basis defined in the current task definitions.
@@ -9,7 +10,7 @@ Usage:
     python src/tau_emotion/scripts/recombine_rewards.py <experiment_dir>
 
 Example:
-    python src/tau_emotion/scripts/recombine_rewards.py data/tmp/gdrive/experiment_2025_01_22_v3_regular_openai_low_vad
+    python src/tau_emotion/scripts/recombine_rewards.py data/simulations/airline
 """
 
 import argparse
@@ -19,6 +20,7 @@ import sys
 from pathlib import Path
 
 from tau_emotion.utils.io_utils import load_results_dict
+from tau_emotion.utils.utils import DATA_DIR
 
 
 def compute_component_reward(reward_info: dict, component: str) -> float:
@@ -142,17 +144,22 @@ def recombine_results(experiment_dir: str, domain: str | None = None) -> None:
             print(f"  Skipping domain {domain_name}")
             continue
 
-        # Load current task definitions
-        tasks_file = Path(f"data/tau_emotion/domains/{domain_name}/tasks.json")
-        if not tasks_file.exists():
-            print(f"  Warning: Tasks file not found: {tasks_file}, skipping")
+        # Load current task definitions (test and train tasks have distinct IDs)
+        domain_dir = DATA_DIR / "tau_emotion" / "domains" / domain_name
+        tasks_files = [
+            f
+            for f in (domain_dir / "tasks.json", domain_dir / "tasks_train.json")
+            if f.exists()
+        ]
+        if not tasks_files:
+            print(f"  Warning: No tasks file found in {domain_dir}, skipping")
             continue
 
-        with open(tasks_file, "r") as f:
-            tasks_data = json.load(f)
-
         # Build task lookup by ID
-        tasks_by_id = {task["id"]: task for task in tasks_data}
+        tasks_by_id = {}
+        for tasks_file in tasks_files:
+            with open(tasks_file, "r") as f:
+                tasks_by_id.update({task["id"]: task for task in json.load(f)})
 
         # Update tasks in results with new reward_basis
         updated_task_count = 0
@@ -187,6 +194,12 @@ def recombine_results(experiment_dir: str, domain: str | None = None) -> None:
             # Check 2: Termination reason indicates premature end (more reliable)
             termination_reason = sim.get("termination_reason")
             valid_terminations = {"agent_stop", "user_stop"}
+
+            # The user gave up: the evaluator gave -1 without scoring the
+            # task, so there is nothing to recombine and the -1 stays.
+            if termination_reason == "user_unsatisfied":
+                skipped_not_evaluated += 1
+                continue
 
             if original_basis is None or termination_reason not in valid_terminations:
                 # Fix corrupted rewards: set back to 0.0 if this was a premature termination

@@ -215,8 +215,5 @@ data/simulations/.credentials/
 # Cursor IDE
 .cursor/
 
-# tau-emotion refactor: one-shot v1→v2 migration scripts (not part of the
-# distribution; live alongside source for convenience).
-
 # Instructions for AI coding agents (kept locally, not published)
 AGENTS.md

@@ -27,7 +27,9 @@ from tau_emotion.utils.utils import DATA_DIR
 def get_available_simulations(sim_dir: Optional[Path] = None):
     """Get list of available simulation result files.
 
-    Prefers results_reviewed.json (with embedded reviews) over results.json.
+    Searches sim_dir at any depth, since default runs are saved under
+    <domain>/<agent model>/. Prefers results_reviewed.json (with embedded
+    reviews) over results.json in the same run directory.
     """
     if sim_dir is None:
         sim_dir = Path(DATA_DIR) / "simulations"
@@ -35,17 +37,18 @@ def get_available_simulations(sim_dir: Optional[Path] = None):
     if not sim_dir.exists():
         return []
 
-    # Look for results files in subdirectories
-    # Prefer results_reviewed.json (with reviews) over results.json
+    run_dirs = {
+        f.parent
+        for name in ("results.json", "results_reviewed.json")
+        for f in sim_dir.rglob(name)
+    }
     sim_files = []
-    for subdir in sim_dir.iterdir():
-        if subdir.is_dir():
-            reviewed_file = subdir / "results_reviewed.json"
-            results_file = subdir / "results.json"
-            if reviewed_file.exists():
-                sim_files.append(reviewed_file)
-            elif results_file.exists():
-                sim_files.append(results_file)
+    for run_dir in run_dirs:
+        reviewed_file = run_dir / "results_reviewed.json"
+        if reviewed_file.exists():
+            sim_files.append(reviewed_file)
+        else:
+            sim_files.append(run_dir / "results.json")
 
     return sorted(sim_files)
 
@@ -109,6 +112,10 @@ def display_simulation_list(
         TerminationReason.TOO_MANY_ERRORS: "red",
         TerminationReason.AGENT_ERROR: "red",
         TerminationReason.USER_ERROR: "red",
+        TerminationReason.USER_UNSATISFIED: "red",
+        TerminationReason.TIMEOUT: "yellow",
+        TerminationReason.CONTEXT_WINDOW_EXCEEDED: "yellow",
+        TerminationReason.UNEXPECTED_ERROR: "red",
     }
 
     termination_icon_map = {
@@ -118,6 +125,10 @@ def display_simulation_list(
         TerminationReason.TOO_MANY_ERRORS: "💥",
         TerminationReason.AGENT_ERROR: "💥",
         TerminationReason.USER_ERROR: "💥",
+        TerminationReason.USER_UNSATISFIED: "😤",
+        TerminationReason.TIMEOUT: "⏱",
+        TerminationReason.CONTEXT_WINDOW_EXCEEDED: "⏱",
+        TerminationReason.UNEXPECTED_ERROR: "💥",
     }
 
     for i, sim in filtered_sims:
@@ -321,12 +332,14 @@ def display_simulation_list(
         )
 
 
-def display_available_files(files):
-    """Display a numbered list of available simulation files."""
+def display_available_files(files, sim_dir: Optional[Path] = None):
+    """Display a numbered list of available simulation files, by run directory."""
     ConsoleDisplay.console.print("\n[bold blue]Available Simulation Files:[/]")
     for i, file in enumerate(files, 1):
-        dir_name = file.parent.name
-        ConsoleDisplay.console.print(f"[cyan]{i}.[/] {dir_name}")
+        run_dir = file.parent
+        if sim_dir is not None and run_dir.is_relative_to(sim_dir):
+            run_dir = run_dir.relative_to(sim_dir)
+        ConsoleDisplay.console.print(f"[cyan]{i}.[/] {run_dir}")
 
 
 def display_simulation_with_task(
@@ -531,11 +544,8 @@ def save_simulation_note(
     """
     Save a simulation note to a directory.
 
-    .. deprecated::
-        This function saves *_simulation.json files which are very large (100K-350K lines)
-        and should NOT be committed to git. Use the results-based export mode in
-        ``export_html.py --results`` instead, which reads results.json directly without
-        creating intermediate simulation dump files.
+    The saved *_simulation.json files are very large (100K-350K lines) and are
+    gitignored; don't commit them.
 
     Saves both:
     1. The note metadata as a JSON file
@@ -559,8 +569,7 @@ def save_simulation_note(
     )
     ConsoleDisplay.console.print(
         "[yellow]⚠ Warning: This saves a large *_simulation.json file. "
-        "These files are gitignored and should not be committed. "
-        "Consider using 'export_html.py --results' instead.[/]"
+        "These files are gitignored and should not be committed.[/]"
     )
     try:
         # Create filename based on task and note ID
@@ -804,9 +813,10 @@ def main(
 ):
     # Get available simulation files
     if sim_file is None:
-        custom_sim_dir = Path(sim_dir) if sim_dir else None
-        sim_files = get_available_simulations(custom_sim_dir)
+        list_root = Path(sim_dir) if sim_dir else Path(DATA_DIR) / "simulations"
+        sim_files = get_available_simulations(list_root)
     else:
+        list_root = None
         sim_files = [Path(sim_file)]
 
     if not sim_files:
@@ -857,7 +867,7 @@ def main(
 
         if choice == "1":
             # Show available files and get selection
-            display_available_files(sim_files)
+            display_available_files(sim_files, list_root)
             # default to view the last file
             file_num = IntPrompt.ask(
                 f"\nSelect file number (1-{len(sim_files)})", default=len(sim_files)

@@ -58,7 +58,7 @@ the full breakdown.
 ## Tests
 All the tests for the domain are stored in the `tests/test_domains/test_<domain_name>` folder.
 - `test_tools_<domain_name>.py`: Contains tests for the tools for the domain.
-- `test_user_tools_<domain_name>.py`: Contains tests for the user tools for the domain (if any)
+- `mock` is the only domain with user tools; `test_mock/test_tools_mock.py` tests them too.
 
 `tests/test_domains/test_emotion_tasks.py` checks the task files shared by the 10 domains.
 

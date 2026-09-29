@@ -20,7 +20,6 @@ from tau_emotion.config import (
     DEFAULT_SEED,
     DEFAULT_USER_IMPLEMENTATION,
 )
-from tau_emotion.data_model.persona import PersonaConfig
 from tau_emotion.data_model.simulation import TextRunConfig
 from tau_emotion.run import get_options, run_domain
 
@@ -72,7 +71,8 @@ def add_run_args(parser):
         type=str,
         default=None,
         help="Base URL of the agent's OpenAI-compatible server, e.g. http://localhost:8000/v1. "
-        "Default: the provider's (OPENAI_API_BASE for bare and openai/ model names).",
+        "Default: the provider's (OPENAI_API_BASE for OpenAI models, gpt-4.1 included, "
+        "and bare model names).",
     )
     parser.add_argument(
         "--agent-api-key",
@@ -113,7 +113,8 @@ def add_run_args(parser):
         type=str,
         default=None,
         help="Base URL of the user's OpenAI-compatible server, e.g. http://localhost:8000/v1. "
-        "Default: the provider's (OPENAI_API_BASE for bare and openai/ model names).",
+        "Default: the provider's (OPENAI_API_BASE for OpenAI models, gpt-4.1 included, "
+        "and bare model names).",
     )
     parser.add_argument(
         "--user-api-key",
@@ -144,25 +145,6 @@ def add_run_args(parser):
         help="The task split to run the simulation on. If not provided, will load 'base' split.",
     )
     parser.add_argument(
-        "--tau-bench-prompts",
-        dest="tau_bench_prompts",
-        action=argparse.BooleanOptionalAction,
-        default=None,
-        help="Prompt the agent and user simulator the way τ-bench does (the "
-        "setting TRACER verified the tasks in). Default: config.TAU_BENCH_PROMPTS "
-        "(on). The choice is recorded in the results.",
-    )
-    parser.add_argument(
-        "--agent-prompt",
-        choices=["tau", "tau2"],
-        default=None,
-        help="The agent's system prompt only: 'tau' sends the policy alone "
-        "(τ-bench style), "
-        "'tau2' wraps it in tau2's <instructions>/<policy> template (for models "
-        "fine-tuned on tau2's prompt). The user simulator keeps the prompt "
-        "--tau-bench-prompts picks. Default: follow --tau-bench-prompts.",
-    )
-    parser.add_argument(
         "--task-ids",
         type=str,
         nargs="+",
@@ -184,7 +166,7 @@ def add_run_args(parser):
         "--max-errors",
         type=int,
         default=DEFAULT_MAX_ERRORS,
-        help=f"The maximum number of tool errors allowed in a row in the simulation. Default is {DEFAULT_MAX_ERRORS}.",
+        help=f"The maximum number of tool errors in a simulation before it is stopped. Default is {DEFAULT_MAX_ERRORS}.",
     )
     parser.add_argument(
         "--timeout",
@@ -196,7 +178,10 @@ def add_run_args(parser):
         "--save-to",
         type=str,
         required=False,
-        help="The path to save the simulation results. Will be saved to data/simulations/<save_to>/results.json. If not provided, will save to <timestamp>_<domain>_<agent>_<user>. If the file already exists, it will try to resume the run.",
+        help="Where to save the results: data/simulations/<save_to>/results.json. "
+        "Default: <domain>/<agent model>, plus suffixes for a non-default agent, "
+        "thinking/reasoning settings, a non-default user model and the train split. "
+        "If the file already exists, the run is resumed.",
     )
     parser.add_argument(
         "--max-concurrency",
@@ -250,15 +235,6 @@ def add_run_args(parser):
         action="store_true",
         default=False,
         help="Enforce communication protocol rules (e.g., no mixed messages with text and tool calls). Default is False.",
-    )
-    parser.add_argument(
-        "--user-persona",
-        type=json.loads,
-        default=None,
-        help="User persona config as JSON dict. Supports explicit values or weighted probabilities. "
-        'Examples: \'{"verbosity": "minimal"}\', '
-        '\'{"verbosity": {"minimal": 0.8, "standard": 0.2}}\'. '
-        "If not provided, uses default behavior (standard verbosity).",
     )
 
     # Resume mode
@@ -481,10 +457,6 @@ def main():
     add_run_args(run_parser)
 
     def run_command(args):
-        user_persona_config = None
-        if args.user_persona:
-            user_persona_config = PersonaConfig.from_dict(args.user_persona)  # noqa: F841
-
         # Set global LLM log mode (used by verbose logging)
         from tau_emotion.utils.llm_utils import set_llm_log_mode
 
@@ -522,12 +494,6 @@ def main():
             user=args.user,
             max_steps=args.max_steps,
             enforce_communication_protocol=args.enforce_communication_protocol,
-            **(
-                {"tau_bench_prompts": args.tau_bench_prompts}
-                if args.tau_bench_prompts is not None
-                else {}
-            ),
-            agent_prompt=args.agent_prompt,
         )
 
         return run_domain(config)
@@ -665,7 +631,8 @@ def main():
         type=str,
         default=None,
         help="Base URL of the judge's OpenAI-compatible server. "
-        "Default: the provider's (OPENAI_API_BASE for bare and openai/ model names).",
+        "Default: the provider's (OPENAI_API_BASE for OpenAI models, gpt-4.1 included, "
+        "and bare model names).",
     )
     review_parser.add_argument(
         "--judge-api-key",

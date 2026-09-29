@@ -43,7 +43,7 @@ def run_server(command, port):
 
     process = None
     try:
-        process = subprocess.Popen(command, shell=True)
+        process = subprocess.Popen(command)
         process.wait()
     except KeyboardInterrupt:
         logger.info(f"\nShutting down server on port {port}...")
@@ -66,9 +66,16 @@ def main():
     # Define server commands with their ports
     servers = [
         (
-            f"{sys.executable} -m uvicorn "
-            "tau_emotion.api_service.simulation_service:app "
-            "--host 127.0.0.1 --port 8001",
+            [
+                sys.executable,
+                "-m",
+                "uvicorn",
+                "tau_emotion.api_service.simulation_service:app",
+                "--host",
+                "127.0.0.1",
+                "--port",
+                "8001",
+            ],
             8001,
         ),
     ]

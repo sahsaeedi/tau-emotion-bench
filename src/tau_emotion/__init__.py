@@ -31,37 +31,6 @@ from tau_emotion.user.user_simulator import UserSimulator
 from tau_emotion.user.user_simulator_base import HalfDuplexUser
 from tau_emotion.utils.display import ConsoleDisplay, MarkdownDisplay
 
-# =============================================================================
-# DEPRECATION ALIASES
-# =============================================================================
-
-
-def __getattr__(name: str):
-    """Module-level __getattr__ for deprecation warnings."""
-    deprecated_aliases = {
-        "BaseAgent": ("HalfDuplexAgent", HalfDuplexAgent),
-        "LocalAgent": ("HalfDuplexAgent", HalfDuplexAgent),
-        "BaseUser": ("HalfDuplexUser", HalfDuplexUser),
-    }
-
-    if name in deprecated_aliases:
-        new_name, new_class = deprecated_aliases[name]
-        warnings.warn(
-            f"{name} is deprecated, use {new_name} instead",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return new_class
-
-    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
-
-
-# Direct aliases for static analysis tools
-BaseAgent = HalfDuplexAgent
-LocalAgent = HalfDuplexAgent
-BaseUser = HalfDuplexUser
-
-
 __all__ = [
     # Core
     "Orchestrator",
@@ -87,8 +56,4 @@ __all__ = [
     # Utils
     "ConsoleDisplay",
     "MarkdownDisplay",
-    # Deprecated aliases (kept for backward compatibility)
-    "BaseAgent",
-    "LocalAgent",
-    "BaseUser",
 ]

@@ -1,14 +1,6 @@
-from copy import deepcopy
-
 import pytest
 from conftest import TEST_LLM
 
-from tau_emotion.config import (
-    DEFAULT_LLM_AGENT,
-    DEFAULT_LLM_ARGS_AGENT,
-    DEFAULT_LLM_ARGS_USER,
-    DEFAULT_LLM_USER,
-)
 from tau_emotion.data_model.simulation import RunConfig, TextRunConfig
 from tau_emotion.data_model.tasks import EnvAssertion, RewardType, Task, make_task
 from tau_emotion.run import (
@@ -17,9 +9,74 @@ from tau_emotion.run import (
     get_tasks,
     load_tasks,
     run_domain,
-    run_task,
-    run_tasks,
+    run_single_task,
 )
+from tau_emotion.run import run_tasks as run_tasks_with_config
+
+
+def run_task(
+    *,
+    domain,
+    task,
+    agent,
+    user,
+    llm_agent,
+    llm_args_agent,
+    llm_user,
+    llm_args_user,
+    evaluation_type=EvaluationType.ALL,
+):
+    """Run one task with a TextRunConfig built from these settings."""
+    config = TextRunConfig(
+        domain=domain,
+        agent=agent,
+        user=user,
+        llm_agent=llm_agent,
+        llm_args_agent=llm_args_agent,
+        llm_user=llm_user,
+        llm_args_user=llm_args_user,
+        max_steps=100,
+        max_errors=10,
+    )
+    return run_single_task(config, task, evaluation_type=evaluation_type)
+
+
+def run_tasks(
+    *,
+    domain,
+    tasks,
+    agent,
+    user,
+    llm_agent,
+    llm_args_agent,
+    llm_user,
+    llm_args_user,
+    max_steps=100,
+    max_errors=10,
+    max_concurrency=1,
+    evaluation_type=EvaluationType.ALL,
+    console_display=True,
+):
+    """Run tasks with a TextRunConfig built from these settings."""
+    config = TextRunConfig(
+        domain=domain,
+        agent=agent,
+        user=user,
+        llm_agent=llm_agent,
+        llm_args_agent=llm_args_agent,
+        llm_user=llm_user,
+        llm_args_user=llm_args_user,
+        max_steps=max_steps,
+        max_errors=max_errors,
+        max_concurrency=max_concurrency,
+        seed=300,
+    )
+    return run_tasks_with_config(
+        config,
+        tasks,
+        evaluation_type=evaluation_type,
+        console_display=console_display,
+    )
 
 
 @pytest.fixture
@@ -80,6 +137,7 @@ def test_get_tasks():
     assert tasks[0].id == "create_task_1"
 
 
+@pytest.mark.llm
 def test_simplified_run(domain_name: str):
     """Test that we can run a task with the mock domain"""
 
@@ -95,10 +153,10 @@ def test_simplified_run(domain_name: str):
             tasks=[task],
             agent="llm_agent",
             user="user_simulator",
-            llm_agent=DEFAULT_LLM_AGENT,
-            llm_args_agent=deepcopy(DEFAULT_LLM_ARGS_AGENT),
-            llm_user=DEFAULT_LLM_USER,
-            llm_args_user=deepcopy(DEFAULT_LLM_ARGS_USER),
+            llm_agent=TEST_LLM,
+            llm_args_agent={},
+            llm_user=TEST_LLM,
+            llm_args_user={},
             max_steps=5,
             max_errors=5,
             evaluation_type=EvaluationType.ENV,

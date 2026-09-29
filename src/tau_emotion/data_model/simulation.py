@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Literal, Optional
 
 import pandas as pd
-from pydantic import AliasChoices, BaseModel, Field, field_validator
+from pydantic import BaseModel, Field
 from typing_extensions import Annotated
 
 from tau_emotion.config import (
@@ -23,10 +23,8 @@ from tau_emotion.config import (
     DEFAULT_RETRY_MIN_WAIT,
     DEFAULT_SAVE_TO,
     DEFAULT_SEED,
-    TAU_BENCH_PROMPTS,
 )
 from tau_emotion.data_model.message import Message
-from tau_emotion.data_model.persona import PersonaConfig
 from tau_emotion.data_model.tasks import Action, EnvAssertion, RewardType, Task
 from tau_emotion.environment.environment import EnvironmentInfo
 from tau_emotion.environment.toolkit import ToolType
@@ -34,14 +32,6 @@ from tau_emotion.orchestrator.modes import CommunicationMode
 from tau_emotion.utils.utils import get_now
 
 SIMULATIONS_DIR = "simulations"
-
-# Results saved before the τ-bench renames store these older names.
-TAU_BENCH_PROMPTS_ALIASES = AliasChoices("tau_bench_prompts", "v1_compat_prompts")
-
-
-def _rename_old_agent_prompt(value):
-    """Map the old agent-prompt name 'v1' to 'tau'."""
-    return "tau" if value == "v1" else value
 
 
 class BaseRunConfig(BaseModel):
@@ -114,7 +104,7 @@ class BaseRunConfig(BaseModel):
     max_errors: Annotated[
         int,
         Field(
-            description="The maximum number of tool errors allowed in a row in the simulation",
+            description="The maximum number of tool errors in a simulation before it is stopped",
             default=DEFAULT_MAX_ERRORS,
         ),
     ]
@@ -270,29 +260,6 @@ class TextRunConfig(BaseRunConfig):
             default_factory=lambda: deepcopy(DEFAULT_LLM_ARGS_AGENT),
         ),
     ]
-    tau_bench_prompts: Annotated[
-        bool,
-        Field(
-            description="Prompt the agent and user simulator the way τ-bench "
-            "does (see config.TAU_BENCH_PROMPTS, the default).",
-            default=TAU_BENCH_PROMPTS,
-            validation_alias=TAU_BENCH_PROMPTS_ALIASES,
-        ),
-    ]
-    agent_prompt: Annotated[
-        Optional[Literal["tau", "tau2"]],
-        Field(
-            description="The agent's system prompt only: 'tau' sends the policy "
-            "alone (τ-bench style), 'tau2' wraps it in tau2's instructions (for "
-            "models trained on tau2's prompt). None follows tau_bench_prompts. "
-            "The user simulator is unaffected.",
-            default=None,
-        ),
-    ]
-
-    rename_old_agent_prompt = field_validator("agent_prompt", mode="before")(
-        _rename_old_agent_prompt
-    )
 
     # ---- User ----
     user: Annotated[
@@ -334,25 +301,11 @@ class TextRunConfig(BaseRunConfig):
         return self.max_steps
 
     @property
-    def agent_tau_bench_prompts(self) -> bool:
-        """Whether the agent gets τ-bench's system prompt (the policy alone)."""
-        if self.agent_prompt is None:
-            return self.tau_bench_prompts
-        return self.agent_prompt == "tau"
-
-    @property
-    def agent_prompt_override(self) -> Optional[str]:
-        """agent_prompt when it departs from tau_bench_prompts, else None."""
-        if self.agent_tau_bench_prompts == self.tau_bench_prompts:
-            return None
-        return self.agent_prompt
-
-    @property
     def effective_agent_model(self) -> str:
         return self.llm_agent
 
 
-# Type alias for backward compatibility
+# Short name used across the runner
 RunConfig = TextRunConfig
 
 
@@ -811,10 +764,6 @@ class UserInfo(BaseModel):
     global_simulation_guidelines: Optional[str] = Field(
         description="The global simulation guidelines for the user.", default=None
     )
-    persona_config: Optional[PersonaConfig] = Field(
-        description="Runtime persona configuration for the user simulator",
-        default=None,
-    )
 
 
 class Info(BaseModel):
@@ -829,21 +778,6 @@ class Info(BaseModel):
     environment_info: EnvironmentInfo = Field(description="Environment information.")
     seed: Optional[int] = Field(
         description="The seed used for the simulation.", default=None
-    )
-    tau_bench_prompts: Optional[bool] = Field(
-        description="Whether the run used τ-bench's prompting. "
-        "None in results saved before this was recorded.",
-        default=None,
-        validation_alias=TAU_BENCH_PROMPTS_ALIASES,
-    )
-    agent_prompt: Optional[str] = Field(
-        description="The agent's system prompt ('tau' or 'tau2') when it "
-        "departs from tau_bench_prompts; None when it follows it.",
-        default=None,
-    )
-
-    rename_old_agent_prompt = field_validator("agent_prompt", mode="before")(
-        _rename_old_agent_prompt
     )
 
 

@@ -58,7 +58,7 @@ Copy `.env.example` as `.env` and edit it to include your API keys:
 cp .env.example .env
 ```
 
-Set `OPENAI_API_KEY` (and `ANTHROPIC_API_KEY` for Claude models). Model names litellm doesn't know are sent to `OPENAI_API_BASE`, so add `OPENAI_API_BASE=<url>` to use an OpenAI-compatible server, or pass `--agent-api-base` / `--user-api-base` per run.
+Set `OPENAI_API_KEY` (and `ANTHROPIC_API_KEY` for Claude models). For models on an OpenAI-compatible server, pass `--agent-api-base` / `--user-api-base` (and their `--*-api-key`) per run. `OPENAI_API_BASE` also works, but it sends every OpenAI model there, `gpt-4.1` included; see [Models and endpoints](models.md).
 
 ## The Benchmark in Brief
 
@@ -77,7 +77,7 @@ tau-emotion run --domain airline --agent-llm gpt-4.1 --user-llm gpt-4.1 \
   --num-trials 1 --num-tasks 5
 ```
 
-Leave out `--user-llm` to use the benchmark's user simulator (`qwen3-235b-a22b-instruct-2507` at temperature 0.7). Reported scores use it, so use it when comparing against them. OpenAI and Anthropic don't serve it, so set `OPENAI_API_BASE` (or `--user-api-base`) to an OpenAI-compatible server that does, such as your own vLLM server or a hosted provider.
+Leave out `--user-llm` to use the benchmark's user simulator (`qwen3-235b-a22b-instruct-2507` at temperature 0.7). Reported scores use it, so use it when comparing against them. OpenAI and Anthropic don't serve it, so pass `--user-api-base <url> --user-api-key <key>` for an OpenAI-compatible server that does, such as your own vLLM server or a hosted provider.
 
 To run specific tasks, pass their ids:
 
@@ -86,7 +86,7 @@ tau-emotion run --domain retail --task-ids retail_test_0000 retail_test_0003 \
   --agent-llm gpt-4.1 --user-llm gpt-4.1
 ```
 
-Results are saved to `data/simulations/<domain>/<agent model>/results.json` (or `data/simulations/<save_to>/results.json` with `--save-to`). Running the same command again resumes that run.
+Results are saved to `data/simulations/<domain>/<agent model>/results.json`, with suffixes added to the folder name for a non-default agent, thinking/reasoning settings, a non-default user model and the train split (the first command above saves to `airline/gpt-4.1_user-gpt-4.1`). With `--save-to`, they go to `data/simulations/<save_to>/results.json`. Running the same command again resumes that run.
 
 ## Simulation Output Structure
 
@@ -109,8 +109,7 @@ The directory-based format splits simulation data into individual files for effi
 data/simulations/<run_name>/
 ├── results.json                        # Metadata and task definitions only
 ├── simulations/                        # Individual simulation data files
-│   ├── sim_0.json
-│   ├── sim_1.json
+│   ├── <simulation_id>.json            # One file per simulation, named by its UUID
 │   └── ...
 └── artifacts/                          # Runtime artifacts (with --verbose-logs)
     └── task_<task_id>/
@@ -141,11 +140,11 @@ Both formats are fully supported by `Results.load()`, which auto-detects the for
 tau-emotion view
 ```
 
-This allows you to browse simulation files, view agent performance metrics, inspect individual simulations, and view task details.
+It lists every run under `data/simulations/` (at any depth; `--dir` picks another folder, `--file` one results file) and lets you view agent performance metrics, inspect individual simulations, and view task details.
 
 ## Configuration
 
-The framework is configured via [`src/tau_emotion/config.py`](../src/tau_emotion/config.py). Besides the CLI defaults, it holds the `TAU_BENCH_*` switches that make runs follow τ-bench's conventions (all on by default; see [Harness conventions](evaluation.md#how-a-conversation-runs)).
+The framework is configured via [`src/tau_emotion/config.py`](../src/tau_emotion/config.py). It holds the CLI defaults and the tools whose call ends a conversation. Runs follow τ-bench's conventions (see [How a conversation runs](evaluation.md#how-a-conversation-runs)).
 
 ### LLM Call Caching
 

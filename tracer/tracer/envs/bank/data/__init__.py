@@ -3,10 +3,11 @@ import os
 from typing import Any
 
 FOLDER_PATH = os.path.dirname(__file__)
+SPLITS = ("test", "train")
 
 # Catalog files are SHARED across splits and never generated.
 CATALOG = []
-# Owned files are partitioned per split; absent split dir => flat layout (= train).
+# Owned files are partitioned per split, in test/ and train/.
 OWNED = ["clients", "transactions", "loans", "beneficiaries"]
 OPTIONAL = {}
 
@@ -17,13 +18,10 @@ def _read(path: str) -> Any:
 
 
 def load_data(split: str = "train") -> dict[str, Any]:
-    """Load the bank database for one split.
-
-    `split` defaults to "train" and the flat layout IS the train split, so every
-    existing caller (`load_data()` with no args) keeps working unchanged.
-    """
-    split_dir = os.path.join(FOLDER_PATH, split)
-    owned_dir = split_dir if os.path.isdir(split_dir) else FOLDER_PATH
+    """Load the bank database for one split ("test" or "train")."""
+    if split not in SPLITS:
+        raise ValueError(f"Unknown data split: {split} (expected one of {SPLITS})")
+    owned_dir = os.path.join(FOLDER_PATH, split)
 
     data: dict[str, Any] = {}
     for name in CATALOG:
@@ -38,9 +36,4 @@ def load_data(split: str = "train") -> dict[str, Any]:
 
 
 def available_splits() -> list[str]:
-    found = [
-        d
-        for d in ("train", "test", "dev")
-        if os.path.isdir(os.path.join(FOLDER_PATH, d))
-    ]
-    return ["train"] + [d for d in found if d != "train"]
+    return list(SPLITS)

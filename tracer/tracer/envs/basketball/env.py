@@ -24,8 +24,6 @@ class MockBasketballDomainEnv(Env):
                 from tracer.envs.basketball.tasks_test import TASKS as tasks
             case "train":
                 from tracer.envs.basketball.tasks_train import TASKS as tasks
-            case "dev":
-                from tracer.envs.basketball.tasks_dev import TASKS as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
         super().__init__(

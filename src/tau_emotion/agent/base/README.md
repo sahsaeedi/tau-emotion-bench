@@ -81,8 +81,19 @@ class LLMConfigMixin:
 ### Half-Duplex LLM Agent
 
 ```python
-from tau_emotion.agent.base_agent import HalfDuplexAgent
+from typing import Optional
+
 from tau_emotion.agent.base.llm_config import LLMConfigMixin
+from tau_emotion.agent.base_agent import HalfDuplexAgent, ValidAgentInputMessage
+from tau_emotion.agent.llm_agent import LLMAgentState
+from tau_emotion.data_model.message import (
+    AssistantMessage,
+    MultiToolMessage,
+    SystemMessage,
+)
+from tau_emotion.environment.tool import Tool
+from tau_emotion.utils.llm_utils import generate
+
 
 class MyHalfDuplexAgent(
     LLMConfigMixin,
@@ -101,26 +112,31 @@ class MyHalfDuplexAgent(
             llm=llm,
             llm_args=llm_args,
         )
-    
+
     def get_init_state(self, message_history=None) -> LLMAgentState:
         return LLMAgentState(
-            system_messages=[SystemMessage(role="system", content=self.system_prompt)],
+            system_messages=[SystemMessage(role="system", content=self.domain_policy)],
             messages=message_history or [],
         )
-    
+
     def generate_next_message(
         self, message: ValidAgentInputMessage, state: LLMAgentState
     ) -> tuple[AssistantMessage, LLMAgentState]:
-        # Build messages for LLM
-        messages = state.system_messages + state.messages + [message]
-        
-        # Call LLM
-        response = generate(model=self.llm, messages=messages, **self.llm_args)
-        
-        # Update state
-        state.messages.append(message)
+        # Add the user's message or the tool results to the history
+        if isinstance(message, MultiToolMessage):
+            state.messages.extend(message.tool_messages)
+        else:
+            state.messages.append(message)
+
+        # Call the LLM with the tools it may use
+        response = generate(
+            model=self.llm,
+            tools=self.tools,
+            messages=state.system_messages + state.messages,
+            **self.llm_args,
+        )
+
         state.messages.append(response)
-        
         return response, state
 ```
 

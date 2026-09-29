@@ -1,7 +1,8 @@
 """Toolkit for the movie domain, ported from TRACER's environment
 (tracer/tracer/envs/movie/).
 
-15 tools mirroring TRACER's `ALL_TOOLS`. Conversion rules from TRACER's tools:
+16 tools: one per tool module in tracer/tracer/envs/movie/tools/, plus `think`.
+Conversion rules from TRACER's tools:
 
 - `data["theaters"]` → `self.db.theaters`.
 - `return json.dumps(x)` → return the pydantic record.
@@ -9,12 +10,16 @@
 - Free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 
 TRACER's environment duplicates `_find_show`, `_list_all_seat_ids`,
-`_booked_seats_for_show` and the pricing helpers across five tool files, in two
-mutually inconsistent `_find_show` arities. They are single private methods here.
+`_booked_seats_for_show` and the pricing helpers across six tool files, with
+`_find_show` returning a 2-tuple in some and a 3-tuple in others. They are single
+private methods here.
 
-Booking ids, payment ids and timestamps are assigned by the tools, in exactly
-TRACER's formats (`BKG000001`, `<booking>-PAY-01`, `<booking>-adj-pay-01`): test
-tasks can reference ids created earlier in the same task.
+Booking and payment ids are assigned by the tools in deterministic formats
+(`BKG000001`, `<booking>-PAY-01`, `<booking>-adj-pay-01`), so the ground-truth
+replay and the agent's run store identical records. TRACER's tool uses random
+uuid-based booking ids and takes payment ids from the caller. Refund ids
+(`<booking>-refund`, `<booking>-adj-refund`) and the static timestamp match
+TRACER's.
 
 Known quirk in TRACER's data, reproduced as-is: the shipped bookings store a
 per-seat tax of `price * tax_rate`, but TRACER's own pricing code
@@ -48,7 +53,7 @@ from tau_emotion.domains.movie.data_model import (
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
 TICKET_TYPES = ("adult", "child", "senior")
-# TRACER keeps these static so behaviour stays deterministic across runs.
+# Static, as in TRACER's tools, so behaviour stays deterministic across runs.
 BOOKING_CREATED_AT = "24-05-15-15-00"
 
 
@@ -141,7 +146,7 @@ class MovieTools(ToolKitBase):
         }
 
     def _new_booking_id(self) -> str:
-        """First free id of the form BKG000001, as TRACER assigns it."""
+        """First free id of the form BKG000001."""
         n = 1
         while f"BKG{n:06d}" in self.db.bookings:
             n += 1

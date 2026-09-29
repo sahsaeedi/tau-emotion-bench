@@ -115,7 +115,7 @@ def parse_args() -> argparse.Namespace:
         "--scenario-mix",
         type=_parse_mix,
         default=None,
-        help="Optional JSON object for scenario category weights.",
+        help="Optional JSON object for scenario category weights; 0 disables a category.",
     )
     parser.add_argument(
         "--model",

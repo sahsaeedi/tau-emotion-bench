@@ -1,6 +1,7 @@
 """Prompts for the domain-violation evaluator — Layer B (LLM confirmation).
 
-Layer B is only invoked when Layer A detects a *candidate* domain violation:
+evaluator.runner and multi_runner call Layer B for every task (force_llm=True).
+Without force_llm it runs only when Layer A detects a *candidate* domain violation:
 - the task was already classified as out-of-domain (in_domain == False)
 - AND the ground-truth action list does NOT contain a handoff tool
 

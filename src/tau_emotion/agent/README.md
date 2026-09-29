@@ -4,7 +4,7 @@
 
 ## Overview
 
-Agents are the system-under-test in tau-emotion evals. An agent interacts with a simulated user and uses environment tools (API endpoints) to resolve customer service tasks. The eval framework scores the agent on whether it takes the correct actions and follows domain policy.
+Agents are the system-under-test in tau-emotion evals. An agent interacts with a simulated user and uses environment tools (API endpoints) to resolve customer service tasks. The eval framework scores the agent on the final database state, and gives -1 when the simulated user gives up (`###UNSATISFIED###`).
 
 Agents use a turn-based (half-duplex) protocol with one base class:
 
@@ -157,9 +157,7 @@ def create_agent(tools, domain_policy, **kwargs):
     return MyAgent(tools=tools, domain_policy=domain_policy, ...)
 ```
 
-There are two ways to register an agent, depending on whether it is a core or community contribution.
-
-**Core agents** register a factory directly in `src/tau_emotion/registry.py`:
+To use an agent from the CLI, register its factory in `src/tau_emotion/registry.py`:
 
 ```python
 from tau_emotion.agent.my_agent import create_my_agent
@@ -167,7 +165,7 @@ from tau_emotion.agent.my_agent import create_my_agent
 registry.register_agent_factory(create_my_agent, "my_agent")
 ```
 
-The name you pass (e.g., `"my_agent"`) is what you will use on the CLI with `--agent`.
+The name you pass (e.g., `"my_agent"`) is what you will use on the CLI with `--agent`. For runs from Python, call `registry.register_agent_factory(...)` before `run_single_task` or `run_domain` instead (see `examples/agents/minimal_text_agent.py`).
 
 ## Understanding the Environment
 

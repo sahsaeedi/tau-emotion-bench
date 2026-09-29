@@ -24,8 +24,6 @@ class MockRetailDomainEnv(Env):
                 from tracer.envs.retail.tasks_test import TASKS_TEST as tasks
             case "train":
                 from tracer.envs.retail.tasks_train import TASKS_TRAIN as tasks
-            case "dev":
-                from tracer.envs.retail.tasks_dev import TASKS_DEV as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
         super().__init__(

@@ -225,7 +225,7 @@ def test_register_courses_happy_path(tools: SchoolTools):
     assert len(tools.get_student_details(STUDENT_ID).registrations) == (
         before_registrations + 1
     )
-    # first free REG000001-style id, exactly as TRACER assigns it
+    # first free REG000001-style id, so replays assign the same one
     assert reg.registration_id == "REG000001"
 
 

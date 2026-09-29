@@ -1,8 +1,8 @@
 """Toolkit for the retail domain, ported from TRACER's environment
 (tracer/tracer/envs/retail/).
 
-16 tools mirroring TRACER's `ALL_TOOLS`, including its checks, database writes
-and return values. Conversion rules from TRACER's tools:
+16 tools, one per tool module in tracer/tracer/envs/retail/tools/, including
+their checks, database writes and return values. Conversion rules from TRACER's tools:
 
 - `data["orders"]` → `self.db.orders`.
 - `return "Error: ..."`, and any exception TRACER's tool raises (e.g. a
@@ -243,7 +243,7 @@ class RetailTools(ToolKitBase):  # Tools
             The user details, as JSON.
         """
         if user_id in self.db.users:
-            # TRACER's user records have no user_id field.
+            # Left out of the output, although TRACER's tool returns it.
             return _record_json(self.db.users[user_id], exclude={"user_id"})
         raise ValueError("user not found")
 

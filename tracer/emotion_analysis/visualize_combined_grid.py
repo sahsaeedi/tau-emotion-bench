@@ -1,19 +1,23 @@
 """
-Combined 2x5 grid of the per-domain instruction-vs-task t-SNE kNN region plots,
-built from the already-saved *_points.json / *_meta.json (no re-embedding, no
-retraining) with white task markers and one shared legend for the figure.
+Combined grid of the per-domain instruction-vs-task t-SNE kNN region plots
+(one panel per file in inputs.task_paths, up to 5 per row), built from the
+*_points.json / *_meta.json that run_all.py saved (no re-embedding, no
+retraining), with white task markers and one shared legend for the figure.
 
-Run from magnet-tau/emotion_analysis:
-  python3 visualize_combined_grid.py
+Run from tracer/ after run_all.py:
+  python3 emotion_analysis/visualize_combined_grid.py --config emotion_analysis/config.json
 """
 
 from __future__ import annotations
 
+import argparse
 import json
+import math
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 import numpy as np
+from utils import get_embedding_model_cfg, load_config, output_dir_for_model
 
 FAMILY_COLORS: Dict[str, str] = {
     "anger": "#e15759",
@@ -23,24 +27,6 @@ FAMILY_COLORS: Dict[str, str] = {
     "enjoyment": "#f28e2b",
 }
 
-ANALYSIS_DIR = (
-    Path(__file__).resolve().parent
-    / "output/llm/openai/text-embedding-3-small/analysis"
-)
-
-DOMAIN_STEMS: List[Tuple[str, str]] = [
-    ("Airline", "airline_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Bank", "bank_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Basketball", "basketball_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Movie", "movie_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Restaurant", "restaurant_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Retail", "retail_solvable_tasks_new_with_emotion_predictions_accepted"),
-    ("School", "school_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Telecom", "telecom_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Telehealth", "telehealth_solvable_tasks_with_emotion_predictions_accepted"),
-    ("Travel", "travel_solvable_tasks_with_emotion_predictions_accepted"),
-]
-
 
 def _hex_to_rgb(h: str) -> np.ndarray:
     h = h.lstrip("#")
@@ -49,15 +35,12 @@ def _hex_to_rgb(h: str) -> np.ndarray:
     )
 
 
-def _load_domain(stem: str) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
-    meta = json.loads(
-        (ANALYSIS_DIR / f"instruction_vs_{stem}_tsne_knn_regions_meta.json").read_text()
-    )
-    points = json.loads(
-        (
-            ANALYSIS_DIR / f"instruction_vs_{stem}_tsne_knn_regions_points.json"
-        ).read_text()
-    )
+def _load_domain(
+    analysis_dir: Path, stem: str
+) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
+    prefix = analysis_dir / f"instruction_vs_{stem}_tsne_knn_regions"
+    meta = json.loads(Path(f"{prefix}_meta.json").read_text())
+    points = json.loads(Path(f"{prefix}_points.json").read_text())
     return meta, points
 
 
@@ -73,6 +56,21 @@ def _plot_extent(
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Combine the per-domain t-SNE kNN region plots into one grid."
+    )
+    parser.add_argument("--config", default="emotion_analysis/config.json")
+    args = parser.parse_args()
+
+    config = load_config(args.config)
+    analysis_dir = output_dir_for_model(config, get_embedding_model_cfg(config))
+    analysis_dir = analysis_dir / "analysis"
+    # Same stems as visualize_instruction_vs_task_tsne_knn_regions.py, e.g.
+    # "bank_test_passed_tasks" -> panel title "Bank".
+    stems = [Path(p).stem for p in config["inputs"]["task_paths"]]
+    ncols = min(5, len(stems))
+    nrows = math.ceil(len(stems) / ncols)
+
     import matplotlib
 
     matplotlib.use("Agg")
@@ -81,12 +79,17 @@ def main() -> None:
     from scipy import ndimage
     from sklearn.neighbors import KNeighborsClassifier
 
-    fig, axes = plt.subplots(2, 5, figsize=(16, 4.2), dpi=140)
+    fig, axes = plt.subplots(
+        nrows, ncols, figsize=(3.2 * ncols, 2.1 * nrows), dpi=140, squeeze=False
+    )
     fig.subplots_adjust(wspace=0.12, hspace=0.38)
     axes = axes.ravel()
+    for ax in axes[len(stems) :]:
+        ax.set_visible(False)
 
-    for ax, (title, stem) in zip(axes, DOMAIN_STEMS):
-        meta, points = _load_domain(stem)
+    for ax, stem in zip(axes, stems):
+        title = stem.split("_")[0].capitalize()
+        meta, points = _load_domain(analysis_dir, stem)
         grid_n = int(meta["heatmap_grid"])
         k_eff = int(meta["tsne_knn_k_effective"])
 
@@ -191,8 +194,8 @@ def main() -> None:
         bbox_to_anchor=(0.5, -0.08),
     )
 
-    out_png = ANALYSIS_DIR / "instruction_vs_task_tsne_knn_regions_grid_all10.png"
-    out_pdf = ANALYSIS_DIR / "instruction_vs_task_tsne_knn_regions_grid_all10.pdf"
+    out_png = analysis_dir / "instruction_vs_task_tsne_knn_regions_grid.png"
+    out_pdf = analysis_dir / "instruction_vs_task_tsne_knn_regions_grid.pdf"
     fig.savefig(out_png, bbox_inches="tight")
     fig.savefig(out_pdf, bbox_inches="tight")
     plt.close(fig)

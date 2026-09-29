@@ -1,8 +1,8 @@
 """Toolkit for the telehealth domain, ported from TRACER's environment
 (tracer/tracer/envs/telehealth/).
 
-23 tools mirroring TRACER's `ALL_TOOLS`, including its return text. Conversion
-rules from TRACER's tools:
+23 tools, one per tool module in tracer/tracer/envs/telehealth/tools/,
+including its return text. Conversion rules from TRACER's tools:
 
 - `data.get("patients", {})` → `self.db.patients`.
 - Most of TRACER's tools return formatted text, and report lookups that find
@@ -965,7 +965,7 @@ class TelehealthTools(ToolKitBase):
 
         appointment.status = "cancelled"
         appointment.cancellation_reason = "patient_cancelled"
-        # Fixed date keeps replays deterministic, as in TRACER's tool.
+        # Fixed date keeps replays deterministic (TRACER's tool uses datetime.now()).
         appointment.cancellation_date = CANCELLATION_DATE
 
         provider = self.db.providers.get(appointment.provider_id)

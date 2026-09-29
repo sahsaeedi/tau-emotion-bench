@@ -7,7 +7,7 @@ import sys
 from collections import defaultdict
 from datetime import date, timedelta
 from pathlib import Path
-from typing import Any, Dict, List, Mapping, Optional, Sequence, Tuple
+from typing import Any, Collection, Dict, List, Mapping, Optional, Sequence, Tuple
 
 if __package__ in {None, ""}:  # pragma: no cover
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
@@ -56,13 +56,22 @@ def _empty_case(blueprint_id: str, category: str, summary: str) -> Dict[str, Any
     }
 
 
+class _NoCandidate(Exception):
+    """No newly generated record fits a scenario category."""
+
+
 def _normalize_mix(mix: Optional[Mapping[str, float]]) -> Dict[str, float]:
+    """Category weights summing to 1; a weight of 0 disables a category."""
     source = dict(DEFAULT_SCENARIO_MIX)
     if mix:
         for key, value in mix.items():
-            if key in source and value > 0:
+            if key in source:
+                if value < 0:
+                    raise ValueError(f"scenario_mix weight for {key} is negative.")
                 source[key] = float(value)
-    total = sum(source.values()) or 1.0
+    total = sum(source.values())
+    if total <= 0:
+        raise ValueError("scenario_mix disables every scenario category.")
     return {key: value / total for key, value in source.items()}
 
 
@@ -102,12 +111,6 @@ class DeterministicScenarioBlueprintGenerator:
         self.assigned_telemetry_assignments = [
             row for row in self.telemetry_assignments if row.get("assigned_to")
         ]
-        if not self.assigned_telemetry_assignments:
-            self.assigned_telemetry_assignments = [
-                dict(row)
-                for row in self.master_data.get("telemetry_inventory", [])
-                if row.get("assigned_to")
-            ]
         self.provider_ids_by_specialty: Dict[str, List[str]] = defaultdict(list)
         for provider_id, provider in sorted(
             self.master_data["providers"].items(), key=_sort_key
@@ -117,6 +120,7 @@ class DeterministicScenarioBlueprintGenerator:
         self.specialty_cursors: Dict[str, int] = defaultdict(int)
         self.telemetry_cursor = 0
         self.family_cursor = 0
+        self.regimen_patient_ids = set(self.master_data["regimen_plans"])
 
     def _latest_appointment_date(self) -> date:
         values = [
@@ -149,30 +153,29 @@ class DeterministicScenarioBlueprintGenerator:
         self.specialty_cursors[specialty] += 1
         return providers[idx]
 
-    def _generated_patients(self, predicate) -> List[str]:
-        matches = [
+    def _next_patient(
+        self, profile_ids: Sequence[str], exclude: Collection[str] = ()
+    ) -> str:
+        # Only newly generated patients: scenarios never touch existing ones.
+        key = "|".join(sorted(profile_ids))
+        profiles = ", ".join(sorted(profile_ids))
+        matches = sorted(
             patient_id
             for patient_id, meta in self.patient_profiles.items()
-            if predicate(patient_id, meta)
-        ]
-        if matches:
-            return sorted(matches)
-        return sorted(self.master_data["patients"].keys())
-
-    def _next_patient(self, profile_ids: Sequence[str]) -> str:
-        key = "|".join(sorted(profile_ids))
-        matches = self._generated_patients(
-            lambda _pid, meta: meta.get("profile_id") in profile_ids
+            if meta.get("profile_id") in profile_ids
         )
+        if not matches:
+            raise _NoCandidate(f"no new patient with profile {profiles}")
+        matches = [patient_id for patient_id in matches if patient_id not in exclude]
+        if not matches:
+            raise _NoCandidate(f"every new patient with profile {profiles} is used")
         idx = self.profile_cursors[key] % len(matches)
         self.profile_cursors[key] += 1
         return matches[idx]
 
     def _next_telemetry_assignment(self) -> Mapping[str, Any]:
         if not self.assigned_telemetry_assignments:
-            raise ValueError(
-                "No assigned telemetry devices available in master metadata."
-            )
+            raise _NoCandidate("no new telemetry device is assigned to a patient")
         assignment = self.assigned_telemetry_assignments[
             self.telemetry_cursor % len(self.assigned_telemetry_assignments)
         ]
@@ -181,7 +184,7 @@ class DeterministicScenarioBlueprintGenerator:
 
     def _next_family_group(self) -> Mapping[str, Any]:
         if not self.family_groups:
-            raise ValueError("No family groups available in master metadata.")
+            raise _NoCandidate("no new family groups")
         group = self.family_groups[self.family_cursor % len(self.family_groups)]
         self.family_cursor += 1
         return group
@@ -639,9 +642,12 @@ class DeterministicScenarioBlueprintGenerator:
         return case
 
     def _build_regimen_case(self) -> Dict[str, Any]:
+        # One regimen plan per patient.
         patient_id = self._next_patient(
-            ["cardiometabolic", "endocrine_review", "atrial_fibrillation"]
+            ["cardiometabolic", "endocrine_review", "atrial_fibrillation"],
+            exclude=self.regimen_patient_ids,
         )
+        self.regimen_patient_ids.add(patient_id)
         provider_id = self._next_provider(
             self.patient_profiles.get(patient_id, {}).get(
                 "preferred_specialty", "Primary Care"
@@ -783,7 +789,11 @@ class DeterministicScenarioBlueprintGenerator:
         }
         assigned = sum(counts.values())
         remainder = target_scenarios - assigned
-        ranked = sorted(mix.items(), key=lambda item: item[1], reverse=True)
+        ranked = sorted(
+            [item for item in mix.items() if item[1] > 0],
+            key=lambda item: item[1],
+            reverse=True,
+        )
         for idx in range(remainder):
             counts[ranked[idx % len(ranked)][0]] += 1
         return counts
@@ -802,8 +812,16 @@ class DeterministicScenarioBlueprintGenerator:
         }
         cases: List[Dict[str, Any]] = []
         for category, count in counts.items():
-            for _ in range(count):
-                cases.append(builders[category]())
+            for built in range(count):
+                try:
+                    cases.append(builders[category]())
+                except _NoCandidate as exc:
+                    print(
+                        f"[telehealth] Skipping {count - built} {category} "
+                        f"scenario(s): {exc}.",
+                        flush=True,
+                    )
+                    break
         return cases
 
 
@@ -819,6 +837,11 @@ def generate_scenario_blueprints(
     cases = generator.build(
         target_scenarios=target_scenarios, scenario_mix=scenario_mix
     )
+    if target_scenarios > 0 and not cases:
+        raise ValueError(
+            "No scenario blueprints could be built for the new records; "
+            "add more patients, family groups or devices."
+        )
     if output_path is not None:
         write_json(output_path, {"cases": cases})
     return cases

@@ -1,6 +1,8 @@
 # Agent Examples
 
-Runnable examples showing how to create and evaluate custom tau-emotion agents.
+Runnable examples showing how to create and evaluate custom tau-emotion agents. They
+run on the mock domain with `openai/gpt-4.1-mini` as the agent and the user
+simulator, so they need `OPENAI_API_KEY`.
 
 ## Examples
 
@@ -11,7 +13,8 @@ A single-file example that creates a minimal agent, registers it, and runs it ag
 - Implementing `HalfDuplexAgent` (the two required methods)
 - Writing a factory function
 - Registering with the registry
-- Running via `run_single_task` or `run_domain`
+- Running one task via `run_single_task` (a `run_domain` call for all mock tasks is
+  left commented out)
 
 ```bash
 python examples/agents/minimal_text_agent.py
@@ -32,7 +35,7 @@ python examples/agents/react_agent.py
 
 ### `custom_agent_eval.py` -- Power user path
 
-Builds all components manually without the registry. Shows:
+Builds the orchestrator by hand instead of from a run config. Shows:
 
 - Building environment, agent, user, and orchestrator by hand
 - Running `run_simulation()` directly

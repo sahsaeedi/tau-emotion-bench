@@ -22,7 +22,7 @@ runner/
 
 Pure simulation execution and evaluation. Takes a fully constructed orchestrator, runs it, evaluates the result, and returns a `SimulationRun` with `reward_info` attached.
 
-- **No registry dependency**: Everything is encapsulated in the orchestrator.
+- **Evaluation rebuilds the environment**: The evaluator builds fresh environments through the registry (by the orchestrator's domain name) to replay the gold actions and check the database. Pass `env_kwargs` for the database to use: `run_simulation(orchestrator, env_kwargs={"db_split": "train"})` for a train task. `run_single_task` and `run_tasks` do this for you.
 - **No config parsing**: No `RunConfig` needed.
 - **No side effects**: No logging setup, no file saving, no auto-review.
 
@@ -51,6 +51,7 @@ from tau_emotion import TextRunConfig
 
 config = TextRunConfig(domain="airline", agent="llm_agent", llm_agent="openai/gpt-4.1")
 orchestrator = build_text_orchestrator(config, task, seed=42)
+# A test task; for a train task pass env_kwargs={"db_split": "train"}
 result = run_simulation(orchestrator)
 ```
 
@@ -85,9 +86,4 @@ results = run_domain(config)
 
 ## Relationship to `tau_emotion.run`
 
-The `tau_emotion.run` module is the original monolithic implementation. The `tau_emotion.runner` package is its modular replacement. Both coexist:
-
-- **`tau_emotion.run`**: Still works for all existing callers (CLI, tests, scripts). Not deprecated yet.
-- **`tau_emotion.runner`**: The recommended API for new code. Cleaner separation of concerns.
-
-Over time, `tau_emotion.run` will be thinned out to re-export from `tau_emotion.runner`.
+`tau_emotion.run` is a facade over this package; the CLI and the API service import from it. New code should import from `tau_emotion.runner`.

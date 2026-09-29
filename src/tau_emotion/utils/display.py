@@ -833,8 +833,13 @@ class ConsoleDisplay:
             "🛑 Normal Stop",
             f"[green]{term_normal}[/] (👤 {metrics.termination_user_stop} / 🤖 {metrics.termination_agent_stop})",
         )
+        table.add_row(
+            "😤 User Gave Up", f"[red]{metrics.termination_user_unsatisfied}[/]"
+        )
         if metrics.termination_max_steps > 0:
             table.add_row("⏱️  Max Steps", f"[yellow]{metrics.termination_max_steps}[/]")
+        if metrics.termination_timeout > 0:
+            table.add_row("⌛ Timeout", f"[yellow]{metrics.termination_timeout}[/]")
         if metrics.termination_error > 0:
             table.add_row("💥 Error", f"[red]{metrics.termination_error}[/]")
         if metrics.termination_infrastructure_error > 0:

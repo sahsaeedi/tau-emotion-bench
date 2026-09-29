@@ -1,7 +1,8 @@
 """Toolkit for the bank domain, ported from TRACER's environment
 (tracer/tracer/envs/bank/).
 
-21 tools mirroring TRACER's `ALL_TOOLS`. Conversion rules from TRACER's tools:
+22 tools: one per tool module in tracer/tracer/envs/bank/tools/, plus `think`.
+Conversion rules from TRACER's tools:
 
 - `data["clients"]` → `self.db.clients`.
 - `return json.dumps(x)` → return the pydantic record.
@@ -12,9 +13,11 @@ Accounts and cards have no top-level collection: they live inside the client
 who holds them, so `_find_account` and `_find_card` scan clients, as TRACER's
 tools do.
 
-Generated values follow TRACER's tools exactly, so the ground-truth replay and
-the agent's run store identical records: a fixed clock, `TXN000001`-style
-transaction ids, and `BEN000001`-style beneficiary ids assigned by the system.
+Generated values are deterministic, so the ground-truth replay and the agent's
+run store identical records: a fixed clock, and first-free `TXN000001`-style
+transaction ids and `BEN000001`-style beneficiary ids assigned by the system.
+TRACER's tools use `datetime.utcnow()` and random uuid-based `TXN` ids, and take
+the beneficiary id from the caller.
 """
 
 from __future__ import annotations
@@ -64,7 +67,7 @@ def _hide_params(*names: str):
     return decorator
 
 
-# Fixed clock, matching TRACER's tools, so replays store identical timestamps.
+# Fixed clock (TRACER's tools use utcnow()), so replays store identical timestamps.
 NOW = "2025-10-02T12:00:00Z"
 MANAGEABLE_CARD_STATUSES = ("active", "blocked")
 
@@ -125,14 +128,14 @@ class BankTools(ToolKitBase):
         return account
 
     def _new_transaction_id(self) -> str:
-        """First free id of the form TXN000001, as TRACER assigns it."""
+        """First free TXN000001-style id (TRACER's ids are random, from uuid)."""
         n = 1
         while f"TXN{n:06d}" in self.db.transactions:
             n += 1
         return f"TXN{n:06d}"
 
     def _new_beneficiary_id(self) -> str:
-        """First free id of the form BEN000001, as TRACER assigns it."""
+        """First free BEN000001-style id (TRACER takes it from the caller)."""
         n = 1
         while f"BEN{n:06d}" in self.db.beneficiaries:
             n += 1

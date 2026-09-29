@@ -15,6 +15,13 @@ Usage:
                evaluator/config/eval_config_movie.json \\
       --eval-model gpt-4.1 --eval-model-provider openai
 
+One set of judge agents serves every domain. The model settings (eval_model,
+eval_model_provider, eval_temperature, api_base) come from the CLI or the combined
+config (default: gpt-4.1, openai, 0.0); a per-domain config only gives the domain,
+its input/output paths and the task selection (start_index, end_index, task_ids).
+--start-index/--end-index/--task-ids, or the same keys in the combined config when
+set (not null), override the per-domain selection.
+
 Each domain maintains its own checkpoint file. The runner iterates round-robin:
   round 0: airline[0] → bank[0] → ... → travel[0]
   round 1: airline[1] → bank[1] → ... → travel[1]
@@ -81,7 +88,7 @@ def _build_domain_state(
     global_overrides: Dict[str, Any],
 ) -> DomainState:
     """Load one domain's task list and existing results."""
-    # Global overrides win over per-domain config values for model/index settings
+    # Global overrides win over per-domain config values for the task selection
     merged = {**cfg, **{k: v for k, v in global_overrides.items() if v is not None}}
 
     input_path = merged.get("input_path")
@@ -94,7 +101,7 @@ def _build_domain_state(
 
     # Filter by task_ids / start_index / end_index
     task_ids = merged.get("task_ids")
-    start = int(merged.get("start_index", 0))
+    start = int(merged.get("start_index") or 0)
     end_val = merged.get("end_index")
 
     if task_ids:

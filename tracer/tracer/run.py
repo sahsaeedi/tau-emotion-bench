@@ -27,7 +27,7 @@ def run(config: RunConfig) -> List[EnvRunResult]:
     assert config.agent_strategy in ["tool-calling", "act", "react", "few-shot"], (
         "Invalid agent strategy"
     )
-    assert config.task_split in ["train", "test", "dev"], "Invalid task split"
+    assert config.task_split in ["train", "test"], "Invalid task split"
     assert config.user_strategy in [item.value for item in UserStrategy], (
         "Invalid user strategy"
     )

@@ -1,8 +1,8 @@
 """Toolkit for the airline domain, ported from TRACER's environment
 (tracer/tracer/envs/airline/).
 
-14 tools mirroring TRACER's `ALL_TOOLS`, including its checks, database writes
-and return values. Conversion rules from TRACER's tools:
+14 tools, one per tool module in tracer/tracer/envs/airline/tools/, including
+their checks, database writes and return values. Conversion rules from TRACER's tools:
 
 - `data["reservations"]` → `self.db.reservations`.
 - `return "Error: ..."`, and any exception TRACER's tool raises (e.g. a
@@ -283,7 +283,8 @@ class AirlineTools(ToolKitBase):
         """
         if reservation_id in self.db.reservations:
             return _record_json(self.db.reservations[reservation_id])
-        # TRACER's message for a missing reservation.
+        # TRACER's tool says "Reservation id not found" here; this toolkit says
+        # "user not found".
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
@@ -297,7 +298,7 @@ class AirlineTools(ToolKitBase):
             The user as JSON.
         """
         if user_id in self.db.users:
-            # TRACER's user records have no user_id field.
+            # Left out of the output, although TRACER's tool returns it.
             return _record_json(self.db.users[user_id], exclude={"user_id"})
         raise ValueError("user not found")
 

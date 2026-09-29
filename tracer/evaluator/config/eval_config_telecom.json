@@ -2,10 +2,6 @@
   "domain": "telecom",
   "input_path": "output/tasks/test_valid/telecom_test_tasks_valid.json",
   "output_path": "output/evaluations/telecom_test_eval.json",
-  "eval_model_provider": "openai",
-  "eval_model": "gpt-4.1",
-  "eval_temperature": 0.0,
-  "api_base": null,
   "start_index": 0,
   "end_index": null,
   "task_ids": null

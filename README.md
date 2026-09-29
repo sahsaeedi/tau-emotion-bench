@@ -41,8 +41,8 @@ the user simulator acts out ("You're eager and insistent..."), and
 `emotion_metadata` labels (`emotion_family`, `emotion_leaf`, politeness, urgency,
 trust in the agent) used only for analysis.
 
-A conversation is scored on the final database state and on whether the agent told
-the user what the task requires. The simulated user ends it in one of two ways:
+A conversation is scored on the final database state. The simulated user ends it
+in one of two ways:
 
 - `###STOP###`: the task is done, and the run scores 1 or 0.
 - `###UNSATISFIED###`: the user gave up because the agent ignored their emotional
@@ -66,10 +66,11 @@ uv run tau-emotion check-data
 
 **The benchmark's user simulator is `qwen3-235b-a22b-instruct-2507` at temperature
 0.7**, the default when you leave out `--user-llm`. Use it when you compare against
-reported scores. OpenAI and Anthropic don't serve it, so set `OPENAI_API_BASE` in
-`.env` to an OpenAI-compatible server that does (your own vLLM server or a hosted
-provider). [docs/models.md](docs/models.md) covers keys, servers and reasoning
-models.
+reported scores. OpenAI and Anthropic don't serve it, so run it on an
+OpenAI-compatible server that does (your own vLLM server or a hosted provider) and
+pass `--user-api-base <url> --user-api-key <key>`. Setting `OPENAI_API_BASE` instead
+sends every OpenAI model, `gpt-4.1` included, to that server.
+[docs/models.md](docs/models.md) covers keys, servers and reasoning models.
 
 ## Running the benchmark
 
@@ -80,18 +81,20 @@ uv run tau-emotion run --domain airline --agent-llm gpt-4.1 --user-llm gpt-4.1 \
   --num-trials 1 --num-tasks 5
 ```
 
-A full domain, three trials, with the benchmark's user simulator:
+A full domain, three trials, with a `gpt-4.1` agent and the benchmark's user
+simulator on another server:
 
 ```bash
-uv run tau-emotion run --domain airline --agent-llm gpt-4.1 --num-trials 3
+uv run tau-emotion run --domain airline --agent-llm gpt-4.1 --num-trials 3 \
+  --user-api-base <url> --user-api-key <key>
 ```
 
 | Flag | What it does |
 |---|---|
 | `--domain` | One of the 10 domains |
 | `--agent-llm`, `--user-llm` | The agent's and the user simulator's models |
-| `--agent-llm-args`, `--user-llm-args` | Sampling arguments as JSON, e.g. `'{"temperature": 0.0}'` |
-| `--task-split-name` | `test` (the benchmark, the default) or `train` |
+| `--agent-llm-args`, `--user-llm-args` | Sampling arguments as JSON, e.g. `'{"temperature": 0.0}'`; they replace the defaults |
+| `--task-split-name` | `base` (the default) or `test`, the same benchmark tasks, or `train` |
 | `--num-trials`, `--num-tasks`, `--task-ids` | How many runs of which tasks |
 | `--max-concurrency` | Simulations run in parallel |
 | `--save-to` | Results folder under `data/simulations/` |
@@ -117,9 +120,12 @@ To benchmark your own agent instead of a model behind the built-in one, see
 Each finished conversation is saved to `data/simulations/<run>/results.json` as soon
 as it ends, and the run prints its metrics when all are done.
 
-- **Run folder:** without `--save-to`, `<run>` is `<domain>/<agent model>`.
-- **Resuming:** running the same command again resumes the run and retries its
-  infrastructure errors. A higher `--num-trials` adds the missing trials.
+- **Run folder:** without `--save-to`, `<run>` is `<domain>/<agent model>`, extended
+  with a non-default agent's name, the thinking or reasoning setting, a user model
+  other than the benchmark's (`user-<model>`) and the train split (`train`).
+- **Resuming:** running the same command again offers to resume the run
+  (`--auto-resume` skips the prompt) and retries its infrastructure errors. A higher
+  `--num-trials` adds the missing trials.
 - **Metrics:** Pass^k and Pass@k for k = 1 up to the number of trials (only reward 1
   counts as a success), the average reward, database matches, and how the
   conversations ended.
@@ -152,6 +158,7 @@ make check-all     # ruff lint and format
 ```
 
 Set `TAU_EMOTION_TEST_LLM` to run the LLM tests on a model other than `gpt-4.1-mini`.
+With `OPENAI_API_BASE` set, that model must be one the server there serves.
 
 ## License and acknowledgements
 

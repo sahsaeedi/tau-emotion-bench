@@ -1,16 +1,18 @@
 """Toolkit for the school domain, ported from TRACER's environment
 (tracer/tracer/envs/school/).
 
-11 tools mirroring TRACER's `ALL_TOOLS`. Conversion rules from TRACER's tools:
+13 tools: one per tool module in tracer/tracer/envs/school/tools/, plus
+`calculate` and `think`. Conversion rules from TRACER's tools:
 
 - `data["courses"]` → `self.db.courses`.
 - `return json.dumps(x)` → return the pydantic record.
 - `return "Error: ..."` → `raise ValueError("...")`.
 - Free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 
-New registration ids are the first free `REG000001`-style id, matching TRACER.
-Test tasks can reference ids created earlier in the same task, so the format
-must match TRACER's exactly.
+New registration ids are the first free `REG000001`-style id, so the
+ground-truth replay and the agent's run assign the same ids and test tasks can
+refer to an id created earlier in the same task. TRACER's tool uses random
+uuid-based ids.
 """
 
 from __future__ import annotations
@@ -102,7 +104,7 @@ class SchoolTools(ToolKitBase):
         return reg
 
     def _new_registration_id(self) -> str:
-        """First free id of the form REG000001, as TRACER assigns it."""
+        """First free id of the form REG000001."""
         n = 1
         while f"REG{n:06d}" in self.db.registrations:
             n += 1

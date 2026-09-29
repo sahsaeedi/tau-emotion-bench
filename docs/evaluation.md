@@ -94,7 +94,7 @@ The evaluator first looks at why the conversation ended
 | Termination | Reward |
 |-------------|--------|
 | `user_unsatisfied`: the simulated user wrote `###UNSATISFIED###`, giving up because the agent ignored their emotional needs, eroded trust, or created friction | **-1** (`USER_UNSATISFIED_REWARD`), no other check runs |
-| `user_stop` (`###STOP###` and the other user stop tokens) or `agent_stop` (including a call to a transfer tool, which ends the conversation as in τ-bench) | scored with `reward_basis` as described above |
+| `user_stop` (`###STOP###` and the other user stop tokens) or `agent_stop` (including a call to a transfer tool such as `transfer_to_human_agents`, which ends the conversation) | scored with `reward_basis` as described above |
 | anything else (`max_steps`, `too_many_errors`, `timeout`, errors) | **0** |
 
 The -1 sits below the 0 of a run that simply failed or ran out of steps,
@@ -104,28 +104,19 @@ leaves the task unfinished.
 ## How a conversation runs
 
 The benchmark follows [τ-bench](https://github.com/sierra-research/tau-bench)'s
-conventions, which are also those of the environments TRACER generated and
-verified the tasks in:
+conventions:
 
 - the agent's system prompt is the domain policy alone;
 - the user simulator uses τ-bench's user prompt, with the task's instructions
   followed by its `Emotion Instruction:`;
-- the conversation opens with the user's message, with no agent greeting;
+- the saved conversation opens with the fixed greeting "Hi! How can I help you
+  today?" as the user simulator's cue, but the agent's context starts at the
+  user's first message;
 - a transfer to a human agent ends the conversation;
 - of several tool calls in one message, only the first runs;
+- an empty agent reply reaches the user as an empty message;
+- the agent's reasoning goes back to the model with the next request;
 - a run ends after 200 steps by default (`--max-steps`).
-
-`--no-tau-bench-prompts` switches the prompts to τ²-bench's style instead:
-
-| | τ-bench conventions (default) | τ²-bench style |
-|---|---|---|
-| Agent system prompt | the domain policy alone | the policy inside an `<instructions>` wrapper |
-| User simulator prompt | τ-bench's user prompt | [`data/tau_emotion/user_simulator/`](../data/tau_emotion/user_simulator/) guidelines |
-| Agent's first context | the user's opening message | a seeded agent greeting |
-
-Every results file records the choice in `info.tau_bench_prompts`. `--agent-prompt`
-changes only the agent's system prompt. The other conventions are `TAU_BENCH_*`
-switches in [`src/tau_emotion/config.py`](../src/tau_emotion/config.py).
 
 ## Why `actions` looks like a requirement (and isn't)
 
@@ -142,10 +133,11 @@ on a fresh env" than to spell out by hand.
 But because this list is also rendered to the agent in some debug views
 and reads like a checklist, it is easy to misread as a list of *required*
 agent actions. In practice, the only thing that matters for scoring is
-whether the predicted DB end state matches the target DB end state and
-whether the required strings were communicated. An agent that takes a
-different (correct) path through the tools — or no tool calls at all when
-the right answer is to refuse — can still receive full reward.
+whether the predicted DB end state matches the target DB end state (and,
+for tasks that list `communicate_info`, whether those strings were said; no
+shipped task lists any). An agent that takes a different (correct) path
+through the tools — or no tool calls at all when the right answer is to
+refuse — can still receive full reward.
 
 This is **intended**: τ-bench scores on outcomes (`DB + COMMUNICATE`), not
 on whether the agent followed a particular script. Switching the reward to
@@ -262,8 +254,5 @@ is only one).
   [`src/tau_emotion/data_model/simulation.py`](../src/tau_emotion/data_model/simulation.py)
 - User simulator rules for `###STOP###` and `###UNSATISFIED###`:
   `TAU_BENCH_SYSTEM_PROMPT` in [`src/tau_emotion/user/user_simulator.py`](../src/tau_emotion/user/user_simulator.py)
-  (the default, τ-bench prompting), or
-  [`data/tau_emotion/user_simulator/simulation_guidelines.md`](../data/tau_emotion/user_simulator/simulation_guidelines.md)
-  with `--no-tau-bench-prompts`
 - Discussion of the `actions`-vs-`reward_basis` confusion:
   [issue #224][issue-224] and [RFC #129][issue-129].

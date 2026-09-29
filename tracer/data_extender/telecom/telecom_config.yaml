@@ -77,3 +77,6 @@ devices:
   tv_cable_box_probability: 0.70
 
 taxes_fees_rate_range: [0.06, 0.12]
+
+# Range for account.created_date (inclusive, YYYY-MM-DD).
+created_date_range: ["2016-01-01", "2025-09-01"]

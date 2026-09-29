@@ -4,7 +4,7 @@ Helper functions for task loading, run configuration, and metadata.
 
 from typing import Optional
 
-from tau_emotion.config import DEFAULT_AGENT_IMPLEMENTATION
+from tau_emotion.config import DEFAULT_AGENT_IMPLEMENTATION, DEFAULT_LLM_USER
 from tau_emotion.data_model.simulation import (
     AgentInfo,
     Info,
@@ -14,12 +14,7 @@ from tau_emotion.data_model.simulation import (
 from tau_emotion.data_model.tasks import Task
 from tau_emotion.environment.environment import EnvironmentInfo
 from tau_emotion.registry import RegistryInfo, registry
-from tau_emotion.user.user_simulator import (
-    STOP,
-    TAU_BENCH_SYSTEM_PROMPT,
-    UNSATISFIED,
-    get_global_user_sim_guidelines,
-)
+from tau_emotion.user.user_simulator import get_global_user_sim_guidelines
 from tau_emotion.utils.utils import get_commit_hash
 
 
@@ -106,9 +101,9 @@ def make_run_name(config: RunConfig) -> str:
 
     Text runs get one directory per agent model, so the same command resumes
     its run instead of starting a new one: <domain>/<agent model>, with the
-    thinking setting when one is given, e.g. airline/qwen3-8b_no-thinking.
-    The trial count is left out, so
-    rerunning with more trials adds them to the same run.
+    thinking setting when one is given, a non-default user model and the train
+    split, e.g. airline/qwen3-8b_no-thinking_user-gpt-4.1_train. The trial count
+    is left out, so rerunning with more trials adds them to the same run.
     """
     parts = [config.llm_agent.replace("/", "_")]
     extra_body = config.llm_args_agent.get("extra_body") or {}
@@ -126,12 +121,12 @@ def make_run_name(config: RunConfig) -> str:
     reasoning_effort = extra_body.get("reasoning_effort")
     if reasoning_effort is not None:
         parts.append(f"effort-{reasoning_effort}")
+    if config.llm_user != DEFAULT_LLM_USER:
+        parts.append(f"user-{config.llm_user.replace('/', '_')}")
+    if config.task_split_name == "train":
+        parts.append("train")
     if config.effective_agent != DEFAULT_AGENT_IMPLEMENTATION:
         parts.insert(0, config.effective_agent)
-    if not config.tau_bench_prompts:
-        parts.append("tau2-prompts")
-    if config.agent_prompt_override is not None:
-        parts.append(f"{config.agent_prompt_override}-agent-prompt")
     return f"{config.domain}/{'_'.join(parts)}"
 
 
@@ -147,30 +142,18 @@ def get_info(config: RunConfig, **overrides) -> Info:
 
     Args:
         config: The run configuration.
-        **overrides: Override specific fields (e.g., user_persona_config,
-            policy_override).
+        **overrides: Override specific fields (e.g., policy_override).
 
     Returns:
         Info object with run metadata.
     """
-    user_persona_config = overrides.get("user_persona_config")
     policy_override = overrides.get("policy_override")
-
-    if config.tau_bench_prompts:
-        # The τ-bench prompt is one block per task; record it without the task's
-        # own instruction, which is stored with the task.
-        global_user_sim_guidelines = TAU_BENCH_SYSTEM_PROMPT.format(
-            instruction_display="", stop=STOP, unsatisfied=UNSATISFIED
-        )
-    else:
-        global_user_sim_guidelines = get_global_user_sim_guidelines()
 
     user_info = UserInfo(
         implementation=config.effective_user,
         llm=config.llm_user,
         llm_args=_without_api_key(config.llm_args_user),
-        global_simulation_guidelines=global_user_sim_guidelines,
-        persona_config=user_persona_config,
+        global_simulation_guidelines=get_global_user_sim_guidelines(),
     )
 
     agent_llm = config.llm_agent
@@ -196,6 +179,4 @@ def get_info(config: RunConfig, **overrides) -> Info:
         agent_info=agent_info,
         environment_info=environment_info,
         seed=config.seed,
-        tau_bench_prompts=config.tau_bench_prompts,
-        agent_prompt=config.agent_prompt_override,
     )

@@ -24,12 +24,10 @@ class MockBankDomainEnv(Env):
                 from tracer.envs.bank.tasks_test import TASKS as tasks
             case "train":
                 from tracer.envs.bank.tasks_train import TASKS as tasks
-            case "dev":
-                from tracer.envs.bank.tasks_dev import TASKS as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
-        # data_split is separate from task_split, as in the other domains: the flat
-        # layout IS the train split, so load_data() with no args is unchanged.
+        # data_split is separate from task_split, as in the other domains; the data
+        # comes from data/<data_split>/ (test/ or train/).
         super().__init__(
             data_load_func=lambda: load_data(data_split),
             tools=ALL_TOOLS,

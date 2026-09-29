@@ -27,11 +27,9 @@ class MockAirlineDomainEnv(Env):
                 from tracer.envs.airline.tasks_test import TASKS as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
-        # data_split is deliberately SEPARATE from task_split. The shipped
-        # tasks_test.py names entities (mia_li_3668, Z7GOZK, HAT136) that live in the
-        # flat layout, i.e. the train split -- so those tasks are train-data tasks.
-        # Point data_split at "test" only together with tasks generated from that
-        # split (python -m tracer.generator --split test).
+        # data_split is deliberately SEPARATE from task_split: the data comes from
+        # data/<data_split>/ (test/ or train/). Use the split the tasks were
+        # generated from (python -m tracer.generator --split test|train).
         super().__init__(
             data_load_func=lambda: load_data(data_split),
             tools=ALL_TOOLS,

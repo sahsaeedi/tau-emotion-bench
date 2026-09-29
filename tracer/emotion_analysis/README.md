@@ -26,3 +26,12 @@ python emotion_analysis/run_all.py --config emotion_analysis/config.json
 - `<task_stem>_with_emotion_predictions.json` — original task file with `novel_emotion_prediction` added to each task (written next to the input file)
 - `analysis/instruction_model_output_tsne.png` — t-SNE of instructions only, colored by emotion family
 - `analysis/instruction_vs_<task_stem>_tsne_knn_regions.png` — one plot per task file: t-SNE with kNN decision regions in 2D (task colors match the field)
+
+To combine the per-task-file region plots into one figure (one panel per file in
+`inputs.task_paths`), run after `run_all.py`:
+
+```bash
+python emotion_analysis/visualize_combined_grid.py --config emotion_analysis/config.json
+```
+
+It writes `analysis/instruction_vs_task_tsne_knn_regions_grid.{png,pdf}`.

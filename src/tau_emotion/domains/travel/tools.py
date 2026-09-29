@@ -1,7 +1,8 @@
 """Toolkit for the travel domain, ported from TRACER's environment
 (tracer/tracer/envs/travel/).
 
-15 tools mirroring TRACER's `ALL_TOOLS`. Conversion rules from TRACER's tools:
+16 tools: one per tool module in tracer/tracer/envs/travel/tools/, plus `think`.
+Conversion rules from TRACER's tools:
 
 - `data["packages"]` → `self.db.packages`.
 - `return json.dumps(x)` → return the pydantic record.
@@ -11,9 +12,9 @@
 Bookings live inside travelers rather than in their own collection, so
 `_find_booking` scans travelers, exactly as TRACER's tools do.
 
-New booking ids are the first free `BKG000001`-style id, matching TRACER. Test
-tasks can reference ids created earlier in the same task, so the format must
-match TRACER's exactly.
+New booking ids are the first free `BKG000001`-style id, so the ground-truth
+replay and the agent's run assign the same ids (TRACER's tool uses random
+uuid-based ids).
 """
 
 from __future__ import annotations
@@ -98,7 +99,7 @@ class TravelTools(ToolKitBase):
         return package
 
     def _new_booking_id(self) -> str:
-        """First free id of the form BKG000001, as TRACER assigns it."""
+        """First free id of the form BKG000001."""
         existing = {
             b.booking_id for t in self.db.travelers.values() for b in t.bookings
         }

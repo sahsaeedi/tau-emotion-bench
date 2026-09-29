@@ -5,7 +5,7 @@ Minimal custom agent example.
 This example shows how to create the simplest possible tau-emotion agent,
 register it, and run it against the mock domain -- all in one file.
 
-No API keys are needed (uses the mock domain with a real LLM).
+Needs OPENAI_API_KEY (the agent and user simulator use openai/gpt-4.1-mini).
 
 Usage:
     python examples/agents/minimal_text_agent.py
@@ -110,7 +110,7 @@ def create_minimal_agent(tools, domain_policy, **kwargs):
     The registry calls this with:
         tools: list[Tool] -- the domain's tools
         domain_policy: str -- the domain's policy document
-        **kwargs may include: llm, llm_args, task, solo_mode
+        **kwargs may include: llm, llm_args, task
     """
     return MinimalAgent(
         tools=tools,
@@ -127,7 +127,7 @@ def create_minimal_agent(tools, domain_policy, **kwargs):
 if __name__ == "__main__":
     from tau_emotion.data_model.simulation import TextRunConfig
     from tau_emotion.registry import registry
-    from tau_emotion.runner import get_tasks, run_single_task
+    from tau_emotion.runner import get_tasks, run_domain, run_single_task  # noqa: F401
 
     # Register our agent
     registry.register_agent_factory(create_minimal_agent, "minimal_agent")

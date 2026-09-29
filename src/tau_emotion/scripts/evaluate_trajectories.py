@@ -10,6 +10,7 @@ from rich.console import Console
 from rich.progress import Progress
 
 from tau_emotion.data_model.simulation import Results
+from tau_emotion.data_model.tasks import Task
 from tau_emotion.evaluator.evaluator import EvaluationType, evaluate_simulation
 from tau_emotion.metrics.agent_metrics import compute_metrics
 from tau_emotion.utils.display import ConsoleDisplay
@@ -23,6 +24,12 @@ def is_solo_mode(results: Results) -> bool:
     if agent_implementation == "llm_agent_solo" and user_implementation == "dummy_user":
         return True
     return False
+
+
+def _env_kwargs(task: Task) -> dict | None:
+    """Train tasks are scored on db_train.json, as in the runner
+    (runner/build.py _build_env_kwargs)."""
+    return {"db_split": "train"} if task.split == "train" else None
 
 
 def compute_simulation_rewards(
@@ -60,6 +67,7 @@ def compute_simulation_rewards(
                 simulation=simulation,
                 evaluation_type=evaluation_type,
                 solo_mode=solo_mode,
+                env_kwargs=_env_kwargs(task),
             )
 
             # Update the simulation with new reward info

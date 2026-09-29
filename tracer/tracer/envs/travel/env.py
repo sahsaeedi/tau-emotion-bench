@@ -24,8 +24,6 @@ class MockTravelDomainEnv(Env):
                 from tracer.envs.travel.tasks_test import TASKS as tasks
             case "train":
                 from tracer.envs.travel.tasks_train import TASKS as tasks
-            case "dev":
-                from tracer.envs.travel.tasks_dev import TASKS as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
         super().__init__(

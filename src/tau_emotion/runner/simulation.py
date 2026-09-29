@@ -26,15 +26,16 @@ def run_simulation(
     already wired in), runs the simulation, evaluates it, and returns the result
     with reward_info attached.
 
-    This is the lowest-level entry point. It has no dependency on the registry
-    or RunConfig -- everything is already encapsulated in the orchestrator.
+    This is the lowest-level entry point: it needs no RunConfig. The evaluator
+    rebuilds the task's environment from the registry to score the run, so the
+    domain must be registered.
 
     Args:
         orchestrator: A fully constructed Orchestrator. Must have agent, user,
             environment, and task set.
         evaluation_type: The type of evaluation to perform. Defaults to ALL.
         env_kwargs: Additional kwargs passed to the evaluator's environment
-            constructor.
+            constructor, e.g. {"db_split": "train"} for a train task.
 
     Returns:
         SimulationRun with reward_info attached.

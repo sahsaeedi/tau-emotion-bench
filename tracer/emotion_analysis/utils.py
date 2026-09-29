@@ -22,10 +22,6 @@ def get_embedding_model_cfg(config: Dict[str, Any]) -> Dict[str, Any]:
     model_cfg = config.get("embedding_model")
     if model_cfg:
         return model_cfg
-    # Backward compatibility for older config shape.
-    models = config.get("embedding_models", [])
-    if models:
-        return models[0]
     raise ValueError("Config is missing 'embedding_model'.")
 
 

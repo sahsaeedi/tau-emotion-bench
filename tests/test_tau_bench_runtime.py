@@ -1,6 +1,6 @@
 """τ-bench runtime conventions the orchestrator follows.
 
-The prompt side is covered in test_tau_bench_prompts.py. These tests cover
+The prompt side is covered in test_prompts.py. These tests cover
 what τ-bench does while a conversation runs: it keeps only the first of
 several tool calls, it passes an empty model reply on to the user, and it ends
 the conversation as soon as the agent transfers to a human.
@@ -11,7 +11,7 @@ from typing import Callable
 import pytest
 
 from tau_emotion.agent.llm_agent import LLMAgent
-from tau_emotion.config import TAU_BENCH_TERMINATE_TOOLS
+from tau_emotion.config import TERMINATE_TOOLS
 from tau_emotion.data_model.message import AssistantMessage, ToolCall
 from tau_emotion.data_model.simulation import TerminationReason
 from tau_emotion.data_model.tasks import Task
@@ -117,7 +117,7 @@ def test_a_transfer_ends_the_conversation(
     error; what this checks is that the call ends the conversation.
     """
     orchestrator = _orchestrator(domain_name, get_environment, base_task)
-    transfer = next(iter(TAU_BENCH_TERMINATE_TOOLS))
+    transfer = next(iter(TERMINATE_TOOLS))
     orchestrator.message = AssistantMessage(
         role="assistant", content=None, tool_calls=[_tool_call(transfer)]
     )
@@ -157,4 +157,4 @@ def test_the_domains_that_tau_bench_stops_on_have_the_tool():
         environment = registry.get_env_constructor(domain)()
         tool_names = {tool.name for tool in environment.get_tools()}
         assert expected in tool_names
-        assert expected in TAU_BENCH_TERMINATE_TOOLS
+        assert expected in TERMINATE_TOOLS

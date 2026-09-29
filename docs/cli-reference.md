@@ -40,20 +40,17 @@ tau-emotion run \
 | `--task-ids` | Only run the tasks with these ids (e.g. `airline_test_0000 airline_test_0003`) |
 | `--task-split-name` | Task split: `base` (default) or `test`, the same 580-task benchmark set run on `db.json`; or `train`, the train tasks run on `db_train.json` |
 | `--task-set-name` | Task set to use (default: the domain's own) |
-| `--tau-bench-prompts` / `--no-tau-bench-prompts` | Prompt the agent and user simulator by τ-bench's conventions (the policy alone as the system prompt, τ-bench's user prompt), or τ²-bench's style instead. Default: `config.TAU_BENCH_PROMPTS` (on). The choice is recorded in the results |
-| `--agent-prompt` | The agent's system prompt only: `tau` sends the policy alone, `tau2` wraps it in τ²-bench's `<instructions>`/`<policy>` template (for models fine-tuned on τ²-bench's prompt). The user simulator keeps the prompt `--tau-bench-prompts` picks. Default: follow `--tau-bench-prompts` |
 | `--max-steps` | Maximum simulation steps (default: `200`) |
 | `--max-errors` | Maximum number of tool errors in a run before it is stopped (default: `200`, equal to `--max-steps`, so the cap is effectively off) |
 | `--max-concurrency` | Maximum concurrent simulations (default: `3`) |
 | `--seed` | Random seed for reproducibility (default: `300`) |
-| `--save-to` | Output directory name, saved as `data/simulations/<save_to>/results.json`. Default: `<domain>/<agent model>`, plus the thinking setting when one is given. If the file already exists, the run is resumed |
+| `--save-to` | Output directory name, saved as `data/simulations/<save_to>/results.json`. Default: `<domain>/<agent model>`, plus suffixes for a non-default agent, thinking/reasoning settings, a non-default user model (`user-<model>`) and the train split (`train`), e.g. `airline/gpt-4.1_user-gpt-4.1`. If the file already exists, the run is resumed |
 | `--log-level` | Log level (default: `ERROR`) |
 | `--verbose-logs` | Save detailed logs (LLM calls, per-task logs) |
 | `--llm-log-mode` | LLM log mode when `--verbose-logs` is on: `all` or `latest` (default: `latest`) |
 | `--max-retries` | Max retries for failed tasks (default: `3`) |
 | `--retry-delay` | Delay in seconds between retries (default: `1.0`) |
 | `--enforce-communication-protocol` | Enforce protocol rules (e.g. no mixed text + tool call messages) |
-| `--user-persona` | User persona config as JSON dict |
 | `--auto-resume` | Automatically resume from existing save file without prompting |
 | `--auto-review` | Automatically run LLM conversation review after each simulation |
 | `--review-mode` | Review mode when `--auto-review` is on: `full` or `user` (default: `full`) |
@@ -83,7 +80,7 @@ tau-emotion run --domain telehealth --agent-llm <served_model_name> \
 
 ## `tau-emotion view` — View Results
 
-Browse and analyze simulation results.
+Browse and analyze simulation results. It lists every `results.json` under `data/simulations/` (or `--dir`), at any depth.
 
 ```bash
 tau-emotion view

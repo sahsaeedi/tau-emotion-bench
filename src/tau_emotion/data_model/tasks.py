@@ -133,13 +133,13 @@ class UserScenario(BaseModel):
     ]
 
     def to_tau_bench_instruction(self) -> str:
-        """The scenario in τ-bench's instruction format, as TRACER's task files
-        write it: the instruction text, then the emotion block appended to it."""
+        """The scenario as the single instruction the user prompt shows: the
+        instruction text, then a line "Emotion Instruction: <text>", the block
+        the prompt's emotion rules refer to."""
         text = str(self.instructions)
         if self.persona is not None:
             text = f"{self.persona}\n\n{text}"
         if self.emotion_instruction is not None:
-            # TRACER joins the two with a single newline.
             text = f"{text}\nEmotion Instruction: {self.emotion_instruction}"
         return text
 

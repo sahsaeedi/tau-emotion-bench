@@ -64,9 +64,9 @@ metrics = compute_metrics(results)
 print(f"Average reward: {metrics.avg_reward}")
 ```
 
-`TextRunConfig` extends `BaseRunConfig`, which holds shared fields like `domain`, `task_split_name`, `num_trials`, `seed`, etc. `RunConfig` is an alias for `TextRunConfig`. Unset fields take the same defaults as the CLI (`config.py`); `llm_user` defaults to `qwen3-235b-a22b-instruct-2507`, and `tau_bench_prompts` to `config.TAU_BENCH_PROMPTS`.
+`TextRunConfig` extends `BaseRunConfig`, which holds shared fields like `domain`, `task_split_name`, `num_trials`, `seed`, etc. `RunConfig` is an alias for `TextRunConfig`. Unset fields take the same defaults as the CLI (`config.py`); `llm_user` defaults to `qwen3-235b-a22b-instruct-2507`.
 
-This handles everything: task loading, filtering, concurrency, checkpointing, metrics display. Results are saved to `data/simulations/<domain>/<agent model>/results.json` unless `save_to` is set.
+This handles everything: task loading, filtering, concurrency, checkpointing, metrics display. Results are saved to `data/simulations/<save_to>/results.json`. Without `save_to`, the folder is `make_run_name(config)`: `<domain>/<agent model>`, plus suffixes for a non-default agent, thinking/reasoning settings, a non-default user model and the train split. For the config above that is `airline/openai_gpt-4.1_user-openai_gpt-4.1-mini`.
 
 ### Train tasks
 
@@ -171,9 +171,11 @@ from tau_emotion.user.user_simulator import UserSimulator
 env = MyCustomEnvironment()
 agent = MyCustomAgent(tools=env.get_tools(), domain_policy=env.get_policy())
 
-# Standard user simulator; the instructions include the task's emotion instruction
+# Standard user simulator; the instructions include the task's emotion instruction.
+# The benchmark domains give the user no tools; pass env.get_user_tools() only
+# if your environment has user tools (it raises ValueError otherwise).
 user = UserSimulator(
-    tools=env.get_user_tools(),
+    tools=None,
     instructions=task.user_scenario.to_tau_bench_instruction(),
     llm="openai/gpt-4.1-mini",
 )
@@ -208,10 +210,10 @@ print(f"Reward: {result.reward_info.reward}")
 ### Layer 2: Build
 
 - **`build_environment(domain, *, solo_mode=False, env_kwargs=None)`** -- Build an environment from a domain name.
-- **`build_agent(agent_name, environment, *, llm, llm_args, task, solo_mode, tau_bench_prompts)`** -- Build an agent from a registered name.
-- **`build_user(user_name, environment, task, *, llm, llm_args, persona_config, solo_mode, tau_bench_prompts)`** -- Build a half-duplex user from a registered name.
-- **`build_text_orchestrator(config, task, *, seed, simulation_id, user_persona_config)`** -- Build a half-duplex `Orchestrator` from a `TextRunConfig`.
-- **`build_orchestrator(config, task, *, seed, simulation_id, user_persona_config)`** -- Same as `build_text_orchestrator`.
+- **`build_agent(agent_name, environment, *, llm, llm_args, task, solo_mode)`** -- Build an agent from a registered name.
+- **`build_user(user_name, environment, task, *, llm, llm_args, solo_mode)`** -- Build a half-duplex user from a registered name.
+- **`build_text_orchestrator(config, task, *, seed, simulation_id)`** -- Build a half-duplex `Orchestrator` from a `TextRunConfig`.
+- **`build_orchestrator(config, task, *, seed, simulation_id)`** -- Same as `build_text_orchestrator`.
 
 ### Layer 3: Batch Execution
 
@@ -227,7 +229,7 @@ print(f"Reward: {result.reward_info.reward}")
 - **`load_task_splits(task_set_name)`** -- Split name -> task ids for a task set.
 - **`get_environment_info(domain_name, include_tool_info, env_kwargs)`** -- Describe a domain's environment.
 - **`get_info(config, **overrides)`** -- Create run metadata (`Info` object).
-- **`make_run_name(config)`** -- Generate the default run name (`<domain>/<agent model>`, plus the thinking setting when one is given).
+- **`make_run_name(config)`** -- Generate the default run name: `<domain>/<agent model>`, plus suffixes for a non-default agent (as a prefix), thinking/reasoning settings, a non-default user model (`user-<model>`) and the train split (`train`).
 
 ---
 

@@ -14,12 +14,7 @@ from tau_emotion.agent.base_agent import (
     is_valid_agent_history_message,
 )
 from tau_emotion.agent.llm_agent import LLMSoloAgent
-from tau_emotion.config import (
-    TAU_BENCH_EMPTY_AGENT_REPLY,
-    TAU_BENCH_PROMPTS,
-    TAU_BENCH_SINGLE_TOOL_CALL,
-    TAU_BENCH_TERMINATE_TOOLS,
-)
+from tau_emotion.config import TERMINATE_TOOLS
 from tau_emotion.data_model.message import (
     AssistantMessage,
     Message,
@@ -312,25 +307,20 @@ class BaseOrchestrator(ABC, Generic[BaseAgentT, BaseUserT, TrajectoryItemT]):
     def _apply_tau_bench_message_conventions(agent_msg: AssistantMessage) -> None:
         """Apply τ-bench's conventions to the agent's message, then validate it.
 
-        τ-bench's tool-calling agent keeps only the first tool call of a message and
-        turns an empty reply into an empty message to the user. The message is
-        edited in place, so the agent's own history carries the same one forward.
+        τ-bench's tool-calling agent keeps only the first tool call of a message
+        (tracer/tracer/agents/tool_calling_agent.py: `tool_calls[:1]`) and passes
+        a reply with no content on to the user as it is (`message_to_action`)
+        instead of failing the run; here it goes out as an empty message. The
+        message is edited in place, so the agent's own history carries the same
+        one forward.
         """
-        if (
-            TAU_BENCH_SINGLE_TOOL_CALL
-            and agent_msg.tool_calls
-            and len(agent_msg.tool_calls) > 1
-        ):
+        if agent_msg.tool_calls and len(agent_msg.tool_calls) > 1:
             logger.debug(
                 f"Keeping the first of {len(agent_msg.tool_calls)} tool calls, "
                 "as τ-bench does"
             )
             del agent_msg.tool_calls[1:]
-        if (
-            TAU_BENCH_EMPTY_AGENT_REPLY
-            and not agent_msg.has_content()
-            and not agent_msg.is_tool_call()
-        ):
+        if not agent_msg.has_content() and not agent_msg.is_tool_call():
             logger.warning(
                 "Agent returned no content and no tool call; sending an empty "
                 "message to the user, as τ-bench does"
@@ -434,7 +424,6 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
         simulation_id: Optional[str] = None,
         validate_communication: bool = False,
         timeout: Optional[float] = None,
-        tau_bench_prompts: Optional[bool] = None,
     ):
         """
         Initialize the Orchestrator for managing simulation between Agent, User, and Environment.
@@ -457,13 +446,7 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
             validate_communication: If True, validates communication protocol rules (e.g., no mixed
                                    messages with both text and tool calls). Defaults to False.
             timeout: Maximum wallclock time in seconds. None means no timeout.
-            tau_bench_prompts: Start the agent's context at the user's first
-                message, as τ-bench does. None means
-                config.TAU_BENCH_PROMPTS.
         """
-        self.tau_bench_prompts = (
-            TAU_BENCH_PROMPTS if tau_bench_prompts is None else tau_bench_prompts
-        )
         # Initialize base class
         super().__init__(
             domain=domain,
@@ -668,9 +651,7 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
                 first_message.timestamp = get_now()
                 # τ-bench seeds only the user simulator with this greeting; its
                 # agent starts from the user's first message.
-                self.agent_state = self.agent.get_init_state(
-                    message_history=[] if self.tau_bench_prompts else [first_message]
-                )
+                self.agent_state = self.agent.get_init_state()
                 self.trajectory = [first_message]
                 self.message = first_message
                 self.from_role = Role.AGENT
@@ -923,7 +904,7 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
             self.from_role = Role.ENV
             # τ-bench ends the conversation once the agent has called a terminate
             # tool (transfer to a human) and scores the run from here.
-            if requestor == Role.AGENT and (called_tools & TAU_BENCH_TERMINATE_TOOLS):
+            if requestor == Role.AGENT and (called_tools & TERMINATE_TOOLS):
                 self.done = True
                 self.termination_reason = TerminationReason.AGENT_STOP
         else:

@@ -9,7 +9,6 @@ from tau_emotion.agent.base_agent import (
     ValidAgentInputMessage,
     is_valid_agent_history_message,
 )
-from tau_emotion.config import TAU_BENCH_PROMPTS
 from tau_emotion.data_model.message import (
     APICompatibleMessage,
     AssistantMessage,
@@ -21,25 +20,6 @@ from tau_emotion.data_model.message import (
 from tau_emotion.data_model.tasks import Action, Task
 from tau_emotion.environment.tool import Tool, as_tool
 from tau_emotion.utils.llm_utils import generate
-
-AGENT_INSTRUCTION = """
-You are a customer service agent that helps the user according to the <policy> provided below.
-In each turn you can either:
-- Send a message to the user.
-- Make a tool call.
-You cannot do both at the same time.
-
-Try to be helpful and always follow the policy. Always make sure you generate valid JSON only.
-""".strip()
-
-SYSTEM_PROMPT = """
-<instructions>
-{agent_instruction}
-</instructions>
-<policy>
-{domain_policy}
-</policy>
-""".strip()
 
 
 class LLMAgentState(BaseModel):
@@ -65,14 +45,9 @@ class LLMAgent(
         domain_policy: str,
         llm: str,
         llm_args: Optional[dict] = None,
-        tau_bench_prompts: Optional[bool] = None,
     ):
         """
         Initialize the LLMAgent.
-
-        Args:
-            tau_bench_prompts: Use τ-bench's prompting. None means
-                config.TAU_BENCH_PROMPTS.
         """
         super().__init__(
             tools=tools,
@@ -80,19 +55,12 @@ class LLMAgent(
             llm=llm,
             llm_args=llm_args,
         )
-        self.tau_bench_prompts = (
-            TAU_BENCH_PROMPTS if tau_bench_prompts is None else tau_bench_prompts
-        )
 
     @property
     def system_prompt(self) -> str:
         # τ-bench sends the domain policy as the whole system prompt, with no
         # instruction wrapper around it.
-        if self.tau_bench_prompts:
-            return self.domain_policy
-        return SYSTEM_PROMPT.format(
-            domain_policy=self.domain_policy, agent_instruction=AGENT_INSTRUCTION
-        )
+        return self.domain_policy
 
     def get_init_state(
         self, message_history: Optional[list[Message]] = None
@@ -512,7 +480,6 @@ def create_llm_agent(tools, domain_policy, **kwargs):
         domain_policy=domain_policy,
         llm=kwargs.get("llm"),
         llm_args=kwargs.get("llm_args"),
-        tau_bench_prompts=kwargs.get("tau_bench_prompts"),
     )
 
 

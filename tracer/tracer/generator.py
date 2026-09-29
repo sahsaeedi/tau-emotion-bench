@@ -238,9 +238,9 @@ def parse_args():
     p.add_argument(
         "--split",
         default="train",
-        choices=["train", "test", "dev"],
-        help="Which data split to generate tasks FROM. Train is the flat layout; "
-        "test/dev read tracer/envs/<domain>/data/<split>/ when present.",
+        choices=["train", "test"],
+        help="Which data split to generate tasks FROM "
+        "(tracer/envs/<domain>/data/<split>/).",
     )
 
     p.add_argument("--generator-model-provider", default="openai")

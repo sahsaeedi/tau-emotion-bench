@@ -238,7 +238,7 @@ def test_add_beneficiary_starts_pending(tools: BankTools):
         display_name="Test Payee",
     )
 
-    # the system assigns the id, in TRACER's format
+    # the system assigns the first free BEN000001-style id
     assert beneficiary.beneficiary_id == "BEN000001"
     assert beneficiary.verification.status == "pending"
     assert beneficiary.status == "active"
@@ -328,7 +328,7 @@ def test_verify_beneficiary(tools: BankTools):
     assert verified.verification.method == "micro_deposit"
     assert (
         verified.verification.verified_at == "2025-10-02T12:00:00Z"
-    )  # TRACER's fixed clock
+    )  # the toolkit's fixed clock
 
 
 def test_verify_beneficiary_requires_ownership(tools: BankTools):
@@ -355,7 +355,7 @@ def test_initiate_internal_transfer(tools: BankTools):
     assert debit.direction == "debit" and credit.direction == "credit"
     assert debit.related_transaction_id == credit.transaction_id
     assert credit.related_transaction_id == debit.transaction_id
-    # first free TXN000001-style ids, exactly as TRACER assigns them
+    # first free TXN000001-style ids, so replays assign the same ones
     assert (debit.transaction_id, credit.transaction_id) == ("TXN000001", "TXN000002")
     assert tools.db.transactions[debit.transaction_id] is debit
 

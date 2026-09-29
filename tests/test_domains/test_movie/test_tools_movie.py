@@ -200,7 +200,7 @@ def test_create_booking(tools: MovieTools):
     assert booking.totals.amount_due == 0.0
     assert [s.seat_id for s in booking.seats] == [FREE_SEAT]
     assert len(booking.delivery.tickets) == 1
-    # ids and timestamps are assigned by the system, in TRACER's formats
+    # the system assigns deterministic ids
     assert booking.booking_id == "BKG000001"
     assert [p.payment_id for p in booking.payment_history] == ["BKG000001-PAY-01"]
     assert booking.payment_history[0].method.source == "card"

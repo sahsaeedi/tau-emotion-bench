@@ -38,9 +38,12 @@ SOFTWARE.
 ## τ-bench
 
 - Source: https://github.com/sierra-research/tau-bench
-- Used for: the tool implementations in TRACER's telecom domain
-  (`tracer/tracer/envs/telecom/tools/`) and the `Tool` base class
-  (`tracer/tracer/envs/tool.py`).
+- Used for: TRACER's airline and retail environments
+  (`tracer/tracer/envs/{airline,retail}/`: tools, rules, policy), the environment
+  base class, user simulator and `Tool` base class (`tracer/tracer/envs/base.py`,
+  `user.py`, `tool.py`), and the agent classes (`tracer/tracer/agents/`), types,
+  run loop and model utilities (`tracer/tracer/model_utils/`) that the task
+  generator builds on, with modifications.
 
 ```
 MIT License
@@ -69,9 +72,9 @@ SOFTWARE.
 ## τ-trait
 
 - Source: https://github.com/collinear-ai/tau-trait
-- Used for: TRACER's domain environments (`tracer/tracer/envs/`: tools, data
-  loading, rules) and model utilities (`tracer/tracer/model_utils/`), with
-  modifications.
+- Used for: TRACER's telecom and telehealth environments
+  (`tracer/tracer/envs/{telecom,telehealth}/`: tools, rules, policy, data), with
+  modifications. τ-trait is a fork of τ-bench, under the same license.
 
 ```
 MIT License

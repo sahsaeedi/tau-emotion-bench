@@ -319,7 +319,7 @@ def test_send_certificate(environment: Environment, send_certificate_call: ToolC
         environment.use_tool("get_user_details", user_id="mia_li_3668")
     )
     assert user_details["payment_methods"]["certificate_3221322"]["amount"] == 100
-    # Like TRACER's tools, user details do not include a user_id field.
+    # User details leave out the user_id field (TRACER's tool returns it).
     assert "user_id" not in user_details
 
 

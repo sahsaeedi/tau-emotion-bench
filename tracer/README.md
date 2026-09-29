@@ -9,7 +9,8 @@ movie, restaurant, school and travel.
 Tasks are generated and verified in TRACER's own environments,
 `tracer/envs/<domain>/`: the tools, the policy (`wiki.md`) and the database of each
 domain, following τ-bench's conventions. The benchmark's tools in
-`../src/tau_emotion/domains/` reproduce these environments, so a task that is
+`../src/tau_emotion/domains/` reproduce these environments (every TRACER tool is
+there; some domains add a few, such as `think` or user lookups), so a task that is
 solvable here is solvable in the benchmark.
 
 No generated outputs ship with it: no tool graphs, traces, emotion bank or trained
@@ -48,7 +49,7 @@ into the benchmark.
 | `evaluator/` | Step 4: the four-criteria quality audit |
 | `emotions/` | Step 5: builds the emotion persona bank |
 | `emotion_analysis/` | Step 6: assigns an emotion to each task, and plots the emotion space |
-| `export_to_tau2.py` | Step 7: writes tasks into the benchmark |
+| `export_tasks.py` | Step 7: writes tasks into the benchmark |
 | `data_extender/` | Adds synthetic customers to the telecom and telehealth databases ([below](#adding-users-to-a-database)) |
 | `export_db.py` | Writes a domain's TRACER database into the benchmark's `db.json` / `db_train.json` |
 
@@ -78,15 +79,20 @@ VLLM_API_KEY=...          # graph_builder.py --provider vllm
 OPENAI_COMPATIBLE_API_KEY=...  # the telehealth extender with --provider openai-compatible
 ```
 
-Every LLM step also runs on an OpenAI-compatible server (vLLM or a hosted provider):
+Every LLM step except the emotion bank (step 5) also runs on an OpenAI-compatible
+server (vLLM or a hosted provider):
 `graph_builder.py --provider vllm --base-url <url>`, and `--api-base <url>` with
 `--generator-model-provider openai` or `--eval-model-provider openai` (and
 `OPENAI_API_KEY` set to that server's key) for the generator and the evaluator.
 
 ## Pipeline
 
-The example builds `bank` test tasks. Use `--split train` throughout to build train
-tasks against the train database instead.
+The example builds `bank` test tasks. To build train tasks against the train
+database instead, pass `--split train` to the generator, `filter_valid_tasks.py`,
+`multi_runner` and `export_tasks.py`, and write `train` for `test` in every file path
+of steps 3–7 (`output/tasks/train/bank_train_tasks.json`,
+`output/tasks/train_valid/...`, `output/evaluations/bank_train_*.json`); the other
+commands take their split from the file names.
 
 ```bash
 # 1. Tool graphs: one LLM pass per domain
@@ -122,7 +128,9 @@ python -m evaluator.runner --domain bank \
 #    or every domain with valid tasks, one task per domain in turn:
 #      python -m evaluator.multi_runner --domains all --split test \
 #        --eval-model gpt-4.1 --eval-model-provider openai
-#      (evaluator/config/eval_config_<domain>.json hold the same settings per domain)
+#      (or --config evaluator/config/eval_config_all.json, which lists the
+#       per-domain configs evaluator/config/eval_config_<domain>.json; the model
+#       settings come from the command line or eval_config_all.json)
 python -m evaluator.orchestrator \
   --eval-path output/evaluations/bank_test_eval.json \
   --markdown-out output/evaluations/bank_test_report.md
@@ -131,7 +139,9 @@ python -m evaluator.get_passed_tasks \
   --input-path output/tasks/test_valid/bank_test_tasks_valid.json \
   --output-path output/evaluations/bank_test_passed_tasks.json
 
-# 5. Emotion persona bank: an OpenAI Batch API job (up to 24 h), once for all domains
+# 5. Emotion persona bank: an OpenAI Batch API job (up to 24 h), once for all domains.
+#    It needs OPENAI_API_KEY for OpenAI itself: OpenAI-compatible servers usually
+#    have no Batch API.
 python emotions/build_emotion_persona_instructions_batch.py submit
 python emotions/build_emotion_persona_instructions_batch.py status
 python emotions/build_emotion_persona_instructions_batch.py wait-download
@@ -146,7 +156,7 @@ python emotion_analysis/run_all.py --config emotion_analysis/config.json
 # 7. Export into the benchmark. Run it with the benchmark's environment, so each task
 #    is checked against the benchmark's task schema and the domain's tools:
 cd ..
-uv run python tracer/export_to_tau2.py \
+uv run python tracer/export_tasks.py \
   tracer/output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json \
   --domain bank --split test --dry-run
 #    then run it again with --overwrite to replace data/tau_emotion/domains/bank/tasks.json
@@ -188,6 +198,10 @@ python -m data_extender.telehealth.extend_telehealth \
 cp -r data_extender/generated_telehealth/* tracer/envs/telehealth/data/
 ```
 
+The telehealth scenarios use only the newly generated patients and devices. A
+scenario category with no fitting new record is skipped with a message, and a
+weight of 0 in `scenario_mix` turns a category off.
+
 New ids, account numbers and ticket numbers continue after the existing ones.
 Telehealth providers are catalog records, so new ones appear in both splits.
 
@@ -199,21 +213,34 @@ python export_db.py --domain telecom --split test --dry-run
 #    (--split train writes db_train.json)
 ```
 
+After a telehealth extension, export both splits, since the provider catalog they
+share has changed:
+
+```bash
+python export_db.py --domain telehealth --split test --overwrite
+python export_db.py --domain telehealth --split train --overwrite
+```
+
 Existing tasks keep working: records are only added, never changed.
 
 ## Quality criteria
 
 `evaluator/` scores every generated task and passes it only if all four hold.
 Criteria 1 and 2 look at the rewritten `preference_instruction`. Criteria 3 and 4
-use deterministic checks first and fall back to the judge LLM only when those are
-inconclusive.
+are always decided by the judge LLM, which sees the ground-truth actions together
+with the generator's replay of them (criterion 3) or its `in_domain` label
+(criterion 4).
 
 | # | Criterion | Violated when |
 |---|---|---|
 | 1 | Goal-oriented | The instruction is procedural: the agent would have to draw information out of the user before it could act |
 | 2 | Template | The instruction lacks a concrete tool-calling task or a user preference |
-| 3 | Solvable by ground truth | The ground-truth actions fail in the environment, or `solvable` is `false` |
+| 3 | Solvable by ground truth | The judge finds that the ground-truth actions, and their replay, do not accomplish the instruction |
 | 4 | No domain violation | The task is out of domain, but the ground truth acts instead of transferring to a human agent |
+
+Telecom, basketball, movie, restaurant, school and travel register no transfer tool
+in TRACER, so their ground truth can never hand off: a task the judge confirms is
+out of domain fails criterion 4 there.
 
 ## Batch generation
 

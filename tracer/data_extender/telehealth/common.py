@@ -462,6 +462,10 @@ class TelehealthSeedPacker:
             payload["patient_id"] = patient_map.get(
                 str(payload["patient_id"]), str(payload["patient_id"])
             )
+            if payload["patient_id"] in self.data["regimen_plans"]:
+                raise ValueError(
+                    f"Patient {payload['patient_id']} already has a regimen plan."
+                )
             self.data["regimen_plans"][payload["patient_id"]] = payload
             self.stats["regimen_plans_added"] += 1
 
@@ -489,10 +493,17 @@ class TelehealthSeedPacker:
                     continue
                 if primary not in self.data["drug_interactions"]:
                     self.data["drug_interactions"][primary] = {}
+                known = self.data["drug_interactions"][primary]
                 for secondary, details in mapping.items():
-                    if secondary not in self.data["drug_interactions"][primary]:
-                        self.stats["interaction_entries_added"] += 1
-                    self.data["drug_interactions"][primary][secondary] = dict(details)
+                    if secondary in known:
+                        if known[secondary] != details:
+                            raise ValueError(
+                                f"Drug interaction {primary} + {secondary} "
+                                "already exists with different details."
+                            )
+                        continue
+                    known[secondary] = dict(details)
+                    self.stats["interaction_entries_added"] += 1
 
     def validate(self) -> None:
         patients = self.data["patients"]

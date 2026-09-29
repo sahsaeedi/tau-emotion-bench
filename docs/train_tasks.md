@@ -23,12 +23,14 @@ exactly like a benchmark task. The set was then filtered in three steps:
 
 ### 40 tasks restored with a ground-truth fix
 
-40 tasks that step 2 dropped were solved with reward 1 anyway. They were added
-back with their gold actions edited: each fix removes calls that failed in
-TRACER's environment and changed nothing there, so the gold actions reach the state the solved run
-was scored against. Every fix was checked by replaying that run's successful
-tool calls on the train database: the final database equals the fixed gold's,
-and the agent stated every required output.
+40 tasks that step 2 dropped were solved with reward 1 anyway, so they were
+added back. For the 31 retail and bank tasks the gold actions were edited: each
+fix removes calls that failed in TRACER's environment and changed nothing there,
+so the gold actions reach the state the solved run was scored against. The 9
+telecom tasks needed no edit. Every restored task was checked by replaying that
+run's successful tool calls on the train database: the final database equals
+the gold's, and the agent said every output TRACER's task expects (the shipped
+tasks don't score this).
 
 | Domain | tasks | why they were dropped | fix |
 |---|---|---|---|

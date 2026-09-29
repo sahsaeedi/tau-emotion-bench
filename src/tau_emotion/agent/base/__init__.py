@@ -11,15 +11,9 @@ from tau_emotion.agent.base.llm_config import LLMConfigMixin
 # Protocol base class
 from tau_emotion.agent.base.participant import HalfDuplexParticipant
 
-# Deprecated alias for backward compatibility
-BaseConversationParticipant = HalfDuplexParticipant
-
-
 __all__ = [
     # Protocol base class
     "HalfDuplexParticipant",
     # LLM configuration
     "LLMConfigMixin",
-    # Deprecated alias (kept for backward compatibility)
-    "BaseConversationParticipant",
 ]

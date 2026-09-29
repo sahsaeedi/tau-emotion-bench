@@ -80,7 +80,11 @@ def _deep_update(dst: Dict[str, Any], src: Mapping[str, Any]) -> Dict[str, Any]:
     return dst
 
 
+DEFAULT_CONFIG = Path("data_extender") / "telecom" / "telecom_config.yaml"
+
+
 def _default_config() -> Dict[str, Any]:
+    """Built-in settings; keep them equal to `telecom_config.yaml`."""
     return {
         "account_type_weights": {"residential": 0.85, "business": 0.15},
         "residential": {
@@ -125,7 +129,7 @@ def _default_config() -> Dict[str, Any]:
             "balance_cap": 250.0,
         },
         "tickets": {
-            "count_weights": {0: 0.60, 1: 0.30, 2: 0.07, 3: 0.03},
+            "count_weights": {0: 0.70, 1: 0.20, 2: 0.07, 3: 0.03},
             "status_weights": {"closed": 0.70, "open": 0.30},
             "priority_weights": {"low": 0.25, "medium": 0.55, "high": 0.20},
             "more_devices_threshold": 6,
@@ -249,11 +253,6 @@ def _make_customer_id(first: str, last: str, suffix: int) -> str:
 
 def _make_account_number(n: int) -> str:
     return f"ACC{n:09d}"
-
-
-def _pick_account_type(rng: random.Random) -> str:
-    # Backwards-compatible default; overridden by config in generate_telecom_dataset
-    return _choice_weighted(rng, [("residential", 0.85), ("business", 0.15)])
 
 
 def _pick_residential_services(
@@ -720,6 +719,10 @@ def generate_telecom_dataset(
     ticket_seq = 1 + max([0] + [int(t[len("TICKET") :]) for t in tickets_out])
 
     acct_weights = [(k, float(v)) for k, v in cfg["account_type_weights"].items()]
+    # str() so unquoted YAML dates (parsed as date objects) work too.
+    created_lo, created_hi = (
+        date.fromisoformat(str(v)) for v in cfg["created_date_range"]
+    )
 
     for _i in range(n_customers):
         # Generate unique name/id
@@ -759,7 +762,7 @@ def generate_telecom_dataset(
 
         addr = _faker_us_address(fake)
 
-        created = _rand_date(rng, date(2016, 1, 1), date(2025, 9, 1))
+        created = _rand_date(rng, created_lo, created_hi)
         payment_method = _pick_payment_method(rng, account_type)
         credit_score = _pick_credit_score(rng)
 
@@ -818,8 +821,9 @@ def main() -> int:
     parser.add_argument(
         "--config",
         type=str,
-        default=str(Path("data_extender") / "telecom" / "telecom_config.yaml"),
-        help="YAML config path for weights/ranges.",
+        default=None,
+        help="YAML config path for weights/ranges "
+        "(default: data_extender/telecom/telecom_config.yaml).",
     )
     parser.add_argument(
         "--out",
@@ -841,13 +845,19 @@ def main() -> int:
     repo_root = _repo_root(Path.cwd())
 
     cfg: Dict[str, Any] = _default_config()
-    config_path = Path(args.config)
+    config_path = Path(args.config or DEFAULT_CONFIG)
     resolved_config = (
         config_path if config_path.is_absolute() else (repo_root / config_path)
     )
-    # Without a config file, the defaults are used.
     if resolved_config.exists():
         _deep_update(cfg, _load_yaml_config(resolved_config))
+    elif args.config is not None:
+        raise SystemExit(f"Config file does not exist: {resolved_config}")
+    else:
+        print(
+            f"Warning: config file not found at {resolved_config}; "
+            "using the built-in defaults."
+        )
 
     out_dir = (
         (repo_root / args.out).resolve()
