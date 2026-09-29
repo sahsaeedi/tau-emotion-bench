@@ -18,6 +18,7 @@ class MockRetailDomainEnv(Env):
         user_provider: Optional[str] = None,
         task_split: str = "test",
         task_index: Optional[int] = None,
+        data_split: Optional[str] = None,
     ):
         match task_split:
             case "test":
@@ -26,8 +27,11 @@ class MockRetailDomainEnv(Env):
                 from tracer.envs.retail.tasks_train import TASKS_TRAIN as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
+        # The data comes from data/<data_split>/ (test/ or train/), by default the
+        # task split's. Set it to the split the tasks were generated from.
+        data_split = data_split or task_split
         super().__init__(
-            data_load_func=load_data,
+            data_load_func=lambda: load_data(data_split),
             tools=ALL_TOOLS,
             tasks=tasks,
             wiki=WIKI,

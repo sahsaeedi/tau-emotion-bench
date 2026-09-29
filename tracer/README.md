@@ -156,7 +156,8 @@ python emotion_analysis/run_all.py --config emotion_analysis/config.json
 # 7. Export into the benchmark. Run it with the benchmark's environment, so each task
 #    is checked against the benchmark's task schema and the domain's tools:
 cd ..
-uv run python tracer/export_tasks.py \
+deactivate && source .venv/bin/activate
+python tracer/export_tasks.py \
   tracer/output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json \
   --domain bank --split test --dry-run
 #    then run it again with --overwrite to replace data/tau_emotion/domains/bank/tasks.json

@@ -278,8 +278,7 @@ def get_user_details_call() -> ToolCall:
 
 def test_get_user_details(environment: Environment, get_user_details_call: ToolCall):
     response = environment.get_response(get_user_details_call)
-    # User details leave out the user_id field (TRACER's tool returns it).
-    assert "user_id" not in json.loads(response.content)
+    assert json.loads(response.content)["user_id"] == "sara_doe_496"
     # Test with non-existent user
     get_user_details_call.arguments["user_id"] = "NONEXISTENT"
     response = environment.get_response(get_user_details_call)

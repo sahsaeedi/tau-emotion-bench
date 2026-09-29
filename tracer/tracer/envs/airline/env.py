@@ -3,10 +3,8 @@
 from typing import Optional, Union
 
 from tracer.envs.airline.data import load_data
-from tracer.envs.airline.reverse_tools import ALL_TOOLS
 from tracer.envs.airline.rules import RULES
-
-# from tracer.envs.airline.tools import ALL_TOOLS
+from tracer.envs.airline.tools import ALL_TOOLS
 from tracer.envs.airline.wiki import WIKI
 from tracer.envs.base import Env
 from tracer.envs.user import UserStrategy
@@ -20,16 +18,18 @@ class MockAirlineDomainEnv(Env):
         user_provider: Optional[str] = None,
         task_split: str = "test",
         task_index: Optional[int] = None,
-        data_split: str = "train",
+        data_split: Optional[str] = None,
     ):
         match task_split:
             case "test":
                 from tracer.envs.airline.tasks_test import TASKS as tasks
+            case "train":
+                from tracer.envs.airline.tasks_train import TASKS as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
-        # data_split is deliberately SEPARATE from task_split: the data comes from
-        # data/<data_split>/ (test/ or train/). Use the split the tasks were
-        # generated from (python -m tracer.generator --split test|train).
+        # The data comes from data/<data_split>/ (test/ or train/), by default the
+        # task split's. Set it to the split the tasks were generated from.
+        data_split = data_split or task_split
         super().__init__(
             data_load_func=lambda: load_data(data_split),
             tools=ALL_TOOLS,

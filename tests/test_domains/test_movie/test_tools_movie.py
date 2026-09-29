@@ -320,7 +320,7 @@ def test_cancel_booking_is_idempotent(tools: MovieTools):
 
 def test_calculate(tools: MovieTools):
     assert tools.calculate("10 * 2 + 3") == "23.0"
-    with pytest.raises(ValueError, match="Invalid characters"):
+    with pytest.raises(ValueError, match="invalid characters"):
         tools.calculate("open('x')")
 
 

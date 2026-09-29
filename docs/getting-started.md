@@ -22,7 +22,13 @@ cd tau-emotion-bench
 uv sync                        # core: all 10 domains (+ the mock test fixture)
 ```
 
-This creates a virtual environment, installs core dependencies from the lockfile, and enables the `tau-emotion` command. The Python version is pinned via `.python-version` (3.12) — uv will download it automatically if needed.
+This creates a virtual environment in `.venv`, installs the core dependencies from the lockfile, and installs the `tau-emotion` command there. The Python version is pinned via `.python-version` (3.12); uv downloads it if needed. Activate the environment so that `tau-emotion` is on your `PATH`:
+
+```bash
+source .venv/bin/activate
+```
+
+Without uv, `python3.12 -m venv .venv && source .venv/bin/activate && pip install -e .` does the same.
 
 In Python, the package is imported as `tau_emotion` (for example `from tau_emotion import TextRunConfig`).
 
@@ -35,7 +41,9 @@ uv sync --extra dev            # + pytest, pytest-xdist, ruff, pre-commit (requi
 uv sync --all-extras           # everything
 ```
 
-> **Note:** If you install without `-e` mode (e.g., `uv pip install .`), you'll need to set the `TAU_EMOTION_DATA_DIR` environment variable to point to your data directory:
+With pip: `pip install -e ".[dev]"`.
+
+> **Note:** If you install without `-e` mode (e.g., `pip install .`), you'll need to set the `TAU_EMOTION_DATA_DIR` environment variable to point to your data directory:
 > ```bash
 > export TAU_EMOTION_DATA_DIR=/path/to/tau-emotion-bench/data
 > ```
@@ -43,7 +51,7 @@ uv sync --all-extras           # everything
 ### 3. Verify your installation
 
 ```bash
-uv run tau-emotion check-data
+tau-emotion check-data
 ```
 
 This prints the data directory the package will use and checks that it exists.
@@ -150,7 +158,7 @@ The framework is configured via [`src/tau_emotion/config.py`](../src/tau_emotion
 
 LLM call caching is disabled by default. To enable it:
 
-1. Install the `redis` Python package: `uv pip install redis`
+1. Install the `redis` Python package: `pip install redis`
 2. Make sure a Redis server is running
 3. Update the redis config in `config.py` if necessary
 4. Set `LLM_CACHE_ENABLED` to `True` in `config.py`

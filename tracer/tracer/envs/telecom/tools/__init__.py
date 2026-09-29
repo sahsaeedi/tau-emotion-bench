@@ -21,11 +21,11 @@ from .troubleshoot_device import TroubleshootDevice
 
 ALL_TOOLS = [
     TransferToHumanAgents,
-    # Calculate,
-    # Think,
-    # FindCustomerByEmail,
-    # FindCustomerByPhone,
-    # GetCustomerDetails,
+    Calculate,
+    Think,
+    FindCustomerByEmail,
+    FindCustomerByPhone,
+    GetCustomerDetails,
     GetServiceDetails,
     GetDeviceDetails,
     GetBillingDetails,

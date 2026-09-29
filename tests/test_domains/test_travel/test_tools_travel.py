@@ -326,6 +326,17 @@ def test_update_booking_add_ons_charges_difference(tools: TravelTools):
     )
 
 
+def test_update_booking_add_ons_rejects_bad_add_on_unchanged(tools: TravelTools):
+    booking = tools.get_booking_details(BOOKING_ID)
+    before = booking.model_dump()
+
+    with pytest.raises(ValueError):
+        tools.update_booking_add_ons(
+            BOOKING_ID, [{"type": "excursion", "price": 2400.0}], PAYMENT_METHOD
+        )
+    assert tools.get_booking_details(BOOKING_ID).model_dump() == before
+
+
 def test_update_booking_add_ons_validates_payment_method(tools: TravelTools):
     with pytest.raises(ValueError, match="Payment method not found"):
         tools.update_booking_add_ons(BOOKING_ID, [], "nope")
@@ -404,7 +415,7 @@ def test_schedule_agent_meeting_validates(tools: TravelTools):
 
 def test_calculate(tools: TravelTools):
     assert tools.calculate("18500 * 2") == "37000.0"
-    with pytest.raises(ValueError, match="Invalid characters"):
+    with pytest.raises(ValueError, match="invalid characters"):
         tools.calculate("__import__")
 
 

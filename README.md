@@ -54,15 +54,20 @@ conversation runs.
 
 ## Installation
 
-Requires [uv](https://docs.astral.sh/uv/getting-started/installation/) (Python 3.12).
+Requires Python 3.12. With [uv](https://docs.astral.sh/uv/getting-started/installation/):
 
 ```bash
 git clone https://github.com/sahsaeedi/tau-emotion-bench.git
 cd tau-emotion-bench
 uv sync
+source .venv/bin/activate
 cp .env.example .env           # then set your API keys
-uv run tau-emotion check-data
+tau-emotion check-data
 ```
+
+Without uv, create the environment with
+`python3.12 -m venv .venv && source .venv/bin/activate && pip install -e .` instead
+of `uv sync`.
 
 **The benchmark's user simulator is `qwen3-235b-a22b-instruct-2507` at temperature
 0.7**, the default when you leave out `--user-llm`. Use it when you compare against
@@ -77,7 +82,7 @@ sends every OpenAI model, `gpt-4.1` included, to that server.
 Five airline tasks, with only an OpenAI key:
 
 ```bash
-uv run tau-emotion run --domain airline --agent-llm gpt-4.1 --user-llm gpt-4.1 \
+tau-emotion run --domain airline --agent-llm gpt-4.1 --user-llm gpt-4.1 \
   --num-trials 1 --num-tasks 5
 ```
 
@@ -85,7 +90,7 @@ A full domain, three trials, with a `gpt-4.1` agent and the benchmark's user
 simulator on another server:
 
 ```bash
-uv run tau-emotion run --domain airline --agent-llm gpt-4.1 --num-trials 3 \
+tau-emotion run --domain airline --agent-llm gpt-4.1 --num-trials 3 \
   --user-api-base <url> --user-api-key <key>
 ```
 
@@ -131,8 +136,8 @@ as it ends, and the run prints its metrics when all are done.
   conversations ended.
 
 ```bash
-uv run tau-emotion view                                         # browse runs and conversations
-uv run tau-emotion review data/simulations/<run>/results.json   # LLM judge of agent and user errors
+tau-emotion view                                         # browse runs and conversations
+tau-emotion review data/simulations/<run>/results.json   # LLM judge of agent and user errors
 ```
 
 `review` has an LLM judge label each conversation's agent and user errors by
@@ -152,7 +157,7 @@ severity. The judge is `claude-opus-4-5` unless you pick another with `--judge-l
 ## Development
 
 ```bash
-uv sync --extra dev
+uv sync --extra dev   # or: pip install -e ".[dev]"
 make test          # the tests that call an LLM are skipped without OPENAI_API_KEY
 make check-all     # ruff lint and format
 ```

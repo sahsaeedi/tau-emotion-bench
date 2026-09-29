@@ -19,6 +19,7 @@ from tracer.envs.bank.tools.list_client_accounts import ListClientAccountsTool
 from tracer.envs.bank.tools.list_client_beneficiaries import ListClientBeneficiariesTool
 from tracer.envs.bank.tools.make_loan_payment import MakeLoanPaymentTool
 from tracer.envs.bank.tools.search_transactions import SearchTransactionsTool
+from tracer.envs.bank.tools.think import Think
 from tracer.envs.bank.tools.transfer_to_human_agents import TransferToHumanAgents
 from tracer.envs.bank.tools.unfreeze_account import UnfreezeAccountTool
 from tracer.envs.bank.tools.unfreeze_card import UnfreezeCardTool
@@ -46,4 +47,5 @@ ALL_TOOLS = [
     FreezeAccountTool,
     UnfreezeAccountTool,
     MakeLoanPaymentTool,
+    Think,
 ]

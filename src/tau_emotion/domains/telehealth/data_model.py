@@ -193,6 +193,7 @@ class VitalSigns(BaseModel):
 
 class RecordNote(BaseModel):
     note: str
+    metadata: Optional[Dict[str, Any]] = None
 
 
 class MedicalRecord(BaseModel):

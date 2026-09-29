@@ -8,6 +8,7 @@ from tracer.envs.travel.tools.get_traveler_details import GetTravelerDetailsTool
 from tracer.envs.travel.tools.list_all_destinations import ListAllDestinationsTool
 from tracer.envs.travel.tools.schedule_agent_meeting import ScheduleAgentMeetingTool
 from tracer.envs.travel.tools.search_packages import SearchPackagesTool
+from tracer.envs.travel.tools.think import ThinkTool
 from tracer.envs.travel.tools.transfer_to_human_agents import TransferToHumanAgentsTool
 from tracer.envs.travel.tools.update_booking_add_ons import UpdateBookingAddOnsTool
 from tracer.envs.travel.tools.update_booking_departure_date import (
@@ -17,7 +18,7 @@ from tracer.envs.travel.tools.update_booking_rooming import UpdateBookingRooming
 from tracer.envs.travel.tools.update_booking_travelers import UpdateBookingTravelersTool
 
 ALL_TOOLS = [
-    # GetTravelerDetailsTool,
+    GetTravelerDetailsTool,
     GetAgentDetailsTool,
     GetPackageDetailsTool,
     GetBookingDetailsTool,
@@ -31,5 +32,6 @@ ALL_TOOLS = [
     UpdateBookingRoomingTool,
     ScheduleAgentMeetingTool,
     TransferToHumanAgentsTool,
-    # CalculateTool,
+    CalculateTool,
+    ThinkTool,
 ]

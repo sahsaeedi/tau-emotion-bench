@@ -13,7 +13,7 @@ their validation rules and return values. Conversion rules from TRACER's tools:
 """
 
 import json
-from typing import List, Optional
+from typing import List, Literal, Optional, get_args
 
 from pydantic import BaseModel
 
@@ -28,19 +28,21 @@ from tau_emotion.domains.telecom.data_model import (
 )
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
-# Lists, not sets: TRACER's error messages print them in this order.
-VALID_TICKET_CATEGORIES = [
-    "mobile",
-    "internet",
-    "tv",
-    "billing",
-    "account",
-    "device",
-    "security",
-    "phone",
+# The allowed values of TRACER's tool schemas. The lists keep this order because
+# TRACER's error messages print them in it.
+TicketCategory = Literal[
+    "mobile", "internet", "tv", "billing", "account", "device", "security", "phone"
 ]
-VALID_TICKET_PRIORITIES = ["low", "medium", "high", "urgent"]
-VALID_ISSUES = ["no_service", "slow_speeds", "battery_drain"]
+TicketPriority = Literal["low", "medium", "high", "urgent"]
+TicketStatus = Literal["open", "closed", "pending", "in_progress", "resolved"]
+Issue = Literal["no_service", "slow_speeds", "battery_drain"]
+ServiceAction = Literal["add", "remove", "list"]
+BillingCycle = Literal["monthly", "quarterly", "annual"]
+PaymentMethod = Literal["credit_card", "bank_transfer"]
+
+VALID_TICKET_CATEGORIES = list(get_args(TicketCategory))
+VALID_TICKET_PRIORITIES = list(get_args(TicketPriority))
+VALID_ISSUES = list(get_args(Issue))
 
 # TRACER's troubleshooting text, verbatim (including its trailing spaces).
 PHONE_STEPS = {
@@ -270,14 +272,14 @@ class TelecomTools(ToolKitBase):
         return _record_json(self.db.support_tickets[ticket_id])
 
     @is_tool(ToolType.READ)
-    def troubleshoot_device(self, device_name: str, issue: str) -> str:
+    def troubleshoot_device(self, device_name: str, issue: Issue) -> str:
         """Provide troubleshooting steps for device issues.
 
         Args:
             device_name: The device name, such as 'iPhone 15 Pro' or
                 'WiFi 6 Router'.
-            issue: Description of the issue with the device. Options:
-                no_service, slow_speeds, battery_drain.
+            issue: The issue type to troubleshoot: 'no_service', 'slow_speeds',
+                or 'battery_drain'.
 
         Returns:
             Troubleshooting steps, or 'Unknown issue' if the device category
@@ -348,21 +350,22 @@ class TelecomTools(ToolKitBase):
     def manage_service(
         self,
         customer_id: str,
-        action: str,
+        action: ServiceAction,
         service_id: Optional[str] = None,
         devices_ids: Optional[List[str]] = None,
     ) -> str:
-        """Manage customer services: add, remove, suspend, activate, or list services.
+        """Manage customer services: add, remove, or list services on an account.
 
         Args:
             customer_id: The customer's unique identifier, such as
                 'john_smith_1234'.
-            action: Action to perform: 'add', 'remove', or 'list'.
-            service_id: Service identifier (required for
-                add/remove/suspend/activate), such as 'mobile_unlimited'.
-            devices_ids: The device ids. Should be a list of strings
-                corresponding to the device ids in the customer's list of
-                devices.
+            action: 'list' to retrieve all services, 'add' to add a service,
+                or 'remove' to remove a service.
+            service_id: The service identifier, such as 'mobile_unlimited'.
+                Required when action is 'add' or 'remove'.
+            devices_ids: The device ids to attach to the service when action
+                is 'add'. Each must match a device_id in the customer's list of
+                devices. Removing a service detaches its devices.
 
         Returns:
             For 'list', a JSON object with the customer's services. For
@@ -446,17 +449,17 @@ class TelecomTools(ToolKitBase):
         customer_id: str,
         paperless: bool,
         auto_pay: bool,
-        billing_cycle: str,
+        billing_cycle: BillingCycle,
     ) -> str:
         """Manage customer billing: paperless, auto_pay, or billing_cycle.
 
         Args:
             customer_id: The customer's unique identifier, such as
                 'john_smith_1234'.
-            paperless: Paperless billing.
-            auto_pay: Auto pay.
-            billing_cycle: The billing cycle. Should be a string. Options are:
-                monthly, quarterly, annual.
+            paperless: Whether the customer is enrolled in paperless billing.
+            auto_pay: Whether auto-pay is enabled for the account.
+            billing_cycle: The billing cycle: 'monthly', 'quarterly', or
+                'annual'.
 
         Returns:
             A JSON object with the customer id and the updated billing record.
@@ -477,7 +480,10 @@ class TelecomTools(ToolKitBase):
 
     @is_tool(ToolType.WRITE)
     def create_support_ticket(
-        self, customer_id: str, category: str, priority: str = "medium"
+        self,
+        customer_id: str,
+        category: TicketCategory,
+        priority: TicketPriority = "medium",
     ) -> str:
         """Create a new support ticket for a customer.
 
@@ -518,15 +524,16 @@ class TelecomTools(ToolKitBase):
         return f"Success: Created support ticket {ticket_id} for customer {customer_id}"
 
     @is_tool(ToolType.WRITE)
-    def modify_support_ticket(self, ticket_id: str, status: str, priority: str) -> str:
+    def modify_support_ticket(
+        self, ticket_id: str, status: TicketStatus, priority: TicketPriority
+    ) -> str:
         """Modify the status and priority of a support ticket.
 
         Args:
             ticket_id: The support ticket identifier, such as 'TICKET001'.
-            status: The status of the support ticket, such as 'open' or
-                'closed'.
-            priority: The priority of the support ticket, such as 'low',
-                'medium', 'high', or 'urgent'.
+            status: The new status: 'open', 'closed', 'pending',
+                'in_progress', or 'resolved'.
+            priority: The new priority: 'low', 'medium', 'high', or 'urgent'.
 
         Returns:
             A success message.
@@ -547,14 +554,14 @@ class TelecomTools(ToolKitBase):
 
     @is_tool(ToolType.WRITE)
     def record_payment(
-        self, customer_id: str, amount: float, method: str, date: str
+        self, customer_id: str, amount: float, method: PaymentMethod, date: str
     ) -> str:
         """Apply a payment to a customer account and update the remaining balance.
 
         Args:
             customer_id: Unique customer identifier, e.g. 'lisa_chen_3456'.
             amount: Payment amount to apply.
-            method: Payment method used. Options: credit_card, bank_transfer.
+            method: The payment method: 'credit_card' or 'bank_transfer'.
             date: Payment date in ISO format, e.g. '2025-09-18'.
 
         Returns:

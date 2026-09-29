@@ -68,8 +68,8 @@ AIRPORTS = {
 }
 
 
-def _record_json(record: BaseModel, exclude: Optional[set[str]] = None) -> str:
-    return json.dumps(record.model_dump(exclude_unset=True, exclude=exclude))
+def _record_json(record: BaseModel) -> str:
+    return json.dumps(record.model_dump(exclude_unset=True))
 
 
 def _as_dicts(items: List[Any]) -> List[dict]:
@@ -141,9 +141,9 @@ class AirlineTools(ToolKitBase):
         destination: str,
         flight_type: FlightType,
         cabin: CabinClass,
-        flights: List[FlightInfo | dict],
-        passengers: List[Passenger | dict],
-        payment_methods: List[Payment | dict],
+        flights: List[FlightInfo],
+        passengers: List[Passenger],
+        payment_methods: List[Payment],
         total_baggages: int,
         nonfree_baggages: int,
         insurance: Insurance,
@@ -154,14 +154,11 @@ class AirlineTools(ToolKitBase):
             user_id: The ID of the user to book the reservation, such as 'sara_doe_496'.
             origin: The IATA code for the origin city, such as 'SFO'.
             destination: The IATA code for the destination city, such as 'JFK'.
-            flight_type: The type of flight, 'one_way' or 'round_trip'.
-            cabin: The cabin class, 'basic_economy', 'economy', or 'business'.
             flights: An array of objects containing details about each piece of flight.
             passengers: An array of objects containing details about each passenger.
             payment_methods: An array of objects containing details about each payment method.
             total_baggages: The total number of baggage items included in the reservation.
             nonfree_baggages: The number of non-free baggage items included in the reservation.
-            insurance: Whether the reservation has insurance, 'yes' or 'no'.
 
         Returns:
             The new reservation as JSON.
@@ -467,14 +464,13 @@ class AirlineTools(ToolKitBase):
         self,
         reservation_id: str,
         cabin: CabinClass,
-        flights: List[FlightInfo | dict],
+        flights: List[FlightInfo],
         payment_id: str,
     ) -> str:
         """Update the flight information of a reservation.
 
         Args:
             reservation_id: The reservation ID, such as 'ZFA04Y'.
-            cabin: The cabin class, 'basic_economy', 'economy', or 'business'.
             flights: An array of objects containing details about each piece of flight in the ENTIRE new reservation. Even if the a flight segment is not changed, it should still be included in the array.
             payment_id: The payment id stored in user profile, such as 'credit_card_7815826', 'gift_card_7815826', 'certificate_7815826'.
 
@@ -525,7 +521,7 @@ class AirlineTools(ToolKitBase):
 
     @is_tool(ToolType.WRITE)
     def update_reservation_passengers(
-        self, reservation_id: str, passengers: List[Passenger | dict]
+        self, reservation_id: str, passengers: List[Passenger]
     ) -> str:
         """Update the passenger information of a reservation.
 

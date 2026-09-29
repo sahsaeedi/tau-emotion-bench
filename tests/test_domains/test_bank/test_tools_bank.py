@@ -481,7 +481,7 @@ def test_timestamps_are_deterministic(tools: BankTools):
 
 def test_calculate(tools: BankTools):
     assert tools.calculate("85000.50 - 1000") == "84000.5"
-    with pytest.raises(ValueError, match="Invalid characters"):
+    with pytest.raises(ValueError, match="invalid characters"):
         tools.calculate("import os")
 
 

@@ -19,6 +19,8 @@ from __future__ import annotations
 
 from typing import Dict, List, Literal, Optional
 
+from pydantic import BaseModel, Field
+
 from tau_emotion.domains.school.data_model import (
     Course,
     CourseMeeting,
@@ -71,6 +73,20 @@ WeekDay = Literal[
 ]
 StudyLevel = Literal["undergraduate", "graduate", "continuing_ed"]
 YesNo = Literal["yes", "no"]
+
+
+# The shapes of the payment arguments in TRACER's tool schemas. The tools still
+# receive plain dicts.
+class PaymentEntry(BaseModel):
+    payment_id: str = Field(description="Saved payment method ID.")
+    amount: int = Field(description="Amount to charge in dollars.")
+
+
+class RegistrationPayment(BaseModel):
+    payment_id: str = Field(description="Saved payment method ID.")
+    amount: int = Field(
+        description="Payment amount in dollars (negative for a refund)."
+    )
 
 
 class SchoolTools(ToolKitBase):
@@ -326,7 +342,7 @@ class SchoolTools(ToolKitBase):
         study_level: StudyLevel,
         grading_options: Optional[Dict[str, str]] = None,
         health_insurance: YesNo = "no",
-        payment_methods: Optional[List[Dict]] = None,
+        payment_methods: Optional[List[PaymentEntry]] = None,
     ) -> Registration:
         """
         Create a new registration for a student for a given term.
@@ -345,7 +361,8 @@ class SchoolTools(ToolKitBase):
                 ('letter', 'pass/fail', 'audit'). Defaults to 'letter'.
             health_insurance: Whether the student elects health insurance
                 through the school, 'yes' or 'no'.
-            payment_methods: List of {payment_id, amount} entries covering the total due.
+            payment_methods: List of payment method entries (payment_id, amount)
+                covering the total due.
 
         Returns:
             The newly created registration.
@@ -580,14 +597,15 @@ class SchoolTools(ToolKitBase):
         return reg
 
     @is_tool(ToolType.WRITE)
-    def pay_registration(self, registration_id: str, payment: Dict) -> Registration:
+    def pay_registration(
+        self, registration_id: str, payment: RegistrationPayment
+    ) -> Registration:
         """
         Record a payment (or a refund, with a negative amount) for a registration.
 
         Args:
             registration_id: The registration ID.
-            payment: Payment object with payment_id and amount, where amount is
-                in dollars and negative for a refund.
+            payment: Payment object with payment_id and amount.
 
         Returns:
             The updated registration.
@@ -636,7 +654,7 @@ class SchoolTools(ToolKitBase):
             ValueError: If the expression is invalid.
         """
         if not all(char in "0123456789+-*/(). " for char in expression):
-            raise ValueError("Invalid characters in expression")
+            raise ValueError("invalid characters in expression")
         return str(round(float(eval(expression, {"__builtins__": None}, {})), 2))
 
     @is_tool(ToolType.GENERIC)

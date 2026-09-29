@@ -23,23 +23,25 @@ from tracer.envs.restaurant.tools.modify_placed_ticket_items import (
 from tracer.envs.restaurant.tools.modify_placed_ticket_table import (
     ModifyPlacedTicketTableTool,
 )
+from tracer.envs.restaurant.tools.think import ThinkTool
 from tracer.envs.restaurant.tools.transfer_to_human_agents import (
     TransferToHumanAgentsTool,
 )
 
 ALL_TOOLS = [
-    # CalculateTool,
+    CalculateTool,
     TransferToHumanAgentsTool,
     GetTicketDetailsTool,
     GetDishDetailsTool,
-    # GetPatronDetailsTool,
+    GetPatronDetailsTool,
     ListAllDishesTool,
-    # FindPatronRefByEmailTool,
-    # FindPatronRefByNameZipTool,
+    FindPatronRefByEmailTool,
+    FindPatronRefByNameZipTool,
     CancelPlacedTicketTool,
     ModifyPlacedTicketDropoffTool,
     ModifyPlacedTicketTableTool,
     ModifyPlacedTicketItemsTool,
     ModifyPlacedTicketInstrumentTool,
     AddTipToTicketTool,
+    ThinkTool,
 ]

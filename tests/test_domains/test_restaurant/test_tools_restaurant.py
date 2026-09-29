@@ -268,7 +268,7 @@ def test_modify_items_validates(tools: RestaurantTools):
 
 def test_calculate(tools: RestaurantTools):
     assert tools.calculate("9.5 + 0.5") == "10.0"
-    with pytest.raises(ValueError, match="Invalid characters"):
+    with pytest.raises(ValueError, match="invalid characters"):
         tools.calculate("import os")
 
 

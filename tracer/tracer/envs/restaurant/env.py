@@ -15,9 +15,8 @@ class MockRestaurantDomainEnv(Env):
         user_model: str = "gpt-4o",
         user_provider: Optional[str] = None,
         task_split: str = "test",
-        emotion_enabled: bool = True,
         task_index: Optional[int] = None,
-        api_base: Optional[str] = None,
+        data_split: Optional[str] = None,
     ):
         match task_split:
             case "test":
@@ -26,8 +25,11 @@ class MockRestaurantDomainEnv(Env):
                 from tracer.envs.restaurant.tasks_train import TASKS as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
+        # The data comes from data/<data_split>/ (test/ or train/), by default the
+        # task split's. Set it to the split the tasks were generated from.
+        data_split = data_split or task_split
         super().__init__(
-            data_load_func=load_data,
+            data_load_func=lambda: load_data(data_split),
             tools=ALL_TOOLS,
             tasks=tasks,
             wiki=WIKI,
@@ -36,6 +38,5 @@ class MockRestaurantDomainEnv(Env):
             user_model=user_model,
             user_provider=user_provider,
             task_index=task_index,
-            api_base=api_base,
         )
         self.terminate_tools = ["transfer_to_human_agents"]

@@ -519,10 +519,11 @@ class TravelTools(ToolKitBase):
         departure = self._validate_departure(
             package, booking.departure_date, required_slots=0
         )
+        new_add_ons = [AddOn.model_validate(a) for a in add_ons]
         new_total = self._calc_total_price(
             base_price_per_person=departure.base_price,
             num_travelers=len(booking.travelers),
-            add_ons=add_ons,
+            add_ons=new_add_ons,
             insurance=booking.insurance,
         )
         delta = round(new_total - booking.total_price, 2)
@@ -531,7 +532,7 @@ class TravelTools(ToolKitBase):
                 Payment(payment_id=payment_method_id, amount=delta)
             )
 
-        booking.add_ons = [AddOn.model_validate(a) for a in add_ons]
+        booking.add_ons = new_add_ons
         booking.total_price = new_total
         return booking
 
@@ -655,7 +656,7 @@ class TravelTools(ToolKitBase):
             ValueError: If the expression is invalid.
         """
         if not all(char in "0123456789+-*/(). " for char in expression):
-            raise ValueError("Invalid characters in expression")
+            raise ValueError("invalid characters in expression")
         return str(round(float(eval(expression, {"__builtins__": None}, {})), 2))
 
     @is_tool(ToolType.GENERIC)

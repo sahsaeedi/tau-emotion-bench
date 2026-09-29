@@ -5,8 +5,8 @@ from pydantic import BaseModel, Field
 from tau_emotion.domains.airline.utils import AIRLINE_DB_PATH
 from tau_emotion.environment.db import DB
 
-FlightType = Literal["round_trip", "one_way"]
-CabinClass = Literal["business", "economy", "basic_economy"]
+FlightType = Literal["one_way", "round_trip"]
+CabinClass = Literal["basic_economy", "economy", "business"]
 Insurance = Literal["yes", "no"]
 # TRACER's tools store amounts exactly as given, so keep ints as ints and allow
 # cents.
@@ -44,8 +44,11 @@ class Address(BaseModel):
 
 # Payment Related Models
 class Payment(BaseModel):
-    payment_id: str = Field(description="Unique identifier for the payment")
-    amount: Amount = Field(description="Payment amount in dollars")
+    payment_id: str = Field(
+        description="The payment id stored in user profile, such as "
+        "'credit_card_7815826', 'gift_card_7815826', 'certificate_7815826'."
+    )
+    amount: Amount = Field(description="The amount to be paid.")
 
 
 class PaymentMethodBase(BaseModel):
@@ -80,9 +83,16 @@ PaymentMethod = Union[CreditCard, GiftCard, Certificate]
 
 
 class Passenger(BaseModel):
-    first_name: str = Field(description="Passenger's first name")
-    last_name: str = Field(description="Passenger's last name")
-    dob: str = Field(description="Date of birth in YYYY-MM-DD format")
+    first_name: str = Field(
+        description="The first name of the passenger, such as 'Noah'."
+    )
+    last_name: str = Field(
+        description="The last name of the passenger, such as 'Brown'."
+    )
+    dob: str = Field(
+        description="The date of birth of the passenger in the format "
+        "'YYYY-MM-DD', such as '1990-01-01'."
+    )
 
 
 SeatPrices = Annotated[

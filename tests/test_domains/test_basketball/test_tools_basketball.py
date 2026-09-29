@@ -347,7 +347,7 @@ def test_modify_player_address_replaces_every_field(tools: BasketballTools):
 
 def test_calculate(tools: BasketballTools):
     assert tools.calculate("57 + 3") == "60.0"
-    with pytest.raises(ValueError, match="Invalid characters"):
+    with pytest.raises(ValueError, match="invalid characters"):
         tools.calculate("__builtins__")
 
 

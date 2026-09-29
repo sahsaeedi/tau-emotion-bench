@@ -111,7 +111,11 @@ fi
 echo "[$(date '+%F %T')] domain=$DOMAIN agent=$AGENT_MODEL temp=${AGENT_TEMPERATURE:-unset} thinking=${AGENT_THINKING:-default} user=$USER_MODEL temp=${USER_TEMPERATURE:-unset} trials=$TRIALS tasks=${NUM_TASKS:-all} concurrency=$CONCURRENCY max_steps=$MAX_STEPS split=$SPLIT -> $OUTPUT" \
     | tee -a "$OUTPUT/run.log"
 
-.venv/bin/tau-emotion run \
+# The repo's .venv, else the tau-emotion on PATH (e.g. a pip-installed environment).
+TAU_EMOTION="$HERE/.venv/bin/tau-emotion"
+[ -x "$TAU_EMOTION" ] || TAU_EMOTION=$(command -v tau-emotion)
+
+"$TAU_EMOTION" run \
     --domain "$DOMAIN" \
     --task-split-name "$SPLIT" \
     --agent-llm "$AGENT_MODEL" \

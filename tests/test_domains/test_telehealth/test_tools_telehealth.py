@@ -124,3 +124,21 @@ def test_record_updates_return_the_raw_record(tools: TelehealthTools):
 
     result = json.loads(tools.update_medical_record_note(record_id, "audited"))
     assert result["notes"][-1] == {"note": "audited"}
+    result = json.loads(
+        tools.update_medical_record_note(record_id, "flagged", {"by": "qa"})
+    )
+    assert result["notes"][-1] == {"note": "flagged", "metadata": {"by": "qa"}}
+
+
+def test_update_prescription_supplier_rejects_bad_input_unchanged(
+    tools: TelehealthTools,
+):
+    record = next(r for r in tools.db.medical_records.values() if r.prescriptions)
+    prescription = record.prescriptions[0]
+    pharmacy_before = prescription.pharmacy
+
+    with pytest.raises(ValueError):
+        tools.update_prescription_supplier(
+            record.record_id, prescription.medication, "Acme", None, 12
+        )
+    assert prescription.pharmacy == pharmacy_before

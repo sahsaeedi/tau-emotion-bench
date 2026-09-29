@@ -2,8 +2,8 @@ from typing import Optional, Union
 
 from tracer.envs.base import Env
 from tracer.envs.telecom.data import load_data
-from tracer.envs.telecom.reverse_tools import ALL_TOOLS
 from tracer.envs.telecom.rules import RULES
+from tracer.envs.telecom.tools import ALL_TOOLS
 from tracer.envs.telecom.wiki import WIKI
 from tracer.envs.user import UserStrategy
 
@@ -16,9 +16,7 @@ class MockTelecomDomainEnv(Env):
         user_provider: Optional[str] = None,
         task_split: str = "test",
         task_index: Optional[int] = None,
-        user_model_base_url: Optional[str] = None,
-        # trait_dict: Optional[Dict[str, int]] = None,
-        # endpoint: Optional[str] = None,
+        data_split: Optional[str] = None,
     ):
         match task_split:
             case "test":
@@ -27,8 +25,11 @@ class MockTelecomDomainEnv(Env):
                 from tracer.envs.telecom.tasks_train import TASKS_TRAIN as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
+        # The data comes from data/<data_split>/ (test/ or train/), by default the
+        # task split's. Set it to the split the tasks were generated from.
+        data_split = data_split or task_split
         super().__init__(
-            data_load_func=load_data,
+            data_load_func=lambda: load_data(data_split),
             tools=ALL_TOOLS,
             tasks=tasks,
             wiki=WIKI,
@@ -36,9 +37,6 @@ class MockTelecomDomainEnv(Env):
             user_strategy=user_strategy,
             user_model=user_model,
             user_provider=user_provider,
-            # trait_dict=trait_dict,
             task_index=task_index,
-            # endpoint=endpoint,
-            user_model_base_url=user_model_base_url,
         )
         self.terminate_tools = ["transfer_to_human_agents"]

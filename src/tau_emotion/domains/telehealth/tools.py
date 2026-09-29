@@ -1045,12 +1045,15 @@ class TelehealthTools(ToolKitBase):
         )
 
     @is_tool(ToolType.WRITE)
-    def update_medical_record_note(self, record_id: str, note: str) -> str:
+    def update_medical_record_note(
+        self, record_id: str, note: str, metadata: Optional[dict] = None
+    ) -> str:
         """Append an audit or compliance note to a medical record.
 
         Args:
             record_id: Identifier of the medical record to update
             note: Note text to append
+            metadata: Optional structured metadata to attach
 
         Returns:
             The updated medical record as JSON.
@@ -1062,7 +1065,12 @@ class TelehealthTools(ToolKitBase):
         if not record:
             raise ValueError(f"medical record {record_id} not found")
         # Reassign rather than append so the field counts as set on the record.
-        record.notes = [*record.notes, RecordNote(note=note)]
+        entry = (
+            RecordNote(note=note, metadata=metadata)
+            if metadata
+            else RecordNote(note=note)
+        )
+        record.notes = [*record.notes, entry]
         return _record_json(record)
 
     @is_tool(ToolType.WRITE)
@@ -1112,13 +1120,15 @@ class TelehealthTools(ToolKitBase):
         if prescription is None:
             raise ValueError(f"medication {medication} not found in record {record_id}")
 
-        prescription.pharmacy = f"{supplier_company} ({brand_name})"
-        prescription.supplier = PrescriptionSupplier(
+        # Build the supplier first, so invalid input leaves the record unchanged.
+        supplier = PrescriptionSupplier(
             company=supplier_company,
             brand_name=brand_name,
             price_usd=float(price_usd),
             currency=currency,
         )
+        prescription.pharmacy = f"{supplier_company} ({brand_name})"
+        prescription.supplier = supplier
         return _record_json(record)
 
     # ------------------------------------------------------------------

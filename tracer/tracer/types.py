@@ -119,7 +119,7 @@ class SolveResult(BaseModel):
 
 
 class EnvInfo(BaseModel):
-    task: Task
+    task: Optional[Task] = None
     source: Optional[str] = None
     user_cost: Optional[float] = None
     reward_info: Optional[RewardResult] = None

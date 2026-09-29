@@ -1,3 +1,6 @@
+# Run tools from the active virtual environment, or through uv when none is active.
+RUN := $(if $(VIRTUAL_ENV),,uv run )
+
 # Default target
 .PHONY: all
 all: help
@@ -15,32 +18,32 @@ clean:
 ## Run core tests (requires: uv sync --extra dev)
 .PHONY: test
 test:
-	uv run pytest tests/
+	$(RUN)pytest tests/
 
 ## Run all tests (requires: uv sync --all-extras)
 .PHONY: test-all
 test-all:
-	uv run pytest tests/
+	$(RUN)pytest tests/
 
 ## Start the Environment CLI for interacting with domain environments
 .PHONY: env-cli
 env-cli:
-	uv run python -m tau_emotion.environment.utils.interface_agent
+	$(RUN)python -m tau_emotion.environment.utils.interface_agent
 
 ## Lint code with ruff
 .PHONY: lint
 lint:
-	uv run ruff check .
+	$(RUN)ruff check .
 
 ## Format code with ruff
 .PHONY: format
 format:
-	uv run ruff format .
+	$(RUN)ruff format .
 
 ## Lint and fix issues automatically
 .PHONY: lint-fix
 lint-fix:
-	uv run ruff check --fix .
+	$(RUN)ruff check --fix .
 
 ## Run both linting and formatting
 .PHONY: check-all
@@ -49,7 +52,7 @@ check-all: lint format
 ## Install pre-commit hooks
 .PHONY: setup-hooks
 setup-hooks:
-	uv run pre-commit install
+	$(RUN)pre-commit install
 
 ## Display online help for commonly used targets in this Makefile
 .PHONY: help

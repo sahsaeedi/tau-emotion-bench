@@ -13,15 +13,13 @@ from typing import Any, Dict, List
 from litellm import provider_list
 
 from tracer.agents.base import Agent
-from tracer.envs import get_env
+from tracer.envs import ENV_CLASSES, get_env
 from tracer.envs.user import UserStrategy
 from tracer.types import EnvRunResult, RunConfig
 
 
 def run(config: RunConfig) -> List[EnvRunResult]:
-    assert config.env in ["retail", "airline"], (
-        "Only retail and airline envs are supported"
-    )
+    assert config.env in ENV_CLASSES, f"Unknown env: {config.env}"
     assert config.model_provider in provider_list, "Invalid model provider"
     assert config.user_model_provider in provider_list, "Invalid user model provider"
     assert config.agent_strategy in ["tool-calling", "act", "react", "few-shot"], (

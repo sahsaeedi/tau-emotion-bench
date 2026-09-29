@@ -15,9 +15,8 @@ class MockBankDomainEnv(Env):
         user_model: str = "gpt-4o",
         user_provider: Optional[str] = None,
         task_split: str = "test",
-        emotion_enabled: bool = True,
         task_index: Optional[int] = None,
-        data_split: str = "train",
+        data_split: Optional[str] = None,
     ):
         match task_split:
             case "test":
@@ -26,8 +25,9 @@ class MockBankDomainEnv(Env):
                 from tracer.envs.bank.tasks_train import TASKS as tasks
             case _:
                 raise ValueError(f"Unknown task split: {task_split}")
-        # data_split is separate from task_split, as in the other domains; the data
-        # comes from data/<data_split>/ (test/ or train/).
+        # The data comes from data/<data_split>/ (test/ or train/), by default the
+        # task split's. Set it to the split the tasks were generated from.
+        data_split = data_split or task_split
         super().__init__(
             data_load_func=lambda: load_data(data_split),
             tools=ALL_TOOLS,

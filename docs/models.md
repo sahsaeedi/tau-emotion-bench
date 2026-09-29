@@ -36,7 +36,7 @@ pass `--user-api-base`/`--user-api-key` (or `--agent-api-base`/`--agent-api-key`
 for the side on the other server:
 
 ```bash
-uv run tau-emotion run --domain airline --agent-llm gpt-4.1 \
+tau-emotion run --domain airline --agent-llm gpt-4.1 \
   --user-api-base <url> --user-api-key <key>
 ```
 

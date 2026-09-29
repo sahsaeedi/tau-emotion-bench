@@ -17,21 +17,22 @@ from tracer.envs.basketball.tools.list_club_roster_ids import ListClubRosterIdsT
 from tracer.envs.basketball.tools.list_clubs_by_league import ListClubsByLeagueTool
 from tracer.envs.basketball.tools.modify_player_address import ModifyPlayerAddressTool
 from tracer.envs.basketball.tools.record_scoring_event import RecordScoringEventTool
+from tracer.envs.basketball.tools.think import ThinkTool
 from tracer.envs.basketball.tools.transfer_to_human_agents import (
     TransferToHumanAgentsTool,
 )
 from tracer.envs.basketball.tools.update_game_status import UpdateGameStatusTool
 
 ALL_TOOLS = [
-    # CalculateTool,
+    CalculateTool,
     TransferToHumanAgentsTool,
     GetClubDetailsTool,
-    # GetPlayerDetailsTool,
+    GetPlayerDetailsTool,
     GetGameDetailsTool,
     ListAllClubsTool,
     ListClubsByLeagueTool,
-    # FindPlayerIdByEmailTool,
-    # FindPlayerIdByNameTool,
+    FindPlayerIdByEmailTool,
+    FindPlayerIdByNameTool,
     ListClubRosterIdsTool,
     GetGameBoxScoreTool,
     GetClubScheduleTool,
@@ -42,4 +43,5 @@ ALL_TOOLS = [
     ModifyPlayerAddressTool,
     UpdateGameStatusTool,
     RecordScoringEventTool,
+    ThinkTool,
 ]

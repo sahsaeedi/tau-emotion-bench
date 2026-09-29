@@ -19,7 +19,7 @@ can still be cancelled or modified again.
 """
 
 import json
-from typing import List, Literal, Optional
+from typing import List, Literal
 
 from pydantic import BaseModel
 
@@ -32,8 +32,8 @@ from tau_emotion.domains.retail.data_model import (
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
 
-def _record_json(record: BaseModel, exclude: Optional[set[str]] = None) -> str:
-    return json.dumps(record.model_dump(exclude_unset=True, exclude=exclude))
+def _record_json(record: BaseModel) -> str:
+    return json.dumps(record.model_dump(exclude_unset=True))
 
 
 class RetailTools(ToolKitBase):  # Tools
@@ -243,8 +243,7 @@ class RetailTools(ToolKitBase):  # Tools
             The user details, as JSON.
         """
         if user_id in self.db.users:
-            # Left out of the output, although TRACER's tool returns it.
-            return _record_json(self.db.users[user_id], exclude={"user_id"})
+            return _record_json(self.db.users[user_id])
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
@@ -448,7 +447,7 @@ class RetailTools(ToolKitBase):  # Tools
             country=country,
             zip=zip,
         )
-        return _record_json(user, exclude={"user_id"})
+        return _record_json(user)
 
     @is_tool(ToolType.WRITE)
     def return_delivered_order_items(

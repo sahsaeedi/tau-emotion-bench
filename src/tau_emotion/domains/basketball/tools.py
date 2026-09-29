@@ -560,7 +560,7 @@ class BasketballTools(ToolKitBase):
             ValueError: If the expression is invalid.
         """
         if not all(char in "0123456789+-*/(). " for char in expression):
-            raise ValueError("Invalid characters in expression")
+            raise ValueError("invalid characters in expression")
         return str(round(float(eval(expression, {"__builtins__": None}, {})), 2))
 
     @is_tool(ToolType.GENERIC)

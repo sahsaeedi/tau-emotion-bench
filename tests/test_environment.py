@@ -608,3 +608,10 @@ def test_environment_evaluator_hallucinated_only_scores_zero(
     assert reward_info.reward == 0.0
     assert reward_info.db_check is not None
     assert not reward_info.db_check.db_match
+
+
+def test_tool_results_keep_numbers_as_numbers():
+    result = {"score": 8, "ratio": 0.5, "final": True, "rows": [1, None, "a"]}
+    assert Environment.to_json_str(result) == (
+        '{"score": 8, "ratio": 0.5, "final": true, "rows": [1, null, "a"]}'
+    )

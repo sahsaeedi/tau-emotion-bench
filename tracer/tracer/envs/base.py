@@ -64,11 +64,12 @@ class Env(object):
         self.tools_info = [tool.get_info() for tool in tools]
         self.terminate_tools = []
         self.tasks = tasks
-        if task_index is not None:
-            self.task_index = task_index
-        else:
-            self.task_index = random.randint(0, len(tasks))
-        self.task = tasks[self.task_index]
+        # The domains' task modules are empty placeholders, so an env may have no
+        # tasks; it still exposes the data and tools.
+        if task_index is None and tasks:
+            task_index = random.randrange(len(tasks))
+        self.task_index = task_index
+        self.task = tasks[task_index] if task_index is not None else None
         self.wiki = wiki
         self.rules = rules
         self.user = load_user(
@@ -79,7 +80,7 @@ class Env(object):
 
     def reset(self, task_index: Optional[int] = None) -> EnvResetResponse:
         if task_index is None:
-            task_index = random.randint(0, len(self.tasks))
+            task_index = random.randrange(len(self.tasks))
         self.task_index = task_index
         self.data = self.data_load_func()
         self.task = self.tasks[task_index]
@@ -114,7 +115,7 @@ class Env(object):
             info.source = action.name
 
         if done:
-            if self.enable_reward:
+            if self.enable_reward and self.task is not None:
                 reward_res = self.calculate_reward()
                 reward = reward_res.reward
                 info.reward_info = reward_res

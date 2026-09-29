@@ -11,6 +11,7 @@ from tracer.envs.movie.tools.list_movies import ListMoviesTool
 from tracer.envs.movie.tools.list_shows import ListShowsTool
 from tracer.envs.movie.tools.list_theaters import ListTheatersTool
 from tracer.envs.movie.tools.price_preview import PricePreviewTool
+from tracer.envs.movie.tools.think import Think
 from tracer.envs.movie.tools.transfer_to_human_agents import TransferToHumanAgents
 from tracer.envs.movie.tools.update_booking_seats import UpdateBookingSeatsTool
 
@@ -28,6 +29,7 @@ ALL_TOOLS = [
     CancelBookingTool,
     UpdateBookingSeatsTool,
     GetBookingDetailsTool,
-    # Calculate,
+    Calculate,
     TransferToHumanAgents,
+    Think,
 ]
