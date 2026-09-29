@@ -115,6 +115,7 @@ def build_user(
     llm: Optional[str] = None,
     llm_args: Optional[dict] = None,
     solo_mode: bool = False,
+    no_emotion: bool = False,
 ) -> HalfDuplexUser:
     """Build a half-duplex user from a registered name.
 
@@ -127,6 +128,7 @@ def build_user(
         llm: LLM model name for the user simulator.
         llm_args: LLM arguments for the user simulator.
         solo_mode: If True, validates that DummyUser is used appropriately.
+        no_emotion: If True, the user is not given the task's emotion instruction.
 
     Returns:
         A fully constructed half-duplex user instance.
@@ -145,9 +147,13 @@ def build_user(
     if issubclass(UserConstructor, DummyUser):
         assert solo_mode, "Dummy user can only be used with solo agent"
 
+    scenario = task.user_scenario
+    if no_emotion:
+        scenario = scenario.model_copy(update={"emotion_instruction": None})
+
     return UserConstructor(
         tools=user_tools,
-        instructions=task.user_scenario.to_tau_bench_instruction(),
+        instructions=scenario.to_tau_bench_instruction(),
         llm=llm,
         llm_args=llm_args,
     )
@@ -223,6 +229,7 @@ def build_text_orchestrator(
         llm=config.llm_user,
         llm_args=config.llm_args_user,
         solo_mode=solo_mode,
+        no_emotion=config.no_emotion,
     )
 
     orchestrator = Orchestrator(

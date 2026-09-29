@@ -259,6 +259,12 @@ def add_run_args(parser):
         default="full",
         help="Review mode when --auto-review is enabled: 'full' (agent+user errors, default) or 'user' (user simulator only).",
     )
+    parser.add_argument(
+        "--no-emotion",
+        action="store_true",
+        default=False,
+        help="Do not give the user simulator the task's emotion instruction.",
+    )
 
 
 def _llm_args(args, side: str) -> dict:
@@ -484,6 +490,7 @@ def main():
             auto_resume=args.auto_resume,
             auto_review=args.auto_review,
             review_mode=args.review_mode,
+            no_emotion=args.no_emotion,
         )
 
         config = TextRunConfig(

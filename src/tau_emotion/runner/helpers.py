@@ -125,6 +125,8 @@ def make_run_name(config: RunConfig) -> str:
         parts.append(f"user-{config.llm_user.replace('/', '_')}")
     if config.task_split_name == "train":
         parts.append("train")
+    if config.no_emotion:
+        parts.append("no-emotion")
     if config.effective_agent != DEFAULT_AGENT_IMPLEMENTATION:
         parts.insert(0, config.effective_agent)
     return f"{config.domain}/{'_'.join(parts)}"
