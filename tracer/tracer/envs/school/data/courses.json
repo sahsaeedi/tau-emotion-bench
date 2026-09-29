@@ -1,0 +1,6432 @@
+{
+  "XNMQ98S": {
+    "course_id": "XNMQ98S",
+    "department": "Fine Arts",
+    "course_code": "ART-1101",
+    "title": "Introduction to Drawing",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Maya",
+      "last_name": "Khan",
+      "email": "mkhan@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Art Center",
+      "room": "AC-101"
+    },
+    "scheduled_first_meeting_est": "25-01-27-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Syllabus and line fundamentals",
+        "actual_start_time_est": "25-01-27-09-02",
+        "actual_end_time_est": "25-01-27-09-50",
+        "notes": "Introductions and materials overview."
+      },
+      "25-01-29": {
+        "status": "held",
+        "topic": "Gesture drawing",
+        "actual_start_time_est": "25-01-29-09-00",
+        "actual_end_time_est": "25-01-29-09-50",
+        "notes": "Five 1-minute sketches to warm up."
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Shading techniques",
+        "notes": "Snow day."
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 28,
+    "current_waitlist": 2
+  },
+  "EDZVQJM": {
+    "course_id": "EDZVQJM",
+    "department": "Art History",
+    "course_code": "ARTH-2210",
+    "title": "Renaissance Art",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Elena",
+      "last_name": "Vasari",
+      "email": "evasari@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities Hall",
+      "room": "HH-204"
+    },
+    "scheduled_first_meeting_est": "25-01-28-11-00",
+    "scheduled_last_meeting_est": "25-05-01-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Course intro and late Gothic",
+        "actual_start_time_est": "25-01-28-11-02",
+        "actual_end_time_est": "25-01-28-12-15",
+        "notes": "Overview of course requirements."
+      },
+      "25-02-04": {
+        "status": "rescheduled",
+        "topic": "Florentine Early Renaissance",
+        "actual_start_time_est": "25-02-05-10-30",
+        "actual_end_time_est": "25-02-05-11-45",
+        "notes": "Rescheduled due to campus event."
+      },
+      "25-02-06": {
+        "status": "held",
+        "topic": "Giotto and perspective",
+        "actual_start_time_est": "25-02-06-11-00",
+        "actual_end_time_est": "25-02-06-12-15",
+        "notes": "Slide lecture."
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 8,
+    "current_enrollment": 40,
+    "current_waitlist": 5
+  },
+  "GQ1Z5SW": {
+    "course_id": "GQ1Z5SW",
+    "department": "Studio Art",
+    "course_code": "ARTS-3055",
+    "title": "Sculpture Studio",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Thomas",
+      "last_name": "Nguyen",
+      "email": "tnguyen@univ.edu"
+    },
+    "location": {
+      "campus": "West",
+      "building": "Sculpture Lab",
+      "room": "SL-3"
+    },
+    "scheduled_first_meeting_est": "25-01-31-13-30",
+    "scheduled_last_meeting_est": "25-05-02-16-15",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "16-15"
+    },
+    "dates": {
+      "25-01-31": {
+        "status": "held",
+        "topic": "Safety and studio orientation",
+        "actual_start_time_est": "25-01-31-13-35",
+        "actual_end_time_est": "25-01-31-16-10",
+        "notes": "Safety contracts signed."
+      },
+      "25-02-07": {
+        "status": "held",
+        "topic": "Armature building",
+        "actual_start_time_est": "25-02-07-13-30",
+        "actual_end_time_est": "25-02-07-16-15",
+        "notes": "Aluminum wire demonstration."
+      },
+      "25-02-14": {
+        "status": "rescheduled",
+        "topic": "Clay modeling",
+        "actual_start_time_est": "25-02-15-10-00",
+        "actual_end_time_est": "25-02-15-13-00",
+        "notes": "Instructor at conference."
+      }
+    },
+    "capacity": 18,
+    "waitlist_capacity": 5,
+    "current_enrollment": 17,
+    "current_waitlist": 0
+  },
+  "ABBQ410": {
+    "course_id": "ABBQ410",
+    "department": "Biology",
+    "course_code": "BIO-1101",
+    "title": "Introductory Molecular Biology",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Alice",
+      "last_name": "Nguyen",
+      "email": "alice.nguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Science Center",
+      "room": "BIO101"
+    },
+    "scheduled_first_meeting_est": "25-01-15-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Course Introduction and Cell Structure",
+        "actual_start_time_est": "25-01-15-09-00",
+        "actual_end_time_est": "25-01-15-10-10",
+        "notes": "First day overview and syllabus"
+      },
+      "25-01-20": {
+        "status": "canceled",
+        "topic": "Macromolecules",
+        "notes": "Weather closure"
+      },
+      "25-01-22": {
+        "status": "rescheduled",
+        "topic": "Macromolecules",
+        "actual_start_time_est": "25-01-23-09-00",
+        "actual_end_time_est": "25-01-23-10-15",
+        "notes": "Rescheduled due to prior cancellation"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 58,
+    "current_waitlist": 3
+  },
+  "F32TWQ4": {
+    "course_id": "F32TWQ4",
+    "department": "Biology",
+    "course_code": "BIO-2203",
+    "title": "Ecology and Evolution",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Brandon",
+      "last_name": "Lee",
+      "email": "brandon.lee@univ.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Life Sciences",
+      "room": "LS201"
+    },
+    "scheduled_first_meeting_est": "25-01-16-11-00",
+    "scheduled_last_meeting_est": "25-05-06-11-00",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-16": {
+        "status": "held",
+        "topic": "Introduction to Ecology",
+        "actual_start_time_est": "25-01-16-11-00",
+        "actual_end_time_est": "25-01-16-12-10",
+        "notes": "Overview of course and key ecological principles"
+      },
+      "25-01-21": {
+        "status": "held",
+        "topic": "Ecosystem Dynamics",
+        "actual_start_time_est": "25-01-21-11-00",
+        "actual_end_time_est": "25-01-21-12-12",
+        "notes": null
+      },
+      "25-01-23": {
+        "status": "held",
+        "topic": "Population Genetics",
+        "actual_start_time_est": "25-01-23-11-00",
+        "actual_end_time_est": "25-01-23-12-15",
+        "notes": "Introduced Hardy-Weinberg equilibrium"
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 15,
+    "current_enrollment": 80,
+    "current_waitlist": 10
+  },
+  "RLRW2QJ": {
+    "course_id": "RLRW2QJ",
+    "department": "Biology",
+    "course_code": "BIO-3305",
+    "title": "Biostatistics for Life Sciences",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Carmen",
+      "last_name": "Ortiz",
+      "email": "carmen.ortiz@univ.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Statistics Hall",
+      "room": "ST303"
+    },
+    "scheduled_first_meeting_est": "25-01-17-13-30",
+    "scheduled_last_meeting_est": "25-05-07-13-30",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "16-15"
+    },
+    "dates": {
+      "25-01-17": {
+        "status": "held",
+        "topic": "Descriptive Statistics",
+        "actual_start_time_est": "25-01-17-13-30",
+        "actual_end_time_est": "25-01-17-16-10",
+        "notes": "Intro to R environment"
+      },
+      "25-01-24": {
+        "status": "held",
+        "topic": "Probability Fundamentals",
+        "actual_start_time_est": "25-01-24-13-30",
+        "actual_end_time_est": "25-01-24-16-15",
+        "notes": null
+      },
+      "25-01-31": {
+        "status": "canceled",
+        "topic": "Random Variables",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 45,
+    "waitlist_capacity": 8,
+    "current_enrollment": 42,
+    "current_waitlist": 0
+  },
+  "IW6WJXQ": {
+    "course_id": "IW6WJXQ",
+    "department": "PUBH",
+    "course_code": "PUBH-3101",
+    "title": "Introduction to Public Health",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Lydia",
+      "last_name": "Harper",
+      "email": "lydia.harper@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Health Sciences",
+      "room": "HS-201"
+    },
+    "scheduled_first_meeting_est": "25-01-15-09-30",
+    "scheduled_last_meeting_est": "25-05-01-10-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Course Overview and the 10 Essential Services",
+        "actual_start_time_est": "25-01-15-09-30",
+        "actual_end_time_est": "25-01-15-10-45",
+        "notes": "Introductions and syllabus review"
+      },
+      "25-01-20": {
+        "status": "canceled",
+        "topic": "Public Health History",
+        "notes": "University holiday"
+      },
+      "25-01-22": {
+        "status": "rescheduled",
+        "topic": "Determinants of Health",
+        "actual_start_time_est": "25-01-23-09-30",
+        "actual_end_time_est": "25-01-23-10-45",
+        "notes": "Moved due to weather"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 58,
+    "current_waitlist": 2
+  },
+  "6GTTE4I": {
+    "course_id": "6GTTE4I",
+    "department": "HLTH",
+    "course_code": "HLTH-4220",
+    "title": "Health Policy and Management",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Marcos",
+      "last_name": "Delgado",
+      "email": "marcos.delgado@univ.edu"
+    },
+    "location": {
+      "campus": "City",
+      "building": "Policy Center",
+      "room": "PC-105"
+    },
+    "scheduled_first_meeting_est": "25-01-16-11-00",
+    "scheduled_last_meeting_est": "25-05-02-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-16": {
+        "status": "held",
+        "topic": "US Healthcare System Structure",
+        "actual_start_time_est": "25-01-16-11-02",
+        "actual_end_time_est": "25-01-16-12-15",
+        "notes": "Set expectations for policy briefs"
+      },
+      "25-01-21": {
+        "status": "held",
+        "topic": "Financing and Reimbursement",
+        "actual_start_time_est": "25-01-21-11-00",
+        "actual_end_time_est": "25-01-21-12-10",
+        "notes": "Guest speaker from local HMO"
+      },
+      "25-01-23": {
+        "status": "canceled",
+        "topic": "Medicare and Medicaid",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 45,
+    "waitlist_capacity": 5,
+    "current_enrollment": 40,
+    "current_waitlist": 1
+  },
+  "H9FAZL7": {
+    "course_id": "H9FAZL7",
+    "department": "EPI",
+    "course_code": "EPI-5300",
+    "title": "Principles of Epidemiology",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Anika",
+      "last_name": "Singh",
+      "email": "anika.singh@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Public Health Center",
+      "room": "PH-310"
+    },
+    "scheduled_first_meeting_est": "25-01-17-14-00",
+    "scheduled_last_meeting_est": "25-05-02-16-30",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "16-30"
+    },
+    "dates": {
+      "25-01-17": {
+        "status": "held",
+        "topic": "Measures of Disease Frequency",
+        "actual_start_time_est": "25-01-17-14-00",
+        "actual_end_time_est": "25-01-17-16-25",
+        "notes": "Introduced cumulative incidence and incidence rate"
+      },
+      "25-01-24": {
+        "status": "rescheduled",
+        "topic": "Study Designs Overview",
+        "actual_start_time_est": "25-01-25-14-00",
+        "actual_end_time_est": "25-01-25-16-30",
+        "notes": "Rescheduled due to campus closure"
+      },
+      "25-01-31": {
+        "status": "held",
+        "topic": "Cohort Studies",
+        "actual_start_time_est": "25-01-31-14-03",
+        "actual_end_time_est": "25-01-31-16-30",
+        "notes": "Case study on occupational exposure"
+      }
+    },
+    "capacity": 50,
+    "waitlist_capacity": 10,
+    "current_enrollment": 35,
+    "current_waitlist": 0
+  },
+  "Y64PLXM": {
+    "course_id": "Y64PLXM",
+    "department": "Economics",
+    "course_code": "ECON-1010",
+    "title": "Principles of Microeconomics",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Alice",
+      "last_name": "Rivera",
+      "email": "arivera@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Hunt Hall",
+      "room": "204"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction to Microeconomics",
+        "actual_start_time_est": "25-01-22-09-00",
+        "actual_end_time_est": "25-01-22-09-50",
+        "notes": "First class"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Elasticity",
+        "notes": "Snow closure"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Supply and Demand Equilibrium",
+        "actual_start_time_est": "25-03-04-10-00",
+        "actual_end_time_est": "25-03-04-10-50",
+        "notes": "Rescheduled due to instructor conference"
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 20,
+    "current_enrollment": 78,
+    "current_waitlist": 5
+  },
+  "FH4QYFJ": {
+    "course_id": "FH4QYFJ",
+    "department": "Economics",
+    "course_code": "ECON-3020",
+    "title": "Intermediate Macroeconomics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Benjamin",
+      "last_name": "Lee",
+      "email": "blee@univ.edu"
+    },
+    "location": {
+      "campus": "City",
+      "building": "Economics Center",
+      "room": "310"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-07-11-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "11-50"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "National Income Accounting",
+        "actual_start_time_est": "25-01-23-11-00",
+        "actual_end_time_est": "25-01-23-11-50",
+        "notes": null
+      },
+      "25-02-20": {
+        "status": "canceled",
+        "topic": "Unemployment and Inflation",
+        "notes": "Instructor illness"
+      },
+      "25-04-10": {
+        "status": "held",
+        "topic": "Monetary Policy",
+        "actual_start_time_est": "25-04-10-11-00",
+        "actual_end_time_est": "25-04-10-11-50",
+        "notes": "Guest lecture"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 60,
+    "current_waitlist": 2
+  },
+  "72XE0WI": {
+    "course_id": "72XE0WI",
+    "department": "Economics",
+    "course_code": "ECON-4500",
+    "title": "Econometrics",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Chloe",
+      "last_name": "Nguyen",
+      "email": "cnguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Data Sciences",
+      "room": "120A"
+    },
+    "scheduled_first_meeting_est": "25-01-22-14-00",
+    "scheduled_last_meeting_est": "25-05-05-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction to Econometrics",
+        "actual_start_time_est": "25-01-22-14-00",
+        "actual_end_time_est": "25-01-22-15-15",
+        "notes": null
+      },
+      "25-02-12": {
+        "status": "rescheduled",
+        "topic": "OLS Regression",
+        "actual_start_time_est": "25-02-13-16-00",
+        "actual_end_time_est": "25-02-13-17-15",
+        "notes": "Room conflict"
+      },
+      "25-03-17": {
+        "status": "held",
+        "topic": "Hypothesis Testing",
+        "actual_start_time_est": "25-03-17-14-00",
+        "actual_end_time_est": "25-03-17-15-15",
+        "notes": null
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 8,
+    "current_enrollment": 36,
+    "current_waitlist": 1
+  },
+  "YZEWLLA": {
+    "course_id": "YZEWLLA",
+    "department": "Spanish",
+    "course_code": "SPAN-1010",
+    "title": "Elementary Spanish I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Ana",
+      "last_name": "Mart\u00ednez",
+      "email": "amartinez@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities",
+      "room": "H-201"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introductions and alphabet",
+        "actual_start_time_est": "25-01-22-09-00",
+        "actual_end_time_est": "25-01-22-09-50",
+        "notes": "Icebreakers and syllabus overview"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Present tense regular verbs",
+        "notes": "Snow day"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Numbers and telling time",
+        "actual_start_time_est": "25-03-04-10-00",
+        "actual_end_time_est": "25-03-04-10-50",
+        "notes": "Moved due to campus event"
+      }
+    },
+    "capacity": 28,
+    "waitlist_capacity": 10,
+    "current_enrollment": 27,
+    "current_waitlist": 2
+  },
+  "X4JZ42O": {
+    "course_id": "X4JZ42O",
+    "department": "Spanish",
+    "course_code": "SPAN-2200",
+    "title": "Intermediate Spanish Conversation",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Carlos",
+      "last_name": "Ruiz",
+      "email": "cruiz@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Language Center",
+      "room": "LC-105"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-11-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "11-50"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Introductions and proficiency assessment",
+        "actual_start_time_est": "25-01-23-11-00",
+        "actual_end_time_est": "25-01-23-11-50",
+        "notes": "Baseline conversation sampling"
+      },
+      "25-02-13": {
+        "status": "held",
+        "topic": "Conversational strategies: agreeing and disagreeing",
+        "actual_start_time_est": "25-02-13-11-00",
+        "actual_end_time_est": "25-02-13-11-50",
+        "notes": "Role-play activities"
+      },
+      "25-04-10": {
+        "status": "canceled",
+        "topic": "Debate: travel vs. study abroad",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 20,
+    "waitlist_capacity": 5,
+    "current_enrollment": 18,
+    "current_waitlist": 1
+  },
+  "HWFWFFT": {
+    "course_id": "HWFWFFT",
+    "department": "Spanish",
+    "course_code": "SPAN-3305",
+    "title": "Spanish Literature: Golden Age",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Luc\u00eda",
+      "last_name": "G\u00f3mez",
+      "email": "lgomez@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Arts & Letters",
+      "room": "AL-302"
+    },
+    "scheduled_first_meeting_est": "25-01-22-14-00",
+    "scheduled_last_meeting_est": "25-05-05-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Course overview; Cervantes in context",
+        "actual_start_time_est": "25-01-22-14-00",
+        "actual_end_time_est": "25-01-22-15-15",
+        "notes": "Introduction to Golden Age themes"
+      },
+      "25-03-12": {
+        "status": "rescheduled",
+        "topic": "Lope de Vega: Fuenteovejuna",
+        "actual_start_time_est": "25-03-13-16-00",
+        "actual_end_time_est": "25-03-13-17-15",
+        "notes": "Room conflict on 03-12"
+      },
+      "25-04-16": {
+        "status": "held",
+        "topic": "Calder\u00f3n de la Barca: Life is a Dream",
+        "actual_start_time_est": "25-04-16-14-00",
+        "actual_end_time_est": "25-04-16-15-15",
+        "notes": "Close reading and discussion"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 22,
+    "current_waitlist": 0
+  },
+  "YSGSWP0": {
+    "course_id": "YSGSWP0",
+    "department": "PHED",
+    "course_code": "PHED-1101",
+    "title": "Foundations of Physical Education",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Dana",
+      "last_name": "Keller",
+      "email": "dana.keller@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Athletics Center",
+      "room": "Room 101"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction and course overview",
+        "actual_start_time_est": "25-01-22-09-00",
+        "actual_end_time_est": "25-01-22-09-50",
+        "notes": "First class meeting"
+      },
+      "25-01-27": {
+        "status": "canceled",
+        "topic": "Physical literacy and wellness",
+        "notes": "Instructor illness"
+      },
+      "25-02-05": {
+        "status": "rescheduled",
+        "topic": "Principles of training",
+        "actual_start_time_est": "25-02-06-09-00",
+        "actual_end_time_est": "25-02-06-09-50",
+        "notes": "Rescheduled due to weather"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 28,
+    "current_waitlist": 3
+  },
+  "E448SQ6": {
+    "course_id": "E448SQ6",
+    "department": "KINES",
+    "course_code": "KINES-2203",
+    "title": "Exercise Physiology",
+    "credits": 5,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Luis",
+      "last_name": "Nguyen",
+      "email": "luis.nguyen@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "Lab 2"
+    },
+    "scheduled_first_meeting_est": "25-01-23-10-30",
+    "scheduled_last_meeting_est": "25-05-06-12-20",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "10-30",
+      "end_time_est": "12-20"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Introduction to energy systems",
+        "actual_start_time_est": "25-01-23-10-30",
+        "actual_end_time_est": "25-01-23-12-20",
+        "notes": "Overview of course expectations"
+      },
+      "25-01-28": {
+        "status": "canceled",
+        "topic": "Metabolism and exercise",
+        "notes": "Weather closure"
+      },
+      "25-02-04": {
+        "status": "rescheduled",
+        "topic": "Cardiorespiratory responses to exercise",
+        "actual_start_time_est": "25-02-05-11-00",
+        "actual_end_time_est": "25-02-05-12-10",
+        "notes": "Moved to accommodate lab availability"
+      }
+    },
+    "capacity": 24,
+    "waitlist_capacity": 5,
+    "current_enrollment": 24,
+    "current_waitlist": 2
+  },
+  "UT4UF4I": {
+    "course_id": "UT4UF4I",
+    "department": "PHED",
+    "course_code": "PHED-3105",
+    "title": "Coaching and Leadership in Sports",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Riley",
+      "last_name": "Shaw",
+      "email": "riley.shaw@university.edu"
+    },
+    "location": {
+      "campus": "West",
+      "building": "Field House",
+      "room": "Seminar A"
+    },
+    "scheduled_first_meeting_est": "25-01-24-14-00",
+    "scheduled_last_meeting_est": "25-05-02-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-01-24": {
+        "status": "held",
+        "topic": "Leadership styles in sport",
+        "actual_start_time_est": "25-01-24-14-00",
+        "actual_end_time_est": "25-01-24-15-15",
+        "notes": "Introductions and expectations"
+      },
+      "25-02-14": {
+        "status": "held",
+        "topic": "Motivation and team culture",
+        "actual_start_time_est": "25-02-14-14-02",
+        "actual_end_time_est": "25-02-14-15-15",
+        "notes": "Guest speaker from athletics"
+      },
+      "25-03-07": {
+        "status": "canceled",
+        "topic": "Ethics in coaching",
+        "notes": "Coach summit travel"
+      }
+    },
+    "capacity": 20,
+    "waitlist_capacity": 5,
+    "current_enrollment": 17,
+    "current_waitlist": 0
+  },
+  "9QZINOS": {
+    "course_id": "9QZINOS",
+    "department": "Chemistry",
+    "course_code": "CHEM-1010",
+    "title": "General Chemistry I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Lena",
+      "last_name": "Hughes",
+      "email": "lena.hughes@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "SH-201"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction to Atomic Structure",
+        "actual_start_time_est": "25-01-22-09-02",
+        "actual_end_time_est": "25-01-22-09-50",
+        "notes": "First day overview"
+      },
+      "25-01-27": {
+        "status": "canceled",
+        "topic": "Stoichiometry Basics",
+        "notes": "Snow day closure"
+      },
+      "25-01-29": {
+        "status": "rescheduled",
+        "topic": "Stoichiometry Basics",
+        "actual_start_time_est": "25-01-30-10-00",
+        "actual_end_time_est": "25-01-30-10-50",
+        "notes": "Make-up session on Thursday"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "B6JLUL7": {
+    "course_id": "B6JLUL7",
+    "department": "Biology",
+    "course_code": "BIOL-2020",
+    "title": "Cell Biology",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Desai",
+      "email": "priya.desai@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Life Sciences",
+      "room": "LS-110"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-11-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "11-50"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Cell Structure and Function",
+        "actual_start_time_est": "25-01-23-11-01",
+        "actual_end_time_est": "25-01-23-11-49",
+        "notes": "Introductions and syllabus"
+      },
+      "25-01-28": {
+        "status": "rescheduled",
+        "topic": "Membrane Dynamics",
+        "actual_start_time_est": "25-01-29-12-00",
+        "actual_end_time_est": "25-01-29-12-50",
+        "notes": "Instructor at conference on Tue"
+      },
+      "25-01-30": {
+        "status": "held",
+        "topic": "Membrane Transport",
+        "actual_start_time_est": "25-01-30-11-00",
+        "actual_end_time_est": "25-01-30-11-50",
+        "notes": null
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 8,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "F8PNSP3": {
+    "course_id": "F8PNSP3",
+    "department": "Physics",
+    "course_code": "PHYS-3030",
+    "title": "Electromagnetism",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Mateo",
+      "last_name": "Klein",
+      "email": "mateo.klein@univ.edu"
+    },
+    "location": {
+      "campus": "North",
+      "building": "Physics Center",
+      "room": "PC-305"
+    },
+    "scheduled_first_meeting_est": "25-01-21-14-00",
+    "scheduled_last_meeting_est": "25-05-07-14-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "14-50"
+    },
+    "dates": {
+      "25-01-21": {
+        "status": "held",
+        "topic": "Coulomb's Law",
+        "actual_start_time_est": "25-01-21-14-03",
+        "actual_end_time_est": "25-01-21-14-50",
+        "notes": "Review of vector calculus"
+      },
+      "25-01-23": {
+        "status": "canceled",
+        "topic": "Electric Field",
+        "notes": "Instructor illness"
+      },
+      "25-01-28": {
+        "status": "held",
+        "topic": "Gauss's Law",
+        "actual_start_time_est": "25-01-28-14-00",
+        "actual_end_time_est": "25-01-28-14-50",
+        "notes": null
+      }
+    },
+    "capacity": 20,
+    "waitlist_capacity": 5,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "WFT7EI8": {
+    "course_id": "WFT7EI8",
+    "department": "HIST",
+    "course_code": "HIST-2101",
+    "title": "Modern European History",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Elena",
+      "last_name": "Kovac",
+      "email": "elena.kovac@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities Hall",
+      "room": "H201"
+    },
+    "scheduled_first_meeting_est": "25-01-27-09-00",
+    "scheduled_last_meeting_est": "25-05-05-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Course Introduction",
+        "actual_start_time_est": "25-01-27-09-00",
+        "actual_end_time_est": "25-01-27-10-15",
+        "notes": "First class of term."
+      },
+      "25-01-29": {
+        "status": "held",
+        "topic": "Renaissance to Enlightenment",
+        "actual_start_time_est": "25-01-29-09-00",
+        "actual_end_time_est": "25-01-29-10-15"
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Industrial Revolution Overview",
+        "notes": "Snow day"
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 10,
+    "current_enrollment": 33,
+    "current_waitlist": 2
+  },
+  "IZ99HR6": {
+    "course_id": "IZ99HR6",
+    "department": "SOCI",
+    "course_code": "SOCI-1200",
+    "title": "Introduction to Sociology",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Marisol",
+      "last_name": "Grant",
+      "email": "marisol.grant@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Social Sciences Center",
+      "room": "S105"
+    },
+    "scheduled_first_meeting_est": "25-01-28-13-30",
+    "scheduled_last_meeting_est": "25-05-06-14-45",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "14-45"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Foundations of Sociology",
+        "actual_start_time_est": "25-01-28-13-30",
+        "actual_end_time_est": "25-01-28-14-45"
+      },
+      "25-01-30": {
+        "status": "held",
+        "topic": "Culture and Society",
+        "actual_start_time_est": "25-01-30-13-30",
+        "actual_end_time_est": "25-01-30-14-45"
+      },
+      "25-02-04": {
+        "status": "rescheduled",
+        "topic": "Socialization",
+        "actual_start_time_est": "25-02-05-13-30",
+        "actual_end_time_est": "25-02-05-14-45",
+        "notes": "Moved due to campus event"
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 20,
+    "current_enrollment": 78,
+    "current_waitlist": 10
+  },
+  "PFVDQOO": {
+    "course_id": "PFVDQOO",
+    "department": "POLS",
+    "course_code": "POLS-3305",
+    "title": "Comparative Politics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Samuel",
+      "last_name": "Okoye",
+      "email": "samuel.okoye@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Civic Studies",
+      "room": "C310"
+    },
+    "scheduled_first_meeting_est": "25-01-28-10-00",
+    "scheduled_last_meeting_est": "25-05-06-11-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "10-00",
+      "end_time_est": "11-15"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Introduction to Comparative Politics",
+        "actual_start_time_est": "25-01-28-10-00",
+        "actual_end_time_est": "25-01-28-11-15"
+      },
+      "25-01-30": {
+        "status": "held",
+        "topic": "Regime Types",
+        "actual_start_time_est": "25-01-30-10-00",
+        "actual_end_time_est": "25-01-30-11-15"
+      },
+      "25-02-06": {
+        "status": "canceled",
+        "topic": "Democratic Institutions",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 40,
+    "current_waitlist": 5
+  },
+  "RKP9U84": {
+    "course_id": "RKP9U84",
+    "department": "Social Studies",
+    "course_code": "SOST-1010",
+    "title": "Introduction to Social Studies",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Amelia",
+      "last_name": "Brooks",
+      "email": "amelia.brooks@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Social Sciences Hall",
+      "room": "201"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Course Overview and Methods",
+        "actual_start_time_est": "25-01-22-09-02",
+        "actual_end_time_est": "25-01-22-10-14",
+        "notes": "Introductions and syllabus review"
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Foundations of Social Inquiry",
+        "notes": "Inclement weather"
+      },
+      "25-03-12": {
+        "status": "rescheduled",
+        "topic": "Culture and Society",
+        "actual_start_time_est": "25-03-13-09-00",
+        "actual_end_time_est": "25-03-13-10-15",
+        "notes": "Rescheduled due to campus event"
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 10,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "IKAAKLN": {
+    "course_id": "IKAAKLN",
+    "department": "History",
+    "course_code": "HIST-2205",
+    "title": "Modern World History",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Navid",
+      "last_name": "Rahman",
+      "email": "navid.rahman@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities Center",
+      "room": "305"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-11-00",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Industrial Revolution",
+        "actual_start_time_est": "25-01-23-11-01",
+        "actual_end_time_est": "25-01-23-12-14",
+        "notes": "Assigned first reading"
+      },
+      "25-02-27": {
+        "status": "rescheduled",
+        "topic": "World Wars Overview",
+        "actual_start_time_est": "25-02-28-11-30",
+        "actual_end_time_est": "25-02-28-12-45",
+        "notes": "Instructor conference"
+      },
+      "25-04-10": {
+        "status": "canceled",
+        "topic": "Decolonization Movements",
+        "notes": "Public holiday"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "EK4TN09": {
+    "course_id": "EK4TN09",
+    "department": "Sociology",
+    "course_code": "SOCI-3050",
+    "title": "Sociology of Education",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Lena",
+      "last_name": "Ortiz",
+      "email": "lena.ortiz@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Education Hall",
+      "room": "118"
+    },
+    "scheduled_first_meeting_est": "25-01-28-14-00",
+    "scheduled_last_meeting_est": "25-05-06-14-00",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "16-30"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Schooling and Society",
+        "actual_start_time_est": "25-01-28-14-00",
+        "actual_end_time_est": "25-01-28-16-28",
+        "notes": "Introductions and course aims"
+      },
+      "25-03-04": {
+        "status": "held",
+        "topic": "Inequality in Education",
+        "actual_start_time_est": "25-03-04-14-03",
+        "actual_end_time_est": "25-03-04-16-29",
+        "notes": null
+      },
+      "25-03-18": {
+        "status": "canceled",
+        "topic": "Policy and Reform",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 10,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "38TRKN7": {
+    "course_id": "38TRKN7",
+    "department": "Biology",
+    "course_code": "BIOL-1101",
+    "title": "Introduction to Biology",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Emily",
+      "last_name": "Zhang",
+      "email": "emily.zhang@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "201"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-07-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Course Introduction and Syllabus",
+        "actual_start_time_est": "25-01-22-09-02",
+        "actual_end_time_est": "25-01-22-10-14",
+        "notes": "Introductions and overview"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Cell Structure and Function",
+        "notes": "Canceled due to snow day"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "DNA and RNA",
+        "actual_start_time_est": "25-03-04-09-30",
+        "actual_end_time_est": "25-03-04-10-45",
+        "notes": "Rescheduled to Tuesday due to holiday"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "P711TOG": {
+    "course_id": "P711TOG",
+    "department": "Biology",
+    "course_code": "BIOL-2203",
+    "title": "Genetics",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Patel",
+      "email": "priya.patel@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Genetics Center",
+      "room": "B12"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-08-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Mendelian Principles",
+        "actual_start_time_est": "25-01-23-11-02",
+        "actual_end_time_est": "25-01-23-12-14",
+        "notes": "Covered basic terminology"
+      },
+      "25-02-13": {
+        "status": "canceled",
+        "topic": "Chromosomal Inheritance",
+        "notes": "Instructor illness"
+      },
+      "25-04-10": {
+        "status": "rescheduled",
+        "topic": "Gene Regulation",
+        "actual_start_time_est": "25-04-11-13-00",
+        "actual_end_time_est": "25-04-11-14-15",
+        "notes": "Moved to Friday due to conference"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 8,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "O0K6NWF": {
+    "course_id": "O0K6NWF",
+    "department": "Biology",
+    "course_code": "BIOL-3305",
+    "title": "Microbiology",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Yusuf",
+      "last_name": "Ali",
+      "email": "yusuf.ali@university.edu"
+    },
+    "location": {
+      "campus": "West",
+      "building": "Life Sciences Lab",
+      "room": "310"
+    },
+    "scheduled_first_meeting_est": "25-01-24-14-00",
+    "scheduled_last_meeting_est": "25-05-09-16-45",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "16-45"
+    },
+    "dates": {
+      "25-01-24": {
+        "status": "held",
+        "topic": "Lab Safety and Techniques",
+        "actual_start_time_est": "25-01-24-14-05",
+        "actual_end_time_est": "25-01-24-16-40",
+        "notes": "Completed safety quiz"
+      },
+      "25-02-21": {
+        "status": "canceled",
+        "topic": "Bacterial Cell Structure",
+        "notes": "Building maintenance closure"
+      },
+      "25-03-14": {
+        "status": "rescheduled",
+        "topic": "Antibiotics and Resistance",
+        "actual_start_time_est": "25-03-15-09-00",
+        "actual_end_time_est": "25-03-15-11-45",
+        "notes": "Moved to Saturday due to equipment availability"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "AZKRZF5": {
+    "course_id": "AZKRZF5",
+    "department": "Business",
+    "course_code": "BUSN-2101",
+    "title": "Principles of Management",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Linda",
+      "last_name": "Garcia",
+      "email": "lgarcia@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Business Hall",
+      "room": "B101"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-30",
+    "scheduled_last_meeting_est": "25-05-05-10-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Course Introduction and Management Theories",
+        "actual_start_time_est": "25-01-22-09-32",
+        "actual_end_time_est": "25-01-22-10-46",
+        "notes": "First day overview."
+      },
+      "25-02-03": {
+        "status": "held",
+        "topic": "Leadership Styles",
+        "actual_start_time_est": "25-02-03-09-30",
+        "actual_end_time_est": "25-02-03-10-45",
+        "notes": "Guest speaker."
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Decision-Making Models",
+        "notes": "Instructor illness."
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "CQD8092": {
+    "course_id": "CQD8092",
+    "department": "Marketing",
+    "course_code": "MKTG-2205",
+    "title": "Marketing Fundamentals",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Sarah",
+      "last_name": "Lee",
+      "email": "slee@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Business Hall",
+      "room": "B204"
+    },
+    "scheduled_first_meeting_est": "25-01-21-11-00",
+    "scheduled_last_meeting_est": "25-05-01-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-21": {
+        "status": "held",
+        "topic": "Marketing Mix Basics",
+        "actual_start_time_est": "25-01-21-11-02",
+        "actual_end_time_est": "25-01-21-12-14",
+        "notes": "Introductions and syllabus review."
+      },
+      "25-02-13": {
+        "status": "canceled",
+        "topic": "Consumer Behavior",
+        "notes": "Weather closure."
+      },
+      "25-03-06": {
+        "status": "rescheduled",
+        "topic": "Market Research Methods",
+        "actual_start_time_est": "25-03-07-11-30",
+        "actual_end_time_est": "25-03-07-12-45",
+        "notes": "Moved due to campus event."
+      }
+    },
+    "capacity": 45,
+    "waitlist_capacity": 8,
+    "current_enrollment": 2,
+    "current_waitlist": 1
+  },
+  "NMXGZAF": {
+    "course_id": "NMXGZAF",
+    "department": "Finance",
+    "course_code": "FINC-5102",
+    "title": "Financial Modeling for Managers",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "David",
+      "last_name": "Chen",
+      "email": "dchen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Finance Center",
+      "room": "F310"
+    },
+    "scheduled_first_meeting_est": "25-01-27-18-00",
+    "scheduled_last_meeting_est": "25-04-28-20-30",
+    "meeting_pattern": {
+      "days": [
+        "Monday"
+      ],
+      "start_time_est": "18-00",
+      "end_time_est": "20-30"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Excel Modeling Foundations",
+        "actual_start_time_est": "25-01-27-18-01",
+        "actual_end_time_est": "25-01-27-20-28",
+        "notes": "Lab session."
+      },
+      "25-02-10": {
+        "status": "held",
+        "topic": "Time Value of Money Models",
+        "actual_start_time_est": "25-02-10-18-00",
+        "actual_end_time_est": "25-02-10-20-30",
+        "notes": null
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Scenario Analysis",
+        "actual_start_time_est": "25-03-04-18-15",
+        "actual_end_time_est": "25-03-04-20-30",
+        "notes": "Rescheduled for holiday."
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 5,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "E9KON6B": {
+    "course_id": "E9KON6B",
+    "department": "Music",
+    "course_code": "MUSC-1101",
+    "title": "Music Theory I",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Elena",
+      "last_name": "Morales",
+      "email": "emorales@university.edu"
+    },
+    "location": {
+      "campus": "Downtown Arts Campus",
+      "building": "Conservatory",
+      "room": "C101"
+    },
+    "scheduled_first_meeting_est": "25-01-22-10-00",
+    "scheduled_last_meeting_est": "25-05-05-10-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "10-00",
+      "end_time_est": "10-50"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Intervals and Scales",
+        "actual_start_time_est": "25-01-22-10-00",
+        "actual_end_time_est": "25-01-22-10-50",
+        "notes": "First class and syllabus overview"
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Triads and Seventh Chords",
+        "notes": "Snow day closure"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Harmonic Progressions",
+        "actual_start_time_est": "25-03-04-12-00",
+        "actual_end_time_est": "25-03-04-12-50",
+        "notes": "Rescheduled due to student recital"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 28,
+    "current_waitlist": 2
+  },
+  "YO36D9X": {
+    "course_id": "YO36D9X",
+    "department": "Music",
+    "course_code": "MUSC-2204",
+    "title": "History of Jazz",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Marcus",
+      "last_name": "Lee",
+      "email": "mlee@university.edu"
+    },
+    "location": {
+      "campus": "Downtown Arts Campus",
+      "building": "Jazz Center",
+      "room": "J204"
+    },
+    "scheduled_first_meeting_est": "25-01-23-14-00",
+    "scheduled_last_meeting_est": "25-05-06-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Origins of Jazz in New Orleans",
+        "actual_start_time_est": "25-01-23-14-00",
+        "actual_end_time_est": "25-01-23-15-15",
+        "notes": "Introductions and course overview"
+      },
+      "25-02-13": {
+        "status": "canceled",
+        "topic": "The Swing Era",
+        "notes": "Instructor illness"
+      },
+      "25-04-10": {
+        "status": "rescheduled",
+        "topic": "Bebop Innovations",
+        "actual_start_time_est": "25-04-11-14-00",
+        "actual_end_time_est": "25-04-11-15-15",
+        "notes": "Room conflict on 04-10"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 5,
+    "current_enrollment": 40,
+    "current_waitlist": 3
+  },
+  "K3W0HY4": {
+    "course_id": "K3W0HY4",
+    "department": "Music",
+    "course_code": "MUSC-3302",
+    "title": "Orchestration and Arranging",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Natarajan",
+      "email": "pnatarajan@university.edu"
+    },
+    "location": {
+      "campus": "Downtown Arts Campus",
+      "building": "Music Hall",
+      "room": "M312"
+    },
+    "scheduled_first_meeting_est": "25-01-24-09-30",
+    "scheduled_last_meeting_est": "25-05-08-11-00",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "11-00"
+    },
+    "dates": {
+      "25-01-24": {
+        "status": "held",
+        "topic": "Instrumentation Basics",
+        "actual_start_time_est": "25-01-24-09-30",
+        "actual_end_time_est": "25-01-24-11-00",
+        "notes": "Introduction to orchestral families"
+      },
+      "25-02-21": {
+        "status": "canceled",
+        "topic": "Strings and Woodwinds",
+        "notes": "Facility maintenance"
+      },
+      "25-03-14": {
+        "status": "rescheduled",
+        "topic": "Brass and Percussion",
+        "actual_start_time_est": "25-03-15-10-00",
+        "actual_end_time_est": "25-03-15-11-30",
+        "notes": "Rescheduled to Saturday workshop"
+      }
+    },
+    "capacity": 20,
+    "waitlist_capacity": 5,
+    "current_enrollment": 18,
+    "current_waitlist": 0
+  },
+  "HQGTL5L": {
+    "course_id": "HQGTL5L",
+    "department": "Chemistry",
+    "course_code": "CHEM-1101",
+    "title": "Introductory Chemistry I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Sarah",
+      "last_name": "Johnson",
+      "email": "sjohnson@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "201"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-05-05-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Course Introduction and Safety",
+        "actual_start_time_est": "25-01-13-09-01",
+        "actual_end_time_est": "25-01-13-10-14",
+        "notes": "Brief lab tour included"
+      },
+      "25-01-15": {
+        "status": "canceled",
+        "topic": "Atomic Structure and Periodicity",
+        "notes": "Canceled due to weather"
+      },
+      "25-01-20": {
+        "status": "rescheduled",
+        "topic": "Atomic Structure and Periodicity",
+        "actual_start_time_est": "25-01-21-10-00",
+        "actual_end_time_est": "25-01-21-11-15",
+        "notes": "Rescheduled to Tuesday due to holiday"
+      }
+    },
+    "capacity": 120,
+    "waitlist_capacity": 20,
+    "current_enrollment": 118,
+    "current_waitlist": 5
+  },
+  "QNPS1KX": {
+    "course_id": "QNPS1KX",
+    "department": "Chemistry",
+    "course_code": "CHEM-2202",
+    "title": "Organic Chemistry II",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Miguel",
+      "last_name": "Torres",
+      "email": "mtorres@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Chemistry Center",
+      "room": "310"
+    },
+    "scheduled_first_meeting_est": "25-01-14-11-00",
+    "scheduled_last_meeting_est": "25-05-06-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-14": {
+        "status": "held",
+        "topic": "Aromaticity and Benzene",
+        "actual_start_time_est": "25-01-14-11-02",
+        "actual_end_time_est": "25-01-14-12-13",
+        "notes": "Reviewed reaction mechanisms"
+      },
+      "25-01-16": {
+        "status": "held",
+        "topic": "Electrophilic Aromatic Substitution",
+        "actual_start_time_est": "25-01-16-11-01",
+        "actual_end_time_est": "25-01-16-12-14",
+        "notes": null
+      },
+      "25-02-04": {
+        "status": "canceled",
+        "topic": "Substituent Effects",
+        "notes": "Instructor conference travel"
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 15,
+    "current_enrollment": 80,
+    "current_waitlist": 10
+  },
+  "TD81NGD": {
+    "course_id": "TD81NGD",
+    "department": "Chemistry",
+    "course_code": "CHEM-3405",
+    "title": "Physical Chemistry I",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Raman",
+      "email": "praman@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Research Center",
+      "room": "115"
+    },
+    "scheduled_first_meeting_est": "25-01-13-13-00",
+    "scheduled_last_meeting_est": "25-05-02-13-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "13-00",
+      "end_time_est": "13-50"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Kinetic Theory Review",
+        "actual_start_time_est": "25-01-13-13-00",
+        "actual_end_time_est": "25-01-13-13-49",
+        "notes": "Syllabus overview"
+      },
+      "25-01-15": {
+        "status": "held",
+        "topic": "Thermodynamics: First Law",
+        "actual_start_time_est": "25-01-15-13-02",
+        "actual_end_time_est": "25-01-15-13-50",
+        "notes": null
+      },
+      "25-01-17": {
+        "status": "held",
+        "topic": "State Functions and Processes",
+        "actual_start_time_est": "25-01-17-13-01",
+        "actual_end_time_est": "25-01-17-13-49",
+        "notes": "Problem set 1 assigned"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 55,
+    "current_waitlist": 3
+  },
+  "8CP6IM4": {
+    "course_id": "8CP6IM4",
+    "department": "Physics",
+    "course_code": "PHYS-1101",
+    "title": "Classical Mechanics I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Jane",
+      "last_name": "Maxwell",
+      "email": "jmaxwell@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Center",
+      "room": "SC-201"
+    },
+    "scheduled_first_meeting_est": "25-01-15-09-00",
+    "scheduled_last_meeting_est": "25-05-01-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Course introduction and vectors",
+        "actual_start_time_est": "25-01-15-09-00",
+        "actual_end_time_est": "25-01-15-10-15",
+        "notes": "First day of class"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Work and Energy",
+        "notes": "Weather closure"
+      },
+      "25-03-01": {
+        "status": "rescheduled",
+        "topic": "Momentum and Collisions",
+        "actual_start_time_est": "25-03-02-09-30",
+        "actual_end_time_est": "25-03-02-10-45",
+        "notes": "Rescheduled due to holiday"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 15,
+    "current_enrollment": 58,
+    "current_waitlist": 5
+  },
+  "MFFJ7CB": {
+    "course_id": "MFFJ7CB",
+    "department": "Physics",
+    "course_code": "PHYS-2212",
+    "title": "Electromagnetism",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "James",
+      "last_name": "Faraday",
+      "email": "jfaraday@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Center",
+      "room": "SC-305"
+    },
+    "scheduled_first_meeting_est": "25-01-16-10-30",
+    "scheduled_last_meeting_est": "25-05-02-11-45",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "10-30",
+      "end_time_est": "11-45"
+    },
+    "dates": {
+      "25-01-16": {
+        "status": "held",
+        "topic": "Coulomb\u2019s law and electric fields",
+        "actual_start_time_est": "25-01-16-10-32",
+        "actual_end_time_est": "25-01-16-11-47",
+        "notes": "Brief syllabus overview"
+      },
+      "25-02-20": {
+        "status": "held",
+        "topic": "Gauss\u2019s Law",
+        "actual_start_time_est": "25-02-20-10-30",
+        "actual_end_time_est": "25-02-20-11-45",
+        "notes": "Problem-solving session"
+      },
+      "25-03-12": {
+        "status": "rescheduled",
+        "topic": "Magnetic fields and Amp\u00e8re\u2019s law",
+        "actual_start_time_est": "25-03-13-12-00",
+        "actual_end_time_est": "25-03-13-13-15",
+        "notes": "Room change and time shift"
+      }
+    },
+    "capacity": 50,
+    "waitlist_capacity": 10,
+    "current_enrollment": 50,
+    "current_waitlist": 3
+  },
+  "1HRYIVG": {
+    "course_id": "1HRYIVG",
+    "department": "Physics",
+    "course_code": "PHYS-3305",
+    "title": "Quantum Physics",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Alice",
+      "last_name": "Dirac",
+      "email": "adirac@university.edu"
+    },
+    "location": {
+      "campus": "North",
+      "building": "Physics Hall",
+      "room": "PH-101"
+    },
+    "scheduled_first_meeting_est": "25-01-20-13-00",
+    "scheduled_last_meeting_est": "25-05-05-14-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "13-00",
+      "end_time_est": "14-15"
+    },
+    "dates": {
+      "25-01-20": {
+        "status": "held",
+        "topic": "Wave functions and postulates",
+        "actual_start_time_est": "25-01-20-13-02",
+        "actual_end_time_est": "25-01-20-14-16",
+        "notes": "Intro to bra-ket notation"
+      },
+      "25-02-19": {
+        "status": "canceled",
+        "topic": "Time-independent Schr\u00f6dinger equation",
+        "notes": "Instructor illness"
+      },
+      "25-04-07": {
+        "status": "held",
+        "topic": "Angular momentum and spin",
+        "actual_start_time_est": "25-04-07-13-00",
+        "actual_end_time_est": "25-04-07-14-15",
+        "notes": "Spin-1/2 systems"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 39,
+    "current_waitlist": 2
+  },
+  "C076XJ5": {
+    "course_id": "C076XJ5",
+    "department": "Mathematics",
+    "course_code": "MATH-1010",
+    "title": "Calculus I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Evelyn",
+      "last_name": "Harper",
+      "email": "evelyn.harper@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "201"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-05-02-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Limits and Continuity",
+        "actual_start_time_est": "25-01-13-09-00",
+        "actual_end_time_est": "25-01-13-09-50",
+        "notes": "Introductory lecture"
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Derivatives",
+        "notes": "Snow day"
+      },
+      "25-03-10": {
+        "status": "rescheduled",
+        "topic": "Midterm Review",
+        "actual_start_time_est": "25-03-11-09-00",
+        "actual_end_time_est": "25-03-11-09-50",
+        "notes": "Moved due to room maintenance"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "4K43N6F": {
+    "course_id": "4K43N6F",
+    "department": "Mathematics",
+    "course_code": "MATH-2210",
+    "title": "Linear Algebra",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Samuel",
+      "last_name": "Ortiz",
+      "email": "samuel.ortiz@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Mathematics Center",
+      "room": "305"
+    },
+    "scheduled_first_meeting_est": "25-01-14-11-00",
+    "scheduled_last_meeting_est": "25-05-01-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-14": {
+        "status": "held",
+        "topic": "Vectors and Matrices",
+        "actual_start_time_est": "25-01-14-11-00",
+        "actual_end_time_est": "25-01-14-12-15",
+        "notes": "Syllabus overview"
+      },
+      "25-02-20": {
+        "status": "canceled",
+        "topic": "Vector Spaces",
+        "notes": "Instructor at conference"
+      },
+      "25-03-06": {
+        "status": "rescheduled",
+        "topic": "Eigenvalues and Eigenvectors",
+        "actual_start_time_est": "25-03-07-11-00",
+        "actual_end_time_est": "25-03-07-12-15",
+        "notes": "Rescheduled due to campus event"
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 10,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "4G2Z23U": {
+    "course_id": "4G2Z23U",
+    "department": "Mathematics",
+    "course_code": "MATH-5020",
+    "title": "Real Analysis I",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Desai",
+      "email": "priya.desai@univ.edu"
+    },
+    "location": {
+      "campus": "Graduate",
+      "building": "Graduate Center",
+      "room": "410"
+    },
+    "scheduled_first_meeting_est": "25-01-13-14-00",
+    "scheduled_last_meeting_est": "25-05-05-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Logic and Proofs",
+        "actual_start_time_est": "25-01-13-14-00",
+        "actual_end_time_est": "25-01-13-15-15",
+        "notes": "Introductions and course overview"
+      },
+      "25-02-12": {
+        "status": "canceled",
+        "topic": "Metric Spaces",
+        "notes": "Instructor illness"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Sequences and Limits",
+        "actual_start_time_est": "25-03-04-14-00",
+        "actual_end_time_est": "25-03-04-15-15",
+        "notes": "Rescheduled for departmental seminar"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "C2045QR": {
+    "course_id": "C2045QR",
+    "department": "Literature",
+    "course_code": "LITR-3010",
+    "title": "Modernist Poetry",
+    "credits": 3,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Ada",
+      "last_name": "Morris",
+      "email": "amorris@uni.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Humanities Hall",
+      "room": "204A"
+    },
+    "scheduled_first_meeting_est": "25-09-02-10-00",
+    "scheduled_last_meeting_est": "25-12-10-11-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "10-00",
+      "end_time_est": "11-15"
+    },
+    "dates": {
+      "25-09-02": {
+        "status": "held",
+        "topic": "Course Introduction and Syllabus",
+        "actual_start_time_est": "25-09-02-10-00",
+        "actual_end_time_est": "25-09-02-11-15",
+        "notes": "All students attended."
+      },
+      "25-09-04": {
+        "status": "held",
+        "topic": "Imagism and Early Modernism",
+        "actual_start_time_est": "25-09-04-10-02",
+        "actual_end_time_est": "25-09-04-11-14",
+        "notes": "Brief discussion spillover."
+      },
+      "25-09-09": {
+        "status": "canceled",
+        "topic": "Ezra Pound and T.S. Eliot",
+        "notes": "Instructor illness; make-up to be announced."
+      },
+      "25-09-11": {
+        "status": "rescheduled",
+        "topic": "Ezra Pound and T.S. Eliot (Make-up)",
+        "actual_start_time_est": "25-09-12-12-00",
+        "actual_end_time_est": "25-09-12-13-15",
+        "notes": "Held in seminar room 210."
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 27,
+    "current_waitlist": 2
+  },
+  "G0CR3PX": {
+    "course_id": "G0CR3PX",
+    "department": "Literature",
+    "course_code": "LITR-3455",
+    "title": "Shakespearean Tragedies",
+    "credits": 4,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Bernard",
+      "last_name": "Lee",
+      "email": "blee@uni.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Old Library",
+      "room": "3B"
+    },
+    "scheduled_first_meeting_est": "25-09-01-14-00",
+    "scheduled_last_meeting_est": "25-12-08-15-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-50"
+    },
+    "dates": {
+      "25-09-01": {
+        "status": "held",
+        "topic": "Tragedy in the Elizabethan Context",
+        "actual_start_time_est": "25-09-01-14-00",
+        "actual_end_time_est": "25-09-01-15-50",
+        "notes": "Introductions and course overview."
+      },
+      "25-09-03": {
+        "status": "rescheduled",
+        "topic": "Close Reading: Hamlet I",
+        "actual_start_time_est": "25-09-04-16-00",
+        "actual_end_time_est": "25-09-04-17-50",
+        "notes": "Rescheduled due to campus event."
+      },
+      "25-09-08": {
+        "status": "held",
+        "topic": "Hamlet II: Soliloquies",
+        "actual_start_time_est": "25-09-08-14-01",
+        "actual_end_time_est": "25-09-08-15-48",
+        "notes": null
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 8,
+    "current_enrollment": 24,
+    "current_waitlist": 0
+  },
+  "VM90FQW": {
+    "course_id": "VM90FQW",
+    "department": "Literature",
+    "course_code": "LITR-2120",
+    "title": "World Literature: Epics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Clara",
+      "last_name": "Nguyen",
+      "email": "cnguyen@uni.edu"
+    },
+    "location": {
+      "campus": "Riverside Campus",
+      "building": "Arts Center",
+      "room": "115"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-04-25-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Introduction to Epic Traditions",
+        "actual_start_time_est": "25-01-13-09-00",
+        "actual_end_time_est": "25-01-13-09-50",
+        "notes": "Syllabus overview."
+      },
+      "25-01-15": {
+        "status": "held",
+        "topic": "The Epic of Gilgamesh",
+        "actual_start_time_est": "25-01-15-09-01",
+        "actual_end_time_est": "25-01-15-09-49",
+        "notes": null
+      },
+      "25-01-17": {
+        "status": "canceled",
+        "topic": "Homer's Iliad I",
+        "notes": "Weather closure."
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 35,
+    "current_waitlist": 1
+  },
+  "BFOBDAU": {
+    "course_id": "BFOBDAU",
+    "department": "BUS",
+    "course_code": "BUS-1010",
+    "title": "Introduction to Business Studies",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Maria",
+      "last_name": "Patel",
+      "email": "maria.patel@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Business Hall",
+      "room": "101"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction to the Business Environment",
+        "actual_start_time_est": "25-01-22-09-02",
+        "actual_end_time_est": "25-01-22-09-50",
+        "notes": "Overview of course and expectations"
+      },
+      "25-01-27": {
+        "status": "held",
+        "topic": "Stakeholders and Corporate Goals",
+        "actual_start_time_est": "25-01-27-09-00",
+        "actual_end_time_est": "25-01-27-09-50",
+        "notes": null
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Ethics in Business",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 50,
+    "waitlist_capacity": 10,
+    "current_enrollment": 48,
+    "current_waitlist": 2
+  },
+  "AX8NU7V": {
+    "course_id": "AX8NU7V",
+    "department": "BUS",
+    "course_code": "BUS-2200",
+    "title": "Managerial Accounting",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "James",
+      "last_name": "Kim",
+      "email": "james.kim@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Finance Center",
+      "room": "204"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Accounting Principles Review",
+        "actual_start_time_est": "25-01-23-11-00",
+        "actual_end_time_est": "25-01-23-12-10",
+        "notes": "Syllabus and expectations discussed"
+      },
+      "25-01-28": {
+        "status": "held",
+        "topic": "Cost Behavior and CVP Analysis",
+        "actual_start_time_est": "25-01-28-11-00",
+        "actual_end_time_est": "25-01-28-12-15",
+        "notes": null
+      },
+      "25-02-04": {
+        "status": "rescheduled",
+        "topic": "Budgeting Fundamentals",
+        "actual_start_time_est": "25-02-05-10-00",
+        "actual_end_time_est": "25-02-05-11-15",
+        "notes": "Rescheduled due to campus event"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 5,
+    "current_enrollment": 40,
+    "current_waitlist": 3
+  },
+  "I4ZUI48": {
+    "course_id": "I4ZUI48",
+    "department": "BUS",
+    "course_code": "BUS-3305",
+    "title": "Business Analytics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Elena",
+      "last_name": "Rossi",
+      "email": "elena.rossi@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Analytics Lab",
+      "room": "3A"
+    },
+    "scheduled_first_meeting_est": "25-01-28-18-00",
+    "scheduled_last_meeting_est": "25-05-06-19-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday"
+      ],
+      "start_time_est": "18-00",
+      "end_time_est": "19-15"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Intro to Business Analytics and Data",
+        "actual_start_time_est": "25-01-28-18-05",
+        "actual_end_time_est": "25-01-28-19-15",
+        "notes": "Lab setup and tool overview"
+      },
+      "25-02-04": {
+        "status": "held",
+        "topic": "Descriptive Analytics with Spreadsheets",
+        "actual_start_time_est": "25-02-04-18-00",
+        "actual_end_time_est": "25-02-04-19-10",
+        "notes": null
+      },
+      "25-02-11": {
+        "status": "rescheduled",
+        "topic": "Data Visualization Basics",
+        "actual_start_time_est": "25-02-12-18-00",
+        "actual_end_time_est": "25-02-12-19-15",
+        "notes": "Instructor attending conference on 02/11"
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 5,
+    "current_enrollment": 33,
+    "current_waitlist": 1
+  },
+  "KXM6RH0": {
+    "course_id": "KXM6RH0",
+    "department": "Physics",
+    "course_code": "PHYS-1301",
+    "title": "Classical Mechanics",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Elena",
+      "last_name": "Kovacs",
+      "email": "ekovacs@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "SH-201"
+    },
+    "scheduled_first_meeting_est": "25-01-27-09-00",
+    "scheduled_last_meeting_est": "25-05-02-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Introduction to Kinematics",
+        "actual_start_time_est": "25-01-27-09-01",
+        "actual_end_time_est": "25-01-27-10-14",
+        "notes": "First day overview"
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Newton's Laws",
+        "notes": "Weather closure"
+      },
+      "25-02-05": {
+        "status": "rescheduled",
+        "topic": "Newton's Laws",
+        "actual_start_time_est": "25-02-05-11-00",
+        "actual_end_time_est": "25-02-05-12-15",
+        "notes": "Make-up session"
+      }
+    },
+    "capacity": 45,
+    "waitlist_capacity": 10,
+    "current_enrollment": 38,
+    "current_waitlist": 2
+  },
+  "NMQC1AN": {
+    "course_id": "NMQC1AN",
+    "department": "Chemistry",
+    "course_code": "CHEM-2202",
+    "title": "Organic Chemistry II",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Leah",
+      "last_name": "Martinez",
+      "email": "lmartinez@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Chemistry Center",
+      "room": "CC-310"
+    },
+    "scheduled_first_meeting_est": "25-01-28-13-30",
+    "scheduled_last_meeting_est": "25-05-01-14-45",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "14-45"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Aromaticity Review",
+        "actual_start_time_est": "25-01-28-13-31",
+        "actual_end_time_est": "25-01-28-14-44",
+        "notes": "Syllabus and safety overview"
+      },
+      "25-02-06": {
+        "status": "held",
+        "topic": "Reaction Mechanisms II",
+        "actual_start_time_est": "25-02-06-13-30",
+        "actual_end_time_est": "25-02-06-14-45",
+        "notes": null
+      },
+      "25-02-13": {
+        "status": "canceled",
+        "topic": "Stereochemistry",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 12,
+    "current_enrollment": 60,
+    "current_waitlist": 5
+  },
+  "EM8L380": {
+    "course_id": "EM8L380",
+    "department": "Biology",
+    "course_code": "BIOL-3405",
+    "title": "Genetics and Genomics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Jun",
+      "last_name": "Park",
+      "email": "jpark@univ.edu"
+    },
+    "location": {
+      "campus": "West",
+      "building": "Life Sciences",
+      "room": "LS-120"
+    },
+    "scheduled_first_meeting_est": "25-01-29-15-00",
+    "scheduled_last_meeting_est": "25-04-30-16-15",
+    "meeting_pattern": {
+      "days": [
+        "Wednesday"
+      ],
+      "start_time_est": "15-00",
+      "end_time_est": "16-15"
+    },
+    "dates": {
+      "25-01-29": {
+        "status": "held",
+        "topic": "DNA Structure and Function",
+        "actual_start_time_est": "25-01-29-15-01",
+        "actual_end_time_est": "25-01-29-16-14",
+        "notes": null
+      },
+      "25-02-05": {
+        "status": "rescheduled",
+        "topic": "Mendelian Inheritance",
+        "actual_start_time_est": "25-02-05-16-00",
+        "actual_end_time_est": "25-02-05-17-15",
+        "notes": "Room change due to maintenance"
+      },
+      "25-02-12": {
+        "status": "held",
+        "topic": "Linkage and Mapping",
+        "actual_start_time_est": "25-02-12-15-00",
+        "actual_end_time_est": "25-02-12-16-15",
+        "notes": null
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 8,
+    "current_enrollment": 30,
+    "current_waitlist": 0
+  },
+  "0D1SGWW": {
+    "course_id": "0D1SGWW",
+    "department": "ENVS",
+    "course_code": "ENVS-3010",
+    "title": "Climate Change Science",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Daniela",
+      "last_name": "Reyes",
+      "email": "daniela.reyes@univ.example"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Science Hall",
+      "room": "S201"
+    },
+    "scheduled_first_meeting_est": "25-01-21-09-30",
+    "scheduled_last_meeting_est": "25-05-05-09-30",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Introduction to Climate Systems",
+        "actual_start_time_est": "25-01-23-09-31",
+        "actual_end_time_est": "25-01-23-10-46",
+        "notes": "Reviewed syllabus and course expectations."
+      },
+      "25-02-04": {
+        "status": "canceled",
+        "topic": "Extreme Weather and Attribution",
+        "notes": "Campus closure due to snow."
+      },
+      "25-03-06": {
+        "status": "rescheduled",
+        "topic": "Carbon Cycle and Feedbacks",
+        "actual_start_time_est": "25-03-07-09-30",
+        "actual_end_time_est": "25-03-07-10-45",
+        "notes": "Room scheduling conflict."
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 20,
+    "current_enrollment": 62,
+    "current_waitlist": 5
+  },
+  "06452JC": {
+    "course_id": "06452JC",
+    "department": "ENVS",
+    "course_code": "ENVS-2200",
+    "title": "Environmental Policy and Law",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Helen",
+      "last_name": "Brooks",
+      "email": "helen.brooks@univ.example"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Public Affairs",
+      "room": "PA105"
+    },
+    "scheduled_first_meeting_est": "25-01-22-11-00",
+    "scheduled_last_meeting_est": "25-05-07-11-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Foundations of Environmental Law",
+        "actual_start_time_est": "25-01-22-11-01",
+        "actual_end_time_est": "25-01-22-12-14",
+        "notes": "Introductions and course overview."
+      },
+      "25-02-10": {
+        "status": "rescheduled",
+        "topic": "Clean Air Act",
+        "actual_start_time_est": "25-02-11-11-00",
+        "actual_end_time_est": "25-02-11-12-15",
+        "notes": "Instructor travel delay."
+      },
+      "25-03-03": {
+        "status": "canceled",
+        "topic": "International Environmental Agreements",
+        "notes": "Public holiday."
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 15,
+    "current_enrollment": 58,
+    "current_waitlist": 7
+  },
+  "NSYVJVO": {
+    "course_id": "NSYVJVO",
+    "department": "ENVS",
+    "course_code": "ENVS-4105",
+    "title": "Ecosystems Field Methods",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Omar",
+      "last_name": "Patel",
+      "email": "omar.patel@univ.example"
+    },
+    "location": {
+      "campus": "Field Station",
+      "building": "Ecology Center",
+      "room": "Lab 2"
+    },
+    "scheduled_first_meeting_est": "25-01-24-13-00",
+    "scheduled_last_meeting_est": "25-05-02-13-00",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "13-00",
+      "end_time_est": "15-30"
+    },
+    "dates": {
+      "25-01-24": {
+        "status": "held",
+        "topic": "Intro to Field Methods",
+        "actual_start_time_est": "25-01-24-13-02",
+        "actual_end_time_est": "25-01-24-15-31",
+        "notes": "Safety briefing completed."
+      },
+      "25-02-28": {
+        "status": "held",
+        "topic": "Soil Sampling Techniques",
+        "actual_start_time_est": "25-02-28-13-00",
+        "actual_end_time_est": "25-02-28-15-29",
+        "notes": "Collected samples from riparian zone."
+      },
+      "25-04-04": {
+        "status": "canceled",
+        "topic": "Aquatic Invertebrate Surveys",
+        "notes": "Severe weather warnings."
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 28,
+    "current_waitlist": 2
+  },
+  "9O8HGCW": {
+    "course_id": "9O8HGCW",
+    "department": "Art",
+    "course_code": "ART-1010",
+    "title": "Introduction to Drawing",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Lena",
+      "last_name": "Park",
+      "email": "lena.park@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Fine Arts",
+      "room": "FA-201"
+    },
+    "scheduled_first_meeting_est": "25-01-21-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Line, Shape, and Contour",
+        "actual_start_time_est": "25-01-22-09-02",
+        "actual_end_time_est": "25-01-22-10-16",
+        "notes": "Introductions and materials overview"
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Gesture Drawing",
+        "notes": "Weather closure campus-wide"
+      },
+      "25-02-06": {
+        "status": "rescheduled",
+        "topic": "Gesture Drawing (make-up)",
+        "actual_start_time_est": "25-02-06-09-30",
+        "actual_end_time_est": "25-02-06-10-45",
+        "notes": "Rescheduled due to snow day"
+      }
+    },
+    "capacity": 24,
+    "waitlist_capacity": 10,
+    "current_enrollment": 18,
+    "current_waitlist": 2
+  },
+  "DGJ1DMQ": {
+    "course_id": "DGJ1DMQ",
+    "department": "Art History",
+    "course_code": "ARTH-2050",
+    "title": "Modern Art 1900\u20131945",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Mateo",
+      "last_name": "Ruiz",
+      "email": "mateo.ruiz@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities",
+      "room": "HUM-104"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-11-00",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Introduction: Modernism and Avant-Garde",
+        "actual_start_time_est": "25-01-23-11-00",
+        "actual_end_time_est": "25-01-23-12-14",
+        "notes": "Course overview and syllabus"
+      },
+      "25-02-13": {
+        "status": "held",
+        "topic": "Cubism: Picasso and Braque",
+        "actual_start_time_est": "25-02-13-11-01",
+        "actual_end_time_est": "25-02-13-12-15",
+        "notes": "Slide lecture with discussion"
+      },
+      "25-03-05": {
+        "status": "rescheduled",
+        "topic": "Futurism and Vorticism",
+        "actual_start_time_est": "25-03-05-11-00",
+        "actual_end_time_est": "25-03-05-12-15",
+        "notes": "Rescheduled to avoid conference conflict"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 20,
+    "current_enrollment": 54,
+    "current_waitlist": 3
+  },
+  "F975ZKS": {
+    "course_id": "F975ZKS",
+    "department": "Studio Art",
+    "course_code": "ARTS-3120",
+    "title": "Ceramics: Wheel Throwing",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Aisha",
+      "last_name": "Khan",
+      "email": "aisha.khan@university.edu"
+    },
+    "location": {
+      "campus": "South",
+      "building": "Ceramics Studio",
+      "room": "CER-1"
+    },
+    "scheduled_first_meeting_est": "25-01-27-14-00",
+    "scheduled_last_meeting_est": "25-05-07-14-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "16-30"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Studio Orientation and Safety",
+        "actual_start_time_est": "25-01-27-14-02",
+        "actual_end_time_est": "25-01-27-16-28",
+        "notes": "Safety waivers signed"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Centering and Pulling Walls",
+        "notes": "Kiln maintenance; make-up to be scheduled"
+      },
+      "25-02-12": {
+        "status": "held",
+        "topic": "Centering Techniques",
+        "actual_start_time_est": "25-02-12-14-01",
+        "actual_end_time_est": "25-02-12-16-29",
+        "notes": "Demo and practice"
+      }
+    },
+    "capacity": 16,
+    "waitlist_capacity": 5,
+    "current_enrollment": 14,
+    "current_waitlist": 1
+  },
+  "YFV5AS6": {
+    "course_id": "YFV5AS6",
+    "department": "Psychology",
+    "course_code": "PSYC-1101",
+    "title": "Introduction to Psychology",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Alicia",
+      "last_name": "Morgan",
+      "email": "amorgan@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Behavioral Sciences",
+      "room": "B101"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-04-28-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Course Introduction and History of Psychology",
+        "actual_start_time_est": "25-01-13-09-00",
+        "actual_end_time_est": "25-01-13-10-15",
+        "notes": "On time"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Sensation and Perception",
+        "notes": "Weather closure"
+      },
+      "25-03-19": {
+        "status": "rescheduled",
+        "topic": "Learning and Conditioning",
+        "actual_start_time_est": "25-03-20-09-00",
+        "actual_end_time_est": "25-03-20-10-15",
+        "notes": "Rescheduled to Thursday due to campus event"
+      }
+    },
+    "capacity": 100,
+    "waitlist_capacity": 20,
+    "current_enrollment": 98,
+    "current_waitlist": 12
+  },
+  "GYN9C02": {
+    "course_id": "GYN9C02",
+    "department": "Psychology",
+    "course_code": "PSYC-2305",
+    "title": "Cognitive Psychology",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Brian",
+      "last_name": "Chen",
+      "email": "bchen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Cognitive Science Center",
+      "room": "C204"
+    },
+    "scheduled_first_meeting_est": "25-01-14-13-30",
+    "scheduled_last_meeting_est": "25-04-29-14-45",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "14-45"
+    },
+    "dates": {
+      "25-01-14": {
+        "status": "held",
+        "topic": "Introduction to Cognitive Science",
+        "actual_start_time_est": "25-01-14-13-30",
+        "actual_end_time_est": "25-01-14-14-45",
+        "notes": "First day overview"
+      },
+      "25-02-27": {
+        "status": "held",
+        "topic": "Attention and Consciousness",
+        "actual_start_time_est": "25-02-27-13-30",
+        "actual_end_time_est": "25-02-27-14-45",
+        "notes": null
+      },
+      "25-03-18": {
+        "status": "canceled",
+        "topic": "Language Processing",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 36,
+    "current_waitlist": 3
+  },
+  "PDJMO1C": {
+    "course_id": "PDJMO1C",
+    "department": "Psychology",
+    "course_code": "PSYC-3402",
+    "title": "Research Methods in Psychology",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Sara",
+      "last_name": "Patel",
+      "email": "spatel@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Research Annex",
+      "room": "R310"
+    },
+    "scheduled_first_meeting_est": "25-01-17-10-30",
+    "scheduled_last_meeting_est": "25-05-02-12-00",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "10-30",
+      "end_time_est": "12-00"
+    },
+    "dates": {
+      "25-01-17": {
+        "status": "held",
+        "topic": "Scientific Method and Ethics",
+        "actual_start_time_est": "25-01-17-10-30",
+        "actual_end_time_est": "25-01-17-12-00",
+        "notes": "Reviewed IRB basics"
+      },
+      "25-02-21": {
+        "status": "rescheduled",
+        "topic": "Experimental Design",
+        "actual_start_time_est": "25-02-22-10-30",
+        "actual_end_time_est": "25-02-22-12-00",
+        "notes": "Moved to Saturday due to lab availability"
+      },
+      "25-04-04": {
+        "status": "held",
+        "topic": "Data Analysis Basics",
+        "actual_start_time_est": "25-04-04-10-30",
+        "actual_end_time_est": "25-04-04-12-00",
+        "notes": null
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 5,
+    "current_enrollment": 28,
+    "current_waitlist": 1
+  },
+  "RHWO7C5": {
+    "course_id": "RHWO7C5",
+    "department": "Computer Science",
+    "course_code": "CSCI-2100",
+    "title": "Data Structures",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "John",
+      "last_name": "Park",
+      "email": "jpark@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Engineering Hall",
+      "room": "E201"
+    },
+    "scheduled_first_meeting_est": "25-01-27-09-30",
+    "scheduled_last_meeting_est": "25-05-02-10-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Introduction and Algorithm Analysis",
+        "actual_start_time_est": "25-01-27-09-31",
+        "actual_end_time_est": "25-01-27-10-45",
+        "notes": "First day overview"
+      },
+      "25-02-03": {
+        "status": "held",
+        "topic": "Stacks and Queues",
+        "actual_start_time_est": "25-02-03-09-30",
+        "actual_end_time_est": "25-02-03-10-45",
+        "notes": "In-class coding exercise"
+      },
+      "25-02-12": {
+        "status": "canceled",
+        "topic": "Linked Lists",
+        "notes": "Snow day; campus closed"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 54,
+    "current_waitlist": 3
+  },
+  "QRLKSZJ": {
+    "course_id": "QRLKSZJ",
+    "department": "Computer Science",
+    "course_code": "CSCI-2400",
+    "title": "Computer Systems",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Nair",
+      "email": "pnair@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Tech Center",
+      "room": "T105"
+    },
+    "scheduled_first_meeting_est": "25-01-28-11-00",
+    "scheduled_last_meeting_est": "25-05-01-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Course overview and C basics",
+        "actual_start_time_est": "25-01-28-11-00",
+        "actual_end_time_est": "25-01-28-12-15",
+        "notes": "Set up development environment"
+      },
+      "25-02-04": {
+        "status": "held",
+        "topic": "Data representation and number systems",
+        "actual_start_time_est": "25-02-04-11-01",
+        "actual_end_time_est": "25-02-04-12-15",
+        "notes": null
+      },
+      "25-02-11": {
+        "status": "rescheduled",
+        "topic": "Machine-level programming",
+        "actual_start_time_est": "25-02-12-11-00",
+        "actual_end_time_est": "25-02-12-12-15",
+        "notes": "Shifted due to instructor travel"
+      }
+    },
+    "capacity": 50,
+    "waitlist_capacity": 10,
+    "current_enrollment": 48,
+    "current_waitlist": 2
+  },
+  "S7CFD8N": {
+    "course_id": "S7CFD8N",
+    "department": "Computer Science",
+    "course_code": "CSCI-3500",
+    "title": "Operating Systems",
+    "credits": 4,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Miguel",
+      "last_name": "Alvarez",
+      "email": "malvarez@univ.edu"
+    },
+    "location": {
+      "campus": "North",
+      "building": "Science Complex",
+      "room": "S302"
+    },
+    "scheduled_first_meeting_est": "25-09-02-14-00",
+    "scheduled_last_meeting_est": "25-12-10-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-09-03": {
+        "status": "held",
+        "topic": "Introduction to OS and processes",
+        "actual_start_time_est": "25-09-03-14-00",
+        "actual_end_time_est": "25-09-03-15-15",
+        "notes": "Syllabus review"
+      },
+      "25-09-05": {
+        "status": "held",
+        "topic": "Threads and concurrency",
+        "actual_start_time_est": "25-09-05-14-00",
+        "actual_end_time_est": "25-09-05-15-15",
+        "notes": null
+      },
+      "25-09-12": {
+        "status": "rescheduled",
+        "topic": "CPU scheduling",
+        "actual_start_time_est": "25-09-13-14-00",
+        "actual_end_time_est": "25-09-13-15-15",
+        "notes": "Room maintenance on 09/12"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 35,
+    "current_waitlist": 1
+  },
+  "Q1XUJ3T": {
+    "course_id": "Q1XUJ3T",
+    "department": "Spanish",
+    "course_code": "SPAN-1010",
+    "title": "Elementary Spanish I",
+    "credits": 4,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Lucia",
+      "last_name": "Martinez",
+      "email": "lmartinez@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities",
+      "room": "HUM-101"
+    },
+    "scheduled_first_meeting_est": "25-09-02-09-00",
+    "scheduled_last_meeting_est": "25-12-10-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-09-02": {
+        "status": "held",
+        "topic": "Introductions and Spanish alphabet",
+        "actual_start_time_est": "25-09-02-09-00",
+        "actual_end_time_est": "25-09-02-09-50",
+        "notes": "First day overview"
+      },
+      "25-09-04": {
+        "status": "canceled",
+        "topic": "Pronunciation basics",
+        "notes": "Instructor illness"
+      },
+      "25-09-09": {
+        "status": "rescheduled",
+        "topic": "Greetings and farewells",
+        "actual_start_time_est": "25-09-09-10-00",
+        "actual_end_time_est": "25-09-09-10-50",
+        "notes": "Room change due to maintenance"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 3,
+    "current_waitlist": 0
+  },
+  "PQT2MJB": {
+    "course_id": "PQT2MJB",
+    "department": "Spanish",
+    "course_code": "SPAN-2100",
+    "title": "Intermediate Spanish Conversation",
+    "credits": 3,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Diego",
+      "last_name": "Alvarez",
+      "email": "dalvarez@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Language Center",
+      "room": "LC-202"
+    },
+    "scheduled_first_meeting_est": "25-09-03-11-00",
+    "scheduled_last_meeting_est": "25-12-12-11-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "11-50"
+    },
+    "dates": {
+      "25-09-03": {
+        "status": "held",
+        "topic": "Conversational review: summer experiences",
+        "actual_start_time_est": "25-09-03-11-00",
+        "actual_end_time_est": "25-09-03-11-50",
+        "notes": "Participation-based"
+      },
+      "25-09-05": {
+        "status": "held",
+        "topic": "Describing people and places",
+        "actual_start_time_est": "25-09-05-11-00",
+        "actual_end_time_est": "25-09-05-11-50",
+        "notes": null
+      },
+      "25-09-09": {
+        "status": "rescheduled",
+        "topic": "Past tense storytelling",
+        "actual_start_time_est": "25-09-09-12-00",
+        "actual_end_time_est": "25-09-09-12-50",
+        "notes": "Conflicts on 09-08"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "N4Q81OI": {
+    "course_id": "N4Q81OI",
+    "department": "Spanish",
+    "course_code": "SPAN-3200",
+    "title": "Spanish Literature of the 20th Century",
+    "credits": 3,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Marina",
+      "last_name": "Ortega",
+      "email": "mortega@univ.edu"
+    },
+    "location": {
+      "campus": "Downtown",
+      "building": "Arts Hall",
+      "room": "AH-305"
+    },
+    "scheduled_first_meeting_est": "25-09-02-14-00",
+    "scheduled_last_meeting_est": "25-12-11-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-09-02": {
+        "status": "held",
+        "topic": "Course overview; Modernism",
+        "actual_start_time_est": "25-09-02-14-00",
+        "actual_end_time_est": "25-09-02-15-15",
+        "notes": "Syllabus review"
+      },
+      "25-09-04": {
+        "status": "held",
+        "topic": "Juan Ram\u00f3n Jim\u00e9nez",
+        "actual_start_time_est": "25-09-04-14-00",
+        "actual_end_time_est": "25-09-04-15-15",
+        "notes": null
+      },
+      "25-09-11": {
+        "status": "canceled",
+        "topic": "Generation of '27",
+        "notes": "Weather closure"
+      }
+    },
+    "capacity": 20,
+    "waitlist_capacity": 5,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "TB6J1DR": {
+    "course_id": "TB6J1DR",
+    "department": "Economics",
+    "course_code": "ECON-1010",
+    "title": "Principles of Microeconomics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Elena",
+      "last_name": "Martinez",
+      "email": "elena.martinez@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Social Sciences",
+      "room": "SS-201"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-05-05-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Introduction to Microeconomics",
+        "actual_start_time_est": "25-01-13-09-02",
+        "actual_end_time_est": "25-01-13-10-14",
+        "notes": "Reviewed syllabus"
+      },
+      "25-01-15": {
+        "status": "canceled",
+        "topic": "Supply and Demand",
+        "notes": "Snow day"
+      },
+      "25-01-20": {
+        "status": "rescheduled",
+        "topic": "Supply and Demand (Make-up)",
+        "actual_start_time_est": "25-01-20-09-00",
+        "actual_end_time_est": "25-01-20-10-15",
+        "notes": "Make-up for 25-01-15"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 5,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "U60XO2X": {
+    "course_id": "U60XO2X",
+    "department": "Economics",
+    "course_code": "ECON-2010",
+    "title": "Principles of Macroeconomics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "David",
+      "last_name": "Chen",
+      "email": "david.chen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Social Sciences",
+      "room": "SS-305"
+    },
+    "scheduled_first_meeting_est": "25-01-14-11-00",
+    "scheduled_last_meeting_est": "25-05-06-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-14": {
+        "status": "held",
+        "topic": "Introduction to Macroeconomics",
+        "actual_start_time_est": "25-01-14-11-02",
+        "actual_end_time_est": "25-01-14-12-14",
+        "notes": "Course overview"
+      },
+      "25-01-16": {
+        "status": "held",
+        "topic": "GDP and National Income",
+        "actual_start_time_est": "25-01-16-11-00",
+        "actual_end_time_est": "25-01-16-12-15",
+        "notes": null
+      },
+      "25-02-04": {
+        "status": "canceled",
+        "topic": "Unemployment and Inflation",
+        "notes": "Instructor at conference"
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 5,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "P6GVJKH": {
+    "course_id": "P6GVJKH",
+    "department": "Economics",
+    "course_code": "ECON-3050",
+    "title": "Econometrics",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Nair",
+      "email": "priya.nair@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Data Science Center",
+      "room": "DS-120"
+    },
+    "scheduled_first_meeting_est": "25-01-17-13-00",
+    "scheduled_last_meeting_est": "25-05-02-15-30",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "13-00",
+      "end_time_est": "15-30"
+    },
+    "dates": {
+      "25-01-17": {
+        "status": "held",
+        "topic": "Course Introduction and Review of Statistics",
+        "actual_start_time_est": "25-01-17-13-01",
+        "actual_end_time_est": "25-01-17-15-28",
+        "notes": "Set up software"
+      },
+      "25-01-24": {
+        "status": "held",
+        "topic": "Linear Regression Basics",
+        "actual_start_time_est": "25-01-24-13-00",
+        "actual_end_time_est": "25-01-24-15-30",
+        "notes": null
+      },
+      "25-02-07": {
+        "status": "rescheduled",
+        "topic": "Inference in Regression",
+        "actual_start_time_est": "25-02-10-13-00",
+        "actual_end_time_est": "25-02-10-15-30",
+        "notes": "Rescheduled due to building maintenance"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "5VRJGQC": {
+    "course_id": "5VRJGQC",
+    "department": "History",
+    "course_code": "HIST-2101",
+    "title": "World History to 1500",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Emily",
+      "last_name": "Carter",
+      "email": "emily.carter@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Liberal Arts",
+      "room": "HIST-204"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Course Introduction and Historical Methods",
+        "actual_start_time_est": "25-01-22-09-02",
+        "actual_end_time_est": "25-01-22-10-14",
+        "notes": "First-day logistics and syllabus review"
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Ancient Mesopotamia",
+        "notes": "Instructor illness"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Classical Greece",
+        "actual_start_time_est": "25-03-03-11-00",
+        "actual_end_time_est": "25-03-03-12-15",
+        "notes": "Make-up session due to snow day"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 38,
+    "current_waitlist": 3
+  },
+  "ZG1DG4V": {
+    "course_id": "ZG1DG4V",
+    "department": "History",
+    "course_code": "HIST-3220",
+    "title": "Modern European History",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Rahul",
+      "last_name": "Sen",
+      "email": "rahul.sen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities Center",
+      "room": "HC-310"
+    },
+    "scheduled_first_meeting_est": "25-01-23-13-30",
+    "scheduled_last_meeting_est": "25-05-06-13-30",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "14-45"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Revolutions of 1848",
+        "actual_start_time_est": "25-01-23-13-31",
+        "actual_end_time_est": "25-01-23-14-44",
+        "notes": "Introductions and course overview"
+      },
+      "25-02-13": {
+        "status": "rescheduled",
+        "topic": "Industrialization and Society",
+        "actual_start_time_est": "25-02-13-16-00",
+        "actual_end_time_est": "25-02-13-17-15",
+        "notes": "Room conflict; moved to late afternoon"
+      },
+      "25-03-06": {
+        "status": "canceled",
+        "topic": "Imperialism and Colonialism",
+        "notes": "Campus closure due to weather"
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 8,
+    "current_enrollment": 35,
+    "current_waitlist": 5
+  },
+  "1U4FBQ4": {
+    "course_id": "1U4FBQ4",
+    "department": "History",
+    "course_code": "HIST-3415",
+    "title": "History of the Civil Rights Movement",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Dana",
+      "last_name": "Nguyen",
+      "email": "dana.nguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Social Sciences",
+      "room": "SS-118"
+    },
+    "scheduled_first_meeting_est": "25-01-22-15-00",
+    "scheduled_last_meeting_est": "25-05-05-15-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "15-00",
+      "end_time_est": "16-15"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Origins of Jim Crow",
+        "actual_start_time_est": "25-01-27-15-01",
+        "actual_end_time_est": "25-01-27-16-13",
+        "notes": "Active participation noted"
+      },
+      "25-02-19": {
+        "status": "held",
+        "topic": "Brown v. Board of Education",
+        "actual_start_time_est": "25-02-19-15-00",
+        "actual_end_time_est": "25-02-19-16-15",
+        "notes": null
+      },
+      "25-04-02": {
+        "status": "rescheduled",
+        "topic": "March on Washington",
+        "actual_start_time_est": "25-04-02-10-00",
+        "actual_end_time_est": "25-04-02-11-15",
+        "notes": "Rescheduled to morning due to event"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 27,
+    "current_waitlist": 0
+  },
+  "8PWD21M": {
+    "course_id": "8PWD21M",
+    "department": "Psychology",
+    "course_code": "PSYC-2001",
+    "title": "Introduction to Psychology",
+    "credits": 3,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Elaine",
+      "last_name": "Porter",
+      "email": "eporter@univ.example"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Social Sciences",
+      "room": "SS101"
+    },
+    "scheduled_first_meeting_est": "25-09-02-09-00",
+    "scheduled_last_meeting_est": "25-12-10-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-09-02": {
+        "status": "held",
+        "topic": "Course Overview and History",
+        "actual_start_time_est": "25-09-02-09-00",
+        "actual_end_time_est": "25-09-02-09-50",
+        "notes": "On time."
+      },
+      "25-09-04": {
+        "status": "canceled",
+        "topic": "Research Methods",
+        "notes": "Instructor illness."
+      },
+      "25-09-09": {
+        "status": "rescheduled",
+        "topic": "Research Methods",
+        "actual_start_time_est": "25-09-09-10-00",
+        "actual_end_time_est": "25-09-09-10-50",
+        "notes": "Room change to SS103."
+      }
+    },
+    "capacity": 120,
+    "waitlist_capacity": 20,
+    "current_enrollment": 115,
+    "current_waitlist": 5
+  },
+  "ZSXZT48": {
+    "course_id": "ZSXZT48",
+    "department": "Psychology",
+    "course_code": "PSYC-3102",
+    "title": "Cognitive Psychology",
+    "credits": 4,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Ravi",
+      "last_name": "Patel",
+      "email": "rpatel@univ.example"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Cognitive Science",
+      "room": "CS204"
+    },
+    "scheduled_first_meeting_est": "25-09-01-11-00",
+    "scheduled_last_meeting_est": "25-12-12-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-09-01": {
+        "status": "held",
+        "topic": "Attention and Perception",
+        "actual_start_time_est": "25-09-01-11-00",
+        "actual_end_time_est": "25-09-01-12-15",
+        "notes": "Introductions and syllabus."
+      },
+      "25-09-03": {
+        "status": "held",
+        "topic": "Memory Systems",
+        "actual_start_time_est": "25-09-03-11-00",
+        "actual_end_time_est": "25-09-03-12-15",
+        "notes": null
+      },
+      "25-09-08": {
+        "status": "rescheduled",
+        "topic": "Experimental Methods",
+        "actual_start_time_est": "25-09-08-12-00",
+        "actual_end_time_est": "25-09-08-13-15",
+        "notes": "Moved later due to building maintenance."
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 58,
+    "current_waitlist": 1
+  },
+  "8I0Z84P": {
+    "course_id": "8I0Z84P",
+    "department": "Psychology",
+    "course_code": "PSYC-4225",
+    "title": "Abnormal Psychology",
+    "credits": 3,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Maya",
+      "last_name": "Sanchez",
+      "email": "msanchez@univ.example"
+    },
+    "location": {
+      "campus": "Downtown",
+      "building": "Health Sciences",
+      "room": "HS310"
+    },
+    "scheduled_first_meeting_est": "25-09-03-14-00",
+    "scheduled_last_meeting_est": "25-12-10-15-15",
+    "meeting_pattern": {
+      "days": [
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-15"
+    },
+    "dates": {
+      "25-09-03": {
+        "status": "held",
+        "topic": "Introduction to Psychopathology",
+        "actual_start_time_est": "25-09-03-14-00",
+        "actual_end_time_est": "25-09-03-15-15",
+        "notes": null
+      },
+      "25-09-10": {
+        "status": "canceled",
+        "topic": "Anxiety Disorders",
+        "notes": "Weather closure."
+      },
+      "25-09-17": {
+        "status": "held",
+        "topic": "Mood Disorders",
+        "actual_start_time_est": "25-09-17-14-00",
+        "actual_end_time_est": "25-09-17-15-15",
+        "notes": "Guest speaker."
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 15,
+    "current_enrollment": 75,
+    "current_waitlist": 0
+  },
+  "K70NWGB": {
+    "course_id": "K70NWGB",
+    "department": "Literature",
+    "course_code": "LIT-2201",
+    "title": "Introduction to World Literature",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Elaine",
+      "last_name": "Park",
+      "email": "epark@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities",
+      "room": "H-201"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-05-05-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Course Overview and Gilgamesh",
+        "actual_start_time_est": "25-01-13-09-02",
+        "actual_end_time_est": "25-01-13-10-14",
+        "notes": "Introductions and syllabus review"
+      },
+      "25-01-15": {
+        "status": "held",
+        "topic": "Classical Epics",
+        "actual_start_time_est": "25-01-15-09-01",
+        "actual_end_time_est": "25-01-15-10-16",
+        "notes": null
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Greek Tragedy",
+        "notes": "Severe weather closure"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "EQZ5C5W": {
+    "course_id": "EQZ5C5W",
+    "department": "English",
+    "course_code": "ENGL-3310",
+    "title": "Shakespeare: Tragedies and Histories",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Marcus",
+      "last_name": "Lee",
+      "email": "mlee@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Old Library",
+      "room": "OL-105"
+    },
+    "scheduled_first_meeting_est": "25-01-14-11-00",
+    "scheduled_last_meeting_est": "25-05-01-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-14": {
+        "status": "held",
+        "topic": "Course Intro; Shakespeare's Theatre",
+        "actual_start_time_est": "25-01-14-11-01",
+        "actual_end_time_est": "25-01-14-12-14",
+        "notes": null
+      },
+      "25-01-16": {
+        "status": "held",
+        "topic": "Julius Caesar: Power and Rhetoric",
+        "actual_start_time_est": "25-01-16-11-00",
+        "actual_end_time_est": "25-01-16-12-15",
+        "notes": "Close reading workshop"
+      },
+      "25-02-20": {
+        "status": "rescheduled",
+        "topic": "Macbeth: Fate and Ambition",
+        "actual_start_time_est": "25-02-21-11-00",
+        "actual_end_time_est": "25-02-21-12-15",
+        "notes": "Instructor conference travel"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "DZ1NZRJ": {
+    "course_id": "DZ1NZRJ",
+    "department": "Comparative Literature",
+    "course_code": "CLIT-4105",
+    "title": "Comparative Literature Seminar: Modernism",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Sonia",
+      "last_name": "Gupta",
+      "email": "sgupta@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Seminar Hall",
+      "room": "SH-301"
+    },
+    "scheduled_first_meeting_est": "25-01-15-14-00",
+    "scheduled_last_meeting_est": "25-04-30-16-45",
+    "meeting_pattern": {
+      "days": [
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "16-45"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Modernist Manifestos",
+        "actual_start_time_est": "25-01-15-14-02",
+        "actual_end_time_est": "25-01-15-16-44",
+        "notes": "Discussion-led seminar"
+      },
+      "25-02-12": {
+        "status": "held",
+        "topic": "Stream of Consciousness",
+        "actual_start_time_est": "25-02-12-13-58",
+        "actual_end_time_est": "25-02-12-16-46",
+        "notes": null
+      },
+      "25-03-05": {
+        "status": "canceled",
+        "topic": "Poetry and Fragmentation",
+        "notes": "Room outage"
+      }
+    },
+    "capacity": 15,
+    "waitlist_capacity": 5,
+    "current_enrollment": 2,
+    "current_waitlist": 1
+  },
+  "3BFEI6E": {
+    "course_id": "3BFEI6E",
+    "department": "Mathematics",
+    "course_code": "MATH-1010",
+    "title": "Calculus I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Alice",
+      "last_name": "Nguyen",
+      "email": "alice.nguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "201"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-04-25-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Limits and Continuity",
+        "actual_start_time_est": "25-01-13-09-00",
+        "actual_end_time_est": "25-01-13-09-50",
+        "notes": "Course introduction and syllabus review"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Applications of Derivatives",
+        "notes": "Instructor illness"
+      },
+      "25-03-07": {
+        "status": "rescheduled",
+        "topic": "Integration Techniques",
+        "actual_start_time_est": "25-03-07-10-00",
+        "actual_end_time_est": "25-03-07-10-50",
+        "notes": "Moved to later slot due to department seminar"
+      }
+    },
+    "capacity": 120,
+    "waitlist_capacity": 20,
+    "current_enrollment": 118,
+    "current_waitlist": 5
+  },
+  "DIC9F2K": {
+    "course_id": "DIC9F2K",
+    "department": "Mathematics",
+    "course_code": "MATH-2410",
+    "title": "Linear Algebra",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Bob",
+      "last_name": "Patel",
+      "email": "bob.patel@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Math Center",
+      "room": "B12"
+    },
+    "scheduled_first_meeting_est": "25-01-14-13-30",
+    "scheduled_last_meeting_est": "25-04-24-14-45",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "14-45"
+    },
+    "dates": {
+      "25-01-14": {
+        "status": "held",
+        "topic": "Vectors and Matrices",
+        "actual_start_time_est": "25-01-14-13-30",
+        "actual_end_time_est": "25-01-14-14-45",
+        "notes": "Overview of course expectations"
+      },
+      "25-02-06": {
+        "status": "held",
+        "topic": "Matrix Inverses",
+        "actual_start_time_est": "25-02-06-13-30",
+        "actual_end_time_est": "25-02-06-14-45",
+        "notes": null
+      },
+      "25-03-18": {
+        "status": "canceled",
+        "topic": "Eigenvalues and Eigenvectors",
+        "notes": "Campus weather closure"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 60,
+    "current_waitlist": 3
+  },
+  "YDOA7EF": {
+    "course_id": "YDOA7EF",
+    "department": "Mathematics",
+    "course_code": "MATH-5010",
+    "title": "Real Analysis",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Carol",
+      "last_name": "Ito",
+      "email": "carol.ito@univ.edu"
+    },
+    "location": {
+      "campus": "River",
+      "building": "Graduate Studies",
+      "room": "305"
+    },
+    "scheduled_first_meeting_est": "25-01-13-15-00",
+    "scheduled_last_meeting_est": "25-04-23-16-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "15-00",
+      "end_time_est": "16-15"
+    },
+    "dates": {
+      "25-01-13": {
+        "status": "held",
+        "topic": "Measure Theory Basics",
+        "actual_start_time_est": "25-01-13-15-00",
+        "actual_end_time_est": "25-01-13-16-15",
+        "notes": null
+      },
+      "25-02-12": {
+        "status": "rescheduled",
+        "topic": "Lebesgue Integration",
+        "actual_start_time_est": "25-02-12-16-00",
+        "actual_end_time_est": "25-02-12-17-15",
+        "notes": "Room change due to maintenance"
+      },
+      "25-03-10": {
+        "status": "held",
+        "topic": "L^p Spaces",
+        "actual_start_time_est": "25-03-10-15-00",
+        "actual_end_time_est": "25-03-10-16-15",
+        "notes": null
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 18,
+    "current_waitlist": 0
+  },
+  "S2KX8C7": {
+    "course_id": "S2KX8C7",
+    "department": "Computer Science",
+    "course_code": "CS-2200",
+    "title": "Data Structures",
+    "credits": 4,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "John",
+      "last_name": "Smith",
+      "email": "jsmith@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Engineering Hall",
+      "room": "E201"
+    },
+    "scheduled_first_meeting_est": "25-09-02-09-00",
+    "scheduled_last_meeting_est": "25-12-11-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-09-02": {
+        "status": "held",
+        "topic": "Introduction and Course Overview",
+        "actual_start_time_est": "25-09-02-09-02",
+        "actual_end_time_est": "25-09-02-10-12",
+        "notes": "Reviewed syllabus and grading."
+      },
+      "25-09-04": {
+        "status": "held",
+        "topic": "Arrays and Linked Lists",
+        "actual_start_time_est": "25-09-04-09-00",
+        "actual_end_time_est": "25-09-04-10-15",
+        "notes": "In-class exercises on list operations."
+      },
+      "25-09-09": {
+        "status": "canceled",
+        "topic": "Stacks and Queues",
+        "notes": "Instructor illness."
+      },
+      "25-09-12": {
+        "status": "rescheduled",
+        "topic": "Stacks and Queues",
+        "actual_start_time_est": "25-09-12-13-00",
+        "actual_end_time_est": "25-09-12-14-15",
+        "notes": "Make-up session."
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 58,
+    "current_waitlist": 3
+  },
+  "8O9TP0V": {
+    "course_id": "8O9TP0V",
+    "department": "Computer Science",
+    "course_code": "CS-3100",
+    "title": "Design and Analysis of Algorithms",
+    "credits": 4,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Alice",
+      "last_name": "Nguyen",
+      "email": "anguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Computer Science Center",
+      "room": "CSC301"
+    },
+    "scheduled_first_meeting_est": "25-09-03-11-00",
+    "scheduled_last_meeting_est": "25-12-12-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-09-03": {
+        "status": "held",
+        "topic": "Asymptotic Notation and Analysis",
+        "actual_start_time_est": "25-09-03-11-01",
+        "actual_end_time_est": "25-09-03-12-12",
+        "notes": "Introduced Big-O, Big-Theta, Big-Omega."
+      },
+      "25-09-08": {
+        "status": "held",
+        "topic": "Divide and Conquer",
+        "actual_start_time_est": "25-09-08-11-00",
+        "actual_end_time_est": "25-09-08-12-15",
+        "notes": "Case studies: MergeSort, QuickSort."
+      },
+      "25-09-10": {
+        "status": "rescheduled",
+        "topic": "Recurrences",
+        "actual_start_time_est": "25-09-11-16-00",
+        "actual_end_time_est": "25-09-11-17-15",
+        "notes": "Moved due to building maintenance."
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 15,
+    "current_enrollment": 75,
+    "current_waitlist": 0
+  },
+  "A4NW5ZS": {
+    "course_id": "A4NW5ZS",
+    "department": "Computer Science",
+    "course_code": "CS-3410",
+    "title": "Operating Systems",
+    "credits": 4,
+    "term": "2025-FALL",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Patel",
+      "email": "ppatel@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Tech Annex",
+      "room": "TA210"
+    },
+    "scheduled_first_meeting_est": "25-09-02-14-30",
+    "scheduled_last_meeting_est": "25-12-11-15-45",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "14-30",
+      "end_time_est": "15-45"
+    },
+    "dates": {
+      "25-09-02": {
+        "status": "held",
+        "topic": "Introduction to Operating Systems",
+        "actual_start_time_est": "25-09-02-14-31",
+        "actual_end_time_est": "25-09-02-15-44",
+        "notes": "Covered course components and OS roles."
+      },
+      "25-09-04": {
+        "status": "held",
+        "topic": "Processes and Threads",
+        "actual_start_time_est": "25-09-04-14-30",
+        "actual_end_time_est": "25-09-04-15-45",
+        "notes": "Context switching demo."
+      },
+      "25-09-09": {
+        "status": "held",
+        "topic": "CPU Scheduling",
+        "actual_start_time_est": "25-09-09-14-30",
+        "actual_end_time_est": "25-09-09-15-45",
+        "notes": "Compared FCFS, SJF, RR."
+      }
+    },
+    "capacity": 70,
+    "waitlist_capacity": 12,
+    "current_enrollment": 66,
+    "current_waitlist": 2
+  },
+  "4TPW0TG": {
+    "course_id": "4TPW0TG",
+    "department": "Chemistry",
+    "course_code": "CHEM-1101",
+    "title": "General Chemistry I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Amelia",
+      "last_name": "Clark",
+      "email": "aclark@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Center",
+      "room": "CHEM101"
+    },
+    "scheduled_first_meeting_est": "25-01-21-09-00",
+    "scheduled_last_meeting_est": "25-05-05-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction, measurement, and significant figures",
+        "actual_start_time_est": "25-01-22-09-00",
+        "actual_end_time_est": "25-01-22-10-15",
+        "notes": "First lecture"
+      },
+      "25-02-10": {
+        "status": "canceled",
+        "topic": "Stoichiometry and chemical reactions",
+        "notes": "Snow day campus closure"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Thermochemistry",
+        "actual_start_time_est": "25-03-04-14-00",
+        "actual_end_time_est": "25-03-04-15-15",
+        "notes": "Rescheduled due to lab conflict"
+      }
+    },
+    "capacity": 120,
+    "waitlist_capacity": 20,
+    "current_enrollment": 118,
+    "current_waitlist": 5
+  },
+  "K373Q3S": {
+    "course_id": "K373Q3S",
+    "department": "Chemistry",
+    "course_code": "CHEM-1202",
+    "title": "General Chemistry II",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Brian",
+      "last_name": "Nguyen",
+      "email": "bnguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Center",
+      "room": "CHEM202"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Gases and kinetic molecular theory",
+        "actual_start_time_est": "25-01-28-11-00",
+        "actual_end_time_est": "25-01-28-12-15",
+        "notes": "Overview of gas laws"
+      },
+      "25-02-18": {
+        "status": "canceled",
+        "topic": "Exam review",
+        "notes": "Instructor illness"
+      },
+      "25-04-01": {
+        "status": "rescheduled",
+        "topic": "Chemical equilibrium",
+        "actual_start_time_est": "25-04-02-16-00",
+        "actual_end_time_est": "25-04-02-17-15",
+        "notes": "Moved to accommodate seminar"
+      }
+    },
+    "capacity": 100,
+    "waitlist_capacity": 15,
+    "current_enrollment": 95,
+    "current_waitlist": 0
+  },
+  "VSUHW7O": {
+    "course_id": "VSUHW7O",
+    "department": "Chemistry",
+    "course_code": "CHEM-2301",
+    "title": "Organic Chemistry I",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Srinivasan",
+      "email": "psrinivasan@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Organic Chem Building",
+      "room": "OCB-201"
+    },
+    "scheduled_first_meeting_est": "25-01-27-13-30",
+    "scheduled_last_meeting_est": "25-05-07-14-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "13-30",
+      "end_time_est": "14-45"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Bonding and structure",
+        "actual_start_time_est": "25-01-27-13-30",
+        "actual_end_time_est": "25-01-27-14-45",
+        "notes": "Course overview and syllabus"
+      },
+      "25-03-10": {
+        "status": "held",
+        "topic": "Stereochemistry",
+        "actual_start_time_est": "25-03-10-13-30",
+        "actual_end_time_est": "25-03-10-14-45",
+        "notes": "Midterm review"
+      },
+      "25-04-15": {
+        "status": "rescheduled",
+        "topic": "Substitution reactions",
+        "actual_start_time_est": "25-04-16-10-30",
+        "actual_end_time_est": "25-04-16-11-45",
+        "notes": "Room change due to maintenance"
+      }
+    },
+    "capacity": 80,
+    "waitlist_capacity": 15,
+    "current_enrollment": 80,
+    "current_waitlist": 10
+  },
+  "C5AAL2Q": {
+    "course_id": "C5AAL2Q",
+    "department": "Physical Education",
+    "course_code": "PHED-1101",
+    "title": "Foundations of Physical Fitness",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Ava",
+      "last_name": "Thompson",
+      "email": "ava.thompson@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Athletics Center",
+      "room": "Gym A"
+    },
+    "scheduled_first_meeting_est": "25-01-15-09-00",
+    "scheduled_last_meeting_est": "25-05-05-10-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Course Introduction and Fitness Assessments",
+        "actual_start_time_est": "25-01-15-09-02",
+        "actual_end_time_est": "25-01-15-10-14",
+        "notes": "Orientation and syllabus review"
+      },
+      "25-01-17": {
+        "status": "canceled",
+        "topic": "Cardiorespiratory Endurance Basics",
+        "notes": "Severe weather closure"
+      },
+      "25-01-22": {
+        "status": "rescheduled",
+        "topic": "Muscular Strength and Endurance",
+        "actual_start_time_est": "25-01-23-09-00",
+        "actual_end_time_est": "25-01-23-10-15",
+        "notes": "Rescheduled due to facility maintenance"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 28,
+    "current_waitlist": 2
+  },
+  "X5KYVAX": {
+    "course_id": "X5KYVAX",
+    "department": "Physical Education",
+    "course_code": "PHED-2203",
+    "title": "Team Sports Coaching",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Daniel",
+      "last_name": "Ortiz",
+      "email": "daniel.ortiz@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Field House",
+      "room": "Classroom 204"
+    },
+    "scheduled_first_meeting_est": "25-01-16-11-00",
+    "scheduled_last_meeting_est": "25-05-06-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-16": {
+        "status": "held",
+        "topic": "Coaching Philosophy and Ethics",
+        "actual_start_time_est": "25-01-16-11-01",
+        "actual_end_time_est": "25-01-16-12-13",
+        "notes": "Introductions and expectations"
+      },
+      "25-01-23": {
+        "status": "rescheduled",
+        "topic": "Practice Planning",
+        "actual_start_time_est": "25-01-24-11-00",
+        "actual_end_time_est": "25-01-24-12-15",
+        "notes": "Adjusted for facility availability"
+      },
+      "25-02-06": {
+        "status": "canceled",
+        "topic": "Injury Prevention Workshop",
+        "notes": "Guest speaker unavailable"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 25,
+    "current_waitlist": 3
+  },
+  "VD8IAVR": {
+    "course_id": "VD8IAVR",
+    "department": "Physical Education",
+    "course_code": "PHED-3302",
+    "title": "Kinesiology for Educators",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Mei",
+      "last_name": "Chen",
+      "email": "mei.chen@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Health Sciences",
+      "room": "Lab 310"
+    },
+    "scheduled_first_meeting_est": "25-01-15-14-00",
+    "scheduled_last_meeting_est": "25-05-05-15-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-45"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Biomechanics Fundamentals",
+        "actual_start_time_est": "25-01-15-14-01",
+        "actual_end_time_est": "25-01-15-15-44",
+        "notes": "Lab safety overview"
+      },
+      "25-02-10": {
+        "status": "held",
+        "topic": "Muscle Physiology in Movement",
+        "actual_start_time_est": "25-02-10-14-00",
+        "actual_end_time_est": "25-02-10-15-45",
+        "notes": "EMG demo"
+      },
+      "25-03-03": {
+        "status": "canceled",
+        "topic": "Midterm Review",
+        "notes": "Campus power outage"
+      }
+    },
+    "capacity": 20,
+    "waitlist_capacity": 5,
+    "current_enrollment": 18,
+    "current_waitlist": 0
+  },
+  "MQD5G8X": {
+    "course_id": "MQD5G8X",
+    "department": "Environmental Science",
+    "course_code": "ENVS-3401",
+    "title": "Climate Change Science and Policy",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Laura",
+      "last_name": "Gonzalez",
+      "email": "lgonzalez@univ.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Green Hall",
+      "room": "210"
+    },
+    "scheduled_first_meeting_est": "25-01-21-09-30",
+    "scheduled_last_meeting_est": "25-05-05-10-45",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-21": {
+        "status": "held",
+        "topic": "Course introduction and climate system overview",
+        "actual_start_time_est": "25-01-21-09-30",
+        "actual_end_time_est": "25-01-21-10-45",
+        "notes": "Welcome and syllabus review"
+      },
+      "25-02-13": {
+        "status": "canceled",
+        "topic": "Radiative forcing and energy balance",
+        "notes": "Inclement weather"
+      },
+      "25-03-04": {
+        "status": "rescheduled",
+        "topic": "Greenhouse gases and feedbacks",
+        "actual_start_time_est": "25-03-05-09-30",
+        "actual_end_time_est": "25-03-05-10-45",
+        "notes": "Instructor at conference"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 35,
+    "current_waitlist": 2
+  },
+  "QHJKAPR": {
+    "course_id": "QHJKAPR",
+    "department": "Environmental Science",
+    "course_code": "ENVS-3550",
+    "title": "Environmental Data Analysis with Python",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Samuel",
+      "last_name": "Nguyen",
+      "email": "snguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Science Center",
+      "room": "318"
+    },
+    "scheduled_first_meeting_est": "25-01-22-13-00",
+    "scheduled_last_meeting_est": "25-05-07-14-15",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "13-00",
+      "end_time_est": "14-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Intro to data analysis and tools",
+        "actual_start_time_est": "25-01-22-13-00",
+        "actual_end_time_est": "25-01-22-14-15",
+        "notes": "Installed Python and key libraries"
+      },
+      "25-02-10": {
+        "status": "held",
+        "topic": "Pandas for environmental datasets",
+        "actual_start_time_est": "25-02-10-13-00",
+        "actual_end_time_est": "25-02-10-14-15",
+        "notes": "Hands-on lab"
+      },
+      "25-03-17": {
+        "status": "canceled",
+        "topic": "Spatial data basics",
+        "notes": "Power outage"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 5,
+    "current_enrollment": 28,
+    "current_waitlist": 0
+  },
+  "YWMXUW4": {
+    "course_id": "YWMXUW4",
+    "department": "Environmental Science",
+    "course_code": "ENVS-4210",
+    "title": "Hydrology and Watershed Management",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Jane",
+      "last_name": "Waters",
+      "email": "jwaters@univ.edu"
+    },
+    "location": {
+      "campus": "North Campus",
+      "building": "River Lab",
+      "room": "102"
+    },
+    "scheduled_first_meeting_est": "25-01-23-15-30",
+    "scheduled_last_meeting_est": "25-05-08-16-45",
+    "meeting_pattern": {
+      "days": [
+        "Thursday"
+      ],
+      "start_time_est": "15-30",
+      "end_time_est": "16-45"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Water cycle fundamentals",
+        "actual_start_time_est": "25-01-23-15-30",
+        "actual_end_time_est": "25-01-23-16-45",
+        "notes": "Course overview"
+      },
+      "25-02-27": {
+        "status": "rescheduled",
+        "topic": "Streamflow measurement techniques",
+        "actual_start_time_est": "25-02-28-15-30",
+        "actual_end_time_est": "25-02-28-16-45",
+        "notes": "Rescheduled due to field equipment delay"
+      },
+      "25-04-03": {
+        "status": "held",
+        "topic": "Watershed modeling",
+        "actual_start_time_est": "25-04-03-15-30",
+        "actual_end_time_est": "25-04-03-16-45",
+        "notes": "Model calibration demo"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 22,
+    "current_waitlist": 1
+  },
+  "PWHF15Y": {
+    "course_id": "PWHF15Y",
+    "department": "Geography",
+    "course_code": "GEOG-1201",
+    "title": "Physical Geography",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Ana",
+      "last_name": "Rivers",
+      "email": "arivers@univ.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Science Hall",
+      "room": "204"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-30",
+    "scheduled_last_meeting_est": "25-05-01-10-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction to Physical Geography",
+        "actual_start_time_est": "25-01-22-09-30",
+        "actual_end_time_est": "25-01-22-10-45",
+        "notes": "Syllabus overview and course expectations"
+      },
+      "25-02-12": {
+        "status": "canceled",
+        "topic": "Weather and Climate Basics",
+        "notes": "Canceled due to snow closure"
+      },
+      "25-03-03": {
+        "status": "rescheduled",
+        "topic": "Biogeography",
+        "actual_start_time_est": "25-03-04-10-00",
+        "actual_end_time_est": "25-03-04-11-15",
+        "notes": "Shifted due to instructor conference"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 38,
+    "current_waitlist": 3
+  },
+  "99OADQ5": {
+    "course_id": "99OADQ5",
+    "department": "Geography",
+    "course_code": "GEOG-2305",
+    "title": "Geographic Information Systems",
+    "credits": 5,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Leo",
+      "last_name": "Hart",
+      "email": "lhart@univ.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Tech Center",
+      "room": "310"
+    },
+    "scheduled_first_meeting_est": "25-01-23-14-00",
+    "scheduled_last_meeting_est": "25-05-02-15-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-50"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Intro to GIS and Spatial Data",
+        "actual_start_time_est": "25-01-23-14-00",
+        "actual_end_time_est": "25-01-23-15-50",
+        "notes": "Installed GIS software"
+      },
+      "25-02-13": {
+        "status": "held",
+        "topic": "Vector Data Models",
+        "actual_start_time_est": "25-02-13-14-02",
+        "actual_end_time_est": "25-02-13-15-50",
+        "notes": "Hands-on lab with shapefiles"
+      },
+      "25-04-10": {
+        "status": "canceled",
+        "topic": "Field Data Collection",
+        "notes": "Equipment failure; to be covered next week"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 5,
+    "current_enrollment": 30,
+    "current_waitlist": 2
+  },
+  "K0XUKML": {
+    "course_id": "K0XUKML",
+    "department": "Geography",
+    "course_code": "GEOG-3412",
+    "title": "Urban Geography",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Maya",
+      "last_name": "Chen",
+      "email": "mchen@univ.edu"
+    },
+    "location": {
+      "campus": "Downtown Campus",
+      "building": "Urban Studies",
+      "room": "118"
+    },
+    "scheduled_first_meeting_est": "25-01-24-11-00",
+    "scheduled_last_meeting_est": "25-05-03-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-24": {
+        "status": "held",
+        "topic": "Urbanization and Space",
+        "actual_start_time_est": "25-01-24-11-00",
+        "actual_end_time_est": "25-01-24-12-15",
+        "notes": "Introductions and key themes"
+      },
+      "25-02-21": {
+        "status": "held",
+        "topic": "Transportation and Land Use",
+        "actual_start_time_est": "25-02-21-11-01",
+        "actual_end_time_est": "25-02-21-12-15",
+        "notes": "Case study: Transit-oriented development"
+      },
+      "25-03-28": {
+        "status": "rescheduled",
+        "topic": "Urban Inequality",
+        "actual_start_time_est": "25-03-29-09-00",
+        "actual_end_time_est": "25-03-29-10-15",
+        "notes": "Rescheduled due to building maintenance"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 22,
+    "current_waitlist": 0
+  },
+  "PRHYDZ1": {
+    "course_id": "PRHYDZ1",
+    "department": "Geography",
+    "course_code": "GEOG-2101",
+    "title": "Physical Geography",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Anna",
+      "last_name": "Rivera",
+      "email": "anna.rivera@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Hall",
+      "room": "205"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "10-15"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction to Earth's Systems",
+        "actual_start_time_est": "25-01-22-09-02",
+        "actual_end_time_est": "25-01-22-10-14",
+        "notes": "First day overview"
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Weather Systems",
+        "notes": "Snow day"
+      },
+      "25-03-17": {
+        "status": "rescheduled",
+        "topic": "Biomes and Ecosystems",
+        "actual_start_time_est": "25-03-18-09-00",
+        "actual_end_time_est": "25-03-18-10-15",
+        "notes": "Rescheduled due to conference"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 38,
+    "current_waitlist": 2
+  },
+  "ZGMUBQF": {
+    "course_id": "ZGMUBQF",
+    "department": "Geography",
+    "course_code": "GEOG-3120",
+    "title": "Geographic Information Systems",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Mark",
+      "last_name": "Chen",
+      "email": "mark.chen@univ.edu"
+    },
+    "location": {
+      "campus": "Tech",
+      "building": "GIS Center",
+      "room": "101"
+    },
+    "scheduled_first_meeting_est": "25-01-23-14-00",
+    "scheduled_last_meeting_est": "25-05-07-14-00",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "15-50"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "GIS Basics",
+        "actual_start_time_est": "25-01-23-14-01",
+        "actual_end_time_est": "25-01-23-15-48",
+        "notes": "Lab orientation"
+      },
+      "25-02-13": {
+        "status": "held",
+        "topic": "Spatial Data Models",
+        "actual_start_time_est": "25-02-13-14-00",
+        "actual_end_time_est": "25-02-13-15-50",
+        "notes": null
+      },
+      "25-04-03": {
+        "status": "canceled",
+        "topic": "Midterm Lab",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 5,
+    "current_enrollment": 30,
+    "current_waitlist": 5
+  },
+  "9IZA04H": {
+    "course_id": "9IZA04H",
+    "department": "Geography",
+    "course_code": "GEOG-3355",
+    "title": "Urban Geography",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Sofia",
+      "last_name": "Patel",
+      "email": "sofia.patel@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities Building",
+      "room": "312"
+    },
+    "scheduled_first_meeting_est": "25-01-24-11-00",
+    "scheduled_last_meeting_est": "25-05-08-11-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "11-50"
+    },
+    "dates": {
+      "25-01-24": {
+        "status": "held",
+        "topic": "Urbanization Trends",
+        "actual_start_time_est": "25-01-24-11-03",
+        "actual_end_time_est": "25-01-24-11-50",
+        "notes": "Discussion-heavy session"
+      },
+      "25-02-21": {
+        "status": "rescheduled",
+        "topic": "Transport Networks",
+        "actual_start_time_est": "25-02-22-11-00",
+        "actual_end_time_est": "25-02-22-11-50",
+        "notes": "Room maintenance"
+      },
+      "25-03-14": {
+        "status": "held",
+        "topic": "Housing and Inequality",
+        "actual_start_time_est": "25-03-14-11-00",
+        "actual_end_time_est": "25-03-14-11-49",
+        "notes": null
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 8,
+    "current_enrollment": 33,
+    "current_waitlist": 1
+  },
+  "AX7VQ2C": {
+    "course_id": "AX7VQ2C",
+    "department": "MUSC",
+    "course_code": "MUSC-1201",
+    "title": "Music Theory I",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Alicia",
+      "last_name": "Keys",
+      "email": "alicia.keys@music.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Performing Arts Center",
+      "room": "PAC-101"
+    },
+    "scheduled_first_meeting_est": "25-01-13-09-00",
+    "scheduled_last_meeting_est": "25-05-05-09-50",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-00",
+      "end_time_est": "09-50"
+    },
+    "dates": {
+      "25-02-03": {
+        "status": "held",
+        "topic": "Intervals and Scales",
+        "actual_start_time_est": "25-02-03-09-00",
+        "actual_end_time_est": "25-02-03-09-50",
+        "notes": "Introduced course expectations and syllabus overview"
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Triads and Seventh Chords",
+        "notes": "Class canceled due to weather; materials posted online"
+      },
+      "25-02-07": {
+        "status": "rescheduled",
+        "topic": "Rhythmic Notation and Meter",
+        "actual_start_time_est": "25-02-08-10-00",
+        "actual_end_time_est": "25-02-08-10-50",
+        "notes": "Make-up session held on Saturday"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 28,
+    "current_waitlist": 3
+  },
+  "19IPBNY": {
+    "course_id": "19IPBNY",
+    "department": "MUSC",
+    "course_code": "MUSC-2310",
+    "title": "History of Jazz",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Wynton",
+      "last_name": "Marsalis",
+      "email": "wynton.marsalis@music.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Music Hall",
+      "room": "MH-205"
+    },
+    "scheduled_first_meeting_est": "25-01-14-11-00",
+    "scheduled_last_meeting_est": "25-05-06-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-02-04": {
+        "status": "held",
+        "topic": "Origins of Jazz: Ragtime and Blues",
+        "actual_start_time_est": "25-02-04-11-00",
+        "actual_end_time_est": "25-02-04-12-15",
+        "notes": "Guest audio examples from early recordings"
+      },
+      "25-02-06": {
+        "status": "rescheduled",
+        "topic": "New Orleans and Early Jazz",
+        "actual_start_time_est": "25-02-06-15-00",
+        "actual_end_time_est": "25-02-06-16-15",
+        "notes": "Moved to afternoon due to faculty meeting"
+      },
+      "25-02-11": {
+        "status": "held",
+        "topic": "Swing Era and Big Bands",
+        "actual_start_time_est": "25-02-11-11-00",
+        "actual_end_time_est": "25-02-11-12-15",
+        "notes": null
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 15,
+    "current_enrollment": 60,
+    "current_waitlist": 10
+  },
+  "SFFSVG3": {
+    "course_id": "SFFSVG3",
+    "department": "MUSC",
+    "course_code": "MUSC-3455",
+    "title": "Digital Music Production",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Nadia",
+      "last_name": "Rivera",
+      "email": "nadia.rivera@music.edu"
+    },
+    "location": {
+      "campus": "Downtown",
+      "building": "Tech Arts Lab",
+      "room": "TAL-312"
+    },
+    "scheduled_first_meeting_est": "25-01-15-14-00",
+    "scheduled_last_meeting_est": "25-05-07-16-45",
+    "meeting_pattern": {
+      "days": [
+        "Wednesday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "16-45"
+    },
+    "dates": {
+      "25-02-05": {
+        "status": "held",
+        "topic": "DAW Fundamentals and Signal Flow",
+        "actual_start_time_est": "25-02-05-14-00",
+        "actual_end_time_est": "25-02-05-16-45",
+        "notes": "Lab orientation completed"
+      },
+      "25-02-12": {
+        "status": "held",
+        "topic": "MIDI Programming and Virtual Instruments",
+        "actual_start_time_est": "25-02-12-14-00",
+        "actual_end_time_est": "25-02-12-16-45",
+        "notes": null
+      },
+      "25-02-19": {
+        "status": "canceled",
+        "topic": "Audio Recording Techniques",
+        "notes": "Equipment maintenance; reschedule pending"
+      }
+    },
+    "capacity": 24,
+    "waitlist_capacity": 8,
+    "current_enrollment": 22,
+    "current_waitlist": 0
+  },
+  "W53ZOH8": {
+    "course_id": "W53ZOH8",
+    "department": "History",
+    "course_code": "HIST-2101",
+    "title": "Ancient Civilizations",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Emily",
+      "last_name": "Carter",
+      "email": "ecarter@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities Hall",
+      "room": "HUM-201"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-30",
+    "scheduled_last_meeting_est": "25-05-05-10-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-22": {
+        "status": "held",
+        "topic": "Introduction to Ancient Worlds",
+        "actual_start_time_est": "25-01-22-09-30",
+        "actual_end_time_est": "25-01-22-10-45",
+        "notes": "Syllabus overview and course expectations"
+      },
+      "25-02-03": {
+        "status": "canceled",
+        "topic": "Mesopotamia",
+        "notes": "Snow closure"
+      },
+      "25-02-07": {
+        "status": "rescheduled",
+        "topic": "Mesopotamia (Make-up Session)",
+        "actual_start_time_est": "25-02-07-09-30",
+        "actual_end_time_est": "25-02-07-10-45",
+        "notes": "Rescheduled due to earlier cancellation"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 38,
+    "current_waitlist": 2
+  },
+  "FVHSUHH": {
+    "course_id": "FVHSUHH",
+    "department": "History",
+    "course_code": "HIST-3320",
+    "title": "U.S. History Since 1865",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Marcus",
+      "last_name": "Lee",
+      "email": "marcus.lee@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Liberal Arts Center",
+      "room": "LAC-305"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-23": {
+        "status": "held",
+        "topic": "Reconstruction Era",
+        "actual_start_time_est": "25-01-23-11-00",
+        "actual_end_time_est": "25-01-23-12-15",
+        "notes": "Course framing and historiography of Reconstruction"
+      },
+      "25-02-13": {
+        "status": "canceled",
+        "topic": "Industrialization",
+        "notes": "Instructor illness"
+      },
+      "25-02-21": {
+        "status": "rescheduled",
+        "topic": "Gilded Age",
+        "actual_start_time_est": "25-02-21-11-00",
+        "actual_end_time_est": "25-02-21-12-15",
+        "notes": "Make-up for missed session on 25-02-13"
+      }
+    },
+    "capacity": 35,
+    "waitlist_capacity": 5,
+    "current_enrollment": 35,
+    "current_waitlist": 3
+  },
+  "LOX9P7O": {
+    "course_id": "LOX9P7O",
+    "department": "History",
+    "course_code": "HIST-4512",
+    "title": "Global Historiography",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Aisha",
+      "last_name": "Rahman",
+      "email": "aisha.rahman@univ.edu"
+    },
+    "location": {
+      "campus": "Downtown",
+      "building": "Riverview Academic Center",
+      "room": "RAC-410"
+    },
+    "scheduled_first_meeting_est": "25-01-24-14-00",
+    "scheduled_last_meeting_est": "25-05-08-16-30",
+    "meeting_pattern": {
+      "days": [
+        "Thursday"
+      ],
+      "start_time_est": "14-00",
+      "end_time_est": "16-30"
+    },
+    "dates": {
+      "25-01-24": {
+        "status": "held",
+        "topic": "What is Historiography?",
+        "actual_start_time_est": "25-01-24-14-00",
+        "actual_end_time_est": "25-01-24-16-30",
+        "notes": "Introductions and scope"
+      },
+      "25-02-06": {
+        "status": "canceled",
+        "topic": "Classical vs. Modern Historians",
+        "notes": "Campus event conflict"
+      },
+      "25-02-14": {
+        "status": "rescheduled",
+        "topic": "Classical vs. Modern Historians (Make-up)",
+        "actual_start_time_est": "25-02-14-14-00",
+        "actual_end_time_est": "25-02-14-16-30",
+        "notes": "Rescheduled to Friday"
+      }
+    },
+    "capacity": 20,
+    "waitlist_capacity": 5,
+    "current_enrollment": 18,
+    "current_waitlist": 0
+  },
+  "QUK1LHQ": {
+    "course_id": "QUK1LHQ",
+    "department": "English",
+    "course_code": "ENGL-2010",
+    "title": "Introduction to Literary Analysis",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Alice",
+      "last_name": "Henderson",
+      "email": "alice.henderson@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Liberal Arts",
+      "room": "LA-204"
+    },
+    "scheduled_first_meeting_est": "25-01-22-09-30",
+    "scheduled_last_meeting_est": "25-05-05-09-30",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-02-03": {
+        "status": "held",
+        "topic": "Close Reading: Poetry",
+        "actual_start_time_est": "25-02-03-09-31",
+        "actual_end_time_est": "25-02-03-10-46",
+        "notes": "Syllabus quiz completed"
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Narrative Structure",
+        "notes": "Weather closure"
+      },
+      "25-02-10": {
+        "status": "rescheduled",
+        "topic": "Figurative Language",
+        "actual_start_time_est": "25-02-11-09-30",
+        "actual_end_time_est": "25-02-11-10-45",
+        "notes": "Shifted due to campus event"
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 24,
+    "current_waitlist": 0
+  },
+  "QAAVLX6": {
+    "course_id": "QAAVLX6",
+    "department": "English",
+    "course_code": "ENGL-3150",
+    "title": "Shakespeare: Tragedies and Histories",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Benjamin",
+      "last_name": "Cho",
+      "email": "benjamin.cho@university.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Humanities",
+      "room": "HUM-310"
+    },
+    "scheduled_first_meeting_est": "25-01-23-11-00",
+    "scheduled_last_meeting_est": "25-05-06-11-00",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-02-04": {
+        "status": "held",
+        "topic": "Hamlet: Act I",
+        "actual_start_time_est": "25-02-04-11-00",
+        "actual_end_time_est": "25-02-04-12-15",
+        "notes": "Introduced course project"
+      },
+      "25-02-06": {
+        "status": "held",
+        "topic": "Hamlet: Act II",
+        "actual_start_time_est": "25-02-06-11-01",
+        "actual_end_time_est": "25-02-06-12-14",
+        "notes": null
+      },
+      "25-02-11": {
+        "status": "rescheduled",
+        "topic": "Hamlet: Act III",
+        "actual_start_time_est": "25-02-12-11-00",
+        "actual_end_time_est": "25-02-12-12-15",
+        "notes": "Rescheduled due to departmental colloquium"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 25,
+    "current_waitlist": 3
+  },
+  "4Y985YM": {
+    "course_id": "4Y985YM",
+    "department": "English",
+    "course_code": "ENGL-2210",
+    "title": "Creative Writing Workshop",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Clara",
+      "last_name": "Nguyen",
+      "email": "clara.nguyen@university.edu"
+    },
+    "location": {
+      "campus": "Downtown",
+      "building": "Writers House",
+      "room": "WH-101"
+    },
+    "scheduled_first_meeting_est": "25-01-24-14-15",
+    "scheduled_last_meeting_est": "25-05-02-14-15",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "14-15",
+      "end_time_est": "15-45"
+    },
+    "dates": {
+      "25-02-07": {
+        "status": "held",
+        "topic": "Workshop: Finding Your Voice",
+        "actual_start_time_est": "25-02-07-14-16",
+        "actual_end_time_est": "25-02-07-15-45",
+        "notes": "Prompt-based freewriting"
+      },
+      "25-02-14": {
+        "status": "canceled",
+        "topic": "Peer Review Round 1",
+        "notes": "Instructor illness"
+      },
+      "25-02-21": {
+        "status": "held",
+        "topic": "Poetry Drafts and Feedback",
+        "actual_start_time_est": "25-02-21-14-15",
+        "actual_end_time_est": "25-02-21-15-44",
+        "notes": null
+      }
+    },
+    "capacity": 18,
+    "waitlist_capacity": 6,
+    "current_enrollment": 16,
+    "current_waitlist": 2
+  },
+  "ODT8HFM": {
+    "course_id": "ODT8HFM",
+    "department": "Physics",
+    "course_code": "PHYS-1101",
+    "title": "Classical Mechanics I",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Laura",
+      "last_name": "Nguyen",
+      "email": "lnguyen@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Physics Hall",
+      "room": "PH-101"
+    },
+    "scheduled_first_meeting_est": "25-01-27-09-30",
+    "scheduled_last_meeting_est": "25-05-02-09-30",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday",
+        "Friday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-20"
+    },
+    "dates": {
+      "25-01-27": {
+        "status": "held",
+        "topic": "Vectors and Kinematics",
+        "actual_start_time_est": "25-01-27-09-31",
+        "actual_end_time_est": "25-01-27-10-19",
+        "notes": "Course introduction and syllabus review"
+      },
+      "25-01-29": {
+        "status": "canceled",
+        "topic": "Newton's Laws",
+        "notes": "Campus closure due to weather"
+      },
+      "25-01-31": {
+        "status": "rescheduled",
+        "topic": "Newton's Laws",
+        "actual_start_time_est": "25-02-01-11-00",
+        "actual_end_time_est": "25-02-01-11-50",
+        "notes": "Made up on Saturday"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 10,
+    "current_enrollment": 54,
+    "current_waitlist": 2
+  },
+  "S2MDNKR": {
+    "course_id": "S2MDNKR",
+    "department": "Physics",
+    "course_code": "PHYS-2202",
+    "title": "Electromagnetism II",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Diego",
+      "last_name": "Martinez",
+      "email": "dmartinez@univ.edu"
+    },
+    "location": {
+      "campus": "Main",
+      "building": "Science Center",
+      "room": "SC-204"
+    },
+    "scheduled_first_meeting_est": "25-01-28-11-00",
+    "scheduled_last_meeting_est": "25-05-01-12-15",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "11-00",
+      "end_time_est": "12-15"
+    },
+    "dates": {
+      "25-01-28": {
+        "status": "held",
+        "topic": "Maxwell's Equations Review",
+        "actual_start_time_est": "25-01-28-11-02",
+        "actual_end_time_est": "25-01-28-12-14",
+        "notes": null
+      },
+      "25-01-30": {
+        "status": "held",
+        "topic": "Wave Propagation",
+        "actual_start_time_est": "25-01-30-11-00",
+        "actual_end_time_est": "25-01-30-12-13",
+        "notes": "Assigned problem set 1"
+      },
+      "25-02-04": {
+        "status": "rescheduled",
+        "topic": "Boundary Conditions",
+        "actual_start_time_est": "25-02-05-13-00",
+        "actual_end_time_est": "25-02-05-14-15",
+        "notes": "Room change due to maintenance"
+      }
+    },
+    "capacity": 45,
+    "waitlist_capacity": 8,
+    "current_enrollment": 43,
+    "current_waitlist": 0
+  },
+  "JISQIPF": {
+    "course_id": "JISQIPF",
+    "department": "Physics",
+    "course_code": "PHYS-5500",
+    "title": "Quantum Field Theory Seminar",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Mei",
+      "last_name": "Zhang",
+      "email": "mzhang@univ.edu"
+    },
+    "location": {
+      "campus": "City",
+      "building": "Graduate Physics Center",
+      "room": "GPC-3B"
+    },
+    "scheduled_first_meeting_est": "25-01-29-15-00",
+    "scheduled_last_meeting_est": "25-04-30-17-30",
+    "meeting_pattern": {
+      "days": [
+        "Wednesday"
+      ],
+      "start_time_est": "15-00",
+      "end_time_est": "17-30"
+    },
+    "dates": {
+      "25-01-29": {
+        "status": "held",
+        "topic": "Path Integrals Overview",
+        "actual_start_time_est": "25-01-29-15-01",
+        "actual_end_time_est": "25-01-29-17-28",
+        "notes": "Introductions and syllabus"
+      },
+      "25-02-05": {
+        "status": "held",
+        "topic": "Scalar Fields",
+        "actual_start_time_est": "25-02-05-15-00",
+        "actual_end_time_est": "25-02-05-17-31",
+        "notes": "Guest speaker"
+      },
+      "25-02-12": {
+        "status": "canceled",
+        "topic": "Spinor Fields",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 25,
+    "waitlist_capacity": 5,
+    "current_enrollment": 22,
+    "current_waitlist": 1
+  },
+  "TDK78Y8": {
+    "course_id": "TDK78Y8",
+    "department": "Public Health",
+    "course_code": "HLTH-2100",
+    "title": "Introduction to Public Health",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Emma",
+      "last_name": "Rivera",
+      "email": "emma.rivera@uni.edu"
+    },
+    "location": {
+      "campus": "Health Sciences Campus",
+      "building": "Wellness Center",
+      "room": "WCN-201"
+    },
+    "scheduled_first_meeting_est": "25-01-15-09-30",
+    "scheduled_last_meeting_est": "25-05-01-10-45",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "10-45"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Course Introduction and the Determinants of Health",
+        "actual_start_time_est": "25-01-15-09-32",
+        "actual_end_time_est": "25-01-15-10-47",
+        "notes": "Late start due to syllabus distribution"
+      },
+      "25-02-05": {
+        "status": "canceled",
+        "topic": "Epidemiology Basics",
+        "notes": "Campus closure due to weather"
+      },
+      "25-03-12": {
+        "status": "rescheduled",
+        "topic": "Health Policy and Ethics",
+        "actual_start_time_est": "25-03-13-09-30",
+        "actual_end_time_est": "25-03-13-10-45",
+        "notes": "Rescheduled for instructor conference"
+      }
+    },
+    "capacity": 60,
+    "waitlist_capacity": 15,
+    "current_enrollment": 48,
+    "current_waitlist": 5
+  },
+  "CLXWM4M": {
+    "course_id": "CLXWM4M",
+    "department": "Nursing",
+    "course_code": "NURS-3305",
+    "title": "Community Health Nursing",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Daniel",
+      "last_name": "Cho",
+      "email": "daniel.cho@uni.edu"
+    },
+    "location": {
+      "campus": "Health Sciences Campus",
+      "building": "Nursing Hall",
+      "room": "NH-310"
+    },
+    "scheduled_first_meeting_est": "25-01-16-13-00",
+    "scheduled_last_meeting_est": "25-05-02-14-50",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "13-00",
+      "end_time_est": "14-50"
+    },
+    "dates": {
+      "25-01-16": {
+        "status": "held",
+        "topic": "Community Assessment Frameworks",
+        "actual_start_time_est": "25-01-16-13-02",
+        "actual_end_time_est": "25-01-16-14-48",
+        "notes": "Introductions and course overview"
+      },
+      "25-02-13": {
+        "status": "held",
+        "topic": "Vaccination Clinics: Planning and Execution",
+        "actual_start_time_est": "25-02-13-13-00",
+        "actual_end_time_est": "25-02-13-14-50",
+        "notes": "Simulation lab session"
+      },
+      "25-03-20": {
+        "status": "canceled",
+        "topic": "Chronic Disease Management in the Community",
+        "notes": "Instructor illness"
+      }
+    },
+    "capacity": 40,
+    "waitlist_capacity": 10,
+    "current_enrollment": 38,
+    "current_waitlist": 3
+  },
+  "YGV8T77": {
+    "course_id": "YGV8T77",
+    "department": "Health Informatics",
+    "course_code": "HINF-4050",
+    "title": "Health Informatics and Data Analytics",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Priya",
+      "last_name": "Nair",
+      "email": "priya.nair@uni.edu"
+    },
+    "location": {
+      "campus": "Innovation Campus",
+      "building": "Bioinformatics Center",
+      "room": "BIC-120"
+    },
+    "scheduled_first_meeting_est": "25-01-17-15-30",
+    "scheduled_last_meeting_est": "25-05-03-16-45",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "15-30",
+      "end_time_est": "16-45"
+    },
+    "dates": {
+      "25-01-17": {
+        "status": "held",
+        "topic": "Introduction to Health Data Standards",
+        "actual_start_time_est": "25-01-17-15-31",
+        "actual_end_time_est": "25-01-17-16-44",
+        "notes": "Overview of HL7 and ICD"
+      },
+      "25-02-14": {
+        "status": "rescheduled",
+        "topic": "FHIR and Interoperability",
+        "actual_start_time_est": "25-02-15-10-00",
+        "actual_end_time_est": "25-02-15-11-15",
+        "notes": "Rescheduled due to campus event"
+      },
+      "25-04-11": {
+        "status": "held",
+        "topic": "Predictive Analytics for Population Health",
+        "actual_start_time_est": "25-04-11-15-30",
+        "actual_end_time_est": "25-04-11-16-45",
+        "notes": "Guest speaker session"
+      }
+    },
+    "capacity": 50,
+    "waitlist_capacity": 12,
+    "current_enrollment": 45,
+    "current_waitlist": 7
+  },
+  "SPF5PK3": {
+    "course_id": "SPF5PK3",
+    "department": "English",
+    "course_code": "ENGL-2101",
+    "title": "British Literature I",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Emily",
+      "last_name": "Hart",
+      "email": "emily.hart@university.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Liberal Arts",
+      "room": "LA-204"
+    },
+    "scheduled_first_meeting_est": "25-01-15-10-00",
+    "scheduled_last_meeting_est": "25-05-01-10-00",
+    "meeting_pattern": {
+      "days": [
+        "Monday",
+        "Wednesday"
+      ],
+      "start_time_est": "10-00",
+      "end_time_est": "11-15"
+    },
+    "dates": {
+      "25-01-15": {
+        "status": "held",
+        "topic": "Introduction to Old English Poetry",
+        "actual_start_time_est": "25-01-15-10-02",
+        "actual_end_time_est": "25-01-15-11-14",
+        "notes": "Reviewed syllabus and course expectations."
+      },
+      "25-01-22": {
+        "status": "canceled",
+        "topic": "Epic Tradition",
+        "notes": "Instructor illness."
+      },
+      "25-01-27": {
+        "status": "rescheduled",
+        "topic": "Beowulf",
+        "actual_start_time_est": "25-01-28-10-00",
+        "actual_end_time_est": "25-01-28-11-15",
+        "notes": "Rescheduled due to weather."
+      }
+    },
+    "capacity": 30,
+    "waitlist_capacity": 10,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  },
+  "NM1TS7F": {
+    "course_id": "NM1TS7F",
+    "department": "English",
+    "course_code": "ENGL-2205",
+    "title": "Shakespearean Drama",
+    "credits": 4,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "David",
+      "last_name": "Nguyen",
+      "email": "d.nguyen@university.edu"
+    },
+    "location": {
+      "campus": "Main Campus",
+      "building": "Humanities Center",
+      "room": "HC-310"
+    },
+    "scheduled_first_meeting_est": "25-01-16-13-00",
+    "scheduled_last_meeting_est": "25-05-02-13-00",
+    "meeting_pattern": {
+      "days": [
+        "Tuesday",
+        "Thursday"
+      ],
+      "start_time_est": "13-00",
+      "end_time_est": "14-50"
+    },
+    "dates": {
+      "25-01-16": {
+        "status": "held",
+        "topic": "Shakespeare and the Elizabethan Stage",
+        "actual_start_time_est": "25-01-16-13-02",
+        "actual_end_time_est": "25-01-16-14-48",
+        "notes": "Introductions and course overview."
+      },
+      "25-02-06": {
+        "status": "canceled",
+        "topic": "Comedies and Histories",
+        "notes": "Campus closure."
+      },
+      "25-02-13": {
+        "status": "held",
+        "topic": "Henry IV, Part 1",
+        "actual_start_time_est": "25-02-13-13-01",
+        "actual_end_time_est": "25-02-13-14-49",
+        "notes": "Discussion-led seminar."
+      }
+    },
+    "capacity": 28,
+    "waitlist_capacity": 8,
+    "current_enrollment": 2,
+    "current_waitlist": 0
+  },
+  "N7HLYB5": {
+    "course_id": "N7HLYB5",
+    "department": "English",
+    "course_code": "ENGL-3302",
+    "title": "Creative Writing Workshop",
+    "credits": 3,
+    "term": "2025-SPRING",
+    "instructor": {
+      "first_name": "Aisha",
+      "last_name": "Bennett",
+      "email": "aisha.bennett@university.edu"
+    },
+    "location": {
+      "campus": "Downtown Campus",
+      "building": "Arts Annex",
+      "room": "AA-105"
+    },
+    "scheduled_first_meeting_est": "25-01-17-09-30",
+    "scheduled_last_meeting_est": "25-04-30-09-30",
+    "meeting_pattern": {
+      "days": [
+        "Friday"
+      ],
+      "start_time_est": "09-30",
+      "end_time_est": "12-00"
+    },
+    "dates": {
+      "25-01-17": {
+        "status": "held",
+        "topic": "Workshop Orientation",
+        "actual_start_time_est": "25-01-17-09-31",
+        "actual_end_time_est": "25-01-17-11-58",
+        "notes": "Reviewed workshop guidelines."
+      },
+      "25-02-07": {
+        "status": "rescheduled",
+        "topic": "Narrative Voice",
+        "actual_start_time_est": "25-02-06-09-30",
+        "actual_end_time_est": "25-02-06-12-00",
+        "notes": "Moved earlier to avoid holiday weekend."
+      },
+      "25-03-07": {
+        "status": "held",
+        "topic": "Peer Critique Session",
+        "actual_start_time_est": "25-03-07-09-30",
+        "actual_end_time_est": "25-03-07-11-59",
+        "notes": "Small group feedback."
+      }
+    },
+    "capacity": 18,
+    "waitlist_capacity": 5,
+    "current_enrollment": 1,
+    "current_waitlist": 0
+  }
+}

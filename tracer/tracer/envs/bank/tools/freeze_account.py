@@ -1,0 +1,52 @@
+import json
+from typing import Any, Dict, Optional, Tuple
+
+from tracer.envs.tool import Tool
+
+
+def _find_account(
+    data: Dict[str, Any], account_id: str
+) -> Tuple[Optional[str], Optional[Dict[str, Any]]]:
+    for client_id, client in data["clients"].items():
+        if account_id in client["accounts"]:
+            return client_id, client["accounts"][account_id]
+    return None, None
+
+
+class FreezeAccountTool(Tool):
+    @staticmethod
+    def invoke(data: Dict[str, Any], account_id: str, reason: str) -> str:
+        _, account = _find_account(data, account_id)
+        if account is None:
+            return "Error: Account not found"
+        if account["status"] == "closed":
+            return "Error: Account is closed and cannot be frozen"
+        account["status"] = "frozen"
+        return json.dumps(account)
+
+    @staticmethod
+    def get_info() -> Dict[str, Any]:
+        return {
+            "type": "function",
+            "function": {
+                "name": "freeze_account",
+                "description": (
+                    "Freeze an account (set status to 'frozen'). The agent should get explicit "
+                    "user confirmation (yes/no) before calling."
+                ),
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "The account id.",
+                        },
+                        "reason": {
+                            "type": "string",
+                            "description": "Reason for freezing.",
+                        },
+                    },
+                    "required": ["account_id", "reason"],
+                },
+            },
+        }

@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0",
+  "title": "emotion_persona_schema",
+  "source": {
+    "name": "Atlas of Emotions",
+    "url": "https://atlasofemotions.org/",
+    "notes": [
+      "Core hierarchy is based on the five Atlas emotion families.",
+      "Curated customer-service subcategories are trimmed for practical synthetic instruction generation."
+    ]
+  },
+  "hierarchy": {
+    "anger": [
+      "annoyance",
+      "frustration",
+      "argumentativeness",
+      "bitterness",
+      "exasperation",
+      "vengefulness",
+      "fury"
+    ],
+    "fear": [
+      "trepidation",
+      "anxiety",
+      "nervousness",
+      "dread",
+      "desperation",
+      "panic",
+      "horror",
+      "terror"
+    ],
+    "disgust": [
+      "dislike",
+      "aversion",
+      "distaste",
+      "repugnance",
+      "revulsion",
+      "abhorrence",
+      "loathing"
+    ],
+    "sadness": [
+      "disappointment",
+      "resignation",
+      "distraughtness",
+      "discouragement",
+      "helplessness",
+      "misery",
+      "hopelessness",
+      "grief",
+      "despair",
+      "sorrow",
+      "anguish"
+    ],
+    "enjoyment": [
+      "sensory_pleasure",
+      "rejoicing",
+      "amusement",
+      "relief",
+      "compassion_joy",
+      "schadenfreude",
+      "fiero",
+      "naches",
+      "pride",
+      "wonder",
+      "peace",
+      "excitement",
+      "ecstasy"
+    ]
+  },
+  "customer_service_curated_hierarchy": {
+    "anger": [
+      "annoyance",
+      "frustration",
+      "argumentativeness",
+      "bitterness",
+      "exasperation"
+    ],
+    "fear": [
+      "anxiety",
+      "nervousness",
+      "dread",
+      "desperation"
+    ],
+    "disgust": [
+      "dislike",
+      "aversion",
+      "distaste",
+      "repugnance"
+    ],
+    "sadness": [
+      "disappointment",
+      "discouragement",
+      "helplessness",
+      "hopelessness",
+      "sorrow"
+    ],
+    "enjoyment": [
+      "relief",
+      "pride",
+      "peace",
+      "excitement"
+    ]
+  },
+  "generation_dimensions": {
+    "politeness": [
+      "warm",
+      "neutral",
+      "cold"
+    ],
+    "urgency": [
+      "low",
+      "moderate",
+      "high"
+    ],
+    "trust_in_agent": [
+      "trusting",
+      "cautious",
+      "skeptical"
+    ]
+  }
+}

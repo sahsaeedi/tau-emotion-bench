@@ -1,0 +1,21 @@
+{
+  "configs": [
+    "evaluator/config/eval_config_airline.json",
+    "evaluator/config/eval_config_bank.json",
+    "evaluator/config/eval_config_basketball.json",
+    "evaluator/config/eval_config_movie.json",
+    "evaluator/config/eval_config_restaurant.json",
+    "evaluator/config/eval_config_retail.json",
+    "evaluator/config/eval_config_school.json",
+    "evaluator/config/eval_config_telecom.json",
+    "evaluator/config/eval_config_telehealth.json",
+    "evaluator/config/eval_config_travel.json"
+  ],
+  "eval_model_provider": "openai",
+  "eval_model": "gpt-4.1",
+  "eval_temperature": 0.0,
+  "api_base": null,
+  "start_index": 0,
+  "end_index": null,
+  "task_ids": null
+}

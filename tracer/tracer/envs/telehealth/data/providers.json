@@ -1,0 +1,6304 @@
+{
+    "dr_smith_cardiology": {
+        "provider_id": "dr_smith_cardiology",
+        "name": {
+            "first_name": "Robert",
+            "last_name": "Smith",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD12345",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 100-2001",
+            "email": "dr.smith@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "15:00",
+                "16:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "15:00",
+                "16:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "15:00",
+                "16:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "15:00"
+            ],
+            "sunday": [
+                "16:00"
+            ]
+        },
+        "consultation_fee": 200.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 15
+    },
+    "dr_thompson_cardiology": {
+        "provider_id": "dr_thompson_cardiology",
+        "name": {
+            "first_name": "Margaret",
+            "last_name": "Thompson",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD67890",
+        "credentials": [
+            "MD",
+            "FACC",
+            "FSCAI"
+        ],
+        "contact": {
+            "phone": "(555) 100-2005",
+            "email": "dr.thompson@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "08:30",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 275.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 25
+    },
+    "dr_patel_dermatology": {
+        "provider_id": "dr_patel_dermatology",
+        "name": {
+            "first_name": "Priya",
+            "last_name": "Patel",
+            "title": "MD"
+        },
+        "specialty": "Dermatology",
+        "license_number": "MD23456",
+        "credentials": [
+            "MD",
+            "FAAD"
+        ],
+        "contact": {
+            "phone": "(555) 100-2002",
+            "email": "dr.patel@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ]
+        },
+        "consultation_fee": 175.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 12
+    },
+    "dr_williams_psychiatry": {
+        "provider_id": "dr_williams_psychiatry",
+        "name": {
+            "first_name": "Jennifer",
+            "last_name": "Williams",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD34567",
+        "credentials": [
+            "MD",
+            "Board Certified Psychiatrist"
+        ],
+        "contact": {
+            "phone": "(555) 100-2003",
+            "email": "dr.williams@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "friday": [
+                "14:00",
+                "15:00",
+                "16:00"
+            ]
+        },
+        "consultation_fee": 250.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 20
+    },
+    "dr_garcia_primary": {
+        "provider_id": "dr_garcia_primary",
+        "name": {
+            "first_name": "Carlos",
+            "last_name": "Garcia",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD45678",
+        "credentials": [
+            "MD",
+            "Board Certified Family Medicine"
+        ],
+        "contact": {
+            "phone": "(555) 100-2004",
+            "email": "dr.garcia@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "06:00",
+                "08:00",
+                "08:30",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "tuesday": [
+                "06:00",
+                "08:00",
+                "09:00",
+                "10:00",
+                "10:30",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "wednesday": [
+                "06:00",
+                "08:00",
+                "09:00",
+                "09:30",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "06:00",
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "friday": [
+                "06:00",
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "sunday": [
+                "09:30"
+            ]
+        },
+        "consultation_fee": 150.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 10
+    },
+    "dr_lee_dermatology": {
+        "provider_id": "dr_lee_dermatology",
+        "name": {
+            "first_name": "Sarah",
+            "last_name": "Lee",
+            "title": "MD"
+        },
+        "specialty": "Dermatology",
+        "license_number": "MD56789",
+        "credentials": [
+            "MD",
+            "FAAD"
+        ],
+        "contact": {
+            "phone": "(555) 100-2005",
+            "email": "dr.lee@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "15:00",
+                "16:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "16:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "15:00",
+                "16:00"
+            ]
+        },
+        "consultation_fee": 180.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 8
+    },
+    "pharmacist_jones": {
+        "provider_id": "pharmacist_jones",
+        "name": {
+            "first_name": "Evelyn",
+            "last_name": "Jones",
+            "title": "PharmD"
+        },
+        "specialty": "Pharmacy",
+        "license_number": "PH123456",
+        "credentials": [
+            "PharmD",
+            "BCACP"
+        ],
+        "contact": {
+            "phone": "(555) 100-2010",
+            "email": "pharmacist.jones@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "09:30",
+                "10:00",
+                "14:00",
+                "14:30",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "09:30",
+                "10:00",
+                "14:00",
+                "14:30",
+                "15:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "09:30",
+                "10:00",
+                "14:00",
+                "14:30"
+            ],
+            "thursday": [
+                "09:00",
+                "09:30",
+                "10:00",
+                "14:00",
+                "14:30",
+                "15:00"
+            ],
+            "friday": [
+                "09:00",
+                "09:30",
+                "10:00",
+                "13:30",
+                "14:00"
+            ],
+            "saturday": [
+                "10:00",
+                "10:30",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 90.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 12
+    },
+    "dr_nguyen_pediatrics": {
+        "provider_id": "dr_nguyen_pediatrics",
+        "name": {
+            "first_name": "Lan",
+            "last_name": "Nguyen",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD778899",
+        "credentials": [
+            "MD",
+            "Board Certified Pediatrics"
+        ],
+        "contact": {
+            "phone": "(555) 210-4455",
+            "email": "dr.nguyen@healthcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "10:30"
+            ],
+            "tuesday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "10:30"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ],
+            "thursday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "10:30"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ],
+            "saturday": [
+                "08:30",
+                "09:30"
+            ]
+        },
+        "consultation_fee": 185.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "dr_singh_endocrinology": {
+        "provider_id": "dr_singh_endocrinology",
+        "name": {
+            "title": "Dr.",
+            "first_name": "Priya",
+            "last_name": "Singh"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "ENDO45127",
+        "credentials": [
+            "MD",
+            "FACE"
+        ],
+        "contact": {
+            "phone": "(555) 640-8821",
+            "email": "dr.singh@endocrinecenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:30",
+                "15:30"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:00",
+                "10:00",
+                "13:30",
+                "15:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "11:00",
+                "14:30"
+            ],
+            "thursday": [
+                "08:30",
+                "10:30",
+                "13:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:30",
+                "12:30"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Twi"
+        ],
+        "years_experience": 18
+    },
+    "dr_fernandez_endocrinology": {
+        "provider_id": "dr_fernandez_endocrinology",
+        "name": {
+            "title": "Dr.",
+            "first_name": "Lucia",
+            "last_name": "Fernandez"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "ENDO77219",
+        "credentials": [
+            "MD",
+            "ECNU"
+        ],
+        "contact": {
+            "phone": "(555) 218-6400",
+            "email": "dr.fernandez@endocrinecenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "11:30",
+                "16:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "11:30"
+            ],
+            "thursday": [
+                "09:30",
+                "12:00",
+                "15:30"
+            ],
+            "friday": [
+                "10:00",
+                "13:30"
+            ],
+            "sunday": [
+                "14:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 22
+    },
+    "dr_saito_cardiology": {
+        "provider_id": "dr_saito_cardiology",
+        "name": {
+            "first_name": "Hiroko",
+            "last_name": "Saito",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD998877",
+        "credentials": [
+            "MD",
+            "FACC",
+            "FSCAI"
+        ],
+        "contact": {
+            "phone": "(555) 741-6600",
+            "email": "dr.saito@pacificcardio.com"
+        },
+        "schedule": {
+            "monday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "15:00"
+            ],
+            "wednesday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "10:30"
+            ],
+            "thursday": [
+                "08:00",
+                "08:30",
+                "09:00",
+                "10:00",
+                "15:30"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 285.0,
+        "languages": [
+            "English",
+            "Japanese"
+        ],
+        "years_experience": 28
+    },
+    "care_coordinator_ito": {
+        "provider_id": "care_coordinator_ito",
+        "name": {
+            "first_name": "Naomi",
+            "last_name": "Ito",
+            "title": "RN"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "RN662210",
+        "credentials": [
+            "RN",
+            "CCM"
+        ],
+        "contact": {
+            "phone": "(555) 741-7790",
+            "email": "naomi.ito@pacificcare.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English",
+            "Japanese"
+        ],
+        "years_experience": 16
+    },
+    "dr_ivankovic_neurology": {
+        "provider_id": "dr_ivankovic_neurology",
+        "name": {
+            "first_name": "Marin",
+            "last_name": "Ivankovic",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "NEU559921",
+        "credentials": [
+            "MD",
+            "FAAN"
+        ],
+        "contact": {
+            "phone": "(555) 880-4412",
+            "email": "dr.ivankovic@neurocenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "13:30",
+                "15:30"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:00",
+                "15:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 260.0,
+        "languages": [
+            "English",
+            "Croatian"
+        ],
+        "years_experience": 21
+    },
+    "dr_hartwell_psychology": {
+        "provider_id": "dr_hartwell_psychology",
+        "name": {
+            "first_name": "Kendra",
+            "last_name": "Hartwell",
+            "title": "PhD"
+        },
+        "specialty": "Clinical Psychology",
+        "license_number": "PSY441188",
+        "credentials": [
+            "PhD",
+            "ABPP"
+        ],
+        "contact": {
+            "phone": "(555) 880-2270",
+            "email": "dr.hartwell@mindcenter.com"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "11:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "13:30"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00"
+            ],
+            "wednesday": [
+                "11:30"
+            ]
+        },
+        "consultation_fee": 195.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 18
+    },
+    "dr_patel_neurology": {
+        "provider_id": "dr_patel_neurology",
+        "name": {
+            "first_name": "Rohan",
+            "last_name": "Patel",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "NEU771204",
+        "credentials": [
+            "MD",
+            "FAAN"
+        ],
+        "contact": {
+            "phone": "(555) 330-7712",
+            "email": "dr.patel@northstarhealth.org"
+        },
+        "schedule": {
+            "monday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "10:30"
+            ],
+            "tuesday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "13:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ],
+            "thursday": [
+                "07:30",
+                "08:30",
+                "09:30",
+                "10:30",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "13:00",
+                "14:00"
+            ]
+        },
+        "consultation_fee": 255.0,
+        "languages": [
+            "English",
+            "Gujarati"
+        ],
+        "years_experience": 19
+    },
+    "coach_riley_telemetry": {
+        "provider_id": "coach_riley_telemetry",
+        "name": {
+            "first_name": "Morgan",
+            "last_name": "Riley",
+            "title": "RN"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RN883276",
+        "credentials": [
+            "RN",
+            "CCT"
+        ],
+        "contact": {
+            "phone": "(555) 330-8822",
+            "email": "morgan.riley@telemetrycoach.com"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:30",
+                "10:00",
+                "10:30",
+                "11:30",
+                "16:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "11:30"
+            ],
+            "friday": [
+                "09:00",
+                "09:30",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "dr_kumar_respiratory": {
+        "provider_id": "dr_kumar_respiratory",
+        "name": {
+            "first_name": "Anjali",
+            "last_name": "Kumar",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD992244",
+        "credentials": [
+            "MD",
+            "FAASM"
+        ],
+        "contact": {
+            "phone": "(555) 882-4410",
+            "email": "anjali.kumar@northsoundsleep.org"
+        },
+        "schedule": {
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "saturday": [
+                "09:30"
+            ]
+        },
+        "consultation_fee": 220.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 18
+    },
+    "dr_okafor_developmental_pediatrics": {
+        "provider_id": "dr_okafor_developmental_pediatrics",
+        "name": {
+            "first_name": "Chioma",
+            "last_name": "Okafor",
+            "title": "MD"
+        },
+        "specialty": "Developmental Pediatrics",
+        "license_number": "DEVPED-OR-8845",
+        "credentials": [
+            "MD",
+            "FAAP",
+            "Board Certified Developmental-Behavioral Pediatrics"
+        ],
+        "contact": {
+            "phone": "(555) 447-3318",
+            "email": "dr.okafor@portlandpeds.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 285.0,
+        "languages": [
+            "English",
+            "Igbo"
+        ],
+        "years_experience": 14
+    },
+    "ot_sullivan": {
+        "provider_id": "ot_sullivan",
+        "name": {
+            "first_name": "Rebecca",
+            "last_name": "Sullivan",
+            "title": "OTR/L"
+        },
+        "specialty": "Occupational Therapy",
+        "license_number": "OT-OR-5521",
+        "credentials": [
+            "OTR/L",
+            "Sensory Integration Certified"
+        ],
+        "contact": {
+            "phone": "(555) 447-5521",
+            "email": "r.sullivan@portlandpeds.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ],
+            "saturday": [
+                "09:00"
+            ]
+        },
+        "consultation_fee": 140.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 9
+    },
+    "slp_martinez": {
+        "provider_id": "slp_martinez",
+        "name": {
+            "first_name": "Diego",
+            "last_name": "Martinez",
+            "title": "MS CCC-SLP"
+        },
+        "specialty": "Speech-Language Pathology",
+        "license_number": "SLP-OR-7738",
+        "credentials": [
+            "MS",
+            "CCC-SLP",
+            "PROMPT Certified"
+        ],
+        "contact": {
+            "phone": "(555) 447-7738",
+            "email": "d.martinez@portlandpeds.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "13:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "11:30"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "13:30",
+                "14:30"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "11:30",
+                "13:30"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 155.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 7
+    },
+    "bcba_washington": {
+        "provider_id": "bcba_washington",
+        "name": {
+            "first_name": "Jamal",
+            "last_name": "Washington",
+            "title": "MS BCBA"
+        },
+        "specialty": "Behavioral Analysis",
+        "license_number": "BCBA-OR-9944",
+        "credentials": [
+            "MS",
+            "BCBA",
+            "LBA"
+        ],
+        "contact": {
+            "phone": "(555) 447-9944",
+            "email": "j.washington@portlandpeds.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 175.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 12
+    },
+    "dr_rodriguez_orthopedics": {
+        "provider_id": "dr_rodriguez_orthopedics",
+        "name": {
+            "first_name": "Maria",
+            "last_name": "Rodriguez",
+            "title": "MD"
+        },
+        "specialty": "Orthopedic Surgery",
+        "credentials": [
+            "MD",
+            "Board Certified in Orthopedic Surgery"
+        ],
+        "contact": {
+            "phone": "(555) 678-9012",
+            "email": "m.rodriguez@orthocenter.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 200.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 18
+    },
+    "pt_james_chen": {
+        "provider_id": "pt_james_chen",
+        "name": {
+            "first_name": "James",
+            "last_name": "Chen",
+            "title": "PT, DPT"
+        },
+        "specialty": "Physical Therapy",
+        "credentials": [
+            "Doctor of Physical Therapy",
+            "Board Certified Orthopedic Specialist"
+        ],
+        "contact": {
+            "phone": "(555) 789-0123",
+            "email": "j.chen@rehabpt.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00"
+            ]
+        },
+        "consultation_fee": 120.0,
+        "languages": [
+            "English",
+            "Mandarin"
+        ],
+        "years_experience": 12
+    },
+    "dr_chen_primary_care": {
+        "provider_id": "dr_chen_primary_care",
+        "name": {
+            "first_name": "Lisa",
+            "last_name": "Chen"
+        },
+        "specialty": "Primary Care",
+        "credentials": [
+            "MD",
+            "Board Certified in Family Medicine"
+        ],
+        "contact": {
+            "phone": "(555) 234-5678",
+            "email": "l.chen@primarycare.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00",
+                "16:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00",
+                "15:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ]
+        },
+        "consultation_fee": 150.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 18
+    },
+    "dr_patel_anesthesiology": {
+        "provider_id": "dr_patel_anesthesiology",
+        "name": {
+            "first_name": "Anjali",
+            "last_name": "Patel",
+            "title": "MD"
+        },
+        "specialty": "Anesthesiology",
+        "credentials": [
+            "MD",
+            "Board Certified in Anesthesiology",
+            "Fellowship in Cardiac Anesthesia"
+        ],
+        "contact": {
+            "phone": "(555) 333-8877",
+            "email": "a.patel@anesthesia.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 250.0,
+        "languages": [
+            "English",
+            "Hindi",
+            "Gujarati"
+        ],
+        "years_experience": 15
+    },
+    "dr_kim_cardiac_surgery": {
+        "provider_id": "dr_kim_cardiac_surgery",
+        "name": {
+            "first_name": "Robert",
+            "last_name": "Kim",
+            "title": "MD, FACS"
+        },
+        "specialty": "Cardiac Surgery",
+        "credentials": [
+            "MD",
+            "Board Certified in Cardiothoracic Surgery",
+            "Fellow of the American College of Surgeons"
+        ],
+        "contact": {
+            "phone": "(555) 222-9988",
+            "email": "r.kim@cardiacsurgery.org"
+        },
+        "schedule": {
+            "monday": [
+                "07:00",
+                "08:00",
+                "09:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "07:00",
+                "08:00",
+                "09:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "07:00",
+                "08:00",
+                "09:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "07:00",
+                "08:00",
+                "09:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "07:00",
+                "08:00",
+                "09:00"
+            ],
+            "saturday": [
+                "07:00"
+            ]
+        },
+        "consultation_fee": 350.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 22
+    },
+    "camila_ortega_primary_care_tracer_0001": {
+        "provider_id": "camila_ortega_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Camila",
+            "last_name": "Ortega",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78000",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0900",
+            "email": "dr.ortega.1@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 11
+    },
+    "owen_shaw_cardiology_tracer_0001": {
+        "provider_id": "owen_shaw_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Owen",
+            "last_name": "Shaw",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78001",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0901",
+            "email": "dr.shaw.2@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 20
+    },
+    "meera_santos_pediatrics_tracer_0001": {
+        "provider_id": "meera_santos_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Meera",
+            "last_name": "Santos",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78002",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0902",
+            "email": "dr.santos.3@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 16
+    },
+    "hector_lane_endocrinology_tracer_0001": {
+        "provider_id": "hector_lane_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Hector",
+            "last_name": "Lane",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78003",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0903",
+            "email": "dr.lane.4@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 19
+    },
+    "amelia_quinn_pulmonology_tracer_0001": {
+        "provider_id": "amelia_quinn_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Amelia",
+            "last_name": "Quinn",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78004",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0904",
+            "email": "dr.quinn.5@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 17
+    },
+    "victor_liao_neurology_tracer_0001": {
+        "provider_id": "victor_liao_neurology_tracer_0001",
+        "name": {
+            "first_name": "Victor",
+            "last_name": "Liao",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78005",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0905",
+            "email": "dr.liao.6@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 14
+    },
+    "riley_stone_device_coaching_tracer_0001": {
+        "provider_id": "riley_stone_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Riley",
+            "last_name": "Stone",
+            "title": "RT"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RT78006",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0906",
+            "email": "coach.stone.7@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 11
+    },
+    "monica_reyes_care_coordination_tracer_0001": {
+        "provider_id": "monica_reyes_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Monica",
+            "last_name": "Reyes",
+            "title": "RN"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "RN78007",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0907",
+            "email": "care.reyes.8@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 15
+    },
+    "charles_lewis_primary_care_tracer_0001": {
+        "provider_id": "charles_lewis_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Charles",
+            "last_name": "Lewis",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78000",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0900",
+            "email": "dr.lewis.1@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 11
+    },
+    "ryan_harris_cardiology_tracer_0001": {
+        "provider_id": "ryan_harris_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Ryan",
+            "last_name": "Harris",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78001",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0901",
+            "email": "dr.harris.2@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 20
+    },
+    "daniel_pitts_pediatrics_tracer_0001": {
+        "provider_id": "daniel_pitts_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Daniel",
+            "last_name": "Pitts",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78002",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0902",
+            "email": "dr.pitts.3@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 16
+    },
+    "christopher_fisher_endocrinology_tracer_0001": {
+        "provider_id": "christopher_fisher_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Christopher",
+            "last_name": "Fisher",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78003",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0903",
+            "email": "dr.fisher.4@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 19
+    },
+    "kevin_reynolds_pulmonology_tracer_0001": {
+        "provider_id": "kevin_reynolds_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Kevin",
+            "last_name": "Reynolds",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78004",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0904",
+            "email": "dr.reynolds.5@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 17
+    },
+    "brian_roman_neurology_tracer_0001": {
+        "provider_id": "brian_roman_neurology_tracer_0001",
+        "name": {
+            "first_name": "Brian",
+            "last_name": "Roman",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78005",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0905",
+            "email": "dr.roman.6@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 14
+    },
+    "william_benson_device_coaching_tracer_0001": {
+        "provider_id": "william_benson_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "William",
+            "last_name": "Benson",
+            "title": "RT"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RT78006",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0906",
+            "email": "coach.benson.7@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 11
+    },
+    "julie_hines_care_coordination_tracer_0001": {
+        "provider_id": "julie_hines_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Julie",
+            "last_name": "Hines",
+            "title": "RN"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "RN78007",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0907",
+            "email": "care.hines.8@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 15
+    },
+    "amy_mitchell_psychiatry_tracer_0001": {
+        "provider_id": "amy_mitchell_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Amy",
+            "last_name": "Mitchell",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78008",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0908",
+            "email": "dr.mitchell.9@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 15
+    },
+    "charles_barajas_primary_care_tracer_0001": {
+        "provider_id": "charles_barajas_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Charles",
+            "last_name": "Barajas",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78009",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0909",
+            "email": "dr.barajas.10@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 12
+    },
+    "bryan_bryant_cardiology_tracer_0001": {
+        "provider_id": "bryan_bryant_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Bryan",
+            "last_name": "Bryant",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78010",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0910",
+            "email": "dr.bryant.11@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 21
+    },
+    "kelly_weaver_pediatrics_tracer_0001": {
+        "provider_id": "kelly_weaver_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Kelly",
+            "last_name": "Weaver",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78011",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0911",
+            "email": "dr.weaver.12@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 17
+    },
+    "michael_moss_endocrinology_tracer_0001": {
+        "provider_id": "michael_moss_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Michael",
+            "last_name": "Moss",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78012",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0912",
+            "email": "dr.moss.13@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 16
+    },
+    "sophia_everett_pulmonology_tracer_0001": {
+        "provider_id": "sophia_everett_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Sophia",
+            "last_name": "Everett",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78013",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0913",
+            "email": "dr.everett.14@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 18
+    },
+    "kevin_salas_neurology_tracer_0001": {
+        "provider_id": "kevin_salas_neurology_tracer_0001",
+        "name": {
+            "first_name": "Kevin",
+            "last_name": "Salas",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78014",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0914",
+            "email": "dr.salas.15@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 15
+    },
+    "robert_wright_device_coaching_tracer_0001": {
+        "provider_id": "robert_wright_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Robert",
+            "last_name": "Wright",
+            "title": "RN"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RN78015",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0915",
+            "email": "coach.wright.16@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 12
+    },
+    "brittany_johnson_care_coordination_tracer_0001": {
+        "provider_id": "brittany_johnson_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Brittany",
+            "last_name": "Johnson",
+            "title": "LCSW"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "LCSW78016",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0916",
+            "email": "care.johnson.17@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 12
+    },
+    "jessica_tapia_psychiatry_tracer_0001": {
+        "provider_id": "jessica_tapia_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Jessica",
+            "last_name": "Tapia",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78017",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0917",
+            "email": "dr.tapia.18@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 16
+    },
+    "nicholas_salinas_primary_care_tracer_0001": {
+        "provider_id": "nicholas_salinas_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Nicholas",
+            "last_name": "Salinas",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78018",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0918",
+            "email": "dr.salinas.19@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 13
+    },
+    "christine_bailey_cardiology_tracer_0001": {
+        "provider_id": "christine_bailey_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Christine",
+            "last_name": "Bailey",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78019",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0919",
+            "email": "dr.bailey.20@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 22
+    },
+    "james_orozco_pediatrics_tracer_0001": {
+        "provider_id": "james_orozco_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "James",
+            "last_name": "Orozco",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78020",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0920",
+            "email": "dr.orozco.21@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "amy_young_endocrinology_tracer_0001": {
+        "provider_id": "amy_young_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Amy",
+            "last_name": "Young",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78021",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0921",
+            "email": "dr.young.22@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 17
+    },
+    "brian_kim_pulmonology_tracer_0001": {
+        "provider_id": "brian_kim_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Brian",
+            "last_name": "Kim",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78022",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0922",
+            "email": "dr.kim.23@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 19
+    },
+    "john_hopkins_neurology_tracer_0001": {
+        "provider_id": "john_hopkins_neurology_tracer_0001",
+        "name": {
+            "first_name": "John",
+            "last_name": "Hopkins",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78023",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0923",
+            "email": "dr.hopkins.24@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 16
+    },
+    "kimberly_rosales_device_coaching_tracer_0001": {
+        "provider_id": "kimberly_rosales_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Kimberly",
+            "last_name": "Rosales",
+            "title": "RT"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RT78024",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0924",
+            "email": "coach.rosales.25@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 9
+    },
+    "brandon_page_care_coordination_tracer_0001": {
+        "provider_id": "brandon_page_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Brandon",
+            "last_name": "Page",
+            "title": "RN"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "RN78025",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0925",
+            "email": "care.page.26@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 13
+    },
+    "jonathan_noble_psychiatry_tracer_0001": {
+        "provider_id": "jonathan_noble_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Jonathan",
+            "last_name": "Noble",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78026",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0926",
+            "email": "dr.noble.27@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 17
+    },
+    "debra_nunez_primary_care_tracer_0001": {
+        "provider_id": "debra_nunez_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Debra",
+            "last_name": "Nunez",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78027",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0927",
+            "email": "dr.nunez.28@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "juan_fitzgerald_cardiology_tracer_0001": {
+        "provider_id": "juan_fitzgerald_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Juan",
+            "last_name": "Fitzgerald",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78028",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0928",
+            "email": "dr.fitzgerald.29@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 19
+    },
+    "bruce_king_pediatrics_tracer_0001": {
+        "provider_id": "bruce_king_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Bruce",
+            "last_name": "King",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78029",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0929",
+            "email": "dr.king.30@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 15
+    },
+    "debra_castro_endocrinology_tracer_0001": {
+        "provider_id": "debra_castro_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Debra",
+            "last_name": "Castro",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78030",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0930",
+            "email": "dr.castro.31@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 18
+    },
+    "suzanne_cooper_pulmonology_tracer_0001": {
+        "provider_id": "suzanne_cooper_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Suzanne",
+            "last_name": "Cooper",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78031",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0931",
+            "email": "dr.cooper.32@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 20
+    },
+    "melissa_mcfarland_neurology_tracer_0001": {
+        "provider_id": "melissa_mcfarland_neurology_tracer_0001",
+        "name": {
+            "first_name": "Melissa",
+            "last_name": "Mcfarland",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78032",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0932",
+            "email": "dr.mcfarland.33@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 13
+    },
+    "kimberly_wade_device_coaching_tracer_0001": {
+        "provider_id": "kimberly_wade_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Kimberly",
+            "last_name": "Wade",
+            "title": "RN"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RN78033",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0933",
+            "email": "coach.wade.34@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 10
+    },
+    "dylan_hampton_care_coordination_tracer_0001": {
+        "provider_id": "dylan_hampton_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Dylan",
+            "last_name": "Hampton",
+            "title": "LCSW"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "LCSW78034",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0934",
+            "email": "care.hampton.35@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "philip_mendoza_psychiatry_tracer_0001": {
+        "provider_id": "philip_mendoza_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Philip",
+            "last_name": "Mendoza",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78035",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0935",
+            "email": "dr.mendoza.36@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 18
+    },
+    "dana_padilla_primary_care_tracer_0001": {
+        "provider_id": "dana_padilla_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Dana",
+            "last_name": "Padilla",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78036",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0936",
+            "email": "dr.padilla.37@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 11
+    },
+    "thomas_may_cardiology_tracer_0001": {
+        "provider_id": "thomas_may_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Thomas",
+            "last_name": "May",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78037",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0937",
+            "email": "dr.may.38@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 20
+    },
+    "katherine_olson_pediatrics_tracer_0001": {
+        "provider_id": "katherine_olson_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Katherine",
+            "last_name": "Olson",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78038",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0938",
+            "email": "dr.olson.39@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 16
+    },
+    "charles_scott_endocrinology_tracer_0001": {
+        "provider_id": "charles_scott_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Charles",
+            "last_name": "Scott",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78039",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0939",
+            "email": "dr.scott.40@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 19
+    },
+    "maria_walker_pulmonology_tracer_0001": {
+        "provider_id": "maria_walker_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Maria",
+            "last_name": "Walker",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78040",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0940",
+            "email": "dr.walker.41@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 17
+    },
+    "christopher_gilbert_neurology_tracer_0001": {
+        "provider_id": "christopher_gilbert_neurology_tracer_0001",
+        "name": {
+            "first_name": "Christopher",
+            "last_name": "Gilbert",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78041",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0941",
+            "email": "dr.gilbert.42@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 14
+    },
+    "anthony_moran_device_coaching_tracer_0001": {
+        "provider_id": "anthony_moran_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Anthony",
+            "last_name": "Moran",
+            "title": "RT"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RT78042",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0942",
+            "email": "coach.moran.43@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 11
+    },
+    "kyle_williams_care_coordination_tracer_0001": {
+        "provider_id": "kyle_williams_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Kyle",
+            "last_name": "Williams",
+            "title": "RN"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "RN78043",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0943",
+            "email": "care.williams.44@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 15
+    },
+    "mark_brown_psychiatry_tracer_0001": {
+        "provider_id": "mark_brown_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Mark",
+            "last_name": "Brown",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78044",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0944",
+            "email": "dr.brown.45@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 15
+    },
+    "shannon_anderson_primary_care_tracer_0001": {
+        "provider_id": "shannon_anderson_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Shannon",
+            "last_name": "Anderson",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78045",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0945",
+            "email": "dr.anderson.46@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 12
+    },
+    "kayla_guzman_cardiology_tracer_0001": {
+        "provider_id": "kayla_guzman_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Kayla",
+            "last_name": "Guzman",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78046",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0946",
+            "email": "dr.guzman.47@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 21
+    },
+    "cody_hancock_pediatrics_tracer_0001": {
+        "provider_id": "cody_hancock_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Cody",
+            "last_name": "Hancock",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78047",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0947",
+            "email": "dr.hancock.48@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 17
+    },
+    "kelly_taylor_endocrinology_tracer_0001": {
+        "provider_id": "kelly_taylor_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Kelly",
+            "last_name": "Taylor",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78048",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0948",
+            "email": "dr.taylor.49@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 16
+    },
+    "adrian_christensen_pulmonology_tracer_0001": {
+        "provider_id": "adrian_christensen_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Adrian",
+            "last_name": "Christensen",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78049",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0949",
+            "email": "dr.christensen.50@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 18
+    },
+    "cynthia_perry_neurology_tracer_0001": {
+        "provider_id": "cynthia_perry_neurology_tracer_0001",
+        "name": {
+            "first_name": "Cynthia",
+            "last_name": "Perry",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78050",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0950",
+            "email": "dr.perry.51@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 15
+    },
+    "chelsea_buck_device_coaching_tracer_0001": {
+        "provider_id": "chelsea_buck_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Chelsea",
+            "last_name": "Buck",
+            "title": "RN"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RN78051",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0951",
+            "email": "coach.buck.52@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 12
+    },
+    "linda_collins_care_coordination_tracer_0001": {
+        "provider_id": "linda_collins_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Linda",
+            "last_name": "Collins",
+            "title": "LCSW"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "LCSW78052",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0952",
+            "email": "care.collins.53@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 12
+    },
+    "stephen_tran_psychiatry_tracer_0001": {
+        "provider_id": "stephen_tran_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Stephen",
+            "last_name": "Tran",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78053",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0953",
+            "email": "dr.tran.54@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 16
+    },
+    "john_wise_primary_care_tracer_0001": {
+        "provider_id": "john_wise_primary_care_tracer_0001",
+        "name": {
+            "first_name": "John",
+            "last_name": "Wise",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78054",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0954",
+            "email": "dr.wise.55@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 13
+    },
+    "luis_sims_cardiology_tracer_0001": {
+        "provider_id": "luis_sims_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Luis",
+            "last_name": "Sims",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78055",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0955",
+            "email": "dr.sims.56@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 22
+    },
+    "leslie_stone_pediatrics_tracer_0001": {
+        "provider_id": "leslie_stone_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Leslie",
+            "last_name": "Stone",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78056",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0956",
+            "email": "dr.stone.57@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "caleb_turner_endocrinology_tracer_0001": {
+        "provider_id": "caleb_turner_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Caleb",
+            "last_name": "Turner",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78057",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0957",
+            "email": "dr.turner.58@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 17
+    },
+    "ralph_haynes_pulmonology_tracer_0001": {
+        "provider_id": "ralph_haynes_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Ralph",
+            "last_name": "Haynes",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78058",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0958",
+            "email": "dr.haynes.59@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 19
+    },
+    "kelly_brown_neurology_tracer_0001": {
+        "provider_id": "kelly_brown_neurology_tracer_0001",
+        "name": {
+            "first_name": "Kelly",
+            "last_name": "Brown",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78059",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0959",
+            "email": "dr.brown.60@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 16
+    },
+    "becky_wright_device_coaching_tracer_0001": {
+        "provider_id": "becky_wright_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Becky",
+            "last_name": "Wright",
+            "title": "RT"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RT78060",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0960",
+            "email": "coach.wright.61@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 9
+    },
+    "lisa_larson_care_coordination_tracer_0001": {
+        "provider_id": "lisa_larson_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Lisa",
+            "last_name": "Larson",
+            "title": "RN"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "RN78061",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0961",
+            "email": "care.larson.62@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 13
+    },
+    "lee_whitaker_psychiatry_tracer_0001": {
+        "provider_id": "lee_whitaker_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Lee",
+            "last_name": "Whitaker",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78062",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0962",
+            "email": "dr.whitaker.63@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 17
+    },
+    "kenneth_mayer_primary_care_tracer_0001": {
+        "provider_id": "kenneth_mayer_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Kenneth",
+            "last_name": "Mayer",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78063",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0963",
+            "email": "dr.mayer.64@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "megan_cook_cardiology_tracer_0001": {
+        "provider_id": "megan_cook_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Megan",
+            "last_name": "Cook",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78064",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0964",
+            "email": "dr.cook.65@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 19
+    },
+    "leslie_miller_pediatrics_tracer_0001": {
+        "provider_id": "leslie_miller_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Leslie",
+            "last_name": "Miller",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78065",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0965",
+            "email": "dr.miller.66@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 15
+    },
+    "tami_robinson_endocrinology_tracer_0001": {
+        "provider_id": "tami_robinson_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Tami",
+            "last_name": "Robinson",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78066",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0966",
+            "email": "dr.robinson.67@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 18
+    },
+    "ryan_powell_pulmonology_tracer_0001": {
+        "provider_id": "ryan_powell_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Ryan",
+            "last_name": "Powell",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78067",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0967",
+            "email": "dr.powell.68@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 20
+    },
+    "melanie_scott_neurology_tracer_0001": {
+        "provider_id": "melanie_scott_neurology_tracer_0001",
+        "name": {
+            "first_name": "Melanie",
+            "last_name": "Scott",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78068",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0968",
+            "email": "dr.scott.69@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 13
+    },
+    "joseph_robertson_device_coaching_tracer_0001": {
+        "provider_id": "joseph_robertson_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Joseph",
+            "last_name": "Robertson",
+            "title": "RN"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RN78069",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0969",
+            "email": "coach.robertson.70@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 10
+    },
+    "kyle_neal_care_coordination_tracer_0001": {
+        "provider_id": "kyle_neal_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Kyle",
+            "last_name": "Neal",
+            "title": "LCSW"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "LCSW78070",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0970",
+            "email": "care.neal.71@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 14
+    },
+    "thomas_torres_psychiatry_tracer_0001": {
+        "provider_id": "thomas_torres_psychiatry_tracer_0001",
+        "name": {
+            "first_name": "Thomas",
+            "last_name": "Torres",
+            "title": "MD"
+        },
+        "specialty": "Psychiatry",
+        "license_number": "MD78071",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0971",
+            "email": "dr.torres.72@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "thursday": [
+                "11:00",
+                "13:00",
+                "15:00"
+            ],
+            "friday": [
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 205.0,
+        "languages": [
+            "English",
+            "Arabic"
+        ],
+        "years_experience": 18
+    },
+    "howard_mccarthy_primary_care_tracer_0001": {
+        "provider_id": "howard_mccarthy_primary_care_tracer_0001",
+        "name": {
+            "first_name": "Howard",
+            "last_name": "Mccarthy",
+            "title": "MD"
+        },
+        "specialty": "Primary Care",
+        "license_number": "MD78072",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0972",
+            "email": "dr.mccarthy.73@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 135.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 11
+    },
+    "brandi_dixon_cardiology_tracer_0001": {
+        "provider_id": "brandi_dixon_cardiology_tracer_0001",
+        "name": {
+            "first_name": "Brandi",
+            "last_name": "Dixon",
+            "title": "MD"
+        },
+        "specialty": "Cardiology",
+        "license_number": "MD78073",
+        "credentials": [
+            "MD",
+            "FACC"
+        ],
+        "contact": {
+            "phone": "(555) 889-0973",
+            "email": "dr.dixon.74@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "14:00",
+                "15:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "11:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "11:00"
+            ]
+        },
+        "consultation_fee": 225.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 20
+    },
+    "harry_wood_pediatrics_tracer_0001": {
+        "provider_id": "harry_wood_pediatrics_tracer_0001",
+        "name": {
+            "first_name": "Harry",
+            "last_name": "Wood",
+            "title": "MD"
+        },
+        "specialty": "Pediatrics",
+        "license_number": "MD78074",
+        "credentials": [
+            "MD",
+            "FAAP"
+        ],
+        "contact": {
+            "phone": "(555) 889-0974",
+            "email": "dr.wood.75@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "thursday": [
+                "08:30",
+                "09:30",
+                "10:30",
+                "14:00"
+            ],
+            "friday": [
+                "08:30",
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 165.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 16
+    },
+    "ashley_schneider_endocrinology_tracer_0001": {
+        "provider_id": "ashley_schneider_endocrinology_tracer_0001",
+        "name": {
+            "first_name": "Ashley",
+            "last_name": "Schneider",
+            "title": "MD"
+        },
+        "specialty": "Endocrinology",
+        "license_number": "MD78075",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0975",
+            "email": "dr.schneider.76@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ],
+            "thursday": [
+                "09:00",
+                "10:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "09:00",
+                "10:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 210.0,
+        "languages": [
+            "English",
+            "Hindi"
+        ],
+        "years_experience": 19
+    },
+    "austin_yu_pulmonology_tracer_0001": {
+        "provider_id": "austin_yu_pulmonology_tracer_0001",
+        "name": {
+            "first_name": "Austin",
+            "last_name": "Yu",
+            "title": "MD"
+        },
+        "specialty": "Pulmonology",
+        "license_number": "MD78076",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0976",
+            "email": "dr.yu.77@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "14:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 215.0,
+        "languages": [
+            "English",
+            "Korean"
+        ],
+        "years_experience": 17
+    },
+    "stacey_howell_neurology_tracer_0001": {
+        "provider_id": "stacey_howell_neurology_tracer_0001",
+        "name": {
+            "first_name": "Stacey",
+            "last_name": "Howell",
+            "title": "MD"
+        },
+        "specialty": "Neurology",
+        "license_number": "MD78077",
+        "credentials": [
+            "MD"
+        ],
+        "contact": {
+            "phone": "(555) 889-0977",
+            "email": "dr.howell.78@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "tuesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "wednesday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "thursday": [
+                "09:30",
+                "10:30",
+                "14:30"
+            ],
+            "friday": [
+                "09:30",
+                "10:30"
+            ]
+        },
+        "consultation_fee": 230.0,
+        "languages": [
+            "English",
+            "French"
+        ],
+        "years_experience": 14
+    },
+    "jennifer_roth_device_coaching_tracer_0001": {
+        "provider_id": "jennifer_roth_device_coaching_tracer_0001",
+        "name": {
+            "first_name": "Jennifer",
+            "last_name": "Roth",
+            "title": "RT"
+        },
+        "specialty": "Device Coaching",
+        "license_number": "RT78078",
+        "credentials": [
+            "RT",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0978",
+            "email": "coach.roth.79@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "tuesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "wednesday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "thursday": [
+                "08:00",
+                "09:00",
+                "10:00",
+                "15:00"
+            ],
+            "friday": [
+                "08:00",
+                "09:00",
+                "10:00"
+            ]
+        },
+        "consultation_fee": 95.0,
+        "languages": [
+            "English"
+        ],
+        "years_experience": 11
+    },
+    "jasmine_norris_care_coordination_tracer_0001": {
+        "provider_id": "jasmine_norris_care_coordination_tracer_0001",
+        "name": {
+            "first_name": "Jasmine",
+            "last_name": "Norris",
+            "title": "RN"
+        },
+        "specialty": "Care Coordination",
+        "license_number": "RN78079",
+        "credentials": [
+            "LCSW",
+            "RN"
+        ],
+        "contact": {
+            "phone": "(555) 889-0979",
+            "email": "care.norris.80@tracer-health.org"
+        },
+        "schedule": {
+            "monday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "tuesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "wednesday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "thursday": [
+                "10:00",
+                "11:00",
+                "13:00",
+                "14:00"
+            ],
+            "friday": [
+                "10:00",
+                "11:00",
+                "13:00"
+            ]
+        },
+        "consultation_fee": 110.0,
+        "languages": [
+            "English",
+            "Spanish"
+        ],
+        "years_experience": 15
+    }
+}

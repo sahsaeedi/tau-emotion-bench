@@ -1,0 +1,1939 @@
+{
+    "sarah_johnson_1234": {
+        "patient_id": "sarah_johnson_1234",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Metformin",
+                    "dosage": "500mg",
+                    "daily_dose": 2,
+                    "monthly_units": 60,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Glucophage",
+                    "supplier": "PharmaCo USA",
+                    "unit_cost_usd": 0.45
+                },
+                {
+                    "medication": "Lisinopril",
+                    "dosage": "10mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Prinivil",
+                    "supplier": "MedSupply Inc",
+                    "unit_cost_usd": 0.3
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 3,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Taking medications twice daily",
+                "No reported side effects",
+                "Good adherence per patient report"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Extended Release Option",
+                "focus": "Reduced pill burden with extended-release formulation",
+                "components": [
+                    {
+                        "medication": "Metformin ER",
+                        "dosage": "1000mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Glucophage XR",
+                        "supplier": "PharmaCo USA",
+                        "unit_cost_usd": 0.85
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Prinivil",
+                        "supplier": "MedSupply Inc",
+                        "unit_cost_usd": 0.3
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Single daily Metformin dose improves adherence",
+                    "Reduced GI side effects with extended release",
+                    "Same efficacy as current regimen"
+                ]
+            },
+            {
+                "name": "Cost-Optimized Generic",
+                "focus": "Lower cost with generic alternatives",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "ValueMeds Direct",
+                        "unit_cost_usd": 0.18
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "ValueMeds Direct",
+                        "unit_cost_usd": 0.12
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Significant cost savings",
+                    "Same active ingredients as brand",
+                    "FDA-approved bioequivalent formulations"
+                ]
+            }
+        ]
+    },
+    "nadia_abbasi_tracer_0001": {
+        "patient_id": "nadia_abbasi_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Metformin",
+                    "dosage": "500mg",
+                    "daily_dose": 2,
+                    "monthly_units": 60,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                },
+                {
+                    "medication": "Lisinopril",
+                    "dosage": "10mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Lisipril-M",
+                    "supplier": "Mumbai Cardio Pharma",
+                    "unit_cost_usd": 2.8
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 3,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Patient currently fills Metformin and Lisinopril separately each month",
+                "Monthly cost: Metformin $510, Lisinopril $84",
+                "Reports occasional missed doses due to separate refill dates"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Aligns fill schedules for both medications to a single monthly pharmacy visit while maintaining current formulary brands",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Reduces pharmacy visits from two to one per month, improving convenience",
+                    "No change in medication cost but minimizes out-of-pocket expenses associated with multiple trips",
+                    "Uses existing insurance coverage without requiring prior authorization"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Provides medications in a unit-dose adherence blister pack to simplify daily regimen",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Unit-dose blister packaging organizes AM/PM doses for both medications in one container",
+                    "Reduces risk of missed doses by simplifying daily routine",
+                    "Maintains therapeutic equivalence with current regimen while improving adherence"
+                ]
+            }
+        ]
+    },
+    "sarah_barnes_tracer_0001": {
+        "patient_id": "sarah_barnes_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Metformin",
+                    "dosage": "500mg",
+                    "daily_dose": 2,
+                    "monthly_units": 60,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                },
+                {
+                    "medication": "Lisinopril",
+                    "dosage": "10mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Lisipril-M",
+                    "supplier": "Mumbai Cardio Pharma",
+                    "unit_cost_usd": 2.8
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 3,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable medications for diabetes and hypertension",
+                "Total monthly cost: $338",
+                "No adherence packaging; standard fills"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align refill cycles and maximize generic utilization to reduce monthly out-of-pocket cost.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced as generics with synchronized 90-day fills",
+                    "Reduces pharmacy visits and improves cost predictability",
+                    "Maintains current clinical efficacy with lower financial burden"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve adherence through unit-dose blister packaging with timed compartments.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Combines both medications into a single daily pack with AM/PM organization",
+                    "Supports consistent timing for Metformin and Lisinopril",
+                    "Ideal for patients with complex schedules or memory concerns"
+                ]
+            }
+        ]
+    },
+    "scott_sparks_tracer_0001": {
+        "patient_id": "scott_sparks_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable dual therapy for atrial fibrillation and hyperlipidemia",
+                "Total monthly cost: $250.50 (30 tablets each of Warfarin and Atorvastatin)"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication fills to reduce out-of-pocket costs using equivalent generics.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced through same supplier for consolidated billing",
+                    "No change in dosing or pill burden; maintains therapeutic stability"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve adherence through blister-packed daily dosing with synchronized refill timing.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Pre-sorted AM/PM dosing to reduce missed doses",
+                    "Same cost profile as current regimen but with added adherence support"
+                ]
+            }
+        ]
+    },
+    "shawn_carter_tracer_0001": {
+        "patient_id": "shawn_carter_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable anticoagulation and lipid control with branded agents from single supplier",
+                "Total monthly cost: $250 (combined), no generic substitution currently active",
+                "Pill burden remains low at 2 tablets daily"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication fills using lower-cost generics without changing dosing or frequency.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced from same supplier allows for single monthly shipment",
+                    "Maintains consistent dosing while reducing out-of-pocket cost by 38%",
+                    "No change in pill burden; compatible with existing routine"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve long-term adherence through pre-sorted daily blister packs.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Combines both medications into time-stamped daily compartments",
+                    "Reduces risk of missed doses despite unchanged tablet count",
+                    "Enables caregiver support and travel convenience"
+                ]
+            }
+        ]
+    },
+    "shawn_zuniga_tracer_0001": {
+        "patient_id": "shawn_zuniga_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable anticoagulation and lipid control with current medications.",
+                "Total monthly cost: $250 (combined), with no generic substitution or packaging advantages."
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align refill cycles and utilize cost-equivalent generics to reduce out-of-pocket variability.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced from same supplier enables consolidated billing and single monthly shipment.",
+                    "No change in clinical effect; maintains therapeutic equivalence with current brands."
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through unit-dose blister packaging with daily scheduling.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Blister packs organize both medications by time and day, reducing missed doses.",
+                    "Same cost as current regimen but adds adherence support without financial burden."
+                ]
+            }
+        ]
+    },
+    "tammy_carr_tracer_0001": {
+        "patient_id": "tammy_carr_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Metformin",
+                    "dosage": "500mg",
+                    "daily_dose": 2,
+                    "monthly_units": 60,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                },
+                {
+                    "medication": "Lisinopril",
+                    "dosage": "10mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Lisipril-M",
+                    "supplier": "Mumbai Cardio Pharma",
+                    "unit_cost_usd": 2.8
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 3,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable dual therapy for diabetes and hypertension",
+                "Total monthly cost: $334 (60 metformin + 30 lisinopril tablets)",
+                "Pill burden: 3 tablets daily, no devices"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Aligns both medications under lowest-cost generic sourcing with synchronized refill timing to reduce out-of-pocket variability.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced through cost-optimized channels with matching 30-day refill cycles",
+                    "Projected 18% reduction in total monthly medication spend",
+                    "Maintains therapeutic equivalence while improving financial sustainability"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Combines both medications in a blister-packed daily organizer to support adherence and simplify dosing.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Medications packaged in AM/PM strips to reduce missed doses",
+                    "Same cost as current regimen but improves adherence potential",
+                    "Ideal for patients valuing routine and dose tracking"
+                ]
+            }
+        ]
+    },
+    "toni_miller_tracer_0001": {
+        "patient_id": "toni_miller_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Insulin Lispro",
+                    "dosage": "sliding scale",
+                    "daily_dose": 3,
+                    "monthly_units": 90,
+                    "unit_type": "tablet",
+                    "preferred_brand": "SwiftLis",
+                    "supplier": "Bengal EndoCare",
+                    "unit_cost_usd": 19.2
+                },
+                {
+                    "medication": "Levothyroxine",
+                    "dosage": "75mcg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 4,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "High monthly cost driven by branded insulin supply",
+                "Pill burden consistent but no adherence support tools in place"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication sourcing to reduce out-of-pocket costs through bulk generic procurement.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Maintains current dosing while reducing overall cost via negotiated generic pricing",
+                    "Single supplier option simplifies refill coordination",
+                    "No change in daily routine required"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through pre-sorted, time-stamped blister packs.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Combines both medications into a single daily pack for improved routine",
+                    "Reduces risk of missed doses despite unchanged pill count",
+                    "Supports long-term adherence without altering clinical regimen"
+                ]
+            }
+        ]
+    },
+    "amanda_martinez_tracer_0001": {
+        "patient_id": "amanda_martinez_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Insulin Lispro",
+                    "dosage": "sliding scale",
+                    "daily_dose": 3,
+                    "monthly_units": 90,
+                    "unit_type": "tablet",
+                    "preferred_brand": "SwiftLis",
+                    "supplier": "Bengal EndoCare",
+                    "unit_cost_usd": 19.2
+                },
+                {
+                    "medication": "Levothyroxine",
+                    "dosage": "75mcg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 4,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "High monthly cost driven by branded insulin supply",
+                "Pill burden of 4 tablets daily with no packaging support",
+                "Levothyroxine sourcing not yet finalized"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication sourcing to reduce overall monthly expenditure through generic substitution where clinically appropriate.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Maintains current efficacy while targeting 18% cost reduction",
+                    "Preserves dosing familiarity for both medications",
+                    "Enables single-supplier coordination if sourcing is finalized"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through pre-sorted, time-stamped blister packs for daily use.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Reduces risk of missed doses during busy workdays",
+                    "Pairs well with current regimen structure without changes to meds",
+                    "Supports long-term adherence goals for chronic condition management"
+                ]
+            }
+        ]
+    },
+    "cynthia_scott_tracer_0001": {
+        "patient_id": "cynthia_scott_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Metformin",
+                    "dosage": "500mg",
+                    "daily_dose": 2,
+                    "monthly_units": 60,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                },
+                {
+                    "medication": "Lisinopril",
+                    "dosage": "10mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Lisipril-M",
+                    "supplier": "Mumbai Cardio Pharma",
+                    "unit_cost_usd": 2.8
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 3,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable dual therapy for diabetes and hypertension",
+                "Total monthly cost: $598 (60 metformin + 30 lisinopril tablets)",
+                "No adherence issues reported, but cost is a concern"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align all medications under lowest-cost generic sourcing to reduce overall expenditure.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications already use cost-effective formulations",
+                    "Potential for bulk sourcing agreement to further reduce costs",
+                    "No change in dosing schedule maintains adherence"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve compliance through pre-sorted, date-specific blister packaging.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Combines both medications into a single daily pack",
+                    "Reduces risk of missed doses despite unchanged pill count",
+                    "Packaging can be synchronized with monthly refill cycle"
+                ]
+            }
+        ]
+    },
+    "diane_robinson_tracer_0001": {
+        "patient_id": "diane_robinson_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Insulin Lispro",
+                    "dosage": "sliding scale",
+                    "daily_dose": 3,
+                    "monthly_units": 90,
+                    "unit_type": "tablet",
+                    "preferred_brand": "SwiftLis",
+                    "supplier": "Bengal EndoCare",
+                    "unit_cost_usd": 19.2
+                },
+                {
+                    "medication": "Levothyroxine",
+                    "dosage": "75mcg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 4,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable insulin and thyroid replacement therapy with consistent dosing",
+                "Monthly cost driven primarily by branded insulin formulation",
+                "No current adherence aids in use"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication sourcing to reduce out-of-pocket costs through coordinated generic substitution where clinically appropriate.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Maintains therapeutic equivalence while enabling bulk procurement discounts",
+                    "Preserves current dosing schedule to minimize patient disruption",
+                    "Facilitates single-supply ordering for improved refill coordination"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through structured blister packaging synchronized with daily routine.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Organizes multi-med regimen into time-stamped doses for clarity",
+                    "Reduces risk of missed or duplicated doses",
+                    "Supports independence for patients managing complex daily regimens"
+                ]
+            }
+        ]
+    },
+    "edward_rice_tracer_0001": {
+        "patient_id": "edward_rice_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable dual therapy for atrial fibrillation and hyperlipidemia",
+                "Total monthly cost: $249.90 (30 tablets each of Warfarin 5mg and Atorvastatin 20mg)",
+                "Pill burden: 2 tablets daily, no devices"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication fills to reduce dispensing fees and leverage bulk generic pricing.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced from same supplier (VedaRx Labs) enables synchronized refill scheduling",
+                    "No change in pill burden but potential for reduced copay through combined billing",
+                    "Maintains therapeutic equivalence with current branded generics"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve compliance through unit-dose blister packaging with daily scheduling.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Blister packs organize both medications by time and day, reducing missed doses",
+                    "Same medications and costs, but added packaging improves routine clarity",
+                    "Ideal for patients valuing structure and visual confirmation of adherence"
+                ]
+            }
+        ]
+    },
+    "joshua_wagner_tracer_0001": {
+        "patient_id": "joshua_wagner_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable anticoagulation and lipid control with current medications.",
+                "Total monthly cost: $249.90 for 60 tablets (30 each of warfarin and atorvastatin).",
+                "Pill burden is low but not synchronized for adherence support."
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication fills using lower-cost generics without changing brands or dosing.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced from same supplier allows for single monthly shipment.",
+                    "No change in clinical efficacy; maintains therapeutic equivalence.",
+                    "Reduces pharmacy visits and improves refill coordination."
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through blister-packed daily dosing with synchronized refills.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Pre-sorted daily packs reduce risk of missed or duplicate doses.",
+                    "Packaging includes both medications, reinforcing routine compliance.",
+                    "Supports long-term management of chronic cardiovascular conditions."
+                ]
+            }
+        ]
+    },
+    "kevin_arnold_tracer_0001": {
+        "patient_id": "kevin_arnold_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable anticoagulation and lipid control with current regimen",
+                "Total monthly cost: $250 (after insurance), out-of-pocket: $75",
+                "Low pill burden but no adherence support tools"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication fills to reduce out-of-pocket costs using preferred generics.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced through VedaRx Labs for bulk discount eligibility",
+                    "Fill synchronization reduces pharmacy visits to once per month",
+                    "Maintains therapeutic equivalence while lowering patient cost by 18%"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence with personalized blister packs.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Daily dose packaging reduces missed doses and supports routine",
+                    "Includes QR-coded tracking for telehealth adherence monitoring",
+                    "Same cost as current plan but adds adherence support infrastructure"
+                ]
+            }
+        ]
+    },
+    "kevin_bond_tracer_0001": {
+        "patient_id": "kevin_bond_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable on Warfarin 5mg and Atorvastatin 20mg daily",
+                "Total monthly cost: $250 (Vedarin and Atorveeda, VedaRx Labs)",
+                "Pill burden: 2 tablets daily, no adherence aids"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Reduce out-of-pocket costs by aligning fill cycles and leveraging lower-cost generics from preferred network suppliers.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications sourced from same supplier for coordinated refill timing",
+                    "Maintains therapeutic equivalence while lowering total monthly cost by 18%",
+                    "No change in dosing or administration required"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through unit-dose blister packaging with daily scheduling cues.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Blister packs organize both medications by day and time, reducing missed doses",
+                    "Same medications and cost as current regimen but with adherence support",
+                    "Ideal for patient with travel or variable daily routine"
+                ]
+            }
+        ]
+    },
+    "laurie_carson_tracer_0001": {
+        "patient_id": "laurie_carson_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Insulin Lispro",
+                    "dosage": "sliding scale",
+                    "daily_dose": 3,
+                    "monthly_units": 90,
+                    "unit_type": "tablet",
+                    "preferred_brand": "SwiftLis",
+                    "supplier": "Bengal EndoCare",
+                    "unit_cost_usd": 19.2
+                },
+                {
+                    "medication": "Levothyroxine",
+                    "dosage": "75mcg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 4,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "High monthly cost driven primarily by branded insulin.",
+                "Stable dosing with no recent hypoglycemic events.",
+                "Adherence occasionally impacted by morning routine."
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Reduce out-of-pocket expense through generic substitution and synchronized refill timing.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Aligns refill dates to minimize pharmacy visits.",
+                    "Maintains therapeutic equivalence while lowering cost.",
+                    "Preserves current dosing accuracy with familiar administration."
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence via blister-packed daily dosing with visual cues.",
+                "components": [
+                    {
+                        "medication": "Insulin Lispro",
+                        "dosage": "sliding scale",
+                        "daily_dose": 3,
+                        "monthly_units": 90,
+                        "unit_type": "tablet",
+                        "preferred_brand": "SwiftLis",
+                        "supplier": "Bengal EndoCare",
+                        "unit_cost_usd": 19.2
+                    },
+                    {
+                        "medication": "Levothyroxine",
+                        "dosage": "75mcg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 4,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Organizes AM/PM doses to reduce missed tablets.",
+                    "Compatible with current medication brands and dosages.",
+                    "Supports routine consistency, especially on busy mornings."
+                ]
+            }
+        ]
+    },
+    "matthew_smith_tracer_0001": {
+        "patient_id": "matthew_smith_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Warfarin",
+                    "dosage": "5mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Vedarin",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.28
+                },
+                {
+                    "medication": "Atorvastatin",
+                    "dosage": "20mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Atorveeda",
+                    "supplier": "VedaRx Labs",
+                    "unit_cost_usd": 4.05
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 2,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable anticoagulation and lipid control with warfarin and atorvastatin",
+                "Total monthly cost: $250 (combined), no current adherence aids",
+                "Pill burden is low but potential for cost reduction exists"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication fills using lower-cost generics to reduce out-of-pocket expenses.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications filled at same pharmacy on same schedule for cost efficiency",
+                    "Maintains current therapeutic efficacy with potential 15% cost reduction",
+                    "No change in dosing or administration routine required"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through unit-dose blister packaging with daily reminders.",
+                "components": [
+                    {
+                        "medication": "Warfarin",
+                        "dosage": "5mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Vedarin",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.28
+                    },
+                    {
+                        "medication": "Atorvastatin",
+                        "dosage": "20mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Atorveeda",
+                        "supplier": "VedaRx Labs",
+                        "unit_cost_usd": 4.05
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 2,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Medications packaged together by dose and time to reduce missed doses",
+                    "Supports long-term adherence for chronic atrial fibrillation and lipid management",
+                    "Enables caregiver or pharmacy monitoring of compliance"
+                ]
+            }
+        ]
+    },
+    "megan_jones_tracer_0001": {
+        "patient_id": "megan_jones_tracer_0001",
+        "current_regimen": {
+            "components": [
+                {
+                    "medication": "Metformin",
+                    "dosage": "500mg",
+                    "daily_dose": 2,
+                    "monthly_units": 60,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Generic",
+                    "supplier": "Clinical sourcing pending",
+                    "unit_cost_usd": 8.5
+                },
+                {
+                    "medication": "Lisinopril",
+                    "dosage": "10mg",
+                    "daily_dose": 1,
+                    "monthly_units": 30,
+                    "unit_type": "tablet",
+                    "preferred_brand": "Lisipril-M",
+                    "supplier": "Mumbai Cardio Pharma",
+                    "unit_cost_usd": 2.8
+                }
+            ],
+            "pill_burden": {
+                "tablets_per_day": 3,
+                "devices_per_month": 0
+            },
+            "notes": [
+                "Stable dual therapy for comorbid hypertension and type 2 diabetes",
+                "Total monthly cost: $339 (60 metformin + 30 lisinopril tablets)",
+                "No reported adherence issues, but opportunity to reduce complexity"
+            ]
+        },
+        "optimized_regimens": [
+            {
+                "name": "Cost-Synchronized Generic Fill",
+                "focus": "Align medication sourcing to reduce out-of-pocket costs using consistent generic suppliers.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Both medications maintain same dosage and frequency for seamless transition",
+                    "Utilizes lowest-cost available sourcing without brand switching",
+                    "Monthly fill synchronized to reduce pharmacy visits"
+                ]
+            },
+            {
+                "name": "Adherence Packaging Option",
+                "focus": "Improve medication adherence through unit-dose blister packaging with daily scheduling.",
+                "components": [
+                    {
+                        "medication": "Metformin",
+                        "dosage": "500mg",
+                        "daily_dose": 2,
+                        "monthly_units": 60,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Generic",
+                        "supplier": "Clinical sourcing pending",
+                        "unit_cost_usd": 8.5
+                    },
+                    {
+                        "medication": "Lisinopril",
+                        "dosage": "10mg",
+                        "daily_dose": 1,
+                        "monthly_units": 30,
+                        "unit_type": "tablet",
+                        "preferred_brand": "Lisipril-M",
+                        "supplier": "Mumbai Cardio Pharma",
+                        "unit_cost_usd": 2.8
+                    }
+                ],
+                "pill_burden": {
+                    "tablets_per_day": 3,
+                    "devices_per_month": 0
+                },
+                "synergy_notes": [
+                    "Maintains current medication and dosing with enhanced adherence support",
+                    "Blister packs organize AM/PM doses to reduce missed doses",
+                    "Packaging syncs refill timing for both medications"
+                ]
+            }
+        ]
+    }
+}

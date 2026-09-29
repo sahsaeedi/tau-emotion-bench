@@ -1,0 +1,3142 @@
+{
+    "REC001": {
+        "record_id": "REC001",
+        "appointment_id": "APPT002",
+        "patient_id": "david_martinez_5678",
+        "provider_id": "dr_williams_psychiatry",
+        "date": "2024-01-16",
+        "type": "consultation_note",
+        "subjective": "Patient reports significant improvement in anxiety symptoms since starting sertraline 6 weeks ago. Sleep has improved, less worry about work situations. Minimal side effects noted - some initial nausea that resolved after first week.",
+        "objective": "Patient appears calm and engaged. Good eye contact. Speech normal rate and volume. Mood appears euthymic. No signs of acute distress.",
+        "assessment": "Generalized anxiety disorder, responding well to sertraline 50mg daily. Patient tolerating medication well with good therapeutic response.",
+        "plan": "Increase sertraline to 75mg daily for continued optimization. Continue current dose for 6 weeks then reassess. Patient to monitor for any side effects. Follow-up in 6 weeks. Discussed stress management techniques.",
+        "prescriptions": [
+            {
+                "medication": "Sertraline",
+                "dosage": "75mg",
+                "frequency": "once daily",
+                "quantity": "30 tablets",
+                "refills": 2,
+                "pharmacy": "CVS Pharmacy Main St"
+            }
+        ],
+        "next_appointment": "2024-03-01"
+    },
+    "REC002": {
+        "record_id": "REC002",
+        "appointment_id": "APPT001",
+        "patient_id": "sarah_johnson_1234",
+        "provider_id": "dr_garcia_primary",
+        "date": "2024-01-15",
+        "type": "annual_physical",
+        "vital_signs": {
+            "blood_pressure": "142/88",
+            "heart_rate": "76",
+            "temperature": "98.6",
+            "weight": "165 lbs",
+            "height": "5'6\""
+        },
+        "subjective": "Patient here for annual physical. Reports feeling generally well. Some fatigue noted over past few months. Taking medications as prescribed. Diet could be improved. Exercise 2-3 times per week.",
+        "objective": "Well-appearing female in no acute distress. Cardiovascular: Regular rate and rhythm, no murmurs. Lungs: Clear to auscultation bilaterally. No acute findings on examination.",
+        "assessment": "1. Hypertension - not optimally controlled, BP elevated today\n2. Type 2 diabetes - well controlled based on last A1C\n3. Health maintenance up to date",
+        "plan": "1. Increase lisinopril to 15mg daily\n2. Recheck BP in 2 weeks\n3. Continue metformin\n4. Order lipid panel and A1C\n5. Mammogram due - will order\n6. Discussed diet and exercise",
+        "lab_orders": [
+            "Comprehensive metabolic panel",
+            "Lipid panel",
+            "HbA1c",
+            "Thyroid function tests"
+        ],
+        "next_appointment": "2024-01-29"
+    },
+    "REC003": {
+        "record_id": "REC003",
+        "appointment_id": "APPT003",
+        "patient_id": "emily_chen_9012",
+        "provider_id": "dr_patel_dermatology",
+        "date": "2024-01-17",
+        "type": "consultation_note",
+        "subjective": "Patient reports persistent erythematous rash on forearms for the past two weeks with mild itching. Over-the-counter moisturizers provided minimal relief.",
+        "objective": "Multiple erythematous plaques with well-demarcated borders noted on bilateral forearms. No signs of secondary infection.",
+        "assessment": "Contact dermatitis with mild inflammation.",
+        "plan": "Recommend hydrocortisone 1% cream applied twice daily for 7 days and avoid potential irritants. Discussed return precautions if symptoms worsen or fail to improve.",
+        "recommendations": [
+            "Hydrocortisone 1% cream twice daily",
+            "Use hypoallergenic moisturizer",
+            "Avoid suspected irritants"
+        ]
+    },
+    "REC004": {
+        "record_id": "REC004",
+        "appointment_id": "APPT018",
+        "patient_id": "olivia_martin_4433",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-03-30",
+        "type": "virtual_follow_up",
+        "subjective": "Patient reports increased nasal congestion despite daily fluticasone. Requests refills for both inhaler and nasal spray, and inquires about trying a prophylactic antibiotic for spring allergies.",
+        "objective": "No acute distress noted. Patient performing coordinated breathing techniques correctly. Reviewed allergy list: documented sulfa drug allergy with prior hives reaction.",
+        "assessment": "Seasonal allergic rhinitis with asthma overlap. Avoid sulfonamide-based antibiotics due to documented allergy.",
+        "plan": "Continue albuterol inhaler PRN, renew fluticasone nasal spray. Do NOT prescribe sulfonamide antibiotics; discuss non-sulfa alternatives if symptoms worsen.",
+        "recommendations": [
+            "Continue fluticasone nasal spray 1 spray daily",
+            "Renew albuterol inhaler for rescue use",
+            "Avoid sulfonamide antibiotics due to allergy"
+        ]
+    },
+    "REC005": {
+        "record_id": "REC005",
+        "appointment_id": "APPT020",
+        "patient_id": "heather_collins_48201",
+        "provider_id": "dr_garcia_primary",
+        "date": "2024-11-12",
+        "type": "telehealth_follow_up",
+        "subjective": "Patient reports improved adherence to dietary changes, mild muscle aches with evening statin dose.",
+        "objective": "No acute issues noted via video. Reviewed home blood pressure readings.",
+        "assessment": "Hyperlipidemia with good response to statin therapy.",
+        "plan": "Continue atorvastatin 20mg nightly; encourage hydration to reduce myalgias.",
+        "prescriptions": [
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "nightly",
+                "quantity": "30 tablets",
+                "refills": 3,
+                "pharmacy": "Grand Rapids Wellness Pharmacy"
+            }
+        ]
+    },
+    "REC006": {
+        "record_id": "REC006",
+        "appointment_id": "APPT021",
+        "patient_id": "heather_collins_48201",
+        "provider_id": "dr_thompson_cardiology",
+        "date": "2025-01-06",
+        "type": "lipid_specialist_follow_up",
+        "subjective": "Patient reports LDL plateau despite high adherence to statin therapy; denies myalgias.",
+        "objective": "Recent lipid panel reviewed via portal upload; LDL remains above goal though triglycerides improved.",
+        "assessment": "Hyperlipidemia needing additional cholesterol absorption blockade.",
+        "plan": "Add ezetimibe 10mg daily alongside current statin; reinforce adherence and schedule repeat labs in 6 weeks.",
+        "prescriptions": [
+            {
+                "medication": "Ezetimibe",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "quantity": "30 tablets",
+                "refills": 2,
+                "pharmacy": "CardioCare Mail Pharmacy"
+            }
+        ]
+    },
+    "REC007": {
+        "record_id": "REC007",
+        "appointment_id": "APPT022",
+        "patient_id": "heather_collins_48201",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-02-10",
+        "type": "asthma_control_follow_up",
+        "subjective": "Reports increased pollen-triggered wheeze and wants streamlined controller plan for spring.",
+        "objective": "Peak flow log shows mild variability. No rescue inhaler use beyond twice per week.",
+        "assessment": "Seasonal asthma with leukotriene modifier benefit expected.",
+        "plan": "Begin montelukast 10mg nightly and reinforce trigger avoidance plan.",
+        "prescriptions": [
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "nightly",
+                "quantity": "30 tablets",
+                "refills": 2,
+                "pharmacy": "Lakeshore Specialty Pharmacy"
+            }
+        ]
+    },
+    "REC008": {
+        "record_id": "REC008",
+        "appointment_id": "APPT023",
+        "patient_id": "heather_collins_48201",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-03-18",
+        "type": "asthma_maintenance_check",
+        "subjective": "Follow-up for seasonal asthma; patient prefers once-daily maintenance inhaler to fit schedule.",
+        "objective": "Breath sounds clear over video assessment. Reviewed spacer technique and adherence.",
+        "assessment": "Seasonal asthma requiring inhaled corticosteroid controller.",
+        "plan": "Prescribe fluticasone inhaler 110mcg two puffs twice daily with spacer coaching.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "2 puffs twice daily",
+                "quantity": "1 inhaler",
+                "refills": 3,
+                "pharmacy": "Lakeshore Specialty Pharmacy"
+            }
+        ]
+    },
+    "REC009": {
+        "record_id": "REC009",
+        "appointment_id": "APPT026",
+        "patient_id": "amara_osei_8834",
+        "provider_id": "dr_fernandez_endocrinology",
+        "date": "2025-03-02",
+        "type": "consultation_note",
+        "subjective": "Patient reported erratic glucose alerts after CGM transmitter failure and requested backup insulin delivery plan.",
+        "objective": "CGM data gap noted for 48 hours. Finger-stick log shows stable fasting values averaging 105 mg/dL.",
+        "assessment": "Type 1 Diabetes with recent CGM transmitter failure; basal insulin coverage adequate, bolus timing needs closer review.",
+        "plan": "Order replacement transmitter, reinforce bolus timing checklist, maintain current basal dosing until next review.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Glargine",
+                "dosage": "20 units",
+                "frequency": "at bedtime",
+                "quantity": "1 pen",
+                "refills": 1,
+                "pharmacy": "Lakeshore Specialty Pharmacy"
+            }
+        ]
+    },
+    "REC010": {
+        "record_id": "REC010",
+        "appointment_id": "APPT025",
+        "patient_id": "amara_osei_8834",
+        "provider_id": "dr_singh_endocrinology",
+        "date": "2025-04-15",
+        "type": "follow_up_note",
+        "subjective": "Patient reports stable overnight glucose but lunchtime spikes when pre-meal insulin is delayed.",
+        "objective": "CGM download shows average glucose 138 mg/dL, time-in-range 74%. No hypoglycemia episodes <70 mg/dL.",
+        "assessment": "Type 1 Diabetes with adequate basal coverage. Need faster bolus access during pharmacy backorder contingencies.",
+        "plan": "Issue refills for basal and bolus insulin pens, note need for emergency sourcing if national shortage occurs.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Glargine",
+                "dosage": "20 units",
+                "frequency": "at bedtime",
+                "quantity": "2 pens",
+                "refills": 1,
+                "pharmacy": "Lakeshore Specialty Pharmacy"
+            },
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "6 units",
+                "frequency": "before meals",
+                "quantity": "3 pens",
+                "refills": 1,
+                "pharmacy": "Lakeshore Specialty Pharmacy"
+            }
+        ]
+    },
+    "REC011": {
+        "record_id": "REC011",
+        "appointment_id": "APPT028",
+        "patient_id": "nina_park_8020",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-04-02",
+        "type": "ergonomic_coaching_note",
+        "subjective": "Patient reports neck stiffness after video calls and wants firmer resistance exercises plus softer myofascial release tools.",
+        "objective": "Telehealth kit currently includes a medium-strength resistance band set and a firm foam roller.",
+        "assessment": "Remote physical therapy support requiring higher resistance and cushioned roller for daily use.",
+        "plan": "Provide upgraded resistance band set and cushioned foam roller; reassess in two weeks via telehealth.",
+        "prescriptions": [
+            {
+                "medication": "Resistance Band Set",
+                "dosage": "Medium strength",
+                "frequency": "15 minutes twice daily",
+                "quantity": "1 set",
+                "refills": 0,
+                "pharmacy": "FlexiFit Rehab (Medium Set)",
+                "supplier": {
+                    "company": "FlexiFit Rehab",
+                    "brand_name": "FlexiFit Medium",
+                    "price_usd": 24.5,
+                    "currency": "USD"
+                }
+            },
+            {
+                "medication": "Foam Massage Roller",
+                "dosage": "Firm 60cm",
+                "frequency": "10 minutes daily",
+                "quantity": "1 roller",
+                "refills": 0,
+                "pharmacy": "RollEase Therapy (Firm)",
+                "supplier": {
+                    "company": "RollEase Therapy",
+                    "brand_name": "RollEase Firm",
+                    "price_usd": 21.0,
+                    "currency": "USD"
+                }
+            }
+        ]
+    },
+    "REC012": {
+        "record_id": "REC012",
+        "appointment_id": "APPT029",
+        "patient_id": "yumi_tanaka_7410",
+        "provider_id": "dr_saito_cardiology",
+        "date": "2025-05-12",
+        "type": "pre_procedure_assessment",
+        "subjective": "Patient reports intermittent palpitations and is preparing for ablation; anxious about medication overlap.",
+        "objective": "Review of anticoagulation logs shows consistent INR between 2.3-2.8. Anxiety questionnaire score elevated.",
+        "assessment": "Atrial fibrillation management needing synchronized medication reconciliation and language-aligned counseling.",
+        "plan": "Hold warfarin morning of ablation; coordinate with care coordinator for anxiety support and remote vitals kit.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "once daily",
+                "quantity": "30 tablets",
+                "refills": 1,
+                "pharmacy": "Pacifica Heart Pharmacy",
+                "supplier": {
+                    "company": "Sunrise Biotech",
+                    "brand_name": "Lipistal",
+                    "price_usd": 4.15,
+                    "currency": "USD"
+                }
+            },
+            {
+                "medication": "Sertraline",
+                "dosage": "50mg",
+                "frequency": "once daily",
+                "quantity": "30 tablets",
+                "refills": 1,
+                "pharmacy": "Pacifica Heart Pharmacy",
+                "supplier": {
+                    "company": "Harmony Labs",
+                    "brand_name": "Sertrawin",
+                    "price_usd": 4.75,
+                    "currency": "USD"
+                }
+            }
+        ]
+    },
+    "REC013": {
+        "record_id": "REC013",
+        "appointment_id": "APPT030",
+        "patient_id": "yumi_tanaka_7410",
+        "provider_id": "dr_thompson_cardiology",
+        "date": "2025-05-19",
+        "type": "consultation_note",
+        "subjective": "Follow-up on lipid control and palpitations; patient curious about rosuvastatin/ezetimibe combo option.",
+        "objective": "Recent lipid panel shows LDL 118, HDL 52. Resting HR 68, BP 128/78.",
+        "assessment": "Mixed hyperlipidemia with possible benefit from combination therapy; requires interaction screening against warfarin/sertraline.",
+        "plan": "Review combo therapy interactions, coordinate for Japanese-language educational materials, and confirm availability of alternative cardiologist if conflicts arise.",
+        "prescriptions": [
+            {
+                "medication": "Rosuvastatin",
+                "dosage": "10mg",
+                "frequency": "nightly",
+                "quantity": "30 tablets",
+                "refills": 2,
+                "pharmacy": "Pacifica Heart Pharmacy"
+            }
+        ]
+    },
+    "REC014": {
+        "record_id": "REC014",
+        "appointment_id": "APPT031",
+        "patient_id": "yumi_tanaka_7410",
+        "provider_id": "care_coordinator_ito",
+        "date": "2025-05-06",
+        "type": "care_coordination_note",
+        "subjective": "Patient wants synchronized reminders in Japanese and confirmation of all telehealth logistics before ablation week.",
+        "objective": "Care coordinator reviewed medication list and remote device inventory; noted missing spare INR strips.",
+        "assessment": "Requires equipment refresh, translation-ready instructions, and confirmation of coverage for coaching sessions.",
+        "plan": "Ship additional INR strips, send Japanese-language care plan, verify voucher eligibility for coordination session, and gather supplier quotes for combination therapy.",
+        "prescriptions": []
+    },
+    "REC015": {
+        "record_id": "REC015",
+        "appointment_id": "APPT033",
+        "patient_id": "elena_morales_9921",
+        "provider_id": "dr_ivankovic_neurology",
+        "date": "2025-07-15",
+        "type": "neurology_intake",
+        "subjective": "Patient reports increased nocturnal auras and is preparing for wearable EEG telemetry.",
+        "objective": "Medication regimen reviewed: lamotrigine 100mg BID, buspirone 10mg TID, aspirin 81mg daily.",
+        "assessment": "Focal epilepsy tuning required; coordinate telemetry device training and seizure trigger logging.",
+        "plan": "Finalize telemetry equipment order, flag lamotrigine supplier for cost comparison, consolidate anxiety meds before the monitoring period.",
+        "prescriptions": [
+            {
+                "medication": "Lamotrigine",
+                "dosage": "100mg",
+                "frequency": "twice daily",
+                "quantity": "60 tablets",
+                "refills": 2,
+                "pharmacy": "Cascade Neuro Pharmacy"
+            },
+            {
+                "medication": "Buspirone",
+                "dosage": "10mg",
+                "frequency": "three times daily",
+                "quantity": "90 tablets",
+                "refills": 2,
+                "pharmacy": "Cascade Neuro Pharmacy"
+            }
+        ]
+    },
+    "REC016": {
+        "record_id": "REC016",
+        "appointment_id": "APPT034",
+        "patient_id": "elena_morales_9921",
+        "provider_id": "dr_hartwell_psychology",
+        "date": "2025-07-17",
+        "type": "behavioral_follow_up",
+        "subjective": "Discussed anxiety spikes surrounding seizure clusters and upcoming telemetry.",
+        "objective": "Patient using guided breathing app; reports buspirone adherence at 90%.",
+        "assessment": "GAD exacerbation around monitoring schedule; requires structured coping plan.",
+        "plan": "Set mindfulness reminders, coordinate with neurology team, evaluate caffeine intake.",
+        "prescriptions": []
+    },
+    "REC017": {
+        "record_id": "REC017",
+        "appointment_id": "APPT036",
+        "patient_id": "natalia_cole_8832",
+        "provider_id": "dr_patel_neurology",
+        "date": "2025-08-04",
+        "type": "telemetry_intake",
+        "subjective": "Telemetry wearable flagged missing overnight; patient requests urgent replacement before monitoring block.",
+        "objective": "Telemetry inventory shows kit NS-EEG-220 flagged 'missing/overdue'. Current medications: lamotrigine 150mg BID, clonazepam 0.5mg nightly, melatonin 5mg bedtime.",
+        "assessment": "Telemetry equipment recall + seizure monitoring prep.",
+        "plan": "Check inventory status, log replacement order, schedule device coaching session with telemetry nurse.",
+        "prescriptions": [
+            {
+                "medication": "Lamotrigine",
+                "dosage": "150mg",
+                "frequency": "twice daily",
+                "quantity": "60 tablets",
+                "refills": 2,
+                "pharmacy": "NorthStar Pharmacy"
+            },
+            {
+                "medication": "Clonazepam",
+                "dosage": "0.5mg",
+                "frequency": "nightly",
+                "quantity": "30 tablets",
+                "refills": 1,
+                "pharmacy": "NorthStar Pharmacy"
+            }
+        ]
+    },
+    "REC018": {
+        "record_id": "REC018",
+        "appointment_id": "APPT038",
+        "patient_id": "natalia_cole_8832",
+        "provider_id": "dr_hartwell_psychology",
+        "date": "2025-08-06",
+        "type": "behavioral_follow_up",
+        "subjective": "Patient anxious about telemetry wearable recall and rescheduled coaching.",
+        "objective": "Discussed progress with sleep hygiene. Reviewed clonazepam usage.",
+        "assessment": "Anxiety secondary to equipment logistics; monitor for insomnia relapse.",
+        "plan": "Coordinate with neurology team, confirm telemetry device delivery window, queue group session if monitoring stretches beyond two weeks.",
+        "prescriptions": []
+    },
+    "REC021": {
+        "record_id": "REC021",
+        "appointment_id": "APPT041",
+        "patient_id": "jin_park_7284",
+        "provider_id": "coach_riley_telemetry",
+        "date": "2025-06-10",
+        "type": "sleep_compliance_note",
+        "subjective": "Patient reports ventilator felt snug; noticed strap marks but denies leaks.",
+        "objective": "Usage 2025-06-01 to 2025-06-07: one missing upload (2025-06-04). Average nightly usage 6.7 hrs. Device VC-449.",
+        "assessment": "Compliance trending positive except unsynced night on 2025-06-04. Requires artifact embed for audit.",
+        "plan": "Verify backup ventilator availability. Ensure upload artifact archived. Schedule follow-up with respiratory specialist.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC022": {
+        "record_id": "REC022",
+        "appointment_id": "APPT044",
+        "patient_id": "maya_chen_3318",
+        "provider_id": "dr_okafor_developmental_pediatrics",
+        "date": "2025-04-15",
+        "type": "developmental_assessment",
+        "subjective": "Parent reports progress with communication skills using AAC device. Some regression in social engagement at school.",
+        "objective": "Maya demonstrates improved expressive communication via device (20-30 word combinations). Social reciprocity remains delayed. Sensory sensitivities present.",
+        "assessment": "ASD Level 2, stable. Continued multi-disciplinary therapy recommended. Medication management adequate.",
+        "plan": "Continue tri-weekly OT/SLP/ABA therapy. Schedule 6-month evaluation October 2025. Coordinate team meeting with all providers to align goals.",
+        "prescriptions": [
+            {
+                "medication": "Risperidone",
+                "dosage": "0.5mg",
+                "frequency": "twice daily",
+                "quantity": "60 tablets",
+                "refills": 3,
+                "pharmacy": "Portland Children's Pharmacy"
+            },
+            {
+                "medication": "Melatonin",
+                "dosage": "3mg",
+                "frequency": "at bedtime",
+                "quantity": "90 tablets",
+                "refills": 5,
+                "pharmacy": "Portland Children's Pharmacy"
+            }
+        ]
+    },
+    "REC023": {
+        "record_id": "REC023",
+        "appointment_id": "APPT045",
+        "patient_id": "maya_chen_3318",
+        "provider_id": "ot_sullivan",
+        "date": "2025-09-18",
+        "type": "therapy_progress_note",
+        "subjective": "Maya tolerating textured materials better. Parent notes improved dressing skills at home.",
+        "objective": "Completed sensory integration activities. Demonstrated improved tolerance to tactile input. Fine motor coordination progressing.",
+        "assessment": "Positive response to sensory integration therapy. Continue current protocol.",
+        "plan": "Maintain bi-weekly OT sessions. Coordinate with SLP for integrated sensory-communication activities.",
+        "prescriptions": []
+    },
+    "REC024": {
+        "record_id": "REC024",
+        "appointment_id": "APPT046",
+        "patient_id": "maya_chen_3318",
+        "provider_id": "slp_martinez",
+        "date": "2025-09-19",
+        "type": "therapy_progress_note",
+        "subjective": "Parent reports Maya using AAC device spontaneously to request preferred activities.",
+        "objective": "Maya using 3-4 word combinations on AAC. Demonstrated improved joint attention during structured play.",
+        "assessment": "Expressive language improving via AAC. Pragmatic language skills emerging.",
+        "plan": "Continue bi-weekly speech therapy. Train parents on AAC modeling strategies. Coordinate with BCBA on communication goals.",
+        "prescriptions": []
+    },
+    "REC025": {
+        "record_id": "REC025",
+        "appointment_id": "APPT047",
+        "patient_id": "maya_chen_3318",
+        "provider_id": "bcba_washington",
+        "date": "2025-09-20",
+        "type": "behavioral_analysis_note",
+        "subjective": "Parent reports reduced tantrum frequency at home. Maya participating more in family activities.",
+        "objective": "Social skills targets: turn-taking (60% accuracy), sharing (45% accuracy), emotion recognition (70% accuracy).",
+        "assessment": "Progress on targeted social behaviors. Challenging behaviors decreasing with consistent reinforcement.",
+        "plan": "Continue ABA protocol 3x/week. Update behavior intervention plan for school setting. Schedule parent training session.",
+        "prescriptions": []
+    },
+    "REC026": {
+        "record_id": "REC026",
+        "appointment_id": null,
+        "patient_id": "omar_hassan_2156",
+        "provider_id": "dr_rodriguez_orthopedics",
+        "date": "2025-09-10",
+        "type": "operative_note",
+        "subjective": "Patient presented with chronic right knee pain and mechanical symptoms (locking, catching) consistent with meniscal pathology.",
+        "objective": "Right knee arthroscopy performed. Findings: Grade 2 medial meniscus tear (posterior horn), mild chondromalacia patella. Procedures performed: partial medial meniscectomy, debridement of unstable meniscal tissue, lavage.",
+        "assessment": "Successful arthroscopic partial meniscectomy for medial meniscus tear. No complications during procedure. Expected recovery 6-8 weeks with physical therapy.",
+        "plan": "Post-operative protocol: ice/elevation 48-72 hours, weight-bearing as tolerated with crutches for 1 week, pain management with Ibuprofen 600mg q6h PRN. Follow-up in 2 weeks to assess healing. Refer to PT for rehabilitation starting week 3 post-op. RTC PRN for any concerns (increased pain, swelling, signs of infection).",
+        "prescriptions": []
+    },
+    "REC027": {
+        "record_id": "REC027",
+        "appointment_id": "APPT056",
+        "patient_id": "carlos_mendez_4521",
+        "provider_id": "dr_chen_primary_care",
+        "date": "2025-09-25",
+        "type": "primary_care_visit",
+        "subjective": "Patient reports chronic lower back pain (6/10) that worsens with prolonged standing. Also reports manageable anxiety levels with current Sertraline dose, though occasional breakthrough anxiety with work stress.",
+        "objective": "VS: BP 128/82, HR 76, Temp 98.4°F. General: alert, cooperative. Musculoskeletal: mild lumbar paraspinal tenderness, normal ROM. Mental status: appropriate affect, no acute distress.",
+        "assessment": "1. Chronic mechanical lower back pain - likely muscular. 2. Anxiety disorder - stable on current regimen.",
+        "plan": "Continue current medications. Advised on proper body mechanics and core strengthening exercises. Recommended heat therapy and OTC pain relief as needed. Follow-up in 3 weeks to reassess pain management. Consider PT referral if no improvement.",
+        "prescriptions": [
+            {
+                "medication": "Sertraline",
+                "dosage": "100mg daily",
+                "frequency": "once daily in the morning",
+                "duration": "ongoing",
+                "refills": 3
+            },
+            {
+                "medication": "Ibuprofen",
+                "dosage": "600mg",
+                "frequency": "every 6-8 hours as needed for pain",
+                "duration": "ongoing",
+                "refills": 2
+            },
+            {
+                "medication": "Acetaminophen",
+                "dosage": "500mg",
+                "frequency": "every 4-6 hours as needed",
+                "duration": "ongoing",
+                "refills": 2
+            }
+        ]
+    },
+    "REC028": {
+        "record_id": "REC028",
+        "appointment_id": null,
+        "patient_id": "robert_martinez_5589",
+        "provider_id": "dr_kim_cardiac_surgery",
+        "date": "2025-10-20",
+        "type": "pre_surgical_evaluation",
+        "subjective": "Patient reports stable angina with exertion. Medications adherence good. No recent chest pain at rest. Preparing for upcoming CABG surgery on 2025-11-15.",
+        "objective": "VS: BP 138/85, HR 68, O2 sat 97% on room air. Cardiovascular: Regular rate and rhythm, no murmurs. Lungs clear. ECG shows ST depression in lateral leads. Recent cardiac cath confirmed triple vessel disease.",
+        "assessment": "1. Coronary artery disease - triple vessel, stable angina. 2. Hypertension - controlled. 3. Type 2 Diabetes - controlled. 4. Hyperlipidemia - on statin therapy. Surgical candidate for CABG.",
+        "plan": "Proceed with CABG on 2025-11-15. Continue current cardiac medications up until surgery except hold Aspirin 5 days before. Pre-op anesthesia consultation required. Post-op cardiac rehab referral. Continue Metoprolol, Atorvastatin, Metformin through surgery date.",
+        "prescriptions": [
+            {
+                "medication": "Atorvastatin",
+                "dosage": "40mg daily",
+                "frequency": "once daily at bedtime",
+                "duration": "ongoing",
+                "refills": 3
+            },
+            {
+                "medication": "Metoprolol",
+                "dosage": "50mg",
+                "frequency": "twice daily",
+                "duration": "ongoing",
+                "refills": 3
+            },
+            {
+                "medication": "Aspirin",
+                "dosage": "81mg",
+                "frequency": "once daily (hold 5 days before surgery)",
+                "duration": "ongoing",
+                "refills": 3
+            },
+            {
+                "medication": "Metformin",
+                "dosage": "1000mg",
+                "frequency": "twice daily with meals",
+                "duration": "ongoing",
+                "refills": 3
+            }
+        ]
+    },
+    "REC029": {
+        "record_id": "REC029",
+        "appointment_id": null,
+        "patient_id": "patricia_wong_6634",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-10-15",
+        "type": "chronic_disease_management",
+        "subjective": "Patient reports good medication adherence. Blood pressure controlled at home (average 128/78). Blood glucose readings 110-140 fasting. No side effects from current medications.",
+        "objective": "VS: BP 130/80, HR 72, BMI 28.5. Labs: HbA1c 7.1%, LDL 95 mg/dL, creatinine 0.9. General: well-appearing, no acute distress.",
+        "assessment": "1. Type 2 Diabetes - controlled on Metformin. 2. Hypertension - controlled on Lisinopril. 3. Hyperlipidemia - controlled on Rosuvastatin. Continue current regimen.",
+        "plan": "Continue current medications. Patient interested in cost optimization - review medication suppliers for potential savings. Schedule 3-month follow-up to monitor labs and BP. Reinforce lifestyle modifications.",
+        "prescriptions": [
+            {
+                "medication": "Lisinopril",
+                "dosage": "20mg daily",
+                "frequency": "once daily in the morning",
+                "duration": "ongoing",
+                "refills": 3,
+                "supplier": "US Generic Plus",
+                "brand": "Lisinopril-G",
+                "unit_cost_usd": 8.5
+            },
+            {
+                "medication": "Rosuvastatin",
+                "dosage": "10mg daily",
+                "frequency": "once daily at bedtime",
+                "duration": "ongoing",
+                "refills": 3,
+                "supplier": "Silver Maple Pharma",
+                "brand": "MapleStat",
+                "unit_cost_usd": 6.2
+            },
+            {
+                "medication": "Metformin",
+                "dosage": "1000mg",
+                "frequency": "twice daily with meals",
+                "duration": "ongoing",
+                "refills": 3
+            }
+        ]
+    },
+    "REC_tracer_030": {
+        "record_id": "REC_tracer_030",
+        "appointment_id": "APPT_tracer_059",
+        "patient_id": "avery_morgan_tracer_0001",
+        "provider_id": "dr_saito_cardiology",
+        "date": "2025-12-01",
+        "type": "follow_up_note",
+        "subjective": "Patient reports occasional palpitations but no chest pain, SOB, or syncope. Adherent to Warfarin and Atorvastatin.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Stable atrial fibrillation and hyperlipidemia on current regimen.",
+        "plan": "Continue current medications. INR to be checked in 4 weeks. Follow-up appointment in 3 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_031": {
+        "record_id": "REC_tracer_031",
+        "appointment_id": "APPT_tracer_060",
+        "patient_id": "nadia_abbasi_tracer_0001",
+        "provider_id": "camila_ortega_primary_care_tracer_0001",
+        "date": "2025-12-01",
+        "type": "follow_up_note",
+        "subjective": "Patient reports consistent adherence to medications. Home BP readings average 135-140/85-90 mmHg. Fasting glucose 140-160 mg/dL. Denies chest pain, SOB, or dizziness.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Stable hypertension and type 2 diabetes without acute complications.",
+        "plan": "Continue current medications. Schedule next follow-up in 3 months. Repeat HbA1c and basic metabolic panel in 3 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_032": {
+        "record_id": "REC_tracer_032",
+        "appointment_id": "APPT_tracer_061",
+        "patient_id": "avery_morgan_tracer_0001",
+        "provider_id": "dr_smith_cardiology",
+        "date": "2025-11-30",
+        "type": "follow_up_note",
+        "subjective": "Reports no palpitations, dizziness, or shortness of breath. Taking Warfarin and Atorvastatin consistently without side effects.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Atrial fibrillation stable on therapeutic anticoagulation. Hyperlipidemia well-controlled with current statin therapy.",
+        "plan": "Continue Warfarin 5mg daily and Atorvastatin 20mg daily. Schedule monthly INR monitoring. Next cardiology follow-up in 6 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_033": {
+        "record_id": "REC_tracer_033",
+        "appointment_id": "APPT_tracer_062",
+        "patient_id": "jordan_patel_tracer_0001",
+        "provider_id": "dr_chen_primary_care",
+        "date": "2025-12-01",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current Fluticasone and Montelukast, costing over $25 monthly.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Cost analysis shows safe, equivalent alternatives available at lower cost from Indian suppliers.",
+        "plan": "Approve switch to Lotus Respiratory's Flohale (Fluticasone) and Lotus Breath's BreathFree (Montelukast); update pharmacy records.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_034": {
+        "record_id": "REC_tracer_034",
+        "appointment_id": "APPT_tracer_063",
+        "patient_id": "nadia_abbasi_tracer_0001",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-11-30",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current medications, especially lisinopril. Expresses willingness to switch to lower-cost alternatives if safe.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient's current medications reviewed for cost-saving opportunities. Lisinopril identified as having a significantly cheaper equivalent from an approved international supplier without compromising safety.",
+        "plan": "Switch lisinopril to Mumbai Cardio Pharma's Lisipril-M (10mg) at $2.80/month. Continue metformin as no cheaper alternative found. Provide new prescription and supplier information.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Mumbai Cardio Pharma",
+                    "brand_name": "Lisipril-M",
+                    "price_usd": 2.8,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_035": {
+        "record_id": "REC_tracer_035",
+        "appointment_id": "APPT_tracer_064",
+        "patient_id": "avery_morgan_tracer_0001",
+        "provider_id": "dr_thompson_cardiology",
+        "date": "2025-12-01",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty falling asleep for past 2 weeks, currently taking Bupropion for depression without issues. Denies palpitations or chest pain.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-risk interaction between Bupropion and Zolpidem; no significant pharmacokinetic interaction expected but monitor for additive CNS effects.",
+        "plan": "Proceed with Zolpidem at lowest dose; monitor for insomnia exacerbation or agitation. Follow up in 2 weeks via telehealth.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_036": {
+        "record_id": "REC_tracer_036",
+        "appointment_id": "APPT_tracer_065",
+        "patient_id": "avery_morgan_tracer_0001",
+        "provider_id": "owen_shaw_cardiology_tracer_0001",
+        "date": "2025-12-01",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports chronic insomnia and is considering adding Zolpidem to current regimen. Currently taking Bupropion. Denies recent agitation but notes occasional restlessness.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity drug interaction (risk score 2) between Bupropion and Zolpidem; no significant interaction expected per review. Monitor for insomnia or agitation.",
+        "plan": "Approve Zolpidem 5mg as needed for sleep. Advise patient to monitor for increased insomnia or agitation and report any concerns. Schedule follow-up in 2 weeks.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_037": {
+        "record_id": "REC_tracer_037",
+        "appointment_id": "APPT_tracer_066",
+        "patient_id": "avery_morgan_tracer_0001",
+        "provider_id": "coach_riley_telemetry",
+        "date": "2025-12-01",
+        "type": "telemetry_compliance_note",
+        "subjective": "Forgot to sync on 11/28 and had trouble wearing it all night on 11/27 due to discomfort",
+        "objective": "Telemetry review for device CARDIA_tracer_451 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Suboptimal telemetry compliance: one day with no upload (11/28) and one day with usage below threshold (5.9 hours on 11/27)",
+        "plan": "Reinforce proper device use; schedule daily sync reminders; reassess in 7 days.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_038": {
+        "record_id": "REC_tracer_038",
+        "appointment_id": "APPT_tracer_068",
+        "patient_id": "jordan_patel_tracer_0001",
+        "provider_id": "riley_stone_device_coaching_tracer_0001",
+        "date": "2025-12-01",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports travel on 11/28 caused missed session; otherwise using device 6+ hours nightly but sometimes removes mask early.",
+        "objective": "Telemetry review for device PHILIP_tracer_452 (Philips Trilogy Ventilator); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Telemetry review confirms one missing upload (11/28) and one night with usage below threshold (11/27).",
+        "plan": "Reinforce consistent device use; schedule device coaching to address travel barriers and mask comfort issues. Monitor compliance weekly.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_039": {
+        "record_id": "REC_tracer_039",
+        "appointment_id": "APPT_tracer_070",
+        "patient_id": "avery_morgan_tracer_0001",
+        "provider_id": "coach_riley_telemetry",
+        "date": "2025-12-01",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient states they sometimes forget to sync the device in the morning and had a night (11/27) where they removed it early due to discomfort.",
+        "objective": "Telemetry review for device CARDIA_tracer_451 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Telemetry review shows one missed upload (11/28) and one night with inadequate wear time (5.9 hours on 11/27).",
+        "plan": "1. Reinforce daily sync routine. 2. Adjust device placement for comfort. 3. Recheck adherence in 48 hours.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_040": {
+        "record_id": "REC_tracer_040",
+        "appointment_id": "APPT_tracer_072",
+        "patient_id": "nadia_abbasi_tracer_0001",
+        "provider_id": "camila_ortega_primary_care_tracer_0001",
+        "date": "2025-12-01",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports taking Metformin twice daily and Lisinopril once daily as prescribed, but expresses concern about high monthly medication costs (approximately $600) and occasionally missing doses due to separate refill schedules.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Current regimen is effective for BP and glucose control but presents high out-of-pocket cost and suboptimal adherence due to separate fill schedules.",
+        "plan": "Present two optimization options to patient: 1) Cost-synchronized generic fill to reduce cost, 2) Adherence packaging to improve compliance. Obtain patient preference and process authorization.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "2x daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_041": {
+        "record_id": "REC_tracer_041",
+        "appointment_id": "APPT_tracer_074",
+        "patient_id": "daniel_morales_tracer_0001",
+        "provider_id": "care_coordinator_ito",
+        "date": "2025-12-01",
+        "type": "family_coordination_note",
+        "subjective": "Mother reports Daniel (5yo) and Sofia (3yo) had vomiting/diarrhea x2 days; Mateo (1yo) now symptomatic. Concerned about dehydration and school exposure risks.",
+        "objective": "Household coordination review for family members: daniel_morales_tracer_0001, sofia_morales_tracer_0001, mateo_morales_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household viral gastroenteritis outbreak confirmed; acute care triaged to pediatric visit, coordination needs to follow-up appointment",
+        "plan": "Coordinate school nurse clearance for Daniel/Sofia; arrange oral rehydration solution delivery; 48-hour follow-up for Mateo's status",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_042": {
+        "record_id": "REC_tracer_042",
+        "appointment_id": "APPT_tracer_075",
+        "patient_id": "amanda_martinez_tracer_0001",
+        "provider_id": "amy_young_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports generally stable blood sugars but occasional morning hypoglycemia; thyroid symptoms well-controlled on current levothyroxine dose.",
+        "objective": "Patient profile includes Type 1 Diabetes, Hypothyroidism.",
+        "assessment": "Well-managed Type 1 Diabetes and primary hypothyroidism; no acute endocrine concerns identified.",
+        "plan": "Continue current insulin regimen and levothyroxine; review glucose logs and adjust sliding scale if needed; annual endocrine reevaluation scheduled.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_043": {
+        "record_id": "REC_tracer_043",
+        "appointment_id": "APPT_tracer_076",
+        "patient_id": "cynthia_scott_tracer_0001",
+        "provider_id": "camila_ortega_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Cynthia reports generally stable energy levels but occasional morning dizziness, possibly related to blood pressure. She has been adhering to her medications and monitoring blood sugar at home.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Chronic management of hypertension and type 2 diabetes with stable vitals and no acute distress noted.",
+        "plan": "Continue current medication regimen with lifestyle counseling. Assess blood pressure trends and HbA1c from recent labs. Schedule next follow-up in 3 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_044": {
+        "record_id": "REC_tracer_044",
+        "appointment_id": "APPT_tracer_077",
+        "patient_id": "diane_robinson_tracer_0001",
+        "provider_id": "ashley_schneider_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "I've been trying to keep my blood sugar stable, but it's been running high after meals. I'm taking my insulin and thyroid meds as prescribed.",
+        "objective": "Patient profile includes Type 1 Diabetes, Hypothyroidism.",
+        "assessment": "Patient with Type 1 Diabetes and Hypothyroidism presenting for routine follow-up. No acute distress reported.",
+        "plan": "Review glucose trends and medication adherence. Assess need for insulin regimen adjustment. Continue current levothyroxine dose with TSH monitoring.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_045": {
+        "record_id": "REC_tracer_045",
+        "appointment_id": "APPT_tracer_078",
+        "patient_id": "edward_rice_tracer_0001",
+        "provider_id": "brandi_dixon_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports generally stable symptoms but has occasional palpitations, especially with exertion. No chest pain or syncope. Taking medications as prescribed.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Stable atrial fibrillation and hyperlipidemia. No signs of decompensation. Medication adherence reported.",
+        "plan": "Continue current anticoagulation and lipid-lowering therapy. Monitor INR regularly. Discuss rhythm control strategy at next visit.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_046": {
+        "record_id": "REC_tracer_046",
+        "appointment_id": "APPT_tracer_079",
+        "patient_id": "joshua_wagner_tracer_0001",
+        "provider_id": "bryan_bryant_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports feeling stable, no palpitations or chest pain recently. Taking Warfarin and Atorvastatin as prescribed. No bleeding episodes or muscle pain noted.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Stable atrial fibrillation and hyperlipidemia under current medical management. No signs of anticoagulation complications or statin-related side effects.",
+        "plan": "Continue current anticoagulation and lipid-lowering therapy. Monitor INR within therapeutic range. Schedule next follow-up in 6 months or sooner if symptoms develop.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_047": {
+        "record_id": "REC_tracer_047",
+        "appointment_id": "APPT_tracer_080",
+        "patient_id": "kevin_arnold_tracer_0001",
+        "provider_id": "christine_bailey_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports feeling stable, no palpitations or chest pain recently. Taking Warfarin and Atorvastatin as prescribed.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Stable atrial fibrillation and well-controlled hyperlipidemia based on recent labs and clinical history.",
+        "plan": "Continue current anticoagulation and statin therapy. Monitor INR every 4 weeks. Schedule next follow-up in 6 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_048": {
+        "record_id": "REC_tracer_048",
+        "appointment_id": "APPT_tracer_081",
+        "patient_id": "kevin_bond_tracer_0001",
+        "provider_id": "dr_saito_cardiology",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports feeling stable, no palpitations or chest pain recently. Taking Warfarin and Atorvastatin as prescribed.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Stable atrial fibrillation and hyperlipidemia under current medical management.",
+        "plan": "Continue current anticoagulation and lipid-lowering therapy. Monitor INR and lipid panel in follow-up labs.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_049": {
+        "record_id": "REC_tracer_049",
+        "appointment_id": "APPT_tracer_082",
+        "patient_id": "laurie_carson_tracer_0001",
+        "provider_id": "caleb_turner_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports generally stable blood sugars but occasional morning hypoglycemia. Feels fatigued at times despite consistent levothyroxine use.",
+        "objective": "Patient profile includes Type 1 Diabetes, Hypothyroidism.",
+        "assessment": "Well-controlled Type 1 Diabetes with minor glycemic variability; hypothyroidism on stable replacement therapy.",
+        "plan": "Continue current insulin regimen and levothyroxine. Assess need for thyroid function testing and insulin adjustment based on glucose trends.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_050": {
+        "record_id": "REC_tracer_050",
+        "appointment_id": "APPT_tracer_083",
+        "patient_id": "matthew_smith_tracer_0001",
+        "provider_id": "dr_smith_cardiology",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports feeling stable, no palpitations or chest pain recently. Taking Warfarin and Atorvastatin as prescribed.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Stable atrial fibrillation and hyperlipidemia under current medical management.",
+        "plan": "Continue current anticoagulation and lipid-lowering therapy. Monitor INR regularly and assess for any symptoms of arrhythmia or medication side effects.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_051": {
+        "record_id": "REC_tracer_051",
+        "appointment_id": "APPT_tracer_084",
+        "patient_id": "megan_jones_tracer_0001",
+        "provider_id": "charles_barajas_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "I've been checking my blood sugar at home regularly and trying to stick to my diet. Sometimes my blood pressure feels high, but I'm taking my Lisinopril as prescribed.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Stable chronic conditions with ongoing management of hypertension and type 2 diabetes. No acute distress reported.",
+        "plan": "Continue current medication regimen. Review home glucose and blood pressure logs. Schedule HbA1c and basic metabolic panel in one week.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_052": {
+        "record_id": "REC_tracer_052",
+        "appointment_id": "APPT_tracer_085",
+        "patient_id": "melanie_chambers_tracer_0001",
+        "provider_id": "charles_lewis_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports generally feeling well but occasionally forgets evening Metformin dose. No chest pain or dizziness recently.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Stable hypertension and type 2 diabetes with room for medication adherence improvement.",
+        "plan": "Continue current medications. Discuss adherence strategies and lifestyle modifications during visit. Schedule HbA1c and basic metabolic panel in one week.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_053": {
+        "record_id": "REC_tracer_053",
+        "appointment_id": "APPT_tracer_086",
+        "patient_id": "michele_wheeler_tracer_0001",
+        "provider_id": "dana_padilla_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports occasional morning dizziness and mild fatigue. Has been checking blood pressure at home with average readings of 138/86 mmHg. Blood sugars generally within target range, though post-meal levels sometimes reach 180 mg/dL.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Stable chronic management of hypertension and type 2 diabetes. No signs of acute distress. Symptoms may suggest need for medication adjustment or lifestyle review.",
+        "plan": "Review home BP and glucose logs. Assess medication adherence and side effects. Consider potential dose adjustment or additional monitoring based on trends.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_054": {
+        "record_id": "REC_tracer_054",
+        "appointment_id": "APPT_tracer_087",
+        "patient_id": "michelle_adams_tracer_0001",
+        "provider_id": "charles_scott_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Michelle reports generally stable blood sugars but occasional morning hypoglycemia. She is taking levothyroxine daily and using insulin lispro with meals as prescribed.",
+        "objective": "Patient profile includes Type 1 Diabetes, Hypothyroidism.",
+        "assessment": "Well-controlled Type 1 Diabetes and stable hypothyroidism on current regimen. No signs of acute complications.",
+        "plan": "Continue current medication regimen. Review glucose trends and adjust insulin dosing if needed. Schedule TSH and HbA1c testing in next 30 days.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_055": {
+        "record_id": "REC_tracer_055",
+        "appointment_id": "APPT_tracer_088",
+        "patient_id": "molly_hill_tracer_0001",
+        "provider_id": "christopher_fisher_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports generally stable blood sugars but occasional morning hypoglycemia. Consistently taking levothyroxine daily.",
+        "objective": "Patient profile includes Type 1 Diabetes, Hypothyroidism.",
+        "assessment": "Well-controlled Type 1 Diabetes and stable Hypothyroidism on current regimen.",
+        "plan": "Continue current medication regimen. Review glucose trends and adjust insulin dosing if needed. Schedule TSH and A1c labs next quarter.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_056": {
+        "record_id": "REC_tracer_056",
+        "appointment_id": "APPT_tracer_089",
+        "patient_id": "morgan_grant_tracer_0001",
+        "provider_id": "debra_nunez_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports generally feeling well, with occasional morning fatigue. No chest pain or shortness of breath. Monitoring blood sugar at home with occasional fasting highs.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Stable hypertension and type 2 diabetes. No acute concerns. Medications well tolerated.",
+        "plan": "Continue current medication regimen. Review home glucose logs and BP readings. Schedule HbA1c lab work. Discuss lifestyle modifications in next visit.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_057": {
+        "record_id": "REC_tracer_057",
+        "appointment_id": "APPT_tracer_090",
+        "patient_id": "norma_ruiz_tracer_0001",
+        "provider_id": "debra_castro_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "I've been trying to keep my blood sugar stable, but it's been running high after meals. I'm taking my insulin and thyroid meds as prescribed.",
+        "objective": "Patient profile includes Type 1 Diabetes, Hypothyroidism.",
+        "assessment": "Patient with Type 1 Diabetes and Hypothyroidism presents for routine follow-up. No acute distress reported. Current regimen includes insulin lispro on a sliding scale and levothyroxine 75mcg daily.",
+        "plan": "Review glucose trends and medication adherence. Assess need for insulin regimen adjustment. Continue current levothyroxine dose with TSH monitoring.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_058": {
+        "record_id": "REC_tracer_058",
+        "appointment_id": "APPT_tracer_091",
+        "patient_id": "rebecca_washington_tracer_0001",
+        "provider_id": "dr_fernandez_endocrinology",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Rebecca reports generally stable blood sugars but occasional morning hypoglycemia. She feels fatigued at times despite consistent levothyroxine use.",
+        "objective": "Patient profile includes Type 1 Diabetes, Hypothyroidism.",
+        "assessment": "Well-controlled Type 1 Diabetes with minor glycemic variability; hypothyroidism on stable replacement therapy.",
+        "plan": "Continue current insulin regimen and levothyroxine. Review glucose logs and adjust sliding scale if needed. Schedule TSH recheck in 3 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_059": {
+        "record_id": "REC_tracer_059",
+        "appointment_id": "APPT_tracer_092",
+        "patient_id": "richard_nelson_tracer_0001",
+        "provider_id": "dr_thompson_cardiology",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports feeling stable, no palpitations or chest pain recently. Taking Warfarin and Atorvastatin as prescribed.",
+        "objective": "Patient profile includes Atrial Fibrillation, Hyperlipidemia.",
+        "assessment": "Stable atrial fibrillation and hyperlipidemia under current medical management.",
+        "plan": "Continue current anticoagulation and lipid-lowering therapy. Monitor INR and lipid panel in 3 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_060": {
+        "record_id": "REC_tracer_060",
+        "appointment_id": "APPT_tracer_093",
+        "patient_id": "robin_rodriguez_tracer_0001",
+        "provider_id": "dr_chen_primary_care",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "Patient reports generally feeling well, with occasional morning fatigue and mild dizziness when standing quickly.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Stable chronic conditions with ongoing management of hypertension and type 2 diabetes.",
+        "plan": "Continue current medication regimen; monitor blood pressure and glucose levels weekly. Discuss results during visit.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_061": {
+        "record_id": "REC_tracer_061",
+        "appointment_id": "APPT_tracer_094",
+        "patient_id": "sandra_brown_tracer_0001",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-12-17",
+        "type": "follow_up_note",
+        "subjective": "I've been checking my blood pressure at home and it's been running a bit high lately. I'm trying to stay on track with my diet, but stress has made blood sugar harder to control.",
+        "objective": "Patient profile includes Hypertension, Type 2 Diabetes.",
+        "assessment": "Chronic hypertension and type 2 diabetes, currently managed with metformin and lisinopril. No acute distress noted.",
+        "plan": "Continue current medications. Review home BP logs and HbA1c trends. Discuss lifestyle modifications and adherence barriers. Schedule next follow-up in 3 months.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_062": {
+        "record_id": "REC_tracer_062",
+        "appointment_id": "APPT_tracer_095",
+        "patient_id": "adrian_reese_tracer_0001",
+        "provider_id": "howard_mccarthy_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current asthma and COPD medications despite insurance coverage.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Identified therapeutically equivalent, lower-cost suppliers for Fluticasone and Montelukast without compromising safety or efficacy.",
+        "plan": "Switch to Flohale (Fluticasone) and BreathFree (Montelukast) from Indian suppliers Lotus Respiratory and Lotus Breath, respectively, to reduce out-of-pocket costs.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_063": {
+        "record_id": "REC_tracer_063",
+        "appointment_id": "APPT_tracer_096",
+        "patient_id": "amanda_martinez_tracer_0001",
+        "provider_id": "john_wise_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current insulin supply and is interested in cost-saving alternatives. No issues with levothyroxine access or tolerability.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "plan": "Switch Insulin Lispro to SwiftLis (Bengal EndoCare) to reduce out-of-pocket cost. Continue Levothyroxine at current dose with local pharmacy supply. Monitor glucose trends over next 4 weeks.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "with meals",
+                "supplier": {
+                    "company": "Bengal EndoCare",
+                    "brand_name": "SwiftLis",
+                    "price_usd": 19.2,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "once daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_064": {
+        "record_id": "REC_tracer_064",
+        "appointment_id": "APPT_tracer_097",
+        "patient_id": "barry_farmer_tracer_0001",
+        "provider_id": "kenneth_mayer_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current inhaler and oral medications for COPD and asthma control.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is on stable respiratory therapy but faces financial burden. Therapeutic equivalents from lower-cost suppliers identified without compromising safety or efficacy.",
+        "plan": "Switch current Fluticasone and Montelukast to lower-cost suppliers. Provide updated prescriptions and coordinate pharmacy transfer. Reassess adherence and symptoms in 4 weeks.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_065": {
+        "record_id": "REC_tracer_065",
+        "appointment_id": "APPT_tracer_098",
+        "patient_id": "cynthia_scott_tracer_0001",
+        "provider_id": "nicholas_salinas_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to ongoing medication costs for diabetes and hypertension management.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is stable on current regimen but can benefit from cost-saving supplier switches without compromising therapeutic equivalence.",
+        "plan": "Switch Lisinopril to Mumbai Cardio Pharma's Lisipril-M (10mg, once daily) to reduce out-of-pocket expenses. Continue Metformin 500mg twice daily with current supplier. Monitor for adherence and tolerability.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Mumbai Cardio Pharma",
+                    "brand_name": "Lisipril-M",
+                    "price_usd": 2.8,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_066": {
+        "record_id": "REC_tracer_066",
+        "appointment_id": "APPT_tracer_099",
+        "patient_id": "diane_robinson_tracer_0001",
+        "provider_id": "shannon_anderson_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to current insulin costs and is seeking more affordable options while maintaining effective diabetes control.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient requires cost-effective medication alternatives; insulin lispro supplier updated to lowest-cost FDA-approved option. Levothyroxine remains stable without changes.",
+        "plan": "Switch insulin lispro to SwiftLis (Bengal EndoCare) for cost savings. Confirm patient access to international pharmacy services. Reassess adherence and glycemic control in 3 months.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "with meals",
+                "supplier": {
+                    "company": "Bengal EndoCare",
+                    "brand_name": "SwiftLis",
+                    "price_usd": 19.2,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "once daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_067": {
+        "record_id": "REC_tracer_067",
+        "appointment_id": "APPT_tracer_100",
+        "patient_id": "dustin_weber_tracer_0001",
+        "provider_id": "camila_ortega_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current inhaler and oral medication for COPD and asthma control.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is on stable respiratory therapy but faces financial burden. Therapeutically equivalent, lower-cost suppliers identified for both medications.",
+        "plan": "Switch to cost-effective suppliers without changing medication regimen. Update prescriptions and coordinate pharmacy fulfillment.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_068": {
+        "record_id": "REC_tracer_068",
+        "appointment_id": "APPT_tracer_101",
+        "patient_id": "gary_barry_tracer_0001",
+        "provider_id": "charles_barajas_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current inhaler and tablet medications, despite insurance coverage. Seeks more affordable alternatives without changing effectiveness.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is stable on current regimen for COPD and OSA but expresses financial burden. Therapeutic equivalents from lower-cost international suppliers are available and appropriate.",
+        "plan": "Switch to cost-effective, FDA-approved equivalent medications from verified suppliers to reduce out-of-pocket expenses while maintaining clinical efficacy. Provide patient education on new product names and usage.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_069": {
+        "record_id": "REC_tracer_069",
+        "appointment_id": "APPT_tracer_102",
+        "patient_id": "jeffery_duran_tracer_0001",
+        "provider_id": "charles_lewis_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current inhaler and oral medication for COPD. Seeks more affordable alternatives without changing effectiveness.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is stable on current regimen but faces financial burden. Therapeutic equivalents from lower-cost suppliers identified as safe and appropriate.",
+        "plan": "Switch to lower-cost suppliers for Fluticasone and Montelukast with same clinical specifications. Monitor for any changes in symptom control or side effects.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_070": {
+        "record_id": "REC_tracer_070",
+        "appointment_id": "APPT_tracer_103",
+        "patient_id": "kevin_shelton_tracer_0001",
+        "provider_id": "dana_padilla_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current asthma and COPD medications despite insurance coverage.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is stable on current regimen but faces financial burden. Equivalent lower-cost suppliers identified for both Fluticasone and Montelukast.",
+        "plan": "Switch to cost-effective suppliers without changing medication or dosage. Monitor for any access or adherence issues post-transition.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_071": {
+        "record_id": "REC_tracer_071",
+        "appointment_id": "APPT_tracer_104",
+        "patient_id": "laurie_carson_tracer_0001",
+        "provider_id": "debra_nunez_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to high medication costs, especially insulin. Interested in lower-cost alternatives without compromising safety.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is on stable therapy for Type 1 Diabetes and hypothyroidism. Cost-saving opportunities identified through supplier substitution for insulin with equivalent biosimilar product.",
+        "plan": "Switch Insulin Lispro to SwiftLis (Bengal EndoCare) as a cost-effective alternative. Continue Levothyroxine 75mcg daily with current supplier. Monitor glucose and thyroid symptoms.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "with meals",
+                "supplier": {
+                    "company": "Bengal EndoCare",
+                    "brand_name": "SwiftLis",
+                    "price_usd": 19.2,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "once daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_072": {
+        "record_id": "REC_tracer_072",
+        "appointment_id": "APPT_tracer_105",
+        "patient_id": "matthew_osborne_tracer_0001",
+        "provider_id": "dr_chen_primary_care",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current inhaler and allergy medication, seeks lower-cost alternatives without changing effectiveness.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is stable on current regimen but faces financial burden. Equivalent generic alternatives from vetted international suppliers identified as safe and significantly lower cost.",
+        "plan": "Switch to cost-effective suppliers for Fluticasone and Montelukast with same dosing. Monitor for any changes in symptom control or side effects. Provide prescription updates and pharmacy coordination.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_073": {
+        "record_id": "REC_tracer_073",
+        "appointment_id": "APPT_tracer_106",
+        "patient_id": "megan_jones_tracer_0001",
+        "provider_id": "dr_garcia_primary",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to medication costs, especially for blood pressure and diabetes management.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is on stable therapy for hypertension and type 2 diabetes; cost-saving opportunities identified through supplier substitution without compromising safety or efficacy.",
+        "plan": "Switch Lisinopril to Mumbai Cardio Pharma's Lisipril-M (10mg daily), lowest-cost equivalent available. Continue Metformin 500mg twice daily with current supplier. Monitor for adherence and any access issues.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Mumbai Cardio Pharma",
+                    "brand_name": "Lisipril-M",
+                    "price_usd": 2.8,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_074": {
+        "record_id": "REC_tracer_074",
+        "appointment_id": "APPT_tracer_107",
+        "patient_id": "melanie_chambers_tracer_0001",
+        "provider_id": "howard_mccarthy_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to ongoing medication costs, especially for blood pressure and diabetes management. Interested in more affordable options.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient requires cost-effective medication alternatives; Lisinopril can be safely switched to a lower-cost generic from an approved international supplier without therapeutic compromise.",
+        "plan": "Transition Lisinopril to 'Lisipril-M' from Mumbai Cardio Pharma (India) at same dosage and frequency. Confirm pharmacy fulfillment and patient understanding of new brand. Reassess adherence and cost impact in 30 days.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Mumbai Cardio Pharma",
+                    "brand_name": "Lisipril-M",
+                    "price_usd": 2.8,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_075": {
+        "record_id": "REC_tracer_075",
+        "appointment_id": "APPT_tracer_108",
+        "patient_id": "michael_stanley_tracer_0001",
+        "provider_id": "john_wise_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current inhaler and oral medications for COPD and asthma control.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is on stable respiratory regimen but faces financial burden. Therapeutic equivalents from lower-cost suppliers identified as safe alternatives.",
+        "plan": "Switch to cost-effective suppliers for Fluticasone and Montelukast with same clinical specifications. Monitor for any access or adherence issues post-transition.",
+        "prescriptions": [
+            {
+                "medication": "Fluticasone Inhaler",
+                "dosage": "110mcg",
+                "frequency": "twice daily",
+                "supplier": {
+                    "company": "Lotus Respiratory",
+                    "brand_name": "Flohale",
+                    "price_usd": 7.1,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Montelukast",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Lotus Breath",
+                    "brand_name": "BreathFree",
+                    "price_usd": 3.05,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_076": {
+        "record_id": "REC_tracer_076",
+        "appointment_id": "APPT_tracer_109",
+        "patient_id": "michele_wheeler_tracer_0001",
+        "provider_id": "kenneth_mayer_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to ongoing medication costs for diabetes and hypertension management.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is stable on current regimen but can benefit from cost-saving supplier switches where clinically appropriate.",
+        "plan": "Switch Lisinopril to Mumbai Cardio Pharma's Lisipril-M, a therapeutically equivalent option at reduced cost. Continue Metformin as no lower-cost alternative was identified.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Mumbai Cardio Pharma",
+                    "brand_name": "Lisipril-M",
+                    "price_usd": 2.8,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_077": {
+        "record_id": "REC_tracer_077",
+        "appointment_id": "APPT_tracer_110",
+        "patient_id": "michelle_adams_tracer_0001",
+        "provider_id": "nicholas_salinas_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to current medication costs, especially insulin. Interested in lower-cost alternatives without compromising safety.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient is stable on current regimen but faces economic burden. Cost-minimization analysis performed using approved supplier catalog; safe, lower-cost options identified.",
+        "plan": "Switch Insulin Lispro to SwiftLis (Bengal EndoCare) to reduce cost while maintaining therapeutic equivalence. Continue Levothyroxine 75mcg daily; no change needed. Provide updated prescription and pharmacy instructions.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "with meals",
+                "supplier": {
+                    "company": "Bengal EndoCare",
+                    "brand_name": "SwiftLis",
+                    "price_usd": 19.2,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "once daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_078": {
+        "record_id": "REC_tracer_078",
+        "appointment_id": "APPT_tracer_111",
+        "patient_id": "molly_hill_tracer_0001",
+        "provider_id": "shannon_anderson_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports difficulty affording current insulin supply and is interested in lower-cost alternatives. Levothyroxine is well-tolerated.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient requires cost-effective medication options. Insulin Lispro can be safely transitioned to a lower-cost supplier; Levothyroxine remains appropriate without changes needed.",
+        "plan": "Switch Insulin Lispro to SwiftLis (Bengal EndoCare) to reduce out-of-pocket cost. Continue Levothyroxine 75mcg daily. Provide prescription updates and supplier information.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "with meals",
+                "supplier": {
+                    "company": "Bengal EndoCare",
+                    "brand_name": "SwiftLis",
+                    "price_usd": 19.2,
+                    "country": "India"
+                }
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "once daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_079": {
+        "record_id": "REC_tracer_079",
+        "appointment_id": "APPT_tracer_112",
+        "patient_id": "morgan_grant_tracer_0001",
+        "provider_id": "camila_ortega_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "medication_supply_note",
+        "subjective": "Patient reports financial strain due to medication costs and is seeking more affordable options for blood pressure and diabetes management.",
+        "objective": "Compared existing medications against the supplier catalog and selected the lowest-cost safe options.",
+        "assessment": "Patient requires cost-effective medication alternatives; safe and effective generic options available through international suppliers at reduced prices.",
+        "plan": "Switch Lisinopril to Lisipril-M (Mumbai Cardio Pharma) to reduce out-of-pocket cost while maintaining therapeutic equivalence. Continue Metformin at current dose.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "twice daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "once daily",
+                "supplier": {
+                    "company": "Mumbai Cardio Pharma",
+                    "brand_name": "Lisipril-M",
+                    "price_usd": 2.8,
+                    "country": "India"
+                }
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_080": {
+        "record_id": "REC_tracer_080",
+        "appointment_id": "APPT_tracer_113",
+        "patient_id": "adam_alexander_tracer_0001",
+        "provider_id": "juan_fitzgerald_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia and is concerned about potential side effects from adding Zolpidem to current Bupropion regimen. Denies recent agitation or mood changes.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem with a risk score of 2; no significant pharmacokinetic or pharmacodynamic interaction expected. Clinical monitoring advised.",
+        "plan": "Proceed with cautious initiation of Zolpidem at prescribed dose. Advise patient to monitor for increased insomnia or agitation and report any changes. No regimen adjustment needed at this time.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_081": {
+        "record_id": "REC_tracer_081",
+        "appointment_id": "APPT_tracer_114",
+        "patient_id": "austin_roberts_tracer_0001",
+        "provider_id": "kayla_guzman_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia despite current Sertraline use and is considering adding Zolpidem for sleep support. Expresses concern about potential side effects or interactions.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; risk score 2 indicates minimal clinical concern. No contraindication to co-administration, though mild CNS stimulation may occur.",
+        "plan": "Proceed with cautious initiation of Zolpidem at prescribed dose. Monitor for increased insomnia or agitation over next 2 weeks. No changes to Bupropion regimen required.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_082": {
+        "record_id": "REC_tracer_082",
+        "appointment_id": "APPT_tracer_115",
+        "patient_id": "clifford_brown_tracer_0001",
+        "provider_id": "luis_sims_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia despite current use of Sertraline and is considering adding Zolpidem for sleep support. Expresses concern about possible side effects or interactions.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "No significant pharmacokinetic interaction expected between Bupropion and Zolpidem. Risk of additive CNS stimulation is low but present; monitor for insomnia or agitation during overlap period.",
+        "plan": "Proceed with cautious addition of Zolpidem under observation. Educate patient on symptoms to report, including restlessness or worsened sleep. Follow up in 2 weeks if concerns arise.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_083": {
+        "record_id": "REC_tracer_083",
+        "appointment_id": "APPT_tracer_116",
+        "patient_id": "edward_rice_tracer_0001",
+        "provider_id": "megan_cook_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty sleeping and is considering Zolpidem but is concerned about interactions with current medications, especially Bupropion.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; no significant pharmacokinetic or pharmacodynamic risks identified. Risk score 2/10.",
+        "plan": "Proceed with cautious initiation of Zolpidem. Monitor for increased insomnia or agitation. No dose adjustment needed for Bupropion or Warfarin.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_084": {
+        "record_id": "REC_tracer_084",
+        "appointment_id": "APPT_tracer_117",
+        "patient_id": "gregory_elliott_tracer_0001",
+        "provider_id": "owen_shaw_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia despite current Sertraline therapy and is concerned about potential side effects from adding Zolpidem, especially with recent switch to Bupropion.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "No significant drug interaction expected between Bupropion and Zolpidem; low severity (risk score 2). Patient should be monitored for increased insomnia or agitation due to overlapping CNS effects.",
+        "plan": "Proceed with cautious initiation of Zolpidem 5mg at bedtime. Advise patient to report any worsening sleep disturbances or nervousness. Follow up in 2 weeks.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_085": {
+        "record_id": "REC_tracer_085",
+        "appointment_id": "APPT_tracer_118",
+        "patient_id": "jacob_jensen_tracer_0001",
+        "provider_id": "ryan_harris_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia despite current use of Sertraline and expresses concern about adding Zolpidem due to possible interactions with Bupropion, which was recently prescribed by another provider.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; risk score 2/10. No contraindication to co-administration. Primary concern is potential additive CNS stimulation leading to insomnia or agitation.",
+        "plan": "Proceed with cautious initiation of Zolpidem 5mg at bedtime. Monitor for increased insomnia or agitation over next 2 weeks. Patient educated on signs to report. Continue current Bupropion regimen.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_086": {
+        "record_id": "REC_tracer_086",
+        "appointment_id": "APPT_tracer_119",
+        "patient_id": "joshua_wagner_tracer_0001",
+        "provider_id": "thomas_may_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing difficulty with sleep onset, considering use of a sleep aid. Currently taking Bupropion for depression and is stable on Warfarin for atrial fibrillation. No recent bleeding or clotting events.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem with a risk score of 2; no significant pharmacokinetic or pharmacodynamic interaction expected. Potential for additive CNS stimulation or disrupted sleep architecture warrants observation.",
+        "plan": "Proceed with cautious initiation of Zolpidem at lowest effective dose. Monitor for increased insomnia, agitation, or mood changes. Reinforce non-pharmacologic sleep hygiene. No changes to Warfarin or Atorvastatin.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_087": {
+        "record_id": "REC_tracer_087",
+        "appointment_id": "APPT_tracer_120",
+        "patient_id": "kevin_arnold_tracer_0001",
+        "provider_id": "brandi_dixon_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty sleeping and is considering Zolpidem but is concerned about interactions with current medications, especially Bupropion.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; risk score 2. No significant pharmacokinetic or pharmacodynamic interaction expected. Minimal overlap in peak activity (8 hours).",
+        "plan": "Proceed with cautious addition of Zolpidem. Advise patient to monitor for increased insomnia or agitation. Follow up in 2 weeks if symptoms worsen.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_088": {
+        "record_id": "REC_tracer_088",
+        "appointment_id": "APPT_tracer_121",
+        "patient_id": "kevin_bond_tracer_0001",
+        "provider_id": "bryan_bryant_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty sleeping and has been considering using Zolpidem as needed. No history of severe agitation or seizures. Currently stable on Bupropion for mood support.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem with a risk score of 2; no significant pharmacokinetic or pharmacodynamic interaction expected. Monitoring advised due to potential additive CNS effects.",
+        "plan": "Proceed with cautious initiation of Zolpidem at the lowest effective dose. Counsel patient on monitoring for increased insomnia or agitation. Schedule follow-up in 2 weeks if symptoms arise.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_089": {
+        "record_id": "REC_tracer_089",
+        "appointment_id": "APPT_tracer_122",
+        "patient_id": "matthew_smith_tracer_0001",
+        "provider_id": "christine_bailey_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty sleeping and has been considering Zolpidem for short-term use. Asks if it's safe to take with current Bupropion.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; no significant pharmacokinetic or pharmacodynamic concerns identified. Risk score 2/10 supports cautious co-administration with monitoring.",
+        "plan": "Proceed with proposed Zolpidem addition under observation. Counsel patient on signs of insomnia or agitation. Reassess in 2 weeks or sooner if symptoms arise.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_090": {
+        "record_id": "REC_tracer_090",
+        "appointment_id": "APPT_tracer_123",
+        "patient_id": "michael_scott_tracer_0001",
+        "provider_id": "dr_saito_cardiology",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia despite current use of Sertraline and Bupropion. Expresses concern about adding Zolpidem due to possible side effects or interactions.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "No significant pharmacokinetic interaction expected between Bupropion and Zolpidem. Low severity (risk score 2) interaction; theoretical risk of increased CNS stimulation or worsened insomnia/agitation.",
+        "plan": "Proceed with cautious initiation of Zolpidem 5mg at bedtime. Monitor for increased insomnia, restlessness, or mood changes. Follow up in 2 weeks or sooner if adverse effects occur.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_091": {
+        "record_id": "REC_tracer_091",
+        "appointment_id": "APPT_tracer_124",
+        "patient_id": "patrick_rangel_tracer_0001",
+        "provider_id": "dr_smith_cardiology",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia despite current sertraline regimen and is considering adding zolpidem for sleep support. No history of seizures or severe anxiety. Expresses concern about mixing medications.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Interaction between Bupropion and Zolpidem is low severity (risk score 2) with no major pharmacokinetic conflict; however, both may lower seizure threshold and could contribute to agitation or sleep disruption if not monitored.",
+        "plan": "Proceed with cautious addition of zolpidem at lowest effective dose. Advise patient to report any increased restlessness, difficulty sleeping, or mood changes. No changes to current bupropion regimen required.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_092": {
+        "record_id": "REC_tracer_092",
+        "appointment_id": "APPT_tracer_125",
+        "patient_id": "richard_nelson_tracer_0001",
+        "provider_id": "dr_thompson_cardiology",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing difficulty with sleep onset and is considering starting Zolpidem as needed. Currently on stable dose of Bupropion for depression with good effect.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; no significant pharmacokinetic or pharmacodynamic concerns. Risk of additive CNS stimulation is minimal but possible.",
+        "plan": "Proceed with cautious initiation of Zolpidem at lowest effective dose. Advise patient to monitor for increased insomnia or agitation, especially during first week of use.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_093": {
+        "record_id": "REC_tracer_093",
+        "appointment_id": "APPT_tracer_126",
+        "patient_id": "scott_sparks_tracer_0001",
+        "provider_id": "juan_fitzgerald_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty sleeping despite stable mood on current Bupropion regimen. Interested in starting a sleep aid but concerned about interactions with existing medications.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; no significant pharmacokinetic or pharmacodynamic concerns. Risk of additive CNS stimulation is minimal but possible.",
+        "plan": "Proceed with cautious initiation of Zolpidem at lowest effective dose. Monitor for insomnia, restlessness, or agitation over next 2 weeks. No changes to Bupropion.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_094": {
+        "record_id": "REC_tracer_094",
+        "appointment_id": "APPT_tracer_127",
+        "patient_id": "shawn_carter_tracer_0001",
+        "provider_id": "kayla_guzman_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty sleeping and is considering starting Zolpidem for short-term use. Currently on stable dose of Bupropion for depression with good effect.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; no contraindication present. Risk of mild CNS stimulation or sleep disruption is possible but not clinically significant.",
+        "plan": "Proceed with cautious initiation of Zolpidem at lowest effective dose. Monitor for increased insomnia or agitation. No changes to current Bupropion regimen.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_095": {
+        "record_id": "REC_tracer_095",
+        "appointment_id": "APPT_tracer_128",
+        "patient_id": "shawn_zuniga_tracer_0001",
+        "provider_id": "luis_sims_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports difficulty sleeping and is considering starting Zolpidem. Asks if it's safe to use with current Bupropion.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Low-severity interaction between Bupropion and Zolpidem; risk score 2. No significant pharmacokinetic or pharmacodynamic concerns, but potential for increased insomnia or agitation due to overlapping CNS effects.",
+        "plan": "Proceed with Zolpidem as prescribed with close symptom monitoring. Advise patient to report any new or worsening agitation, restlessness, or sleep disturbances.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_096": {
+        "record_id": "REC_tracer_096",
+        "appointment_id": "APPT_tracer_129",
+        "patient_id": "trevor_mckee_tracer_0001",
+        "provider_id": "megan_cook_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "interaction_review_note",
+        "subjective": "Patient reports ongoing insomnia and current use of Sertraline for depression. Expresses concern about adding Zolpidem due to potential side effects or interactions with existing medications.",
+        "objective": "Interaction review for Bupropion + Zolpidem: severity=low, risk_score=2, action=No significant interaction expected; observe for insomnia or agitation.",
+        "assessment": "Interaction between Bupropion and Zolpidem is low risk (risk score 2). No significant pharmacokinetic or pharmacodynamic interactions expected. Mild additive risk of insomnia or agitation due to Bupropion's activating properties.",
+        "plan": "Proceed with cautious initiation of Zolpidem at 5mg nightly. Advise patient to monitor for increased restlessness or sleep disturbances. Follow up in 2 weeks for response and tolerability.",
+        "prescriptions": [
+            {
+                "medication": "Bupropion",
+                "dosage": "per current regimen",
+                "frequency": "as prescribed"
+            },
+            {
+                "medication": "Zolpidem",
+                "dosage": "proposed addition",
+                "frequency": "as prescribed"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_097": {
+        "record_id": "REC_tracer_097",
+        "appointment_id": "APPT_tracer_130",
+        "patient_id": "shawn_carter_tracer_0001",
+        "provider_id": "anthony_moran_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the cardiac monitor one night last week; otherwise feels routine.",
+        "objective": "Telemetry review for device CARDIA_tracer_461 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance detected: one full day of missing telemetry (12/14) and one night with suboptimal wear time (12/13). Recent uploads otherwise consistent.",
+        "plan": "Reinforce daily sync routine, troubleshoot potential barriers, and confirm understanding of upload process. Reschedule if gaps persist.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_098": {
+        "record_id": "REC_tracer_098",
+        "appointment_id": "APPT_tracer_132",
+        "patient_id": "michael_stanley_tracer_0001",
+        "provider_id": "becky_wright_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to turn on the ventilator one night and had connectivity issues another night; unsure if data transmitted properly.",
+        "objective": "Telemetry review for device PHILIP_tracer_462 (Philips Trilogy Ventilator); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance over 7-day window: one night with no upload and one night below 6-hour threshold (5.9 hours). Recent adherence has improved.",
+        "plan": "Review proper device setup and Wi-Fi pairing steps; schedule immediate sync test; reinforce importance of nightly use for therapy efficacy and insurance requirements.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_099": {
+        "record_id": "REC_tracer_099",
+        "appointment_id": "APPT_tracer_134",
+        "patient_id": "kathryn_clark_tracer_0001",
+        "provider_id": "chelsea_buck_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the device one night and had trouble reconnecting it the next evening. Feels anxious about doing it correctly.",
+        "objective": "Telemetry review for device WEARAB_tracer_463 (Wearable EEG); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified: one full day of data missing (2025-12-14), one night with suboptimal wear time (5.9 hours). Recent adherence has improved.",
+        "plan": "Reinforce proper device use and nightly sync routine. Provide step-by-step visual guide. Schedule neurology follow-up to review compliance and clinical correlation.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_100": {
+        "record_id": "REC_tracer_100",
+        "appointment_id": "APPT_tracer_136",
+        "patient_id": "amanda_martinez_tracer_0001",
+        "provider_id": "coach_riley_telemetry",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports occasionally forgetting to sync device at night, especially during busy evenings. No technical issues noted.",
+        "objective": "Telemetry review for device CONTIN_tracer_464 (Continuous Glucose Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance with CGM use over 7-day period; one full day of missing data and one night with suboptimal wear time. Recent usage improved.",
+        "plan": "Reinforce daily upload routine, provide troubleshooting tips for connectivity, and schedule follow-up with endocrinologist to review adherence and glycemic control.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_101": {
+        "record_id": "REC_tracer_101",
+        "appointment_id": "APPT_tracer_138",
+        "patient_id": "edward_rice_tracer_0001",
+        "provider_id": "jennifer_roth_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the device one night and had trouble connecting to the app on another day due to phone battery issues.",
+        "objective": "Telemetry review for device CARDIA_tracer_465 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance over 7-day telemetry window with one complete missed upload and one night of suboptimal wear time. Recent adherence has improved.",
+        "plan": "Reinforce daily sync routine, provide troubleshooting tips for connectivity issues, and schedule follow-up with cardiology to review accumulated data.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_102": {
+        "record_id": "REC_tracer_102",
+        "appointment_id": "APPT_tracer_140",
+        "patient_id": "matthew_osborne_tracer_0001",
+        "provider_id": "joseph_robertson_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports the ventilator felt uncomfortable on the night of the 14th and was turned off early. Device was not restarted and forgot to reconnect in the morning.",
+        "objective": "Telemetry review for device PHILIP_tracer_466 (Philips Trilogy Ventilator); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified: one full night of missing telemetry and one night with usage below 6 hours (5.9 hrs). Recent adherence has improved with 7 consecutive days of use, including 4 days meeting threshold (>6 hrs).",
+        "plan": "Reinforce importance of nightly use and consistent syncing. Provide troubleshooting tips for connectivity issues. Schedule follow-up with pulmonologist to review adherence trends and clinical impact.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_103": {
+        "record_id": "REC_tracer_103",
+        "appointment_id": "APPT_tracer_142",
+        "patient_id": "ashley_gordon_tracer_0001",
+        "provider_id": "kimberly_rosales_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the device one night and had trouble with the app connection on another. Feels anxious about doing it right.",
+        "objective": "Telemetry review for device WEARAB_tracer_467 (Wearable EEG); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance over 7-day telemetry window with one missed upload and one night of below-threshold usage (5.9 hours). Recent adherence has improved with full syncs in the last two days.",
+        "plan": "Schedule immediate device coaching to address technical barriers and reinforce daily routine integration. Provide troubleshooting guide and set up reminder system for nightly use.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_104": {
+        "record_id": "REC_tracer_104",
+        "appointment_id": "APPT_tracer_144",
+        "patient_id": "michelle_adams_tracer_0001",
+        "provider_id": "kimberly_wade_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports occasionally forgetting to sync the glucose monitor, especially overnight. No technical error messages noted.",
+        "objective": "Telemetry review for device CONTIN_tracer_468 (Continuous Glucose Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance with CGM data uploads over 7-day review; one full day of missing data and one night with suboptimal wear time.",
+        "plan": "Reinforce importance of daily syncs, provide troubleshooting tips for connectivity issues, and schedule follow-up with endocrinology to review adherence improvement.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_105": {
+        "record_id": "REC_tracer_105",
+        "appointment_id": "APPT_tracer_146",
+        "patient_id": "joshua_wagner_tracer_0001",
+        "provider_id": "riley_stone_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the device on one night and had trouble with the app interface that day.",
+        "objective": "Telemetry review for device CARDIA_tracer_469 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified in 7-day telemetry window: one complete missed upload on 2025-12-14 and one night (12/13) near threshold. All other days within acceptable range.",
+        "plan": "Schedule device coaching to reinforce proper syncing technique and troubleshoot app issues. Emphasize importance of daily uploads for rhythm surveillance in atrial fibrillation.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_106": {
+        "record_id": "REC_tracer_106",
+        "appointment_id": "APPT_tracer_148",
+        "patient_id": "dustin_weber_tracer_0001",
+        "provider_id": "robert_wright_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync device on one night and experiencing connectivity issues the next; feels generally comfortable with setup but wants troubleshooting tips.",
+        "objective": "Telemetry review for device PHILIP_tracer_470 (Philips Trilogy Ventilator); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified: one night with no upload and one night at 5.9 hours (below 6-hour threshold). Recent adherence has otherwise been consistent.",
+        "plan": "Reinforce proper sync procedure; troubleshoot Wi-Fi connectivity at bedside; schedule immediate coaching session to prevent recurring gaps.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_107": {
+        "record_id": "REC_tracer_107",
+        "appointment_id": "APPT_tracer_150",
+        "patient_id": "jamie_huynh_tracer_0001",
+        "provider_id": "william_benson_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to initiate sync after wearing device on night of 12/13; no issues with comfort or usability otherwise.",
+        "objective": "Telemetry review for device WEARAB_tracer_471 (Wearable EEG); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified: one missed upload (12/14) and one suboptimal usage night (12/13, 5.9 hrs). Recent adherence has improved.",
+        "plan": "Reinforce nightly sync protocol; schedule brief coaching session to troubleshoot user steps; continue monitoring for 7-day compliance.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_108": {
+        "record_id": "REC_tracer_108",
+        "appointment_id": "APPT_tracer_152",
+        "patient_id": "molly_hill_tracer_0001",
+        "provider_id": "anthony_moran_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports occasionally forgetting to sync the CGM at night and sometimes removing the sensor during sleep due to discomfort.",
+        "objective": "Telemetry review for device CONTIN_tracer_472 (Continuous Glucose Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance with CGM use over the past week: one full day with no upload and one night with suboptimal wear time (5.9 hours), falling below the 6-hour minimum threshold.",
+        "plan": "Educate on consistent nightly use and proper syncing technique; troubleshoot barriers to adherence; reschedule if gaps persist ahead of endocrinology follow-up.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_109": {
+        "record_id": "REC_tracer_109",
+        "appointment_id": "APPT_tracer_154",
+        "patient_id": "richard_nelson_tracer_0001",
+        "provider_id": "becky_wright_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports occasionally forgetting to sync the monitor, especially after late nights. No chest pain or palpitations noted.",
+        "objective": "Telemetry review for device CARDIA_tracer_473 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance with cardiac event monitor use over 7-day period; one full day with no upload and one night with suboptimal wear time. No arrhythmias detected on transmitted data.",
+        "plan": "Schedule device coaching to review proper sync technique and troubleshoot barriers to nightly use. Reinforce importance of daily uploads for effective rhythm surveillance.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_110": {
+        "record_id": "REC_tracer_110",
+        "appointment_id": "APPT_tracer_156",
+        "patient_id": "kevin_shelton_tracer_0001",
+        "provider_id": "chelsea_buck_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports occasional difficulty remembering to sync the ventilator and suspects the device may not have transmitted data on one night due to power loss.",
+        "objective": "Telemetry review for device PHILIP_tracer_474 (Philips Trilogy Ventilator); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance over 7-day window with one missed upload and one night of suboptimal usage (5.9 hours), falling below the 6-hour threshold. Recent adherence has improved.",
+        "plan": "Address barriers to consistent device syncing; reinforce importance of nightly usage ≥6 hours. Schedule immediate device coaching session and follow-up with pulmonologist to review clinical implications.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_111": {
+        "record_id": "REC_tracer_111",
+        "appointment_id": "APPT_tracer_158",
+        "patient_id": "margaret_clarke_tracer_0001",
+        "provider_id": "coach_riley_telemetry",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to initiate sync on the wearable device one night and experiencing connectivity issues another night.",
+        "objective": "Telemetry review for device WEARAB_tracer_475 (Wearable EEG); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified over 7-day telemetry window: one night with no upload and one night with suboptimal wear time (5.9 hours). Recent adherence has improved.",
+        "plan": "Reinforce daily sync routine and provide troubleshooting tips for connectivity. Schedule follow-up with neurology to review corrected data trends.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_112": {
+        "record_id": "REC_tracer_112",
+        "appointment_id": "APPT_tracer_160",
+        "patient_id": "norma_ruiz_tracer_0001",
+        "provider_id": "jennifer_roth_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "I forgot to sync my glucose monitor one night and didn't realize it until the next day. I've been trying to keep up but sometimes the app doesn't connect right away.",
+        "objective": "Telemetry review for device CONTIN_tracer_476 (Continuous Glucose Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance with CGM use over the past week; one full day of missing data and one night with suboptimal wear time. Recent uploads show improved adherence.",
+        "plan": "Reinforce importance of daily syncing and consistent wear. Provide troubleshooting steps for connectivity issues. Schedule follow-up with endocrinology to review trends.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_113": {
+        "record_id": "REC_tracer_113",
+        "appointment_id": "APPT_tracer_162",
+        "patient_id": "scott_sparks_tracer_0001",
+        "provider_id": "joseph_robertson_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the device on one night and had trouble with the app connection earlier in the week.",
+        "objective": "Telemetry review for device CARDIA_tracer_477 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance observed: one full day of data missing (12/14), one night with suboptimal wear time (5.9 hours on 12/13). All other days meet minimum 6-hour threshold.",
+        "plan": "Reinforce daily sync routine with evening reminders. Provide step-by-step troubleshooting guide for connectivity issues. Reschedule if further gaps occur.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_114": {
+        "record_id": "REC_tracer_114",
+        "appointment_id": "APPT_tracer_164",
+        "patient_id": "gary_barry_tracer_0001",
+        "provider_id": "kimberly_rosales_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to turn on the ventilator one night and had trouble reconnecting the device to Wi-Fi the next evening.",
+        "objective": "Telemetry review for device PHILIP_tracer_478 (Philips Trilogy Ventilator); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance over 7-day period with one missed upload and one night of suboptimal usage (5.9 hours). Recent adherence has improved.",
+        "plan": "Reinforce importance of nightly use and consistent syncing. Provide troubleshooting guide for connectivity issues. Schedule follow-up with clinical team.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_115": {
+        "record_id": "REC_tracer_115",
+        "appointment_id": "APPT_tracer_166",
+        "patient_id": "sharon_baird_tracer_0001",
+        "provider_id": "kimberly_wade_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the device one night and had trouble with the app interface on another.",
+        "objective": "Telemetry review for device WEARAB_tracer_479 (Wearable EEG); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance over 7-day telemetry window with one missed upload and one night of suboptimal wear time; recent adherence has improved.",
+        "plan": "Reinforce proper device use and daily sync routine; provide step-by-step troubleshooting guide; reschedule if gaps persist before neurology review.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_116": {
+        "record_id": "REC_tracer_116",
+        "appointment_id": "APPT_tracer_168",
+        "patient_id": "laurie_carson_tracer_0001",
+        "provider_id": "riley_stone_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync the glucose monitor on one occasion and had trouble with the app during a night out.",
+        "objective": "Telemetry review for device CONTIN_tracer_480 (Continuous Glucose Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial compliance with CGM use over 7-day period; one full day of missing data and one night with suboptimal wear time noted.",
+        "plan": "Reinforce daily sync routine, provide troubleshooting tips for app connectivity issues, and schedule follow-up with endocrinologist to review adherence progress.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_117": {
+        "record_id": "REC_tracer_117",
+        "appointment_id": "APPT_tracer_170",
+        "patient_id": "matthew_smith_tracer_0001",
+        "provider_id": "robert_wright_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "I forgot to sync the device one night and wasn't sure if I needed to do anything about it. Otherwise, it's been going okay.",
+        "objective": "Telemetry review for device CARDIA_tracer_481 (Cardiac Event Monitor); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Patient missed one telemetry upload on 2025-12-14 and had suboptimal wear time on 2025-12-13; all other days show acceptable usage and normal rhythm data.",
+        "plan": "Reinforce daily sync routine and provide troubleshooting tips. Schedule follow-up with cardiology to review rhythm trends and compliance improvement.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_118": {
+        "record_id": "REC_tracer_118",
+        "appointment_id": "APPT_tracer_172",
+        "patient_id": "jeffery_duran_tracer_0001",
+        "provider_id": "william_benson_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports occasionally forgetting to turn on the ventilator at night and unsure if it's syncing properly. Feels tired in the mornings.",
+        "objective": "Telemetry review for device PHILIP_tracer_482 (Philips Trilogy Ventilator); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified over 7-day telemetry window: one night with no upload and one night with usage below 6 hours. Recent adherence has improved.",
+        "plan": "Schedule device coaching to reinforce proper use and data transmission. Educate on importance of nightly usage ≥6 hours for therapeutic benefit and insurance compliance.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_119": {
+        "record_id": "REC_tracer_119",
+        "appointment_id": "APPT_tracer_174",
+        "patient_id": "audrey_horton_tracer_0001",
+        "provider_id": "anthony_moran_device_coaching_tracer_0001",
+        "date": "2025-12-17",
+        "type": "telemetry_compliance_note",
+        "subjective": "Patient reports forgetting to sync device on 12/14 after traveling; felt anxious about making a mistake. Otherwise, wearing device nightly without discomfort.",
+        "objective": "Telemetry review for device WEARAB_tracer_483 (Wearable EEG); 7-day window includes one missing upload and one below-threshold night.",
+        "assessment": "Partial non-compliance identified: one full missed upload on 12/14 and one night (12/13) with suboptimal wear time (5.9 hrs). Recent adherence has improved.",
+        "plan": "Reinforce proper syncing procedure; provide step-by-step email guide. Schedule brief check-in to confirm consistent uploads. Continue current antiepileptic regimen.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_120": {
+        "record_id": "REC_tracer_120",
+        "appointment_id": "APPT_tracer_176",
+        "patient_id": "sarah_barnes_tracer_0001",
+        "provider_id": "charles_barajas_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports difficulty keeping up with multiple daily medications and expresses concern about ongoing pharmacy costs, especially for diabetes and blood pressure control.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient on stable but suboptimal regimen for hypertension and type 2 diabetes with avoidable cost and adherence risk due to分散 pill schedule. Two deterministic optimization paths available without changing clinical efficacy.",
+        "plan": "Review cost-synchronized generic and adherence packaging options during visit. Obtain patient preference. Update regimen and coordinate pharmacy fulfillment if changes selected.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "2x daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_121": {
+        "record_id": "REC_tracer_121",
+        "appointment_id": "APPT_tracer_177",
+        "patient_id": "scott_sparks_tracer_0001",
+        "provider_id": "dr_saito_cardiology",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports concern about monthly medication expenses and wants to simplify pill-taking routine. No side effects noted with current regimen.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Stable anticoagulation and lipid management with Warfarin and Atorvastatin. Pill burden is low but cost-efficiency and adherence support may be improved.",
+        "plan": "Present two optimized regimen options: cost-synchronized generics and adherence packaging. Discuss preferences and finalize updated prescription plan.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_122": {
+        "record_id": "REC_tracer_122",
+        "appointment_id": "APPT_tracer_178",
+        "patient_id": "shawn_carter_tracer_0001",
+        "provider_id": "dr_smith_cardiology",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports consistent adherence to warfarin and atorvastatin but expresses concern about monthly medication expenses and long-term convenience.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Stable regimen for atrial fibrillation and hyperlipidemia with no reported side effects; opportunity to optimize cost and adherence through synchronized fills or packaging despite unchanged pill burden.",
+        "plan": "Review two optimization strategies: cost-synchronized generics and adherence packaging. Discuss patient preferences, insurance alignment, and pharmacy coordination. Finalize plan at visit.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_123": {
+        "record_id": "REC_tracer_123",
+        "appointment_id": "APPT_tracer_179",
+        "patient_id": "shawn_zuniga_tracer_0001",
+        "provider_id": "dr_thompson_cardiology",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports difficulty managing monthly medication costs and would prefer fewer prescriptions to track. Expresses interest in simplified packaging or lower-cost options without changing effectiveness.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Stable on current warfarin and atorvastatin regimen for atrial fibrillation and hyperlipidemia. Pill burden is low but cost may impact long-term adherence. Two optimization strategies identified: cost-synchronized fill and adherence packaging.",
+        "plan": "Review two optimized regimen options with patient during telehealth visit. Discuss cost implications, refill coordination, and adherence benefits. Finalize preference and update prescriptions accordingly.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_124": {
+        "record_id": "REC_tracer_124",
+        "appointment_id": "APPT_tracer_180",
+        "patient_id": "tammy_carr_tracer_0001",
+        "provider_id": "charles_lewis_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports consistent use of metformin and lisinopril but expresses concern about monthly medication costs and keeping track of doses.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient on stable regimen for Type 2 Diabetes and Hypertension with good adherence; opportunity to reduce financial burden and improve convenience through structured packaging or sourcing strategies.",
+        "plan": "Present two optimized regimen options during visit: cost-synchronized generics and adherence packaging. Discuss patient preference, insurance alignment, and next steps for prescription processing.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "2x daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_125": {
+        "record_id": "REC_tracer_125",
+        "appointment_id": "APPT_tracer_181",
+        "patient_id": "toni_miller_tracer_0001",
+        "provider_id": "amy_young_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports concern about high out-of-pocket costs for insulin and wants to simplify pill-taking routine. No side effects noted with current medications.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient on stable but costly regimen for Type 1 Diabetes and Hypothyroidism. Pill burden is moderate with no adherence issues reported. Two optimization pathways available with identical medication components but differing supply logistics.",
+        "plan": "Review cost-synchronized generic and adherence packaging options during telehealth visit. Discuss patient preferences around cost, convenience, and delivery. Finalize updated regimen and submit new prescriptions if agreed.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "3x daily"
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_126": {
+        "record_id": "REC_tracer_126",
+        "appointment_id": "APPT_tracer_182",
+        "patient_id": "amanda_martinez_tracer_0001",
+        "provider_id": "ashley_schneider_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports consistent blood sugar monitoring but finds current medication costs burdensome. Mentions occasional difficulty organizing daily pills, especially during work hours.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient on stable but costly regimen for Type 1 Diabetes and Hypothyroidism. Pill burden is moderate with no device use. Two optimization pathways identified: cost reduction and adherence support.",
+        "plan": "Review two deterministic optimization options: (1) cost-synchronized generic fill to align pricing, and (2) adherence packaging to improve dosing consistency. Discuss patient preferences and insurance coverage.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "3x daily"
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_127": {
+        "record_id": "REC_tracer_127",
+        "appointment_id": "APPT_tracer_183",
+        "patient_id": "cynthia_scott_tracer_0001",
+        "provider_id": "dana_padilla_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports difficulty managing multiple prescriptions and expresses concern about monthly medication costs, especially with current pharmacy pricing. No side effects noted.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient on stable regimen for hypertension and type 2 diabetes with no reported adverse effects, but faces financial and adherence challenges due to current dispensing model.",
+        "plan": "Review two optimized regimen models: cost-synchronized generics and adherence packaging. Discuss patient preferences, insurance alignment, and long-term sustainability.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "2x daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_128": {
+        "record_id": "REC_tracer_128",
+        "appointment_id": "APPT_tracer_184",
+        "patient_id": "diane_robinson_tracer_0001",
+        "provider_id": "caleb_turner_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports concern about high medication costs and wants to simplify pill-taking routine without compromising control of diabetes or thyroid levels.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Current regimen includes insulin lispro and levothyroxine with stable dosing. Pill burden is moderate at 4 tablets daily. Cost analysis shows opportunity for optimization despite unchanged components.",
+        "plan": "Present two deterministic optimization pathways: cost-synchronized sourcing and adherence packaging. Discuss trade-offs and finalize preference with patient.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "3x daily"
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_129": {
+        "record_id": "REC_tracer_129",
+        "appointment_id": "APPT_tracer_185",
+        "patient_id": "edward_rice_tracer_0001",
+        "provider_id": "juan_fitzgerald_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports difficulty managing multiple prescriptions and expresses concern about monthly medication expenses. Feels consistent with dosing but wants simpler routine.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient on stable anticoagulation and lipid-lowering therapy with preserved adherence. Current regimen has high out-of-pocket cost and opportunity for synchronization or packaging improvements.",
+        "plan": "Review two optimized regimen options: cost-synchronized generics and adherence packaging. Discuss patient preferences, insurance coverage, and long-term sustainability.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_130": {
+        "record_id": "REC_tracer_130",
+        "appointment_id": "APPT_tracer_186",
+        "patient_id": "joshua_wagner_tracer_0001",
+        "provider_id": "kayla_guzman_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports concern about monthly medication expenses and would like to simplify pill-taking routine. No side effects noted with current regimen.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Stable on warfarin and atorvastatin for atrial fibrillation and hyperlipidemia. Regimen effective but opportunity exists to optimize cost and adherence through packaging and fill coordination.",
+        "plan": "Present two optimized regimen options: cost-synchronized generic fill and adherence packaging. Discuss pros and cons, including cost, convenience, and monitoring needs. Finalize preference and update prescriptions accordingly.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_131": {
+        "record_id": "REC_tracer_131",
+        "appointment_id": "APPT_tracer_187",
+        "patient_id": "kevin_arnold_tracer_0001",
+        "provider_id": "luis_sims_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports difficulty managing monthly prescription costs and wants to simplify pill-taking routine. No side effects from current medications.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Stable on warfarin and atorvastatin for atrial fibrillation and hyperlipidemia. Regimen effective but opportunity to improve cost efficiency and adherence support.",
+        "plan": "Review two optimized regimen options: cost-synchronized generics and adherence packaging. Discuss patient preferences and finalize updated medication plan.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_132": {
+        "record_id": "REC_tracer_132",
+        "appointment_id": "APPT_tracer_188",
+        "patient_id": "kevin_bond_tracer_0001",
+        "provider_id": "megan_cook_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports consistent use of Warfarin and Atorvastatin but expresses concern about monthly medication expenses and potential for missed doses when traveling.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Stable anticoagulation and lipid management with current regimen; opportunity to reduce financial burden and improve adherence through packaging and sourcing strategies without changing medications.",
+        "plan": "Review two optimized regimen options: cost-synchronized generics and adherence packaging. Discuss patient preferences, finalize selection, and update prescriptions accordingly.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_133": {
+        "record_id": "REC_tracer_133",
+        "appointment_id": "APPT_tracer_189",
+        "patient_id": "laurie_carson_tracer_0001",
+        "provider_id": "charles_scott_endocrinology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports concern about high out-of-pocket costs for insulin and difficulty remembering morning medication routine, especially on workdays.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient is on a stable but costly insulin and thyroid hormone regimen with unchanged clinical needs. Pill burden is moderate; adherence may benefit from packaging or cost reduction.",
+        "plan": "Review two optimized regimen options focusing on cost synchronization and adherence support. Discuss patient preferences and finalize updated prescription plan.",
+        "prescriptions": [
+            {
+                "medication": "Insulin Lispro",
+                "dosage": "sliding scale",
+                "frequency": "3x daily"
+            },
+            {
+                "medication": "Levothyroxine",
+                "dosage": "75mcg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_134": {
+        "record_id": "REC_tracer_134",
+        "appointment_id": "APPT_tracer_190",
+        "patient_id": "matthew_smith_tracer_0001",
+        "provider_id": "owen_shaw_cardiology_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports taking both medications as prescribed but expresses concern about monthly pharmacy costs and long-term adherence.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Stable on current warfarin and atorvastatin regimen with good adherence; opportunity to reduce financial burden and improve medication management through optimization strategies.",
+        "plan": "Present two structured regimen options: cost-synchronized generics and adherence packaging. Discuss pros and cons, obtain patient preference, and coordinate pharmacy transfer if indicated.",
+        "prescriptions": [
+            {
+                "medication": "Warfarin",
+                "dosage": "5mg",
+                "frequency": "1x daily"
+            },
+            {
+                "medication": "Atorvastatin",
+                "dosage": "20mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_135": {
+        "record_id": "REC_tracer_135",
+        "appointment_id": "APPT_tracer_191",
+        "patient_id": "megan_jones_tracer_0001",
+        "provider_id": "debra_nunez_primary_care_tracer_0001",
+        "date": "2025-12-17",
+        "type": "regimen_review_note",
+        "subjective": "Patient reports concern about monthly medication costs and wants to simplify pill-taking routine. No side effects from current meds.",
+        "objective": "Compiled current regimen costs, pill burden, and two deterministic optimization options for comparison.",
+        "assessment": "Patient on stable regimen for hypertension and type 2 diabetes. Pill burden is moderate (3 tablets/day). Cost analysis shows opportunity for optimization through sourcing and packaging strategies.",
+        "plan": "Present two deterministic optimization options: cost-synchronized generic fill and adherence packaging. Discuss preferences, insurance alignment, and next steps for implementation.",
+        "prescriptions": [
+            {
+                "medication": "Metformin",
+                "dosage": "500mg",
+                "frequency": "2x daily"
+            },
+            {
+                "medication": "Lisinopril",
+                "dosage": "10mg",
+                "frequency": "1x daily"
+            }
+        ],
+        "notes": []
+    },
+    "REC_tracer_136": {
+        "record_id": "REC_tracer_136",
+        "appointment_id": "APPT_tracer_193",
+        "patient_id": "jonathan_barnett_tracer_0001",
+        "provider_id": "brandon_page_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports recent viral gastroenteritis affecting multiple members, with ongoing concerns about symptom management and scheduling conflicts for appointments. Jonathan is primary point of contact and caregiver for younger members.",
+        "objective": "Household coordination review for family members: jonathan_barnett_tracer_0001, stacy_barnett_tracer_0001, jamie_barnett_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household-level health event with shared exposure; care needs are interdependent. Coordination required to prevent re-exposure and ensure adherence to supportive care measures.",
+        "plan": "Initiate family-wide hygiene and monitoring protocol. Schedule pediatric evaluation for symptomatic member. Distribute care responsibilities and provide centralized communication channel for updates.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_137": {
+        "record_id": "REC_tracer_137",
+        "appointment_id": "APPT_tracer_195",
+        "patient_id": "kelly_montgomery_tracer_0001",
+        "provider_id": "brittany_johnson_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Kelly reports ongoing concerns about Andrew's speech and motor milestones; Laura feels overwhelmed managing appointments. Family wants a unified plan to support Andrew and streamline care.",
+        "objective": "Household coordination review for family members: kelly_montgomery_tracer_0001, laura_montgomery_tracer_0001, andrew_montgomery_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Family presents with shared concerns regarding pediatric developmental progress; coordination challenges identified across household members. Appropriate triage to pediatric evaluation and structured follow-up initiated.",
+        "plan": "Coordinate pediatric developmental screening for Andrew; provide family with centralized calendar, caregiver roles matrix, and referral packet. Schedule follow-up to review results and adjust plan.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_138": {
+        "record_id": "REC_tracer_138",
+        "appointment_id": "APPT_tracer_197",
+        "patient_id": "richard_dunn_tracer_0001",
+        "provider_id": "care_coordinator_ito",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports ongoing challenges with consistent asthma triggers and medication adherence across household. Concerned about differing routines for Ricardo and confusion around inhaler use.",
+        "objective": "Household coordination review for family members: richard_dunn_tracer_0001, ricardo_dunn_tracer_0001, kristi_dunn_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household coordination review confirms need for unified asthma action plan; pediatric follow-up indicated for Ricardo, caregiver education needed for all members.",
+        "plan": "Coordinate asthma education session, distribute individualized action plans, and schedule environmental assessment for home triggers.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_139": {
+        "record_id": "REC_tracer_139",
+        "appointment_id": "APPT_tracer_199",
+        "patient_id": "renee_freeman_tracer_0001",
+        "provider_id": "dylan_hampton_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Mother reports both children had vomiting and diarrhea over the past week. Nicole (age 5) is recovering; Nicholas (age 8) still has intermittent nausea. Concerned about school re-entry and preventing recurrence.",
+        "objective": "Household coordination review for family members: renee_freeman_tracer_0001, nicole_freeman_tracer_0001, nicholas_freeman_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household exposure to viral gastroenteritis resolved in one sibling, improving in the other. No dehydration signs. Coordination needed for school notifications and home care consistency.",
+        "plan": "Recommend symptom diary for Nicholas, rehydration protocol, and school health office contact. Schedule pediatric follow-up if symptoms persist beyond 10 days. Provide hand hygiene and disinfection guidance.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_140": {
+        "record_id": "REC_tracer_140",
+        "appointment_id": "APPT_tracer_201",
+        "patient_id": "jeffrey_figueroa_tracer_0001",
+        "provider_id": "jasmine_norris_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports concerns about developmental progress in youngest child and difficulty managing appointments across multiple providers.",
+        "objective": "Household coordination review for family members: jeffrey_figueroa_tracer_0001, brittney_figueroa_tracer_0001, mark_figueroa_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household coordination review confirms need for structured care plan; concerns appropriately triaged between pediatric evaluation and care coordination.",
+        "plan": "Coordinate pediatric consultation for developmental assessment; assign care navigator to streamline appointments and provide family resources in preferred language.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_141": {
+        "record_id": "REC_tracer_141",
+        "appointment_id": "APPT_tracer_203",
+        "patient_id": "wendy_cook_tracer_0001",
+        "provider_id": "julie_hines_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Wendy reports ongoing difficulty managing asthma in both children, especially during seasonal changes. Notes inconsistent inhaler use and school absences.",
+        "objective": "Household coordination review for family members: wendy_cook_tracer_0001, marcus_cook_tracer_0001, rebecca_cook_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household-level asthma burden identified; coordination needed across pediatric care, school health, and home environment.",
+        "plan": "Initiate family asthma action plan; schedule pediatric consult for medication review; coordinate with school nurse and provide trigger reduction guidance.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_142": {
+        "record_id": "REC_tracer_142",
+        "appointment_id": "APPT_tracer_205",
+        "patient_id": "james_hanson_tracer_0001",
+        "provider_id": "kyle_neal_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports multiple members experiencing nausea, vomiting, and mild fever over the past week. Concerned about contagion and appropriate symptom management at home.",
+        "objective": "Household coordination review for family members: james_hanson_tracer_0001, desiree_hanson_tracer_0001, paul_hanson_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household exposure to viral gastroenteritis likely, with mild symptoms resolving. No signs of dehydration or complications in any member. Care coordination indicated for shared concerns and prevention education.",
+        "plan": "Coordinate pediatric follow-up for James. Provide family education on hygiene, symptom monitoring, and isolation practices. Schedule provider visits for symptomatic members and reinforce supportive care.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_143": {
+        "record_id": "REC_tracer_143",
+        "appointment_id": "APPT_tracer_207",
+        "patient_id": "lauren_gonzalez_tracer_0001",
+        "provider_id": "kyle_williams_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Mother reports increasing concerns about 8-year-old son's focus in school and 5-year-old daughter's speech development. Feels overwhelmed managing appointments and school communications.",
+        "objective": "Household coordination review for family members: lauren_gonzalez_tracer_0001, jill_gonzalez_tracer_0001, michael_gonzalez_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Family presents with coordinated developmental and psychosocial concerns. Household-level triage appropriate given shared stressors and language preference.",
+        "plan": "Coordinate pediatric evaluation for developmental screening (APPT_tracer_206) and initiate school support referrals. Schedule follow-up care coordination to consolidate recommendations.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_144": {
+        "record_id": "REC_tracer_144",
+        "appointment_id": "APPT_tracer_209",
+        "patient_id": "charles_levine_tracer_0001",
+        "provider_id": "linda_collins_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports frequent asthma symptoms in both children, especially at night; concerned about inconsistent inhaler use and school absences. Charles (father) feels overwhelmed managing care for Thomas and Marie.",
+        "objective": "Household coordination review for family members: charles_levine_tracer_0001, thomas_levine_tracer_0001, marie_levine_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household-level asthma burden identified with suboptimal control in multiple members. Coordination gap in medication administration and trigger mitigation observed.",
+        "plan": "Initiate family asthma action plan; schedule joint pediatric review and caregiver education session. Refer to environmental health for home trigger assessment.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_145": {
+        "record_id": "REC_tracer_145",
+        "appointment_id": "APPT_tracer_211",
+        "patient_id": "heather_mccoy_tracer_0001",
+        "provider_id": "lisa_larson_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Heather reports both children had vomiting and diarrhea starting two days ago, with Brad now improving but Rachel continuing to have mild symptoms. She feels overwhelmed managing care while maintaining household routines.",
+        "objective": "Household coordination review for family members: heather_mccoy_tracer_0001, rachel_mccoy_tracer_0001, brad_mccoy_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household affected by probable viral gastroenteritis with staggered recovery. Caregiver stress noted; no red-flag symptoms in children. Coordination needed across pediatric and family support domains.",
+        "plan": "Consolidate care recommendations from pediatric visit into shared family plan. Schedule follow-up to assess symptom resolution and psychosocial needs. Provide hydration and isolation guidance.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_146": {
+        "record_id": "REC_tracer_146",
+        "appointment_id": "APPT_tracer_213",
+        "patient_id": "joel_garner_tracer_0001",
+        "provider_id": "monica_reyes_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Joel reports feeling overwhelmed managing healthcare for his son Barry, who has mild developmental delays, while also supporting his partner Angela, who has chronic back pain. Family wants a clearer care plan and better coordination between providers.",
+        "objective": "Household coordination review for family members: joel_garner_tracer_0001, angela_garner_tracer_0001, barry_garner_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Caregiver burden identified in a three-member household with overlapping health needs. Developmental concerns in one pediatric patient; chronic condition in adult partner. Coordination visit confirms need for structured follow-up and shared care planning.",
+        "plan": "Schedule pediatric consultation for developmental review. Assign care coordinator to consolidate medical records, verify insurance authorizations, and facilitate communication between providers. Provide family with unified care calendar.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_147": {
+        "record_id": "REC_tracer_147",
+        "appointment_id": "APPT_tracer_215",
+        "patient_id": "valerie_mullen_tracer_0001",
+        "provider_id": "brandon_page_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports difficulty keeping track of different asthma medications and environmental triggers for each member; concerned about emergency preparedness at home.",
+        "objective": "Household coordination review for family members: valerie_mullen_tracer_0001, joseph_mullen_tracer_0001, sydney_mullen_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household coordination review confirms need for unified asthma action plans; concerns appropriately triaged with pediatric input and care coordination follow-up.",
+        "plan": "Develop shared asthma management calendar; schedule environmental assessment; distribute individualized action plans by next week.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_148": {
+        "record_id": "REC_tracer_148",
+        "appointment_id": "APPT_tracer_217",
+        "patient_id": "collin_coleman_tracer_0001",
+        "provider_id": "brittany_johnson_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports recent episode of viral gastroenteritis affecting multiple members. Concerns about overlapping symptoms, caregiving responsibilities, and prevention of recurrence.",
+        "objective": "Household coordination review for family members: collin_coleman_tracer_0001, anita_coleman_tracer_0001, juan_coleman_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household coordination challenge following acute viral illness. No ongoing complications identified; triage completed to address pediatric and coordination needs separately.",
+        "plan": "Proceed with scheduled pediatric consultation and care coordination visits. Distribute symptom monitoring guide and emergency contact protocol to all family members.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_149": {
+        "record_id": "REC_tracer_149",
+        "appointment_id": "APPT_tracer_219",
+        "patient_id": "yesenia_wiley_tracer_0001",
+        "provider_id": "care_coordinator_ito",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Yesenia reports feeling overwhelmed managing appointments and developmental concerns for her son Zachary. She wants better alignment between providers and more clarity on next steps for each family member.",
+        "objective": "Household coordination review for family members: yesenia_wiley_tracer_0001, holly_wiley_tracer_0001, zachary_wiley_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Family demonstrates need for structured care coordination. Multiple household members have intersecting health timelines requiring centralized tracking and provider synchronization.",
+        "plan": "Initiate family care plan with shared calendar, designate care coordinator as central contact, and schedule pediatric developmental evaluation for Zachary within two weeks.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_150": {
+        "record_id": "REC_tracer_150",
+        "appointment_id": "APPT_tracer_221",
+        "patient_id": "wayne_le_tracer_0001",
+        "provider_id": "dylan_hampton_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Family reports ongoing challenges with consistent asthma controller use across household members, especially during seasonal changes. Concerns about school inhaler access and trigger exposure at home.",
+        "objective": "Household coordination review for family members: wayne_le_tracer_0001, bradley_le_tracer_0001, erica_le_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household-level asthma management gaps identified; coordination needed across pediatric care, pharmacy, and school health services.",
+        "plan": "Initiate family-wide asthma action plan; schedule joint pediatric review and environmental assessment; assign care coordinator to support prescription fulfillment and school documentation.",
+        "prescriptions": [],
+        "notes": []
+    },
+    "REC_tracer_151": {
+        "record_id": "REC_tracer_151",
+        "appointment_id": "APPT_tracer_223",
+        "patient_id": "carla_harris_tracer_0001",
+        "provider_id": "jasmine_norris_care_coordination_tracer_0001",
+        "date": "2025-12-18",
+        "type": "family_coordination_note",
+        "subjective": "Carla reports that her son, Samantha, had vomiting and diarrhea for 2 days last week; she’s concerned about lingering effects and potential spread to her husband James, who has mild fatigue. Family wants guidance on prevention and when to seek further care.",
+        "objective": "Household coordination review for family members: carla_harris_tracer_0001, samantha_harris_tracer_0001, james_harris_tracer_0001. Shared concerns triaged into one pediatric visit and one coordination follow-up.",
+        "assessment": "Household exposure to viral gastroenteritis with resolved symptoms in child. No complications observed. Care coordination indicated to reinforce hygiene, monitor for recurrence, and support family-wide health literacy.",
+        "plan": "Coordinate with pediatric provider to confirm resolution in child. Provide family education on infection control, hydration monitoring, and symptom tracking. Schedule follow-up if symptoms reappear in James or Carla.",
+        "prescriptions": [],
+        "notes": []
+    }
+}

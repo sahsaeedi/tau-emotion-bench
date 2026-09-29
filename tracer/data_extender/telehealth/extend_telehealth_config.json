@@ -1,0 +1,32 @@
+{
+  "input_data_dir": "tracer/envs/telehealth/data",
+  "seed": 1337,
+  "target_new_patients": 12,
+  "target_family_groups": 3,
+  "target_new_providers": 8,
+  "target_new_devices": 10,
+  "target_scenarios": 12,
+  "scenario_mix": {
+    "scheduling_provider": 0.18,
+    "supplier_update": 0.16,
+    "drug_interaction": 0.16,
+    "telemetry_compliance": 0.2,
+    "regimen_optimization": 0.15,
+    "family_coordination": 0.15
+  },
+  "model": "gpt-4.1",
+  "provider": "openai",
+  "base_api": null,
+  "api_key": null,
+  "temperature": 0.4,
+  "batch_size": 1,
+  "enable_thinking": true,
+  "master_cases_out": "data_extender/generated_telehealth_master_cases.json",
+  "master_metadata_out": "data_extender/generated_telehealth_master_metadata.json",
+  "master_output_dir": "data_extender/generated_telehealth_master",
+  "blueprint_out": "data_extender/generated_telehealth_blueprints.json",
+  "scenario_out": "data_extender/generated_telehealth_scenarios.json",
+  "transcript_out": "data_extender/generated_telehealth_llm_transcript.json",
+  "out": "data_extender/generated_telehealth",
+  "split": "test"
+}

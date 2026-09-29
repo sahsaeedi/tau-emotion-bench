@@ -1,0 +1,79 @@
+account_type_weights:
+  residential: 0.85
+  business: 0.15
+
+residential:
+  mobile_weights:
+    mobile_basic: 0.30
+    mobile_unlimited: 0.45
+    mobile_senior: 0.10
+    mobile_family_4lines: 0.15
+  internet_weights:
+    internet_cable_100mb: 0.25
+    internet_cable_500mb: 0.35
+    internet_fiber_500mb: 0.20
+    internet_fiber_1gb: 0.20
+  tv_weights:
+    none: 0.40
+    tv_basic: 0.35
+    tv_premium: 0.25
+  security_probability: 0.15
+
+business:
+  internet_weights:
+    internet_fiber_2gb: 0.75
+    internet_fiber_1gb: 0.25
+  phone_system_probability: 0.70
+  tv_weights:
+    none: 0.30
+    tv_sports_package: 0.50
+    tv_premium: 0.20
+
+billing_preferences:
+  paperless_probability: 0.70
+  auto_pay_probability:
+    residential: 0.60
+    business: 0.40
+
+billing_dates:
+  # `next_bill_date` will always be in this year-month.
+  next_bill_year_month: "2025-10"
+  # Inclusive day-of-month range used to sample next_bill_date.
+  next_bill_day_range: [5, 28]
+  # How many monthly payments to generate in `payment_history`.
+  # This will be capped automatically so the earliest payment is not before `payment_history_earliest_year_month`.
+  payment_history_months_range: [3, 5]
+  # Earliest payment month allowed in `payment_history` (YYYY-MM).
+  payment_history_earliest_year_month: "2025-06"
+
+delinquency:
+  if_no_autopay_probability: 0.15
+  base_probability: 0.05
+  late_fee_amount: 25.0
+  balance_min: 20.0
+  balance_cap: 250.0
+
+tickets:
+  count_weights:
+    0: 0.70
+    1: 0.20
+    2: 0.07
+    3: 0.03
+  status_weights:
+    closed: 0.70
+    open: 0.30
+  priority_weights:
+    low: 0.25
+    medium: 0.55
+    high: 0.20
+  more_devices_threshold: 6
+  more_devices_bump_probability: 0.25
+
+devices:
+  family_lines_range: [3, 5]
+  business_lines_range: [2, 12]
+  router_rental_probability: 0.55
+  tv_additional_set_probability: 0.60
+  tv_cable_box_probability: 0.70
+
+taxes_fees_rate_range: [0.06, 0.12]

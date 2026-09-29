@@ -1,0 +1,3850 @@
+[
+  {
+    "id": "school_test_0000",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Morgan Johnson, student ID VA04AF3, a graduate student in the 2025-SPRING term, and you want to drop the course PHYS-3030 Electromagnetism (4 credits) from your registration 2KS6E6N because you are adjusting your course load. You would like to add the course ART-1101 Introduction to Drawing (3 credits) to the same registration because it fits your schedule and academic interests. Since the new course carries fewer credits, you expect a tuition refund as a result of this change.\n\nUse morgan.johnson9275@univ.edu for authentication.",
+      "emotion_instruction": "You are genuinely excited about this interaction, ready to see what happens next. Speak directly and get to the point. You expect the agent to deliver, and you trust their expertise.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "0_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "2KS6E6N"
+          }
+        },
+        {
+          "action_id": "0_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "2KS6E6N",
+            "add_course_ids": [
+              "XNMQ98S"
+            ],
+            "drop_course_ids": [
+              "F8PNSP3"
+            ]
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0001",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Carla Patel, student ID YA848A7, an undergraduate student registered for the 2025-SPRING term, and you want to update your current registration NALH7NO by dropping the course PHYS-3030 Electromagnetism because you wish to reduce your course load and shift focus toward the arts. You would like to add the course ART-1101 Introduction to Drawing, a 3-credit Fine Arts course that meets on Mondays and Wednesdays at 9:00 AM, because it aligns with your academic interests and fits your schedule. The courses you are keeping must be left exactly as they are, and in particular BUS-3305 must keep the grading option it already has on this registration, exactly as it is recorded in the system, since you did not ask to change it. You want the tuition difference from this change settled against your saved Visa card ending in 3694: if the swap costs extra, charge that Visa, and if it works out as a refund, you want the refund recorded to that same Visa rather than to any other card on file. In this same conversation, after the spring change is done, you also want to rebuild your fall term. You are currently registered for 2025-FALL under registration SOTDOH1, and PSYC-2001 Introduction to Psychology is the only course on it you still want. So you want the agent to create a brand-new 2025-FALL undergraduate registration whose only course is PSYC-2001 Introduction to Psychology, a 3-credit Psychology course that meets on Tuesdays and Thursdays at 9:00 AM, with no health insurance and the full tuition charged to the same Visa card ending in 3694, and then to cancel registration SOTDOH1 outright so that every payment recorded on it is refunded. You do not want SOTDOH1 edited course by course; you want it cancelled in full. Do not end the conversation until you have asked for both the new fall registration and the cancellation of SOTDOH1.\n\nUse carla.patel7128@univ.edu for authentication.",
+      "emotion_instruction": "You feel energetic and can't wait for this to be resolved. You express yourself in a clear and excited manner. You assume the agent will solve your problem efficiently. Push for rapid progress.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "1_0",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "NALH7NO",
+            "add_course_ids": [
+              "XNMQ98S"
+            ],
+            "drop_course_ids": [
+              "F8PNSP3"
+            ],
+            "grading_options": {
+              "I4ZUI48": "pass_fail"
+            },
+            "payment_id": "63KPMYO"
+          }
+        },
+        {
+          "action_id": "1_1",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "YA848A7",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M"
+            ],
+            "study_level": "undergraduate",
+            "payment_methods": [
+              {
+                "payment_id": "63KPMYO",
+                "amount": 1500
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "1_2",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "SOTDOH1"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0002",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Ethan O'Connor (student ID RHCKH5L), and you want to cancel your 2025-FALL registration (AEG1JPT) because of scheduling conflicts, and you expect all prior payments to be refunded according to policy. Later, you would like to add the course 'Introduction to Drawing' (ART-1101) to your 2025-SPRING registration (B3ZYS67) to fulfill your arts requirement, and you prefer the tuition difference to be charged to your saved Mastercard ending in 6666.\n\nUse ethan.o'connor8446@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re buzzing with excitement and can\u2019t stand waiting. Use brief, sharp instructions. Trust the agent, but expect them to act quickly and efficiently.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "2_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "AEG1JPT"
+          }
+        },
+        {
+          "action_id": "2_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "B3ZYS67"
+          }
+        },
+        {
+          "action_id": "2_2",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "XNMQ98S"
+          }
+        },
+        {
+          "action_id": "2_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "B3ZYS67",
+            "add_course_ids": [
+              "XNMQ98S"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "7I03UNJ"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0003",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Chloe Becker, student ID 3A7N4WL, a graduate student registered full-time for the 2025-SPRING term, and you want to view your registration 5QG68MJ to confirm your enrolled courses and payment status. After reviewing, you would like to make an additional voluntary payment of exactly $100 recorded against this registration. You already know the registration is paid in full, so the $100 is a prepaid credit on your account rather than a balance you owe, and you still want it recorded. You want the $100 split across the two Mastercards saved on your account: first $60 on the card ending in 6055, then $40 on the card ending in 0825. Ask for them in that order and make sure both are recorded.\n\nUse chloe.becker8818@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re energized by the possibilities here, but you don\u2019t lose sight of practicalities. You expect responses in a reasonable timeframe. Show curiosity, but don\u2019t accept vague answers. Politely press for thoroughness when needed.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "3_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "5QG68MJ"
+          }
+        },
+        {
+          "action_id": "3_1",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "5QG68MJ",
+            "payment": {
+              "payment_id": "KGR89LR",
+              "amount": 60
+            }
+          }
+        },
+        {
+          "action_id": "3_2",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "5QG68MJ",
+            "payment": {
+              "payment_id": "ZFID56D",
+              "amount": 40
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0004",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Bob Okoro, student ID ZVJ4839, an undergraduate student currently enrolled in three courses for the 2025-SPRING term. You want to add Sculpture Studio (ARTS-3055), a 3-credit course, to your registration X27GQLJ because it fits your schedule and has open seats. You prefer the additional tuition to be charged to your saved Amex card ending in 6715, as it is your designated payment method for this registration.\n\nUse bob.okoro3114@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re thrilled about resolving this and want it handled now. Your tone is lively and straightforward. You count on the agent\u2019s support. Make your impatience clear, but remain friendly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "4_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "X27GQLJ"
+          }
+        },
+        {
+          "action_id": "4_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "X27GQLJ",
+            "add_course_ids": [
+              "GQ1Z5SW"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "25KL81I"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0005",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Liam Nguyen, student ID M66CPIN, an undergraduate student, and you want to cancel your 2025-FALL registration (2FXXA0T) because you are adjusting your academic plans. Later, you would like to update your 2025-SPRING registration (XTXT5AY) by adding the course 'Introduction to Drawing' (ART-1101), which fits your schedule and academic interests. You also want Geographic Information Systems (GEOG-2305), which you are keeping, to stay on the grading option it already has on that registration, exactly as it is recorded in the system, since you did not ask to change it. After the update, you need to make a payment of $1500 to finalize the addition, and you prefer to pay using your saved Chase bank account ending in 5769 for convenience and record consistency.\n\nUse liam.nguyen1627@univ.edu for authentication.",
+      "emotion_instruction": "You feel nervous about this situation and your tone is tense. You need help quickly, but you're unsure if the agent will resolve your issue. Ask direct questions and double-check any answers. Don't reveal full trust until you feel reassured.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "5_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "2FXXA0T"
+          }
+        },
+        {
+          "action_id": "5_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "XTXT5AY",
+            "add_course_ids": [
+              "XNMQ98S"
+            ],
+            "drop_course_ids": [],
+            "grading_options": {
+              "99OADQ5": "pass_fail"
+            },
+            "payment_id": "1KR966B"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0006",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Priya Ram\u00edrez, student ID RROQ28M, a graduate student, and you want to make an additional payment of $300 to your 2025-SPRING registration (0ODFQJI) using your Amex card ending in 5203, because you are maintaining active enrollment in your current term. Later, you want to cancel your 2025-FALL registration (4UJNWTJ) and enroll in the course ECON-2010: Principles of Macroeconomics for the 2025-SPRING term at the graduate level with health insurance elected, splitting the payment between your Chase bank account ending in 7989 ($1200) and your Amex card ending in 5203 ($1500), because you are adjusting your academic plan to focus on Economics and consolidate coursework in the current term. After that, you would like to search for open Economics courses in the 2025-SPRING term and obtain full details about ECON-2010, because you are exploring additional opportunities to complete your program requirements.\n\nUse priya.ram\u00edrez9703@univ.edu for authentication.",
+      "emotion_instruction": "You are worried and on edge, wanting immediate help. You ask questions directly and don't waste time on pleasantries. You\u2019re unsure if the agent can solve your issue, so you ask for specifics. You listen carefully for signs you can trust their advice.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "anxiety",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "6_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "0ODFQJI",
+            "payment": {
+              "payment_id": "BZYQQFO",
+              "amount": 300
+            }
+          }
+        },
+        {
+          "action_id": "6_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "0ODFQJI"
+          }
+        },
+        {
+          "action_id": "6_2",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "4UJNWTJ"
+          }
+        },
+        {
+          "action_id": "6_3",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "RROQ28M",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "U60XO2X"
+            ],
+            "study_level": "graduate",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "78LUDIV",
+                "amount": 1200
+              },
+              {
+                "payment_id": "BZYQQFO",
+                "amount": 1500
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "6_4",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "Economics",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "6_5",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "U60XO2X"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0007",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Taylor Sharma, student ID A3GH36L, an undergraduate student registering for the 2025-SPRING term, and you want to enroll in ARTS-3055: Sculpture Studio, which meets on Fridays from 1:30 PM to 4:15 PM at the West campus Sculpture Lab, because it fulfills your major requirement in Sculpture and fits your schedule. You do not want to add health insurance to your registration because you have existing coverage. You prefer to pay the tuition using your Visa card on file.\n\nUse taylor.sharma2418@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re excited and in a hurry, so there\u2019s no need for friendliness. Get straight to the request. You trust the agent to handle it well, so keep your messages brief.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "7_0",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "7_1",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "ART",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "7_2",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "ARTS",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "7_3",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "7_4",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "GQ1Z5SW"
+          }
+        },
+        {
+          "action_id": "7_5",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "YFV5AS6"
+          }
+        },
+        {
+          "action_id": "7_6",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "A3GH36L",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "GQ1Z5SW"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "NHU5PMD",
+                "amount": 1500
+              }
+            ]
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0008",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Benjamin Carter, a graduate student (student ID 4YN7NNQ), and you want to update your 2025-SPRING registration (FQU4T3N) by dropping the course Digital Music Production and adding Sculpture Studio, because you wish to shift your focus from music to studio art. Any tuition refund should go back to your Visa ending in 5856. Later, you would like to cancel your 2025-FALL registration (IRYEZMR), as you do not plan to continue in that term. After that, you would like to explore all available courses for the 2025-SPRING term to ensure Sculpture Studio aligns with your academic goals before finalizing your schedule.\n\nUse benjamin.carter4050@univ.edu for authentication.",
+      "emotion_instruction": "You feel uneasy and cautious, but try to be friendly and pleasant. Ask for clarification gently and avoid making quick decisions. Let your voice show a little uncertainty. You want to believe the agent, but need more reassurance first.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "low",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "8_0",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "FQU4T3N",
+            "add_course_ids": [
+              "GQ1Z5SW"
+            ],
+            "drop_course_ids": [
+              "SFFSVG3"
+            ],
+            "payment_id": "LW6RJ7J"
+          }
+        },
+        {
+          "action_id": "8_1",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "IRYEZMR"
+          }
+        },
+        {
+          "action_id": "8_2",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "8_3",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "8_4",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "GQ1Z5SW"
+          }
+        },
+        {
+          "action_id": "8_5",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "GQ1Z5SW",
+            "date": "25-02-14"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0009",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Emily Okafor (emily.okafor9392@univ.edu, student ID 06B1D59), a graduate student, and you want to cancel your 2025-FALL registration (registration ID YR442YT) due to scheduling conflicts and receive a full refund of your payments. In this same conversation, after the cancellation is confirmed, you also want the 2025-SPRING course Quantum Field Theory Seminar (PHYS-5500) added to your existing 2025-SPRING registration, with the courses already on it keeping the grading options they have now, exactly as they are recorded in the system, and the $2,400 tuition difference charged to your Visa ending in 4383. Do not end the conversation until you have asked for this. After that, you would like to explore available courses for the 2025-SPRING term to consider potential future enrollments.\n\nUse emily.okafor9392@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re thrilled about what\u2019s ahead and want things sorted right away. You talk quickly and confidently, but keep your guard up. Show your excitement, but make it clear you need proof before trusting the agent\u2019s answers. Don\u2019t hold back on asking for specifics.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "9_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "YR442YT"
+          }
+        },
+        {
+          "action_id": "9_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "A22FJZW",
+            "add_course_ids": [
+              "JISQIPF"
+            ],
+            "drop_course_ids": [],
+            "grading_options": {
+              "YO36D9X": "letter",
+              "RLRW2QJ": "pass_fail",
+              "K3W0HY4": "pass_fail",
+              "JISQIPF": "letter"
+            },
+            "payment_id": "JFS991I"
+          }
+        },
+        {
+          "action_id": "9_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0010",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Chloe Harper (chloe.harper1614@univ.edu, student ID TP8NPG6), an undergraduate student, and you want to modify your 2025-SPRING registration (ZSIRURB) by adding the Sculpture Studio course (ARTS-3055) because it fits your interest in studio art and meets on Fridays, which aligns with your preferred schedule. You also want to drop your Introduction to Psychology course (PSYC-1101) to make room for the new course and adjust your academic focus. You prefer to keep your total credits manageable and maintain full-time status, and you would like the changes applied to your current registration using your saved bank account for any financial adjustments.\n\nUse chloe.harper1614@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re buzzing with excitement and expect things to move fast. Your speech is animated and concise. You\u2019re confident the agent is up to the task. Stay engaged and prompt the agent to act quickly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "10_0",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "10_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "GQ1Z5SW"
+          }
+        },
+        {
+          "action_id": "10_2",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "ZSIRURB"
+          }
+        },
+        {
+          "action_id": "10_3",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "10_4",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "ZSIRURB",
+            "add_course_ids": [
+              "GQ1Z5SW"
+            ],
+            "drop_course_ids": [
+              "YFV5AS6"
+            ],
+            "payment_id": "SBCDIPR"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0011",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Thomas Morales, student ID ZXKFC7S, an undergraduate student, and you want to enroll in the course BUS-1010 (Introduction to Business Studies) as a new, separate 2025-SPRING undergraduate registration without health insurance, because it fulfills a core requirement. You know it overlaps your HIST-2101 class by twenty minutes and you have permission from the instructor, so you do not want it added to your existing spring registration AH2ZJKP and you do not want to drop any course. You prefer to pay $500 of the tuition by your Amex card ending in 8454 and $1000 by your Mastercard ending in 0670 to split the charge across both cards. Later, you would like a $100 refund applied to your Amex card ending in 8454 for your existing 2025-SPRING registration AH2ZJKP, possibly due to a fee adjustment. After that, you intend to cancel your entire 2025-FALL registration (AV6XFBI), which includes three courses, because you plan to take a leave of absence, and you expect a full refund of all prior payments made to both your Amex and Mastercard for that term.\n\nUse thomas.morales2882@univ.edu for authentication.",
+      "emotion_instruction": "You are uneasy and in a hurry to get help. Maintain a neutral politeness but stay cautious in your responses. Request prompt updates and explanations. Be hesitant to accept information at face value.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "11_0",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true,
+            "department": "BUS",
+            "day": "Monday",
+            "start_after": "09-00",
+            "end_before": "12-00"
+          }
+        },
+        {
+          "action_id": "11_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "BFOBDAU"
+          }
+        },
+        {
+          "action_id": "11_2",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "ZXKFC7S",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "BFOBDAU"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "1C8UBDL",
+                "amount": 500
+              },
+              {
+                "payment_id": "MWUIDC5",
+                "amount": 1000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "11_3",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "AH2ZJKP",
+            "payment": {
+              "payment_id": "1C8UBDL",
+              "amount": -100
+            }
+          }
+        },
+        {
+          "action_id": "11_4",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "AH2ZJKP"
+          }
+        },
+        {
+          "action_id": "11_5",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "AV6XFBI"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0012",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Carol Brooks, student ID ALG0QLL, an undergraduate student, and you want to modify your spring 2025 registration (YEJNY0V) by dropping the course Music Theory I (MUSC-1201) because it conflicts with your artistic interests, and you would like to add Sculpture Studio (ARTS-3055) instead, which aligns better with your schedule and creative goals, as it meets only on Fridays and fits your availability. Your other courses must be left exactly as they are \u2014 in particular Cell Biology (BIOL-2020) must keep the grading option it already has. Later, you would like to make an additional payment of $100 toward your registration using your saved Amex card ending in 0205, as it is your preferred and already on-file payment method.\n\nUse carol.brooks8621@univ.edu for authentication.",
+      "emotion_instruction": "You are worried and on edge, wanting immediate help. You ask questions directly and don't waste time on pleasantries. You\u2019re unsure if the agent can solve your issue, so you ask for specifics. You listen carefully for signs you can trust their advice.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "anxiety",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "12_0",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "12_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "AX7VQ2C"
+          }
+        },
+        {
+          "action_id": "12_2",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "B6JLUL7"
+          }
+        },
+        {
+          "action_id": "12_3",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "JISQIPF"
+          }
+        },
+        {
+          "action_id": "12_4",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "12_5",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "GQ1Z5SW"
+          }
+        },
+        {
+          "action_id": "12_6",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "YEJNY0V",
+            "add_course_ids": [
+              "GQ1Z5SW"
+            ],
+            "drop_course_ids": [
+              "AX7VQ2C"
+            ],
+            "grading_options": {
+              "B6JLUL7": "pass_fail"
+            }
+          }
+        },
+        {
+          "action_id": "12_7",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "YEJNY0V",
+            "payment": {
+              "payment_id": "V90JIII",
+              "amount": 100
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0013",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Chloe Gomez, student ID CZEUZTT, a graduate student in the MBA Geospatial Science program, and you want to cancel your 2025-FALL registration (HPKT9GP) which includes Elementary Spanish I and Operating Systems. Before proceeding with the cancellation, you want to review the details of Elementary Spanish I (SPAN-1010), including its schedule and meeting history, and you would like a list of all courses available for the 2025-FALL term to explore potential future enrollment. After canceling the 2025-FALL registration, you would like to make an additional payment of $500 to your 2025-SPRING registration (D11YXTQ) split as exactly $300 from your saved bank account with Chase ending in 3316, which you want recorded first, and the remaining $200 on your saved Visa card ending in 0274. You already know that registration is paid in full; the $500 is simply a prepaid credit you want recorded on it, and you do not need anything else done with the credit.\n\nUse chloe.gomez3115@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re genuinely excited about using the service, though you don\u2019t want to seem too overzealous. You\u2019d like things to proceed efficiently. Express your interest, but verify details before moving on. Keep the conversation constructive and precise.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "13_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "HPKT9GP"
+          }
+        },
+        {
+          "action_id": "13_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "Q1XUJ3T"
+          }
+        },
+        {
+          "action_id": "13_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "13_3",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "HPKT9GP"
+          }
+        },
+        {
+          "action_id": "13_4",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "D11YXTQ",
+            "payment": {
+              "payment_id": "AG3AOOD",
+              "amount": 300
+            }
+          }
+        },
+        {
+          "action_id": "13_5",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "D11YXTQ",
+            "payment": {
+              "payment_id": "J41XH7R",
+              "amount": 200
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0014",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are a graduate student, student ID A668WP3, updating your spring 2025 registration. You want to drop the Creative Writing Workshop (ENGL-2210, section B2) because you wish to replace it with a course that better aligns with your academic interests. Later, you would like to add Introduction to Drawing (ART-1101) to your registration, as it fits your schedule with Monday and Wednesday morning meetings and fulfills your interest in expanding your artistic skills. You expect no additional tuition to be due for this swap, and you want the agent to confirm that before making the change.\n\nUse maya.sharma8146@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re genuinely excited about using the service, though you don\u2019t want to seem too overzealous. You\u2019d like things to proceed efficiently. Express your interest, but verify details before moving on. Keep the conversation constructive and precise.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "14_0",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "LXQ06HB",
+            "add_course_ids": [
+              "XNMQ98S"
+            ],
+            "drop_course_ids": [
+              "4Y985YM"
+            ],
+            "payment_id": "YJL7159"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0015",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Lena Rossi, student ID 8NGMHND, a graduate student registered for spring 2025 under registration B7PJYBO, currently enrolled in PSYC-3402 (Research Methods in Psychology). You want to review the details of this course to confirm your enrollment and course information. After that, you would like a refund of your $500 grant, which posted after you had already paid the full $2,700, and you prefer this refund be issued to your Chase bank account ending in 2603, as it is your primary linked bank account for tuition transactions.\n\nUse lena.rossi9324@univ.edu for authentication.",
+      "emotion_instruction": "You're on edge and worried that something might go wrong. Your tone is polite and gentle, but your anxiety peeks through. Request help quickly and carefully. You want to trust the agent but are hesitant.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "15_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "B7PJYBO"
+          }
+        },
+        {
+          "action_id": "15_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "PDJMO1C"
+          }
+        },
+        {
+          "action_id": "15_2",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "B7PJYBO",
+            "payment": {
+              "payment_id": "W7ZLJFN",
+              "amount": -500
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0016",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Mateo Hughes (mateo.hughes7844@univ.edu, student ID Q0ZOIBP), an undergraduate student, and you want to add Sculpture Studio (ARTS-3055) to your 2025-SPRING registration (MYHNULO) because it is a compatible course with an open seat and fits your academic interests in Studio Art. You would like the additional $1500 tuition to be charged to your Mastercard ending in 0268 because it is your preferred payment method on file. You want to know what departments are offered so you can explore academic options, and you are interested in searching for open undergraduate courses in 2025-SPRING that do not conflict with your current schedule to identify potential electives, but you are only browsing: you will decide later and do not want to add any of those electives in this conversation. You also want a complete list of all courses available for 2025-SPRING to review your full range of academic offerings. In this same conversation, after the course has been added, you also want the agent to cancel your 2025-FALL registration (3O7K1I7) outright, to free up your schedule for future planning. Do not end the conversation until you have asked for this cancellation.\n\nUse mateo.hughes7844@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re looking forward to a positive result and feel a burst of excitement. You want things to move along, but you\u2019re not pushy. Ask for updates if things stall. Stay on topic and gently double-check what the agent says.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "16_0",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "MYHNULO",
+            "add_course_ids": [
+              "GQ1Z5SW"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "0WHKYCF"
+          }
+        },
+        {
+          "action_id": "16_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "MYHNULO"
+          }
+        },
+        {
+          "action_id": "16_2",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "3O7K1I7"
+          }
+        },
+        {
+          "action_id": "16_3",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "16_4",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "16_5",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "16_6",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "GQ1Z5SW"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0017",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Noah Chen, student ID FQ5ZOJT, a graduate student in Psychology, exploring Geography courses for the 2025-SPRING term. You want to first list all departments to understand available academic areas. Then, you would like to search for open Geography courses in the 2025-SPRING term to identify available options. You are particularly interested in GEOG-3120 (Geographic Information Systems), so you want to retrieve full details about that course to evaluate its fit for your academic goals. After reviewing the course, you intend to record an extra $500 payment on your registration QOW8KHI using your Amex card ending in 7184. You know the tuition is already paid in full; the $500 is a deliberate prepayment you want on record. Following the payment, you want to check the updated registration details to confirm the transaction was applied correctly. Finally, you would like to confirm whether your GEOG-3120 class was held on April 3, 2025, because you missed that day and want to know whether the session was actually held.\n\nUse noah.chen8101@univ.edu for authentication.",
+      "emotion_instruction": "You feel jittery and uncertain about the outcome. You communicate in a neutral tone, asking for clarification when needed. You don't easily share personal details. You watch for signs that the agent is reliable before relaxing.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "17_0",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "17_1",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "Geography",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "17_2",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "ZGMUBQF"
+          }
+        },
+        {
+          "action_id": "17_3",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "QOW8KHI",
+            "payment": {
+              "payment_id": "BY76PEK",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "17_4",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "QOW8KHI"
+          }
+        },
+        {
+          "action_id": "17_5",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "ZGMUBQF",
+            "date": "25-04-03"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0018",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Benjamin Ram\u00edrez (benjamin.ram\u00edrez4992@univ.edu, student ID 70EE82F), an undergraduate mathematics major, and you are contacting the registrar because your Health Policy and Management class was canceled on 2025-01-23 due to instructor illness. First, you want your 2025-SPRING registration SQ42CYC canceled in full and all payments refunded to your saved Chase bank account ending in 1698, because you have decided to drop everything for the term after the canceled meeting. After that, you would like the updated spring registration reviewed so you can confirm that all courses were dropped and the refund was recorded, and you also want the canceled Health Policy and Management meeting on 2025-01-23 checked and read back to you, because the cancellation was due to instructor illness (you understand nothing can be added to your student file). Later, you want to re-register for 2025-SPRING with a fresh schedule: first list all available 2025-SPRING courses, then register you as an undergraduate without health insurance for the Calculus I (MATH-1010) section taught by Evelyn Harper and Introduction to Sociology (SOCI-1200), charging the full tuition to your saved Chase bank account ending in 1698, because you want to restart the term with these two courses. After the registration, you would like the Calculus I details shown so you can confirm that it meets Monday, Wednesday, and Friday in the early-morning 9:00 a.m. slot. Finally, for your 2025-FALL registration 61J7F46, you want the agent to search for open 2025-FALL courses that fit your current schedule, then swap Abnormal Psychology (PSYC-4225) out for Modernist Poetry (LITR-3010) by dropping the former and adding the latter, because Modernist Poetry is open, schedule-compatible, and keeps your credit load and tuition unchanged; you also want Operating Systems (CS-3410) to keep the grading option it already has on that registration, exactly as it is recorded in the system, since you did not ask to change it.\n\nUse benjamin.ram\u00edrez4992@univ.edu for authentication.",
+      "emotion_instruction": "You feel very frustrated and want quick answers. Express your dissatisfaction openly and push for immediate resolution. Keep your tone direct but not rude. Question if the agent can truly help you this time.",
+      "emotion_metadata": {
+        "emotion_family": "anger",
+        "emotion_leaf": "frustration",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "18_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "SQ42CYC"
+          }
+        },
+        {
+          "action_id": "18_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "SQ42CYC"
+          }
+        },
+        {
+          "action_id": "18_2",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "6GTTE4I",
+            "date": "25-01-23"
+          }
+        },
+        {
+          "action_id": "18_3",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "18_4",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "70EE82F",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "C076XJ5",
+              "IZ99HR6"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "ZEDXBHY",
+                "amount": 4000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "18_5",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "C076XJ5"
+          }
+        },
+        {
+          "action_id": "18_6",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "18_7",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "61J7F46",
+            "add_course_ids": [
+              "C2045QR"
+            ],
+            "drop_course_ids": [
+              "8I0Z84P"
+            ],
+            "grading_options": {
+              "A4NW5ZS": "pass_fail"
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0019",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jamal Rivers (jamal.rivers5030@univ.edu, student ID H4PAF31), a full-time Physical Education undergraduate, and you are contacting about your 2025-SPRING registration (confirmation QVGFD7Y). You want the agent to pull up that registration, and you prefer to receive the unapplied scholarship credit as a refund to your Mastercard ending in 7180, because the credit is already associated with the registration but has not been applied. Later, you want to rework your spring schedule on the same registration. First, you would like the agent to show the available departments and the full 2025-SPRING course catalog, because you want to review the term options before changing courses. After that, you want to drop the morning Physics course Classical Mechanics I (PHYS-1101) and add the afternoon Physical Education course Kinesiology for Educators (PHED-3302), because this is a like-for-like 4-credit swap that better fits your Physical Education program without changing tuition. Finally, you would like the agent to search for any other open Physical Education courses in 2025-SPRING, so you can see whether additional PE options are available after the swap, including whether Foundations of Physical Fitness (PHED-1101) is compatible once the Physics course is removed.\n\nUse jamal.rivers5030@univ.edu for authentication.",
+      "emotion_instruction": "Your annoyance is obvious, and you need urgent help. Respond in a brisk, matter-of-fact way. Don\u2019t automatically accept what the agent says\u2014look for proof or details. Avoid unnecessary chatter.",
+      "emotion_metadata": {
+        "emotion_family": "anger",
+        "emotion_leaf": "annoyance",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "19_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "QVGFD7Y"
+          }
+        },
+        {
+          "action_id": "19_1",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "QVGFD7Y",
+            "payment": {
+              "payment_id": "CBPMFNB",
+              "amount": -1000
+            }
+          }
+        },
+        {
+          "action_id": "19_2",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "19_3",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "19_4",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "QVGFD7Y",
+            "add_course_ids": [
+              "VD8IAVR"
+            ],
+            "drop_course_ids": [
+              "ODT8HFM"
+            ]
+          }
+        },
+        {
+          "action_id": "19_5",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "Physical Education",
+            "open_only": true
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0020",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Casey O'Neill, an undergraduate in the School of Public Health (student ID II623OO, casey.o'neill9375@univ.edu), and you are contacting support to plan your 2025-FALL schedule. You want to see the courses offered in 2025-FALL, because you are choosing classes for that term. After that, you would like the details for LITR-3010 Modernist Poetry, because you are specifically interested in that 3-credit course that meets Tuesday and Thursday in the mid-morning in Humanities Hall 204A and want to confirm it still has open seats. Then, you want to be registered for LITR-3010 Modernist Poetry in a 2025-FALL undergraduate registration, because you are satisfied with the course details and want to secure a seat. You prefer the registration to be without school health insurance, because you do not want that coverage option. You also prefer to pay the full tuition from your saved Chase bank account ending in 0080, because that is the payment method you want to use for this charge. Separately, you also want one more course added to that same new registration: the only Spanish course in 2025-FALL that meets in the afternoon and still has open seats. You do not remember its code or title and want the agent to find it with the course search, and the extra tuition goes on the same Chase account ending in 0080. You do not mention this addition until the LITR-3010 registration has actually been created and confirmed with a registration number, and you do not end the conversation until you have asked for it.\n\nUse casey.o'neill9375@univ.edu for authentication.",
+      "emotion_instruction": "You are highly enthusiastic and want immediate assistance. You communicate energetically and stay on topic. Trust that the agent will help, but keep the conversation moving fast.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "20_0",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "20_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "C2045QR"
+          }
+        },
+        {
+          "action_id": "20_2",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "II623OO",
+            "term": "2025-FALL",
+            "course_ids": [
+              "C2045QR"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "5YHGNSP",
+                "amount": 1500
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "20_3",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "department": "Spanish",
+            "open_only": true,
+            "start_after": "12-00"
+          }
+        },
+        {
+          "action_id": "20_4",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "REG000001",
+            "add_course_ids": [
+              "N4Q81OI"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "5YHGNSP"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0021",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Alex Morales (alex.morales4389@univ.edu, student ID DBHENQ8), an undergraduate in the School of Professional Studies, and you are contacting the university to plan your 2025-FALL schedule. You want to see which courses are offered in 2025-FALL because you are choosing your fall classes. You would like the details for PSYC-2001, Introduction to Psychology, because that is the course you are interested in; you want to confirm that it is a 3-credit 2025-FALL course with open seats and a morning meeting pattern. You want to register for that course as an undergraduate without the school health insurance election because you do not want to add health insurance to this registration. You prefer to pay the full tuition from your saved Chase bank account ending in 6648 because that is the payment method you want to use for this charge. You want PSYC-2001 registered and paid for on its own first, because you are afraid the last seats will go. Once that new 2025-FALL registration is in place, you want one more class added to that same new registration: the psychology course in 2025-FALL that meets Wednesday afternoons on the Downtown campus and still has open seats. You do not know its course code, so you want the agent to look it up for you, and the extra tuition should be charged to the same Chase bank account ending in 6648. You do not want anything added to your existing 2025-SPRING registration.\n\nUse alex.morales4389@univ.edu for authentication.",
+      "emotion_instruction": "Anxiety is making you restless and urgent. You interact directly, with little small talk, seeking rapid clarification. You trust the agent\u2019s ability to resolve the issue. Your responses are concise and precise.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "anxiety",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "21_0",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "21_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "8PWD21M"
+          }
+        },
+        {
+          "action_id": "21_2",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "DBHENQ8",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "47L6PY4",
+                "amount": 1500
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "21_3",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "department": "Psychology",
+            "campus": "Downtown",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "21_4",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "REG000001",
+            "add_course_ids": [
+              "8I0Z84P"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "47L6PY4"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0022",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Bernardo Becker (student account OBC74OO, email bernardo.becker8277@univ.edu), contacting about your graduate registration and fall catalog. You already know the 2025-SPRING registration 0KE5Q5S shows as paid in full and you are not disputing that. You still want to first record a payment of exactly $500 against it from your saved Chase bank account ending in 6010, to sit as a credit on the registration matching the $500 grant on your account, and then show the updated registration details, because you want to see that payment reflected before making a final decision. Later in this same conversation, and only after the $500 payment has been recorded and you have reviewed the updated details, you will confirm that you want to cancel the 2025-SPRING registration 0KE5Q5S and have all recorded payments refunded, including the $500 you just paid, because you have decided not to attend spring. Do not raise the cancellation before the $500 payment is recorded. After that, you would like to be registered for 2025-FALL as a graduate student with only the Wednesday afternoon Abnormal Psychology (PSYC-4225) section, with no health insurance, and you prefer to pay the full fall tuition from your saved Chase bank account ending in 6010, because that is the account you want to use for the new fall registration. Subsequently, now that fall is set, you want to browse the catalog: search for open 2025-FALL courses, pull up the details for the Tuesday/Thursday morning Introduction to Psychology (PSYC-2001) section, show the complete list of 2025-FALL courses, and list all departments the school offers, because you want to review additional fall options and understand the available academic departments.\n\nUse bernardo.becker8277@univ.edu for authentication.",
+      "emotion_instruction": "Keep a peaceful demeanor while stressing the need for urgency. Communicate in a straightforward and efficient manner. Be civil but guarded in trust. Double-check suggestions before proceeding.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "22_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "0KE5Q5S",
+            "payment": {
+              "payment_id": "6YKWLY2",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "22_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "0KE5Q5S"
+          }
+        },
+        {
+          "action_id": "22_2",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "0KE5Q5S"
+          }
+        },
+        {
+          "action_id": "22_3",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "OBC74OO",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8I0Z84P"
+            ],
+            "study_level": "graduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "6YKWLY2",
+                "amount": 2400
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "22_4",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "22_5",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "8PWD21M"
+          }
+        },
+        {
+          "action_id": "22_6",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "22_7",
+          "name": "list_departments",
+          "arguments": {}
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0023",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miles O'Connor, a graduate biochemistry student (email miles.o'connor3648@univ.edu, student ID 4GFHBGO), contacting support to handle your spring payment and restructure your fall schedule. You want to record an extra payment of exactly $500 on your spring registration K282FX3 using your Amex card ending in 1306, because you want to leave a $500 credit on that registration ahead of the changes below; you already know K282FX3 is paid in full and that the payments on record are correct, and you still want the $500 recorded before anything else. Later, you would like to restructure your fall semester: first search the open 2025-FALL course catalog, then register for Operating Systems (CSCI-3500) and Cognitive Psychology (PSYC-3102) in a graduate-level 2025-FALL registration with health insurance, because you want those two courses to replace your old fall schedule and keep your graduate status and health insurance election; you are fine with the new fall registration being part-time at 8 credits and do not want any extra courses added. You want the $6,700 new fall registration charge split by putting $4,000 on your Chase bank account ending in 8279 first and the remaining $2,700 on your Amex card ending in 1306, because that is how much room you have on each. After that, you want to cancel your old fall registration YZ70OQQ, because the new fall registration replaces it. The following day, you want to browse the available departments and view all 2025-SPRING courses, because you are reviewing your spring options. You also want to check whether the 25-02-13 meeting of your registered Organic Chemistry II (CHEM-2202) course was canceled, because you are worried about that session. Then you would like to update spring registration K282FX3 by adding Genetics (BIOL-2203) and dropping Urban Geography (GEOG-3355), because you want to swap those spring courses; you prefer to charge any resulting tuition difference to your Amex card ending in 1306.\n\nUse miles.o'connor3648@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re at ease, yet the matter is time-sensitive. Be concise and direct in your communication. Use neutral language and keep your expectations measured. Cross-check the agent's advice before acting.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "23_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "K282FX3",
+            "payment": {
+              "payment_id": "9YMOWRE",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "23_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "K282FX3"
+          }
+        },
+        {
+          "action_id": "23_2",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "23_3",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "4GFHBGO",
+            "term": "2025-FALL",
+            "course_ids": [
+              "S7CFD8N",
+              "ZSXZT48"
+            ],
+            "study_level": "graduate",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "MFSXCHZ",
+                "amount": 4000
+              },
+              {
+                "payment_id": "9YMOWRE",
+                "amount": 2700
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "23_4",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "YZ70OQQ"
+          }
+        },
+        {
+          "action_id": "23_5",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "23_6",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "23_7",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "NMQC1AN"
+          }
+        },
+        {
+          "action_id": "23_8",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "NMQC1AN",
+            "date": "25-02-13"
+          }
+        },
+        {
+          "action_id": "23_9",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "K282FX3",
+            "add_course_ids": [
+              "P711TOG"
+            ],
+            "drop_course_ids": [
+              "9IZA04H"
+            ],
+            "payment_id": "9YMOWRE"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0024",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are assisting Bob Ahmad, an undergraduate student with email bob.ahmad2777@univ.edu and student ID XBL9R6D, as he reworks his fall and spring registrations. First, you want to record a payment of exactly $500 from his saved Chase checking account ending in 0628 toward his existing 2025-FALL registration, and it must be recorded before anything else happens to that registration, because he paid that $500 in person and it was never posted to the account. You would then like to pull up that fall registration so he can review its current courses and payment status before replacing it. After that, because he wants to redo his fall schedule, you prefer to search the open 2025-FALL catalog and create a fresh undergraduate fall registration without health insurance that includes Elementary Spanish I, which meets Tuesday and Thursday in the morning, and Shakespearean Tragedies, which meets Monday and Wednesday in the afternoon, because both requested courses are available in the open fall catalog. You also prefer to charge the full tuition for the new fall registration to the same saved Chase checking account ending in 0628, because he wants the replacement fall schedule paid from the account he already used. Once the new fall registration is complete, you want to cancel the old 2025-FALL registration and refund all payments made on it back to the same Chase checking account ending in 0628, because the old registration is being replaced rather than kept. Later, you would like to list all departments and show the full 2025-SPRING course catalog, because he is reviewing spring options before changing his spring registration. You then want to review the details for Urban Geography from his spring registration and confirm that its January 24, 2025 meeting was held, because he needs to verify that the Friday midday class actually met before making a course swap. Subsequently, you prefer to update his spring registration by adding Health Policy and Management, which meets Tuesday and Thursday in the midday, and dropping Music Theory I, which meets Monday, Wednesday, and Friday in the early morning, because he wants to replace the music course with the health policy course. Finally, you want to charge the resulting tuition difference to his saved Chase checking account ending in 0628, because he wants the spring adjustment paid from the same bank account.\n\nUse bob.ahmad2777@univ.edu for authentication.",
+      "emotion_instruction": "You carry a sense of pride and demand swift action. You keep your tone neutral and focus on getting things done. You monitor the agent\u2019s responses carefully before placing trust. Keep interactions efficient and goal-oriented.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "24_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "PKWNZSA",
+            "payment": {
+              "payment_id": "6OG74HE",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "24_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "PKWNZSA"
+          }
+        },
+        {
+          "action_id": "24_2",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "24_3",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "XBL9R6D",
+            "term": "2025-FALL",
+            "course_ids": [
+              "Q1XUJ3T",
+              "G0CR3PX"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "6OG74HE",
+                "amount": 4000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "24_4",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "PKWNZSA"
+          }
+        },
+        {
+          "action_id": "24_5",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "24_6",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "24_7",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "K0XUKML"
+          }
+        },
+        {
+          "action_id": "24_8",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "K0XUKML",
+            "date": "25-01-24"
+          }
+        },
+        {
+          "action_id": "24_9",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "3N2IE83",
+            "add_course_ids": [
+              "6GTTE4I"
+            ],
+            "drop_course_ids": [
+              "AX7VQ2C"
+            ],
+            "payment_id": "6OG74HE"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0025",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Sophia Shah (student ID M7NNWY3, sophia.shah2567@univ.edu), contacting to reorganize your 2025 course load. First, you want to cancel your 2025-FALL registration KPDQXP1 and receive a full refund of all payments made for that registration, because you no longer want to keep the fall term; you prefer the refund to go back to the same two saved Mastercard cards on file. After that, you want to update your 2025-SPRING registration 5TSSWLE by dropping Financial Modeling for Managers, FINC-5102, and adding Cell Biology, BIOL-2020, because you prefer the spring biology option and want the change made only after confirming that BIOL-2020 still has open seats in 2025-SPRING; you expect no tuition difference because both courses carry 3 credits.\n\nUse sophia.shah2567@univ.edu for authentication.",
+      "emotion_instruction": "You dislike what you\u2019re experiencing and need it resolved quickly. Keep your responses short and to the point. Be neutral but let your urgency show. Double-check what the agent says.",
+      "emotion_metadata": {
+        "emotion_family": "disgust",
+        "emotion_leaf": "dislike",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "25_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "KPDQXP1"
+          }
+        },
+        {
+          "action_id": "25_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "5TSSWLE"
+          }
+        },
+        {
+          "action_id": "25_2",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "25_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "5TSSWLE",
+            "add_course_ids": [
+              "B6JLUL7"
+            ],
+            "drop_course_ids": [
+              "NMXGZAF"
+            ]
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0026",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Diego Davis (student ID 9H2LR2N, email diego.davis2397@univ.edu), a Social Studies major with a Business Analytics minor, and you want to reorganize your enrollment. First, you want to cancel your 2025-FALL registration B2SS80S, which currently includes four courses, and have all payments for that registration refunded to the Chase bank account ending in 6060 on file, because you have decided not to continue that fall enrollment. Later, you would like the agent to review your 2025-SPRING registration ITRR6SK and browse the open 2025-SPRING course options. After that, in that spring registration, you prefer to drop GEOG-3355 Urban Geography and add BUS-3305 Business Analytics instead, because the 3-credit Business Analytics course matches your minor and helps your spring schedule align with your academic plan. You did not ask to change how any other course is graded, so your other spring courses must keep the grading option they already have on that registration, exactly as it is recorded in the system.\n\nUse diego.davis2397@univ.edu for authentication.",
+      "emotion_instruction": "Stay serene but highlight the urgency of your request. Communicate straightforwardly and avoid small talk. Be polite yet a little reserved with the agent. Ask clarifying questions if unsure about their answers.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "26_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "B2SS80S"
+          }
+        },
+        {
+          "action_id": "26_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "B2SS80S"
+          }
+        },
+        {
+          "action_id": "26_2",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "26_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "ITRR6SK",
+            "add_course_ids": [
+              "I4ZUI48"
+            ],
+            "drop_course_ids": [
+              "9IZA04H"
+            ],
+            "grading_options": {
+              "CLXWM4M": "pass_fail"
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0027",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Darius Torres, student ID 903IM1B, email darius.torres8354@univ.edu, an undergraduate in the College of Nursing, and you want to rework your 2025-SPRING registration (NN3MCCT) while getting ahead on fall. First, you would like the agent to search for open Nursing courses in 2025-SPRING because you want to add a Nursing course to your spring schedule; you prefer to add NURS-3305 Community Health Nursing and drop BUSN-2101 Principles of Management from that spring registration because this swaps a business course for the open Nursing course you want. You prefer to pay any resulting tuition difference with your saved Visa ending in 4080 because that is the saved card you want to use. Later, you would like the full 2025-FALL course catalog listed because you want to review all fall options before enrolling; after that, you want to register as an undergraduate for PSYC-2001 Introduction to Psychology and LITR-3010 Modernist Poetry, without the health insurance add-on, because you want to get ahead on fall. You prefer to pay the full fall tuition with the same saved Visa ending in 4080 because you want the new fall registration paid in full.\n\nUse darius.torres8354@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re eager and animated, wanting solutions as soon as possible. You talk in a straightforward, lively way. You trust the agent's expertise, so you move quickly through your questions. Let your anticipation show.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "27_0",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "Nursing",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "27_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "NN3MCCT",
+            "add_course_ids": [
+              "CLXWM4M"
+            ],
+            "drop_course_ids": [
+              "AZKRZF5"
+            ],
+            "payment_id": "2SVWDKT"
+          }
+        },
+        {
+          "action_id": "27_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "27_3",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "903IM1B",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M",
+              "C2045QR"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "2SVWDKT",
+                "amount": 3000
+              }
+            ]
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0028",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Sofia O'Connor (student ID NWEK57Y, sofia.o'connor4366@univ.edu), a continuing-education Mathematics certificate student, and you want to rework your 2025-SPRING registration OFIH5CP and plan your 2025-FALL term in one visit. First, you want to search for open Mathematics courses in 2025-SPRING because you want to confirm the available spring options before changing your schedule. Then, you want to update registration OFIH5CP by adding the MATH-1010 Calculus I section taught by Evelyn Harper and dropping CHEM-3405 Physical Chemistry I because you want to replace the spring chemistry course with the mathematics course; you prefer to pay the resulting one-credit tuition difference with your Visa ending in 7156 because that is the saved card you selected for this charge. After that, you want to review the full 2025-FALL course list because you are choosing your fall courses from the catalog. Subsequently, you want to register for a new 2025-FALL registration at continuing-education level including LITR-3010 Modernist Poetry and PSYC-2001 Introduction to Psychology, keeping your school health insurance election because you want to maintain your current coverage; you prefer to split the fall registration payment between your Visa ending in 7156 and your Chase checking account ending in 1261, charging exactly $1,700 to the Visa first and the remaining $1,000 to the checking account, because you want to use both saved payment methods for the fall term.\n\nUse sofia.o'connor4366@univ.edu for authentication.",
+      "emotion_instruction": "Your excitement makes you a bit impatient, wanting things handled right away. You speak in short, enthusiastic sentences. You expect the agent to be capable and responsive. Remain positive but press for quick results.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "28_0",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "Mathematics",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "28_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "OFIH5CP",
+            "add_course_ids": [
+              "C076XJ5"
+            ],
+            "drop_course_ids": [
+              "TD81NGD"
+            ],
+            "payment_id": "VFP9VZD"
+          }
+        },
+        {
+          "action_id": "28_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "28_3",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "NWEK57Y",
+            "term": "2025-FALL",
+            "course_ids": [
+              "C2045QR",
+              "8PWD21M"
+            ],
+            "study_level": "continuing_ed",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "VFP9VZD",
+                "amount": 1700
+              },
+              {
+                "payment_id": "N4NL4LD",
+                "amount": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0029",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jordan Delgado, student ID 2IY1LRR, jordan.delgado6352@univ.edu, contacting support because you registered for the wrong term. You want to cancel your 2025-SPRING registration, reference U740I2U, and have everything you paid refunded to your saved Visa ending in 9909, because that spring registration was made in error. Immediately after that, you would like to start a new 2025-FALL registration as an undergraduate with no health insurance, enrolling in Introduction to Psychology (PSYC-2001) and Operating Systems (CSCI-3500), and you prefer to pay the full tuition by your saved Visa ending in 9909, because that is the card you used for the spring registration. Once the new fall registration is in place, you want the full 2025-FALL course list and the full details for Modernist Poetry (LITR-3010), which you then want added to that new fall registration, with the extra tuition charged to the same Visa ending in 9909; you do not mention this addition until the fall registration has actually been created and confirmed.\n\nUse jordan.delgado6352@univ.edu for authentication.",
+      "emotion_instruction": "You are feeling very frustrated and need immediate help. Your patience is thin, but you keep your tone straightforward. Be clear and direct about your problem, but don't go out of your way to be rude. You aren't sure the agent can actually fix your issue, so you question their suggestions.",
+      "emotion_metadata": {
+        "emotion_family": "anger",
+        "emotion_leaf": "frustration",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "29_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "U740I2U"
+          }
+        },
+        {
+          "action_id": "29_1",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "2IY1LRR",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M",
+              "S7CFD8N"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "ZOP0ZCZ",
+                "amount": 3500
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "29_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "29_3",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "C2045QR"
+          }
+        },
+        {
+          "action_id": "29_4",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "REG000001",
+            "add_course_ids": [
+              "C2045QR"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "ZOP0ZCZ"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0030",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Leila Lee, a physics undergraduate at leila.lee9824@univ.edu (student ID XBSIC95), and you want to cancel your 2025-SPRING registration (IYF7LB3) because you have changed your plans and no longer want to take Research Methods in Psychology or Climate Change Science. You would like all payments made for that spring registration refunded because the registration is being canceled in full. After that, you want to register for 2025-FALL as an undergraduate in Elementary Spanish I (SPAN-1010) and Shakespearean Tragedies (LITR-3455), without health insurance, because those are the fall courses you now plan to take. You prefer to pay the full fall registration charge with your saved American Express card ending in 1435 because that is the payment method you asked to use. Later, once the cancellation refund and the new fall registration are processed, you would like the full 2025-FALL course catalog listed so you can review all available options. After that, you want the full details for Design and Analysis of Algorithms (CS-3100) but you are only browsing: you will decide later and do not want to add CS-3100 or make any other change to your fall registration in this conversation.\n\nUse leila.lee9824@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re starting to feel better about the situation. You communicate with the agent in a calm, businesslike way. You\u2019d like a timely solution. You approach the conversation with some hesitation.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "relief",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "30_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "IYF7LB3"
+          }
+        },
+        {
+          "action_id": "30_1",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "XBSIC95",
+            "term": "2025-FALL",
+            "course_ids": [
+              "Q1XUJ3T",
+              "G0CR3PX"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "YGHM08O",
+                "amount": 4000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "30_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "30_3",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "8O9TP0V"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0031",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Cheng Kim, a graduate MA student in Physical Education (student ID 458GALS, cheng.kim6640@univ.edu), contacting about your 2025-SPRING registration 91Z37LW because you were charged the full tuition even though a scholarship was listed on the registration. You want the unapplied scholarship amount refunded, and you prefer the refund to go to your saved Chase bank account ending in 1870, because the scholarship should have reduced the amount you paid. In the same interaction, you would also like confirmation of whether your Music Theory I class met on February 5, 2025, because you missed that Monday session and need to know whether it was held.\n\nUse cheng.kim6640@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re feeling annoyed and want fast results, though you maintain a friendly approach. Make your irritation apparent, but keep your words warm. Urge the agent to act quickly. Don\u2019t accept all assurances without some scrutiny.",
+      "emotion_metadata": {
+        "emotion_family": "anger",
+        "emotion_leaf": "annoyance",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "31_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "91Z37LW",
+            "payment": {
+              "payment_id": "DMN03VB",
+              "amount": -1000
+            }
+          }
+        },
+        {
+          "action_id": "31_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "91Z37LW"
+          }
+        },
+        {
+          "action_id": "31_2",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "E9KON6B",
+            "date": "25-02-05"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0032",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Isabella Singh (student ID 6A9Q8RG), a part-time undergraduate in the BFA Performance (Trumpet) program, contacting about your 2025-FALL registration ABDEB9X under the account email isabella.singh9523@univ.edu. You want to record a payment of exactly $1,500 on that registration, to sit on the account as a credit toward your next term charges. You already know that registration is paid in full for 2025-FALL and you are not disputing any of the payments on it. Split it across both of your saved cards: put $1,000 on the American Express ending in 8141 first, then the remaining $500 on the Visa ending in 8511, and ask for them to be recorded in that order. After that, you would like to confirm whether your Introduction to Psychology course met on 25-09-04, because you were away that day and want to know whether you missed the session. If the session did not take place, you also want to know whether that topic was made up on a later date, so you can plan to attend.\n\nUse isabella.singh9523@univ.edu for authentication.",
+      "emotion_instruction": "You balance serenity with urgency, and don\u2019t waste words. Interact courteously but make your impatience and skepticism apparent.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "32_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "ABDEB9X",
+            "payment": {
+              "payment_id": "6IQA2SV",
+              "amount": 1000
+            }
+          }
+        },
+        {
+          "action_id": "32_1",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "ABDEB9X",
+            "payment": {
+              "payment_id": "N9PTMKM",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "32_2",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "ABDEB9X"
+          }
+        },
+        {
+          "action_id": "32_3",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "8PWD21M",
+            "date": "25-09-04"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0033",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Casey Brooks (casey.brooks2491@univ.edu, student account 39BV0ZP), reorganizing your spring term. You want to cancel your existing 2025-SPRING registration MUS42MQ and receive a full refund, because you no longer want the current spring schedule; you would like confirmation that the spring courses were dropped and that the refunds were recorded, and then you want to see the full 2025-SPRING course catalog so you can choose a different set of classes. Later, you will ask the agent to check what the school has on file for your 2025-FALL registration L9FN86C, because you think an Amex charge there may have been posted twice; you want the agent to read back the recorded payments for that registration, and you are not asking for any payment or refund to be recorded on it. After that, you would like to re-register for 2025-SPRING at the graduate level with school health insurance, because you want a new spring schedule; you want the agent to check the department list and open spring course options, then register you for exactly two courses: ECON-4500 Econometrics, which meets Monday and Wednesday afternoons, and GEOG-3412 Urban Geography, which meets Friday mornings. You prefer to pay for the new spring registration by splitting the charge between your Amex card ending in 0894 and your Chase account ending in 4272, putting exactly $4,000 on the Amex first and the remaining $2,700 on the Chase account, because you want to use both saved payment methods.\n\nUse casey.brooks2491@univ.edu for authentication.",
+      "emotion_instruction": "Maintain a tranquil outlook, but press for swift action. Engage in a matter-of-fact way without emotional language. Trust cautiously\u2014ask for details when necessary. Keep your communication efficient.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "33_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "MUS42MQ"
+          }
+        },
+        {
+          "action_id": "33_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "MUS42MQ"
+          }
+        },
+        {
+          "action_id": "33_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "33_3",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "33_4",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "33_5",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "39BV0ZP",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "72XE0WI",
+              "K0XUKML"
+            ],
+            "study_level": "graduate",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "7R1CA62",
+                "amount": 4000
+              },
+              {
+                "payment_id": "8FVS87Z",
+                "amount": 2700
+              }
+            ]
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0034",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Ethan Davis, student ID GTD5YF2, contacting from ethan.davis899@univ.edu, because you no longer want to attend in spring and want to plan your next term. You want to cancel your 2025-SPRING registration I596W82 and have all of its payments refunded to the original payment methods, because you are withdrawing from the spring term; then you would like the updated registration displayed so you can confirm that all three spring courses were dropped. Later, since spring is cancelled, you want to browse the full 2025-FALL course catalog and see the departments available on Main Campus, because you are planning ahead for fall. After that, you would like to record a prepayment toward your 2025-FALL registration 36T20BH, sized to exactly match the tuition recorded for Shakespearean Tragedies (LITR-3455) on that registration, not reduced by anything already paid. You already know 36T20BH is paid in full for fall and you are fine with that; you want this recorded anyway as an extra credit you carry into the fall term, you do not want a new registration created, and you do not want any payment already on 36T20BH reversed or reallocated. This is what you mean by wanting that course\u2019s tuition paid in advance; you prefer to pay with your saved Visa ending in 7937.\n\nUse ethan.davis899@univ.edu for authentication.",
+      "emotion_instruction": "You sense relief, but the situation still demands urgent action. Be brief and focus on practical steps. Respond quickly, but keep a cautious attitude towards suggestions. Check details before proceeding.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "relief",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "34_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "I596W82"
+          }
+        },
+        {
+          "action_id": "34_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "I596W82"
+          }
+        },
+        {
+          "action_id": "34_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "34_3",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "34_4",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "36T20BH",
+            "payment": {
+              "payment_id": "8YEDWWL",
+              "amount": 2000
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0035",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Darius Rossi, email darius.rossi5319@univ.edu and student ID 3C47M1D, an undergraduate Comparative Literature major already registered for 2025-FALL, and you are contacting support to plan your 2025-SPRING schedule. You want the agent to first show the school\u2019s available departments, because you want to see the full range of academic options before choosing a spring course. Later, you would like the agent to browse open Comparative Literature courses for 2025-SPRING, because you are looking for an available course in your major. After that, you want to register for CLIT-4105, Comparative Literature Seminar: Modernism, as an undergraduate for 2025-SPRING, without electing school health insurance, because it is a 4-credit Wednesday afternoon seminar with open seats. Only after the agent tells you the registration is complete and gives you its new registration number, you also want the English course ENGL-2010, Introduction to Literary Analysis, added to that same new registration, with the extra tuition on your Amex card. Do not mention this second course until the registration is finished, and do not end the conversation until you have asked for it. You prefer to pay by splitting the tuition across the two payment methods on your account: exactly $1,200 from your saved Chase checking account and the remaining $800 on your saved Amex card. Give the agent the Chase amount first and the Amex amount second.\n\nUse darius.rossi5319@univ.edu for authentication.",
+      "emotion_instruction": "You're excited and ready for action, though you don't show much warmth. Keep your questions concise and expect clear answers. You count on the agent's ability to assist.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "35_0",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "35_1",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "Comparative Literature",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "35_2",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "3C47M1D",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "DZ1NZRJ"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "3M4K57H",
+                "amount": 1200
+              },
+              {
+                "payment_id": "8H7XAPT",
+                "amount": 800
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "35_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "REG000001",
+            "add_course_ids": [
+              "QUK1LHQ"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "8H7XAPT"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0036",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Liam Singh, an undergraduate Chemistry major with student ID L7V51QT and email liam.singh6906@univ.edu, planning your 2025-FALL schedule. You want the agent to first show the university's available departments because you want to review the full department list before narrowing your course search. Then, you would like the agent to search for open Computer Science courses for 2025-FALL because you want to see the fall Computer Science options that still have seats. After that, you want to register from your student account into a new 2025-FALL registration for CS-3100 Design and Analysis of Algorithms, a 4-credit course with a Monday/Wednesday midday meeting window, because it is the open Computer Science course you selected. You prefer the registration to be set as undergraduate enrollment without health insurance, because that is the enrollment choice you requested. You prefer to pay the full registration charge with your saved Mastercard ending in 0590, because that is the saved payment method you want charged. Only after the agent has actually created the registration and confirmed it back to you, and not before, you also want CS-2200 Data Structures, the 4-credit Tuesday/Thursday morning Computer Science course, added to that same registration rather than to a second registration, with the extra tuition charged to the same Mastercard ending in 0590. Do not mention this second course until the first registration is confirmed, and do not end the conversation until you have asked for it.\n\nUse liam.singh6906@univ.edu for authentication.",
+      "emotion_instruction": "You want to maintain your momentum and are proud of your efforts, so you ask for fast help. Stay focused and use precise language. Rely on the agent\u2019s expertise to address your request. Keep the dialogue action-oriented.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "36_0",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "36_1",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "department": "Computer Science",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "36_2",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "L7V51QT",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8O9TP0V"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "3WFUOQR",
+                "amount": 2000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "36_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "REG000001",
+            "add_course_ids": [
+              "S2KX8C7"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "3WFUOQR"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0037",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Alicia Hernandez (alicia.hernandez927@univ.edu, student ID RF6OVOM), contacting about your 2025 Spring Social Studies certificate registration. You want the charge previously made to your Amex card ending in 5515 refunded, and you prefer the refund to go back to that same Amex card, because you are adjusting your spring schedule and want the original payment returned. You are not cancelling the registration or dropping any courses \u2014 you only want that one charge returned. After the refund is processed, you would like your registration details reviewed to confirm the updated balance and payment history, because you need to verify that the refund was applied correctly. Later, you want to see the full 2025 Spring course catalog, because you are still planning which courses to take. After that, you prefer to search for open Geography department courses in 2025 Spring, because you want to compare additional Geography options that still have available seats.\n\nUse alicia.hernandez927@univ.edu for authentication.",
+      "emotion_instruction": "You find this problem unpleasant and want no delays. Communicate with concise, factual statements. Trust in the agent is limited, so demand clear evidence of progress. Prioritize quick, effective answers over pleasantries.",
+      "emotion_metadata": {
+        "emotion_family": "disgust",
+        "emotion_leaf": "distaste",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "37_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "OZ6WVZV",
+            "payment": {
+              "payment_id": "SE6HKVA",
+              "amount": -1592
+            }
+          }
+        },
+        {
+          "action_id": "37_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "OZ6WVZV"
+          }
+        },
+        {
+          "action_id": "37_2",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "37_3",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "department": "Geography",
+            "open_only": true
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0038",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Diego Morgan, student BMS9ZDI, a graduate MA Art History student with a Musicology minor, contacting support to restructure your course load. You want to cancel your 2025-SPRING registration TI4JOEH, which currently includes Organic Chemistry II and Calculus I, and immediately re-register for 2025-SPRING as a graduate student without health insurance with Modern Art 1900-1945 and Orchestration and Arranging, because these courses better match your degree; you prefer to pay the graduate tuition by splitting it, putting $4000 on your Chase checking account ending in 2429 and the remaining $2400 on your Mastercard ending in 4841. After that, you want the schedule details for Modern Art 1900-1945 pulled up so you can confirm its Tuesday/Thursday midday meeting pattern. Then, in your 2025-FALL registration 7OAEIKW, you want to drop Cognitive Psychology and add Shakespearean Tragedies instead, because the literature course fits your revised plan. Later, you would like to browse all courses available in 2025-FALL to review your options. After that, you would like to see the current details of your 2025-FALL registration, the full list of courses offered in 2025-SPRING, and the complete department directory, because you are planning the rest of your academic career.\n\nUse diego.morgan5789@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re feeling uneasy and in a rush, needing reassurance right away. You are cooperative and forthright, trusting the agent will assist you. You keep your questions short and to the point.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "anxiety",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "38_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "TI4JOEH"
+          }
+        },
+        {
+          "action_id": "38_1",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "BMS9ZDI",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "DGJ1DMQ",
+              "K3W0HY4"
+            ],
+            "study_level": "graduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "92N4XWZ",
+                "amount": 4000
+              },
+              {
+                "payment_id": "DDTKYZW",
+                "amount": 2400
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "38_2",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "DGJ1DMQ"
+          }
+        },
+        {
+          "action_id": "38_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "7OAEIKW",
+            "add_course_ids": [
+              "G0CR3PX"
+            ],
+            "drop_course_ids": [
+              "ZSXZT48"
+            ]
+          }
+        },
+        {
+          "action_id": "38_4",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "38_5",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "7OAEIKW"
+          }
+        },
+        {
+          "action_id": "38_6",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "38_7",
+          "name": "list_departments",
+          "arguments": {}
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0039",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Casey Thompson (student ID DDS9E6H, casey.thompson4739@univ.edu), an undergraduate History major, and you want to rework your course load across two terms because your original fall schedule no longer fits your plans. First, you want to cancel your 2025-FALL registration (confirmation D6YU95K) and immediately re-register for 2025-FALL with Elementary Spanish I, Spanish Literature of the 20th Century, and Abnormal Psychology, as an undergraduate with no health insurance, because you prefer a lighter fall lineup. You prefer to pay the tuition from your Chase checking account ending in 3287, because that is the bank account on file. Once that is done, you would like the details for Elementary Spanish I shown so you can confirm its regular Tuesday/Thursday morning meeting pattern. After that, you want to update your 2025-SPRING registration (confirmation SV78VHQ) by adding History of the Civil Rights Movement and dropping Creative Writing Workshop, because you want to swap the spring course while keeping the same 15-credit load; you also want Electromagnetism (PHYS-3030) to keep the grading option it already has on that registration, exactly as it is recorded in the system, since you did not ask to change it. Later, you would like to browse the complete 2025-FALL course listing, because you want to see whether any other fall sections interest you. Finally, you would like the current details of your 2025-SPRING registration, the complete 2025-SPRING course listing, and the available departments, because you want to review the updated spring schedule and plan the rest of your degree.\n\nUse casey.thompson4739@univ.edu for authentication.",
+      "emotion_instruction": "Keep a peaceful demeanor while stressing the need for urgency. Communicate in a straightforward and efficient manner. Be civil but guarded in trust. Double-check suggestions before proceeding.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "39_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "D6YU95K"
+          }
+        },
+        {
+          "action_id": "39_1",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "DDS9E6H",
+            "term": "2025-FALL",
+            "course_ids": [
+              "Q1XUJ3T",
+              "N4Q81OI",
+              "8I0Z84P"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "461A4U2",
+                "amount": 5000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "39_2",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "Q1XUJ3T"
+          }
+        },
+        {
+          "action_id": "39_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "SV78VHQ",
+            "add_course_ids": [
+              "1U4FBQ4"
+            ],
+            "drop_course_ids": [
+              "N7HLYB5"
+            ],
+            "grading_options": {
+              "F8PNSP3": "pass_fail"
+            }
+          }
+        },
+        {
+          "action_id": "39_4",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "39_5",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "SV78VHQ"
+          }
+        },
+        {
+          "action_id": "39_6",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "39_7",
+          "name": "list_departments",
+          "arguments": {}
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0040",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miles Nguyen, student ID D4KY9Y7, a continuing-education student in the Business Studies certificate program, contacting about your 2025-SPRING registration J1SFJ5C using the account miles.nguyen7890@univ.edu. First, you want to review that registration and see the details for Intermediate Macroeconomics, ECON-3020, because you need to confirm the course schedule and status before making any changes. You also want to check whether the Tuesday/Thursday class met on 25-02-20, because you are concerned that the session may have been missed. After confirming that the 25-02-20 meeting was canceled due to instructor illness, you would like to drop Intermediate Macroeconomics, ECON-3020, and add Electromagnetism, PHYS-3030, instead, because you want to replace the affected course with an available 2025-SPRING option. You prefer to have any resulting tuition difference charged to your saved Visa ending in 3364, because that is the payment method you selected for this registration change. Once the drop and add are complete, you would like the full list of 2025-SPRING courses, because you want to keep browsing other course alternatives. Only after the drop and add have been confirmed as done do you raise one more change: you also want to add the single 2025-SPRING course that meets on a Tuesday evening, starting after 5 PM, because it is the only slot that fits your work schedule. You do not know its code or title, so the agent has to look it up, and the tuition for it goes on the same Visa ending in 3364. Apart from these two changes you do not want to add or drop anything else in this conversation.\n\nUse miles.nguyen7890@univ.edu for authentication.",
+      "emotion_instruction": "You approach the agent with warmth and seek a peaceful exchange, but you remain unconvinced of their competence. Clearly state your urgent need, but stay composed and cautious.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "40_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "J1SFJ5C"
+          }
+        },
+        {
+          "action_id": "40_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "FH4QYFJ"
+          }
+        },
+        {
+          "action_id": "40_2",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "FH4QYFJ",
+            "date": "25-02-20"
+          }
+        },
+        {
+          "action_id": "40_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "J1SFJ5C",
+            "add_course_ids": [
+              "F8PNSP3"
+            ],
+            "drop_course_ids": [
+              "FH4QYFJ"
+            ],
+            "payment_id": "8X38VSR"
+          }
+        },
+        {
+          "action_id": "40_4",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "J1SFJ5C",
+            "add_course_ids": [
+              "I4ZUI48"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "8X38VSR"
+          }
+        },
+        {
+          "action_id": "40_5",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0041",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Sof\u00eda Fitzgerald, a graduate MBA student majoring in Sculpture, contacting support from the account sof\u00eda.fitzgerald3528@univ.edu (student ID TSBHLNI) about your 2025-SPRING registration H96T51J. First, you want the registration details pulled up because you need to review your current spring schedule before making changes. Then, you would like the details for Geographic Information Systems, GEOG-3120, and a check of whether its April 3, 2025 meeting was held, canceled, or rescheduled, because you need to confirm that the Midterm Lab was canceled due to instructor illness. After that, you want to update the registration by dropping Calculus I, MATH-1010, and adding Sculpture Studio, ARTS-3055, because you are reorganizing your schedule around your Sculpture major; you prefer to accept the resulting tuition refund to your Chase bank account ending in 5854 rather than keep the dropped course. You also want Modern World History, HIST-2205, which you are keeping, to stay on the grading option it already has on that registration, exactly as it is recorded in the system; you do not remember which option that is, so you ask the agent to read it back and preserve it. Finally, you would like the full list of 2025-SPRING courses so you can browse the rest of the catalog for other courses that might fit your plan.\n\nUse sof\u00eda.fitzgerald3528@univ.edu for authentication.",
+      "emotion_instruction": "Stay serene but highlight the urgency of your request. Communicate straightforwardly and avoid small talk. Be polite yet a little reserved with the agent. Ask clarifying questions if unsure about their answers.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "41_0",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "H96T51J"
+          }
+        },
+        {
+          "action_id": "41_1",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "ZGMUBQF"
+          }
+        },
+        {
+          "action_id": "41_2",
+          "name": "get_course_meeting_status",
+          "arguments": {
+            "course_id": "ZGMUBQF",
+            "date": "25-04-03"
+          }
+        },
+        {
+          "action_id": "41_3",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "H96T51J",
+            "add_course_ids": [
+              "GQ1Z5SW"
+            ],
+            "drop_course_ids": [
+              "C076XJ5"
+            ],
+            "grading_options": {
+              "IKAAKLN": "pass_fail"
+            }
+          }
+        },
+        {
+          "action_id": "41_4",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0042",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Benjamin Li, a Fine Arts undergraduate with account benjamin.li9177@univ.edu (student P066XLA), and you are contacting support to restructure your 2025-SPRING schedule. You want to cancel your 2025-SPRING registration RV9P1I4 and receive a refund for all payments, because you are replacing that spring schedule with new courses. You prefer the refund to be returned to your saved Chase bank account ending in 8157, because that was the original payment method. After that, you would like to browse the 2025-SPRING course catalog showing only sections with open seats, because you want to choose only available courses. You would also like to look up the details for the new Introduction to Drawing section ART-1101, because you want to confirm its Monday/Wednesday morning meeting time before enrolling. You would then like to see the full list of 2025-SPRING courses, because you want to review the term options before finalizing your registration. Next, you want to register for three 2025-SPRING undergraduate courses with health insurance: Introduction to Drawing ART-1101 on Monday/Wednesday mornings, Sculpture Studio ARTS-3055 on Friday afternoons, and Modern Art 1900-1945 ARTH-2050 on Tuesday/Thursday midday, because these sections fit your desired spring schedule. You prefer to pay the full amount due from your saved Chase bank account ending in 8157, because that is your preferred payment method. In this same conversation, after the new spring registration is complete, you also want to record a payment of exactly $500 against your 2025-FALL registration 8UMR3E3 using the same saved Chase bank account ending in 8157. You already know 8UMR3E3 is paid in full and you are fine with that; you still want exactly $500 recorded on it as a prepaid credit, and you do not end the conversation until you have asked for this. This replaces any wish to reduce that term's balance. Finally, you would like a list of all available departments, because you want to explore other academic options for future terms.\n\nUse benjamin.li9177@univ.edu for authentication.",
+      "emotion_instruction": "Maintain a peaceful, composed tone even with a pressing issue. Express your need for a fast solution. Interact politely but keep a watchful attitude. Verify the agent's guidance before proceeding.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "42_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "RV9P1I4"
+          }
+        },
+        {
+          "action_id": "42_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "RV9P1I4"
+          }
+        },
+        {
+          "action_id": "42_2",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "42_3",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "XNMQ98S"
+          }
+        },
+        {
+          "action_id": "42_4",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "42_5",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "P066XLA",
+            "term": "2025-SPRING",
+            "course_ids": [
+              "XNMQ98S",
+              "GQ1Z5SW",
+              "DGJ1DMQ"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "AWS3P0K",
+                "amount": 5300
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "42_6",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "8UMR3E3",
+            "payment": {
+              "payment_id": "AWS3P0K",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "42_7",
+          "name": "list_departments",
+          "arguments": {}
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0043",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Diego Shah (diego.shah8622@univ.edu, student ID UXPAXPF), the undergraduate student, and you want to reorganize your academic schedule. First, you want an additional credit of exactly $500 applied to your 2025-FALL registration JSWVNZ5 from your saved Mastercard ending in 6089, because you wanted to add funds to it before reviewing your enrollment; you already know that registration is paid in full and you still want the $500 recorded, before anything else happens to it, and you do not raise cancelling until it is on the record; then you would like to see the details of that registration and browse the open 2025-FALL course offerings, because you are checking whether your current fall schedule is right. Later, after seeing the fall options, you will decide that the current fall schedule is not right, so you want to cancel registration JSWVNZ5 and have its payments refunded to the original payment method, because you are replacing it with a new fall schedule. Immediately after that, you would like to register for Elementary Spanish I and Intermediate Spanish Conversation in 2025-FALL as an undergraduate with health insurance, paying the full tuition due with your saved Mastercard ending in 6089, because those are the two open fall Spanish courses you selected. After that, you want to see the details for Elementary Spanish I, including its Tuesday and Thursday morning meeting pattern, because you want to confirm the schedule. Finally, you would like to list all departments and then view all 2025-SPRING courses, because you are reviewing the spring catalog before making a change; then you want to update your 2025-SPRING registration AR3QMRG by dropping Ancient Civilizations and adding the open spring course you specified, listed in the catalog as Electromagnetism, paying the credit difference with your saved Mastercard ending in 6089, because you want to swap that spring course.\n\nUse diego.shah8622@univ.edu for authentication.",
+      "emotion_instruction": "You approach the conversation with pride in your actions and urgency for results. You keep communication matter-of-fact and brisk. You\u2019re careful about accepting the agent\u2019s help right away. Make requests firmly but hold back a bit.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "43_0",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "JSWVNZ5",
+            "payment": {
+              "payment_id": "8RZRQIS",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "43_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "JSWVNZ5"
+          }
+        },
+        {
+          "action_id": "43_2",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "43_3",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "JSWVNZ5"
+          }
+        },
+        {
+          "action_id": "43_4",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "UXPAXPF",
+            "term": "2025-FALL",
+            "course_ids": [
+              "Q1XUJ3T",
+              "PQT2MJB"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "8RZRQIS",
+                "amount": 3800
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "43_5",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "Q1XUJ3T"
+          }
+        },
+        {
+          "action_id": "43_6",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "43_7",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "43_8",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "AR3QMRG",
+            "add_course_ids": [
+              "F8PNSP3"
+            ],
+            "drop_course_ids": [
+              "W53ZOH8"
+            ],
+            "payment_id": "8RZRQIS"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0044",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Robert Diaz (robert.diaz1025@univ.edu, student ID 63KYHIO), a continuing-education Psychology certificate student planning your fall semester and reviewing your existing spring enrollment. First, you want a complete list of the school\u2019s departments and the complete 2025-FALL course catalog, because you are choosing fall courses after browsing the available options. You also want to register for Introduction to Psychology (PSYC-2001) and Cognitive Psychology (PSYC-3102) for 2025-FALL at the continuing-education level, without health insurance, because those are the two Psychology courses you selected from the fall catalog. You prefer to pay the full tuition for that new fall registration with your Amex card ending in 3958, because that is the payment method you specified for this registration. At the same time, you would like a recap of your spring registration C9MOB52, because you want to see its current courses and payment status before making any later changes. Next, you want an additional credit of exactly $500 applied to that spring registration from your Chase checking account ending in 2524, because you wanted to add funds to it before deciding whether to keep the spring courses. You want that $500 credit recorded before anything else happens to the spring registration, and you do not raise cancelling until it is on the record. Only once the $500 credit is recorded do you ask for spring registration C9MOB52 to be cancelled and every payment and credit made on it, including that $500, refunded, because you no longer need the spring courses.\n\nUse robert.diaz1025@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re frustrated and dislike what\u2019s happened, but you try to stay warm in your communication. Let the agent know time is of the essence. Even as you show politeness, your skepticism comes through in your direct questions.",
+      "emotion_metadata": {
+        "emotion_family": "disgust",
+        "emotion_leaf": "dislike",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "44_0",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "44_1",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "44_2",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "63KYHIO",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M",
+              "ZSXZT48"
+            ],
+            "study_level": "continuing_ed",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "CBII61W",
+                "amount": 2800
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "44_3",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "C9MOB52"
+          }
+        },
+        {
+          "action_id": "44_4",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "C9MOB52",
+            "payment": {
+              "payment_id": "74GDSE1",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "44_5",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "C9MOB52"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0045",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Alice Fitzgerald, an undergraduate Political Science major (student account VYY16QD, email alice.fitzgerald8487@univ.edu), planning your 2025-FALL semester. You want the agent to show the school's department list and the 2025-FALL course catalog because you are choosing your fall courses. You would like to register for Introduction to Psychology (PSYC-2001) and Modernist Poetry (LITR-3010) as an undergraduate without health insurance because those are the two fall courses you selected, and you prefer to pay the full tuition with your saved Visa ending in 3039 because that is your confirmed payment method; you confirm this registration and payment. You also want the agent to pull up your existing 2025-SPRING registration 9JSQ39N for review because you need to check your current spring schedule. Later, after reviewing that spring registration, you want to drop Introductory Chemistry I (CHEM-1101) and have that course's tuition refunded to the same saved Visa ending in 3039 because you no longer want to take it. After that, you would like to cancel the entire 2025-SPRING registration and have any remaining payments refunded to your saved Visa ending in 3039 because you have decided not to continue the spring term; you confirm the cancellation.\n\nUse alice.fitzgerald8487@univ.edu for authentication.",
+      "emotion_instruction": "You are jittery and feel a pressing need to solve your issue. Speak warmly and thank the agent, yet your words may come out rushed. You need fast answers. You're cautious about how much you count on the agent.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "45_0",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "45_1",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "45_2",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "VYY16QD",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M",
+              "C2045QR"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "IY3P9LJ",
+                "amount": 3000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "45_3",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "9JSQ39N"
+          }
+        },
+        {
+          "action_id": "45_4",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "9JSQ39N",
+            "payment": {
+              "payment_id": "IY3P9LJ",
+              "amount": -2000
+            }
+          }
+        },
+        {
+          "action_id": "45_5",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "9JSQ39N"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0046",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Ella Desai, a continuing-education student in the Certificate Social Studies program (ella.desai6183@univ.edu, student T5FV74I), and you want to reorganize your course load. First, you want to cancel your 2025-FALL registration (O9OJYBZ) and have its recorded payments refunded, because you decided to stop the two Spanish courses in that fall registration. Then, you want to review and modify your 2025-SPRING registration (6VMFXG6) by dropping Urban Geography and adding Health Policy and Management, because you want to replace the 3-credit spring geography course with the 4-credit health policy course; you prefer to pay the resulting tuition difference with your saved Visa ending in 0056. After that, you would like to search for open 2025-SPRING courses, because you want to see other available spring options after the swap. Later, you want to see what departments the school offers, because you are browsing academic areas before choosing fall courses. Subsequently, you want to list all 2025-FALL courses, because you want to review the full fall catalog before registering. You would like to register for Introduction to Psychology and Modernist Poetry for 2025-FALL at continuing-education level without health insurance, because those are the fall courses you selected; you prefer to pay the $2,400 tuition by charging exactly $1,500 to your saved Visa ending in 0056 first and the remaining $900 to your saved Mastercard ending in 5661. Once registered, you want to see the details of Introduction to Psychology, because you want to confirm the newly registered fall course. Finally, after the spring course swap above is done, you want to record an additional payment of exactly $500 on your 2025-SPRING registration (6VMFXG6) using your saved Mastercard ending in 5661, because you want a $500 prepayment sitting on that registration ahead of next term; you already know the registration is fully paid and you still want the $500 recorded.\n\nUse ella.desai6183@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re thrilled and want results immediately. Communicate with urgency and clear intent. Let your excitement show, but keep some distance\u2014don\u2019t assume the agent will get it right the first time.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "46_0",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "O9OJYBZ"
+          }
+        },
+        {
+          "action_id": "46_1",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "6VMFXG6"
+          }
+        },
+        {
+          "action_id": "46_2",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "6VMFXG6",
+            "add_course_ids": [
+              "6GTTE4I"
+            ],
+            "drop_course_ids": [
+              "9IZA04H"
+            ],
+            "payment_id": "ZEN3JKZ"
+          }
+        },
+        {
+          "action_id": "46_3",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-SPRING",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "46_4",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "46_5",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-FALL"
+          }
+        },
+        {
+          "action_id": "46_6",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "T5FV74I",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M",
+              "C2045QR"
+            ],
+            "study_level": "continuing_ed",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "ZEN3JKZ",
+                "amount": 1500
+              },
+              {
+                "payment_id": "7Z5B868",
+                "amount": 900
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "46_7",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "8PWD21M"
+          }
+        },
+        {
+          "action_id": "46_8",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "6VMFXG6",
+            "payment": {
+              "payment_id": "7Z5B868",
+              "amount": 500
+            }
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0047",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Emma Gomez, an undergraduate English major using the student account emma.gomez7451@univ.edu (student ID M0IR5WC), and you want to reorganize your course load across your 2025 spring and fall registrations. First, you want the available departments and the full 2025 spring course list shown because you are reviewing options before changing your spring schedule. You would like your 2025 spring registration updated by adding Creative Writing Workshop (ENGL-2210) and dropping Introduction to Biology (BIOL-1101) because the workshop better fits your English major and the biology course is no longer part of your plan. Later, you will search open 2025 fall courses and register for Spanish Literature of the 20th Century (SPAN-3200) and Introduction to Psychology (PSYC-2001) at undergraduate level with no health insurance because you are rebuilding your fall schedule from scratch and both courses have open seats. You prefer to split that new fall registration charge between your saved Visa ending in 4335 and your saved Amex ending in 6211, charging exactly $2,000 to the Visa first and the remaining $1,000 to the Amex, because you want to use both saved cards. After that, you would like your old 2025 fall registration canceled and refunded because it is being replaced by the new fall registration. Finally, you want to record an additional payment of exactly $500 on your 2025 spring registration using your Visa ending in 4335; you know that registration is already paid in full and you want the $500 recorded as a credit on it anyway. Then you would like the updated spring registration details and the Creative Writing Workshop course details shown because you want to verify the course swap and the new workshop.\n\nUse emma.gomez7451@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re content and composed, seeking resolution without stress. Speak directly but not impatiently. You expect a response soon, but check facts before fully relying on answers. Maintain a watchful attitude.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "47_0",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "47_1",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "47_2",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "8GDNRIS",
+            "add_course_ids": [
+              "4Y985YM"
+            ],
+            "drop_course_ids": [
+              "38TRKN7"
+            ]
+          }
+        },
+        {
+          "action_id": "47_3",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "47_4",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "M0IR5WC",
+            "term": "2025-FALL",
+            "course_ids": [
+              "N4Q81OI",
+              "8PWD21M"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "no",
+            "payment_methods": [
+              {
+                "payment_id": "1FPS1GW",
+                "amount": 2000
+              },
+              {
+                "payment_id": "J7C696E",
+                "amount": 1000
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "47_5",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "BWTO06Z"
+          }
+        },
+        {
+          "action_id": "47_6",
+          "name": "pay_registration",
+          "arguments": {
+            "registration_id": "8GDNRIS",
+            "payment": {
+              "payment_id": "1FPS1GW",
+              "amount": 500
+            }
+          }
+        },
+        {
+          "action_id": "47_7",
+          "name": "get_registration_details",
+          "arguments": {
+            "registration_id": "8GDNRIS"
+          }
+        },
+        {
+          "action_id": "47_8",
+          "name": "get_course_details",
+          "arguments": {
+            "course_id": "4Y985YM"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0048",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Emma Singh, a Public Health undergraduate with email emma.singh4672@univ.edu and student ID WML695C, contacting about your 2025-SPRING registration. You want to see the 2025-SPRING course catalog and then make a same-credit change in that registration by adding Introduction to Public Health (HLTH-2100) and dropping Intermediate Macroeconomics (ECON-3020), because both courses are 3 credits and you want your spring schedule to fit your Public Health major without changing your tuition. After that, you would like to know which departments are offered and which 2025-FALL courses are open, because you are exploring whether to shift your enrollment to the fall term. Later, you will want to cancel your 2025-SPRING registration and have your payments refunded, then register for 2025-FALL as an undergraduate with Introduction to Psychology (PSYC-2001) and Modernist Poetry (LITR-3010), keeping your existing health-insurance election, because you prefer to shift your enrollment to the fall term. You prefer to pay the fall registration total with your saved Mastercard ending in 0164, because that is the card you want used for this charge. You do not mention this until the fall registration has actually been created and confirmed, but after that you also want to add Shakespearean Tragedies (LITR-3455) to that same new registration and settle the extra tuition with the same Mastercard, because it rounds out your Composition minor.\n\nUse emma.singh4672@univ.edu for authentication.",
+      "emotion_instruction": "You\u2019re on edge and communicate with a sense of urgency. Your responses are concise and you avoid chit-chat. Show concern and ask for reassurance before following instructions. Don\u2019t fully relax until the issue is solved.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "48_0",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "48_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "GTRFTVN",
+            "add_course_ids": [
+              "TDK78Y8"
+            ],
+            "drop_course_ids": [
+              "FH4QYFJ"
+            ]
+          }
+        },
+        {
+          "action_id": "48_2",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "48_3",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "48_4",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "GTRFTVN"
+          }
+        },
+        {
+          "action_id": "48_5",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "WML695C",
+            "term": "2025-FALL",
+            "course_ids": [
+              "8PWD21M",
+              "C2045QR"
+            ],
+            "study_level": "undergraduate",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "RO3EQH4",
+                "amount": 3300
+              }
+            ]
+          }
+        },
+        {
+          "action_id": "48_6",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "REG000001",
+            "add_course_ids": [
+              "G0CR3PX"
+            ],
+            "drop_course_ids": [],
+            "payment_id": "RO3EQH4"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "school_test_0049",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Cheng Harper, a graduate student in the MS Literature program, using cheng.harper73@univ.edu and student account 5EZ7FBY, and you are reorganizing your schedule for the coming year. First, you want to see all courses offered in 2025-SPRING, because you are reviewing the spring catalog before adjusting your spring registration AGOE81W. Then, in that 2025-SPRING registration, you would like to drop Introduction to Drawing and add the Friday-morning section of Creative Writing Workshop (ENGL-3302), because both are 3-credit courses and you want the credit load and tuition to remain unchanged. Later, you want a list of all university departments and all open 2025-FALL courses, because you are rethinking your fall schedule and want to compare available options. After that, you would like to cancel your existing 2025-FALL registration M756Y1S and receive a full refund of both payments, because the fall plan you had registered for is not right. Subsequently, you want to create a fresh 2025-FALL graduate registration for Elementary Spanish I, Intermediate Spanish Conversation, and Abnormal Psychology, with school health insurance kept, because this is the new fall plan you want, and you are fine with this registration being part-time; you want the new registration to include the morning Spanish course, the midday Spanish conversation course, and the afternoon psychology course. You prefer to pay for the new fall registration by splitting the tuition, putting $5000 on your Chase checking account ending in 0820 and the remaining $3300 on your Amex card ending in 2145, because that is the payment split you requested.\n\nUse cheng.harper73@univ.edu for authentication.",
+      "emotion_instruction": "You approach the agent with a cautious mindset, feeling anxious about what\u2019s happening. Keep your questions focused and direct, avoiding unnecessary details. Show some nerves in your requests, and double-check any information you receive. You\u2019re not ready to fully trust the agent yet.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "anxiety",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "49_0",
+          "name": "list_courses_by_term",
+          "arguments": {
+            "term": "2025-SPRING"
+          }
+        },
+        {
+          "action_id": "49_1",
+          "name": "update_registration_courses",
+          "arguments": {
+            "registration_id": "AGOE81W",
+            "add_course_ids": [
+              "N7HLYB5"
+            ],
+            "drop_course_ids": [
+              "9O8HGCW"
+            ]
+          }
+        },
+        {
+          "action_id": "49_2",
+          "name": "list_departments",
+          "arguments": {}
+        },
+        {
+          "action_id": "49_3",
+          "name": "search_courses",
+          "arguments": {
+            "term": "2025-FALL",
+            "open_only": true
+          }
+        },
+        {
+          "action_id": "49_4",
+          "name": "cancel_registration",
+          "arguments": {
+            "registration_id": "M756Y1S"
+          }
+        },
+        {
+          "action_id": "49_5",
+          "name": "register_courses",
+          "arguments": {
+            "student_id": "5EZ7FBY",
+            "term": "2025-FALL",
+            "course_ids": [
+              "Q1XUJ3T",
+              "PQT2MJB",
+              "8I0Z84P"
+            ],
+            "study_level": "graduate",
+            "health_insurance": "yes",
+            "payment_methods": [
+              {
+                "payment_id": "1GXWRVK",
+                "amount": 5000
+              },
+              {
+                "payment_id": "77V9124",
+                "amount": 3300
+              }
+            ]
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  }
+]

@@ -1,0 +1,3543 @@
+{
+  "ZVaez5b": {
+    "title": "Karachi Biryani",
+    "dish_ref": "ZVaez5b",
+    "selections": {
+      "hNq3rLR": {
+        "plate_ref": "hNq3rLR",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "large",
+          "protein": "chicken",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 650.0
+      }
+    }
+  },
+  "Pq2AemT": {
+    "title": "Dwaeji Gukbap",
+    "dish_ref": "Pq2AemT",
+    "selections": {
+      "nki31Xv": {
+        "plate_ref": "nki31Xv",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "b62SYja": {
+    "title": "Francesinha",
+    "dish_ref": "b62SYja",
+    "selections": {
+      "kyrv7kq": {
+        "plate_ref": "kyrv7kq",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "7tTu0Ch": {
+    "title": "Szegedi Hal\u00e1szl\u00e9",
+    "dish_ref": "7tTu0Ch",
+    "selections": {
+      "d1PJhvE": {
+        "plate_ref": "d1PJhvE",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "carp",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "DjJK95b": {
+    "title": "Persetorsk (Pressed Cod)",
+    "dish_ref": "DjJK95b",
+    "selections": {
+      "w2ehtwC": {
+        "plate_ref": "w2ehtwC",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "cod",
+          "preparation": "pressed, served with browned butter"
+        },
+        "served_today": true,
+        "cost": 249.0
+      }
+    }
+  },
+  "K3QJBCJ": {
+    "title": "Takoyaki",
+    "dish_ref": "K3QJBCJ",
+    "selections": {
+      "hblRmZJ": {
+        "plate_ref": "hblRmZJ",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "octopus",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 650.0
+      }
+    }
+  },
+  "DmHrbxt": {
+    "title": "Hainanese Chicken Rice",
+    "dish_ref": "DmHrbxt",
+    "selections": {
+      "qWKvD3J": {
+        "plate_ref": "qWKvD3J",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "poached"
+        },
+        "served_today": true,
+        "cost": 5.8
+      }
+    }
+  },
+  "0AMgoSy": {
+    "title": "Gudeg Yogyakarta",
+    "dish_ref": "0AMgoSy",
+    "selections": {
+      "GNzdVlv": {
+        "plate_ref": "GNzdVlv",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 45000.0
+      }
+    }
+  },
+  "7BEhWm9": {
+    "title": "Sv\u00ed\u010dkov\u00e1 na smetan\u011b",
+    "dish_ref": "7BEhWm9",
+    "selections": {
+      "eGlsQGo": {
+        "plate_ref": "eGlsQGo",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "braised"
+        },
+        "served_today": true,
+        "cost": 219.0
+      }
+    }
+  },
+  "I207Jm2": {
+    "title": "Z\u00fcrcher Geschnetzeltes",
+    "dish_ref": "I207Jm2",
+    "selections": {
+      "godd9Ns": {
+        "plate_ref": "godd9Ns",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "saut\u00e9ed"
+        },
+        "served_today": true,
+        "cost": 28.5
+      }
+    }
+  },
+  "kAw0Ygf": {
+    "title": "Adelaide Pie Floater",
+    "dish_ref": "kAw0Ygf",
+    "selections": {
+      "fpJfYCN": {
+        "plate_ref": "fpJfYCN",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "1SM1LKu": {
+    "title": "Szegedi Hal\u00e1szl\u00e9 (Fisherman's Soup)",
+    "dish_ref": "1SM1LKu",
+    "selections": {
+      "GhJ3bZI": {
+        "plate_ref": "GhJ3bZI",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "carp",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "Rv8Xlib": {
+    "title": "B\u00fan b\u00f2 Hu\u1ebf",
+    "dish_ref": "Rv8Xlib",
+    "selections": {
+      "v8LwZ5w": {
+        "plate_ref": "v8LwZ5w",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "boiled"
+        },
+        "served_today": true,
+        "cost": 75000.0
+      }
+    }
+  },
+  "SoNI8ky": {
+    "title": "B\u00e1nh b\u00e8o Hu\u1ebf",
+    "dish_ref": "SoNI8ky",
+    "selections": {
+      "HayiIKz": {
+        "plate_ref": "HayiIKz",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "small",
+          "protein": "shrimp",
+          "preparation": "steamed"
+        },
+        "served_today": true,
+        "cost": 40000.0
+      }
+    }
+  },
+  "Ita3eJi": {
+    "title": "Tlayuda Oaxaque\u00f1a",
+    "dish_ref": "Ita3eJi",
+    "selections": {
+      "XCKPpiO": {
+        "plate_ref": "XCKPpiO",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "tasajo",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 120.0
+      }
+    }
+  },
+  "jvGvsAa": {
+    "title": "Montreal Smoked Meat Sandwich",
+    "dish_ref": "jvGvsAa",
+    "selections": {
+      "Vsjkk89": {
+        "plate_ref": "Vsjkk89",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "smoked beef",
+          "preparation": "steamed and sliced on rye"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "Sqxod28": {
+    "title": "Masgouf",
+    "dish_ref": "Sqxod28",
+    "selections": {
+      "Ag9fZdM": {
+        "plate_ref": "Ag9fZdM",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "carp",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "GioykpK": {
+    "title": "Jerusalem Mixed Grill (Meorav Yerushalmi)",
+    "dish_ref": "GioykpK",
+    "selections": {
+      "VQ9zSVZ": {
+        "plate_ref": "VQ9zSVZ",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "large",
+          "protein": "chicken + lamb",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 48.0
+      }
+    }
+  },
+  "BRuSsLW": {
+    "title": "Kebda Eskandarani",
+    "dish_ref": "BRuSsLW",
+    "selections": {
+      "QvUaVoB": {
+        "plate_ref": "QvUaVoB",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "beef liver",
+          "preparation": "pan-fried"
+        },
+        "served_today": true,
+        "cost": 7.5
+      }
+    }
+  },
+  "OPC9Tff": {
+    "title": "Varenyky (Lviv-style dumplings)",
+    "dish_ref": "OPC9Tff",
+    "selections": {
+      "A4piqdi": {
+        "plate_ref": "A4piqdi",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "potato",
+          "preparation": "boiled"
+        },
+        "served_today": true,
+        "cost": 6.5
+      }
+    }
+  },
+  "RugOYMJ": {
+    "title": "Echpochmak",
+    "dish_ref": "RugOYMJ",
+    "selections": {
+      "MP7inuX": {
+        "plate_ref": "MP7inuX",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef and lamb",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 220.0
+      }
+    }
+  },
+  "65PnRYS": {
+    "title": "Malm\u00f6 Falafel Wrap",
+    "dish_ref": "65PnRYS",
+    "selections": {
+      "NMzeC45": {
+        "plate_ref": "NMzeC45",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "falafel",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 79.0
+      }
+    }
+  },
+  "3dOU0TD": {
+    "title": "Pizza Margherita",
+    "dish_ref": "3dOU0TD",
+    "selections": {
+      "qxBnobr": {
+        "plate_ref": "qxBnobr",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "mozzarella di bufala",
+          "preparation": "wood-fired"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "LoSPsCJ": {
+    "title": "Takoyaki (Osaka Specialty)",
+    "dish_ref": "LoSPsCJ",
+    "selections": {
+      "HjAkRia": {
+        "plate_ref": "HjAkRia",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "octopus",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 850.0
+      }
+    }
+  },
+  "evL9Vz8": {
+    "title": "Chicken Parmigiana",
+    "dish_ref": "evL9Vz8",
+    "selections": {
+      "BWf6tuT": {
+        "plate_ref": "BWf6tuT",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "large",
+          "protein": "chicken",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 24.5
+      }
+    }
+  },
+  "xYE6dah": {
+    "title": "Paella Valenciana",
+    "dish_ref": "xYE6dah",
+    "selections": {
+      "YkpYIyG": {
+        "plate_ref": "YkpYIyG",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken and rabbit",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "693E2Eg": {
+    "title": "Wiener Schnitzel",
+    "dish_ref": "693E2Eg",
+    "selections": {
+      "Obk9eF2": {
+        "plate_ref": "Obk9eF2",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "WSkN8e5": {
+    "title": "Kebda Iskandarani Sandwich",
+    "dish_ref": "WSkN8e5",
+    "selections": {
+      "kL8MseZ": {
+        "plate_ref": "kL8MseZ",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "beef liver",
+          "preparation": "pan-seared"
+        },
+        "served_today": true,
+        "cost": 85.0
+      }
+    }
+  },
+  "q2dA7sF": {
+    "title": "Durban Bunny Chow",
+    "dish_ref": "q2dA7sF",
+    "selections": {
+      "dZACZWn": {
+        "plate_ref": "dZACZWn",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "half",
+          "protein": "chicken",
+          "preparation": "curried"
+        },
+        "served_today": true,
+        "cost": 85.0
+      }
+    }
+  },
+  "IssirMs": {
+    "title": "Kapsalon",
+    "dish_ref": "IssirMs",
+    "selections": {
+      "eBg41EE": {
+        "plate_ref": "eBg41EE",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "large",
+          "protein": "chicken",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 11.5
+      }
+    }
+  },
+  "yGnf3YR": {
+    "title": "Empanadas Salte\u00f1as",
+    "dish_ref": "yGnf3YR",
+    "selections": {
+      "7JJbjcx": {
+        "plate_ref": "7JJbjcx",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "XuBBGcr": {
+    "title": "Tihlo (Tigray Barley Dumplings)",
+    "dish_ref": "XuBBGcr",
+    "selections": {
+      "As8ikjl": {
+        "plate_ref": "As8ikjl",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "none",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 120.0
+      }
+    }
+  },
+  "EIoqKw7": {
+    "title": "Empanadas Salte\u00f1as",
+    "dish_ref": "EIoqKw7",
+    "selections": {
+      "gNt0yfd": {
+        "plate_ref": "gNt0yfd",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 9.0
+      }
+    }
+  },
+  "hKAJxoF": {
+    "title": "Penang Char Kway Teow",
+    "dish_ref": "hKAJxoF",
+    "selections": {
+      "O9QzsJ3": {
+        "plate_ref": "O9QzsJ3",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "prawn",
+          "preparation": "wok-fried"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "JcaFotH": {
+    "title": "Baghdad Masgouf",
+    "dish_ref": "JcaFotH",
+    "selections": {
+      "gYhTB0E": {
+        "plate_ref": "gYhTB0E",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "carp",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 22.5
+      }
+    }
+  },
+  "sxPC5A2": {
+    "title": "Acaraj\u00e9 Baiano",
+    "dish_ref": "sxPC5A2",
+    "selections": {
+      "CV2BaNh": {
+        "plate_ref": "CV2BaNh",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "shrimp",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 29.9
+      }
+    }
+  },
+  "O2Ep5YD": {
+    "title": "Adana Kebap",
+    "dish_ref": "O2Ep5YD",
+    "selections": {
+      "YIqW9EM": {
+        "plate_ref": "YIqW9EM",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "lamb",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "5pWhUVl": {
+    "title": "B\u00fan b\u00f2 Hu\u1ebf",
+    "dish_ref": "5pWhUVl",
+    "selections": {
+      "BKoZlIl": {
+        "plate_ref": "BKoZlIl",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "large",
+          "protein": "beef",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 6.5
+      }
+    }
+  },
+  "puAsIrK": {
+    "title": "Echpochmak",
+    "dish_ref": "puAsIrK",
+    "selections": {
+      "Fq6a2oZ": {
+        "plate_ref": "Fq6a2oZ",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef_lamb",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 250.0
+      }
+    }
+  },
+  "bJ93RFZ": {
+    "title": "Takoyaki (Osaka)",
+    "dish_ref": "bJ93RFZ",
+    "selections": {
+      "HRoHS8d": {
+        "plate_ref": "HRoHS8d",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "octopus",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 850.0
+      }
+    }
+  },
+  "Wnk0aqC": {
+    "title": "Varza a la Cluj",
+    "dish_ref": "Wnk0aqC",
+    "selections": {
+      "hdRxQQO": {
+        "plate_ref": "hdRxQQO",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "oven_baked"
+        },
+        "served_today": true,
+        "cost": 38.5
+      }
+    }
+  },
+  "GlP0p6P": {
+    "title": "Penang Char Kway Teow",
+    "dish_ref": "GlP0p6P",
+    "selections": {
+      "H5fPFUG": {
+        "plate_ref": "H5fPFUG",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "prawn",
+          "preparation": "wok-fried"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "gh8TuCu": {
+    "title": "Z\u00fcrcher Geschnetzeltes",
+    "dish_ref": "gh8TuCu",
+    "selections": {
+      "tht82Pl": {
+        "plate_ref": "tht82Pl",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "pan-fried with cream"
+        },
+        "served_today": true,
+        "cost": 28.5
+      }
+    }
+  },
+  "vroEsif": {
+    "title": "Rogale \u015bwi\u0119tomarci\u0144skie",
+    "dish_ref": "vroEsif",
+    "selections": {
+      "blt7zXn": {
+        "plate_ref": "blt7zXn",
+        "modifiers": {
+          "spice_level": null,
+          "portion": "regular",
+          "protein": null,
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "eQfVtaO": {
+    "title": "Pyry z gzikiem",
+    "dish_ref": "eQfVtaO",
+    "selections": {
+      "lCRfYIE": {
+        "plate_ref": "lCRfYIE",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": null,
+          "preparation": "boiled"
+        },
+        "served_today": true,
+        "cost": 18.0
+      }
+    }
+  },
+  "mvyPVCu": {
+    "title": "R\u00e4kmacka (Shrimp Sandwich)",
+    "dish_ref": "mvyPVCu",
+    "selections": {
+      "O3AHbFc": {
+        "plate_ref": "O3AHbFc",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "shrimp",
+          "preparation": "open-faced"
+        },
+        "served_today": true,
+        "cost": 145.0
+      }
+    }
+  },
+  "8U7DGlW": {
+    "title": "Halv Special (Sausage with Mash)",
+    "dish_ref": "8U7DGlW",
+    "selections": {
+      "kyAsTO3": {
+        "plate_ref": "kyAsTO3",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork sausage",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 85.0
+      }
+    }
+  },
+  "c4a6ldh": {
+    "title": "Sm\u00f8rrebr\u00f8d - Pickled Herring",
+    "dish_ref": "c4a6ldh",
+    "selections": {
+      "j0ksTF3": {
+        "plate_ref": "j0ksTF3",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pickled herring",
+          "preparation": "open-faced"
+        },
+        "served_today": true,
+        "cost": 95.0
+      }
+    }
+  },
+  "S2ycBNe": {
+    "title": "Lechon Cebu",
+    "dish_ref": "S2ycBNe",
+    "selections": {
+      "Jp6VYWR": {
+        "plate_ref": "Jp6VYWR",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "roasted"
+        },
+        "served_today": true,
+        "cost": 850.0
+      }
+    }
+  },
+  "rkMmubw": {
+    "title": "Sydney Rock Oysters",
+    "dish_ref": "rkMmubw",
+    "selections": {
+      "cCvuRHq": {
+        "plate_ref": "cCvuRHq",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "dozen",
+          "protein": "oyster",
+          "preparation": "chilled on ice"
+        },
+        "served_today": true,
+        "cost": 36.0
+      }
+    }
+  },
+  "dIx7wNw": {
+    "title": "Masgouf (Baghdad-style grilled carp)",
+    "dish_ref": "dIx7wNw",
+    "selections": {
+      "YPYj0Yb": {
+        "plate_ref": "YPYj0Yb",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "carp",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "SGWZfNk": {
+    "title": "Zapiekanka Krakowska",
+    "dish_ref": "SGWZfNk",
+    "selections": {
+      "dIDv4SH": {
+        "plate_ref": "dIDv4SH",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "ham",
+          "preparation": "toasted"
+        },
+        "served_today": true,
+        "cost": 16.9
+      }
+    }
+  },
+  "hGVCFzx": {
+    "title": "Schweinshaxe (Bavarian Pork Knuckle)",
+    "dish_ref": "hGVCFzx",
+    "selections": {
+      "ZkUCG8O": {
+        "plate_ref": "ZkUCG8O",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "large",
+          "protein": "pork",
+          "preparation": "roasted"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "v2uys8E": {
+    "title": "Echpochmak",
+    "dish_ref": "v2uys8E",
+    "selections": {
+      "MjJaJek": {
+        "plate_ref": "MjJaJek",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 260.0
+      }
+    }
+  },
+  "qbUgkMj": {
+    "title": "Quenelles de Brochet",
+    "dish_ref": "qbUgkMj",
+    "selections": {
+      "dzBWuuS": {
+        "plate_ref": "dzBWuuS",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pike",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "bKcx7xs": {
+    "title": "Kalakukko (Kuopio Fish Pie)",
+    "dish_ref": "bKcx7xs",
+    "selections": {
+      "LPdOKSf": {
+        "plate_ref": "LPdOKSf",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "vendace",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "nKHnvEe": {
+    "title": "Khao Soi Gai",
+    "dish_ref": "nKHnvEe",
+    "selections": {
+      "ZEA5DDe": {
+        "plate_ref": "ZEA5DDe",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 95.0
+      }
+    }
+  },
+  "YZMQSTC": {
+    "title": "Thessaloniki Pork Gyros Pita",
+    "dish_ref": "YZMQSTC",
+    "selections": {
+      "rHkrjsa": {
+        "plate_ref": "rHkrjsa",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "cw4rgvH": {
+    "title": "Pizza Margherita",
+    "dish_ref": "cw4rgvH",
+    "selections": {
+      "AjEHxri": {
+        "plate_ref": "AjEHxri",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": null,
+          "preparation": "wood-fired"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "dep7MNf": {
+    "title": "Hainanese Chicken Rice",
+    "dish_ref": "dep7MNf",
+    "selections": {
+      "S6xNu3G": {
+        "plate_ref": "S6xNu3G",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "poached"
+        },
+        "served_today": true,
+        "cost": 6.5
+      }
+    }
+  },
+  "4h1qtN7": {
+    "title": "Kacchi Biryani",
+    "dish_ref": "4h1qtN7",
+    "selections": {
+      "ItKqvsu": {
+        "plate_ref": "ItKqvsu",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "mutton",
+          "preparation": "dum"
+        },
+        "served_today": true,
+        "cost": 450.0
+      }
+    }
+  },
+  "Fr9FYIJ": {
+    "title": "Gudeg Yogyakarta",
+    "dish_ref": "Fr9FYIJ",
+    "selections": {
+      "Hu7YJ9i": {
+        "plate_ref": "Hu7YJ9i",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 45000.0
+      }
+    }
+  },
+  "7eWCDs2": {
+    "title": "Currywurst",
+    "dish_ref": "7eWCDs2",
+    "selections": {
+      "9DE17vk": {
+        "plate_ref": "9DE17vk",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "YR8IdtM": {
+    "title": "Szegedi hal\u00e1szl\u00e9",
+    "dish_ref": "YR8IdtM",
+    "selections": {
+      "GRaI48r": {
+        "plate_ref": "GRaI48r",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "carp",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 14.0
+      }
+    }
+  },
+  "dsPztKf": {
+    "title": "Chicago Deep-Dish Pizza",
+    "dish_ref": "dsPztKf",
+    "selections": {
+      "uIJl7UY": {
+        "plate_ref": "uIJl7UY",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "large",
+          "protein": "sausage",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 24.99
+      }
+    }
+  },
+  "XPgwwTn": {
+    "title": "Z\u00fcrcher Geschnetzeltes mit R\u00f6sti",
+    "dish_ref": "XPgwwTn",
+    "selections": {
+      "Klwiafn": {
+        "plate_ref": "Klwiafn",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "pan-seared"
+        },
+        "served_today": true,
+        "cost": 32.5
+      }
+    }
+  },
+  "nirYjlO": {
+    "title": "Wiener Schnitzel",
+    "dish_ref": "nirYjlO",
+    "selections": {
+      "lk2FkdA": {
+        "plate_ref": "lk2FkdA",
+        "modifiers": {
+          "spice_level": null,
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "breaded, fried"
+        },
+        "served_today": true,
+        "cost": 19.5
+      }
+    }
+  },
+  "f8u0qnc": {
+    "title": "Debreceni p\u00e1ros kolb\u00e1sz platter",
+    "dish_ref": "f8u0qnc",
+    "selections": {
+      "s6LYvIA": {
+        "plate_ref": "s6LYvIA",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "rzLxfdC": {
+    "title": "Mustamakkara (Tampere Black Sausage)",
+    "dish_ref": "rzLxfdC",
+    "selections": {
+      "CJqwIls": {
+        "plate_ref": "CJqwIls",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "jbVnI0s": {
+    "title": "Cebu Lechon",
+    "dish_ref": "jbVnI0s",
+    "selections": {
+      "3VeTq2Y": {
+        "plate_ref": "3VeTq2Y",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "roasted"
+        },
+        "served_today": true,
+        "cost": 350.0
+      }
+    }
+  },
+  "ioYk5z0": {
+    "title": "Paella Valenciana",
+    "dish_ref": "ioYk5z0",
+    "selections": {
+      "v9QzaV2": {
+        "plate_ref": "v9QzaV2",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken and rabbit",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 17.5
+      }
+    }
+  },
+  "JAeplPf": {
+    "title": "Gaziantep Beyran (Lamb Soup)",
+    "dish_ref": "JAeplPf",
+    "selections": {
+      "ycGmlR3": {
+        "plate_ref": "ycGmlR3",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "lamb",
+          "preparation": "slow-simmered"
+        },
+        "served_today": true,
+        "cost": 185.0
+      }
+    }
+  },
+  "BKdf9KW": {
+    "title": "Dwaeji-gukbap (Busan Pork Rice Soup)",
+    "dish_ref": "BKdf9KW",
+    "selections": {
+      "kmGRbme": {
+        "plate_ref": "kmGRbme",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "TACNtC6": {
+    "title": "Wiener Schnitzel",
+    "dish_ref": "TACNtC6",
+    "selections": {
+      "QDLJGis": {
+        "plate_ref": "QDLJGis",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "breaded and fried"
+        },
+        "served_today": true,
+        "cost": 19.5
+      }
+    }
+  },
+  "MB9QzuL": {
+    "title": "Mapo Tofu (Chengdu)",
+    "dish_ref": "MB9QzuL",
+    "selections": {
+      "493xOCb": {
+        "plate_ref": "493xOCb",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "tofu",
+          "preparation": "stir-fried"
+        },
+        "served_today": true,
+        "cost": 36.0
+      }
+    }
+  },
+  "ibrw9K9": {
+    "title": "Hainanese Chicken Rice",
+    "dish_ref": "ibrw9K9",
+    "selections": {
+      "4SEL2Jm": {
+        "plate_ref": "4SEL2Jm",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "poached"
+        },
+        "served_today": true,
+        "cost": 6.5
+      }
+    }
+  },
+  "xqNILAb": {
+    "title": "Kacchi Biryani (Dhakaiya style)",
+    "dish_ref": "xqNILAb",
+    "selections": {
+      "oxoE9Ck": {
+        "plate_ref": "oxoE9Ck",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "mutton",
+          "preparation": "dum"
+        },
+        "served_today": true,
+        "cost": 450.0
+      }
+    }
+  },
+  "FqTxmDq": {
+    "title": "Kapsalon",
+    "dish_ref": "FqTxmDq",
+    "selections": {
+      "CAXho2m": {
+        "plate_ref": "CAXho2m",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 10.5
+      }
+    }
+  },
+  "xoXw83V": {
+    "title": "Bergensk Fiskesuppe",
+    "dish_ref": "xoXw83V",
+    "selections": {
+      "AmsiW4r": {
+        "plate_ref": "AmsiW4r",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "cod",
+          "preparation": "boiled"
+        },
+        "served_today": true,
+        "cost": 189.0
+      }
+    }
+  },
+  "baWymQK": {
+    "title": "Ajiaco Santafere\u00f1o",
+    "dish_ref": "baWymQK",
+    "selections": {
+      "mKiykKH": {
+        "plate_ref": "mKiykKH",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 8.99
+      }
+    }
+  },
+  "Qk0uSA7": {
+    "title": "Karachi Biryani",
+    "dish_ref": "Qk0uSA7",
+    "selections": {
+      "bkXkwzP": {
+        "plate_ref": "bkXkwzP",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "dum"
+        },
+        "served_today": true,
+        "cost": 950.0
+      }
+    }
+  },
+  "4hBHwY5": {
+    "title": "Penang Char Kway Teow",
+    "dish_ref": "4hBHwY5",
+    "selections": {
+      "AR03vwl": {
+        "plate_ref": "AR03vwl",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "prawn",
+          "preparation": "wok-fried"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "k5Hjgox": {
+    "title": "Sm\u00f8rrebr\u00f8d (Copenhagen Open-Faced Sandwich)",
+    "dish_ref": "k5Hjgox",
+    "selections": {
+      "1RXSlJR": {
+        "plate_ref": "1RXSlJR",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "herring",
+          "preparation": "open-faced"
+        },
+        "served_today": true,
+        "cost": 129.0
+      }
+    }
+  },
+  "6jdklbU": {
+    "title": "Moqueca Baiana",
+    "dish_ref": "6jdklbU",
+    "selections": {
+      "8Usnjix": {
+        "plate_ref": "8Usnjix",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "fish",
+          "preparation": "stewed in dend\u00ea oil and coconut milk"
+        },
+        "served_today": true,
+        "cost": 89.0
+      }
+    }
+  },
+  "QJmEh8H": {
+    "title": "Zoervleis (Limburg Sour Beef Stew)",
+    "dish_ref": "QJmEh8H",
+    "selections": {
+      "XXfDtfc": {
+        "plate_ref": "XXfDtfc",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 16.5
+      }
+    }
+  },
+  "zS6FCHN": {
+    "title": "Limburgse Vlaai (Cherry)",
+    "dish_ref": "zS6FCHN",
+    "selections": {
+      "shiU63U": {
+        "plate_ref": "shiU63U",
+        "modifiers": {
+          "spice_level": null,
+          "portion": "slice",
+          "protein": null,
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 4.0
+      }
+    }
+  },
+  "utedN2X": {
+    "title": "Tlayuda Oaxaque\u00f1a",
+    "dish_ref": "utedN2X",
+    "selections": {
+      "cc69h0H": {
+        "plate_ref": "cc69h0H",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "tasajo",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 120.0
+      }
+    }
+  },
+  "tKPg0AN": {
+    "title": "Mole Poblano",
+    "dish_ref": "tKPg0AN",
+    "selections": {
+      "g3Ef2DA": {
+        "plate_ref": "g3Ef2DA",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 180.0
+      }
+    }
+  },
+  "xYHAsXZ": {
+    "title": "Quenelles de Brochet",
+    "dish_ref": "xYHAsXZ",
+    "selections": {
+      "5TjTHhM": {
+        "plate_ref": "5TjTHhM",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pike",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "r3MBjD4": {
+    "title": "Classic Montreal Poutine",
+    "dish_ref": "r3MBjD4",
+    "selections": {
+      "gmlU0NC": {
+        "plate_ref": "gmlU0NC",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 12.99
+      }
+    }
+  },
+  "xgfdngv": {
+    "title": "Birmingham Balti",
+    "dish_ref": "xgfdngv",
+    "selections": {
+      "Cob4hEB": {
+        "plate_ref": "Cob4hEB",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stir-fried"
+        },
+        "served_today": true,
+        "cost": 10.99
+      }
+    }
+  },
+  "5GVbh84": {
+    "title": "Philly Cheesesteak",
+    "dish_ref": "5GVbh84",
+    "selections": {
+      "Izsjsd5": {
+        "plate_ref": "Izsjsd5",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 12.99
+      }
+    }
+  },
+  "N9RLw4I": {
+    "title": "Gentse Waterzooi (Chicken)",
+    "dish_ref": "N9RLw4I",
+    "selections": {
+      "iRyaZyX": {
+        "plate_ref": "iRyaZyX",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "poached"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "Aoqzo4x": {
+    "title": "Mombasa Chicken Biryani",
+    "dish_ref": "Aoqzo4x",
+    "selections": {
+      "7lfKlJc": {
+        "plate_ref": "7lfKlJc",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 850.0
+      }
+    }
+  },
+  "qSl8uPp": {
+    "title": "Chicken Kyiv",
+    "dish_ref": "qSl8uPp",
+    "selections": {
+      "3Z5iE8q": {
+        "plate_ref": "3Z5iE8q",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 320.0
+      }
+    }
+  },
+  "iADWFAm": {
+    "title": "Paella Valenciana",
+    "dish_ref": "iADWFAm",
+    "selections": {
+      "2SEVhft": {
+        "plate_ref": "2SEVhft",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken & rabbit",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "GsIFcUU": {
+    "title": "Karachi Biryani",
+    "dish_ref": "GsIFcUU",
+    "selections": {
+      "cOCSkKf": {
+        "plate_ref": "cOCSkKf",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "dum"
+        },
+        "served_today": true,
+        "cost": 1200.0
+      }
+    }
+  },
+  "xXlSOUj": {
+    "title": "Bole and Fish (Port Harcourt Style)",
+    "dish_ref": "xXlSOUj",
+    "selections": {
+      "IBo8VzI": {
+        "plate_ref": "IBo8VzI",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "catfish",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 3500.0
+      }
+    }
+  },
+  "5Onzy4g": {
+    "title": "Chicago-Style Deep-Dish Pizza",
+    "dish_ref": "5Onzy4g",
+    "selections": {
+      "TZEGHBj": {
+        "plate_ref": "TZEGHBj",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "large",
+          "protein": "sausage",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 24.5
+      }
+    }
+  },
+  "TtBjGxz": {
+    "title": "Tlayuda Oaxaque\u00f1a",
+    "dish_ref": "TtBjGxz",
+    "selections": {
+      "TvCGrmk": {
+        "plate_ref": "TvCGrmk",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "tasajo",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 110.0
+      },
+      "mn1mEsg": {
+        "plate_ref": "mn1mEsg",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "quesillo",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 95.0
+      }
+    }
+  },
+  "j08Exk0": {
+    "title": "Beryani-e Esfahan",
+    "dish_ref": "j08Exk0",
+    "selections": {
+      "ADRcY1T": {
+        "plate_ref": "ADRcY1T",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "lamb",
+          "preparation": "pan-fried"
+        },
+        "served_today": true,
+        "cost": 6.5
+      }
+    }
+  },
+  "jlqFVEr": {
+    "title": "Isfahan Beryani",
+    "dish_ref": "jlqFVEr",
+    "selections": {
+      "H720y04": {
+        "plate_ref": "H720y04",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "lamb",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "atc5gx4": {
+    "title": "Mustamakkara (Tampere Black Sausage)",
+    "dish_ref": "atc5gx4",
+    "selections": {
+      "lcXzkqY": {
+        "plate_ref": "lcXzkqY",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "hZPUyeW": {
+    "title": "Khao Soi (Chiang Mai Curried Noodles)",
+    "dish_ref": "hZPUyeW",
+    "selections": {
+      "6zGXv6c": {
+        "plate_ref": "6zGXv6c",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 85.0
+      }
+    }
+  },
+  "1wrjscJ": {
+    "title": "Chattogram Mezban Beef",
+    "dish_ref": "1wrjscJ",
+    "selections": {
+      "Zl8WZpK": {
+        "plate_ref": "Zl8WZpK",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 480.0
+      }
+    }
+  },
+  "mMzaPxt": {
+    "title": "Schweinshaxe (Roasted Pork Knuckle)",
+    "dish_ref": "mMzaPxt",
+    "selections": {
+      "ytA2mWv": {
+        "plate_ref": "ytA2mWv",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "roasted"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "YisnjgQ": {
+    "title": "Hainanese Chicken Rice",
+    "dish_ref": "YisnjgQ",
+    "selections": {
+      "LrG4dyE": {
+        "plate_ref": "LrG4dyE",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "poached"
+        },
+        "served_today": true,
+        "cost": 6.5
+      }
+    }
+  },
+  "yRZXotW": {
+    "title": "Acaraj\u00e9",
+    "dish_ref": "yRZXotW",
+    "selections": {
+      "ootxOJ7": {
+        "plate_ref": "ootxOJ7",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "shrimp",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 28.0
+      }
+    }
+  },
+  "Lo92m6w": {
+    "title": "Doro Wat",
+    "dish_ref": "Lo92m6w",
+    "selections": {
+      "6ObJP0x": {
+        "plate_ref": "6ObJP0x",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "yUesHnM": {
+    "title": "Kalam Polo Shirazi",
+    "dish_ref": "yUesHnM",
+    "selections": {
+      "AP4kRi6": {
+        "plate_ref": "AP4kRi6",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "steamed"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "i2qWiGa": {
+    "title": "Durban Bunny Chow",
+    "dish_ref": "i2qWiGa",
+    "selections": {
+      "2qrgqHE": {
+        "plate_ref": "2qrgqHE",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "half loaf",
+          "protein": "chicken",
+          "preparation": "Durban curry"
+        },
+        "served_today": true,
+        "cost": 65.0
+      }
+    }
+  },
+  "rU5pjoL": {
+    "title": "Chicken Kyiv",
+    "dish_ref": "rU5pjoL",
+    "selections": {
+      "XqgYgOk": {
+        "plate_ref": "XqgYgOk",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 220.0
+      }
+    }
+  },
+  "l5qdSKF": {
+    "title": "Durban Bunny Chow",
+    "dish_ref": "l5qdSKF",
+    "selections": {
+      "AB42iIr": {
+        "plate_ref": "AB42iIr",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "half loaf",
+          "protein": "mutton",
+          "preparation": "curried"
+        },
+        "served_today": true,
+        "cost": 85.0
+      }
+    }
+  },
+  "BntN9p5": {
+    "title": "Montreal Smoked Meat Sandwich",
+    "dish_ref": "BntN9p5",
+    "selections": {
+      "bynzjG1": {
+        "plate_ref": "bynzjG1",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "steamed"
+        },
+        "served_today": true,
+        "cost": 14.95
+      }
+    }
+  },
+  "siZjSng": {
+    "title": "Gudeg Yogyakarta",
+    "dish_ref": "siZjSng",
+    "selections": {
+      "qSuz93f": {
+        "plate_ref": "qSuz93f",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 45000.0
+      }
+    }
+  },
+  "zS9J97H": {
+    "title": "Olomouck\u00e9 tvar\u016f\u017eky",
+    "dish_ref": "zS9J97H",
+    "selections": {
+      "lQOroCi": {
+        "plate_ref": "lQOroCi",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "cheese",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 189.0
+      }
+    }
+  },
+  "2Yk8eQV": {
+    "title": "Francesinha",
+    "dish_ref": "2Yk8eQV",
+    "selections": {
+      "d8kLjzt": {
+        "plate_ref": "d8kLjzt",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "Wlh4DLz": {
+    "title": "Chicken Kyiv",
+    "dish_ref": "Wlh4DLz",
+    "selections": {
+      "OqXfM6D": {
+        "plate_ref": "OqXfM6D",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "97RN6DV": {
+    "title": "Doro Wat with Injera",
+    "dish_ref": "97RN6DV",
+    "selections": {
+      "Ax3BDRm": {
+        "plate_ref": "Ax3BDRm",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 180.0
+      }
+    }
+  },
+  "bSLMfjt": {
+    "title": "Jerusalem Mixed Grill (Me'orav Yerushalmi)",
+    "dish_ref": "bSLMfjt",
+    "selections": {
+      "eiELUXI": {
+        "plate_ref": "eiELUXI",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 62.0
+      }
+    }
+  },
+  "zD8Ntt9": {
+    "title": "Maczanka po krakowsku",
+    "dish_ref": "zD8Ntt9",
+    "selections": {
+      "1c1rbV4": {
+        "plate_ref": "1c1rbV4",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "braised"
+        },
+        "served_today": true,
+        "cost": 35.9
+      }
+    }
+  },
+  "zzpkBrz": {
+    "title": "Francesinha",
+    "dish_ref": "zzpkBrz",
+    "selections": {
+      "v3pkXM4": {
+        "plate_ref": "v3pkXM4",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "sPMHtqe": {
+    "title": "Bandeja Paisa",
+    "dish_ref": "sPMHtqe",
+    "selections": {
+      "Ng82vbT": {
+        "plate_ref": "Ng82vbT",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef and pork",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "2DKIQYZ": {
+    "title": "Echpochmak (Tatar Triangle Pastry)",
+    "dish_ref": "2DKIQYZ",
+    "selections": {
+      "zKtzTm9": {
+        "plate_ref": "zKtzTm9",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 180.0
+      }
+    }
+  },
+  "88fw0Z2": {
+    "title": "Adana Kebab",
+    "dish_ref": "88fw0Z2",
+    "selections": {
+      "SmtOWry": {
+        "plate_ref": "SmtOWry",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "lamb",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "MC6p3s1": {
+    "title": "Mombasa Pilau",
+    "dish_ref": "MC6p3s1",
+    "selections": {
+      "kQvyXHf": {
+        "plate_ref": "kQvyXHf",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "steamed"
+        },
+        "served_today": true,
+        "cost": 650.0
+      }
+    }
+  },
+  "EVfpTrV": {
+    "title": "Amala with Ewedu and Gbegiri",
+    "dish_ref": "EVfpTrV",
+    "selections": {
+      "EqyLNQ9": {
+        "plate_ref": "EqyLNQ9",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "pya2UrW": {
+    "title": "Gouda Cheese Platter",
+    "dish_ref": "pya2UrW",
+    "selections": {
+      "g4V44BJ": {
+        "plate_ref": "g4V44BJ",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "none",
+          "preparation": "sliced"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "BMRxqHA": {
+    "title": "Chicken Parmigiana (Melbourne Parma)",
+    "dish_ref": "BMRxqHA",
+    "selections": {
+      "UdBdb6L": {
+        "plate_ref": "UdBdb6L",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "crumbed and fried"
+        },
+        "served_today": true,
+        "cost": 24.5
+      }
+    }
+  },
+  "l9zK0Q3": {
+    "title": "Mapo Tofu",
+    "dish_ref": "l9zK0Q3",
+    "selections": {
+      "hlime4m": {
+        "plate_ref": "hlime4m",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "tofu",
+          "preparation": "wok-fried"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "oCBGWNl": {
+    "title": "Emirati Machboos",
+    "dish_ref": "oCBGWNl",
+    "selections": {
+      "SknHzVX": {
+        "plate_ref": "SknHzVX",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 48.0
+      },
+      "ufZ5e5O": {
+        "plate_ref": "ufZ5e5O",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "large",
+          "protein": "lamb",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 58.0
+      }
+    }
+  },
+  "dRNMaHN": {
+    "title": "Luqaimat",
+    "dish_ref": "dRNMaHN",
+    "selections": {
+      "hRH2huo": {
+        "plate_ref": "hRH2huo",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "none",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 18.0
+      }
+    }
+  },
+  "ByK2Na0": {
+    "title": "Gentse Waterzooi",
+    "dish_ref": "ByK2Na0",
+    "selections": {
+      "xiDvywK": {
+        "plate_ref": "xiDvywK",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "poached"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "TWbEKLp": {
+    "title": "Francesinha",
+    "dish_ref": "TWbEKLp",
+    "selections": {
+      "DWOpn8y": {
+        "plate_ref": "DWOpn8y",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "nnWO5Pw": {
+    "title": "Osaka Takoyaki",
+    "dish_ref": "nnWO5Pw",
+    "selections": {
+      "IERSRRs": {
+        "plate_ref": "IERSRRs",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "octopus",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 750.0
+      }
+    }
+  },
+  "qqJbYWu": {
+    "title": "Cairo Koshari Bowl",
+    "dish_ref": "qqJbYWu",
+    "selections": {
+      "vSRfGvi": {
+        "plate_ref": "vSRfGvi",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chickpeas",
+          "preparation": "layered with fried onions"
+        },
+        "served_today": true,
+        "cost": 65.0
+      }
+    }
+  },
+  "uuaKyRg": {
+    "title": "Bergensk Fiskesuppe",
+    "dish_ref": "uuaKyRg",
+    "selections": {
+      "kfSL2Wf": {
+        "plate_ref": "kfSL2Wf",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "cod",
+          "preparation": "poached"
+        },
+        "served_today": true,
+        "cost": 189.0
+      }
+    }
+  },
+  "Y2ZSJYU": {
+    "title": "Bandeja Paisa",
+    "dish_ref": "Y2ZSJYU",
+    "selections": {
+      "5dbXdyb": {
+        "plate_ref": "5dbXdyb",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "9hrToAP": {
+    "title": "Dwaeji Gukbap (Busan Pork Soup)",
+    "dish_ref": "9hrToAP",
+    "selections": {
+      "4BessyF": {
+        "plate_ref": "4BessyF",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "p6Y4yF2": {
+    "title": "Port Harcourt Bole and Fish",
+    "dish_ref": "p6Y4yF2",
+    "selections": {
+      "c5c6eF6": {
+        "plate_ref": "c5c6eF6",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "catfish",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 3500.0
+      }
+    }
+  },
+  "iueqK3k": {
+    "title": "Pra\u017esk\u00e1 \u0161unka s k\u0159enem",
+    "dish_ref": "iueqK3k",
+    "selections": {
+      "7XaIOvl": {
+        "plate_ref": "7XaIOvl",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "smoked"
+        },
+        "served_today": true,
+        "cost": 195.0
+      }
+    }
+  },
+  "7gcSVS8": {
+    "title": "Empanadas Salte\u00f1as",
+    "dish_ref": "7gcSVS8",
+    "selections": {
+      "zCBUZwU": {
+        "plate_ref": "zCBUZwU",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 1500.0
+      }
+    }
+  },
+  "xeOEzBD": {
+    "title": "Philly Cheesesteak",
+    "dish_ref": "xeOEzBD",
+    "selections": {
+      "2KquuT1": {
+        "plate_ref": "2KquuT1",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 13.0
+      }
+    }
+  },
+  "TmSA1ef": {
+    "title": "Bougatsa Thessalonikis",
+    "dish_ref": "TmSA1ef",
+    "selections": {
+      "xrgrcaX": {
+        "plate_ref": "xrgrcaX",
+        "modifiers": {
+          "spice_level": "none",
+          "portion": "slice",
+          "protein": "none",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 3.5
+      }
+    }
+  },
+  "y1VDpDi": {
+    "title": "Bandeja Paisa",
+    "dish_ref": "y1VDpDi",
+    "selections": {
+      "6fAUsdf": {
+        "plate_ref": "6fAUsdf",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "9q67F9i": {
+    "title": "Busan Dwaeji Gukbap",
+    "dish_ref": "9q67F9i",
+    "selections": {
+      "uImCxYe": {
+        "plate_ref": "uImCxYe",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 10.5
+      }
+    }
+  },
+  "pomXgPs": {
+    "title": "Lahori Chargha",
+    "dish_ref": "pomXgPs",
+    "selections": {
+      "xt48V7H": {
+        "plate_ref": "xt48V7H",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "whole",
+          "protein": "chicken",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 1250.0
+      }
+    }
+  },
+  "XuTOVtV": {
+    "title": "Haggis, Neeps and Tatties",
+    "dish_ref": "XuTOVtV",
+    "selections": {
+      "D4wDFYV": {
+        "plate_ref": "D4wDFYV",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "lamb",
+          "preparation": "steamed"
+        },
+        "served_today": true,
+        "cost": 13.5
+      }
+    }
+  },
+  "kDKQi8e": {
+    "title": "Brunsviger",
+    "dish_ref": "kDKQi8e",
+    "selections": {
+      "z4g3oiC": {
+        "plate_ref": "z4g3oiC",
+        "modifiers": {
+          "spice_level": null,
+          "portion": "regular slice",
+          "protein": null,
+          "preparation": "fresh-baked"
+        },
+        "served_today": true,
+        "cost": 4.5
+      }
+    }
+  },
+  "LEq1OY4": {
+    "title": "Doro Wat with Injera",
+    "dish_ref": "LEq1OY4",
+    "selections": {
+      "D94Kapv": {
+        "plate_ref": "D94Kapv",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 220.0
+      }
+    }
+  },
+  "kgTdTOU": {
+    "title": "Mezban Beef (Chattogram)",
+    "dish_ref": "kgTdTOU",
+    "selections": {
+      "8dvKEgQ": {
+        "plate_ref": "8dvKEgQ",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 350.0
+      }
+    }
+  },
+  "YMgYY8f": {
+    "title": "Ali Nazik Kebab (Gaziantep)",
+    "dish_ref": "YMgYY8f",
+    "selections": {
+      "7dxGUSE": {
+        "plate_ref": "7dxGUSE",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "large",
+          "protein": "lamb",
+          "preparation": "charcoal-grilled"
+        },
+        "served_today": true,
+        "cost": 185.0
+      }
+    }
+  },
+  "z8E5LcX": {
+    "title": "Varz\u0103 \u00e0 la Cluj",
+    "dish_ref": "z8E5LcX",
+    "selections": {
+      "p2nJ3tg": {
+        "plate_ref": "p2nJ3tg",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 35.0
+      }
+    }
+  },
+  "MnRsSnT": {
+    "title": "Pizza Margherita",
+    "dish_ref": "MnRsSnT",
+    "selections": {
+      "2Ace7NH": {
+        "plate_ref": "2Ace7NH",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "mozzarella di bufala",
+          "preparation": "wood-fired"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "980tJPL": {
+    "title": "Penang Char Kway Teow",
+    "dish_ref": "980tJPL",
+    "selections": {
+      "fRMNuPd": {
+        "plate_ref": "fRMNuPd",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "prawn",
+          "preparation": "wok-fried"
+        },
+        "served_today": true,
+        "cost": 12.5
+      }
+    }
+  },
+  "VYhzQFu": {
+    "title": "Cretan Herb-Grilled Lamb",
+    "dish_ref": "VYhzQFu",
+    "selections": {
+      "k6y08oF": {
+        "plate_ref": "k6y08oF",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "lamb",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 14.5
+      }
+    }
+  },
+  "yaA0mMx": {
+    "title": "Z\u00fcrcher Geschnetzeltes",
+    "dish_ref": "yaA0mMx",
+    "selections": {
+      "8ZbP8yT": {
+        "plate_ref": "8ZbP8yT",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "saut\u00e9ed"
+        },
+        "served_today": true,
+        "cost": 28.5
+      }
+    }
+  },
+  "O8upcxZ": {
+    "title": "Echpochmak (Tatar triangular pie)",
+    "dish_ref": "O8upcxZ",
+    "selections": {
+      "BolsXt4": {
+        "plate_ref": "BolsXt4",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef and lamb",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 180.0
+      }
+    }
+  },
+  "N255h3H": {
+    "title": "Gaufre de Li\u00e8ge (Li\u00e8ge Waffle)",
+    "dish_ref": "N255h3H",
+    "selections": {
+      "7mTw3uy": {
+        "plate_ref": "7mTw3uy",
+        "modifiers": {
+          "spice_level": null,
+          "portion": "regular",
+          "protein": null,
+          "preparation": "freshly baked"
+        },
+        "served_today": true,
+        "cost": 5.5
+      }
+    }
+  },
+  "6P8oPj8": {
+    "title": "Pizza Margherita",
+    "dish_ref": "6P8oPj8",
+    "selections": {
+      "X7XyFUA": {
+        "plate_ref": "X7XyFUA",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "mozzarella di bufala",
+          "preparation": "wood-fired"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "aBUiytl": {
+    "title": "B\u00fan B\u00f2 Hu\u1ebf",
+    "dish_ref": "aBUiytl",
+    "selections": {
+      "oKBgXPG": {
+        "plate_ref": "oKBgXPG",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 4.5
+      }
+    }
+  },
+  "hibMDTh": {
+    "title": "Gudeg Yogyakarta",
+    "dish_ref": "hibMDTh",
+    "selections": {
+      "HxdUQ5Q": {
+        "plate_ref": "HxdUQ5Q",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 35000.0
+      }
+    }
+  },
+  "kxvDQBi": {
+    "title": "R\u00e4kmacka (Shrimp Sandwich)",
+    "dish_ref": "kxvDQBi",
+    "selections": {
+      "DT8Ayr7": {
+        "plate_ref": "DT8Ayr7",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "shrimp",
+          "preparation": "open-face"
+        },
+        "served_today": true,
+        "cost": 149.0
+      }
+    }
+  },
+  "73yPOcg": {
+    "title": "Gothenburg Shrimp Sandwich (R\u00e4kmacka)",
+    "dish_ref": "73yPOcg",
+    "selections": {
+      "h4kCFGK": {
+        "plate_ref": "h4kCFGK",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "shrimp",
+          "preparation": "open-faced"
+        },
+        "served_today": true,
+        "cost": 159.0
+      }
+    }
+  },
+  "EWIVul9": {
+    "title": "Thessaloniki Pork Gyros Pita",
+    "dish_ref": "EWIVul9",
+    "selections": {
+      "IS68iRf": {
+        "plate_ref": "IS68iRf",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "rotisserie"
+        },
+        "served_today": true,
+        "cost": 7.5
+      }
+    }
+  },
+  "wiuKd8x": {
+    "title": "Empanadas Salte\u00f1as",
+    "dish_ref": "wiuKd8x",
+    "selections": {
+      "Ttlmwf5": {
+        "plate_ref": "Ttlmwf5",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "LExmVxC": {
+    "title": "Kebda Eskandarani (Alexandrian Liver)",
+    "dish_ref": "LExmVxC",
+    "selections": {
+      "GSfaJ6A": {
+        "plate_ref": "GSfaJ6A",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "beef liver",
+          "preparation": "saut\u00e9ed"
+        },
+        "served_today": true,
+        "cost": 85.0
+      }
+    }
+  },
+  "zPEFH4d": {
+    "title": "Khao Soi",
+    "dish_ref": "zPEFH4d",
+    "selections": {
+      "ufw0Ovh": {
+        "plate_ref": "ufw0Ovh",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 120.0
+      }
+    }
+  },
+  "bRPhxk4": {
+    "title": "Isfahan Beryani",
+    "dish_ref": "bRPhxk4",
+    "selections": {
+      "ykk59hq": {
+        "plate_ref": "ykk59hq",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "mutton",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "7LaG34C": {
+    "title": "Schweinshaxe (Bavarian Pork Knuckle)",
+    "dish_ref": "7LaG34C",
+    "selections": {
+      "7d01Zt2": {
+        "plate_ref": "7d01Zt2",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "roasted"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "YwtJsUD": {
+    "title": "Olomouck\u00e9 tvar\u016f\u017eky",
+    "dish_ref": "YwtJsUD",
+    "selections": {
+      "TxaoOfy": {
+        "plate_ref": "TxaoOfy",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "cheese",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 159.0
+      }
+    }
+  },
+  "YvAl5w2": {
+    "title": "Durban Bunny Chow",
+    "dish_ref": "YvAl5w2",
+    "selections": {
+      "62n6tWB": {
+        "plate_ref": "62n6tWB",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "curried"
+        },
+        "served_today": true,
+        "cost": 89.0
+      }
+    }
+  },
+  "UsSNfRJ": {
+    "title": "Sabich Pita",
+    "dish_ref": "UsSNfRJ",
+    "selections": {
+      "sZS6wYL": {
+        "plate_ref": "sZS6wYL",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "egg",
+          "preparation": "fried eggplant"
+        },
+        "served_today": true,
+        "cost": 38.0
+      }
+    }
+  },
+  "8lAzOdf": {
+    "title": "Birmingham Balti",
+    "dish_ref": "8lAzOdf",
+    "selections": {
+      "8jqGmJ6": {
+        "plate_ref": "8jqGmJ6",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "stir-fried"
+        },
+        "served_today": true,
+        "cost": 11.95
+      }
+    }
+  },
+  "5uNjkZh": {
+    "title": "Philadelphia Cheesesteak",
+    "dish_ref": "5uNjkZh",
+    "selections": {
+      "D42MWzo": {
+        "plate_ref": "D42MWzo",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 12.95
+      }
+    }
+  },
+  "6fCBoZk": {
+    "title": "B\u00fan b\u00f2 Hu\u1ebf",
+    "dish_ref": "6fCBoZk",
+    "selections": {
+      "ECTga9w": {
+        "plate_ref": "ECTga9w",
+        "modifiers": {
+          "spice_level": "spicy",
+          "portion": "large",
+          "protein": "beef",
+          "preparation": "simmered"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "JWivWEG": {
+    "title": "Wiener Schnitzel",
+    "dish_ref": "JWivWEG",
+    "selections": {
+      "IEqwVde": {
+        "plate_ref": "IEqwVde",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "veal",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "5y5V07Y": {
+    "title": "Sm\u00f8rrebr\u00f8d (Copenhagen Open-Faced Sandwich)",
+    "dish_ref": "5y5V07Y",
+    "selections": {
+      "UFLmLxz": {
+        "plate_ref": "UFLmLxz",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pickled herring",
+          "preparation": "open-faced"
+        },
+        "served_today": true,
+        "cost": 95.0
+      }
+    }
+  },
+  "kmeNDF1": {
+    "title": "Jerusalem Mixed Grill (Meorav Yerushalmi)",
+    "dish_ref": "kmeNDF1",
+    "selections": {
+      "0EPH9kQ": {
+        "plate_ref": "0EPH9kQ",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 58.0
+      }
+    }
+  },
+  "U5KiXkq": {
+    "title": "Khao Soi Gai",
+    "dish_ref": "U5KiXkq",
+    "selections": {
+      "DBli3J6": {
+        "plate_ref": "DBli3J6",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "braised"
+        },
+        "served_today": true,
+        "cost": 95.0
+      }
+    }
+  },
+  "ktA2J3k": {
+    "title": "Chicken Machboos",
+    "dish_ref": "ktA2J3k",
+    "selections": {
+      "2zs61Sk": {
+        "plate_ref": "2zs61Sk",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 42.0
+      }
+    }
+  },
+  "uQLB1Dw": {
+    "title": "Kubba Mosul",
+    "dish_ref": "uQLB1Dw",
+    "selections": {
+      "HnR9Hhg": {
+        "plate_ref": "HnR9Hhg",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "mpGkTld": {
+    "title": "Gaufre de Li\u00e8ge",
+    "dish_ref": "mpGkTld",
+    "selections": {
+      "f5Kj4Jf": {
+        "plate_ref": "f5Kj4Jf",
+        "modifiers": {
+          "spice_level": null,
+          "portion": "regular",
+          "protein": null,
+          "preparation": "freshly baked"
+        },
+        "served_today": true,
+        "cost": 4.5
+      }
+    }
+  },
+  "r206Uma": {
+    "title": "Boulets \u00e0 la Li\u00e9geoise",
+    "dish_ref": "r206Uma",
+    "selections": {
+      "sUFSMTT": {
+        "plate_ref": "sUFSMTT",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef-pork blend",
+          "preparation": "braised in sirop de Li\u00e8ge"
+        },
+        "served_today": true,
+        "cost": 16.0
+      }
+    }
+  },
+  "aubRy20": {
+    "title": "Lechon Cebu",
+    "dish_ref": "aubRy20",
+    "selections": {
+      "YLmSeNN": {
+        "plate_ref": "YLmSeNN",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "roasted"
+        },
+        "served_today": true,
+        "cost": 350.0
+      }
+    }
+  },
+  "wcDSoQu": {
+    "title": "Mapo Tofu (\u9ebb\u5a46\u8c46\u8150)",
+    "dish_ref": "wcDSoQu",
+    "selections": {
+      "cjPoiX0": {
+        "plate_ref": "cjPoiX0",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "large",
+          "protein": "pork",
+          "preparation": "stir-fried"
+        },
+        "served_today": true,
+        "cost": 49.0
+      }
+    }
+  },
+  "jP7UbiL": {
+    "title": "Mustamakkara",
+    "dish_ref": "jP7UbiL",
+    "selections": {
+      "Q5mewX5": {
+        "plate_ref": "Q5mewX5",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 6.5
+      }
+    }
+  },
+  "wmJu0GL": {
+    "title": "Pie and Mash",
+    "dish_ref": "wmJu0GL",
+    "selections": {
+      "bRJ061M": {
+        "plate_ref": "bRJ061M",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "Gfd01zV": {
+    "title": "Quenelles de Brochet",
+    "dish_ref": "Gfd01zV",
+    "selections": {
+      "9ab60Yv": {
+        "plate_ref": "9ab60Yv",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pike",
+          "preparation": "gratin\u00e9e"
+        },
+        "served_today": true,
+        "cost": 22.5
+      }
+    }
+  },
+  "S2qmTQ5": {
+    "title": "Machboos",
+    "dish_ref": "S2qmTQ5",
+    "selections": {
+      "8fLnZ2j": {
+        "plate_ref": "8fLnZ2j",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "large",
+          "protein": "chicken",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 52.0
+      }
+    }
+  },
+  "Psupvq9": {
+    "title": "Okonomiyaki (Osaka-style)",
+    "dish_ref": "Psupvq9",
+    "selections": {
+      "xcA9j04": {
+        "plate_ref": "xcA9j04",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork belly",
+          "preparation": "griddled"
+        },
+        "served_today": true,
+        "cost": 1200.0
+      }
+    }
+  },
+  "5nSBVfQ": {
+    "title": "Chengdu Mapo Tofu",
+    "dish_ref": "5nSBVfQ",
+    "selections": {
+      "monTZSW": {
+        "plate_ref": "monTZSW",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "tofu + pork",
+          "preparation": "stir-fried"
+        },
+        "served_today": true,
+        "cost": 38.0
+      }
+    }
+  },
+  "o9VXqwb": {
+    "title": "Quenelles de brochet",
+    "dish_ref": "o9VXqwb",
+    "selections": {
+      "EcFrHhF": {
+        "plate_ref": "EcFrHhF",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pike",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "XPlgrzc": {
+    "title": "Ciorb\u0103 de fasole \u00een p\u00e2ine (Bra\u0219ov Bean Soup in Bread Bowl)",
+    "dish_ref": "XPlgrzc",
+    "selections": {
+      "jlxMzv5": {
+        "plate_ref": "jlxMzv5",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "smoked pork",
+          "preparation": "bread bowl"
+        },
+        "served_today": true,
+        "cost": 34.0
+      }
+    }
+  },
+  "BSFc46k": {
+    "title": "Varz\u0103 a la Cluj",
+    "dish_ref": "BSFc46k",
+    "selections": {
+      "2JvGX0A": {
+        "plate_ref": "2JvGX0A",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "baked"
+        },
+        "served_today": true,
+        "cost": 35.5
+      }
+    }
+  },
+  "2Qm31gs": {
+    "title": "Paella Valenciana",
+    "dish_ref": "2Qm31gs",
+    "selections": {
+      "EDgWJgx": {
+        "plate_ref": "EDgWJgx",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "traditional"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "EFC1VHV": {
+    "title": "Chicken Machboos",
+    "dish_ref": "EFC1VHV",
+    "selections": {
+      "qkXExbY": {
+        "plate_ref": "qkXExbY",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "braised"
+        },
+        "served_today": true,
+        "cost": 49.5
+      }
+    }
+  },
+  "pCmAZvv": {
+    "title": "Lechon Cebu Plate",
+    "dish_ref": "pCmAZvv",
+    "selections": {
+      "8fC8Nc3": {
+        "plate_ref": "8fC8Nc3",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "pork",
+          "preparation": "roasted"
+        },
+        "served_today": true,
+        "cost": 350.0
+      }
+    }
+  },
+  "kspQveO": {
+    "title": "Bergen Fish Soup (Bergensk fiskesuppe)",
+    "dish_ref": "kspQveO",
+    "selections": {
+      "z4nvRJP": {
+        "plate_ref": "z4nvRJP",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "cod",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 189.0
+      }
+    }
+  },
+  "ZAR3asV": {
+    "title": "Montreal Smoked Meat Sandwich",
+    "dish_ref": "ZAR3asV",
+    "selections": {
+      "omdjmBH": {
+        "plate_ref": "omdjmBH",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "regular",
+          "protein": "beef",
+          "preparation": "smoked"
+        },
+        "served_today": true,
+        "cost": 14.99
+      }
+    }
+  },
+  "phm8KJ0": {
+    "title": "Mombasa Swahili Biryani",
+    "dish_ref": "phm8KJ0",
+    "selections": {
+      "ImP1hIq": {
+        "plate_ref": "ImP1hIq",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 9.99
+      }
+    }
+  },
+  "TFix0D6": {
+    "title": "Mombasa Biryani",
+    "dish_ref": "TFix0D6",
+    "selections": {
+      "HyGxNWu": {
+        "plate_ref": "HyGxNWu",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "chicken",
+          "preparation": "slow-cooked"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "kk0WP4r": {
+    "title": "Bole and Grilled Fish",
+    "dish_ref": "kk0WP4r",
+    "selections": {
+      "nh4hwUM": {
+        "plate_ref": "nh4hwUM",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "regular",
+          "protein": "catfish",
+          "preparation": "grilled"
+        },
+        "served_today": true,
+        "cost": 8.5
+      }
+    }
+  },
+  "pvBggLW": {
+    "title": "Acaraj\u00e9",
+    "dish_ref": "pvBggLW",
+    "selections": {
+      "4MpI40x": {
+        "plate_ref": "4MpI40x",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "shrimp",
+          "preparation": "fried"
+        },
+        "served_today": true,
+        "cost": 18.5
+      }
+    }
+  },
+  "iZtatds": {
+    "title": "Moqueca Baiana",
+    "dish_ref": "iZtatds",
+    "selections": {
+      "dLlJmSD": {
+        "plate_ref": "dLlJmSD",
+        "modifiers": {
+          "spice_level": "medium",
+          "portion": "family",
+          "protein": "fish",
+          "preparation": "stewed"
+        },
+        "served_today": true,
+        "cost": 65.0
+      }
+    }
+  },
+  "UctyFGj": {
+    "title": "Mapo Tofu (Chengdu)",
+    "dish_ref": "UctyFGj",
+    "selections": {
+      "zByME1z": {
+        "plate_ref": "zByME1z",
+        "modifiers": {
+          "spice_level": "hot",
+          "portion": "regular",
+          "protein": "tofu",
+          "preparation": "braised"
+        },
+        "served_today": true,
+        "cost": 9.5
+      }
+    }
+  },
+  "HFpmnx2": {
+    "title": "Pyry z gzikiem",
+    "dish_ref": "HFpmnx2",
+    "selections": {
+      "iiCKZFO": {
+        "plate_ref": "iiCKZFO",
+        "modifiers": {
+          "spice_level": "mild",
+          "portion": "large",
+          "protein": "bacon",
+          "preparation": "boiled"
+        },
+        "served_today": true,
+        "cost": 26.0
+      }
+    }
+  }
+}

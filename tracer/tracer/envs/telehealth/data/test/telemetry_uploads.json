@@ -1,0 +1,1595 @@
+[
+    {
+        "device_id": "VC-449",
+        "date": "2025-06-01",
+        "usage_hours": 7.4,
+        "synced_at": "2025-06-01T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "VC-449",
+        "date": "2025-06-02",
+        "usage_hours": 6.8,
+        "synced_at": "2025-06-02T06:12:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "VC-449",
+        "date": "2025-06-03",
+        "usage_hours": 5.9,
+        "synced_at": "2025-06-03T06:09:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "VC-449",
+        "date": "2025-06-04",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "VC-449",
+        "date": "2025-06-05",
+        "usage_hours": 6.3,
+        "synced_at": "2025-06-05T06:20:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "VC-449",
+        "date": "2025-06-06",
+        "usage_hours": 6.9,
+        "synced_at": "2025-06-06T06:18:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "VC-449",
+        "date": "2025-06-07",
+        "usage_hours": 7.1,
+        "synced_at": "2025-06-07T06:16:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-25",
+        "usage_hours": 6.8,
+        "synced_at": "2025-11-25T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-26",
+        "usage_hours": 6.4,
+        "synced_at": "2025-11-26T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-27",
+        "usage_hours": 5.9,
+        "synced_at": "2025-11-27T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-28",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-29",
+        "usage_hours": 6.2,
+        "synced_at": "2025-11-29T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-30",
+        "usage_hours": 6.7,
+        "synced_at": "2025-11-30T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-12-01",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-01T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_452",
+        "date": "2025-11-25",
+        "usage_hours": 6.8,
+        "synced_at": "2025-11-25T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_452",
+        "date": "2025-11-26",
+        "usage_hours": 6.4,
+        "synced_at": "2025-11-26T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_452",
+        "date": "2025-11-27",
+        "usage_hours": 5.9,
+        "synced_at": "2025-11-27T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_452",
+        "date": "2025-11-28",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "PHILIP_tracer_452",
+        "date": "2025-11-29",
+        "usage_hours": 6.2,
+        "synced_at": "2025-11-29T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_452",
+        "date": "2025-11-30",
+        "usage_hours": 6.7,
+        "synced_at": "2025-11-30T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_452",
+        "date": "2025-12-01",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-01T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-25",
+        "usage_hours": 6.8,
+        "synced_at": "2025-11-25T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-26",
+        "usage_hours": 6.4,
+        "synced_at": "2025-11-26T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-27",
+        "usage_hours": 5.9,
+        "synced_at": "2025-11-27T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-28",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-29",
+        "usage_hours": 6.2,
+        "synced_at": "2025-11-29T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-11-30",
+        "usage_hours": 6.7,
+        "synced_at": "2025-11-30T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_451",
+        "date": "2025-12-01",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-01T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_461",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_461",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_461",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_461",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_461",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_461",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_461",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_462",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_462",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_462",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_462",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "PHILIP_tracer_462",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_462",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_462",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_463",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_463",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_463",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_463",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "WEARAB_tracer_463",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_463",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_463",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_464",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_464",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_464",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_464",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CONTIN_tracer_464",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_464",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_464",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_465",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_465",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_465",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_465",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_465",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_465",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_465",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_466",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_466",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_466",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_466",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "PHILIP_tracer_466",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_466",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_466",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_467",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_467",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_467",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_467",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "WEARAB_tracer_467",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_467",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_467",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_468",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_468",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_468",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_468",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CONTIN_tracer_468",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_468",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_468",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_469",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_469",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_469",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_469",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_469",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_469",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_469",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_470",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_470",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_470",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_470",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "PHILIP_tracer_470",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_470",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_470",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_471",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_471",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_471",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_471",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "WEARAB_tracer_471",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_471",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_471",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_472",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_472",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_472",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_472",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CONTIN_tracer_472",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_472",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_472",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_473",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_473",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_473",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_473",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_473",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_473",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_473",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_474",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_474",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_474",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_474",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "PHILIP_tracer_474",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_474",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_474",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_475",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_475",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_475",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_475",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "WEARAB_tracer_475",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_475",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_475",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_476",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_476",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_476",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_476",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CONTIN_tracer_476",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_476",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_476",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_477",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_477",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_477",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_477",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_477",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_477",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_477",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_478",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_478",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_478",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_478",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "PHILIP_tracer_478",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_478",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_478",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_479",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_479",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_479",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_479",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "WEARAB_tracer_479",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_479",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_479",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_480",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_480",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_480",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_480",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CONTIN_tracer_480",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_480",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CONTIN_tracer_480",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_481",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_481",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_481",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_481",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "CARDIA_tracer_481",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_481",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "CARDIA_tracer_481",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_482",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_482",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_482",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_482",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "PHILIP_tracer_482",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_482",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "PHILIP_tracer_482",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_483",
+        "date": "2025-12-11",
+        "usage_hours": 6.8,
+        "synced_at": "2025-12-11T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_483",
+        "date": "2025-12-12",
+        "usage_hours": 6.4,
+        "synced_at": "2025-12-12T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_483",
+        "date": "2025-12-13",
+        "usage_hours": 5.9,
+        "synced_at": "2025-12-13T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_483",
+        "date": "2025-12-14",
+        "usage_hours": 0.0,
+        "synced_at": null,
+        "event": "upload_missing",
+        "alerts": [
+            "No data received",
+            "Usage below compliance threshold"
+        ]
+    },
+    {
+        "device_id": "WEARAB_tracer_483",
+        "date": "2025-12-15",
+        "usage_hours": 6.2,
+        "synced_at": "2025-12-15T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_483",
+        "date": "2025-12-16",
+        "usage_hours": 6.7,
+        "synced_at": "2025-12-16T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    },
+    {
+        "device_id": "WEARAB_tracer_483",
+        "date": "2025-12-17",
+        "usage_hours": 7.0,
+        "synced_at": "2025-12-17T06:15:00Z",
+        "event": "normal",
+        "alerts": []
+    }
+]

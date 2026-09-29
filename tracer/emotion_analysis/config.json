@@ -1,0 +1,47 @@
+{
+  "inputs": {
+    "emotion_persona_instructions_path": "emotions/output/emotion_persona_instructions.json",
+    "emotion_schema_path": "emotions/emotion_persona_schema.json",
+    "task_paths": [
+      "output/evaluations/bank_test_passed_tasks.json"
+    ]
+  },
+  "embedding_model": {
+    "type": "llm",
+    "model": "openai/text-embedding-3-small",
+    "api_base": "https://api.openai.com/v1",
+    "batch_size": 64
+  },
+  "training": {
+    "epochs": 30,
+    "lr": 0.001,
+    "batch_size": 128,
+    "hidden_dim": 256,
+    "dropout": 0.15,
+    "seed": 42,
+    "val_split": 0.2,
+    "early_stopping": {
+      "enabled": true,
+      "patience": 3,
+      "min_delta": 0.005
+    },
+    "knn_k": 9
+  },
+  "inference": {
+    "task_output_suffix": "_with_emotion_predictions.json",
+    "instruction_selection_seed": 42
+  },
+  "visualization": {
+    "max_tasks": null,
+    "instruction_task_feature_space": "family",
+    "instruction_task_representation": "probs",
+    "instruction_task_tsne_perplexity": 30,
+    "instruction_task_tsne_random_state": 42,
+    "instruction_task_heatmap_grid": 88,
+    "instruction_task_heatmap_k": 18,
+    "instruction_task_idw_power": 2.0
+  },
+  "outputs": {
+    "root_dir": "emotion_analysis/output"
+  }
+}

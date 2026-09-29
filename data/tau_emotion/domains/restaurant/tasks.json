@@ -1,0 +1,3441 @@
+[
+  {
+    "id": "restaurant_test_0000",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Noam Mitchell, and you want to modify your placed delivery order (ticket pxNWI1n) by swapping the Tlayuda Oaxaque\u00f1a plate from tasajo to quesillo, because the quesillo version is preferred and costs $15 less. You want that $15 difference refunded to your Banco do Brasil card ending in 1387. After that, you would like to add a $20 tip to the same ticket, also charged to your Banco do Brasil card ending in 1387, to acknowledge good service. Later, you want to change the primary payment method on this ticket from your VISA card ending in 2181 to your Banco do Brasil card ending in 1387, for better currency conversion rates. After completing these updates, you would like to cancel your second placed delivery order (ticket m9WBMZ4), because it was placed by mistake.\n\nUse noam.mitchell.424@example.com for authentication.",
+      "emotion_instruction": "You\u2019re thrilled about resolving this and want it handled now. Your tone is lively and straightforward. You count on the agent\u2019s support. Make your impatience clear, but remain friendly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "0_0",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "pxNWI1n",
+            "plate_refs": [
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "mn1mEsg"
+            ],
+            "instrument_ref": "Zn4ZAXV"
+          }
+        },
+        {
+          "action_id": "0_1",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "pxNWI1n",
+            "tip_total": 20,
+            "instrument_ref": "Zn4ZAXV"
+          }
+        },
+        {
+          "action_id": "0_2",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "pxNWI1n",
+            "instrument_ref": "Zn4ZAXV"
+          }
+        },
+        {
+          "action_id": "0_3",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "m9WBMZ4",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0001",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Anong Pratama, and you have two dine-in tickets placed by mistake. You want to modify ticket H9F6HgW by changing the table assignment to zone A, table 5, which has 4 seats, because you prefer a smaller private area. You also want to update the dishes on this ticket: swap the Emirati Machboos from large hot lamb to regular medium chicken because you prefer a milder and smaller portion, and swap the Tlayuda Oaxaque\u00f1a from medium tasajo to mild quesillo because you prefer a milder flavor. You prefer to use your card ending in 3365 for these changes. Additionally, you would like to add a $20 tip to this ticket using the same card because you want to acknowledge good service. Finally, in this same conversation, you also want to cancel your other placed ticket th6Kkao because it was ordered by mistake and is a duplicate of your intended order.\n\nUse anong.pratama.261@example.com for authentication.",
+      "emotion_instruction": "You approach this with a peaceful mindset, speaking kindly but with some reservation. Express gratitude and listen carefully, but don't hesitate to double-check details. You want things handled steadily, without rushing. Let the agent know you value clear communication.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "1_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "H9F6HgW",
+            "zone": "A",
+            "table_no": "5",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "1_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "H9F6HgW",
+            "plate_refs": [
+              "ufZ5e5O",
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "SknHzVX",
+              "mn1mEsg"
+            ],
+            "instrument_ref": "AEawgRz"
+          }
+        },
+        {
+          "action_id": "1_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "H9F6HgW",
+            "tip_total": 20,
+            "instrument_ref": "AEawgRz"
+          }
+        },
+        {
+          "action_id": "1_3",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "th6Kkao",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0002",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Noam Mitchell, contactable at noam.mitchell.424@example.com, and you have a placed delivery order (pxNWI1n). You want to add a $10 tip to this order using your saved Banco do Brasil card ending in 1387 because you wish to reward good service. Later, you would like to update the delivery address from the current Melbourne location to your residence exactly as it is saved in your account: 69 Broad Street on the first address line, Apt 14 on the second address line, city Salta, province Salta, Argentina, postal code A4400, to ensure the food is sent to the correct location. After that, you would like to upgrade the first Emirati Machboos on the order from the Regular chicken portion with Medium spice to the Large lamb portion with Hot spice, as you prefer a more substantial and spicier meal, and you prefer this change and the tip to be charged to the same Banco do Brasil card ending in 1387 for consistent payment tracking. You also want the agent to cancel your cousin Alena Mitchell's dine-in order BBLr1W1, because she is celebrating with you instead and asked you to sort it out for her.\n\nUse noam.mitchell.424@example.com for authentication.",
+      "emotion_instruction": "You share your excitement openly and keep the conversation uplifting. You are friendly and speak with warmth. You\u2019d like things resolved soon, but are patient. You\u2019re attentive and thoughtful about trusting the agent\u2019s responses.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "2_0",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "pxNWI1n",
+            "tip_total": 10,
+            "instrument_ref": "Zn4ZAXV"
+          }
+        },
+        {
+          "action_id": "2_1",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "pxNWI1n",
+            "line_one": "69 Broad Street",
+            "line_two": "Apt 14",
+            "municipality": "Salta",
+            "province": "Salta",
+            "nation": "Argentina",
+            "postal_code": "A4400"
+          }
+        },
+        {
+          "action_id": "2_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "pxNWI1n",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "Zn4ZAXV"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0003",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miguel Dela Cruz and you have two placed delivery tickets. First, you want to update the delivery address for ticket zLnkTAu to 123 Ocean View Ave, Apt 4B, Bali, Bali, Indonesia, 80361 because you have relocated within the city. Then, you would like to change the meal on the same ticket from large spicy lamb Machboos to regular chicken Machboos, as you prefer a milder and smaller portion; you want the $10.00 difference refunded to your saved Sberbank Visa card ending in 6893. Later, you will cancel your other placed ticket i9LnwJo because it was ordered by mistake and is no longer needed.\n\nUse miguel.dela cruz.665@example.com for authentication, typed exactly as written (with a space, not a dot, between \"dela\" and \"cruz\"). Your postal code is EH1 1SG.",
+      "emotion_instruction": "You feel quite nervous and are anxious for a quick resolution. You try to be kind in your words but can't hide your unease. Speak warmly but with a sense of urgency. You're hopeful but not fully sure you can rely on the agent yet.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "3_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "zLnkTAu",
+            "line_one": "123 Ocean View Ave",
+            "line_two": "Apt 4B",
+            "municipality": "Bali",
+            "province": "Bali",
+            "nation": "Indonesia",
+            "postal_code": "80361"
+          }
+        },
+        {
+          "action_id": "3_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "zLnkTAu",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "1e59Q3v"
+          }
+        },
+        {
+          "action_id": "3_2",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "i9LnwJo",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0004",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Aminah de Vries, and you want to update your placed dine-in ticket PGQjvZb. First, you want to change the payment method from your GTBank card ending in 3764 to your other GTBank card ending in 6319, because you prefer to use this card for today's charges. Then, you would like to add a $15 tip to the ticket, charged to the same new card ending in 6319, as a gesture of appreciation for the service. You also want to upgrade your reservation from Patio table C22 (2 seats) to Garden table G5 (4 seats), to accommodate a larger group. Later, you decide to modify your order by switching the protein on your Tlayuda Oaxaque\u00f1a from tasajo to quesillo, because you prefer a milder option, and you confirm that any refund due from the price difference should be applied to the card ending in 6319.\n\nUse aminah.de vries.136@example.com for authentication.",
+      "emotion_instruction": "You\u2019re eager and animated, wanting solutions as soon as possible. You talk in a straightforward, lively way. You trust the agent's expertise, so you move quickly through your questions. Let your anticipation show.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "4_0",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "PGQjvZb",
+            "instrument_ref": "pb3CJVl"
+          }
+        },
+        {
+          "action_id": "4_1",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "PGQjvZb",
+            "tip_total": 15,
+            "instrument_ref": "pb3CJVl"
+          }
+        },
+        {
+          "action_id": "4_2",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "PGQjvZb",
+            "zone": "Garden",
+            "table_no": "G5",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "4_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "PGQjvZb"
+          }
+        },
+        {
+          "action_id": "4_4",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "4_5",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "TtBjGxz"
+          }
+        },
+        {
+          "action_id": "4_6",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "PGQjvZb",
+            "plate_refs": [
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "mn1mEsg"
+            ],
+            "instrument_ref": "pb3CJVl"
+          }
+        },
+        {
+          "action_id": "4_7",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "PGQjvZb"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0005",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Aminah de Vries, and you want to update your placed dine-in order. First, you want to change the payment method from your GTBank card ending in 3764 to your other GTBank card ending in 6319, because you prefer to use this card for the transaction. Once that payment change is done, you would like to modify your order on the same ticket to switch from the Tlayuda Oaxaque\u00f1a with tasajo and medium spice to the milder version with quesillo, because you prefer a less spicy option. Since the new plate is cheaper, you want the price difference from this plate change refunded to your GTBank card ending in 6319.\n\nUse aminah.de vries.136@example.com for authentication, typed exactly as written (with a space, not a dot, between \"de\" and \"vries\"). Your postal code is 168732.",
+      "emotion_instruction": "You are composed but have a pressing concern. Speak neutrally and focus on practical issues. Be polite, but don\u2019t take information at face value. Request explanations or supporting details if needed.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "5_0",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "PGQjvZb",
+            "instrument_ref": "pb3CJVl"
+          }
+        },
+        {
+          "action_id": "5_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "PGQjvZb"
+          }
+        },
+        {
+          "action_id": "5_2",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "TtBjGxz"
+          }
+        },
+        {
+          "action_id": "5_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "PGQjvZb",
+            "plate_refs": [
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "mn1mEsg"
+            ],
+            "instrument_ref": "pb3CJVl"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0006",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jeroen Nordmann, and you have a placed dine-in ticket (5zsU5RX) for a group currently assigned to Bar zone, table A3 with 6 seats. You want to change your table to zone B, table 7, which has 4 seats, to better fit your group size. Later, you would like to upgrade one of the two ordered Tlayuda Oaxaque\u00f1a plates from the quesillo version to the tasajo version, as it is a preferred protein upgrade and is available today. After that, you would like to add a $20 tip to the order using your saved credit card ending in 2719. You also want the agent to cancel your sister Amelia Nordmann's dine-in order 9dy0V9F, because she asked you to take care of it for her.\n\nUse jeroen.nordmann.103@example.com for authentication.",
+      "emotion_instruction": "You\u2019re eager to prove your point and challenge every vague answer. Speak firmly and press for rapid resolution. You believe the agent is capable, so hold them to high standards. Keep conversations energetic and uncompromising.",
+      "emotion_metadata": {
+        "emotion_family": "anger",
+        "emotion_leaf": "argumentativeness",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "6_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "5zsU5RX",
+            "zone": "B",
+            "table_no": "7",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "6_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "5zsU5RX"
+          }
+        },
+        {
+          "action_id": "6_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "5zsU5RX",
+            "plate_refs": [
+              "mn1mEsg"
+            ],
+            "new_plate_refs": [
+              "TvCGrmk"
+            ],
+            "instrument_ref": "K3tzJUu"
+          }
+        },
+        {
+          "action_id": "6_3",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "5zsU5RX",
+            "tip_total": 20,
+            "instrument_ref": "K3tzJUu"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0007",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Anong Mart\u00ednez, and you want to update your dine-in reservation for ticket WUxhtZA by moving from the Bar to the Dining Room, table 12, and reducing the number of seats from 6 to 4 because you are consolidating your plans. Then, in this same conversation, you also want to cancel your second ticket, gjcuPnZ, because it is no longer needed. After that, you would like to add a $20 gratuity to the updated ticket WUxhtZA, and you prefer to use your PKO Bank Polski card ending in 2206 for this additional charge. You also want the agent to move the dine-in reservation Yr3XrL4, which belongs to your cousin Sander Mart\u00ednez, to the Dining Room as well, table 14 for 2 people, so that both parties can sit close together.\n\nUse anong.mart\u00ednez.498@example.com for authentication.",
+      "emotion_instruction": "You can\u2019t hide your excitement and want things done right away. You communicate in a warm, welcoming manner. You trust the agent\u2019s abilities and show genuine eagerness for their help. You keep the mood cheerful and optimistic.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "7_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "WUxhtZA",
+            "zone": "Dining Room",
+            "table_no": "12",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "7_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "WUxhtZA"
+          }
+        },
+        {
+          "action_id": "7_2",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "gjcuPnZ",
+            "reason": "no longer needed"
+          }
+        },
+        {
+          "action_id": "7_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "gjcuPnZ"
+          }
+        },
+        {
+          "action_id": "7_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "WUxhtZA",
+            "tip_total": 20,
+            "instrument_ref": "lkBj0fS"
+          }
+        },
+        {
+          "action_id": "7_5",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "WUxhtZA"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0008",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miguel Huber, and you want to modify your dine-in ticket 7Aagrg1 from its current table in the Main Hall to a larger table in the Garden zone, specifically table G5 with 4 seats, to accommodate a group gathering. After that, you would like to cancel your other ticket jpvMUQT because it was placed by mistake and is no longer needed. Later, you intend to add a $20 tip to the remaining ticket 7Aagrg1 as a gesture of appreciation, and you prefer to use your saved JCB card ending in 4255 for this charge.\n\nUse miguel.huber.745@example.com for authentication.",
+      "emotion_instruction": "You come into the chat feeling proud of your accomplishment. Interact warmly and encourage positive engagement, but ask for specifics to verify answers. Move at a moderate pace, ensuring nothing is overlooked. Trust, but also confirm.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "8_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "7Aagrg1",
+            "zone": "Garden",
+            "table_no": "G5",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "8_1",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "jpvMUQT",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "8_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "7Aagrg1",
+            "tip_total": 20,
+            "instrument_ref": "4L87mcT"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0009",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Min-jun Kim, and you want to update your placed dine-in ticket 9rwtQ0u. First, you would like to change one Tlayuda Oaxaque\u00f1a from the quesillo protein to the tasajo protein because you prefer the latter, and you agree to pay the price difference using your Monobank card ending in 9834. Next, you want to change your table reservation from Patio D3 (4 seats) to Indoor table 7 (2 seats) to better match your party size. After that, you would like to add a $20.00 tip to the same ticket, also charged to your Monobank card ending in 9834. Finally, in this same conversation, you also want to cancel your other placed dine-in ticket 3FGbcbM because it is no longer needed.\n\nUse min-jun.kim.379@example.com for authentication.",
+      "emotion_instruction": "Your excitement makes you a bit impatient, wanting things handled right away. You speak in short, enthusiastic sentences. You expect the agent to be capable and responsive. Remain positive but press for quick results.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "9_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "9_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "9rwtQ0u"
+          }
+        },
+        {
+          "action_id": "9_2",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "TtBjGxz"
+          }
+        },
+        {
+          "action_id": "9_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "9rwtQ0u",
+            "plate_refs": [
+              "mn1mEsg"
+            ],
+            "new_plate_refs": [
+              "TvCGrmk"
+            ],
+            "instrument_ref": "AraBUA4"
+          }
+        },
+        {
+          "action_id": "9_4",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "9rwtQ0u",
+            "zone": "Indoor",
+            "table_no": "7",
+            "seat_count": 2
+          }
+        },
+        {
+          "action_id": "9_5",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "3FGbcbM",
+            "reason": "no longer needed"
+          }
+        },
+        {
+          "action_id": "9_6",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "9rwtQ0u",
+            "tip_total": 20.0,
+            "instrument_ref": "AraBUA4"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0010",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Sander Andersson, and you have a placed delivery ticket (HbRfxn9) with two Emirati Machboos plates. First, you want to change one plate from the large hot lamb option to the regular medium chicken option because you prefer a milder spice level and smaller portion. You agree to the price difference being adjusted on your current JCB card ending in 1005. Later, you would like to update the payment method on the same ticket to your other saved card, the DBS card ending in 3310, and add a $10 tip using that same card to acknowledge good service. After that, you decide to cancel the entire ticket because you realize the order was placed by mistake, and you no longer need the delivery.\n\nUse sander.andersson.646@example.com for authentication.",
+      "emotion_instruction": "You are nervous and try to be polite, but your discomfort shows. Speak warmly, but your questions are cautious and you ask for confirmation often. Let the agent know you need things explained step by step. Don\u2019t rush into trust; seek reassurance.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "10_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "10_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "10_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "HbRfxn9",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "XtVGFCF"
+          }
+        },
+        {
+          "action_id": "10_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "HbRfxn9",
+            "instrument_ref": "bZ0ol8l"
+          }
+        },
+        {
+          "action_id": "10_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "HbRfxn9",
+            "tip_total": 10,
+            "instrument_ref": "bZ0ol8l"
+          }
+        },
+        {
+          "action_id": "10_5",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "HbRfxn9",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0011",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Thando Petrova, and you have a placed dine-in ticket. You want to change the plate selection for one of the Emirati Machboos on your ticket from the regular chicken portion to the large lamb portion, because you prefer a richer protein option and have confirmed the large lamb plate is available today. You prefer to use your JCB card ending in 8460 for any price difference associated with this change. Later, you would like to change your table assignment to zone Garden, table B12, to accommodate your party of 4 people, as your current table only seats 2.\n\nUse thando.petrova.471@example.com for authentication.",
+      "emotion_instruction": "You\u2019re thrilled about what\u2019s ahead and want things sorted right away. You talk quickly and confidently, but keep your guard up. Show your excitement, but make it clear you need proof before trusting the agent\u2019s answers. Don\u2019t hold back on asking for specifics.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "11_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "11_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "11_2",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "oV9GjCD"
+          }
+        },
+        {
+          "action_id": "11_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "oV9GjCD",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "1bIrZ6r"
+          }
+        },
+        {
+          "action_id": "11_4",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "oV9GjCD",
+            "zone": "Garden",
+            "table_no": "B12",
+            "seat_count": 4
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0012",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miguel Petrova, and you want to change the payment card on your placed delivery order UfkEFne from the Ziraat Bankas\u0131 card ending in 1586 to your Eastern Bank Ltd. card ending in 3032. After that, you would like to upgrade the Emirati Machboos in your order from the regular chicken version to the large lamb version (which is more expensive), and have the price difference charged to the same new card ending in 3032. Finally, once the upgrade is done, you would like to add an extra 7.20 tip to the same order, also charged to the card ending in 3032.\n\nUse miguel.petrova.868@example.com for authentication.",
+      "emotion_instruction": "You\u2019re feeling confrontational and want to push back on explanations that don\u2019t satisfy you. You still try to be polite, but your words are sharp and urgent. You expect rapid, clear solutions. Maintain a guarded attitude toward the agent\u2019s responses.",
+      "emotion_metadata": {
+        "emotion_family": "anger",
+        "emotion_leaf": "argumentativeness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "12_0",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "UfkEFne",
+            "instrument_ref": "xN7FT5a"
+          }
+        },
+        {
+          "action_id": "12_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "UfkEFne"
+          }
+        },
+        {
+          "action_id": "12_2",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "12_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "UfkEFne",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "xN7FT5a"
+          }
+        },
+        {
+          "action_id": "12_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "UfkEFne",
+            "tip_total": 7.2,
+            "instrument_ref": "xN7FT5a"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0013",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Andrei Sukhum, and you want to modify your delivery order Trq2YYO, which is currently in 'placed' state. First, you want to change the plate selection for 'Emirati Machboos - Large, Hot' from 'large, hot, lamb' to 'regular, medium, chicken' because you prefer a smaller portion with chicken instead. This change is possible because the 'regular, medium, chicken' option is available today. Later, you would like to add a $10 tip to the same ticket as a gesture of appreciation. After that, you need to update the delivery address from Adelaide, Australia to your home address at 301 Nguyen Van Cu, Apt 12, Hue, Thua Thien Hue, Vietnam, 530000 because you are currently in Hue. For all these changes, you prefer to use your Nordea card ending in 6021 for payment consistency. Finally, once the address has been updated, you also want the order's original payment switched from your Banca Transilvania card ending in 3390 to the same Nordea card.\n\nUse andrei.sukhum.436@example.com for authentication.",
+      "emotion_instruction": "You wish for a prompt answer while keeping the conversation easy and warm. Use soft, polite language, but don\u2019t fully commit trust to the agent. Remain calm and peaceful, even as you stress urgency. Let your warmth coexist with caution.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "13_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "13_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "Trq2YYO"
+          }
+        },
+        {
+          "action_id": "13_2",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "13_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "Trq2YYO",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "vGZYMmi"
+          }
+        },
+        {
+          "action_id": "13_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "Trq2YYO",
+            "tip_total": 10,
+            "instrument_ref": "vGZYMmi"
+          }
+        },
+        {
+          "action_id": "13_5",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "Trq2YYO",
+            "line_one": "301 Nguyen Van Cu",
+            "line_two": "Apt 12",
+            "municipality": "Hue",
+            "province": "Thua Thien Hue",
+            "nation": "Vietnam",
+            "postal_code": "530000"
+          }
+        },
+        {
+          "action_id": "13_6",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "Trq2YYO",
+            "instrument_ref": "vGZYMmi"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0014",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Thandi Murphy, and you want to update the payment method on your delivery ticket MFgdxyl to your ING card ending in 8387 because it is your preferred card. After that, you would like to change one plate on the same order: swap the Tlayuda Oaxaque\u00f1a with mild spice (currently on the ticket) to the same dish with medium spice, because you prefer a bit more heat. Finally, you want to add a $10.00 tip to the same ticket using the updated payment method to thank the team for accommodating your changes. Once all of that is done, you also want the agent to change the delivery address of order 3QX4uTe, which your brother Mehmet Murphy placed, to the address your own order MFgdxyl is going to (40 Gudeok-ro, Osaka, Osaka Prefecture, Japan, postal code 530-0001), because he is coming over to celebrate with you tonight.\n\nUse thandi.murphy.494@example.com for authentication.",
+      "emotion_instruction": "You\u2019re thrilled to be here and ready to solve things quickly. You greet the agent warmly and express your trust openly. You keep your tone lively and enthusiastic, pushing for a fast response. You happily follow the agent\u2019s advice.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "14_0",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "MFgdxyl",
+            "instrument_ref": "jQlATfS"
+          }
+        },
+        {
+          "action_id": "14_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "MFgdxyl",
+            "plate_refs": [
+              "mn1mEsg"
+            ],
+            "new_plate_refs": [
+              "TvCGrmk"
+            ],
+            "instrument_ref": "jQlATfS"
+          }
+        },
+        {
+          "action_id": "14_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "MFgdxyl",
+            "tip_total": 10.0,
+            "instrument_ref": "jQlATfS"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0015",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Amelia Nordmann, and you want to modify your placed dine-in ticket WB0Qm0m by changing the table to T2 in the Terrace zone, which seats 4, because you prefer a smaller setting. You also want to upgrade one 'Regular' portion of Emirati Machboos (the one with house sauce and a fries side) to a 'Large' portion, as it better suits your group's appetite, and you prefer the difference in cost be charged to your saved Visa card ending in 5371. Later, you would like to cancel your second placed dine-in ticket 9dy0V9F because you won't be able to attend. You also want the agent to move your brother Jeroen Nordmann's dine-in order K9WK4lj to table T3 in the Terrace zone, which seats 4, so both of your groups are on the Terrace; he asked you to arrange it for him.\n\nUse amelia.nordmann.294@example.com for authentication.",
+      "emotion_instruction": "You are thrilled about getting this sorted fast. You communicate clearly and eagerly, wanting immediate answers. You believe the agent will handle things well. Stay upbeat and to the point.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "15_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m",
+            "zone": "Terrace",
+            "table_no": "T2",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "15_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m"
+          }
+        },
+        {
+          "action_id": "15_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "VYD7XBY"
+          }
+        },
+        {
+          "action_id": "15_3",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "15_4",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "9dy0V9F"
+          }
+        },
+        {
+          "action_id": "15_5",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "9dy0V9F",
+            "reason": "won't be able to make it"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0016",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Alex Rahman, and you have two delivery tickets placed by mistake. You want to update your ticket kIPaRwI by changing the delivery address to your home at 41 45, Apt 9, Heraklion, Crete, Greece, 71202, because you need the order delivered there. Then, you would like to swap the current plate (Emirati Machboos - Large, Hot) with the Emirati Machboos plate that has a regular portion with chicken, as it better suits your preference, and charge the price difference to your GTBank card ending in 3148. After that, you want to add a $5.00 tip to the same ticket using the same GTBank card. Later, you will cancel your other placed ticket unsnc43 because it was ordered by mistake. Finally, you would like to update the payment method on ticket kIPaRwI to use your GTBank card ending in 3148 instead of your Metrobank card, as it is your preferred payment method.\n\nUse alex.rahman.863@example.com for authentication.",
+      "emotion_instruction": "You\u2019re tense and anxious, eager for a fast answer. You don't make small talk and focus only on the problem. You reserve judgment about the agent\u2019s ability to help. You want precise and prompt information before relaxing.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "anxiety",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "16_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "kIPaRwI",
+            "line_one": "41 45",
+            "line_two": "Apt 9",
+            "municipality": "Heraklion",
+            "province": "Crete",
+            "nation": "Greece",
+            "postal_code": "71202"
+          }
+        },
+        {
+          "action_id": "16_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "kIPaRwI",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "Wr6RMBI"
+          }
+        },
+        {
+          "action_id": "16_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "kIPaRwI",
+            "tip_total": 5.0,
+            "instrument_ref": "Wr6RMBI"
+          }
+        },
+        {
+          "action_id": "16_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "kIPaRwI"
+          }
+        },
+        {
+          "action_id": "16_4",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "unsnc43",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "16_5",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "unsnc43"
+          }
+        },
+        {
+          "action_id": "16_6",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "kIPaRwI",
+            "instrument_ref": "Wr6RMBI"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0017",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Wei Park, a customer with two active delivery orders. You want to update your first order (ticket dTTef2b) by changing the delivery address to your registered address at 165 Jaffa Street, Near the market, Singapore, Central Region, Singapore, 069113, because it is more convenient for dropoff. You also want to swap one 'Tlayuda Oaxaque\u00f1a - Regular, Medium' plate (the one with raita sauce and a salad side) for a 'Tlayuda Oaxaque\u00f1a - Regular, Mild' plate to reduce the spice level for one of the recipients, with the price difference refunded to your card ending in 1355. Additionally, you would like to add a $10.00 tip to this order as a gesture of appreciation, using your card ending in 1355. Later, you will cancel your second placed order (ticket exVzx9p) because you realized it was a duplicate and no longer needed. After that, you would like to update the payment method on the first order (dTTef2b) to use your card ending in 1355, which is already saved in your account, to ensure consistency in billing and for easier expense tracking.\n\nUse wei.park.197@example.com for authentication.",
+      "emotion_instruction": "You\u2019re feeling serene, but you want things handled quickly. Speak directly and avoid unnecessary details. Show you trust the agent\u2019s help. Maintain a steady, neutral tone throughout the exchange.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "17_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "line_one": "165 Jaffa Street",
+            "line_two": "Near the market",
+            "municipality": "Singapore",
+            "province": "Central Region",
+            "nation": "Singapore",
+            "postal_code": "069113"
+          }
+        },
+        {
+          "action_id": "17_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "plate_refs": [
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "mn1mEsg"
+            ],
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "17_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "tip_total": 10.0,
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "17_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "dTTef2b"
+          }
+        },
+        {
+          "action_id": "17_4",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "exVzx9p",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "17_5",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "instrument_ref": "o89N9vW"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0018",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Linnea Morel, and you want to modify one of the 'Large, Hot' lamb Emirati Machboos plates (the one with chili sauce and a salad side) in your delivery ticket VkkQKns to a 'Regular, Medium' chicken Emirati Machboos plate, because you prefer chicken over lamb for that portion. You want to use your saved credit card ending in 6687 for this change. After that, you would like to add a 10.00 tip to the same ticket using the same card, as a gesture of appreciation for the service. Later, you want to update the delivery address for your other order, ticket 8W8cnqY, to your correct address: 313 Haeundae-ro, Apt 37, Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia, 55213, because it was initially set to an incorrect location. After updating the address, you would like to cancel ticket 8W8cnqY, because you realized it was placed by mistake and no longer needed.\n\nUse linnea.morel.805@example.com for authentication.",
+      "emotion_instruction": "You\u2019re looking to keep things peaceful and behave kindly, but you\u2019re not convinced the agent will deliver. Communicate your urgent need while maintaining a trusting yet questioning tone.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "18_0",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "1pbengM"
+          }
+        },
+        {
+          "action_id": "18_1",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "tip_total": 10,
+            "instrument_ref": "1pbengM"
+          }
+        },
+        {
+          "action_id": "18_2",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "8W8cnqY",
+            "line_one": "313 Haeundae-ro",
+            "line_two": "Apt 37",
+            "municipality": "Yogyakarta",
+            "province": "Daerah Istimewa Yogyakarta",
+            "nation": "Indonesia",
+            "postal_code": "55213"
+          }
+        },
+        {
+          "action_id": "18_3",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "8W8cnqY",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0019",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Amelia Smith, and you first want to add a $20 tip to your placed delivery order DRb8rVg, charged to your National Bank of Egypt card ending in 7502. Once the tip has been added, you want to update the payment method for DRb8rVg to that same card ending in 7502, because you prefer to use that card for this transaction. Later, you would like to cancel your second placed delivery order npuYdiU because it was placed by mistake.\n\nUse amelia.smith.870@example.com for authentication.",
+      "emotion_instruction": "You are thrilled about getting this sorted fast. You communicate clearly and eagerly, wanting immediate answers. You believe the agent will handle things well. Stay upbeat and to the point.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "19_0",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "DRb8rVg",
+            "tip_total": 20,
+            "instrument_ref": "RhOv93J"
+          }
+        },
+        {
+          "action_id": "19_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "DRb8rVg"
+          }
+        },
+        {
+          "action_id": "19_2",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "DRb8rVg",
+            "instrument_ref": "RhOv93J"
+          }
+        },
+        {
+          "action_id": "19_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "DRb8rVg"
+          }
+        },
+        {
+          "action_id": "19_4",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "npuYdiU",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "19_5",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "npuYdiU"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0020",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Nikolaj Jones, and you have a placed dine-in ticket (Creanjs) for which you want to add a $15 tip using your VISA card ending in 6450 because you prefer to use that card for rewards. You would like to change your table reservation to a quieter zone, specifically Main Hall, table A12, for 4 guests, to ensure a more comfortable dining experience. After that, you prefer to update the payment method on the entire transaction to use your VISA card ending in 6450 instead of the current Maybank card, so that all charges are consolidated on your preferred rewards card.\n\nUse nikolaj.jones.445@example.com for authentication.",
+      "emotion_instruction": "You\u2019re thrilled about this process and it influences your communication. Speak directly and enthusiastically, keeping things moving. Trust the agent\u2019s expertise. Indicate you\u2019d love to get an answer shortly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "20_0",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "Creanjs"
+          }
+        },
+        {
+          "action_id": "20_1",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "Creanjs",
+            "tip_total": 15,
+            "instrument_ref": "lCS9Olx"
+          }
+        },
+        {
+          "action_id": "20_2",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "Creanjs",
+            "zone": "Main Hall",
+            "table_no": "A12",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "20_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "Creanjs",
+            "instrument_ref": "lCS9Olx"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0021",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jeroen Jones, and you have a placed dine-in reservation. You want to add a $10 tip to your ticket to show appreciation for the service in advance, using your preferred card ending in 0422. Later, you would like to change your table to zone Main, table A10, which accommodates 4 guests, to better suit your group size and preferred ambiance. After that, you would like to update the payment method on the same ticket to your other saved card ending in 0422, which you prefer for this transaction.\n\nUse jeroen.jones.529@example.com for authentication.",
+      "emotion_instruction": "You feel calm and at ease today. You speak kindly and share your request in a gentle way. You trust the agent\u2019s guidance and are happy to wait a little. Express appreciation for their help as you engage.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "21_0",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "LWktwp9"
+          }
+        },
+        {
+          "action_id": "21_1",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "LWktwp9",
+            "tip_total": 10,
+            "instrument_ref": "qwzEmGN"
+          }
+        },
+        {
+          "action_id": "21_2",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "LWktwp9",
+            "zone": "Main",
+            "table_no": "A10",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "21_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "LWktwp9",
+            "instrument_ref": "qwzEmGN"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0022",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Ahmed Sukprasert, and you have two placed delivery orders. You want to update the dropoff address for ticket wM4L4To to your home address, exactly as it is saved in your account: 263 Hamnkanalen 2 (all on the first address line, with no second line), M\u00fcnchen, Bavaria, Germany, 80331, because it is more convenient for delivery. You also want to change the payment method for this ticket to your Barclays card ending in 8778, which is saved in your account, for consistency with your preferred payment. Later, you would like to know the details of the Emirati Machboos dish currently on the menu, as you are interested in its plate options (protein, portion, spice level and price). After reviewing, you would like to cancel your second placed ticket ttNxnYX because it was ordered by mistake and is no longer needed.\n\nUse ahmed.sukprasert.929@example.com for authentication.",
+      "emotion_instruction": "You\u2019re animated while explaining your needs. Use a conversational tone, letting your excitement come through. You believe the agent will sort things out soon. Be expressive and ask for a prompt answer.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "22_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "wM4L4To",
+            "line_one": "263 Hamnkanalen 2",
+            "line_two": "",
+            "municipality": "M\u00fcnchen",
+            "province": "Bavaria",
+            "nation": "Germany",
+            "postal_code": "80331"
+          }
+        },
+        {
+          "action_id": "22_1",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "wM4L4To",
+            "instrument_ref": "hDnsk7S"
+          }
+        },
+        {
+          "action_id": "22_2",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "22_3",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "22_4",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "ttNxnYX",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "22_5",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "ttNxnYX"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0023",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jeroen Nordmann, and you want to update your dine-in reservation for ticket 5zsU5RX by changing the table from the Bar area to a Garden table, specifically table B5, to accommodate a smaller party of 4 people. You would like to add a $20 gratuity to this reservation using your saved credit card ending in 2719. Later, you will cancel your other dine-in reservation, ticket K9WK4lj, because you will not be able to attend it, to avoid any further charges. Once your own reservations are taken care of, you also want the agent to change the delivery address on your neighbour Aino Lindgren's order YfM8akw to your home address, 5 Cad. No:120, Ghent, East Flanders, Belgium, 9000, because her flat is being renovated and she is staying with you for a few days.\n\nUse jeroen.nordmann.103@example.com for authentication.",
+      "emotion_instruction": "You value a calm interaction and aim for harmony, but you\u2019re in a hurry. Remain polite and caring, while gently questioning the agent\u2019s suggestions. Let your urgency show through gentle persistence.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "23_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "5zsU5RX",
+            "zone": "Garden",
+            "table_no": "B5",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "23_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "5zsU5RX"
+          }
+        },
+        {
+          "action_id": "23_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "5zsU5RX",
+            "tip_total": 20,
+            "instrument_ref": "K3tzJUu"
+          }
+        },
+        {
+          "action_id": "23_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "5zsU5RX"
+          }
+        },
+        {
+          "action_id": "23_4",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "K9WK4lj",
+            "reason": "won't be able to make it to the restaurant"
+          }
+        },
+        {
+          "action_id": "23_5",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "K9WK4lj"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0024",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Min-jun Kim, and you have a placed dine-in ticket (9rwtQ0u) for which you want to make several updates. First, you want to change your table reservation from Patio, table D3, to Patio, table D5, to accommodate a larger group of 6 people. Next, you would like to modify one of the two 'Tlayuda Oaxaque\u00f1a - Regular, Mild' plates (the one with house sauce and a salad side) to 'Regular, Medium' for more variety in spice levels, as the medium-spicy version is available today. After that, you would like to add a $20 tip to show your appreciation, using your Monobank card ending in 9834, which is already on file for this ticket.\n\nUse min-jun.kim.379@example.com for authentication.",
+      "emotion_instruction": "You radiate excitement and your messages are energetic and warm. You keep the interaction polite and welcoming. You want timely progress, but you\u2019re not overly urgent. You\u2019re open to guidance, but you verify information given by the agent.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "24_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "9rwtQ0u",
+            "zone": "Patio",
+            "table_no": "D5",
+            "seat_count": 6
+          }
+        },
+        {
+          "action_id": "24_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "9rwtQ0u",
+            "plate_refs": [
+              "mn1mEsg"
+            ],
+            "new_plate_refs": [
+              "TvCGrmk"
+            ],
+            "instrument_ref": "AraBUA4"
+          }
+        },
+        {
+          "action_id": "24_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "9rwtQ0u",
+            "tip_total": 20,
+            "instrument_ref": "AraBUA4"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0025",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Thando Petrova, and you want to cancel your placed dine-in ticket C84OPN4 because you no longer need it. Later, you would like to update your remaining reservation (ticket oV9GjCD) by changing the table from Patio A21 (for 2) to Indoor B12 (for 4) to accommodate more guests. After that, you prefer to modify one of the Emirati Machboos orders on that ticket, upgrading it from the regular chicken portion with medium spice to the large lamb portion with hot spice, because it better suits your guests' preferences. You want all changes applied to your current reservation and prefer to keep using your saved JCB card ending in 8460 for any applicable charges.\n\nUse thando.petrova.471@example.com for authentication.",
+      "emotion_instruction": "You feel a surge of excitement and can't wait to resolve this quickly. You speak with energy and directness. You trust the agent to help, so you jump right into details. Keep your tone lively and focused.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "25_0",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "C84OPN4",
+            "reason": "no longer needed"
+          }
+        },
+        {
+          "action_id": "25_1",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "oV9GjCD",
+            "zone": "Indoor",
+            "table_no": "B12",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "25_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "oV9GjCD",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "1bIrZ6r"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0026",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Aydar Lindgren, and you want to cancel your placed dine-in ticket gvwf8X6 because it was ordered by mistake. Later, you would like to change the table reservation for your remaining ticket CgmzNod from Window B12 (for 2) to Garden G5 (for 4) to accommodate more guests. After that, you would like to modify the food order on ticket CgmzNod by upgrading the spice level of the Tlayuda Oaxaque\u00f1a from mild to medium while keeping the same portion size, and you prefer to use your PKO Bank Polski card ending in 2956 for any additional charges.\n\nUse aydar.lindgren.875@example.com for authentication.",
+      "emotion_instruction": "You feel a sense of nervous urgency and want reassurance. Express gratitude warmly but let your anxiety be felt. Push for prompt action without sounding harsh. You're hesitant to place complete trust in the agent.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "26_0",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "gvwf8X6",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "26_1",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "CgmzNod",
+            "zone": "Garden",
+            "table_no": "G5",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "26_2",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "26_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "CgmzNod",
+            "plate_refs": [
+              "mn1mEsg"
+            ],
+            "new_plate_refs": [
+              "TvCGrmk"
+            ],
+            "instrument_ref": "zdqXeSA"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0027",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Fatima Lindgren, and you want to modify your placed delivery ticket FDhvm4V by changing the Emirati Machboos from the large, hot lamb plate to the medium, regular chicken plate because that is your preferred selection. You want the price difference refunded to your saved Equity Bank credit card ending in 2290. After confirming the change, you would like to add a $5 tip to the same ticket using your saved Equity Bank credit card ending in 2290, as it is your preferred payment method for this transaction.\n\nUse fatima.lindgren.384@example.com for authentication.",
+      "emotion_instruction": "You feel a spark of excitement about resolving your issue, but you keep your tone even. You\u2019d like the process not to drag on. Ask concise questions, and if something isn\u2019t clear, ask for clarification. Make sure you get the answers you need.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "27_0",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "FDhvm4V"
+          }
+        },
+        {
+          "action_id": "27_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "27_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "FDhvm4V",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "q5RVZXv"
+          }
+        },
+        {
+          "action_id": "27_3",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "FDhvm4V",
+            "tip_total": 5,
+            "instrument_ref": "q5RVZXv"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0028",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Wei Park, and you have two active delivery orders. You want to update the delivery address for ticket dTTef2b to your current location, exactly as it is saved in your account: 165 Jaffa Street on the first address line, Near the market on the second address line, Singapore, Central Region, Singapore, postal code 069113, because you want the order delivered to where you are now. Then, you want to change the payment method for this ticket to your credit card ending in 1355 (issued by National Bank of Egypt) because you prefer to use this card for the transaction. After that, you would like to add a $20 tip to this order using the same card, as a gesture of appreciation for timely delivery. Later, you will cancel your second placed ticket exVzx9p because it was placed by mistake and you no longer need it. You also want the agent to send the delivery order abncAK7 of your sister Ximena Park to that same Jaffa Street address, because she is at your place with you today and you want to eat together.\n\nUse wei.park.197@example.com for authentication.",
+      "emotion_instruction": "You are thrilled about getting this sorted fast. You communicate clearly and eagerly, wanting immediate answers. You believe the agent will handle things well. Stay upbeat and to the point.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "28_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "line_one": "165 Jaffa Street",
+            "line_two": "Near the market",
+            "municipality": "Singapore",
+            "province": "Central Region",
+            "nation": "Singapore",
+            "postal_code": "069113"
+          }
+        },
+        {
+          "action_id": "28_1",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "28_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "tip_total": 20,
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "28_3",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "exVzx9p",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0029",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Akiko Durand, and you want to update your delivery ticket 86MpfQi by changing the dropoff address to your primary residence, exactly as it is saved in your account: 205 Haeundae-ro on the first address line, Apt 16 on the second address line, city Z\u00fcrich, province Z\u00fcrich, Switzerland, 8001, because it is more convenient for receiving the order. You also want to switch the payment method to your M-Pesa card ending in 7428 for better expense tracking. Additionally, you would like to add a $20 gratuity to this ticket as a token of appreciation for prompt service. Then, in this same conversation, you also want to cancel your second delivery ticket vUHrpeR because the order is no longer needed. You also want the agent to change the delivery address on order 6ecLAQi, which belongs to your cousin Thando Durand, to your same primary residence address, because Thando is staying with you this week and you want to have dinner together.\n\nUse akiko.durand.461@example.com for authentication.",
+      "emotion_instruction": "You feel a surge of excitement and can't wait to resolve this quickly. You speak with energy and directness. You trust the agent to help, so you jump right into details. Keep your tone lively and focused.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "29_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "line_one": "205 Haeundae-ro",
+            "line_two": "Apt 16",
+            "municipality": "Z\u00fcrich",
+            "province": "Z\u00fcrich",
+            "nation": "Switzerland",
+            "postal_code": "8001"
+          }
+        },
+        {
+          "action_id": "29_1",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "29_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "tip_total": 20,
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "29_3",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "vUHrpeR",
+            "reason": "no longer needed"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0030",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Wei Park, and you have a placed delivery order (ticket dTTef2b) that currently has an incorrect dropoff address set to Chengdu, China. You want to update the dropoff address to your correct location: 165 Jaffa Street, Near the market, Singapore, Central Region, Singapore, 069113, so the order reaches the right destination. After that, you would like to modify one plate of 'Tlayuda Oaxaque\u00f1a - Regular, Medium' (the one with raita sauce and a salad side) to 'Tlayuda Oaxaque\u00f1a - Regular, Mild' because you prefer a milder spice level for one serving, with the price difference refunded to your National Bank of Egypt card ending in 1355. Later, you intend to switch the payment method from your Alpha Bank card to your National Bank of Egypt card (ending in 1355) for better currency handling. After updating the payment instrument, you would like to add a $10 tip to show appreciation for the service.\n\nUse wei.park.197@example.com for authentication.",
+      "emotion_instruction": "You feel a rush of excitement about this and your messages are bright and eager. You're polite but want things to move quickly. Express warmth but keep a slight reserve, wanting to be sure you can rely on the agent. Press for prompt answers while staying friendly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "30_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "line_one": "165 Jaffa Street",
+            "line_two": "Near the market",
+            "municipality": "Singapore",
+            "province": "Central Region",
+            "nation": "Singapore",
+            "postal_code": "069113"
+          }
+        },
+        {
+          "action_id": "30_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "plate_refs": [
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "mn1mEsg"
+            ],
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "30_2",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "30_3",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "tip_total": 10,
+            "instrument_ref": "o89N9vW"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0031",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Amelia Nordmann, and you have two placed dine-in tickets. You want to modify ticket WB0Qm0m by swapping the Large Lamb Emirati Machboos for an additional Regular Chicken Emirati Machboos, as you prefer a lighter option, and you would like the $10 refund applied to your China Construction Bank card ending in 5371. Later, you would like to add a $15 tip to the same ticket WB0Qm0m as a gesture of goodwill, using the same card. After that, you would like to cancel your second placed ticket 9dy0V9F entirely, as it was ordered by mistake and you no longer need it.\n\nUse amelia.nordmann.294@example.com for authentication.",
+      "emotion_instruction": "You\u2019re proud of what you\u2019ve done and want the interaction to reflect that. Use polite, warm language, but ask clarifying questions to ensure accuracy. Move the conversation forward at a comfortable pace. Trust the agent, but remain attentive to details.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "31_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "31_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "31_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "VYD7XBY"
+          }
+        },
+        {
+          "action_id": "31_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m"
+          }
+        },
+        {
+          "action_id": "31_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m",
+            "tip_total": 15,
+            "instrument_ref": "VYD7XBY"
+          }
+        },
+        {
+          "action_id": "31_5",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "9dy0V9F"
+          }
+        },
+        {
+          "action_id": "31_6",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "9dy0V9F",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0032",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Oleksandr Kov\u00e1cs, and you have two placed delivery tickets. You want to cancel ticket xCj9ypp because it was placed by mistake. For your remaining ticket VuOwgar, you first want to change the payment method from your Visa card ending in 8182 to your BBVA card ending in 1513. Once that payment change is done, you also want to modify the food selections: swap one large lamb Machboos (hot, large portion) to a regular chicken Machboos (medium spice, regular portion) because you prefer a lighter option, and change one Tlayuda Oaxaque\u00f1a's protein from tasajo to quesillo because you prefer a milder, vegetarian alternative. You want the price difference from the food changes refunded to your BBVA card ending in 1513. Finally, you want to update the delivery address for ticket VuOwgar to your correct apartment at 75 Khreshchatyk St, Apt 16, Gothenburg, V\u00e4stra G\u00f6taland, Sweden, 411 36, as the current address is incorrect.\n\nUse oleksandr.kov\u00e1cs.988@example.com for authentication.",
+      "emotion_instruction": "You maintain a peaceful, friendly demeanor, taking things at a moderate pace. Thank the agent, but request clarification if anything is uncertain. Express that you are comfortable, though you prefer to review the details together. Keep a gentle, questioning tone.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "32_0",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "xCj9ypp",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "32_1",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "VuOwgar",
+            "instrument_ref": "Y0ZIRZJ"
+          }
+        },
+        {
+          "action_id": "32_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "VuOwgar",
+            "plate_refs": [
+              "ufZ5e5O",
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "SknHzVX",
+              "mn1mEsg"
+            ],
+            "instrument_ref": "Y0ZIRZJ"
+          }
+        },
+        {
+          "action_id": "32_3",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "VuOwgar",
+            "line_one": "75 Khreshchatyk St",
+            "line_two": "Apt 16",
+            "municipality": "Gothenburg",
+            "province": "V\u00e4stra G\u00f6taland",
+            "nation": "Sweden",
+            "postal_code": "411 36"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0033",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miguel Dela Cruz, and you want to cancel your placed delivery ticket i9LnwJo because you ordered it by mistake. For your other placed delivery ticket zLnkTAu, you first want to update the payment method to your other credit card ending in 4234, which is already saved on your account. Once that payment change is done, you would like to modify zLnkTAu by changing the Emirati Machboos from the current large hot lamb version to the regular medium chicken version, as that is your preferred plate selection, with the price difference refunded to the card ending in 4234. After that, you would like the delivery address for ticket zLnkTAu to be updated to your home address: 135 88, Chunxi Road, Apt 55, Edinburgh, Scotland, EH1 1SG, United Kingdom, so the order is delivered to the correct location.\n\nUse miguel.dela cruz.665@example.com for authentication.",
+      "emotion_instruction": "You\u2019re buzzing with happy anticipation and need answers quickly. Address the agent with warmth, but don\u2019t hide your doubts. Challenge vague statements and make sure to get clear timelines. Keep the conversation lively and fast-paced.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "33_0",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "i9LnwJo",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "33_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "i9LnwJo"
+          }
+        },
+        {
+          "action_id": "33_2",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "zLnkTAu",
+            "instrument_ref": "JbTCgn4"
+          }
+        },
+        {
+          "action_id": "33_3",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "33_4",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "33_5",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "zLnkTAu",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "JbTCgn4"
+          }
+        },
+        {
+          "action_id": "33_6",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "zLnkTAu",
+            "line_one": "135 88, Chunxi Road",
+            "line_two": "Apt 55",
+            "municipality": "Edinburgh",
+            "province": "Scotland",
+            "nation": "United Kingdom",
+            "postal_code": "EH1 1SG"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0034",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miguel Al Mansoori, and you want to modify one plate in your placed delivery order KRTUW74 by upgrading one 'Emirati Machboos - Regular, Medium' (chicken, medium spice; the one with raita sauce, not the one with house sauce) to 'Emirati Machboos - Large, Hot' (lamb, hot spice), because you prefer a larger portion with lamb and more heat. You want the price difference charged to your Monobank Visa card ending in 5174, which is already on file. Later, you would like to cancel your other placed delivery order X1AeJne, because you placed it by mistake and it is a duplicate of your intended order.\n\nUse miguel.al mansoori.713@example.com for authentication, typed exactly as written (with a space, not a dot, between 'al' and 'mansoori'). Your postal code is 40020-000.",
+      "emotion_instruction": "You feel an excited urgency and can\u2019t wait for results. Keep your tone brisk and concise. Let your excitement show, but make sure to verify any promises the agent makes.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "34_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "34_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "34_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "KRTUW74",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "7mpx2p2"
+          }
+        },
+        {
+          "action_id": "34_3",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "X1AeJne"
+          }
+        },
+        {
+          "action_id": "34_4",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "X1AeJne",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0035",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jeroen Nordmann, and you want to cancel your dine-in ticket K9WK4lj because you won't be able to attend. You also want to update your other dine-in reservation, ticket 5zsU5RX, from the Bar zone (table A3, for 6 people) to a smaller table in the Main zone, specifically table B5 for 4 people, to better match your current party size. After confirming the changes, you would like to add a $20 tip to ticket 5zsU5RX as a gesture of appreciation for the staff's flexibility, using your saved credit card ending in 2719 issued by Bank Melli Iran.\n\nUse jeroen.nordmann.103@example.com for authentication.",
+      "emotion_instruction": "You are relaxed and courteous, but not overly trusting. Communicate calmly, expressing appreciation while double-checking facts. Your questions are steady, not rushed, but you want clear and complete explanations. Keep the interaction friendly but observant.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "35_0",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "K9WK4lj",
+            "reason": "won't be able to attend"
+          }
+        },
+        {
+          "action_id": "35_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "K9WK4lj"
+          }
+        },
+        {
+          "action_id": "35_2",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "5zsU5RX",
+            "zone": "Main",
+            "table_no": "B5",
+            "seat_count": 4
+          }
+        },
+        {
+          "action_id": "35_3",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "5zsU5RX",
+            "tip_total": 20,
+            "instrument_ref": "K3tzJUu"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0036",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Wei Park, and you have a placed delivery ticket (dTTef2b) with three Tlayuda Oaxaque\u00f1a plates: two 'Regular, Medium' and one 'Regular, Mild'. You want to change one of the 'Regular, Medium' plates (the one with raita sauce and a salad side) to a 'Regular, Mild' plate because you prefer milder food, and you prefer to use your National Bank of Egypt card ending in 1355 for any payment adjustment related to this swap. Later, you want to update the delivery address for this ticket to your current location, exactly as it is saved in your account: 165 Jaffa Street on the first address line, Near the market on the second address line, Singapore, Central Region, Singapore, postal code 069113. After that, you would like to change the primary payment card on the entire ticket to your National Bank of Egypt card ending in 1355 and add a $20 tip using the same card, to reflect your updated payment preference for the full order.\n\nUse wei.park.197@example.com for authentication.",
+      "emotion_instruction": "You're feeling tense and on edge, worried about the outcome. Use a warm tone and thank the agent, but keep your requests concise and urgent. Express your worries clearly. Trust is building but fragile.",
+      "emotion_metadata": {
+        "emotion_family": "fear",
+        "emotion_leaf": "nervousness",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "36_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "36_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "dTTef2b"
+          }
+        },
+        {
+          "action_id": "36_2",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "TtBjGxz"
+          }
+        },
+        {
+          "action_id": "36_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "plate_refs": [
+              "TvCGrmk"
+            ],
+            "new_plate_refs": [
+              "mn1mEsg"
+            ],
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "36_4",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "line_one": "165 Jaffa Street",
+            "line_two": "Near the market",
+            "municipality": "Singapore",
+            "province": "Central Region",
+            "nation": "Singapore",
+            "postal_code": "069113"
+          }
+        },
+        {
+          "action_id": "36_5",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "instrument_ref": "o89N9vW"
+          }
+        },
+        {
+          "action_id": "36_6",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "dTTef2b",
+            "tip_total": 20,
+            "instrument_ref": "o89N9vW"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0037",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Linnea Morel, and you want to modify your placed delivery order VkkQKns by changing one large lamb Machboos plate (the one with chili sauce and a salad side) to a regular chicken Machboos plate because you prefer a different protein option, and you want the refund for the price difference to go to your credit card ending in 4565. Once the plate change is done, you would like to move the payment for this order from your card ending in 6687 to your other credit card ending in 4565 for consistency with your preferred spending account. After that, you would like to add a $10.00 tip to the same order using the updated card as a gesture of appreciation for prompt service. Later, you also want to cancel your second placed order because it was placed by mistake and is no longer needed.\n\nUse linnea.morel.805@example.com for authentication.",
+      "emotion_instruction": "You radiate excitement, using upbeat and engaging language. Be warm, but make it clear that promptness is important to you. While you\u2019re hopeful, ask for detailed confirmations before proceeding. Communicate openly, but keep an eye out for any mistakes.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "37_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "37_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "37_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "J9B16LJ"
+          }
+        },
+        {
+          "action_id": "37_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "instrument_ref": "J9B16LJ"
+          }
+        },
+        {
+          "action_id": "37_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "tip_total": 10.0,
+            "instrument_ref": "J9B16LJ"
+          }
+        },
+        {
+          "action_id": "37_5",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "VkkQKns"
+          }
+        },
+        {
+          "action_id": "37_6",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "8W8cnqY",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0038",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Akiko Durand, and you have two active delivery orders. You want to update the dropoff address for your ticket 86MpfQi to your home address, exactly as it is saved in your account: 205 Haeundae-ro on the first address line, Apt 16 on the second address line, city Z\u00fcrich, province Z\u00fcrich, Switzerland, 8001, because you realized the current address is incorrect. After that, you would like to change the payment method on the same ticket from your Vietcombank Visa ending in 8040 to your other saved card, M-Pesa ending in 7428, because you prefer to use that card for this order. You also want to add a $20 tip to ticket 86MpfQi using the new card, as a gesture of appreciation for timely delivery. Later, you will cancel your other placed ticket vUHrpeR because you placed it by mistake and only need one delivery.\n\nUse akiko.durand.461@example.com for authentication.",
+      "emotion_instruction": "You\u2019re buzzing with excitement and want things sorted quickly. Speak energetically, but keep your tone businesslike. Push for fast answers without sounding rude. You\u2019re hopeful but not fully convinced the agent can deliver.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "38_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "line_one": "205 Haeundae-ro",
+            "line_two": "Apt 16",
+            "municipality": "Z\u00fcrich",
+            "province": "Z\u00fcrich",
+            "nation": "Switzerland",
+            "postal_code": "8001"
+          }
+        },
+        {
+          "action_id": "38_1",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "38_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "tip_total": 20,
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "38_3",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "vUHrpeR",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0039",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Akiko Durand, and you have two placed delivery tickets. You want to update the dropoff address for your ticket 86MpfQi from its current location in Cluj-Napoca, Romania, to your home address, exactly as it is saved in your account: 205 Haeundae-ro (first address line), Apt 16 (second address line), Z\u00fcrich (city), Z\u00fcrich (province), Switzerland, 8001, because you realized the order was intended for home delivery. Later, you want to cancel your other ticket vUHrpeR because it was placed by mistake. After that, you would like to change the payment method on ticket 86MpfQi from your Vietcombank Visa ending in 8040 to your M-Pesa card ending in 7428, and you prefer to add a $10 tip to the same ticket using the new card to reward good service.\n\nUse akiko.durand.461@example.com for authentication.",
+      "emotion_instruction": "You feel a burst of enthusiasm about the service, but you hold back from being overly trusting. Respond with positive energy, but make sure to clarify important points. You keep things friendly, not too formal or too casual.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "low",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "39_0",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "line_one": "205 Haeundae-ro",
+            "line_two": "Apt 16",
+            "municipality": "Z\u00fcrich",
+            "province": "Z\u00fcrich",
+            "nation": "Switzerland",
+            "postal_code": "8001"
+          }
+        },
+        {
+          "action_id": "39_1",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "vUHrpeR",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "39_2",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "39_3",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "tip_total": 10,
+            "instrument_ref": "jq78TBB"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0040",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Amelia Nordmann, and you want to modify your placed dine-in ticket WB0Qm0m by upgrading one regular Emirati Machboos plate (the one with house sauce and a fries side) to a large portion, because you have an increased appetite. The price difference of $10 should be charged to your saved China Construction Bank card ending in 5371. After that, you would like to add a $20 tip to the same ticket to acknowledge prompt service, also using the same card.\n\nUse amelia.nordmann.294@example.com for authentication.",
+      "emotion_instruction": "You\u2019re filled with pride about your achievements and want rapid assistance. Speak warmly to the agent, showing your appreciation. Emphasize the need to resolve things quickly. Assume the agent will deliver.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "40_0",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m"
+          }
+        },
+        {
+          "action_id": "40_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "40_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "VYD7XBY"
+          }
+        },
+        {
+          "action_id": "40_3",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "WB0Qm0m",
+            "tip_total": 20,
+            "instrument_ref": "VYD7XBY"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0041",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Fatima Petrov, and you have a placed dine-in ticket for 6 people at table C13 in the Main Hall. You want to change your reservation to a smaller table for 2 people in the Bar zone, specifically table A1, to better suit your updated party size. After that, you would like to add a $50 tip to your ticket using your Banco Galicia card ending in 5359. Later, you want to update the payment method on the same ticket to use that same Banco Galicia card (ending in 5359) instead of your Visa card ending in 0977, to ensure consistency in your payment preference.\n\nUse fatima.petrov.220@example.com for authentication.",
+      "emotion_instruction": "You are thrilled about getting this sorted fast. You communicate clearly and eagerly, wanting immediate answers. You believe the agent will handle things well. Stay upbeat and to the point.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "41_0",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "vGtULO8",
+            "zone": "Bar",
+            "table_no": "A1",
+            "seat_count": 2
+          }
+        },
+        {
+          "action_id": "41_1",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "vGtULO8",
+            "tip_total": 50,
+            "instrument_ref": "XWQdfeB"
+          }
+        },
+        {
+          "action_id": "41_2",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "vGtULO8"
+          }
+        },
+        {
+          "action_id": "41_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "vGtULO8",
+            "instrument_ref": "XWQdfeB"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0042",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Amelia Smith, and you want to review the full menu and learn more about the Tlayuda Oaxaque\u00f1a, which you know has two available options today: a mild version with quesillo or a medium-spicy version with tasajo. You do not want to place any new order. You would like to update the payment method on your ticket DRb8rVg to your other credit card ending in 7502 because you prefer to use that card for this order, and then to upgrade one of the two mild quesillo Tlayudas on that ticket (the one with raita sauce and no side) to the medium-spicy tasajo version, with the price difference charged to the card ending in 7502; the other Tlayuda (garlic sauce, rice side) stays as it is. Once the upgrade is done, you also want to add a $20 tip to the same ticket using the card ending in 7502. After that, you would like to update the delivery address for ticket DRb8rVg to 90 Ermou Street, Near the market, Chicago, Illinois, 60601, United States, because the current address is incorrect. Later, you will cancel your other ticket npuYdiU because it was placed by mistake and is a duplicate order.\n\nUse amelia.smith.870@example.com for authentication.",
+      "emotion_instruction": "You are excited and want progress right now. Respond firmly and with purpose, but avoid being too informal. Express your high hopes, yet double-check the agent\u2019s claims.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "42_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "42_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "TtBjGxz"
+          }
+        },
+        {
+          "action_id": "42_2",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "DRb8rVg"
+          }
+        },
+        {
+          "action_id": "42_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "DRb8rVg",
+            "instrument_ref": "RhOv93J"
+          }
+        },
+        {
+          "action_id": "42_4",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "DRb8rVg",
+            "plate_refs": [
+              "mn1mEsg"
+            ],
+            "new_plate_refs": [
+              "TvCGrmk"
+            ],
+            "instrument_ref": "RhOv93J"
+          }
+        },
+        {
+          "action_id": "42_5",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "DRb8rVg",
+            "tip_total": 20,
+            "instrument_ref": "RhOv93J"
+          }
+        },
+        {
+          "action_id": "42_6",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "DRb8rVg",
+            "line_one": "90 Ermou Street",
+            "line_two": "Near the market",
+            "municipality": "Chicago",
+            "province": "Illinois",
+            "nation": "United States",
+            "postal_code": "60601"
+          }
+        },
+        {
+          "action_id": "42_7",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "npuYdiU",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0043",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Linnea Morel, a customer with two active delivery orders. You want to first review the menu details for Emirati Machboos to confirm your order choices. You are only looking: you do not want to change any plates on either order in this conversation. Then, you want to change the payment method on your ticket VkkQKns to your other credit card ending in 4565 (issued by Ziraat Bankas\u0131) because you prefer to use that card for this transaction, and you would like to add a $15 tip using the same card as a gesture of appreciation. After that, you want to update the delivery address for ticket VkkQKns to your current location at 313 Haeundae-ro, Apt 37, Yogyakarta, Daerah Istimewa Yogyakarta, Indonesia, 55213, to ensure accurate delivery. Finally, you would like to cancel your duplicate order on ticket 8W8cnqY because you no longer need it and to avoid any confusion or duplicate charges.\n\nUse linnea.morel.805@example.com for authentication.",
+      "emotion_instruction": "You are excited and want progress right now. Respond firmly and with purpose, but avoid being too informal. Express your high hopes, yet double-check the agent\u2019s claims.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "43_0",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "43_1",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "43_2",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "VkkQKns"
+          }
+        },
+        {
+          "action_id": "43_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "instrument_ref": "J9B16LJ"
+          }
+        },
+        {
+          "action_id": "43_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "tip_total": 15,
+            "instrument_ref": "J9B16LJ"
+          }
+        },
+        {
+          "action_id": "43_5",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "VkkQKns",
+            "line_one": "313 Haeundae-ro",
+            "line_two": "Apt 37",
+            "municipality": "Yogyakarta",
+            "province": "Daerah Istimewa Yogyakarta",
+            "nation": "Indonesia",
+            "postal_code": "55213"
+          }
+        },
+        {
+          "action_id": "43_6",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "8W8cnqY",
+            "reason": "no longer needed"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0044",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Aidar Martinez, and you want to update your placed delivery ticket G61vD8j by first adding a $5 tip using your Vietcombank card ending in 4530, because you forgot to include a tip initially. Then, you would like to upgrade the Emirati Machboos on the same ticket from the regular chicken portion to the large lamb version, as you prefer a heartier meal, and you want the price difference to be charged to the same card. After that, you would like to cancel your other placed delivery ticket N5PMgp4, because it was a duplicate order placed by mistake. You also want the agent to move the dine-in order IGwlC9k of your neighbour Linnea Nguyen to the Patio zone, table B3, for 6 seats, because she asked you to take care of it for her.\n\nUse aidar.martinez.899@example.com for authentication.",
+      "emotion_instruction": "You\u2019re serene and welcoming, greeting the agent with trust and kindness. Although you\u2019re peaceful, you emphasize the need for immediate action. You keep your language positive and respectful. Your communication is warm, clear, and insistent.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "44_0",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "G61vD8j",
+            "tip_total": 5,
+            "instrument_ref": "gDL4xq3"
+          }
+        },
+        {
+          "action_id": "44_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "G61vD8j"
+          }
+        },
+        {
+          "action_id": "44_2",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "G61vD8j",
+            "plate_refs": [
+              "SknHzVX"
+            ],
+            "new_plate_refs": [
+              "ufZ5e5O"
+            ],
+            "instrument_ref": "gDL4xq3"
+          }
+        },
+        {
+          "action_id": "44_3",
+          "name": "get_dish_details",
+          "arguments": {
+            "dish_ref": "oCBGWNl"
+          }
+        },
+        {
+          "action_id": "44_4",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "G61vD8j"
+          }
+        },
+        {
+          "action_id": "44_5",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "N5PMgp4",
+            "reason": "ordered by mistake"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0045",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miguel Dela Cruz, and you want to cancel your delivery ticket i9LnwJo because it was placed by mistake, and you would like confirmation of its cancellation status. You also want to receive the full menu to review available options. For your other placed delivery ticket zLnkTAu, you would like to change the plate selection for Emirati Machboos from the Large Lamb (Hot) variant to the Regular Chicken (Medium) variant, as it is a cheaper option, and you prefer the price difference be refunded to your saved Sberbank Visa card ending in 6893.\n\nUse miguel.dela cruz.665@example.com for authentication, typed exactly as written (with a space, not a dot, between \"dela\" and \"cruz\"). Your postal code is EH1 1SG.",
+      "emotion_instruction": "You are calm and warm, but you proceed cautiously. Use polite language and moderate urgency, making sure to clarify anything unclear. Trust the agent somewhat, but validate the solutions provided. Stay engaged and appreciative throughout.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "45_0",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "i9LnwJo",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "45_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "i9LnwJo"
+          }
+        },
+        {
+          "action_id": "45_2",
+          "name": "list_all_dishes",
+          "arguments": {}
+        },
+        {
+          "action_id": "45_3",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "zLnkTAu",
+            "plate_refs": [
+              "ufZ5e5O"
+            ],
+            "new_plate_refs": [
+              "SknHzVX"
+            ],
+            "instrument_ref": "1e59Q3v"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0046",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Akiko Durand, account akiko.durand.461@example.com, contacting about two placed delivery orders. You want to move the payment on delivery ticket 86MpfQi from your Vietcombank Visa ending in 8040 to your saved M-Pesa card ending in 7428, because you prefer to pay by that card for this order. Once the payment change is done, you also want to upgrade the Tlayuda Oaxaque\u00f1a on ticket 86MpfQi from the mild quesillo version to the medium tasajo version, with the extra cost charged to your M-Pesa card ending in 7428. Once the upgrade is done, you would also like a 5.00 tip added to the same ticket 86MpfQi and charged to the M-Pesa card ending in 7428, because you want the driver tip to use the same updated payment method. Later, you would like the dropoff address on ticket 86MpfQi changed to 205 Haeundae-ro, Apt 16, Z\u00fcrich, Z\u00fcrich, Switzerland 8001, because the current dropoff is an old Cluj-Napoca address and this is your home address. After that, you would like your other placed delivery ticket vUHrpeR cancelled, because you no longer need that order. You also want the agent to cancel your sister Aminah Durand's dine-in order OCR1uXK, because she asked you to take care of it for her.\n\nUse akiko.durand.461@example.com for authentication.",
+      "emotion_instruction": "You feel like you\u2019ve reached your breaking point and are not interested in chit-chat. Communicate with urgency and doubt. Make it clear you expect immediate attention, but aren\u2019t sure the agent will deliver.",
+      "emotion_metadata": {
+        "emotion_family": "anger",
+        "emotion_leaf": "exasperation",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "skeptical"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "46_0",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "46_1",
+          "name": "modify_placed_ticket_items",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "plate_refs": [
+              "mn1mEsg"
+            ],
+            "new_plate_refs": [
+              "TvCGrmk"
+            ],
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "46_2",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "tip_total": 5.0,
+            "instrument_ref": "jq78TBB"
+          }
+        },
+        {
+          "action_id": "46_3",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "86MpfQi",
+            "line_one": "205 Haeundae-ro",
+            "line_two": "Apt 16",
+            "municipality": "Z\u00fcrich",
+            "province": "Z\u00fcrich",
+            "nation": "Switzerland",
+            "postal_code": "8001"
+          }
+        },
+        {
+          "action_id": "46_4",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "vUHrpeR",
+            "reason": "no longer needed"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0047",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Miguel Petrova (miguel.petrova.868@example.com), contacting to clean up two pending delivery orders. You want to cancel the Tlayuda Oaxaque\u00f1a delivery order and request a refund because it was placed by mistake and you no longer need it. After that, you would like the dropoff address on the Emirati Machboos delivery order corrected to your home at 211 Baker Street, Apt 37, Thessaloniki, Central Macedonia, Greece, 546 24, because the address currently on that order is wrong. Once the address is fixed, you want the payment for that same Emirati Machboos delivery order changed to your saved Eastern Bank card ending in 3032 instead of the card originally charged, because that is the other saved card you prefer to use. Then, you would like an extra 5.00 tip added for the driver on that same order and charged to the Eastern Bank card ending in 3032, because you want the driver tip to use the updated payment method.\n\nUse miguel.petrova.868@example.com for authentication.",
+      "emotion_instruction": "You feel calm but need this resolved quickly. Speak clearly and to the point. Remain neutral and avoid excessive friendliness. Trust the agent somewhat, but double-check responses before accepting them.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "47_0",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "XjOYPfn",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "47_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "XjOYPfn"
+          }
+        },
+        {
+          "action_id": "47_2",
+          "name": "modify_placed_ticket_dropoff",
+          "arguments": {
+            "ticket_ref": "UfkEFne",
+            "line_one": "211 Baker Street",
+            "line_two": "Apt 37",
+            "municipality": "Thessaloniki",
+            "province": "Central Macedonia",
+            "nation": "Greece",
+            "postal_code": "546 24"
+          }
+        },
+        {
+          "action_id": "47_3",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "UfkEFne",
+            "instrument_ref": "xN7FT5a"
+          }
+        },
+        {
+          "action_id": "47_4",
+          "name": "add_tip_to_ticket",
+          "arguments": {
+            "ticket_ref": "UfkEFne",
+            "tip_total": 5.0,
+            "instrument_ref": "xN7FT5a"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0048",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Mikko Sukprasert, account email mikko.sukprasert.389@example.com, contacting restaurant support about two placed dine-in tickets. First, you want the payment method on your placed dine-in ticket at table A26 in the Bar changed from your Emirates NBD card ending in 9033 to your Metrobank card ending in 9160, because you prefer to use the Metrobank card for that order. After that, you would like that same ticket cancelled, because you realize it was ordered by mistake. Later, you also want your other placed dine-in ticket, currently at table A22 in the Patio, moved to table B7 in the Main zone with 6 seats, because you need a larger table to accommodate a bigger group.\n\nUse mikko.sukprasert.389@example.com for authentication.",
+      "emotion_instruction": "You feel aversion and want the matter resolved as soon as possible. Speak with friendliness and trust, even as you express your discomfort. Be honest about the urgency and thank the agent for listening. Remain positive toward their efforts.",
+      "emotion_metadata": {
+        "emotion_family": "disgust",
+        "emotion_leaf": "aversion",
+        "dimension_politeness": "warm",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "48_0",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "qmKZa00",
+            "instrument_ref": "kfEmmxq"
+          }
+        },
+        {
+          "action_id": "48_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "qmKZa00"
+          }
+        },
+        {
+          "action_id": "48_2",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "qmKZa00",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "48_3",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "sTwlSMQ",
+            "zone": "Main",
+            "table_no": "B7",
+            "seat_count": 6
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "restaurant_test_0049",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Reza De Smet, contacting from reza.de smet.334@example.com about two placed dine-in orders. You want the payment on your placed dine-in order reference HkGZuY5 for Tlayuda Oaxaque\u00f1a switched from your Sberbank card ending in 7946 to your saved PKO Bank Polski card ending in 1343, because you prefer to use that card for this order. After that, you want your other placed dine-in order reference Mmf3EgF for Chicken Machboos cancelled, because it was ordered by mistake. Later, you would like order reference HkGZuY5 moved from the Bar, table C11, to the Main Hall, table C8, with 4 seats, because your party of four wants a different spot. Once your own table has been moved, you also want the agent to move the placed dine-in order 13X85FQ of your friend Juan Hanna, who is part of that party of four, from the Bar, table C12, to the Main Hall, table C8, with 4 seats, so that the whole party sits together.\n\nUse reza.de smet.334@example.com for authentication, typed exactly as written (with a space, not a dot, between \"de\" and \"smet\"). Your postal code is 779 00.",
+      "emotion_instruction": "Maintain a peaceful, composed tone even with a pressing issue. Express your need for a fast solution. Interact politely but keep a watchful attitude. Verify the agent's guidance before proceeding.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "peace",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "49_0",
+          "name": "modify_placed_ticket_instrument",
+          "arguments": {
+            "ticket_ref": "HkGZuY5",
+            "instrument_ref": "rBskuba"
+          }
+        },
+        {
+          "action_id": "49_1",
+          "name": "get_ticket_details",
+          "arguments": {
+            "ticket_ref": "HkGZuY5"
+          }
+        },
+        {
+          "action_id": "49_2",
+          "name": "cancel_placed_ticket",
+          "arguments": {
+            "ticket_ref": "Mmf3EgF",
+            "reason": "ordered by mistake"
+          }
+        },
+        {
+          "action_id": "49_3",
+          "name": "modify_placed_ticket_table",
+          "arguments": {
+            "ticket_ref": "HkGZuY5",
+            "zone": "Main Hall",
+            "table_no": "C8",
+            "seat_count": 4
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  }
+]

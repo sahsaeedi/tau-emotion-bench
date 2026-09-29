@@ -1,0 +1,2289 @@
+{
+  "J5IXN2S-M1": {
+    "movie_id": "J5IXN2S-M1",
+    "title": "City of God (Cidade de Deus)",
+    "genres": [
+      "Thriller",
+      "Drama"
+    ],
+    "runtime_minutes": 130,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Portuguese"
+    ],
+    "subtitles": [
+      "English",
+      "Portuguese"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "02-08-30",
+    "end_of_run_est": "03-01-15",
+    "cast": [
+      {
+        "name": "Alexandre Rodrigues",
+        "role": "Buscap\u00e9"
+      },
+      {
+        "name": "Leandro Firmino",
+        "role": "Z\u00e9 Pequeno"
+      },
+      {
+        "name": "Alice Braga",
+        "role": "Ang\u00e9lica"
+      }
+    ],
+    "crew": {
+      "director": "Fernando Meirelles",
+      "writer": "Br\u00e1ulio Mantovani",
+      "producer": "Andrea Barata Ribeiro",
+      "music": "Antonio Pinto"
+    },
+    "synopsis": "In the slums of Rio, a young photographer chronicles the rise of a ruthless gang leader in a gripping tale of survival and consequence."
+  },
+  "J5IXN2S-M2": {
+    "movie_id": "J5IXN2S-M2",
+    "title": "Elite Squad (Tropa de Elite)",
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "runtime_minutes": 115,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Portuguese"
+    ],
+    "subtitles": [
+      "English",
+      "Portuguese"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "07-10-05",
+    "end_of_run_est": "08-02-01",
+    "cast": [
+      {
+        "name": "Wagner Moura",
+        "role": "Capit\u00e3o Nascimento"
+      },
+      {
+        "name": "Andr\u00e9 Ramiro",
+        "role": "Andr\u00e9 Matias"
+      },
+      {
+        "name": "Caio Junqueira",
+        "role": "Neto Gouveia"
+      }
+    ],
+    "crew": {
+      "director": "Jos\u00e9 Padilha",
+      "writer": "Br\u00e1ulio Mantovani",
+      "producer": "Marcos Prado",
+      "music": "Pedro Bromfman"
+    },
+    "synopsis": "A BOPE captain in Rio de Janeiro struggles with corruption and violence while training new recruits to take on the city\u2019s criminal underworld."
+  },
+  "J5IXN2S-M3": {
+    "movie_id": "J5IXN2S-M3",
+    "title": "The Trespasser (O Invasor)",
+    "genres": [
+      "Thriller",
+      "Mystery"
+    ],
+    "runtime_minutes": 97,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Portuguese"
+    ],
+    "subtitles": [
+      "English",
+      "Portuguese"
+    ],
+    "formats": [
+      "2D"
+    ],
+    "release_date": "01-09-27",
+    "end_of_run_est": "02-01-10",
+    "cast": [
+      {
+        "name": "Marco Ricca",
+        "role": "Ivan"
+      },
+      {
+        "name": "Alexandre Borges",
+        "role": "Estev\u00e3o"
+      },
+      {
+        "name": "Paulo Miklos",
+        "role": "An\u00edsio"
+      }
+    ],
+    "crew": {
+      "director": "Beto Brant",
+      "writer": "Mar\u00e7al Aquino",
+      "producer": "Renato Ciasca",
+      "music": "Andr\u00e9 Abujamra"
+    },
+    "synopsis": "Two partners hire a hitman to solve a problem, only to see their lives spiral as the outsider infiltrates their world."
+  },
+  "QK6BJEH": {
+    "movie_id": "QK6BJEH",
+    "title": "Rashomon",
+    "genres": [
+      "Mystery",
+      "Drama"
+    ],
+    "runtime_minutes": 88,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Japanese"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "50-08-26",
+    "end_of_run_est": "51-01-31",
+    "cast": [
+      {
+        "name": "Toshiro Mifune",
+        "role": "Tajomaru"
+      },
+      {
+        "name": "Machiko Ky\u014d",
+        "role": "Masako Kanazawa"
+      }
+    ],
+    "crew": {
+      "director": "Akira Kurosawa",
+      "writer": "Shinobu Hashimoto",
+      "producer": "Sojiro Motoki",
+      "music": "Fumio Hayasaka"
+    },
+    "synopsis": "In medieval Japan, conflicting accounts of a violent crime unfold, exploring the elusiveness of truth and the nature of human perception."
+  },
+  "RHZT7OU": {
+    "movie_id": "RHZT7OU",
+    "title": "Cure",
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime_minutes": 111,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Japanese"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "97-12-27",
+    "end_of_run_est": "98-03-31",
+    "cast": [
+      {
+        "name": "Koji Yakusho",
+        "role": "Detective Takabe"
+      },
+      {
+        "name": "Masato Hagiwara",
+        "role": "Mamiya"
+      }
+    ],
+    "crew": {
+      "director": "Kiyoshi Kurosawa",
+      "writer": "Kiyoshi Kurosawa",
+      "producer": "Satoshi Fukushima",
+      "music": "Gary Ashiya"
+    },
+    "synopsis": "A detective investigates a string of baffling murders connected by a hypnotic suggestion, blurring the line between the mind and malevolence."
+  },
+  "HEABYHU": {
+    "movie_id": "HEABYHU",
+    "title": "Perfect Blue",
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime_minutes": 81,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Japanese"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "97-07-19",
+    "end_of_run_est": "97-10-31",
+    "cast": [
+      {
+        "name": "Junko Iwao",
+        "role": "Mima Kirigoe (voice)"
+      },
+      {
+        "name": "Rica Matsumoto",
+        "role": "Rumi (voice)"
+      }
+    ],
+    "crew": {
+      "director": "Satoshi Kon",
+      "writer": "Sadayuki Murai",
+      "producer": "Masao Maruyama",
+      "music": "Masahiro Ikumi"
+    },
+    "synopsis": "A pop idol\u2019s transition to acting spirals into paranoia as her identity fractures, culminating in a tense psychological mystery."
+  },
+  "KEUNBBE-M1": {
+    "movie_id": "KEUNBBE-M1",
+    "title": "El cartel de los sapos (The Snitch Cartel)",
+    "genres": [
+      "Action",
+      "Thriller",
+      "Mystery"
+    ],
+    "runtime_minutes": 109,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "12-09-28",
+    "end_of_run_est": "12-12-31",
+    "cast": [
+      {
+        "name": "Manolo Cardona",
+        "role": "Mart\u00edn Gonz\u00e1lez"
+      },
+      {
+        "name": "Juana Acosta",
+        "role": "Sof\u00eda"
+      },
+      {
+        "name": "Diego Cadavid",
+        "role": "Pepe Cadena"
+      }
+    ],
+    "crew": {
+      "director": "Carlos Moreno",
+      "writer": "Andr\u00e9s L\u00f3pez L\u00f3pez",
+      "producer": "Dago Garc\u00eda",
+      "music": "Juan Carlos Campuzano"
+    },
+    "synopsis": "La historia de un joven que asciende en el mundo del narcotr\u00e1fico colombiano y enfrenta traiciones, violencia y el peso de sus decisiones."
+  },
+  "KEUNBBE-M2": {
+    "movie_id": "KEUNBBE-M2",
+    "title": "El Mariachi",
+    "genres": [
+      "Action",
+      "Adventure"
+    ],
+    "runtime_minutes": 81,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D"
+    ],
+    "release_date": "92-02-26",
+    "end_of_run_est": "92-05-31",
+    "cast": [
+      {
+        "name": "Carlos Gallardo",
+        "role": "El Mariachi"
+      },
+      {
+        "name": "Consuelo G\u00f3mez",
+        "role": "Domino"
+      },
+      {
+        "name": "Peter Marquardt",
+        "role": "Moco"
+      }
+    ],
+    "crew": {
+      "director": "Robert Rodriguez",
+      "writer": "Robert Rodriguez",
+      "producer": "Robert Rodriguez",
+      "music": "Robert Rodriguez"
+    },
+    "synopsis": "Un mariachi se ve envuelto por error en una guerra entre criminales cuando es confundido con un asesino a sueldo."
+  },
+  "KEUNBBE-M3": {
+    "movie_id": "KEUNBBE-M3",
+    "title": "Miss Bala",
+    "genres": [
+      "Action",
+      "Thriller",
+      "Drama"
+    ],
+    "runtime_minutes": 113,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby",
+      "IMAX"
+    ],
+    "release_date": "11-10-14",
+    "end_of_run_est": "12-01-15",
+    "cast": [
+      {
+        "name": "Stephanie Sigman",
+        "role": "Laura Guerrero"
+      },
+      {
+        "name": "No\u00e9 Hern\u00e1ndez",
+        "role": "Lino"
+      },
+      {
+        "name": "Joaqu\u00edn Cos\u00edo",
+        "role": "General"
+      }
+    ],
+    "crew": {
+      "director": "Gerardo Naranjo",
+      "writer": "Gerardo Naranjo",
+      "producer": "Pablo Cruz",
+      "music": "Emilio Kauderer"
+    },
+    "synopsis": "Una joven aspirante a reina de belleza se ve atrapada en una red criminal y debe luchar por sobrevivir."
+  },
+  "H7OTLA5": {
+    "movie_id": "H7OTLA5",
+    "title": "Como agua para chocolate",
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "runtime_minutes": 123,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish",
+      "English"
+    ],
+    "subtitles": [
+      "English",
+      "Spanish"
+    ],
+    "formats": [
+      "2D",
+      "3D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "92-12-16",
+    "end_of_run_est": "93-03-30",
+    "cast": [
+      {
+        "name": "Lumi Cavazos",
+        "role": "Tita"
+      },
+      {
+        "name": "Marco Leonardi",
+        "role": "Pedro"
+      },
+      {
+        "name": "Regina Torn\u00e9",
+        "role": "Mam\u00e1 Elena"
+      }
+    ],
+    "crew": {
+      "director": "Alfonso Arau",
+      "writer": "Laura Esquivel",
+      "producer": "Roberto Sneider",
+      "music": "Leo Brouwer"
+    },
+    "synopsis": "Una historia de amor prohibido y tradici\u00f3n familiar donde la cocina se convierte en lenguaje del coraz\u00f3n."
+  },
+  "UG4E096": {
+    "movie_id": "UG4E096",
+    "title": "Tres metros sobre el cielo",
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "runtime_minutes": 118,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "3D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "10-12-03",
+    "end_of_run_est": "11-03-10",
+    "cast": [
+      {
+        "name": "Mario Casas",
+        "role": "Hache"
+      },
+      {
+        "name": "Mar\u00eda Valverde",
+        "role": "Babi"
+      },
+      {
+        "name": "\u00c1lvaro Cervantes",
+        "role": "Pollo"
+      }
+    ],
+    "crew": {
+      "director": "Fernando Gonz\u00e1lez Molina",
+      "writer": "Ram\u00f3n Salazar",
+      "producer": "Francisco Ramos",
+      "music": "Arnau Bataller"
+    },
+    "synopsis": "Dos j\u00f3venes de mundos opuestos viven una pasi\u00f3n intensa que desaf\u00eda las reglas sociales."
+  },
+  "W1JJ4IX": {
+    "movie_id": "W1JJ4IX",
+    "title": "Amarte Duele",
+    "genres": [
+      "Romance",
+      "Drama"
+    ],
+    "runtime_minutes": 104,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "3D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "02-11-08",
+    "end_of_run_est": "03-02-15",
+    "cast": [
+      {
+        "name": "Martha Higareda",
+        "role": "Renata"
+      },
+      {
+        "name": "Luis Fernando Pe\u00f1a",
+        "role": "Ulises"
+      },
+      {
+        "name": "Ximena Sari\u00f1ana",
+        "role": "Mariana"
+      }
+    ],
+    "crew": {
+      "director": "Fernando Sari\u00f1ana",
+      "writer": "Carina Sol\u00f3rzano",
+      "producer": "Mat\u00edas Ehrenberg",
+      "music": "Benny Ibarra"
+    },
+    "synopsis": "Un amor juvenil marcado por la diferencia de clases y las presiones familiares."
+  },
+  "316PP98-M1": {
+    "movie_id": "316PP98-M1",
+    "title": "El laberinto del fauno (Pan's Labyrinth)",
+    "genres": [
+      "Fantasy",
+      "Drama",
+      "Mystery"
+    ],
+    "runtime_minutes": 118,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English",
+      "Spanish"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "06-10-20",
+    "end_of_run_est": "07-02-28",
+    "cast": [
+      {
+        "name": "Ivana Baquero",
+        "role": "Ofelia"
+      },
+      {
+        "name": "Sergi L\u00f3pez",
+        "role": "Capit\u00e1n Vidal"
+      },
+      {
+        "name": "Maribel Verd\u00fa",
+        "role": "Mercedes"
+      },
+      {
+        "name": "Doug Jones",
+        "role": "Fauno / Hombre P\u00e1lido"
+      }
+    ],
+    "crew": {
+      "director": "Guillermo del Toro",
+      "writer": "Guillermo del Toro",
+      "producer": "Bertha Navarro",
+      "music": "Javier Navarrete"
+    },
+    "synopsis": "En la posguerra espa\u00f1ola, una ni\u00f1a descubre un mundo fant\u00e1stico y oscuro mientras intenta escapar de la brutal realidad que la rodea."
+  },
+  "316PP98-M2": {
+    "movie_id": "316PP98-M2",
+    "title": "Vuelven (Tigers Are Not Afraid)",
+    "genres": [
+      "Fantasy",
+      "Horror",
+      "Drama"
+    ],
+    "runtime_minutes": 83,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English",
+      "Spanish"
+    ],
+    "formats": [
+      "2D"
+    ],
+    "release_date": "17-05-12",
+    "end_of_run_est": "17-12-01",
+    "cast": [
+      {
+        "name": "Paola Lara",
+        "role": "Estrella"
+      },
+      {
+        "name": "Juan Ram\u00f3n L\u00f3pez",
+        "role": "El Shine"
+      },
+      {
+        "name": "Tenoch Huerta",
+        "role": "El Chino"
+      }
+    ],
+    "crew": {
+      "director": "Issa L\u00f3pez",
+      "writer": "Issa L\u00f3pez",
+      "producer": "Marco Polo Constandse",
+      "music": "Vince Pope"
+    },
+    "synopsis": "Ni\u00f1os hu\u00e9rfanos por la violencia del crimen organizado usan la imaginaci\u00f3n y la valent\u00eda para sobrevivir en una ciudad mexicana."
+  },
+  "316PP98-M3": {
+    "movie_id": "316PP98-M3",
+    "title": "Cronos",
+    "genres": [
+      "Fantasy",
+      "Horror",
+      "Mystery"
+    ],
+    "runtime_minutes": 92,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish"
+    ],
+    "subtitles": [
+      "English",
+      "Spanish"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "93-05-01",
+    "end_of_run_est": "93-12-01",
+    "cast": [
+      {
+        "name": "Federico Luppi",
+        "role": "Jes\u00fas Gris"
+      },
+      {
+        "name": "Ron Perlman",
+        "role": "\u00c1ngel de la Guardia"
+      },
+      {
+        "name": "Claudio Brook",
+        "role": "Dietrich"
+      }
+    ],
+    "crew": {
+      "director": "Guillermo del Toro",
+      "writer": "Guillermo del Toro",
+      "producer": "Bertha Navarro",
+      "music": "Javier \u00c1lvarez"
+    },
+    "synopsis": "Un misterioso artefacto otorga juventud y sed de sangre a un anticuario, desencadenando consecuencias oscuras."
+  },
+  "C645274": {
+    "movie_id": "C645274",
+    "title": "Blade Runner 2049",
+    "genres": [
+      "Science Fiction",
+      "Thriller",
+      "Drama"
+    ],
+    "runtime_minutes": 164,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "English",
+      "French (Canada)"
+    ],
+    "subtitles": [
+      "English",
+      "French (Canada)"
+    ],
+    "formats": [
+      "2D",
+      "3D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "17-10-06",
+    "end_of_run_est": "18-01-15",
+    "cast": [
+      {
+        "name": "Ryan Gosling",
+        "role": "K"
+      },
+      {
+        "name": "Harrison Ford",
+        "role": "Rick Deckard"
+      },
+      {
+        "name": "Ana de Armas",
+        "role": "Joi"
+      }
+    ],
+    "crew": {
+      "director": "Denis Villeneuve",
+      "writer": "Hampton Fancher & Michael Green",
+      "producer": "Andrew A. Kosove & Broderick Johnson",
+      "music": "Hans Zimmer & Benjamin Wallfisch"
+    },
+    "synopsis": "A new blade runner unearths a long-buried secret that leads him to former blade runner Rick Deckard."
+  },
+  "NEXFOEW": {
+    "movie_id": "NEXFOEW",
+    "title": "Arrival",
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Mystery"
+    ],
+    "runtime_minutes": 116,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "English",
+      "French (Canada)"
+    ],
+    "subtitles": [
+      "English",
+      "French (Canada)"
+    ],
+    "formats": [
+      "2D",
+      "3D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "16-11-11",
+    "end_of_run_est": "17-02-15",
+    "cast": [
+      {
+        "name": "Amy Adams",
+        "role": "Louise Banks"
+      },
+      {
+        "name": "Jeremy Renner",
+        "role": "Ian Donnelly"
+      },
+      {
+        "name": "Forest Whitaker",
+        "role": "Colonel Weber"
+      }
+    ],
+    "crew": {
+      "director": "Denis Villeneuve",
+      "writer": "Eric Heisserer",
+      "producer": "Shawn Levy",
+      "music": "J\u00f3hann J\u00f3hannsson"
+    },
+    "synopsis": "A linguistics professor leads a team of investigators to communicate with extraterrestrial visitors."
+  },
+  "6GDEUR6": {
+    "movie_id": "6GDEUR6",
+    "title": "Dune: Part One",
+    "genres": [
+      "Science Fiction",
+      "Adventure",
+      "Drama"
+    ],
+    "runtime_minutes": 155,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "English",
+      "French (Canada)"
+    ],
+    "subtitles": [
+      "English",
+      "French (Canada)"
+    ],
+    "formats": [
+      "2D",
+      "3D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "21-10-22",
+    "end_of_run_est": "22-01-31",
+    "cast": [
+      {
+        "name": "Timoth\u00e9e Chalamet",
+        "role": "Paul Atreides"
+      },
+      {
+        "name": "Rebecca Ferguson",
+        "role": "Lady Jessica"
+      },
+      {
+        "name": "Oscar Isaac",
+        "role": "Duke Leto Atreides"
+      }
+    ],
+    "crew": {
+      "director": "Denis Villeneuve",
+      "writer": "Jon Spaihts, Denis Villeneuve & Eric Roth",
+      "producer": "Mary Parent",
+      "music": "Hans Zimmer"
+    },
+    "synopsis": "Paul Atreides must travel to the most dangerous planet in the universe to ensure the future of his family and people."
+  },
+  "0VZ1EK7": {
+    "movie_id": "0VZ1EK7",
+    "title": "Space Sweepers",
+    "genres": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ],
+    "runtime_minutes": 136,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Korean",
+      "English"
+    ],
+    "subtitles": [
+      "English",
+      "Korean"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby",
+      "3D"
+    ],
+    "release_date": "21-02-05",
+    "end_of_run_est": "21-04-30",
+    "cast": [
+      {
+        "name": "Song Joong-ki",
+        "role": "Kim Tae-ho"
+      },
+      {
+        "name": "Kim Tae-ri",
+        "role": "Captain Jang"
+      },
+      {
+        "name": "Jin Seon-kyu",
+        "role": "Tiger Park"
+      },
+      {
+        "name": "Yoo Hae-jin",
+        "role": "Bubs (voice)"
+      }
+    ],
+    "crew": {
+      "director": "Jo Sung-hee",
+      "writer": "Jo Sung-hee",
+      "producer": "Yoon In-beom",
+      "music": "Kim Tae-seong"
+    },
+    "synopsis": "In the year 2092, a crew of space junk collectors discover a humanoid robot known to be a weapon of mass destruction and get involved in a risky business deal."
+  },
+  "06WTCTP": {
+    "movie_id": "06WTCTP",
+    "title": "Alienoid",
+    "genres": [
+      "Science Fiction",
+      "Fantasy",
+      "Action"
+    ],
+    "runtime_minutes": 142,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Korean"
+    ],
+    "subtitles": [
+      "English",
+      "Korean"
+    ],
+    "formats": [
+      "2D",
+      "Dolby",
+      "IMAX"
+    ],
+    "release_date": "22-07-20",
+    "end_of_run_est": "22-09-30",
+    "cast": [
+      {
+        "name": "Ryu Jun-yeol",
+        "role": "Mureuk"
+      },
+      {
+        "name": "Kim Woo-bin",
+        "role": "Guard"
+      },
+      {
+        "name": "Kim Tae-ri",
+        "role": "Ean"
+      },
+      {
+        "name": "So Ji-sub",
+        "role": "Moon Do-seok"
+      }
+    ],
+    "crew": {
+      "director": "Choi Dong-hoon",
+      "writer": "Choi Dong-hoon",
+      "producer": "Ahn Soo-hyun",
+      "music": "Jang Young-gyu"
+    },
+    "synopsis": "As aliens attempt to manage imprisoned alien criminals on Earth, timelines collide between present-day and Goryeo-era sorcerers."
+  },
+  "XG6AL0S": {
+    "movie_id": "XG6AL0S",
+    "title": "The Host",
+    "genres": [
+      "Science Fiction",
+      "Horror",
+      "Thriller"
+    ],
+    "runtime_minutes": 120,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Korean"
+    ],
+    "subtitles": [
+      "English",
+      "Korean"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "06-07-27",
+    "end_of_run_est": "06-10-31",
+    "cast": [
+      {
+        "name": "Song Kang-ho",
+        "role": "Park Gang-du"
+      },
+      {
+        "name": "Byun Hee-bong",
+        "role": "Park Hee-bong"
+      },
+      {
+        "name": "Bae Doona",
+        "role": "Park Nam-joo"
+      },
+      {
+        "name": "Go Ah-sung",
+        "role": "Park Hyun-seo"
+      }
+    ],
+    "crew": {
+      "director": "Bong Joon-ho",
+      "writer": "Bong Joon-ho",
+      "producer": "Choi Yong-bae",
+      "music": "Lee Byung-woo"
+    },
+    "synopsis": "A monstrous creature emerges from the Han River, abducting a young girl and forcing her family into a desperate rescue."
+  },
+  "I60AQOY": {
+    "movie_id": "I60AQOY",
+    "title": "La Plan\u00e8te Sauvage",
+    "genres": [
+      "Science Fiction",
+      "Fantasy",
+      "Mystery"
+    ],
+    "runtime_minutes": 72,
+    "mpaa_rating": "PG",
+    "languages_audio": [
+      "French",
+      "Dutch"
+    ],
+    "subtitles": [
+      "French",
+      "Dutch",
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "73-05-02",
+    "end_of_run_est": "73-12-31",
+    "cast": [
+      {
+        "name": "Jennifer Drake",
+        "role": "Tiwa (voice)"
+      },
+      {
+        "name": "Eric Baugin",
+        "role": "Terr (voice)"
+      },
+      {
+        "name": "Jean Valmont",
+        "role": "Narrator (voice)"
+      }
+    ],
+    "crew": {
+      "director": "Ren\u00e9 Laloux",
+      "writer": "Ren\u00e9 Laloux, Roland Topor",
+      "producer": "Anatole Dauman",
+      "music": "Alain Goraguer"
+    },
+    "synopsis": "On a distant planet, tiny humans struggle to survive under the rule of giant blue aliens."
+  },
+  "MA52C0J": {
+    "movie_id": "MA52C0J",
+    "title": "Je t'aime, je t'aime",
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Romance"
+    ],
+    "runtime_minutes": 94,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "French",
+      "Dutch"
+    ],
+    "subtitles": [
+      "French",
+      "Dutch",
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "68-05-29",
+    "end_of_run_est": "68-12-31",
+    "cast": [
+      {
+        "name": "Claude Rich",
+        "role": "Claude Ridder"
+      },
+      {
+        "name": "Olga Georges-Picot",
+        "role": "Catrine"
+      },
+      {
+        "name": "Anouk Ferjac",
+        "role": "The Woman"
+      }
+    ],
+    "crew": {
+      "director": "Alain Resnais",
+      "writer": "Jacques Sternberg",
+      "producer": "Anatole Dauman",
+      "music": "Krzysztof Penderecki"
+    },
+    "synopsis": "A man participates in a time travel experiment that sends him into a loop of fragmented memories."
+  },
+  "VWRD1XB": {
+    "movie_id": "VWRD1XB",
+    "title": "Mr. Nobody",
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Romance"
+    ],
+    "runtime_minutes": 141,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "French",
+      "Dutch",
+      "English"
+    ],
+    "subtitles": [
+      "French",
+      "Dutch",
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "09-09-12",
+    "end_of_run_est": "10-06-30",
+    "cast": [
+      {
+        "name": "Jared Leto",
+        "role": "Nemo Nobody"
+      },
+      {
+        "name": "Diane Kruger",
+        "role": "Anna"
+      },
+      {
+        "name": "Sarah Polley",
+        "role": "Elise"
+      }
+    ],
+    "crew": {
+      "director": "Jaco Van Dormael",
+      "writer": "Jaco Van Dormael",
+      "producer": "Philippe Godeau",
+      "music": "Pierre Van Dormael"
+    },
+    "synopsis": "The last mortal on Earth reflects on the many lives he could have led based on choices he made."
+  },
+  "NO0JEQD": {
+    "movie_id": "NO0JEQD",
+    "title": "Insomnia",
+    "genres": [
+      "Mystery",
+      "Thriller",
+      "Drama"
+    ],
+    "runtime_minutes": 96,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Norwegian"
+    ],
+    "subtitles": [
+      "English",
+      "Norwegian"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "97-02-07",
+    "end_of_run_est": "97-05-31",
+    "cast": [
+      {
+        "name": "Stellan Skarsg\u00e5rd",
+        "role": "Jonas Engstr\u00f6m"
+      },
+      {
+        "name": "Bj\u00f8rn Floberg",
+        "role": "Jon Holt"
+      },
+      {
+        "name": "Gjertrud Jynge",
+        "role": "Hilde Hagen"
+      }
+    ],
+    "crew": {
+      "director": "Erik Skjoldbj\u00e6rg",
+      "writer": "Nikolaj Frobenius",
+      "producer": "Petter J. Borgli",
+      "music": "Geir Jenssen"
+    },
+    "synopsis": "A seasoned detective investigates a murder in a sunlit Norwegian town, battling sleeplessness and moral ambiguity as the case unravels."
+  },
+  "WNGY6BL": {
+    "movie_id": "WNGY6BL",
+    "title": "Headhunters (Hodejegerne)",
+    "genres": [
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime_minutes": 100,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Norwegian",
+      "English"
+    ],
+    "subtitles": [
+      "English",
+      "Norwegian"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "11-08-26",
+    "end_of_run_est": "11-12-15",
+    "cast": [
+      {
+        "name": "Aksel Hennie",
+        "role": "Roger Brown"
+      },
+      {
+        "name": "Nikolaj Coster-Waldau",
+        "role": "Clas Greve"
+      },
+      {
+        "name": "Synn\u00f8ve Macody Lund",
+        "role": "Diana Brown"
+      }
+    ],
+    "crew": {
+      "director": "Morten Tyldum",
+      "writer": "Lars Gudmestad",
+      "producer": "Asle Vatn",
+      "music": "Trond Bjerknes"
+    },
+    "synopsis": "A corporate headhunter who moonlights as an art thief becomes entangled in a deadly game after targeting a former mercenary."
+  },
+  "56PETUI": {
+    "movie_id": "56PETUI",
+    "title": "Thelma",
+    "genres": [
+      "Mystery",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime_minutes": 116,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Norwegian"
+    ],
+    "subtitles": [
+      "English",
+      "Norwegian"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "17-09-15",
+    "end_of_run_est": "17-12-15",
+    "cast": [
+      {
+        "name": "Eili Harboe",
+        "role": "Thelma"
+      },
+      {
+        "name": "Kaya Wilkins",
+        "role": "Anja"
+      },
+      {
+        "name": "Henrik Rafaelsen",
+        "role": "Trond"
+      }
+    ],
+    "crew": {
+      "director": "Joachim Trier",
+      "writer": "Eskil Vogt",
+      "producer": "Thomas Robsahm",
+      "music": "Ola Fl\u00f8ttum"
+    },
+    "synopsis": "A shy student discovers unsettling, unexplained powers as a new romance stirs buried memories and family secrets."
+  },
+  "0D4SRVQ": {
+    "movie_id": "0D4SRVQ",
+    "title": "Aferim!",
+    "genres": [
+      "Adventure",
+      "Drama",
+      "Comedy"
+    ],
+    "runtime_minutes": 108,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Romanian"
+    ],
+    "subtitles": [
+      "English",
+      "French"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "15-01-29",
+    "end_of_run_est": "15-07-31",
+    "cast": [
+      {
+        "name": "Teodor Corban",
+        "role": "Costandin"
+      },
+      {
+        "name": "Mihai Com\u0103noiu",
+        "role": "Ionic\u0103"
+      },
+      {
+        "name": "Cuzin Toma",
+        "role": "Carfin"
+      }
+    ],
+    "crew": {
+      "director": "Radu Jude",
+      "writer": "Radu Jude, Florin L\u0103z\u0103rescu",
+      "producer": "Ada Solomon",
+      "music": "Traditional Folk Arrangements"
+    },
+    "synopsis": "In 19th-century Wallachia, a constable and his son set out to track down a runaway Roma slave, embarking on a journey that exposes the harsh realities and humor of the era."
+  },
+  "LVFFT7M": {
+    "movie_id": "LVFFT7M",
+    "title": "Mihai Viteazul",
+    "genres": [
+      "Adventure",
+      "Action",
+      "Drama"
+    ],
+    "runtime_minutes": 203,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Romanian"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "IMAX"
+    ],
+    "release_date": "71-04-13",
+    "end_of_run_est": "71-12-31",
+    "cast": [
+      {
+        "name": "Amza Pellea",
+        "role": "Mihai Viteazul"
+      },
+      {
+        "name": "Ion Besoiu",
+        "role": "Andrei B\u00e1thory"
+      },
+      {
+        "name": "Olga Tudorache",
+        "role": "Stanca"
+      }
+    ],
+    "crew": {
+      "director": "Sergiu Nicolaescu",
+      "writer": "Titus Popovici",
+      "producer": "Studioul Cinematografic Bucure\u0219ti",
+      "music": "Tiberiu Olah"
+    },
+    "synopsis": "An epic chronicle of Michael the Brave, the 16th-century ruler who briefly united Wallachia, Transylvania, and Moldavia, told through grand battles and political intrigue."
+  },
+  "HZ9UEN8": {
+    "movie_id": "HZ9UEN8",
+    "title": "Comoara (The Treasure)",
+    "genres": [
+      "Adventure",
+      "Comedy"
+    ],
+    "runtime_minutes": 89,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Romanian"
+    ],
+    "subtitles": [
+      "English",
+      "French"
+    ],
+    "formats": [
+      "2D"
+    ],
+    "release_date": "15-05-21",
+    "end_of_run_est": "15-10-15",
+    "cast": [
+      {
+        "name": "Toma Cuzin",
+        "role": "Costi"
+      },
+      {
+        "name": "Adrian Purc\u0103rescu",
+        "role": "Adrian"
+      },
+      {
+        "name": "Corneliu Cozmei",
+        "role": "Neighbor"
+      }
+    ],
+    "crew": {
+      "director": "Corneliu Porumboiu",
+      "writer": "Corneliu Porumboiu",
+      "producer": "42 Km Film",
+      "music": "Matei Alexandru"
+    },
+    "synopsis": "A father and his neighbor search for a rumored treasure in a country garden, finding quiet humor and small adventures along the way."
+  },
+  "Y4V328M": {
+    "movie_id": "Y4V328M",
+    "title": "Mar adentro",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime_minutes": 126,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Spanish",
+      "English"
+    ],
+    "subtitles": [
+      "English",
+      "Spanish"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "04-09-03",
+    "end_of_run_est": "04-12-31",
+    "cast": [
+      {
+        "name": "Javier Bardem",
+        "role": "Ram\u00f3n Sampedro"
+      },
+      {
+        "name": "Bel\u00e9n Rueda",
+        "role": "Julia"
+      },
+      {
+        "name": "Lola Due\u00f1as",
+        "role": "Rosa"
+      }
+    ],
+    "crew": {
+      "director": "Alejandro Amen\u00e1bar",
+      "writer": "Alejandro Amen\u00e1bar",
+      "producer": "Fernando Bovaira",
+      "music": "Alejandro Amen\u00e1bar"
+    },
+    "synopsis": "Based on a true story, a man fights for his right to end his life with dignity after a diving accident leaves him quadriplegic."
+  },
+  "ETAATNO": {
+    "movie_id": "ETAATNO",
+    "title": "Hable con ella",
+    "genres": [
+      "Drama",
+      "Romance"
+    ],
+    "runtime_minutes": 112,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish",
+      "English"
+    ],
+    "subtitles": [
+      "English",
+      "Spanish"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "02-03-15",
+    "end_of_run_est": "02-12-31",
+    "cast": [
+      {
+        "name": "Javier C\u00e1mara",
+        "role": "Benigno"
+      },
+      {
+        "name": "Dar\u00edo Grandinetti",
+        "role": "Marco"
+      },
+      {
+        "name": "Leonor Watling",
+        "role": "Alicia"
+      }
+    ],
+    "crew": {
+      "director": "Pedro Almod\u00f3var",
+      "writer": "Pedro Almod\u00f3var",
+      "producer": "Agust\u00edn Almod\u00f3var",
+      "music": "Alberto Iglesias"
+    },
+    "synopsis": "Two men form an unlikely friendship while caring for the women they love who are in comas."
+  },
+  "H3V2GPF": {
+    "movie_id": "H3V2GPF",
+    "title": "Todo sobre mi madre",
+    "genres": [
+      "Drama",
+      "Comedy"
+    ],
+    "runtime_minutes": 101,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Spanish",
+      "English"
+    ],
+    "subtitles": [
+      "English",
+      "Spanish",
+      "French"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "99-04-16",
+    "end_of_run_est": "99-12-31",
+    "cast": [
+      {
+        "name": "Cecilia Roth",
+        "role": "Manuela"
+      },
+      {
+        "name": "Pen\u00e9lope Cruz",
+        "role": "Sister Rosa"
+      },
+      {
+        "name": "Marisa Paredes",
+        "role": "Huma Rojo"
+      }
+    ],
+    "crew": {
+      "director": "Pedro Almod\u00f3var",
+      "writer": "Pedro Almod\u00f3var",
+      "producer": "Agust\u00edn Almod\u00f3var",
+      "music": "Alberto Iglesias"
+    },
+    "synopsis": "A grieving mother searches for her late son's father, encountering a tapestry of women whose lives intersect with hers."
+  },
+  "M-97PX0R3-001": {
+    "movie_id": "M-97PX0R3-001",
+    "title": "Arn: Tempelriddaren",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Drama"
+    ],
+    "runtime_minutes": 133,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Swedish"
+    ],
+    "subtitles": [
+      "English",
+      "Swedish"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "07-12-25",
+    "end_of_run_est": "08-03-31",
+    "cast": [
+      {
+        "name": "Joakim N\u00e4tterqvist",
+        "role": "Arn Magnusson"
+      },
+      {
+        "name": "Sofia Helin",
+        "role": "Cecilia Algotsdotter"
+      }
+    ],
+    "crew": {
+      "director": "Peter Flinth",
+      "writer": "Hans Gunnarsson",
+      "producer": "Waldemar Bergendahl",
+      "music": "Tuomas Kantelinen"
+    },
+    "synopsis": "A Swedish nobleman trained by the Knights Templar must navigate love and duty during the Crusades."
+  },
+  "M-97PX0R3-002": {
+    "movie_id": "M-97PX0R3-002",
+    "title": "Hamilton: I nationens intresse",
+    "genres": [
+      "Action",
+      "Thriller"
+    ],
+    "runtime_minutes": 109,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Swedish"
+    ],
+    "subtitles": [
+      "English",
+      "Swedish"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "12-01-13",
+    "end_of_run_est": "12-04-15",
+    "cast": [
+      {
+        "name": "Mikael Persbrandt",
+        "role": "Carl Hamilton"
+      },
+      {
+        "name": "Saba Mubarak",
+        "role": "Mouna al Fathar"
+      }
+    ],
+    "crew": {
+      "director": "Kathrine Windfeld",
+      "writer": "Stefan Thunberg",
+      "producer": "Jan-Ole Gerster",
+      "music": "Jonas Struck"
+    },
+    "synopsis": "Agent Carl Hamilton becomes entangled in a high-stakes international arms plot threatening Sweden."
+  },
+  "M-97PX0R3-003": {
+    "movie_id": "M-97PX0R3-003",
+    "title": "Den blomstertid nu kommer (The Unthinkable)",
+    "genres": [
+      "Action",
+      "Thriller",
+      "Drama"
+    ],
+    "runtime_minutes": 129,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Swedish"
+    ],
+    "subtitles": [
+      "English",
+      "Swedish"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "18-06-20",
+    "end_of_run_est": "18-09-20",
+    "cast": [
+      {
+        "name": "Christoffer Nordenrot",
+        "role": "Alex"
+      },
+      {
+        "name": "Lisa Henni",
+        "role": "Anna"
+      }
+    ],
+    "crew": {
+      "director": "Victor Danell",
+      "writer": "Victor Danell",
+      "producer": "Crazy Pictures",
+      "music": "Gustaf Spetz"
+    },
+    "synopsis": "As Sweden faces mysterious attacks, a man returns home, confronting past love and family amidst chaos."
+  },
+  "6XL4BXQ": {
+    "movie_id": "6XL4BXQ",
+    "title": "Solaris",
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Mystery"
+    ],
+    "runtime_minutes": 167,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Russian"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "72-03-20",
+    "end_of_run_est": "72-06-30",
+    "cast": [
+      {
+        "name": "Donatas Banionis",
+        "role": "Kris Kelvin"
+      },
+      {
+        "name": "Natalya Bondarchuk",
+        "role": "Hari"
+      },
+      {
+        "name": "J\u00fcri J\u00e4rvet",
+        "role": "Dr. Snaut"
+      }
+    ],
+    "crew": {
+      "director": "Andrei Tarkovsky",
+      "writer": "Andrei Tarkovsky & Fridrikh Gorenshtein",
+      "producer": "Viacheslav Tarasov",
+      "music": "Eduard Artemyev"
+    },
+    "synopsis": "A psychologist is sent to a space station orbiting the planet Solaris to investigate a series of mysterious occurrences."
+  },
+  "Z8VHFS4": {
+    "movie_id": "Z8VHFS4",
+    "title": "Stalker",
+    "genres": [
+      "Science Fiction",
+      "Drama",
+      "Mystery"
+    ],
+    "runtime_minutes": 163,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Russian"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "79-05-17",
+    "end_of_run_est": "79-08-31",
+    "cast": [
+      {
+        "name": "Aleksandr Kaidanovsky",
+        "role": "Stalker"
+      },
+      {
+        "name": "Anatoly Solonitsyn",
+        "role": "Writer"
+      },
+      {
+        "name": "Nikolai Grinko",
+        "role": "Professor"
+      }
+    ],
+    "crew": {
+      "director": "Andrei Tarkovsky",
+      "writer": "Arkady & Boris Strugatsky",
+      "producer": "Aleksandra Demidova",
+      "music": "Eduard Artemyev"
+    },
+    "synopsis": "A guide leads two men through the mysterious Zone to find a room that grants wishes."
+  },
+  "26E0W2H": {
+    "movie_id": "26E0W2H",
+    "title": "Hard to Be a God",
+    "genres": [
+      "Science Fiction",
+      "Drama"
+    ],
+    "runtime_minutes": 177,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Russian"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "13-11-27",
+    "end_of_run_est": "14-02-28",
+    "cast": [
+      {
+        "name": "Leonid Yarmolnik",
+        "role": "Don Rumata"
+      },
+      {
+        "name": "Aleksandr Chutko",
+        "role": "Don Pampa"
+      },
+      {
+        "name": "Evgeniy Gerchakov",
+        "role": "Budakh"
+      }
+    ],
+    "crew": {
+      "director": "Aleksei German",
+      "writer": "Aleksei German & Svetlana Karmalita",
+      "producer": "Svetlana Karmalita",
+      "music": "Viktor Lebedev"
+    },
+    "synopsis": "On a distant planet stuck in a perpetual medieval state, an Earth observer struggles not to interfere."
+  },
+  "LNO1QYH-01": {
+    "movie_id": "LNO1QYH-01",
+    "title": "Spirited Away",
+    "genres": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "runtime_minutes": 125,
+    "mpaa_rating": "PG",
+    "languages_audio": [
+      "Japanese",
+      "English (Dub)"
+    ],
+    "subtitles": [
+      "English",
+      "Japanese (SDH)"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "01-07-20",
+    "end_of_run_est": "02-01-31",
+    "cast": [
+      {
+        "name": "Rumi Hiiragi",
+        "role": "Chihiro"
+      },
+      {
+        "name": "Miyu Irino",
+        "role": "Haku"
+      },
+      {
+        "name": "Mari Natsuki",
+        "role": "Yubaba / Zeniba"
+      }
+    ],
+    "crew": {
+      "director": "Hayao Miyazaki",
+      "writer": "Hayao Miyazaki",
+      "producer": "Toshio Suzuki",
+      "music": "Joe Hisaishi"
+    },
+    "synopsis": "A young girl wanders into a world ruled by gods, witches, and spirits, where humans are transformed into beasts."
+  },
+  "LNO1QYH-02": {
+    "movie_id": "LNO1QYH-02",
+    "title": "Princess Mononoke",
+    "genres": [
+      "Fantasy",
+      "Adventure"
+    ],
+    "runtime_minutes": 134,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Japanese",
+      "English (Dub)"
+    ],
+    "subtitles": [
+      "English",
+      "Japanese (SDH)"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "97-07-12",
+    "end_of_run_est": "98-01-31",
+    "cast": [
+      {
+        "name": "Yoji Matsuda",
+        "role": "Ashitaka"
+      },
+      {
+        "name": "Yuriko Ishida",
+        "role": "San"
+      },
+      {
+        "name": "Yuko Tanaka",
+        "role": "Lady Eboshi"
+      }
+    ],
+    "crew": {
+      "director": "Hayao Miyazaki",
+      "writer": "Hayao Miyazaki",
+      "producer": "Toshio Suzuki",
+      "music": "Joe Hisaishi"
+    },
+    "synopsis": "A prince becomes entangled in the struggle between the forest gods and humans who consume its resources."
+  },
+  "LNO1QYH-03": {
+    "movie_id": "LNO1QYH-03",
+    "title": "Howl's Moving Castle",
+    "genres": [
+      "Fantasy",
+      "Romance"
+    ],
+    "runtime_minutes": 119,
+    "mpaa_rating": "PG",
+    "languages_audio": [
+      "Japanese",
+      "English (Dub)"
+    ],
+    "subtitles": [
+      "English",
+      "Japanese (SDH)"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "04-11-20",
+    "end_of_run_est": "05-05-31",
+    "cast": [
+      {
+        "name": "Chieko Baisho",
+        "role": "Sophie"
+      },
+      {
+        "name": "Takuya Kimura",
+        "role": "Howl"
+      },
+      {
+        "name": "Akihiro Miwa",
+        "role": "Witch of the Waste"
+      }
+    ],
+    "crew": {
+      "director": "Hayao Miyazaki",
+      "writer": "Hayao Miyazaki",
+      "producer": "Toshio Suzuki",
+      "music": "Joe Hisaishi"
+    },
+    "synopsis": "A young woman cursed by a witch seeks her freedom with the help of a mysterious wizard and his moving castle."
+  },
+  "VC9L8V4": {
+    "movie_id": "VC9L8V4",
+    "title": "The Wailing",
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Thriller"
+    ],
+    "runtime_minutes": 156,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Korean"
+    ],
+    "subtitles": [
+      "English",
+      "Korean"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "16-05-12",
+    "end_of_run_est": "16-12-31",
+    "cast": [
+      {
+        "name": "Kwak Do-won",
+        "role": "Jong-goo"
+      },
+      {
+        "name": "Hwang Jung-min",
+        "role": "The Stranger"
+      },
+      {
+        "name": "Chun Woo-hee",
+        "role": "Moo-myeong"
+      }
+    ],
+    "crew": {
+      "director": "Na Hong-jin",
+      "writer": "Na Hong-jin",
+      "producer": "Suh Dong-hyun",
+      "music": "Jang Young-gyu"
+    },
+    "synopsis": "A police officer investigates a series of mysterious killings in a rural village after the arrival of a stranger, as a sinister force descends upon the community."
+  },
+  "XM03ZP7": {
+    "movie_id": "XM03ZP7",
+    "title": "Train to Busan",
+    "genres": [
+      "Horror",
+      "Action",
+      "Thriller"
+    ],
+    "runtime_minutes": 118,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "Korean"
+    ],
+    "subtitles": [
+      "English",
+      "Korean"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "16-07-20",
+    "end_of_run_est": "16-12-31",
+    "cast": [
+      {
+        "name": "Gong Yoo",
+        "role": "Seok-woo"
+      },
+      {
+        "name": "Jung Yu-mi",
+        "role": "Seong-kyeong"
+      },
+      {
+        "name": "Ma Dong-seok",
+        "role": "Sang-hwa"
+      }
+    ],
+    "crew": {
+      "director": "Yeon Sang-ho",
+      "writer": "Park Joo-suk",
+      "producer": "Lee Dong-ha",
+      "music": "Jang Young-gyu"
+    },
+    "synopsis": "Passengers fight for survival on a high-speed train to Busan as a sudden zombie outbreak overwhelms South Korea."
+  },
+  "T0RYARA": {
+    "movie_id": "T0RYARA",
+    "title": "A Tale of Two Sisters",
+    "genres": [
+      "Horror",
+      "Mystery",
+      "Drama"
+    ],
+    "runtime_minutes": 115,
+    "mpaa_rating": "NR",
+    "languages_audio": [
+      "Korean"
+    ],
+    "subtitles": [
+      "English",
+      "Korean"
+    ],
+    "formats": [
+      "2D",
+      "IMAX",
+      "Dolby"
+    ],
+    "release_date": "03-06-13",
+    "end_of_run_est": "03-12-31",
+    "cast": [
+      {
+        "name": "Im Soo-jung",
+        "role": "Su-mi"
+      },
+      {
+        "name": "Moon Geun-young",
+        "role": "Su-yeon"
+      },
+      {
+        "name": "Yum Jung-ah",
+        "role": "Eun-joo"
+      }
+    ],
+    "crew": {
+      "director": "Kim Jee-woon",
+      "writer": "Kim Jee-woon",
+      "producer": "Oh Jeong-wan",
+      "music": "Lee Byung-woo"
+    },
+    "synopsis": "Two sisters return home from a mental institution to an unsettling stepmother and a house filled with secrets and lingering trauma."
+  },
+  "0FXWA82": {
+    "movie_id": "0FXWA82",
+    "title": "Anatomie d'une chute",
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "runtime_minutes": 152,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "French"
+    ],
+    "subtitles": [
+      "French",
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "25-08-01",
+    "end_of_run_est": "25-10-01",
+    "cast": [
+      {
+        "name": "Sandra H\u00fcller",
+        "role": "Sandra Voyter"
+      },
+      {
+        "name": "Swann Arlaud",
+        "role": "Vincent Renzi"
+      },
+      {
+        "name": "Milo Machado Graner",
+        "role": "Daniel"
+      }
+    ],
+    "crew": {
+      "director": "Justine Triet",
+      "writer": "Justine Triet",
+      "producer": "Marie-Ange Luciani",
+      "music": "Sophie Hunger"
+    },
+    "synopsis": "A celebrated writer confronts the unraveling truth around a mysterious death in the French Alps."
+  },
+  "DJP29MO": {
+    "movie_id": "DJP29MO",
+    "title": "Ne le dis \u00e0 personne",
+    "genres": [
+      "Thriller",
+      "Mystery",
+      "Drama"
+    ],
+    "runtime_minutes": 131,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "French"
+    ],
+    "subtitles": [
+      "French",
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "25-08-20",
+    "end_of_run_est": "25-10-10",
+    "cast": [
+      {
+        "name": "Fran\u00e7ois Cluzet",
+        "role": "Alexandre Beck"
+      },
+      {
+        "name": "Marie-Jos\u00e9e Croze",
+        "role": "Margot Beck"
+      },
+      {
+        "name": "Kristin Scott Thomas",
+        "role": "H\u00e9l\u00e8ne Perkins"
+      }
+    ],
+    "crew": {
+      "director": "Guillaume Canet",
+      "writer": "Guillaume Canet",
+      "producer": "Alain Attal",
+      "music": "Matthieu Chedid"
+    },
+    "synopsis": "Years after his wife's disappearance, a doctor receives a shocking clue that pulls him into a web of secrets."
+  },
+  "YIQ64PW": {
+    "movie_id": "YIQ64PW",
+    "title": "Cach\u00e9",
+    "genres": [
+      "Mystery",
+      "Drama",
+      "Thriller"
+    ],
+    "runtime_minutes": 117,
+    "mpaa_rating": "R",
+    "languages_audio": [
+      "French"
+    ],
+    "subtitles": [
+      "French",
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "25-07-25",
+    "end_of_run_est": "25-09-30",
+    "cast": [
+      {
+        "name": "Daniel Auteuil",
+        "role": "Georges Laurent"
+      },
+      {
+        "name": "Juliette Binoche",
+        "role": "Anne Laurent"
+      },
+      {
+        "name": "Maurice B\u00e9nichou",
+        "role": "Majid"
+      }
+    ],
+    "crew": {
+      "director": "Michael Haneke",
+      "writer": "Michael Haneke",
+      "producer": "Margaret M\u00e9n\u00e9goz",
+      "music": "None (diegetic only)"
+    },
+    "synopsis": "An upper-middle-class couple is tormented by anonymous surveillance tapes exposing buried guilt."
+  },
+  "TA6HUOW": {
+    "movie_id": "TA6HUOW",
+    "title": "A Separation",
+    "genres": [
+      "Drama",
+      "Mystery"
+    ],
+    "runtime_minutes": 123,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Persian"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "11-03-16",
+    "end_of_run_est": "11-09-30",
+    "cast": [
+      {
+        "name": "Peyman Moaadi",
+        "role": "Nader"
+      },
+      {
+        "name": "Leila Hatami",
+        "role": "Simin"
+      },
+      {
+        "name": "Sareh Bayat",
+        "role": "Razieh"
+      }
+    ],
+    "crew": {
+      "director": "Asghar Farhadi",
+      "writer": "Asghar Farhadi",
+      "producer": "Asghar Farhadi",
+      "music": "Sattar Oraki"
+    },
+    "synopsis": "When a married couple faces an impossible choice between leaving Iran for a better life and staying for the wellbeing of a parent, a separation sets off a chain of events that reveals deep societal and personal tensions."
+  },
+  "QCN8FOP": {
+    "movie_id": "QCN8FOP",
+    "title": "Children of Heaven",
+    "genres": [
+      "Drama"
+    ],
+    "runtime_minutes": 89,
+    "mpaa_rating": "PG",
+    "languages_audio": [
+      "Persian"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D"
+    ],
+    "release_date": "97-02-01",
+    "end_of_run_est": "97-08-31",
+    "cast": [
+      {
+        "name": "Amir Farrokh Hashemian",
+        "role": "Ali"
+      },
+      {
+        "name": "Bahare Seddiqi",
+        "role": "Zahra"
+      },
+      {
+        "name": "Reza Naji",
+        "role": "Father"
+      }
+    ],
+    "crew": {
+      "director": "Majid Majidi",
+      "writer": "Majid Majidi",
+      "producer": "Majid Majidi",
+      "music": "Kayvan Jahanshahi"
+    },
+    "synopsis": "A young boy and his sister devise a plan to share a single pair of shoes after he loses her only pair, leading to a heartwarming tale of perseverance and sibling love."
+  },
+  "9YUOVD3": {
+    "movie_id": "9YUOVD3",
+    "title": "A Dragon Arrives!",
+    "genres": [
+      "Science Fiction",
+      "Mystery",
+      "Fantasy"
+    ],
+    "runtime_minutes": 107,
+    "mpaa_rating": "PG-13",
+    "languages_audio": [
+      "Persian"
+    ],
+    "subtitles": [
+      "English"
+    ],
+    "formats": [
+      "2D",
+      "Dolby"
+    ],
+    "release_date": "16-02-15",
+    "end_of_run_est": "16-08-15",
+    "cast": [
+      {
+        "name": "Amir Jadidi",
+        "role": "Detective Babak Hafizi"
+      },
+      {
+        "name": "Homayoun Ghanizadeh",
+        "role": "Director at the quarry"
+      },
+      {
+        "name": "Ehsan Goodarzi",
+        "role": "Archivist"
+      }
+    ],
+    "crew": {
+      "director": "Mani Haghighi",
+      "writer": "Mani Haghighi",
+      "producer": "Mani Haghighi",
+      "music": "Christophe Rezai"
+    },
+    "synopsis": "A detective\u2019s investigation into a mysterious death at a remote desert graveyard spirals into a surreal web of legends, science, and myth."
+  }
+}

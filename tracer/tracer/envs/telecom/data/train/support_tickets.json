@@ -1,0 +1,1442 @@
+{
+    "TICKET00001": {
+        "ticket_id": "TICKET00001",
+        "customer_id": "emerson_walker_9886",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00002": {
+        "ticket_id": "TICKET00002",
+        "customer_id": "emerson_walker_9886",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00003": {
+        "ticket_id": "TICKET00003",
+        "customer_id": "emerson_walker_9886",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00004": {
+        "ticket_id": "TICKET00004",
+        "customer_id": "rowan_lee_8557",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00005": {
+        "ticket_id": "TICKET00005",
+        "customer_id": "taylor_walker_0047",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00006": {
+        "ticket_id": "TICKET00006",
+        "customer_id": "taylor_walker_0047",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00007": {
+        "ticket_id": "TICKET00007",
+        "customer_id": "alex_wilson_3158",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00008": {
+        "ticket_id": "TICKET00008",
+        "customer_id": "sam_martinez_1695",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00009": {
+        "ticket_id": "TICKET00009",
+        "customer_id": "morgan_thomas_9302",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00010": {
+        "ticket_id": "TICKET00010",
+        "customer_id": "morgan_thomas_9302",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00011": {
+        "ticket_id": "TICKET00011",
+        "customer_id": "alex_anderson_8285",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00012": {
+        "ticket_id": "TICKET00012",
+        "customer_id": "alex_anderson_8285",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00013": {
+        "ticket_id": "TICKET00013",
+        "customer_id": "alex_anderson_8285",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00014": {
+        "ticket_id": "TICKET00014",
+        "customer_id": "emerson_allen_8604",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00015": {
+        "ticket_id": "TICKET00015",
+        "customer_id": "jamie_martinez_9584",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00016": {
+        "ticket_id": "TICKET00016",
+        "customer_id": "jamie_martinez_9584",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00017": {
+        "ticket_id": "TICKET00017",
+        "customer_id": "jamie_martinez_9584",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00018": {
+        "ticket_id": "TICKET00018",
+        "customer_id": "parker_nguyen_3989",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00019": {
+        "ticket_id": "TICKET00019",
+        "customer_id": "parker_nguyen_3989",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00020": {
+        "ticket_id": "TICKET00020",
+        "customer_id": "parker_nguyen_3989",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00021": {
+        "ticket_id": "TICKET00021",
+        "customer_id": "reese_white_8479",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00022": {
+        "ticket_id": "TICKET00022",
+        "customer_id": "reese_white_8479",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00023": {
+        "ticket_id": "TICKET00023",
+        "customer_id": "reese_white_8479",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00024": {
+        "ticket_id": "TICKET00024",
+        "customer_id": "reese_clark_1767",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00025": {
+        "ticket_id": "TICKET00025",
+        "customer_id": "quinn_white_9478",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00026": {
+        "ticket_id": "TICKET00026",
+        "customer_id": "kendall_lee_0640",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00027": {
+        "ticket_id": "TICKET00027",
+        "customer_id": "casey_allen_4433",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00028": {
+        "ticket_id": "TICKET00028",
+        "customer_id": "casey_allen_4433",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00029": {
+        "ticket_id": "TICKET00029",
+        "customer_id": "reese_white_1093",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00030": {
+        "ticket_id": "TICKET00030",
+        "customer_id": "jordan_clark_8844",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00031": {
+        "ticket_id": "TICKET00031",
+        "customer_id": "jordan_lee_9133",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00032": {
+        "ticket_id": "TICKET00032",
+        "customer_id": "skyler_wright_6539",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00033": {
+        "ticket_id": "TICKET00033",
+        "customer_id": "jamie_patel_7953",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00034": {
+        "ticket_id": "TICKET00034",
+        "customer_id": "jamie_white_7985",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00035": {
+        "ticket_id": "TICKET00035",
+        "customer_id": "jamie_white_7985",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00036": {
+        "ticket_id": "TICKET00036",
+        "customer_id": "cameron_allen_3885",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00037": {
+        "ticket_id": "TICKET00037",
+        "customer_id": "alex_king_8257",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00038": {
+        "ticket_id": "TICKET00038",
+        "customer_id": "avery_hall_2066",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00039": {
+        "ticket_id": "TICKET00039",
+        "customer_id": "drew_thomas_8834",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00040": {
+        "ticket_id": "TICKET00040",
+        "customer_id": "sam_harris_9751",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00041": {
+        "ticket_id": "TICKET00041",
+        "customer_id": "sam_white_0633",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00042": {
+        "ticket_id": "TICKET00042",
+        "customer_id": "jordan_wright_5293",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00043": {
+        "ticket_id": "TICKET00043",
+        "customer_id": "emerson_garcia_1292",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00044": {
+        "ticket_id": "TICKET00044",
+        "customer_id": "drew_harris_5072",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00045": {
+        "ticket_id": "TICKET00045",
+        "customer_id": "kendall_thomas_5468",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00046": {
+        "ticket_id": "TICKET00046",
+        "customer_id": "kendall_thomas_5468",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00047": {
+        "ticket_id": "TICKET00047",
+        "customer_id": "alex_wright_0457",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00048": {
+        "ticket_id": "TICKET00048",
+        "customer_id": "quinn_wilson_7642",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00049": {
+        "ticket_id": "TICKET00049",
+        "customer_id": "emerson_lee_8162",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00050": {
+        "ticket_id": "TICKET00050",
+        "customer_id": "emerson_lee_8162",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00051": {
+        "ticket_id": "TICKET00051",
+        "customer_id": "rowan_brown_4908",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00052": {
+        "ticket_id": "TICKET00052",
+        "customer_id": "alex_lewis_6880",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00053": {
+        "ticket_id": "TICKET00053",
+        "customer_id": "alex_lewis_6880",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00054": {
+        "ticket_id": "TICKET00054",
+        "customer_id": "casey_jackson_6078",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00055": {
+        "ticket_id": "TICKET00055",
+        "customer_id": "sam_martinez_9041",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00056": {
+        "ticket_id": "TICKET00056",
+        "customer_id": "kendall_harris_2194",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00057": {
+        "ticket_id": "TICKET00057",
+        "customer_id": "harper_young_2365",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00058": {
+        "ticket_id": "TICKET00058",
+        "customer_id": "alex_thomas_4139",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00059": {
+        "ticket_id": "TICKET00059",
+        "customer_id": "alex_thomas_4139",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00060": {
+        "ticket_id": "TICKET00060",
+        "customer_id": "alex_thomas_4139",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00061": {
+        "ticket_id": "TICKET00061",
+        "customer_id": "riley_patel_6045",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00062": {
+        "ticket_id": "TICKET00062",
+        "customer_id": "jordan_wright_5265",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00063": {
+        "ticket_id": "TICKET00063",
+        "customer_id": "jordan_wright_5265",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00064": {
+        "ticket_id": "TICKET00064",
+        "customer_id": "elliot_anderson_3546",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00065": {
+        "ticket_id": "TICKET00065",
+        "customer_id": "elliot_king_6630",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00066": {
+        "ticket_id": "TICKET00066",
+        "customer_id": "elliot_king_6630",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00067": {
+        "ticket_id": "TICKET00067",
+        "customer_id": "reese_patel_0807",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00068": {
+        "ticket_id": "TICKET00068",
+        "customer_id": "casey_lee_7980",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00069": {
+        "ticket_id": "TICKET00069",
+        "customer_id": "rowan_allen_6535",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00070": {
+        "ticket_id": "TICKET00070",
+        "customer_id": "rowan_allen_6535",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00071": {
+        "ticket_id": "TICKET00071",
+        "customer_id": "rowan_martinez_8235",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00072": {
+        "ticket_id": "TICKET00072",
+        "customer_id": "rowan_martinez_8235",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00073": {
+        "ticket_id": "TICKET00073",
+        "customer_id": "skyler_lewis_5495",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00074": {
+        "ticket_id": "TICKET00074",
+        "customer_id": "jamie_jackson_7919",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00075": {
+        "ticket_id": "TICKET00075",
+        "customer_id": "kendall_harris_6679",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00076": {
+        "ticket_id": "TICKET00076",
+        "customer_id": "quinn_wilson_5555",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00077": {
+        "ticket_id": "TICKET00077",
+        "customer_id": "quinn_wilson_5555",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00078": {
+        "ticket_id": "TICKET00078",
+        "customer_id": "quinn_wilson_5555",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00079": {
+        "ticket_id": "TICKET00079",
+        "customer_id": "kendall_white_9831",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00080": {
+        "ticket_id": "TICKET00080",
+        "customer_id": "rowan_walker_5808",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00081": {
+        "ticket_id": "TICKET00081",
+        "customer_id": "rowan_walker_5808",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00082": {
+        "ticket_id": "TICKET00082",
+        "customer_id": "rowan_walker_5808",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00083": {
+        "ticket_id": "TICKET00083",
+        "customer_id": "rowan_lee_7942",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00084": {
+        "ticket_id": "TICKET00084",
+        "customer_id": "rowan_lee_7942",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00085": {
+        "ticket_id": "TICKET00085",
+        "customer_id": "elliot_wilson_3057",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00086": {
+        "ticket_id": "TICKET00086",
+        "customer_id": "elliot_wilson_3057",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00087": {
+        "ticket_id": "TICKET00087",
+        "customer_id": "reese_clark_3092",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00088": {
+        "ticket_id": "TICKET00088",
+        "customer_id": "riley_wilson_4618",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00089": {
+        "ticket_id": "TICKET00089",
+        "customer_id": "riley_wilson_4618",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00090": {
+        "ticket_id": "TICKET00090",
+        "customer_id": "morgan_king_8211",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00091": {
+        "ticket_id": "TICKET00091",
+        "customer_id": "jamie_lewis_6100",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00092": {
+        "ticket_id": "TICKET00092",
+        "customer_id": "reese_hall_9712",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00093": {
+        "ticket_id": "TICKET00093",
+        "customer_id": "reese_hall_9712",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00094": {
+        "ticket_id": "TICKET00094",
+        "customer_id": "reese_hall_9712",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00095": {
+        "ticket_id": "TICKET00095",
+        "customer_id": "morgan_jackson_1504",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00096": {
+        "ticket_id": "TICKET00096",
+        "customer_id": "taylor_thomas_9969",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00097": {
+        "ticket_id": "TICKET00097",
+        "customer_id": "taylor_thomas_9969",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00098": {
+        "ticket_id": "TICKET00098",
+        "customer_id": "riley_walker_3495",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00099": {
+        "ticket_id": "TICKET00099",
+        "customer_id": "alex_lee_6770",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00100": {
+        "ticket_id": "TICKET00100",
+        "customer_id": "skyler_white_1594",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00101": {
+        "ticket_id": "TICKET00101",
+        "customer_id": "skyler_white_1594",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00102": {
+        "ticket_id": "TICKET00102",
+        "customer_id": "cameron_brown_2554",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00103": {
+        "ticket_id": "TICKET00103",
+        "customer_id": "cameron_brown_2554",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00104": {
+        "ticket_id": "TICKET00104",
+        "customer_id": "cameron_brown_2554",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00105": {
+        "ticket_id": "TICKET00105",
+        "customer_id": "harper_hall_9239",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00106": {
+        "ticket_id": "TICKET00106",
+        "customer_id": "harper_hall_9239",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00107": {
+        "ticket_id": "TICKET00107",
+        "customer_id": "harper_hall_9239",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00108": {
+        "ticket_id": "TICKET00108",
+        "customer_id": "riley_wright_5057",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00109": {
+        "ticket_id": "TICKET00109",
+        "customer_id": "elliot_lewis_3535",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00110": {
+        "ticket_id": "TICKET00110",
+        "customer_id": "avery_brown_9507",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00111": {
+        "ticket_id": "TICKET00111",
+        "customer_id": "kendall_lee_9122",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00112": {
+        "ticket_id": "TICKET00112",
+        "customer_id": "rowan_martinez_9196",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00113": {
+        "ticket_id": "TICKET00113",
+        "customer_id": "rowan_martinez_9196",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00114": {
+        "ticket_id": "TICKET00114",
+        "customer_id": "cameron_king_9632",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00115": {
+        "ticket_id": "TICKET00115",
+        "customer_id": "kendall_wright_4079",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00116": {
+        "ticket_id": "TICKET00116",
+        "customer_id": "rowan_hall_8774",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00117": {
+        "ticket_id": "TICKET00117",
+        "customer_id": "jamie_clark_4458",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00118": {
+        "ticket_id": "TICKET00118",
+        "customer_id": "parker_clark_0821",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00119": {
+        "ticket_id": "TICKET00119",
+        "customer_id": "jamie_martinez_9693",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00120": {
+        "ticket_id": "TICKET00120",
+        "customer_id": "cameron_wilson_2504",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00121": {
+        "ticket_id": "TICKET00121",
+        "customer_id": "emerson_lee_1864",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00122": {
+        "ticket_id": "TICKET00122",
+        "customer_id": "emerson_lee_1864",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00123": {
+        "ticket_id": "TICKET00123",
+        "customer_id": "taylor_allen_7009",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00124": {
+        "ticket_id": "TICKET00124",
+        "customer_id": "emerson_nguyen_6383",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00125": {
+        "ticket_id": "TICKET00125",
+        "customer_id": "taylor_hall_9696",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00126": {
+        "ticket_id": "TICKET00126",
+        "customer_id": "emerson_walker_8800",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00127": {
+        "ticket_id": "TICKET00127",
+        "customer_id": "quinn_young_8573",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00128": {
+        "ticket_id": "TICKET00128",
+        "customer_id": "jamie_martinez_3329",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00129": {
+        "ticket_id": "TICKET00129",
+        "customer_id": "alex_thomas_7170",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00130": {
+        "ticket_id": "TICKET00130",
+        "customer_id": "sam_martinez_3845",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00131": {
+        "ticket_id": "TICKET00131",
+        "customer_id": "sam_martinez_3845",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00132": {
+        "ticket_id": "TICKET00132",
+        "customer_id": "parker_lee_9680",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00133": {
+        "ticket_id": "TICKET00133",
+        "customer_id": "parker_lee_9680",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00134": {
+        "ticket_id": "TICKET00134",
+        "customer_id": "parker_lee_9680",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00135": {
+        "ticket_id": "TICKET00135",
+        "customer_id": "harper_jackson_6887",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00136": {
+        "ticket_id": "TICKET00136",
+        "customer_id": "kendall_clark_0565",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00137": {
+        "ticket_id": "TICKET00137",
+        "customer_id": "kendall_clark_0565",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00138": {
+        "ticket_id": "TICKET00138",
+        "customer_id": "taylor_nguyen_0115",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00139": {
+        "ticket_id": "TICKET00139",
+        "customer_id": "drew_garcia_4446",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00140": {
+        "ticket_id": "TICKET00140",
+        "customer_id": "parker_hall_7714",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00141": {
+        "ticket_id": "TICKET00141",
+        "customer_id": "morgan_lewis_3681",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00142": {
+        "ticket_id": "TICKET00142",
+        "customer_id": "casey_garcia_5886",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00143": {
+        "ticket_id": "TICKET00143",
+        "customer_id": "casey_garcia_5886",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00144": {
+        "ticket_id": "TICKET00144",
+        "customer_id": "taylor_anderson_1691",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00145": {
+        "ticket_id": "TICKET00145",
+        "customer_id": "casey_nguyen_4948",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00146": {
+        "ticket_id": "TICKET00146",
+        "customer_id": "skyler_clark_3608",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00147": {
+        "ticket_id": "TICKET00147",
+        "customer_id": "taylor_martinez_4946",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00148": {
+        "ticket_id": "TICKET00148",
+        "customer_id": "taylor_martinez_4946",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00149": {
+        "ticket_id": "TICKET00149",
+        "customer_id": "riley_patel_6640",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00150": {
+        "ticket_id": "TICKET00150",
+        "customer_id": "riley_patel_6640",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00151": {
+        "ticket_id": "TICKET00151",
+        "customer_id": "sam_white_4704",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00152": {
+        "ticket_id": "TICKET00152",
+        "customer_id": "parker_young_5701",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00153": {
+        "ticket_id": "TICKET00153",
+        "customer_id": "parker_young_5701",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00154": {
+        "ticket_id": "TICKET00154",
+        "customer_id": "parker_young_5701",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00155": {
+        "ticket_id": "TICKET00155",
+        "customer_id": "riley_walker_9933",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00156": {
+        "ticket_id": "TICKET00156",
+        "customer_id": "morgan_hall_4954",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00157": {
+        "ticket_id": "TICKET00157",
+        "customer_id": "reese_lee_5555",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00158": {
+        "ticket_id": "TICKET00158",
+        "customer_id": "avery_thomas_0029",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00159": {
+        "ticket_id": "TICKET00159",
+        "customer_id": "avery_garcia_0181",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00160": {
+        "ticket_id": "TICKET00160",
+        "customer_id": "harper_anderson_9931",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00161": {
+        "ticket_id": "TICKET00161",
+        "customer_id": "elliot_patel_3751",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00162": {
+        "ticket_id": "TICKET00162",
+        "customer_id": "alex_lee_6742",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00163": {
+        "ticket_id": "TICKET00163",
+        "customer_id": "drew_garcia_1137",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00164": {
+        "ticket_id": "TICKET00164",
+        "customer_id": "drew_garcia_1137",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00165": {
+        "ticket_id": "TICKET00165",
+        "customer_id": "skyler_lee_0701",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00166": {
+        "ticket_id": "TICKET00166",
+        "customer_id": "sam_anderson_9474",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00167": {
+        "ticket_id": "TICKET00167",
+        "customer_id": "jamie_harris_3456",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00168": {
+        "ticket_id": "TICKET00168",
+        "customer_id": "jamie_harris_3456",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00169": {
+        "ticket_id": "TICKET00169",
+        "customer_id": "jamie_harris_3456",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00170": {
+        "ticket_id": "TICKET00170",
+        "customer_id": "rowan_nguyen_5695",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00171": {
+        "ticket_id": "TICKET00171",
+        "customer_id": "jamie_white_7210",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00172": {
+        "ticket_id": "TICKET00172",
+        "customer_id": "harper_allen_4398",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00173": {
+        "ticket_id": "TICKET00173",
+        "customer_id": "harper_allen_4398",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00174": {
+        "ticket_id": "TICKET00174",
+        "customer_id": "cameron_brown_3317",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00175": {
+        "ticket_id": "TICKET00175",
+        "customer_id": "cameron_brown_3317",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00176": {
+        "ticket_id": "TICKET00176",
+        "customer_id": "sam_jackson_0641",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00177": {
+        "ticket_id": "TICKET00177",
+        "customer_id": "sam_jackson_0641",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00178": {
+        "ticket_id": "TICKET00178",
+        "customer_id": "casey_jackson_4145",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00179": {
+        "ticket_id": "TICKET00179",
+        "customer_id": "taylor_wright_6746",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00180": {
+        "ticket_id": "TICKET00180",
+        "customer_id": "taylor_wright_6746",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00181": {
+        "ticket_id": "TICKET00181",
+        "customer_id": "rowan_garcia_8718",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00182": {
+        "ticket_id": "TICKET00182",
+        "customer_id": "rowan_garcia_8718",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00183": {
+        "ticket_id": "TICKET00183",
+        "customer_id": "rowan_garcia_8718",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00184": {
+        "ticket_id": "TICKET00184",
+        "customer_id": "elliot_white_0405",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00185": {
+        "ticket_id": "TICKET00185",
+        "customer_id": "avery_allen_9914",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00186": {
+        "ticket_id": "TICKET00186",
+        "customer_id": "avery_allen_9914",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00187": {
+        "ticket_id": "TICKET00187",
+        "customer_id": "sam_harris_4993",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00188": {
+        "ticket_id": "TICKET00188",
+        "customer_id": "riley_wilson_6749",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00189": {
+        "ticket_id": "TICKET00189",
+        "customer_id": "riley_wilson_6749",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00190": {
+        "ticket_id": "TICKET00190",
+        "customer_id": "riley_wilson_6749",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00191": {
+        "ticket_id": "TICKET00191",
+        "customer_id": "harper_lee_7515",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00192": {
+        "ticket_id": "TICKET00192",
+        "customer_id": "harper_lee_7515",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00193": {
+        "ticket_id": "TICKET00193",
+        "customer_id": "parker_wilson_0800",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00194": {
+        "ticket_id": "TICKET00194",
+        "customer_id": "harper_jackson_1164",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00195": {
+        "ticket_id": "TICKET00195",
+        "customer_id": "harper_wright_9950",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00196": {
+        "ticket_id": "TICKET00196",
+        "customer_id": "jordan_lee_4152",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00197": {
+        "ticket_id": "TICKET00197",
+        "customer_id": "cameron_martinez_2452",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00198": {
+        "ticket_id": "TICKET00198",
+        "customer_id": "kendall_king_8523",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00199": {
+        "ticket_id": "TICKET00199",
+        "customer_id": "kendall_king_8523",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00200": {
+        "ticket_id": "TICKET00200",
+        "customer_id": "quinn_anderson_8195",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00201": {
+        "ticket_id": "TICKET00201",
+        "customer_id": "alex_anderson_1964",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00202": {
+        "ticket_id": "TICKET00202",
+        "customer_id": "rowan_hall_8198",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00203": {
+        "ticket_id": "TICKET00203",
+        "customer_id": "morgan_allen_2468",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00204": {
+        "ticket_id": "TICKET00204",
+        "customer_id": "morgan_allen_2468",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00205": {
+        "ticket_id": "TICKET00205",
+        "customer_id": "taylor_allen_7996",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00206": {
+        "ticket_id": "TICKET00206",
+        "customer_id": "jordan_martinez_1783",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00207": {
+        "ticket_id": "TICKET00207",
+        "customer_id": "quinn_anderson_6424",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00208": {
+        "ticket_id": "TICKET00208",
+        "customer_id": "quinn_anderson_6424",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00209": {
+        "ticket_id": "TICKET00209",
+        "customer_id": "drew_king_0974",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00210": {
+        "ticket_id": "TICKET00210",
+        "customer_id": "drew_king_0974",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00211": {
+        "ticket_id": "TICKET00211",
+        "customer_id": "cameron_young_2427",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00212": {
+        "ticket_id": "TICKET00212",
+        "customer_id": "elliot_jackson_4381",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00213": {
+        "ticket_id": "TICKET00213",
+        "customer_id": "elliot_nguyen_4725",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00214": {
+        "ticket_id": "TICKET00214",
+        "customer_id": "quinn_wilson_4735",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00215": {
+        "ticket_id": "TICKET00215",
+        "customer_id": "quinn_wilson_4735",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00216": {
+        "ticket_id": "TICKET00216",
+        "customer_id": "casey_walker_2367",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00217": {
+        "ticket_id": "TICKET00217",
+        "customer_id": "quinn_harris_9291",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00218": {
+        "ticket_id": "TICKET00218",
+        "customer_id": "avery_martinez_8709",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00219": {
+        "ticket_id": "TICKET00219",
+        "customer_id": "avery_martinez_8709",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00220": {
+        "ticket_id": "TICKET00220",
+        "customer_id": "harper_king_2209",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00221": {
+        "ticket_id": "TICKET00221",
+        "customer_id": "casey_harris_2762",
+        "status": "open",
+        "priority": "low"
+    },
+    "TICKET00222": {
+        "ticket_id": "TICKET00222",
+        "customer_id": "casey_harris_2762",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00223": {
+        "ticket_id": "TICKET00223",
+        "customer_id": "casey_harris_2762",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00224": {
+        "ticket_id": "TICKET00224",
+        "customer_id": "jordan_wilson_9694",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00225": {
+        "ticket_id": "TICKET00225",
+        "customer_id": "drew_garcia_8188",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00226": {
+        "ticket_id": "TICKET00226",
+        "customer_id": "rowan_patel_0421",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00227": {
+        "ticket_id": "TICKET00227",
+        "customer_id": "alex_lee_0125",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00228": {
+        "ticket_id": "TICKET00228",
+        "customer_id": "cameron_martinez_2490",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00229": {
+        "ticket_id": "TICKET00229",
+        "customer_id": "avery_nguyen_2566",
+        "status": "open",
+        "priority": "high"
+    },
+    "TICKET00230": {
+        "ticket_id": "TICKET00230",
+        "customer_id": "quinn_brown_4758",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00231": {
+        "ticket_id": "TICKET00231",
+        "customer_id": "harper_wilson_5062",
+        "status": "open",
+        "priority": "medium"
+    },
+    "TICKET00232": {
+        "ticket_id": "TICKET00232",
+        "customer_id": "kendall_king_3372",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00233": {
+        "ticket_id": "TICKET00233",
+        "customer_id": "drew_brown_4429",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00234": {
+        "ticket_id": "TICKET00234",
+        "customer_id": "drew_brown_4429",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00235": {
+        "ticket_id": "TICKET00235",
+        "customer_id": "riley_walker_1175",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00236": {
+        "ticket_id": "TICKET00236",
+        "customer_id": "sam_clark_1489",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00237": {
+        "ticket_id": "TICKET00237",
+        "customer_id": "taylor_wright_2035",
+        "status": "closed",
+        "priority": "low"
+    },
+    "TICKET00238": {
+        "ticket_id": "TICKET00238",
+        "customer_id": "taylor_wright_2035",
+        "status": "closed",
+        "priority": "high"
+    },
+    "TICKET00239": {
+        "ticket_id": "TICKET00239",
+        "customer_id": "taylor_wright_2035",
+        "status": "closed",
+        "priority": "medium"
+    },
+    "TICKET00240": {
+        "ticket_id": "TICKET00240",
+        "customer_id": "avery_allen_0007",
+        "status": "closed",
+        "priority": "medium"
+    }
+}

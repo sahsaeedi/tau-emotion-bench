@@ -1,0 +1,4733 @@
+[
+  {
+    "id": "basketball_test_0000",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Evan Green (evan.green@lakers.example.com), a player for the Los Angeles Lakers, and you are playing right now in your team's home game today, April 16, 2025, against a visiting club that is also listed as the Los Angeles Lakers. You want the current score, the box score, the scoring timeline and the full details of that game, because you want to see how it is going. After reviewing the game, in this same conversation, you first want a three-pointer you just made in that game, worth 3 points, recorded for your own team at Q2 10:15. After that, you would like your own season point total, because you are tracking your scoring; you only care about your own points, not the team's. Then, in this same conversation, you would like your address updated to 2000 Arena Way, Los Angeles, CA, USA, 90015, which you prefer as your mailing address from now on, since it matches the arena where you are playing. Later, you want to learn about the league in general, so you would like the full list of clubs and the clubs in the NBA. Finally, you would like detailed information about the Los Angeles Lakers club as it appears in that league list, including its club details, full schedule, current win-loss record and active roster; the schedule and roster lists the system keeps are all you need, and you do not want each game or player opened up one by one.\n\nUse evan.green@lakers.example.com for authentication.",
+      "emotion_instruction": "Your excitement is evident in your eagerness to resolve things, but your tone is distant. Focus on direct questions and trust the agent to handle your needs.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "0_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "XYUIZMX"
+          }
+        },
+        {
+          "action_id": "0_1",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "XYUIZMX"
+          }
+        },
+        {
+          "action_id": "0_2",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "XYUIZMX"
+          }
+        },
+        {
+          "action_id": "0_3",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "XYUIZMX"
+          }
+        },
+        {
+          "action_id": "0_4",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "XYUIZMX",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "DHCFDB5",
+            "player_id": "08E54C0",
+            "timestamp": "Q2 10:15"
+          }
+        },
+        {
+          "action_id": "0_5",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "08E54C0"
+          }
+        },
+        {
+          "action_id": "0_6",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "08E54C0",
+            "street": "2000 Arena Way",
+            "city": "Los Angeles",
+            "state": "CA",
+            "country": "USA",
+            "zip": "90015"
+          }
+        },
+        {
+          "action_id": "0_7",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "0_8",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "0_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "FTP0MK7"
+          }
+        },
+        {
+          "action_id": "0_10",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "FTP0MK7"
+          }
+        },
+        {
+          "action_id": "0_11",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "FTP0MK7"
+          }
+        },
+        {
+          "action_id": "0_12",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "FTP0MK7"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0001",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Devin Sabonis (devin.sabonis@magic.example.com), a guard for the Orlando Magic, and you are playing in today's game, April 16, 2025, against the Phoenix Suns. First, because you have moved, you want your address on file updated in this same conversation to 200 Chestnut St, Philadelphia, PA, USA, 90017, which you prefer as your mailing address from now on. Then, for your league context, you would like the list of clubs in the NBA. After that, you want your team's 2024-25 win-loss record, its roster and its complete schedule, because you want to see how your team's season is going; the roster list and the list of games the system keeps are all you need, and you do not want each teammate's profile or each game opened up one by one. Next, you want the scoring timeline of the game you are playing in today against the Suns, because you want to look back at your contributions so far. After that, you would like the complete list of all clubs, because you want the broader competitive landscape, and then your team's club details, including its home arena and roster. Then you want the full details of that same game against the Suns, including its venue and current status, followed by your own total points for the 2024-25 season, because you are tracking your personal performance; you only care about your own points, not the team's. Finally, you would like the box score of that same game, because you want to see each player's contribution and your own points, rebounds and assists.\n\nUse devin.sabonis@magic.example.com for authentication.",
+      "emotion_instruction": "You\u2019re really eager about this and want everything resolved ASAP. Keep your requests direct, brisk, and focused. Show enthusiasm but don't completely let your guard down. Let some skepticism show in your questions.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "1_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "PD7M8ZO",
+            "street": "200 Chestnut St",
+            "city": "Philadelphia",
+            "state": "PA",
+            "country": "USA",
+            "zip": "90017"
+          }
+        },
+        {
+          "action_id": "1_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "1_2",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "VUKBVXO",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "1_3",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "VUKBVXO"
+          }
+        },
+        {
+          "action_id": "1_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "VUKBVXO"
+          }
+        },
+        {
+          "action_id": "1_5",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "NNK1BOR"
+          }
+        },
+        {
+          "action_id": "1_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "1_7",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "VUKBVXO"
+          }
+        },
+        {
+          "action_id": "1_8",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "NNK1BOR"
+          }
+        },
+        {
+          "action_id": "1_9",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "PD7M8ZO"
+          }
+        },
+        {
+          "action_id": "1_10",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "NNK1BOR"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0002",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Scoot Antetokounmpo (scoot.antetokounmpo@pistons.example.com), a guard for the Detroit Pistons. The game you are playing in on April 16, 2025, away against the Atlanta Hawks, has ended on the floor, but the system still lists it as in progress, so you want its status changed to final in this same conversation. That is the only game you want changed: you do not want the status of any other game changed, and you are not disputing the score on record. After that, in this same conversation, because you are relocating, you want your address changed from Indianapolis, IN to 123 Tech Rd, Austin, TX, USA, 73301. Then, to review your performance, you want to know your total points for the 2024-25 season; you only want the single season total, not a game-by-game breakdown. Finally, to plan ahead, you want a complete overview of your team's schedule for the season, covering every game from the start to the end of the season; the list of games the system keeps is all you need, so you do not want each game looked up one by one.\n\nUse scoot.antetokounmpo@pistons.example.com for authentication.",
+      "emotion_instruction": "You interact with a sense of self-assurance. You\u2019re direct and detached, making requests clearly. You want your concern resolved in a reasonable period. You assume the agent is reliable.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "2_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "IP4N2EW"
+          }
+        },
+        {
+          "action_id": "2_1",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "IP4N2EW",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "2_2",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "71NM2P9",
+            "street": "123 Tech Rd",
+            "city": "Austin",
+            "state": "TX",
+            "country": "USA",
+            "zip": "73301"
+          }
+        },
+        {
+          "action_id": "2_3",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "71NM2P9"
+          }
+        },
+        {
+          "action_id": "2_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "W779G9U"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0003",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Zion James (zion.james@kings.example.com), a player for the Sacramento Kings, and you are relocating from Los Angeles to Sacramento, where your team plays. First, in this same conversation, you want your address on file updated to 123 Kings Blvd, Sacramento, CA, USA, 95814, because of that move, and you prefer it as your mailing address from now on. After that, you would like a review of your team's information, because you want to assess your team's current performance: first, the list of all clubs in the league, for reference; then your team's full 2024-25 schedule, where the list of games the system keeps is all you need. That schedule includes your team's home game against the Memphis Grizzlies on April 16, 2025; that game has ended on the floor, but the system still lists it as in progress, so in this same conversation you want its status changed to final. After that, you would like the full details of that game against the Grizzlies, including its box score and scoring history. Then you want your team's full club details, including its roster and arena; you only want to read them over, you are not asking for any change to the roster, and the roster as the club details show it is enough, so you do not need each teammate looked up one by one. Finally, you would like your team's win-loss record for the 2024-25 season.\n\nUse zion.james@kings.example.com for authentication.",
+      "emotion_instruction": "You\u2019re thrilled and want results immediately. Communicate with urgency and clear intent. Let your excitement show, but keep some distance\u2014don\u2019t assume the agent will get it right the first time.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "3_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "70EE82F",
+            "street": "123 Kings Blvd",
+            "city": "Sacramento",
+            "state": "CA",
+            "country": "USA",
+            "zip": "95814"
+          }
+        },
+        {
+          "action_id": "3_1",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "3_2",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "KJPIZQC"
+          }
+        },
+        {
+          "action_id": "3_3",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "BLUFT42",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "3_4",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "BLUFT42"
+          }
+        },
+        {
+          "action_id": "3_5",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "KJPIZQC"
+          }
+        },
+        {
+          "action_id": "3_6",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "KJPIZQC",
+            "season": "2024-25"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0004",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Bradley Walker (bradley.walker@heat.example.com), a player for the Miami Heat, and you are playing right now in your team's game today, April 16, 2025, at the Golden State Warriors. First, you want to see where your team fits in the league: you would like the list of all clubs in the NBA and your team's current win-loss record. For this, the plain list of clubs is all you need, and the only record you care about is your own team's, so you do not want every other club's record pulled. Then you want the details and the current score of your game at Golden State, because you want to stay on top of the live action. In this same conversation, you want a three-pointer you just made in that game, worth 3 points, recorded for your team at the Q2 11:50 mark, because you track your own scoring closely and want it on the record. After that, you want to review the full scoring timeline of that game to see how your baskets unfolded, and you would like your total points across the season, because you want to gauge your overall scoring impact. Later in this same conversation, because you have moved within Miami and need your contact information current for team records, you want your address updated to 123 Ocean Drive, Miami, FL, USA, 33101, which you prefer as your mailing address from now on.\n\nUse bradley.walker@heat.example.com for authentication.",
+      "emotion_instruction": "You\u2019re self-confident and focused on efficiency. Avoid small talk or polite formalities. Indicate your needs are urgent and important. Trust the agent to deliver promptly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "4_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "4_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "DJPT2S3"
+          }
+        },
+        {
+          "action_id": "4_2",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "4_3",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "DJPT2S3"
+          }
+        },
+        {
+          "action_id": "4_4",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "K8MB5XJ"
+          }
+        },
+        {
+          "action_id": "4_5",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "K8MB5XJ"
+          }
+        },
+        {
+          "action_id": "4_6",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "K8MB5XJ",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "DJPT2S3",
+            "player_id": "M74DFLI",
+            "timestamp": "Q2 11:50"
+          }
+        },
+        {
+          "action_id": "4_7",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "K8MB5XJ"
+          }
+        },
+        {
+          "action_id": "4_8",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "M74DFLI"
+          }
+        },
+        {
+          "action_id": "4_9",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "M74DFLI",
+            "street": "123 Ocean Drive",
+            "city": "Miami",
+            "state": "FL",
+            "country": "USA",
+            "zip": "33101"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0005",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Tyrese White (tyrese.white@cavs.example.com), a guard for the Cleveland Cavaliers, and you are playing right now in your team's home game against the Golden State Warriors on April 16, 2025. You want to review how your team is doing in the NBA. First, you would like the list of clubs in the NBA to get a picture of the league landscape; you only care about NBA clubs, not every club in the system. Then you want the details of your team, including its current season win-loss record, to assess the team's performance. After that, you want the current score of the game you are playing in against the Warriors and your own line in its box score, because you want to stay updated on your contribution during the live game; you only care about your own points, not your teammates' lines. Later, in this same conversation, because you have relocated, you want your address updated to 123 Ocean Drive, Miami, FL, USA, 33101, which is your preferred mailing address from now on. After that, in this same conversation, you want a 3-pointer (3 points) you just made in that game against the Warriors recorded for your team at Q3 01:15, so your scoring contribution is accurately reflected. Finally, you want the game's updated scoring timeline checked to confirm your basket was logged; the timeline entry is all the confirmation you need.\n\nUse tyrese.white@cavs.example.com for authentication.",
+      "emotion_instruction": "You\u2019re quite proud of what you\u2019ve achieved and it shows in your words. You expect the agent to acknowledge your success and assist efficiently. Your tone is warm but matter-of-fact. You trust the process will go smoothly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "5_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "5_1",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "LP6PEUN"
+          }
+        },
+        {
+          "action_id": "5_2",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "RE9W0RK"
+          }
+        },
+        {
+          "action_id": "5_3",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "RE9W0RK"
+          }
+        },
+        {
+          "action_id": "5_4",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "RE9W0RK"
+          }
+        },
+        {
+          "action_id": "5_5",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "LP6PEUN"
+          }
+        },
+        {
+          "action_id": "5_6",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "I5GXL87",
+            "street": "123 Ocean Drive",
+            "city": "Miami",
+            "state": "FL",
+            "country": "USA",
+            "zip": "33101"
+          }
+        },
+        {
+          "action_id": "5_7",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "I5GXL87"
+          }
+        },
+        {
+          "action_id": "5_8",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "LP6PEUN"
+          }
+        },
+        {
+          "action_id": "5_9",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "RE9W0RK",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "LP6PEUN",
+            "player_id": "I5GXL87",
+            "timestamp": "Q3 01:15"
+          }
+        },
+        {
+          "action_id": "5_10",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "RE9W0RK"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0006",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Alperen Middleton (alperen.middleton@grizzlies.example.com), a center for the Memphis Grizzlies, and you want to review your club's information and then close out one of your team's games. First, you want the list of all clubs in the league, because you want to understand the full landscape. Then, you want the detailed information about your team, including its full roster, so you can review your teammates and the club's structure; for the roster, the list the system keeps is all you need, and you do not want each teammate looked up one by one. Next, you want to check on your team's home game today, April 16, 2025, against the Chicago Bulls; you are not playing in that one yourself, but you have been following it. You want the score the system currently shows for that game and then its full details, because you want to review the record before it is closed out. That game has ended on the floor, but the system still lists it as in progress, so in this same conversation you want it marked final, to make sure the record accurately reflects the completed contest.\n\nUse alperen.middleton@grizzlies.example.com for authentication.",
+      "emotion_instruction": "You have a quiet confidence about your achievements. You engage the agent in a matter-of-fact and cool tone. You expect prompt but not immediate attention. You trust the agent to manage things well.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "6_0",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "6_1",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "4MDX5JP"
+          }
+        },
+        {
+          "action_id": "6_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "4MDX5JP"
+          }
+        },
+        {
+          "action_id": "6_3",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "ENZBH7S"
+          }
+        },
+        {
+          "action_id": "6_4",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "ENZBH7S"
+          }
+        },
+        {
+          "action_id": "6_5",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "ENZBH7S",
+            "new_status": "final"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0007",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Andre Russell (andre.russell@nuggets.example.com), a player for the Denver Nuggets. First, in this same conversation, you want a 3-pointer you made (3 points) recorded for your team at 03:21 in the first quarter (Q1 03:21) of the game you are playing in today, April 16, 2025: your team's in-progress home game against the Chicago Bulls, because it reflects your actual performance. After it is recorded, you would like your own total points for the 2024-25 season, because you want to track your season performance; you only care about your own points, not the team's. Separately, you want the list of all clubs in the NBA, because you want to review league membership, and then your team's full schedule, because you want to manage team commitments; for the schedule, the list of games the system keeps is all you need, and you do not want each game opened up one by one. Finally, the other game you are playing in today, April 16, 2025, your team's home game against the Indiana Pacers, has ended on the floor, but the system still lists it as in progress, so in this same conversation you want that game marked final, to ensure the game result is officially recorded.\n\nUse andre.russell@nuggets.example.com for authentication.",
+      "emotion_instruction": "You\u2019re feeling a boost of pride and want to protect your accomplishments. Use straightforward language and assert your needs. You expect updates without much delay, but you\u2019re not demanding. Stay somewhat guarded in trusting the agent\u2019s advice.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "7_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "BB2E2FM"
+          }
+        },
+        {
+          "action_id": "7_1",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "BB2E2FM",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "DZJL0S3",
+            "player_id": "EEHSSDZ",
+            "timestamp": "Q1 03:21"
+          }
+        },
+        {
+          "action_id": "7_2",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "EEHSSDZ"
+          }
+        },
+        {
+          "action_id": "7_3",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "7_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "DZJL0S3"
+          }
+        },
+        {
+          "action_id": "7_5",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "NHX7K0W",
+            "new_status": "final"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0008",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Evan Barnes (evan.barnes@celtics.example.com), a forward for the Boston Celtics. First, in this same conversation, you want your address on file updated to 123 Ocean Drive, Miami, FL, USA, 33139, because you recently moved, and you prefer it as your mailing address from now on. Your teammate Luka Vucevic is moving into the same building, so in this same conversation you also want the same new address put on file for him. After that, you would like your total points for the 2024-25 season, because you want a summary of your performance; you only care about your own total, not the team's. You also want the box score for the game you are playing in today, April 16, 2025, away at the Miami Heat, which is still in progress, so you can review your contribution; you just want to look at it, not change anything in it.\n\nUse evan.barnes@celtics.example.com for authentication.",
+      "emotion_instruction": "You approach the situation confidently, with little emotional display. You communicate succinctly, expecting competent service. You want the issue handled without dragging on. You trust the agent to follow through.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "8_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "ZJ0CZDP",
+            "street": "123 Ocean Drive",
+            "city": "Miami",
+            "state": "FL",
+            "country": "USA",
+            "zip": "33139"
+          }
+        },
+        {
+          "action_id": "8_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "ZJ0CZDP"
+          }
+        },
+        {
+          "action_id": "8_2",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "DR16ZBZ"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0009",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Karl-Anthony Doncic (karlanthony.doncic@nuggets.example.com), a player for the Denver Nuggets. The game you played in today, your team's home game against the Boston Celtics on April 16, 2025, has ended on the floor, but the system still lists it as in progress, and a 3-pointer you made in it is not logged yet. First, you would like the list of clubs in the NBA, because you want to understand the full competitive landscape, and then your team's schedule; for the schedule, the list of games the system keeps is all you need, and you do not want each game opened up one by one. Then, in this same conversation, you want that 3-pointer, worth 3 points, recorded for your team in that game at Q3 00:15, so that your scoring contribution is reflected. After that, you would like the current score the system shows for that game and its full details, because you want to see where it stands. Then, in this same conversation, you want that game marked final, because it has ended on the floor but the system still lists it as in progress. Finally, for personal and professional verification, you would like the full list of all clubs, your team's full roster with its player details, and your team's club details, including its home arena, city and active players; the roster list the system keeps and your club's details are all you need for the players, and you do not want each teammate's personal profile opened up one by one.\n\nUse karlanthony.doncic@nuggets.example.com for authentication.",
+      "emotion_instruction": "You are proud of what you\u2019ve accomplished and want efficient service. You communicate in a straightforward, no-nonsense manner. You expect things to move ahead without much delay. You trust the agent\u2019s competence.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "9_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "9_1",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "FB1FHV6"
+          }
+        },
+        {
+          "action_id": "9_2",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "VAVV8ZN",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "FB1FHV6",
+            "player_id": "I71UTS7",
+            "timestamp": "Q3 00:15"
+          }
+        },
+        {
+          "action_id": "9_3",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "VAVV8ZN"
+          }
+        },
+        {
+          "action_id": "9_4",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "VAVV8ZN"
+          }
+        },
+        {
+          "action_id": "9_5",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "VAVV8ZN",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "9_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "9_7",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "FB1FHV6"
+          }
+        },
+        {
+          "action_id": "9_8",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "FB1FHV6"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0010",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Deni VanVleet (deni.vanvleet@knicks.example.com), a player for the New York Knicks. First, you want to see the list of clubs in the NBA, to make sure you have the league's clubs straight. Next, you would like to look at your team's schedule; you only want the games that are currently in progress, not the whole season, because the game you need is one of them. That game is on April 16, 2025: your team is listed as the visiting side, and the home side is a separate club that is also listed as the New York Knicks. That is simply how the league lists that opponent, and you do not want it changed. In that game you made a three-pointer at 11:50 in the second quarter (Q2 11:50), and you want it recorded in this same conversation as a 3-point basket credited to you and to your own team, because the shot went in and it needs to be officially logged. After that, you would like to check the current score of that game to confirm the standing. Then you want to review the full game details, including the scoring history and the box score; you only want to read them over, and you are not asking for any change to the box score. After that, you want the game's status changed to final in this same conversation, because it has ended on the floor, but the system still lists it as in progress. Next, you would like the list of all clubs in the league for reference. You also want your team's roster; a plain list of who is on it is enough, and you do not need each player looked up one by one. Finally, you would like the complete club details for your team, including its arena and team information, for your personal records.\n\nUse deni.vanvleet@knicks.example.com for authentication.",
+      "emotion_instruction": "You are quite excited, though your communication is crisp and impersonal. Don't dwell on pleasantries. Expect the agent to be effective and helpful.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "10_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "10_1",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "1ELMZB6",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "10_2",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "LQRJM9A",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "1ELMZB6",
+            "player_id": "XI8LKIJ",
+            "timestamp": "Q2 11:50"
+          }
+        },
+        {
+          "action_id": "10_3",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "LQRJM9A"
+          }
+        },
+        {
+          "action_id": "10_4",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "LQRJM9A"
+          }
+        },
+        {
+          "action_id": "10_5",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "LQRJM9A",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "10_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "10_7",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "1ELMZB6"
+          }
+        },
+        {
+          "action_id": "10_8",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "1ELMZB6"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0011",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are LeBron Reed (lebron.reed@lakers.example.com), a player for the Los Angeles Lakers. First, you want an overview of the league, so you would like the list of all clubs. Then you would like your team's current win-loss record, because you want to understand your team's standing, and your team's roster, because you want to stay informed about your teammates; the roster list the system keeps is enough, and you do not need each teammate's profile. You also want your own career point total, because you are tracking your individual contribution; you only care about your own points, not the team's. Next, you turn to the home game you are playing in today, April 16, 2025, against the Boston Celtics, which is still in progress: you want its live score, and you would like your team's schedule filtered to the games that are in progress, because you want to see this matchup in context. That home game against the Celtics has now ended on the floor, but the system still lists it as in progress, so in this same conversation you want it marked final to close out the contest. Following that, you would like the box score of that game, because you want to review the player statistics. Finally, for broader context, you would like the list of clubs in the NBA, your team's club details, the full details of that home game against the Celtics, including date, venue and participants, and its complete scoring timeline, because you want to understand how the game unfolded and your own contributions.\n\nUse lebron.reed@lakers.example.com for authentication.",
+      "emotion_instruction": "You\u2019re motivated by pride in your results and want a fair response. Keep your communication concise and to the point. Expect reasonable speed in resolving the issue. Be neutral in tone, but don\u2019t let your guard down with the agent.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "11_0",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "11_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "ECDOVGE"
+          }
+        },
+        {
+          "action_id": "11_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "ECDOVGE"
+          }
+        },
+        {
+          "action_id": "11_3",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "G8RRBND"
+          }
+        },
+        {
+          "action_id": "11_4",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "GX9Z1G1"
+          }
+        },
+        {
+          "action_id": "11_5",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "ECDOVGE",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "11_6",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "GX9Z1G1",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "11_7",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "GX9Z1G1"
+          }
+        },
+        {
+          "action_id": "11_8",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "11_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "ECDOVGE"
+          }
+        },
+        {
+          "action_id": "11_10",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "GX9Z1G1"
+          }
+        },
+        {
+          "action_id": "11_11",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "GX9Z1G1"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0012",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Bradley Walker (bradley.walker@warriors.example.com), a forward for the Golden State Warriors, and you want to understand your team's standing, your own performance and the outcome of your game today at the Denver Nuggets. First, you would like the list of all clubs, because you are evaluating the competitive context. Then you want your team's win-loss record, because you want to understand its season, and your team's active roster, because you want to confirm your teammates; the roster list the system keeps is enough, and you do not need each teammate's profile. You also want your own total points across games, because you are tracking your scoring; you only care about your own points, not the team's. Next, you want the current score of your game today, April 16, 2025, at the Denver Nuggets, and your team's full schedule; for the schedule, the list of games the system keeps is all you need, and you do not want each game looked up one by one. That game at Denver has now ended on the floor, but the system still lists it as in progress, so in this same conversation you want it marked final to confirm the official result. After that, you would like the box score of that game, because you want to review your own line. Then you would like the list of clubs in the NBA, your team's club details, including its roster and arena, the full details of that game at Denver, and its complete scoring timeline, because you want to review the sequence of baskets.\n\nUse bradley.walker@warriors.example.com for authentication.",
+      "emotion_instruction": "You feel proud of your recent accomplishment and want to share it. You speak clearly and confidently. You expect a prompt response and trust the agent to help. You engage positively and are eager to move things forward.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "12_0",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "12_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "AOCD1AL"
+          }
+        },
+        {
+          "action_id": "12_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "AOCD1AL"
+          }
+        },
+        {
+          "action_id": "12_3",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "P7D0F86"
+          }
+        },
+        {
+          "action_id": "12_4",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "IL2Y1AD"
+          }
+        },
+        {
+          "action_id": "12_5",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "AOCD1AL"
+          }
+        },
+        {
+          "action_id": "12_6",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "IL2Y1AD",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "12_7",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "IL2Y1AD"
+          }
+        },
+        {
+          "action_id": "12_8",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "12_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "AOCD1AL"
+          }
+        },
+        {
+          "action_id": "12_10",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "IL2Y1AD"
+          }
+        },
+        {
+          "action_id": "12_11",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "IL2Y1AD"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0013",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Alex Brunson (alex.brunson@mavs.example.com), a player for the Dallas Mavericks, and you want to understand your team's standing and roster context. First, you would like the list of clubs in the NBA, because you want to understand the league landscape. Then you want your team's club details and its current roster, because you want to confirm your teammates, and your team's win-loss record for the 2024-25 season, because you want to assess its performance; the roster list the system keeps is enough, and you do not need each teammate's profile. Later, you turn to your game today, April 16, 2025, at the Brooklyn Nets, which is still in progress: you want its current score and scoring timeline, because you want to stay updated. Then, in this same conversation, you want a 3-pointer of yours, worth 3 points, recorded for your team in that game at Q2 11:59, because it was your final scoring contribution before the game ended. After that, still in this same conversation, you want that game marked final to officially close it out. Subsequently, you would like the full list of all clubs, your team's full schedule for the season, the box score of that game at Brooklyn, and your own total points for the 2024-25 season, because you want to track your personal scoring; for the schedule, the list of games the system keeps is all you need, and you only care about your own points, not the team's.\n\nUse alex.brunson@mavs.example.com for authentication.",
+      "emotion_instruction": "You have a sense of pride about your situation and show it in your tone. You are straightforward and expect timely assistance. You believe the agent will handle your request well. You communicate with a positive, self-assured attitude.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "13_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "13_1",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "HFYTOUG"
+          }
+        },
+        {
+          "action_id": "13_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "HFYTOUG"
+          }
+        },
+        {
+          "action_id": "13_3",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "HFYTOUG"
+          }
+        },
+        {
+          "action_id": "13_4",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "SQV960I"
+          }
+        },
+        {
+          "action_id": "13_5",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "SQV960I"
+          }
+        },
+        {
+          "action_id": "13_6",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "SQV960I",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "HFYTOUG",
+            "player_id": "8U4E2QX",
+            "timestamp": "Q2 11:59"
+          }
+        },
+        {
+          "action_id": "13_7",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "SQV960I",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "13_8",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "13_9",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "HFYTOUG"
+          }
+        },
+        {
+          "action_id": "13_10",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "SQV960I"
+          }
+        },
+        {
+          "action_id": "13_11",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "8U4E2QX"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0014",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Kendrick Leonard (kendrick.leonard@pelicans.example.com), a player for the New Orleans Pelicans, and you are playing in today's game, April 16, 2025, at the Chicago Bulls. You want the current score of that game as the system shows it, because you want to see where it stands. You also want your club's win-loss record, its active roster and its complete schedule, because you want a picture of the team's season; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each player or game opened up one by one. The game has now ended on the floor, but the system still lists it as in progress, so in this same conversation you want that game at Chicago marked final. After that, you would like your total career points, and the box score, scoring timeline and full details of that same game, including its venue and period breakdown, because you want to reflect on how it went. You also want your club's details, such as its home arena. Finally, you would like to see the clubs in the NBA and the complete list of all clubs, because you want the wider league picture.\n\nUse kendrick.leonard@pelicans.example.com for authentication.",
+      "emotion_instruction": "Beneath your concise words, you feel a buzz of excitement. Your tone is matter-of-fact and you don\u2019t bother with pleasantries. You want progress and keep an eye on how the agent handles your requests. Proceed with a hint of skepticism, even as you look forward to results.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "14_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "00HF0T1"
+          }
+        },
+        {
+          "action_id": "14_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "MI6WED0-C3"
+          }
+        },
+        {
+          "action_id": "14_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "MI6WED0-C3"
+          }
+        },
+        {
+          "action_id": "14_3",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "MI6WED0-C3"
+          }
+        },
+        {
+          "action_id": "14_4",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "00HF0T1",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "14_5",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "DR4EF1I"
+          }
+        },
+        {
+          "action_id": "14_6",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "00HF0T1"
+          }
+        },
+        {
+          "action_id": "14_7",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "00HF0T1"
+          }
+        },
+        {
+          "action_id": "14_8",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "00HF0T1"
+          }
+        },
+        {
+          "action_id": "14_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "MI6WED0-C3"
+          }
+        },
+        {
+          "action_id": "14_10",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "14_11",
+          "name": "list_all_clubs",
+          "arguments": {}
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0015",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Alex Brunson (alex.brunson4704@suns.example.com), a player for the Phoenix Suns, and you are following your team's game today, April 16, 2025, at the Dallas Mavericks. You want the current score of that game, because you are monitoring your team's performance. You also want your team's win-loss record, its active roster and its full schedule, because you want to see where the team stands this season; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each player or game looked up one by one. That game at Dallas has now finished, so in this same conversation you want it marked final to officially close it out. After that, you would like your total career points, and the box score, scoring timeline and full details of that same game at Dallas, including its venue and period breakdown, because you want complete awareness of how it played out. You would also like your team's club details, including its arena, and finally the list of all clubs and the clubs in the NBA, because you want to confirm which teams are in your league.\n\nUse alex.brunson4704@suns.example.com for authentication.",
+      "emotion_instruction": "You\u2019re enthusiastic about the interaction and expect something good to happen. You\u2019d prefer not to wait too long. Keep your comments positive but check facts as you go. Remain slightly guarded to ensure you\u2019re well informed.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "15_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "KI6KFET"
+          }
+        },
+        {
+          "action_id": "15_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "R1JCXDZ"
+          }
+        },
+        {
+          "action_id": "15_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "R1JCXDZ"
+          }
+        },
+        {
+          "action_id": "15_3",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "R1JCXDZ"
+          }
+        },
+        {
+          "action_id": "15_4",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "KI6KFET",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "15_5",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "N3HGZO2"
+          }
+        },
+        {
+          "action_id": "15_6",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "KI6KFET"
+          }
+        },
+        {
+          "action_id": "15_7",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "KI6KFET"
+          }
+        },
+        {
+          "action_id": "15_8",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "KI6KFET"
+          }
+        },
+        {
+          "action_id": "15_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "R1JCXDZ"
+          }
+        },
+        {
+          "action_id": "15_10",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "15_11",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0016",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Trae Henderson (trae.henderson@lakers.example.com), a player for the Los Angeles Lakers, and you want to handle a few things in this one conversation while your game is still live. First, you have relocated from Brooklyn to Los Angeles, so in this same conversation you want your address on file updated to 2215 W 8th St, Los Angeles, CA, USA, 90044, which you prefer as your mailing address from now on. After that, you want to know your total points for the 2024-25 season as a quick check while you play; you only want your own season total as a single number, not a game-by-game breakdown. Then, you would like your current team's live-game schedule reviewed to confirm the game you are playing in right now on April 16, 2025: an away game against the Philadelphia 76ers, now in the second quarter. You only care about your team's games that are in progress right now, not the full season schedule, and the 76ers game is the only one that is yours; a game against any other opponent is not the one you are asking about. Finally, in this same conversation, you want your latest 3-point field goal, worth 3 points, recorded in that game's official scoring record, credited to you and your current team at Q2 11:05.\n\nUse trae.henderson@lakers.example.com for authentication.",
+      "emotion_instruction": "You\u2019re proud and in a hurry, expecting prompt attention. Speak directly and neutrally, but don\u2019t fully trust the agent yet. Make your needs clear and look for evidence before accepting help.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "16_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "083QODT",
+            "street": "2215 W 8th St",
+            "city": "Los Angeles",
+            "state": "CA",
+            "country": "USA",
+            "zip": "90044"
+          }
+        },
+        {
+          "action_id": "16_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "083QODT",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "16_2",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "Y8CGE73",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "16_3",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "AAYZY03"
+          }
+        },
+        {
+          "action_id": "16_4",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "AAYZY03",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "Y8CGE73",
+            "player_id": "083QODT",
+            "timestamp": "Q2 11:05"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0017",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jaren Irving (jaren.irving@hawks.example.com), a guard/forward for the Atlanta Hawks, and you are playing in a live game right now. First, you want your mailing address changed in this same conversation to 892 Oakwood Ave, Indianapolis, Indiana, USA, 46201, because you are relocating from Fishers to Indianapolis. After that, you want the current score of the game you are playing in, your team's away game at the Los Angeles Lakers on 2025-04-16, because you want to confirm the game state. You would also like the details of your team (the Atlanta Hawks club you are under contract with) and the full details of that game, because you are reviewing the matchup while it is in progress. Then, in this same conversation, you want a three-pointer worth 3 points recorded in that game for yourself, credited to your team, at timestamp Q2 12:05, because you just made the shot and want the game log to reflect it; you want the time entered exactly as Q2 12:05, the way you noted it. Following that, you want the box score for the same game, because you want to look over the scoring summary. Later, you would like a list of all NBA clubs, because you are browsing the league. After that, you want your team's schedule, the scoring timeline for the game you are playing in, your own 2024-25 season point total, and your team's active roster, because you are reviewing your team's games, the play-by-play scoring, your personal season scoring, and who is currently active. For the schedule, the list of your team's games this season is all you need, without the details of each game, and for the season total you only care about your own points as a single number, not the team's.\n\nUse jaren.irving@hawks.example.com for authentication.",
+      "emotion_instruction": "You have a quiet confidence about your achievements. You engage the agent in a matter-of-fact and cool tone. You expect prompt but not immediate attention. You trust the agent to manage things well.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "17_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "94M29UC",
+            "street": "892 Oakwood Ave",
+            "city": "Indianapolis",
+            "state": "Indiana",
+            "country": "USA",
+            "zip": "46201"
+          }
+        },
+        {
+          "action_id": "17_1",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "D8TQPFW"
+          }
+        },
+        {
+          "action_id": "17_2",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB3"
+          }
+        },
+        {
+          "action_id": "17_3",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "D8TQPFW"
+          }
+        },
+        {
+          "action_id": "17_4",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "D8TQPFW",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "FEGHRTY-CLB3",
+            "player_id": "94M29UC",
+            "timestamp": "Q2 12:05"
+          }
+        },
+        {
+          "action_id": "17_5",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "D8TQPFW"
+          }
+        },
+        {
+          "action_id": "17_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "17_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB3"
+          }
+        },
+        {
+          "action_id": "17_8",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "D8TQPFW"
+          }
+        },
+        {
+          "action_id": "17_9",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "94M29UC"
+          }
+        },
+        {
+          "action_id": "17_10",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB3"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0018",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Malik Gilgeous-Alexander (malik.gilgeousalexander@celtics.example.com), a Boston Celtics player, and today, April 16, 2025, you are at TD Garden playing in your team's home game while also keeping score for it. First, in this same conversation, you want your address on file changed to 742 Beacon St, Boston, MA, USA, 02108, because you are relocating to Boston for the season and prefer it as your mailing address from now on. Then you turn to the game: you mean your in-progress home game at TD Garden against the visiting club that is also listed as the Boston Celtics, not your game against the Phoenix Suns that is also running today. You want its current score checked, then your team's club details and the game's full details reviewed. In this same conversation, you want a 3-pointer of yours (3 points) recorded for your team in that game at Q2 12:05, and you want the time entered exactly as Q2 12:05, as it reads on your scoresheet. After that, you want to see that game's box score. Finally, for a season wrap-up, you would like the list of all clubs, your team's 2024-25 schedule, the scoring timeline of that same game, your own 2024-25 point total and your team's roster player IDs; for the roster you only care about active players, and for the schedule and the roster the lists the system keeps are all you need, so you do not want each game or player looked up one by one.\n\nUse malik.gilgeousalexander@celtics.example.com for authentication.",
+      "emotion_instruction": "You have a quiet confidence about your achievements. You engage the agent in a matter-of-fact and cool tone. You expect prompt but not immediate attention. You trust the agent to manage things well.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "18_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "WET49A4",
+            "street": "742 Beacon St",
+            "city": "Boston",
+            "state": "MA",
+            "country": "USA",
+            "zip": "02108"
+          }
+        },
+        {
+          "action_id": "18_1",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "AW1ZP2X"
+          }
+        },
+        {
+          "action_id": "18_2",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "0QOZPPZ"
+          }
+        },
+        {
+          "action_id": "18_3",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "AW1ZP2X"
+          }
+        },
+        {
+          "action_id": "18_4",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "AW1ZP2X",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "0QOZPPZ",
+            "player_id": "WET49A4",
+            "timestamp": "Q2 12:05"
+          }
+        },
+        {
+          "action_id": "18_5",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "AW1ZP2X"
+          }
+        },
+        {
+          "action_id": "18_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "18_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "0QOZPPZ",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "18_8",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "AW1ZP2X"
+          }
+        },
+        {
+          "action_id": "18_9",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "WET49A4",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "18_10",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "0QOZPPZ"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0019",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are LeBron Reed (lebron.reed@lakers.example.com), a guard for the Los Angeles Lakers. First, because you are relocating from Detroit to Los Angeles to be closer to your team's arena, you want your address on file updated to 4820 Sunset Blvd, Los Angeles, CA, USA, 90027, which you prefer as your mailing address from now on. Then you would like the list of clubs in the NBA, because you want a quick overview of the league. After that, you want your team's active roster, because you want to see your current active teammates; the roster list the system keeps is enough, and you do not need each teammate's profile. You also want your team's club details, because you want its profile and arena information, and your team's schedule filtered to the games that are in progress, because you want to see which of your team's games are currently live; the list the system keeps is all you need, and you do not want each game opened up one by one. Next, you turn to the home game you are playing in today, April 16, 2025, against the Boston Celtics: you want its current score, and then its full details, because you want the complete game context. That home game against the Celtics has now ended on the floor, but the system still lists it as in progress, so in this same conversation you want it marked final, because it is no longer live. After that, you would like the box score of that game, because you want the official scoring summary now that the game is closed.\n\nUse lebron.reed@lakers.example.com for authentication.",
+      "emotion_instruction": "With a strong sense of pride, you communicate with directness and urgency. Don\u2019t bother with friendly tones. Expect the agent to act swiftly and capably.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "19_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "G8RRBND",
+            "street": "4820 Sunset Blvd",
+            "city": "Los Angeles",
+            "state": "CA",
+            "country": "USA",
+            "zip": "90027"
+          }
+        },
+        {
+          "action_id": "19_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "19_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "ECDOVGE"
+          }
+        },
+        {
+          "action_id": "19_3",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "ECDOVGE"
+          }
+        },
+        {
+          "action_id": "19_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "ECDOVGE",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "19_5",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "GX9Z1G1"
+          }
+        },
+        {
+          "action_id": "19_6",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "GX9Z1G1"
+          }
+        },
+        {
+          "action_id": "19_7",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "GX9Z1G1",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "19_8",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "GX9Z1G1"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0020",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Franz Poole (franz.poole@hawks.example.com), a forward/center for the Atlanta Hawks, and today, April 16, 2025, you are playing in a home game against the Boston Celtics. First, because you are relocating from Miami Beach to Atlanta, you want your address on file updated to 120 Peachtree St NW, Atlanta, GA, USA, 30303, which you prefer as your mailing address from now on. After that, you would like to see which clubs play in the NBA, and then the roster, club details and schedule of your own team, because you are curious about the league and want a fuller view of your team; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each player or game opened up one by one. Then you want the current score and full details of the game you are playing in today at home against the Celtics, as the system shows them, because you want to see where it stands. That game has now ended on the floor, but the system still lists it as in progress, so in this same conversation you want it marked final. Finally, you would like the box score of that same game, because you want to review how your night went; you only care about your own line in it (points, rebounds, assists and minutes), not the rest of the team.\n\nUse franz.poole@hawks.example.com for authentication.",
+      "emotion_instruction": "You interact with a sense of self-assurance. You\u2019re direct and detached, making requests clearly. You want your concern resolved in a reasonable period. You assume the agent is reliable.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "20_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "EVVYE0X",
+            "street": "120 Peachtree St NW",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "zip": "30303"
+          }
+        },
+        {
+          "action_id": "20_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "20_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "33UE6F3"
+          }
+        },
+        {
+          "action_id": "20_3",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "33UE6F3"
+          }
+        },
+        {
+          "action_id": "20_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "33UE6F3"
+          }
+        },
+        {
+          "action_id": "20_5",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "J2AJJ2M"
+          }
+        },
+        {
+          "action_id": "20_6",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "J2AJJ2M"
+          }
+        },
+        {
+          "action_id": "20_7",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "J2AJJ2M",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "20_8",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "J2AJJ2M"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0021",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jabari Turner (jabari.turner@knicks.example.com), a New York Knicks forward, contacting support on game day. First, in this same conversation, you want your address on file updated to 1420 Lakeside Dr, Columbus, OH, USA, 43215, because you are relocating from Cleveland to Columbus, and you prefer it as your mailing address from now on. Your teammate Miles Tatum is moving to Columbus with you, so in this same conversation you also want the same new address put on file for him. After that, you would like a quick league and game rundown, because your team is playing at the Boston Celtics today, April 16, 2025, and that game is still in progress: first, the list of clubs in the NBA; then your team's in-progress games, where the list the system keeps is all you need and you do not want each game opened up one by one; and then the full details, scoring timeline, box score and current score of that game at Boston, because you need a fast status update while it is being played. After that, you would like a broader league view: the full list of clubs, your team's win-loss record, your team's club details and roster, and your own 2024-25 season point total; you only care about your own points, not the team's.\n\nUse jabari.turner@knicks.example.com for authentication.",
+      "emotion_instruction": "You\u2019re buzzing with excitement and can\u2019t stand waiting. Use brief, sharp instructions. Trust the agent, but expect them to act quickly and efficiently.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "21_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "IRABYBB",
+            "street": "1420 Lakeside Dr",
+            "city": "Columbus",
+            "state": "OH",
+            "country": "USA",
+            "zip": "43215"
+          }
+        },
+        {
+          "action_id": "21_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "21_2",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "KR6Q9DD",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "21_3",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "MX4KGL6"
+          }
+        },
+        {
+          "action_id": "21_4",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "MX4KGL6"
+          }
+        },
+        {
+          "action_id": "21_5",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "MX4KGL6"
+          }
+        },
+        {
+          "action_id": "21_6",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "MX4KGL6"
+          }
+        },
+        {
+          "action_id": "21_7",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "21_8",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "KR6Q9DD"
+          }
+        },
+        {
+          "action_id": "21_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "KR6Q9DD"
+          }
+        },
+        {
+          "action_id": "21_10",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "KR6Q9DD"
+          }
+        },
+        {
+          "action_id": "21_11",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "IRABYBB"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0022",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Dereck James (dereck.james@lakers.example.com), a guard for the Los Angeles Lakers, contacting support to tidy up your account and catch up on the season. First, in this same conversation, you want your mailing address on file updated to 482 Maple Drive, Columbus, OH, USA, 43215, because you recently moved, and you prefer it as your mailing address from now on. After that, you would like the list of clubs in the NBA, then the schedule of the Los Angeles Lakers club shown in that list, and then that club's completed December 18, 2024 game against the Orlando Magic, including its full game details, scoring timeline, box score and final score, because you want to review that matchup in detail; for the schedule, the list of games the system keeps is all you need. Later, you would like the full list of all clubs, followed by that Lakers club's 2024-25 win-loss record, its club details and its full roster, because you want a broader view of the league and the Lakers' season; the roster list the system keeps is enough. Finally, you want your own total points for the 2024-25 season, because you want to check your personal scoring total; you only care about your own points, not the team's.\n\nUse dereck.james@lakers.example.com for authentication.",
+      "emotion_instruction": "You want to maintain your momentum and are proud of your efforts, so you ask for fast help. Stay focused and use precise language. Rely on the agent\u2019s expertise to address your request. Keep the dialogue action-oriented.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "22_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "6HSAY1C",
+            "street": "482 Maple Drive",
+            "city": "Columbus",
+            "state": "OH",
+            "country": "USA",
+            "zip": "43215"
+          }
+        },
+        {
+          "action_id": "22_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "22_2",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "FTP0MK7"
+          }
+        },
+        {
+          "action_id": "22_3",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "H5A2V1S"
+          }
+        },
+        {
+          "action_id": "22_4",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "H5A2V1S"
+          }
+        },
+        {
+          "action_id": "22_5",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "H5A2V1S"
+          }
+        },
+        {
+          "action_id": "22_6",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "H5A2V1S"
+          }
+        },
+        {
+          "action_id": "22_7",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "22_8",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "FTP0MK7",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "22_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "FTP0MK7"
+          }
+        },
+        {
+          "action_id": "22_10",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "FTP0MK7"
+          }
+        },
+        {
+          "action_id": "22_11",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "6HSAY1C"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0023",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Desmond Butler (desmond.butler@hornets.example.com), a guard for the Charlotte Hornets. First, you want to see which clubs play in the NBA, because you are browsing the league's clubs. You would also like your team's win-loss record for the 2024-25 season, because you want to know where your team stands this season. After that, you would like the full list of all clubs in the system, not only the NBA ones, because you want the complete list of clubs; you mean the clubs themselves, not any team's list of players. Later, you want your own total points across your games, because you are tracking your personal scoring; you only care about your own total, not the team's. You would also like your team's schedule, because you want to see its games; the list of games the system keeps is all you need, and you do not want each game opened up one by one. Then, in this same conversation, you want the game you are playing in today, April 16, 2025, away at the San Antonio Spurs, marked as final: it has ended on the floor, but the system still lists it as in progress, and you only want its status changed, not its score. After that, in this same conversation, you would like your address on file updated to 412 Maple Ave, Denver, CO, USA, 80210, which you prefer as your mailing address from now on, because you are relocating to Denver. Your teammate Zion James (zion.james@hornets.example.com) is moving to Denver with you, so in this same conversation you also want the same new address put on file for him.\n\nUse desmond.butler@hornets.example.com for authentication.",
+      "emotion_instruction": "You carry a sense of pride and demand swift action. You keep your tone neutral and focus on getting things done. You monitor the agent\u2019s responses carefully before placing trust. Keep interactions efficient and goal-oriented.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "23_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "23_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB1"
+          }
+        },
+        {
+          "action_id": "23_2",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "23_3",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "1LCVNOU"
+          }
+        },
+        {
+          "action_id": "23_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB1"
+          }
+        },
+        {
+          "action_id": "23_5",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "O3O42LD",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "23_6",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "1LCVNOU",
+            "street": "412 Maple Ave",
+            "city": "Denver",
+            "state": "CO",
+            "country": "USA",
+            "zip": "80210"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0024",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Joel Cruz (joel.cruz@warriors.example.com), a Golden State Warriors guard/forward, and you are calling while you are playing in your team's live home game today, April 16, 2025, against the Chicago Bulls. First, you want the full list of all clubs, because you want a quick tour of the league structure. Then you would like that list narrowed to the NBA league, because you only want the NBA clubs. After that, you want your team's active roster and your team's schedule of games that are currently in progress, because you want to check your own team's active players and your current live game; for the roster, the list the system keeps is all you need, and you do not want each teammate looked up one by one. Then, in this same conversation, you want a 3-pointer, worth 3 points, recorded for you in the home game you are playing in against the Chicago Bulls at Q2 11:05, credited to your team, because you just made the shot and want the live game to reflect it. Finally, in this same conversation, you would like your address on file updated to 1 Warriors Way, San Francisco, CA, USA, 94158, which you prefer as your mailing address from now on, because you are relocating from Phoenix to San Francisco to be closer to Chase Center.\n\nUse joel.cruz@warriors.example.com for authentication.",
+      "emotion_instruction": "You\u2019re energized and want things done fast. Sound lively and decisive, but don\u2019t let your guard down. Convey a sense of hurry and check on details before agreeing.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "24_0",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "24_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "24_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "25LNXRQ-GSW",
+            "active_only": true
+          }
+        },
+        {
+          "action_id": "24_3",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "25LNXRQ-GSW",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "24_4",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "COT1PYD",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "25LNXRQ-GSW",
+            "player_id": "4D5587A",
+            "timestamp": "Q2 11:05"
+          }
+        },
+        {
+          "action_id": "24_5",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "4D5587A",
+            "street": "1 Warriors Way",
+            "city": "San Francisco",
+            "state": "CA",
+            "country": "USA",
+            "zip": "94158"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0025",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Karl-Anthony Irving (karlanthony.irving@nuggets.example.com), a forward for the Denver Nuggets, and you are playing right now in your team's away game at the Milwaukee Bucks today, April 16, 2025. First, you want to see the list of all clubs, and then that list narrowed to the NBA league, because you are trying to locate your team within the league; for both club lists, the plain list of names is all you need. After that, you would like to review your team's roster and schedule, because you want current team information as a Nuggets forward; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each player or game looked up one by one. Then, in this same conversation, you want a 3-pointer you just made, worth 3 points, recorded for yourself and credited to your team in the game you are playing in at Milwaukee, at Q2 12:05, because you want the live game log to reflect your basket; you want the time entered exactly as Q2 12:05, the way you noted it. After that, in this same conversation, you want your mailing address updated to 1500 Broadway, Denver, CO, USA, 80202, because you are relocating to Denver, and you prefer it as your mailing address from now on.\n\nUse karlanthony.irving@nuggets.example.com for authentication.",
+      "emotion_instruction": "You\u2019re feeling excited about this, but you keep your enthusiasm in check. You want answers fairly soon, but you\u2019re not rushing the agent. Express interest and anticipation, but keep your questions straightforward. Stay alert and make sure you\u2019re getting accurate help.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "25_0",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "25_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "25_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "C6ZJIS0"
+          }
+        },
+        {
+          "action_id": "25_3",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "C6ZJIS0"
+          }
+        },
+        {
+          "action_id": "25_4",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "LI5UJP9",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "C6ZJIS0",
+            "player_id": "U7C6L1J",
+            "timestamp": "Q2 12:05"
+          }
+        },
+        {
+          "action_id": "25_5",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "U7C6L1J",
+            "street": "1500 Broadway",
+            "city": "Denver",
+            "state": "CO",
+            "country": "USA",
+            "zip": "80202"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0026",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Anthony Booker (anthony.booker@heat.example.com), a guard for the Miami Heat. First, in this same conversation, you want your mailing address updated from 941 Basket Blvd to 2201 Maple Ave, Toronto, ON, USA, M6P 1A4, because you are relocating within Toronto and want it as your mailing address from now on. Next, you want the score of your game on April 16, 2025 checked: the one in which your team is the visiting side against a club that is also listed as the Miami Heat, not your other games that day. That game has ended on the floor, but the system still lists it as in progress. For the score, the game\u2019s score summary is all you need; you do not want its box score or scoring timeline, and you are not asking for any points to be changed. After seeing the score, in this same conversation, you want that game marked final so the result is locked in. After that, you want your team\u2019s 2024-25 win-loss record, because you want to see where your team stands once that result counts; the win-loss count is all you need, and you do not want each game opened up one by one.\n\nUse anthony.booker@heat.example.com for authentication.",
+      "emotion_instruction": "You\u2019re eager to see what happens, but you keep your tone icy. Press the agent to act fast and get straight to the point. Hold back on personal information. Treat what the agent says with skepticism.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "26_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "L1EXQDV",
+            "street": "2201 Maple Ave",
+            "city": "Toronto",
+            "state": "ON",
+            "country": "USA",
+            "zip": "M6P 1A4"
+          }
+        },
+        {
+          "action_id": "26_1",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "ZMM3811"
+          }
+        },
+        {
+          "action_id": "26_2",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "ZMM3811",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "26_3",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "GPTB4DB",
+            "season": "2024-25"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0027",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are OG Tatum (og.tatum@magic.example.com), a guard-forward for the Orlando Magic, and you are playing right now in your team's game today, April 16, 2025, away at the San Antonio Spurs; you want to catch up on the league standings and your own numbers. First, you want the complete list of all clubs, because you are starting with the full club landscape. Then you would like your team's 2024-25 win-loss record, because you want to know how your team is performing this season; the only record you care about is your own team's, so you do not want any other club's record pulled. After that, you want the list of clubs that play in the NBA league, because you want the full NBA context; for both club lists, the plain list of names is all you need, and you do not want details on each club. Next, you would like your own total points for the 2024-25 season, because you are checking your scoring numbers; you only care about your own points, not the team's. You would also like your team's schedule of games that are currently in progress, because you want to see which games are live. Then, in this same conversation, you want a three-pointer worth 3 points recorded for you and your team in the game you are playing in at San Antonio, in the second quarter at 11:05 (Q2 11:05), because you just hit the shot during the live game. Finally, in this same conversation, you want your mailing address updated to 88 Peachtree St, Orlando, FL, USA, 32801, because you are relocating to Orlando, and you prefer it as your mailing address from now on.\n\nUse og.tatum@magic.example.com for authentication.",
+      "emotion_instruction": "You\u2019re feeling a boost of pride and want to protect your accomplishments. Use straightforward language and assert your needs. You expect updates without much delay, but you\u2019re not demanding. Stay somewhat guarded in trusting the agent\u2019s advice.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "27_0",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "27_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "VUKBVXO",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "27_2",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "27_3",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "550R6X5",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "27_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "VUKBVXO",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "27_5",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "CP5UPTS",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "VUKBVXO",
+            "player_id": "550R6X5",
+            "timestamp": "Q2 11:05"
+          }
+        },
+        {
+          "action_id": "27_6",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "550R6X5",
+            "street": "88 Peachtree St",
+            "city": "Orlando",
+            "state": "FL",
+            "country": "USA",
+            "zip": "32801"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0028",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Brook Banchero (brook.banchero@mavs.example.com), a center for the Dallas Mavericks. First, you want the list of clubs that play in the NBA, because you want a quick look at the league landscape before focusing on your own team. Then you would like your team's roster and its full club details, because you want to review your team's players and details; for the roster, the list the system keeps is all you need, and you do not want each teammate looked up one by one. You only want to look these over, and you are not asking for any change to the roster. After that, in this same conversation, you want your address on file updated to 410 Elm St, Dallas, TX, USA, 75219, because you are relocating to Dallas, and you prefer it as your mailing address from now on. Next, you would like the full list of all clubs, because you want the full club list before checking your team's calendar. After that, you would like your team's schedule, because your team's next matchup is on the calendar; the list of games the system keeps is all you need, and you do not want each game opened up one by one. That next matchup is your team's home game against the Denver Nuggets on April 27, 2025, and it is tipping off now, so in this same conversation you want that game's status changed to in progress, because you want the box score to start filling in.\n\nUse brook.banchero@mavs.example.com for authentication.",
+      "emotion_instruction": "Your sense of pride is strong, so you express yourself assertively. Skip unnecessary niceties. Push for immediate action, knowing the agent is capable. Be brief but expect excellence.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "28_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "28_1",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "66BC1MI-DAL"
+          }
+        },
+        {
+          "action_id": "28_2",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "66BC1MI-DAL"
+          }
+        },
+        {
+          "action_id": "28_3",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "NS49ZMD",
+            "street": "410 Elm St",
+            "city": "Dallas",
+            "state": "TX",
+            "country": "USA",
+            "zip": "75219"
+          }
+        },
+        {
+          "action_id": "28_4",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "28_5",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "66BC1MI-DAL"
+          }
+        },
+        {
+          "action_id": "28_6",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "FPP38MB",
+            "new_status": "in_progress"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0029",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Tyler Carter (tyler.carter@spurs.example.com), a guard for the San Antonio Spurs, and it is a busy game day for the Spurs, with a home game against the Indiana Pacers and a road game at the Boston Celtics both under way today, April 16, 2025. You first want your total points for the season, because you want to confirm your scoring total; you only care about your own points, not the team's. Then you would like your club's active roster and an overview of your club, because you want to review your teammates and club details; the roster list the system keeps is enough, and you do not need each teammate's profile. After that, you want the details and full scoring timeline of the home game against the Pacers, because you want to follow the live scoring. Next, you want the current score of the road game at Boston. That game is over, so in this same conversation you want it marked final to close it out. Then you would like your club's 2024-25 win-loss record, followed by the list of all clubs and the clubs in the NBA, because you want to browse the league. Finally, because you are relocating to San Antonio to be closer to the team, you want your address on file updated to 1 Frost Bank Center Dr, San Antonio, TX, USA, 78219, which you prefer as your mailing address going forward.\n\nUse tyler.carter@spurs.example.com for authentication.",
+      "emotion_instruction": "You\u2019re buzzing with excitement and want things sorted quickly. Speak energetically, but keep your tone businesslike. Push for fast answers without sounding rude. You\u2019re hopeful but not fully convinced the agent can deliver.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "29_0",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "TE7MPHT"
+          }
+        },
+        {
+          "action_id": "29_1",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "XQ4GX5N"
+          }
+        },
+        {
+          "action_id": "29_2",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "XQ4GX5N"
+          }
+        },
+        {
+          "action_id": "29_3",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "DOFLRRG"
+          }
+        },
+        {
+          "action_id": "29_4",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "DOFLRRG"
+          }
+        },
+        {
+          "action_id": "29_5",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "TQ92KD7"
+          }
+        },
+        {
+          "action_id": "29_6",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "TQ92KD7",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "29_7",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "XQ4GX5N",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "29_8",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "29_9",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "29_10",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "TE7MPHT",
+            "street": "1 Frost Bank Center Dr",
+            "city": "San Antonio",
+            "state": "TX",
+            "country": "USA",
+            "zip": "78219"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0030",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Ethan Mitchell (ethan.mitchell@knicks.example.com), a guard for the New York Knicks. First, you want the final score of the game you played against the Denver Nuggets on October 26, 2024, because you want to confirm how that game ended. You also want your own 2024-25 season scoring total, because you want to review your season scoring; you only care about your own points, not the team's. Then you would like the box score of that same October 26 game, because you want to see your stats from it, and your team's club details, because you want the club information on file. After that, because you are relocating to Los Angeles, you want your address on file updated to 1280 Sunset Blvd, Los Angeles, CA, USA, 90026, which you prefer as your mailing address from now on. Then, because you are helping with team admin, you would like to see the full list of all clubs, then only the clubs in the NBA, and then your team's schedule, because you want to see its upcoming games; you only care about the games that are still to be played, and the list the system keeps is enough, so you do not want every game opened up one by one. Finally, in this same conversation, you want your upcoming game against the Denver Nuggets on April 18, 2025 postponed, because that matchup has to be pushed back; you only want its status changed to postponed, and setting a new date is not part of this conversation.\n\nUse ethan.mitchell@knicks.example.com for authentication.",
+      "emotion_instruction": "You feel energized about this, but your manner is all business. Speak succinctly, showing little emotion, and trust the agent will guide you correctly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "30_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "9QJ4ZQ5"
+          }
+        },
+        {
+          "action_id": "30_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "3OR99OV"
+          }
+        },
+        {
+          "action_id": "30_2",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "9QJ4ZQ5"
+          }
+        },
+        {
+          "action_id": "30_3",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "EW0D35R"
+          }
+        },
+        {
+          "action_id": "30_4",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "3OR99OV",
+            "street": "1280 Sunset Blvd",
+            "city": "Los Angeles",
+            "state": "CA",
+            "country": "USA",
+            "zip": "90026"
+          }
+        },
+        {
+          "action_id": "30_5",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "30_6",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "30_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "EW0D35R"
+          }
+        },
+        {
+          "action_id": "30_8",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "VI12F7M",
+            "new_status": "postponed"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0031",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Tyrese Williams (tyrese.williams@pelicans.example.com), a player for the New Orleans Pelicans. You are calling right after the game you played in on April 16, 2025, at the Philadelphia 76ers: it has ended on the floor, but the system still lists it as in progress. First, you want the score of that game at Philadelphia as the system currently shows it, because you want to see how the matchup stands on record. You also want to know your point total for the 2024-25 season, because you are keeping track of your season. You would like the box score of that same game, because you want to check your own performance; your own points, rebounds, assists and minutes are what you care about, not a rundown of every player. You also want your club's details, including its home arena, as a refresher on your team's information. Later, because you are moving closer to the arena, you want your mailing address on file updated to 4821 Magnolia Ave, New Orleans, LA, USA, 70118, which you prefer as your mailing address from now on. After that, you want the full list of clubs shown first, because you want a league-wide overview before narrowing the view. You then want that list filtered to NBA clubs, because you want to confirm the NBA teams. Subsequently, you want your team's schedule filtered to the games the system still lists as in progress, because you want to see which games are still open; the list the system keeps is all you need, and you do not want each game opened up one by one. Finally, in this same conversation, you want that game at Philadelphia marked final, because it is over and you want the result to count toward the season record.\n\nUse tyrese.williams@pelicans.example.com for authentication.",
+      "emotion_instruction": "You\u2019re feeling proud and want fast answers. You communicate clearly and to the point, but are hesitant to fully rely on the agent. You watch closely for good service and don\u2019t waste time.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "31_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "4JIF8TV"
+          }
+        },
+        {
+          "action_id": "31_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "ZGSBWTU"
+          }
+        },
+        {
+          "action_id": "31_2",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "4JIF8TV"
+          }
+        },
+        {
+          "action_id": "31_3",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "UBE1B8Q"
+          }
+        },
+        {
+          "action_id": "31_4",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "ZGSBWTU",
+            "street": "4821 Magnolia Ave",
+            "city": "New Orleans",
+            "state": "LA",
+            "country": "USA",
+            "zip": "70118"
+          }
+        },
+        {
+          "action_id": "31_5",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "31_6",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "31_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "UBE1B8Q",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "31_8",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "4JIF8TV",
+            "new_status": "final"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0032",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Paolo Edwards (paolo.edwards@bulls.com), a guard/forward for the Chicago Bulls, and you are playing in today's game, April 16, 2025, at the Atlanta Hawks, which is still in progress. First, you want your own 2024-25 point total before any new basket is credited, because you are doing a season check; you only care about your own points, not the team's. You also want your team's 2024-25 schedule and then your club's details, because you want the team context for that season; the list of games is all you need, not each game opened up. You then want the current score of your game at Atlanta, because you are calling during the live game and want the latest status. After that, in this same conversation, you want a 3-point field goal of yours, worth 3 points, recorded for your team in that game at Q2 11:05, because you are reporting a live basket of yours that has not been logged yet. Then you would like to see that game's box score, because you want to check your own line for the night: your rebounds, assists and minutes. Later in this same conversation, after the game-related asks are handled, you want your address updated to 1 State Farm Dr, Atlanta, GA, USA, 30303, because you are relocating to Atlanta for the season, and you prefer it as your mailing address from now on. After that, you would like a league overview in this order: the full list of all clubs, then your team's active roster, then your team's 2024-25 win-loss record, and then the list of all clubs in the NBA, because you are curious about the league landscape; the roster list the system keeps is enough, and you do not need each teammate's profile.\n\nUse paolo.edwards@bulls.com for authentication.",
+      "emotion_instruction": "You\u2019re excited and want service immediately. Speak coldly and keep your focus on speed. Trust that the agent will deliver what you need without delay.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "32_0",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "FF4X8U5",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "32_1",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "ROVF3EN",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "32_2",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "ROVF3EN"
+          }
+        },
+        {
+          "action_id": "32_3",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "6JL95XX"
+          }
+        },
+        {
+          "action_id": "32_4",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "6JL95XX",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "ROVF3EN",
+            "player_id": "FF4X8U5",
+            "timestamp": "Q2 11:05"
+          }
+        },
+        {
+          "action_id": "32_5",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "6JL95XX"
+          }
+        },
+        {
+          "action_id": "32_6",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "FF4X8U5",
+            "street": "1 State Farm Dr",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "zip": "30303"
+          }
+        },
+        {
+          "action_id": "32_7",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "32_8",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "ROVF3EN"
+          }
+        },
+        {
+          "action_id": "32_9",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "ROVF3EN",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "32_10",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0033",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Khris Sengun (khris.sengun@hornets.example.com), a guard for the Charlotte Hornets, and you are getting ready for your next game. First, you want to look back at your game at the Boston Celtics on October 16, 2024: you want its final score and full game details. You also want the Hornets' 2024-25 win-loss record, the club's details, its active roster and your own total points, because you want the team's season context; the roster list the system keeps is enough, and you do not need each teammate's profile. After that, you would like to browse the full list of clubs and then see the Hornets' schedule, because you want the league list and your upcoming games; the list of games is all you need, not each game opened up. Your next game, at the Detroit Pistons on April 21, 2025, is about to tip off, so in this same conversation you want it marked in progress, and then you want your opening three-point basket, worth 3 points, for Charlotte at 5:30 in the first quarter recorded, because you want the live game to reflect your score. Finally, you would like the scoring timeline and box score of that game at Detroit, because you want to confirm the basket was captured.\n\nUse khris.sengun@hornets.example.com for authentication.",
+      "emotion_instruction": "You approach the conversation with pride in your actions and urgency for results. You keep communication matter-of-fact and brisk. You\u2019re careful about accepting the agent\u2019s help right away. Make requests firmly but hold back a bit.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "33_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "WIMQQT7"
+          }
+        },
+        {
+          "action_id": "33_1",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "WIMQQT7"
+          }
+        },
+        {
+          "action_id": "33_2",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "DX1OFHA",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "33_3",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "DX1OFHA"
+          }
+        },
+        {
+          "action_id": "33_4",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "DX1OFHA"
+          }
+        },
+        {
+          "action_id": "33_5",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "TRZ2O1M"
+          }
+        },
+        {
+          "action_id": "33_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "33_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "DX1OFHA"
+          }
+        },
+        {
+          "action_id": "33_8",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "MQTM5TN",
+            "new_status": "in_progress"
+          }
+        },
+        {
+          "action_id": "33_9",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "MQTM5TN",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "DX1OFHA",
+            "player_id": "TRZ2O1M",
+            "timestamp": "Q1 05:30"
+          }
+        },
+        {
+          "action_id": "33_10",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "MQTM5TN"
+          }
+        },
+        {
+          "action_id": "33_11",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "MQTM5TN"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0034",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are LaMelo Stone (lamelo.stone@pacers.example.com), a guard for the Indiana Pacers, contacting support to catch up on your team's 2024-25 season. You want the final score and full details of your home game against the Los Angeles Lakers on March 6, 2025, because you want a recap of that game. You also want your team's 2024-25 win-loss record, its club profile, its full roster and your own season point total, because you want a complete picture of the team and your own scoring; the roster list the system keeps is enough, and you only care about your own points, not the team's. Later, you would like the full list of all clubs, followed by your team's full schedule, because you want the league context and the team's upcoming slate; the list of games the system keeps is all you need, and you do not want each game opened up one by one. After that, your upcoming road game at the Boston Celtics on April 27, 2025 is about to tip off, so in this same conversation you want it marked in progress, because you want to begin live tracking of that game. Once it is in progress, you want your opening 3-point field goal, worth 3 points, recorded for your team at Q1 08:15, because you scored it early in the first quarter and want the game log to reflect it. Finally, you would like the scoring timeline and box score of that game at Boston, because you want to look over the game log.\n\nUse lamelo.stone@pacers.example.com for authentication.",
+      "emotion_instruction": "You\u2019re thrilled about this and want it handled ASAP. Your tone is direct and quick, skipping pleasantries. You expect the agent to assist efficiently. Trust that they\u2019ll get it done right.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "34_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "5V6ZMXQ"
+          }
+        },
+        {
+          "action_id": "34_1",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "5V6ZMXQ"
+          }
+        },
+        {
+          "action_id": "34_2",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "2FHZLWO",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "34_3",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "2FHZLWO"
+          }
+        },
+        {
+          "action_id": "34_4",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "2FHZLWO"
+          }
+        },
+        {
+          "action_id": "34_5",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "AOVPNLU"
+          }
+        },
+        {
+          "action_id": "34_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "34_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "2FHZLWO"
+          }
+        },
+        {
+          "action_id": "34_8",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "UESLE77",
+            "new_status": "in_progress"
+          }
+        },
+        {
+          "action_id": "34_9",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "UESLE77",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "2FHZLWO",
+            "player_id": "AOVPNLU",
+            "timestamp": "Q1 08:15"
+          }
+        },
+        {
+          "action_id": "34_10",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "UESLE77"
+          }
+        },
+        {
+          "action_id": "34_11",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "UESLE77"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0035",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jabari Turner (jabari.turner@celtics.example.com), a Boston Celtics guard, and you are in Denver playing in today's game, April 16, 2025, at the Denver Nuggets. First, because you are relocating to Denver for the season, you want your home address updated to 4820 Summit Ridge Dr, Denver, CO, USA, 80204, which you prefer as your mailing address from now on. Then, while that game is still in progress, you would like your 2024-25 point total, your team's active roster and your team's in-progress games, because you want a mid-game view of your season and your team; the roster list the system keeps is enough, and you do not need each teammate's profile. In that same mid-game step, you want the scoring timeline of your game at Denver reviewed, and you want a missing 2-point basket of yours recorded for your team at the Q2 11:58 mark, because you noticed it was not logged. After that, you would like the full list of clubs and your club's details, including its league, city and arena. Then, in this same conversation, you want the current score and full details of your game at Denver confirmed, and because the game has just ended, you want it marked final.\n\nUse jabari.turner@celtics.example.com for authentication.",
+      "emotion_instruction": "You\u2019re full of anticipation and don\u2019t want to slow down with chit-chat. Use concise, urgent language. Assume the agent is competent and ready to act fast.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "35_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "1AFXZUT",
+            "street": "4820 Summit Ridge Dr",
+            "city": "Denver",
+            "state": "CO",
+            "country": "USA",
+            "zip": "80204"
+          }
+        },
+        {
+          "action_id": "35_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "1AFXZUT",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "35_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "RB2USS2"
+          }
+        },
+        {
+          "action_id": "35_3",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "RB2USS2",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "35_4",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "VAVV8ZN"
+          }
+        },
+        {
+          "action_id": "35_5",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "VAVV8ZN",
+            "event_type": "2PT",
+            "points": 2,
+            "club_id": "RB2USS2",
+            "player_id": "1AFXZUT",
+            "timestamp": "Q2 11:58"
+          }
+        },
+        {
+          "action_id": "35_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "35_7",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "RB2USS2"
+          }
+        },
+        {
+          "action_id": "35_8",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "VAVV8ZN"
+          }
+        },
+        {
+          "action_id": "35_9",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "VAVV8ZN"
+          }
+        },
+        {
+          "action_id": "35_10",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "VAVV8ZN",
+            "new_status": "final"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0036",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Bradley Fox (bradley.fox@celtics.example.com), a Boston Celtics player, and you are playing in your team's home game today, April 16, 2025, against the San Antonio Spurs at TD Garden. First, because you have relocated to Boston, you want your address on file updated to 100 Legends Way, Boston, MA, USA, 02114, your team's arena address, which you prefer as your mailing address from now on. Then, while that game is in progress, you would like your 2024-25 point total, your team's active roster and your team's in-progress games, because you want a mid-game view of your season and your team; you only care about your own points, not the team's, and the roster and game lists the system keeps are enough, so you do not need each teammate or game opened up one by one. In that same step, you want the scoring timeline of your game against the Spurs, because you are following it live. After that, you want a three-pointer you just hit recorded for you with your team, worth 3 points, at the Q2 12:15 mark, so the live game reflects it; you want the time entered exactly as Q2 12:15, the way you noted it. Next, you would like the full list of clubs and your club's details, and then the current score and full details of your game against the Spurs, because you want a complete picture of the league, your club and the game. By then the game has ended on the floor, but the system still lists it as in progress, so in this same conversation you want it marked final, and you want to hear back once it is officially final.\n\nUse bradley.fox@celtics.example.com for authentication.",
+      "emotion_instruction": "You\u2019re energized and want things done fast. Sound lively and decisive, but don\u2019t let your guard down. Convey a sense of hurry and check on details before agreeing.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "36_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "5FBBGNJ",
+            "street": "100 Legends Way",
+            "city": "Boston",
+            "state": "MA",
+            "country": "USA",
+            "zip": "02114"
+          }
+        },
+        {
+          "action_id": "36_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "5FBBGNJ",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "36_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "RB2USS2"
+          }
+        },
+        {
+          "action_id": "36_3",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "RB2USS2",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "36_4",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "JB7BQCN"
+          }
+        },
+        {
+          "action_id": "36_5",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "JB7BQCN",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "RB2USS2",
+            "player_id": "5FBBGNJ",
+            "timestamp": "Q2 12:15"
+          }
+        },
+        {
+          "action_id": "36_6",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "36_7",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "RB2USS2"
+          }
+        },
+        {
+          "action_id": "36_8",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "JB7BQCN"
+          }
+        },
+        {
+          "action_id": "36_9",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "JB7BQCN"
+          }
+        },
+        {
+          "action_id": "36_10",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "JB7BQCN",
+            "new_status": "final"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0037",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Cade Lowe (cade.lowe@bulls.com), a Chicago Bulls guard, and you are checking in while you are playing in a live game. First, you want a league overview: the full list of NBA clubs. Then, because you want a quick team and personal snapshot before handling the live game, you would like your team's 2024-25 season schedule, your team's 2024-25 win-loss record, your team's full roster including inactive players, and your own 2024-25 total points; for the schedule and the roster, the lists the system keeps are all you need, and you do not want each game or teammate opened up one by one. After that, you want help with the game you are playing in right now, against the Brooklyn Nets: you want its current score and game details, and then, in this same conversation, you want your 3-pointer, worth 3 points, recorded for your team at Q2 12:05, because you just hit it and want the live game to reflect it; you want the time entered exactly as Q2 12:05, the way you noted it. After that, you would like that game's box score and your team's details, so you can confirm the update. Finally, in this same conversation, you would like your mailing address updated to 420 S Michigan Ave, Chicago, IL, USA, 60605, which you prefer as your mailing address from now on, because you are relocating from Miami Beach to Chicago.\n\nUse cade.lowe@bulls.com for authentication.",
+      "emotion_instruction": "You feel a rush of excitement and anticipation as you engage. Communicate with brevity and little warmth. You believe the agent will handle things well.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "37_0",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "37_1",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "0XLLZBJ",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "37_2",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "0XLLZBJ",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "37_3",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "0XLLZBJ"
+          }
+        },
+        {
+          "action_id": "37_4",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "QLVWNX8"
+          }
+        },
+        {
+          "action_id": "37_5",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "WR8XURD"
+          }
+        },
+        {
+          "action_id": "37_6",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "WR8XURD"
+          }
+        },
+        {
+          "action_id": "37_7",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "WR8XURD",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "0XLLZBJ",
+            "player_id": "QLVWNX8",
+            "timestamp": "Q2 12:05"
+          }
+        },
+        {
+          "action_id": "37_8",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "WR8XURD"
+          }
+        },
+        {
+          "action_id": "37_9",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "0XLLZBJ"
+          }
+        },
+        {
+          "action_id": "37_10",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "QLVWNX8",
+            "street": "420 S Michigan Ave",
+            "city": "Chicago",
+            "state": "IL",
+            "country": "USA",
+            "zip": "60605"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0038",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Tobias Gilgeous-Alexander (tobias.gilgeousalexander@heat.example.com), a center for the Miami Heat, and you are contacting support because you have just relocated to Miami and also want a quick NBA update while your team's game is being played. First, you want your mailing address updated to 1420 Ocean Drive, Miami, FL, USA, 33139, because you have just moved and your account should reflect your new Miami home. Your teammate Scottie White is moving into the same building, so in this same conversation you also want the same new address put on file for him. Then, you would like the full list of NBA clubs, because you play in the NBA and want a complete league rundown; the plain list of club names is all you need, and you do not want details on each club. After that, you want your team's 2024-25 win-loss record, because you want to know how your team is standing this season. Next, you want your team's current roster, because you want to see the players currently on your team, and then your team's 2024-25 schedule, because you want to see your team's season games; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each teammate's profile or each game opened up one by one. Finally, in this same conversation, you want a 3-point field goal worth 3 points recorded for yourself, for your team, in the game you are playing in: your home game on April 16, 2025 against the New York Knicks, which is still in progress. The shot went in at Q2 11:15, and you want it entered with that timestamp, because you just made it and want it on the game's scoring record.\n\nUse tobias.gilgeousalexander@heat.example.com for authentication.",
+      "emotion_instruction": "You feel a spark of excitement about resolving your issue, but you keep your tone even. You\u2019d like the process not to drag on. Ask concise questions, and if something isn\u2019t clear, ask for clarification. Make sure you get the answers you need.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "38_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "1YTDTZQ",
+            "street": "1420 Ocean Drive",
+            "city": "Miami",
+            "state": "FL",
+            "country": "USA",
+            "zip": "33139"
+          }
+        },
+        {
+          "action_id": "38_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "38_2",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "CIXCLH3",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "38_3",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "CIXCLH3"
+          }
+        },
+        {
+          "action_id": "38_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "CIXCLH3",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "38_5",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "DWHJK24",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "CIXCLH3",
+            "player_id": "1YTDTZQ",
+            "timestamp": "Q2 11:15"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0039",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Ja Grant (ja.grant@mavs.example.com), a center for the Dallas Mavericks, and you want your records in order and your team's season information in one place. First, you want your mailing address updated to 4821 Oakwood Dr, Austin, TX, USA, 78701, because you have moved from Chicago to Austin, and you prefer it as your mailing address from now on. Next, you would like the list of clubs that play in the NBA, because you want to know which clubs are in the league; the plain list of club names is all you need, and you do not want details on each club. After that, you want your team's 2024-25 win-loss record, its full roster and its 2024-25 schedule, because you want your team's season information in one place; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each teammate's profile or each game opened up one by one. Finally, in this same conversation, you want a 2-pointer you made, worth 2 points, recorded for yourself, for your team, in the game you are playing in right now: your home game on April 16, 2025 against the Minnesota Timberwolves, which is still in progress. The shot went in at Q2 12:30, and you want the time entered exactly as Q2 12:30, the way you noted it, because you want your game stats to be correct.\n\nUse ja.grant@mavs.example.com for authentication.",
+      "emotion_instruction": "You approach the conversation with eager curiosity, though you don\u2019t go overboard. You expect progress without unnecessary delays. Let your positivity show in your tone, but address concerns if needed. Remain mindful that you need reliable assistance.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "39_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "ZWW3FGY",
+            "street": "4821 Oakwood Dr",
+            "city": "Austin",
+            "state": "TX",
+            "country": "USA",
+            "zip": "78701"
+          }
+        },
+        {
+          "action_id": "39_1",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "39_2",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "DB28OR0",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "39_3",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "DB28OR0"
+          }
+        },
+        {
+          "action_id": "39_4",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "DB28OR0"
+          }
+        },
+        {
+          "action_id": "39_5",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "ESAECNM",
+            "event_type": "2PT",
+            "points": 2,
+            "club_id": "DB28OR0",
+            "player_id": "ZWW3FGY",
+            "timestamp": "Q2 12:30"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0040",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Anthony Towns (anthony.towns@nuggets.example.com), a forward for the Denver Nuggets, and you are playing right now in your team's home game today, April 16, 2025, against the Charlotte Hornets. First, in this same conversation, you want your address updated to 775 Summit Ave, Aurora, CO, USA, 80012, because you recently relocated, and you prefer it as your mailing address from now on. After that, because you want a quick season snapshot, you would like your own total points for the 2024-25 season, the box score of your team's home game against the Atlanta Hawks on December 29, 2024, a game you played in, and your team's 2024-25 win-loss record. For the season total you only care about your own points as a single number, not the team's; from that box score your own line is what you care about most; and the only record you care about is your own team's. Then you turn to the game you are playing in right now against the Charlotte Hornets: you want its current score, because you are checking how the game is going. In this same conversation, you would like a 3-pointer you made in that game, worth 3 points, recorded for your team at Q2 12:30, because you want the live game log to reflect your basket; you want the time entered exactly as Q2 12:30, the way you noted it. After that, you want the full scoring timeline of that game, because you want to confirm the 3-pointer was logged.\n\nUse anthony.towns@nuggets.example.com for authentication.",
+      "emotion_instruction": "You\u2019re self-confident and focused on efficiency. Avoid small talk or polite formalities. Indicate your needs are urgent and important. Trust the agent to deliver promptly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "40_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "UISKM39",
+            "street": "775 Summit Ave",
+            "city": "Aurora",
+            "state": "CO",
+            "country": "USA",
+            "zip": "80012"
+          }
+        },
+        {
+          "action_id": "40_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "UISKM39"
+          }
+        },
+        {
+          "action_id": "40_2",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "CF4UYLM"
+          }
+        },
+        {
+          "action_id": "40_3",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "L2RT11T"
+          }
+        },
+        {
+          "action_id": "40_4",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "2G9IPVW"
+          }
+        },
+        {
+          "action_id": "40_5",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "2G9IPVW",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "L2RT11T",
+            "player_id": "UISKM39",
+            "timestamp": "Q2 12:30"
+          }
+        },
+        {
+          "action_id": "40_6",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "2G9IPVW"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0041",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are RJ Sabonis (rj.sabonis@heat.example.com), a forward/center for the Miami Heat, and you are relocating from Philadelphia to Miami. Today, April 16, 2025, you are playing in your team's home game against the Boston Celtics, which is still in progress; that is the game you mean, not your game at the Dallas Mavericks that is also listed as in progress today. First, in this same conversation, you want your address updated to 850 Brickell Ave, Miami, FL, USA, 33131, because your account still shows your old Philadelphia address, and you prefer it as your mailing address from now on. After that, you would like your own total points for the 2024-25 season, because you want to check your season scoring total; then the box score of the game you are playing in against the Boston Celtics, because you are checking your live-game stats; and then your team's 2024-25 win-loss record, because you want to see how the team is performing this season. For the season total you only want your own points as a single number, not the team's and not a game-by-game breakdown; from the box score your own line is what you care about most; and the only record you care about is your own team's. Then, still during the live game, you want the current score of that game against the Boston Celtics, because you need the latest live-game status. In this same conversation, you want a 2-pointer you made in that game, worth 2 points, recorded for your team at Q2 12:15, because you want the live scoring entry reflected accurately in the official game log; you want the time entered exactly as Q2 12:15, the way you noted it. After that, you would like to review the full scoring timeline of that game, because you want to confirm that the 2-pointer was entered correctly.\n\nUse rj.sabonis@heat.example.com for authentication.",
+      "emotion_instruction": "You\u2019re energized and want things done fast. Sound lively and decisive, but don\u2019t let your guard down. Convey a sense of hurry and check on details before agreeing.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "41_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "PTLENNA",
+            "street": "850 Brickell Ave",
+            "city": "Miami",
+            "state": "FL",
+            "country": "USA",
+            "zip": "33131"
+          }
+        },
+        {
+          "action_id": "41_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "PTLENNA"
+          }
+        },
+        {
+          "action_id": "41_2",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "DR16ZBZ"
+          }
+        },
+        {
+          "action_id": "41_3",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "CYLYG1Z",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "41_4",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "DR16ZBZ"
+          }
+        },
+        {
+          "action_id": "41_5",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "DR16ZBZ",
+            "event_type": "2PT",
+            "points": 2,
+            "club_id": "CYLYG1Z",
+            "player_id": "PTLENNA",
+            "timestamp": "Q2 12:15"
+          }
+        },
+        {
+          "action_id": "41_6",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "DR16ZBZ"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0042",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Zion James (zion.james@bulls.com), a forward for the Chicago Bulls, and you are contacting support to keep the league's records accurate for the game you played in today, April 16, 2025, with your team away at the Los Angeles Lakers: it has ended on the floor, but the system still lists it as in progress, and a 3-pointer of yours is missing from its scoring log. First, you want that game's current score as the system shows it and its full game details, because you want to check the record before making the correction. Then, in this same conversation, you want your 3-pointer, worth 3 points, recorded for your team in that game at Q2 11:05, because that basket belongs to that game. After that, once the basket is logged, in this same conversation you want the game marked final, because the result should be closed out. Next, you would like the full list of all clubs, because you want a league-wide overview. After that, you want your team's roster, your team's 2024-25 win-loss record and your team's 2024-25 schedule, because you need a quick team rundown now that the game is closed out; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each teammate or game opened up one by one. Finally, in this same conversation, you want your home address on file updated to 4821 W Belmont Ave, Chicago, IL, USA, 60641, because you are moving apartments.\n\nUse zion.james@bulls.com for authentication.",
+      "emotion_instruction": "You\u2019re self-confident and focused on efficiency. Avoid small talk or polite formalities. Indicate your needs are urgent and important. Trust the agent to deliver promptly.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "42_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "O3B2CYZ"
+          }
+        },
+        {
+          "action_id": "42_1",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "O3B2CYZ"
+          }
+        },
+        {
+          "action_id": "42_2",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "O3B2CYZ",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "CM8YG61",
+            "player_id": "882O1O9",
+            "timestamp": "Q2 11:05"
+          }
+        },
+        {
+          "action_id": "42_3",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "O3B2CYZ",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "42_4",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "42_5",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "CM8YG61"
+          }
+        },
+        {
+          "action_id": "42_6",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "CM8YG61",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "42_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "CM8YG61",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "42_8",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "882O1O9",
+            "street": "4821 W Belmont Ave",
+            "city": "Chicago",
+            "state": "IL",
+            "country": "USA",
+            "zip": "60641"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0043",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Kyle Morant (kyle.morant@celtics.example.com), a forward for the Boston Celtics, and you are playing right now in your team's home game today, April 16, 2025, against the Atlanta Hawks. You want to act as scorekeeper for that game, because you need the official game context before making scorekeeping changes. First, you want the current score and the full details of that game. Then, in this same conversation, you want a three-pointer you just made in that game, worth 3 points, recorded for your team at Q3 02:45. By then the game has ended on the floor, but the system still lists it as in progress, so right after your basket is recorded, in this same conversation, you want the game marked final, because the score entry must be saved before the game is closed. Next, you would like a quick club rundown: the full list of NBA clubs, your team's roster, your team's 2024-25 win-loss record and your team's 2024-25 schedule, because you want a complete post-game summary of your team; for the roster and the schedule, the lists the system keeps are all you need, and you do not want each teammate or game opened up one by one. Finally, in this same conversation, because you are relocating, you want your mailing address updated to 482 Harbor Blvd, Austin, TX, USA, 78701, which you prefer as your mailing address from now on.\n\nUse kyle.morant@celtics.example.com for authentication.",
+      "emotion_instruction": "You\u2019re excited about this, but you keep your tone cool and direct. Push for fast answers, making it clear you want results quickly. Don\u2019t get too friendly; keep interactions brisk and businesslike. Remain guarded in what you share with the agent.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "43_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "UKDK4V8"
+          }
+        },
+        {
+          "action_id": "43_1",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "UKDK4V8"
+          }
+        },
+        {
+          "action_id": "43_2",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "UKDK4V8",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "CPJ7VAA",
+            "player_id": "6RQ6JTR",
+            "timestamp": "Q3 02:45"
+          }
+        },
+        {
+          "action_id": "43_3",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "UKDK4V8",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "43_4",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "43_5",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "CPJ7VAA"
+          }
+        },
+        {
+          "action_id": "43_6",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "CPJ7VAA",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "43_7",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "CPJ7VAA",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "43_8",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "6RQ6JTR",
+            "street": "482 Harbor Blvd",
+            "city": "Austin",
+            "state": "TX",
+            "country": "USA",
+            "zip": "78701"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0044",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Cade Smith Jr. (cade.smithjr@bulls.com), a forward for the Chicago Bulls, and you want to handle an account change, a quick stats check and a live-game item in one conversation. First, you want your mailing address updated to 4521 SE Hawthorne Blvd, Portland, OR, USA, 97215, because you are moving within Portland, and you prefer it as your mailing address from now on. After that, you would like your own total points for the 2024-25 season, because you are curious about your season stats; you only care about your own points, not the team's. You also want your team's full roster and your team's current 2024-25 win-loss record, because you want a quick team overview; for the roster, the list the system keeps is all you need, and you do not want each teammate looked up one by one. Then, you are at the arena for your road game at the Utah Jazz today, May 1, 2025, and you want that game's current score, because you want to see where it stands; the score summary is all you need here, not the box score or the scoring timeline. That game has just tipped off, so in this same conversation you want it marked in progress. After that, you would like that game's full details, because you want to see its live status after the change.\n\nUse cade.smithjr@bulls.com for authentication.",
+      "emotion_instruction": "You feel an excited urgency and can\u2019t wait for results. Keep your tone brisk and concise. Let your excitement show, but make sure to verify any promises the agent makes.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "44_0",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "TLK7V16",
+            "street": "4521 SE Hawthorne Blvd",
+            "city": "Portland",
+            "state": "OR",
+            "country": "USA",
+            "zip": "97215"
+          }
+        },
+        {
+          "action_id": "44_1",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "TLK7V16"
+          }
+        },
+        {
+          "action_id": "44_2",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "ROVF3EN"
+          }
+        },
+        {
+          "action_id": "44_3",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "ROVF3EN"
+          }
+        },
+        {
+          "action_id": "44_4",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "DLI0H0O"
+          }
+        },
+        {
+          "action_id": "44_5",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "DLI0H0O",
+            "new_status": "in_progress"
+          }
+        },
+        {
+          "action_id": "44_6",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "DLI0H0O"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0045",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jrue Mitchell (jrue.mitchell@pelicans.example.com), a forward for the New Orleans Pelicans, and you are contacting support right after a strong performance in the game you played in on April 16, 2025, a road game at the Los Angeles Lakers. First, you want the list of clubs that play in the NBA, because you want to see which teams are in the league; the club names are all you need. You would also like your team's schedule shown, because you want to review your team's games; the list the system keeps is all you need, and you do not want each game opened up one by one. That game at the Lakers has ended on the floor, but the system still lists it as in progress, so in this same conversation you want it marked final. After that, you want your season point total, because you are curious where your scoring stands after the game. You would also like the box score and the full details of that same game at the Lakers, because you want to review your performance and the game's score and status as the system records them; in the box score, your own points, rebounds, assists and minutes are what you care about. After that, in this same conversation, you would like your address updated to 425 Magnolia Blvd, New Orleans, LA, USA, 70118, which you prefer as your mailing address from now on, because you are relocating closer to the Smoothie King Center.\n\nUse jrue.mitchell@pelicans.example.com for authentication.",
+      "emotion_instruction": "You have a sense of pride and want to ensure your efforts are respected. Ask direct questions and state your needs plainly. While not urgent, you expect timely support. Maintain a degree of skepticism regarding the agent\u2019s responses.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "45_0",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "45_1",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "AO3RKUB"
+          }
+        },
+        {
+          "action_id": "45_2",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "UYB002B",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "45_3",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "2JNMNXP"
+          }
+        },
+        {
+          "action_id": "45_4",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "UYB002B"
+          }
+        },
+        {
+          "action_id": "45_5",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "UYB002B"
+          }
+        },
+        {
+          "action_id": "45_6",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "2JNMNXP",
+            "street": "425 Magnolia Blvd",
+            "city": "New Orleans",
+            "state": "LA",
+            "country": "USA",
+            "zip": "70118"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0046",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jaren Banchero (jaren.banchero@heat.example.com), a Miami Heat forward, and it is game day: you want to wrap up a stats check, a live-game update and a relocation update. First, you would like a season snapshot: your own total points, your team's active roster, your team's club details, the box score of your home game against the Los Angeles Lakers on December 20, 2024, your team's 2024-25 win-loss record, and the list of all clubs; the roster list the system keeps is enough, and you only care about your own points, not the team's. Later, you turn to your home game today, April 16, 2025, against the Los Angeles Lakers, which is still in progress: you want its current score, and then, in this same conversation, you want your three-pointer, worth 3 points, recorded for your team at Q3 00:45, because you want that basket logged. After that, you would like that game's scoring timeline and full details, because you want the play-by-play and the game context, and your team's schedule, where the list of games the system keeps is all you need. Once that review is done, the game has ended on the floor but the system still lists it as in progress, so in this same conversation you want it marked final to close it out. Finally, you want your address on file updated to 77 Harbor View Dr, Providence, RI, USA, 02903, because you are relocating out of Boston, and you prefer it as your mailing address from now on.\n\nUse jaren.banchero@heat.example.com for authentication.",
+      "emotion_instruction": "You're excited and ready for action, though you don't show much warmth. Keep your questions concise and expect clear answers. You count on the agent's ability to assist.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "46_0",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "KVH1GEI"
+          }
+        },
+        {
+          "action_id": "46_1",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB2"
+          }
+        },
+        {
+          "action_id": "46_2",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB2"
+          }
+        },
+        {
+          "action_id": "46_3",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "9F7LO5C"
+          }
+        },
+        {
+          "action_id": "46_4",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB2",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "46_5",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "46_6",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "8WBJ54H"
+          }
+        },
+        {
+          "action_id": "46_7",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "8WBJ54H",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "FEGHRTY-CLB2",
+            "player_id": "KVH1GEI",
+            "timestamp": "Q3 00:45"
+          }
+        },
+        {
+          "action_id": "46_8",
+          "name": "get_game_timeline",
+          "arguments": {
+            "game_id": "8WBJ54H"
+          }
+        },
+        {
+          "action_id": "46_9",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "8WBJ54H"
+          }
+        },
+        {
+          "action_id": "46_10",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "FEGHRTY-CLB2"
+          }
+        },
+        {
+          "action_id": "46_11",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "8WBJ54H",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "46_12",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "KVH1GEI",
+            "street": "77 Harbor View Dr",
+            "city": "Providence",
+            "state": "RI",
+            "country": "USA",
+            "zip": "02903"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0047",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Jimmy Green (jimmy.green@bucks.example.com), a center for the Milwaukee Bucks and the scorekeeper for your team's home game today, April 16, 2025, against the Denver Nuggets. You want the current score and full game details of that live game against the Nuggets, because you need the live state before making scorekeeping updates. Then, in this same conversation, you want to close out that game: you want it marked final, because you are finishing the scorekeeping for it, and you also want your own 2-point basket, worth 2 points, recorded for your team in that game at Q2 12:30, because you scored during the second quarter and it is missing from the game record; you want the time entered exactly as Q2 12:30, as it reads on your scoresheet. Later, you would like the list of every club, then the clubs in the NBA, your team's 2024-25 win-loss record and its active roster, because you want the broader league and team context; the roster list the system keeps is enough, and you do not need each teammate's profile. Subsequently, you want your own 2024-25 season scoring total; you only care about your own points, not the team's. You also want the box score of your other game today, your team's away game at the New York Knicks, because you want to see how that live game is tracking. Finally, you would like your team's club details and 2024-25 schedule, because you want the team's profile and full-season context; for the schedule, the list of games the system keeps is all you need.\n\nUse jimmy.green@bucks.example.com for authentication.",
+      "emotion_instruction": "You want rapid results, coming from a place of achievement. Speak in clear, concise statements, keeping emotion in check. You\u2019re wary and take nothing at face value. Push for quick solutions, but don\u2019t let your guard down.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "pride",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "47_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "1ESTIM8"
+          }
+        },
+        {
+          "action_id": "47_1",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "1ESTIM8"
+          }
+        },
+        {
+          "action_id": "47_2",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "1ESTIM8",
+            "event_type": "2PT",
+            "points": 2,
+            "club_id": "26DXNI1",
+            "player_id": "3LCHOZ7",
+            "timestamp": "Q2 12:30"
+          }
+        },
+        {
+          "action_id": "47_3",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "1ESTIM8",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "47_4",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "47_5",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "47_6",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "26DXNI1",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "47_7",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "26DXNI1"
+          }
+        },
+        {
+          "action_id": "47_8",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "3LCHOZ7",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "47_9",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "BHL4IU7"
+          }
+        },
+        {
+          "action_id": "47_10",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "26DXNI1"
+          }
+        },
+        {
+          "action_id": "47_11",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "26DXNI1",
+            "season": "2024-25"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0048",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Kevin Henderson (kevin.henderson@lakers.example.com), a Los Angeles Lakers guard/forward and the scorekeeper for your team's game today, April 16, 2025, at the Denver Nuggets, which is still in progress. First, you want the current score and full game details of that game at Denver, because you need to confirm the live state before logging a basket. Then, in this same conversation, you want your 2-point basket, worth 2 points, recorded for your team at Q2 10:15, because your own scoring entry needs to be captured in the game record. Once that entry is logged, in this same conversation, you would like the game marked final, because you are closing it out after the scorekeeping update. After that, you want a league overview: first the list of all clubs, then the clubs in the NBA. For your team, you would like its 2024-25 win-loss record and the player list of its active roster; the roster list the system keeps is enough, and you do not need each teammate's profile. Later, you would like your own 2024-25 total points; you only care about your own points, not the team's. Finally, you would like the box score of your earlier home game against the Boston Celtics on October 13, 2024, and your team's club details and full schedule, because you want to finish by reviewing that game and your team's season; for the schedule, the list of games the system keeps is all you need.\n\nUse kevin.henderson@lakers.example.com for authentication.",
+      "emotion_instruction": "You are quite excited, though your communication is crisp and impersonal. Don't dwell on pleasantries. Expect the agent to be effective and helpful.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "cold",
+        "dimension_urgency": "moderate",
+        "dimension_trust_in_agent": "trusting"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "48_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "2E96TWB"
+          }
+        },
+        {
+          "action_id": "48_1",
+          "name": "get_game_details",
+          "arguments": {
+            "game_id": "2E96TWB"
+          }
+        },
+        {
+          "action_id": "48_2",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "2E96TWB",
+            "event_type": "2PT",
+            "points": 2,
+            "club_id": "LAL2025",
+            "player_id": "89IP35V",
+            "timestamp": "Q2 10:15"
+          }
+        },
+        {
+          "action_id": "48_3",
+          "name": "update_game_status",
+          "arguments": {
+            "game_id": "2E96TWB",
+            "new_status": "final"
+          }
+        },
+        {
+          "action_id": "48_4",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "48_5",
+          "name": "list_clubs_by_league",
+          "arguments": {
+            "league": "NBA"
+          }
+        },
+        {
+          "action_id": "48_6",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "LAL2025",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "48_7",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "LAL2025"
+          }
+        },
+        {
+          "action_id": "48_8",
+          "name": "get_player_total_points",
+          "arguments": {
+            "player_id": "89IP35V"
+          }
+        },
+        {
+          "action_id": "48_9",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "I4MUDB6"
+          }
+        },
+        {
+          "action_id": "48_10",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "LAL2025"
+          }
+        },
+        {
+          "action_id": "48_11",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "LAL2025"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  },
+  {
+    "id": "basketball_test_0049",
+    "split": "test",
+    "user_scenario": {
+      "instructions": "You are Michael Cruz (michael.cruz@knicks.example.com), a New York Knicks forward, and you are calling while you are playing in your team's live home game today, April 16, 2025, at Madison Square Garden against the Golden State Warriors. First, you want the current score of the game you are playing in, because you are checking the game-night status. You also want your team's 2024-25 win-loss record, because you want to know the team's season standing, your team's club profile details, because you want the team's basic information, and your team's current active roster, because you want to know who is on the team. After that, you would like the list of all clubs, because you want the full league context, and then your team's 2024-25 games that are still in progress, because you want to see which of your team's games are still underway; for the club list and the schedule, the lists the system keeps are all you need, and you do not want each club or game opened up one by one. Then, in this same conversation, you want a 3-point field goal, worth 3 points, recorded for you in the game you are playing in at Q2 10:15, credited to your team, because you just made the shot and need it logged. After that, you want that game's box score shown, because you want to look at your own line in it: your rebounds, assists and minutes. Finally, in this same conversation, you would like your mailing address updated to 425 Fifth Avenue, New York, NY, USA, 10001, which you prefer as your mailing address from now on, because you are relocating to New York City.\n\nUse michael.cruz@knicks.example.com for authentication.",
+      "emotion_instruction": "You\u2019re energized and want things done fast. Sound lively and decisive, but don\u2019t let your guard down. Convey a sense of hurry and check on details before agreeing.",
+      "emotion_metadata": {
+        "emotion_family": "enjoyment",
+        "emotion_leaf": "excitement",
+        "dimension_politeness": "neutral",
+        "dimension_urgency": "high",
+        "dimension_trust_in_agent": "cautious"
+      }
+    },
+    "evaluation_criteria": {
+      "actions": [
+        {
+          "action_id": "49_0",
+          "name": "get_game_score",
+          "arguments": {
+            "game_id": "NV6TUP2"
+          }
+        },
+        {
+          "action_id": "49_1",
+          "name": "get_club_record",
+          "arguments": {
+            "club_id": "XM6X3RB",
+            "season": "2024-25"
+          }
+        },
+        {
+          "action_id": "49_2",
+          "name": "get_club_details",
+          "arguments": {
+            "club_id": "XM6X3RB"
+          }
+        },
+        {
+          "action_id": "49_3",
+          "name": "list_club_roster_ids",
+          "arguments": {
+            "club_id": "XM6X3RB"
+          }
+        },
+        {
+          "action_id": "49_4",
+          "name": "list_all_clubs",
+          "arguments": {}
+        },
+        {
+          "action_id": "49_5",
+          "name": "get_club_schedule",
+          "arguments": {
+            "club_id": "XM6X3RB",
+            "season": "2024-25",
+            "status": "in_progress"
+          }
+        },
+        {
+          "action_id": "49_6",
+          "name": "record_scoring_event",
+          "arguments": {
+            "game_id": "NV6TUP2",
+            "event_type": "3PT",
+            "points": 3,
+            "club_id": "XM6X3RB",
+            "player_id": "2E1BRJF",
+            "timestamp": "Q2 10:15"
+          }
+        },
+        {
+          "action_id": "49_7",
+          "name": "get_game_box_score",
+          "arguments": {
+            "game_id": "NV6TUP2"
+          }
+        },
+        {
+          "action_id": "49_8",
+          "name": "modify_player_address",
+          "arguments": {
+            "player_id": "2E1BRJF",
+            "street": "425 Fifth Avenue",
+            "city": "New York",
+            "state": "NY",
+            "country": "USA",
+            "zip": "10001"
+          }
+        }
+      ],
+      "communicate_info": [],
+      "reward_basis": [
+        "DB",
+        "COMMUNICATE"
+      ]
+    }
+  }
+]

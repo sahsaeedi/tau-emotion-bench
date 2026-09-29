@@ -1,0 +1,6 @@
+# Everything the pipeline generates stays out of git.
+output/
+emotions/output/
+emotion_analysis/output/
+.env
+data_extender/generated_*
