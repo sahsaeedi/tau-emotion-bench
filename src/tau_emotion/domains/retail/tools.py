@@ -1,16 +1,15 @@
-"""Toolkit for the retail domain, ported from TRACER's environment
-(tracer/tracer/envs/retail/).
+"""Toolkit for the retail domain (ported from v1 tau-emotion-bench).
 
-16 tools, one per tool module in tracer/tracer/envs/retail/tools/, including
-their checks, database writes and return values. Conversion rules from TRACER's tools:
+16 tools mirroring v1's `ALL_TOOLS`, including v1's checks, database writes and
+return values. Conversion rules from v1:
 
-- `data["orders"]` → `self.db.orders`.
-- `return "Error: ..."`, and any exception TRACER's tool raises (e.g. a
-  KeyError), → an exception with the same message. Both frameworks show
-  exceptions to the agent as "Error: <message>".
-- `return json.dumps(record)` → `_record_json(record)`, which leaves out
-  fields the record never had, as TRACER's raw dict would.
-- Free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
+- v1 `data["orders"]` → `self.db.orders`.
+- v1 `return "Error: ..."`, and any exception v1 raises (e.g. a KeyError), →
+  an exception with the same message. Both frameworks show exceptions to the
+  agent as "Error: <message>".
+- v1 `return json.dumps(record)` → `_record_json(record)`, which leaves out
+  fields the record never had, as v1's raw dict would.
+- v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 
 Unlike upstream tau2-bench, returns and exchanges set "delivered (return
 requested)" / "delivered (exchange requested)" and accept any order whose status
@@ -19,7 +18,7 @@ can still be cancelled or modified again.
 """
 
 import json
-from typing import List, Literal
+from typing import List, Literal, Optional
 
 from pydantic import BaseModel
 
@@ -32,8 +31,8 @@ from tau_emotion.domains.retail.data_model import (
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
 
-def _record_json(record: BaseModel) -> str:
-    return json.dumps(record.model_dump(exclude_unset=True))
+def _record_json(record: BaseModel, exclude: Optional[set[str]] = None) -> str:
+    return json.dumps(record.model_dump(exclude_unset=True, exclude=exclude))
 
 
 class RetailTools(ToolKitBase):  # Tools
@@ -52,7 +51,7 @@ class RetailTools(ToolKitBase):  # Tools
     def _price_difference(
         self, order: Order, item_ids: List[str], new_item_ids: List[str]
     ) -> float:
-        """TRACER's shared checks for exchanging or modifying items. Returns the
+        """v1's shared checks for exchanging or modifying items. Returns the
         total price difference (new minus old)."""
         all_item_ids = [item.item_id for item in order.items]
         for item_id in item_ids:
@@ -114,9 +113,7 @@ class RetailTools(ToolKitBase):  # Tools
                 )
             )
             if "gift_card" in payment_id:  # refund to gift card immediately
-                payment_method = self.db.users[order.user_id].payment_methods[
-                    payment_id
-                ]
+                payment_method = self.db.users[order.user_id].payment_methods[payment_id]
                 payment_method.balance += payment.amount
                 payment_method.balance = round(payment_method.balance, 2)
 
@@ -145,8 +142,7 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after the exchange, as JSON.
         """
         order = self._get_order(order_id)
-        # TRACER's tool accepts any "delivered..." status, so an order can be
-        # exchanged again.
+        # v1 accepts any "delivered..." status, so an order can be exchanged again.
         if not order.status.startswith("delivered"):
             raise ValueError("non-delivered order cannot be exchanged")
 
@@ -157,9 +153,7 @@ class RetailTools(ToolKitBase):  # Tools
             raise ValueError("payment method not found")
         payment_method = payment_methods[payment_method_id]
         if payment_method.source == "gift_card" and payment_method.balance < diff_price:
-            raise ValueError(
-                "insufficient gift card balance to pay for the price difference"
-            )
+            raise ValueError("insufficient gift card balance to pay for the price difference")
 
         order.status = "delivered (exchange requested)"
         order.exchange_items = sorted(item_ids)
@@ -184,9 +178,7 @@ class RetailTools(ToolKitBase):  # Tools
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
-    def find_user_id_by_name_zip(
-        self, first_name: str, last_name: str, zip: str
-    ) -> str:
+    def find_user_id_by_name_zip(self, first_name: str, last_name: str, zip: str) -> str:
         """Find user id by first name, last name, and zip code. If the user is not found, the function will return an error message. By default, find user id by email, and only call this function if the user is not found by email or cannot remember email.
 
         Args:
@@ -243,7 +235,8 @@ class RetailTools(ToolKitBase):  # Tools
             The user details, as JSON.
         """
         if user_id in self.db.users:
-            return _record_json(self.db.users[user_id])
+            # v1's user records have no user_id field.
+            return _record_json(self.db.users[user_id], exclude={"user_id"})
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
@@ -346,15 +339,12 @@ class RetailTools(ToolKitBase):  # Tools
             item.item_id = new_item_id
             item.price = variant.price
             item.options = variant.options
-        # TRACER's tool leaves the order "pending", so it can still be cancelled
-        # or modified.
+        # v1 leaves the order "pending", so it can still be cancelled or modified.
         order.status = "pending"
         return _record_json(order)
 
     @is_tool(ToolType.WRITE)
-    def modify_pending_order_payment(
-        self, order_id: str, payment_method_id: str
-    ) -> str:
+    def modify_pending_order_payment(self, order_id: str, payment_method_id: str) -> str:
         """Modify the payment method of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.
 
         Args:
@@ -379,9 +369,7 @@ class RetailTools(ToolKitBase):  # Tools
             raise ValueError("there should be exactly one payment for a pending order")
         old_payment_method_id = order.payment_history[0].payment_method_id
         if old_payment_method_id == payment_method_id:
-            raise ValueError(
-                "the new payment method should be different from the current one"
-            )
+            raise ValueError("the new payment method should be different from the current one")
 
         amount = order.payment_history[0].amount
         payment_method = payment_methods[payment_method_id]
@@ -447,7 +435,7 @@ class RetailTools(ToolKitBase):  # Tools
             country=country,
             zip=zip,
         )
-        return _record_json(user)
+        return _record_json(user, exclude={"user_id"})
 
     @is_tool(ToolType.WRITE)
     def return_delivered_order_items(
@@ -464,8 +452,7 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after requesting the return, as JSON.
         """
         order = self._get_order(order_id)
-        # TRACER's tool accepts any "delivered..." status, so an order can be
-        # returned again.
+        # v1 accepts any "delivered..." status, so an order can be returned again.
         if not order.status.startswith("delivered"):
             raise ValueError("non-delivered order cannot be returned")
 

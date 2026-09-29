@@ -278,7 +278,8 @@ def get_user_details_call() -> ToolCall:
 
 def test_get_user_details(environment: Environment, get_user_details_call: ToolCall):
     response = environment.get_response(get_user_details_call)
-    assert json.loads(response.content)["user_id"] == "sara_doe_496"
+    # Like tau2, user details do not include a user_id field.
+    assert "user_id" not in json.loads(response.content)
     # Test with non-existent user
     get_user_details_call.arguments["user_id"] = "NONEXISTENT"
     response = environment.get_response(get_user_details_call)

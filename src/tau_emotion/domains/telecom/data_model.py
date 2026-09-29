@@ -1,8 +1,8 @@
-"""Pydantic models for the telecom domain (account-management CRM).
+"""Pydantic models for the v1-derived telecom domain (account-management CRM).
 
-Schema is reverse-engineered from TRACER's telecom data files
-(tracer/tracer/envs/telecom/data/) merged into
-db.json.
+Schema is reverse-engineered from the v1 telecom data files
+(tau-emotion-bench/tau_emotion_bench/envs/telecom/data/*.json) merged into
+db.json by scripts/import_v1_db.py.
 """
 
 from typing import Any, Dict, List, Literal, Optional
@@ -125,8 +125,8 @@ class Billing(BaseModel):
     payment_history: List[PaymentRecord] = Field(default_factory=list)
     auto_pay: bool = False
     paperless: bool = False
-    # Set by manage_billing, which (like TRACER's tool) writes the cycle here
-    # rather than to the customer's billing_preferences.
+    # Set by manage_billing, which (like v1) writes the cycle here rather than
+    # to the customer's billing_preferences.
     billing_cycle: Optional[str] = None
 
 
@@ -138,7 +138,7 @@ class Billing(BaseModel):
 class SupportTicket(BaseModel):
     ticket_id: str
     customer_id: str
-    # Free-form: TRACER's modify_support_ticket stores any status and priority.
+    # Free-form: v1's modify_support_ticket stores any status and priority.
     status: str
     priority: str
     # Added at creation time by the create_support_ticket tool; absent on

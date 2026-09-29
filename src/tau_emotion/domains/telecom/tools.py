@@ -1,19 +1,18 @@
-"""Toolkit for the telecom domain (account-management CRM), ported from TRACER's
-environment (tracer/tracer/envs/telecom/).
+"""Toolkit for the telecom domain (account-management CRM ported from v1).
 
-19 tools, one per tool module in tracer/tracer/envs/telecom/tools/, including
-their validation rules and return values. Conversion rules from TRACER's tools:
+The 18 tools below mirror v1 tau-emotion-bench's telecom `ALL_TOOLS`, including
+its validation rules and return values. Conversion rules from v1:
 
-- `data.get("customers", {})` → `self.db.customers` (typed pydantic).
-- `return json.dumps(record)` → `_record_json(record)`, which leaves out
-  fields the record never had, as TRACER's raw dict would.
-- `return "Error: ..."` → `raise ValueError("...")`. Both frameworks show
+- v1 `data.get("customers", {})` → `self.db.customers` (typed pydantic).
+- v1 `return json.dumps(record)` → `_record_json(record)`, which leaves out
+  fields the record never had, as v1's raw dict would.
+- v1 `return "Error: ..."` → `raise ValueError("...")`. Both frameworks show
   any exception to the agent as "Error: <message>".
-- Free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
+- v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 """
 
 import json
-from typing import List, Literal, Optional, get_args
+from typing import List, Optional
 
 from pydantic import BaseModel
 
@@ -28,23 +27,21 @@ from tau_emotion.domains.telecom.data_model import (
 )
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
-# The allowed values of TRACER's tool schemas. The lists keep this order because
-# TRACER's error messages print them in it.
-TicketCategory = Literal[
-    "mobile", "internet", "tv", "billing", "account", "device", "security", "phone"
+# Lists, not sets: v1's error messages print them in this order.
+VALID_TICKET_CATEGORIES = [
+    "mobile",
+    "internet",
+    "tv",
+    "billing",
+    "account",
+    "device",
+    "security",
+    "phone",
 ]
-TicketPriority = Literal["low", "medium", "high", "urgent"]
-TicketStatus = Literal["open", "closed", "pending", "in_progress", "resolved"]
-Issue = Literal["no_service", "slow_speeds", "battery_drain"]
-ServiceAction = Literal["add", "remove", "list"]
-BillingCycle = Literal["monthly", "quarterly", "annual"]
-PaymentMethod = Literal["credit_card", "bank_transfer"]
+VALID_TICKET_PRIORITIES = ["low", "medium", "high", "urgent"]
+VALID_ISSUES = ["no_service", "slow_speeds", "battery_drain"]
 
-VALID_TICKET_CATEGORIES = list(get_args(TicketCategory))
-VALID_TICKET_PRIORITIES = list(get_args(TicketPriority))
-VALID_ISSUES = list(get_args(Issue))
-
-# TRACER's troubleshooting text, verbatim (including its trailing spaces).
+# v1's troubleshooting text, verbatim (including its trailing spaces).
 PHONE_STEPS = {
     "battery_drain": (
         "\nTroubleshooting steps: \n"
@@ -163,9 +160,7 @@ class TelecomTools(ToolKitBase):
         """
         target = "".join(ch for ch in phone if ch.isdigit())
         for customer_id, customer in self.db.customers.items():
-            normalized = "".join(
-                ch for ch in customer.demographics.phone if ch.isdigit()
-            )
+            normalized = "".join(ch for ch in customer.demographics.phone if ch.isdigit())
             if normalized == target:
                 return customer_id
         raise ValueError(f"No customer found with phone number: {phone}")
@@ -272,14 +267,14 @@ class TelecomTools(ToolKitBase):
         return _record_json(self.db.support_tickets[ticket_id])
 
     @is_tool(ToolType.READ)
-    def troubleshoot_device(self, device_name: str, issue: Issue) -> str:
+    def troubleshoot_device(self, device_name: str, issue: str) -> str:
         """Provide troubleshooting steps for device issues.
 
         Args:
             device_name: The device name, such as 'iPhone 15 Pro' or
                 'WiFi 6 Router'.
-            issue: The issue type to troubleshoot: 'no_service', 'slow_speeds',
-                or 'battery_drain'.
+            issue: Description of the issue with the device. Options:
+                no_service, slow_speeds, battery_drain.
 
         Returns:
             Troubleshooting steps, or 'Unknown issue' if the device category
@@ -290,7 +285,7 @@ class TelecomTools(ToolKitBase):
                 not in the catalog, or a TV issue other than no_service is
                 given.
         """
-        # TRACER's tool parses the issue before looking up the device.
+        # v1 parses the issue before looking up the device.
         if issue not in VALID_ISSUES:
             raise ValueError(f"'{issue}' is not a valid Issue")
         if device_name not in self.db.devices:
@@ -304,7 +299,7 @@ class TelecomTools(ToolKitBase):
         if category == "tv":
             if issue == "no_service":
                 return TV_NO_SERVICE_STEPS
-            # TRACER's tool compares against a missing Issue.NO_SIGNAL enum member here,
+            # v1 compares against a missing Issue.NO_SIGNAL enum member here,
             # which raises for every other issue.
             raise ValueError("type object 'Issue' has no attribute 'NO_SIGNAL'")
         return "Unknown issue"
@@ -350,22 +345,21 @@ class TelecomTools(ToolKitBase):
     def manage_service(
         self,
         customer_id: str,
-        action: ServiceAction,
+        action: str,
         service_id: Optional[str] = None,
         devices_ids: Optional[List[str]] = None,
     ) -> str:
-        """Manage customer services: add, remove, or list services on an account.
+        """Manage customer services: add, remove, suspend, activate, or list services.
 
         Args:
             customer_id: The customer's unique identifier, such as
                 'john_smith_1234'.
-            action: 'list' to retrieve all services, 'add' to add a service,
-                or 'remove' to remove a service.
-            service_id: The service identifier, such as 'mobile_unlimited'.
-                Required when action is 'add' or 'remove'.
-            devices_ids: The device ids to attach to the service when action
-                is 'add'. Each must match a device_id in the customer's list of
-                devices. Removing a service detaches its devices.
+            action: Action to perform: 'add', 'remove', or 'list'.
+            service_id: Service identifier (required for
+                add/remove/suspend/activate), such as 'mobile_unlimited'.
+            devices_ids: The device ids. Should be a list of strings
+                corresponding to the device ids in the customer's list of
+                devices.
 
         Returns:
             For 'list', a JSON object with the customer's services. For
@@ -396,10 +390,12 @@ class TelecomTools(ToolKitBase):
                     f"Customer {customer_id} already has service: {service_id}"
                 )
 
-            # Like TRACER's tool, each device is checked and attached in turn, so
-            # devices before an unknown id stay attached when the call fails.
+            # Like v1, each device is checked and attached in turn, so devices
+            # before an unknown id stay attached when the call fails.
             for did in devices_ids or []:
-                device = next((d for d in customer.devices if d.device_id == did), None)
+                device = next(
+                    (d for d in customer.devices if d.device_id == did), None
+                )
                 if device is None:
                     raise ValueError(
                         f"Device not found: {did} in devices "
@@ -430,7 +426,7 @@ class TelecomTools(ToolKitBase):
             billing = self.db.billing.get(customer_id)
             if billing is not None:
                 if service_id not in billing.monthly_charges:
-                    # TRACER's dict.pop raises KeyError after the removal above.
+                    # v1's dict.pop raises KeyError after the removal above.
                     raise ValueError(repr(service_id))
                 billing.monthly_charges.pop(service_id)
             return (
@@ -449,17 +445,17 @@ class TelecomTools(ToolKitBase):
         customer_id: str,
         paperless: bool,
         auto_pay: bool,
-        billing_cycle: BillingCycle,
+        billing_cycle: str,
     ) -> str:
         """Manage customer billing: paperless, auto_pay, or billing_cycle.
 
         Args:
             customer_id: The customer's unique identifier, such as
                 'john_smith_1234'.
-            paperless: Whether the customer is enrolled in paperless billing.
-            auto_pay: Whether auto-pay is enabled for the account.
-            billing_cycle: The billing cycle: 'monthly', 'quarterly', or
-                'annual'.
+            paperless: Paperless billing.
+            auto_pay: Auto pay.
+            billing_cycle: The billing cycle. Should be a string. Options are:
+                monthly, quarterly, annual.
 
         Returns:
             A JSON object with the customer id and the updated billing record.
@@ -469,21 +465,16 @@ class TelecomTools(ToolKitBase):
         """
         self._get_customer(customer_id)
         billing = self._get_billing(customer_id)
-        # TRACER's tool writes these to the billing record only, not to the customer's
+        # v1 writes these to the billing record only, not to the customer's
         # billing_preferences, and does not validate the cycle.
         billing.paperless = paperless
         billing.auto_pay = auto_pay
         billing.billing_cycle = billing_cycle
-        return json.dumps(
-            {"customer_id": customer_id, "billing": _record_dict(billing)}
-        )
+        return json.dumps({"customer_id": customer_id, "billing": _record_dict(billing)})
 
     @is_tool(ToolType.WRITE)
     def create_support_ticket(
-        self,
-        customer_id: str,
-        category: TicketCategory,
-        priority: TicketPriority = "medium",
+        self, customer_id: str, category: str, priority: str = "medium"
     ) -> str:
         """Create a new support ticket for a customer.
 
@@ -521,19 +512,23 @@ class TelecomTools(ToolKitBase):
             priority=priority,
             category=category,
         )
-        return f"Success: Created support ticket {ticket_id} for customer {customer_id}"
+        return (
+            f"Success: Created support ticket {ticket_id} for customer "
+            f"{customer_id}"
+        )
 
     @is_tool(ToolType.WRITE)
     def modify_support_ticket(
-        self, ticket_id: str, status: TicketStatus, priority: TicketPriority
+        self, ticket_id: str, status: str, priority: str
     ) -> str:
         """Modify the status and priority of a support ticket.
 
         Args:
             ticket_id: The support ticket identifier, such as 'TICKET001'.
-            status: The new status: 'open', 'closed', 'pending',
-                'in_progress', or 'resolved'.
-            priority: The new priority: 'low', 'medium', 'high', or 'urgent'.
+            status: The status of the support ticket, such as 'open' or
+                'closed'.
+            priority: The priority of the support ticket, such as 'low',
+                'medium', 'high', or 'urgent'.
 
         Returns:
             A success message.
@@ -543,7 +538,7 @@ class TelecomTools(ToolKitBase):
         """
         if ticket_id not in self.db.support_tickets:
             raise ValueError(f"Support ticket not found: {ticket_id}")
-        # TRACER's tool stores any status and priority without validating them.
+        # v1 stores any status and priority without validating them.
         ticket = self.db.support_tickets[ticket_id]
         ticket.status = status
         ticket.priority = priority
@@ -554,14 +549,14 @@ class TelecomTools(ToolKitBase):
 
     @is_tool(ToolType.WRITE)
     def record_payment(
-        self, customer_id: str, amount: float, method: PaymentMethod, date: str
+        self, customer_id: str, amount: float, method: str, date: str
     ) -> str:
         """Apply a payment to a customer account and update the remaining balance.
 
         Args:
             customer_id: Unique customer identifier, e.g. 'lisa_chen_3456'.
             amount: Payment amount to apply.
-            method: The payment method: 'credit_card' or 'bank_transfer'.
+            method: Payment method used. Options: credit_card, bank_transfer.
             date: Payment date in ISO format, e.g. '2025-09-18'.
 
         Returns:
@@ -660,19 +655,3 @@ class TelecomTools(ToolKitBase):
             An empty string.
         """
         return ""
-
-    @is_tool(ToolType.GENERIC)
-    def transfer_to_human_agents(self, summary: str) -> str:
-        """
-        Transfer the user to a human agent, with a summary of the user's issue.
-        Only transfer if
-         -  the user explicitly asks for a human agent
-         -  given the policy and the available tools, you cannot solve the user's issue.
-
-        Args:
-            summary: A summary of the user's issue.
-
-        Returns:
-            A message indicating the user has been transferred to a human agent.
-        """
-        return "Transfer successful"

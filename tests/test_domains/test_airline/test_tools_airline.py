@@ -226,7 +226,8 @@ def test_get_reservation_details(
     reservation_details_call.arguments["reservation_id"] = "NONEXISTENT"
     response = environment.get_response(reservation_details_call)
     assert response.error
-    assert response.content == "Error: Reservation id not found"
+    # tau2 reports a missing reservation as "user not found".
+    assert response.content == "Error: user not found"
 
 
 @pytest.fixture
@@ -320,8 +321,8 @@ def test_send_certificate(environment: Environment, send_certificate_call: ToolC
         environment.use_tool("get_user_details", user_id="mia_li_3668")
     )
     assert user_details["payment_methods"]["certificate_3221322"]["amount"] == 100
-    # User details include the user_id, as TRACER's tool returns it.
-    assert user_details["user_id"] == "mia_li_3668"
+    # Like tau2, user details do not include a user_id field.
+    assert "user_id" not in user_details
 
 
 @pytest.fixture

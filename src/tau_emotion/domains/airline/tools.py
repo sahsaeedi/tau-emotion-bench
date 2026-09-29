@@ -1,16 +1,15 @@
-"""Toolkit for the airline domain, ported from TRACER's environment
-(tracer/tracer/envs/airline/).
+"""Toolkit for the airline domain (ported from v1 tau-emotion-bench).
 
-14 tools, one per tool module in tracer/tracer/envs/airline/tools/, including
-their checks, database writes and return values. Conversion rules from TRACER's tools:
+14 tools mirroring v1's `ALL_TOOLS`, including v1's checks, database writes and
+return values. Conversion rules from v1:
 
-- `data["reservations"]` → `self.db.reservations`.
-- `return "Error: ..."`, and any exception TRACER's tool raises (e.g. a
-  KeyError), → an exception with the same message. Both frameworks show
-  exceptions to the agent as "Error: <message>".
-- `return json.dumps(record)` → `_record_json(record)`, which leaves out
-  fields the record never had, as TRACER's raw dict would.
-- Free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
+- v1 `data["reservations"]` → `self.db.reservations`.
+- v1 `return "Error: ..."`, and any exception v1 raises (e.g. a KeyError), →
+  an exception with the same message. Both frameworks show exceptions to the
+  agent as "Error: <message>".
+- v1 `return json.dumps(record)` → `_record_json(record)`, which leaves out
+  fields the record never had, as v1's raw dict would.
+- v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 
 Unlike upstream tau2-bench, booking does not take seats off the flight, a
 flight change keeps the reservation's original cabin, and one-stop search
@@ -39,7 +38,7 @@ from tau_emotion.domains.airline.data_model import (
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
 CREATED_AT = "2024-05-15T15:00:00"
-# TRACER assumes each task makes at most 3 reservations and sends at most 3
+# v1 assumes each task makes at most 3 reservations and sends at most 3
 # certificates.
 NEW_RESERVATION_IDS = ["HATHAT", "HATHAU", "HATHAV"]
 NEW_CERTIFICATE_NUMBERS = [3221322, 3221323, 3221324]
@@ -68,8 +67,8 @@ AIRPORTS = {
 }
 
 
-def _record_json(record: BaseModel) -> str:
-    return json.dumps(record.model_dump(exclude_unset=True))
+def _record_json(record: BaseModel, exclude: Optional[set[str]] = None) -> str:
+    return json.dumps(record.model_dump(exclude_unset=True, exclude=exclude))
 
 
 def _as_dicts(items: List[Any]) -> List[dict]:
@@ -80,7 +79,7 @@ def _as_dicts(items: List[Any]) -> List[dict]:
 
 
 def _flight_on_date(flight: Flight, date: str) -> dict:
-    """TRACER's search row: the flight without `dates`, plus that date's status."""
+    """v1's search row: the flight without `dates`, plus that date's status."""
     row = flight.model_dump(exclude={"dates"})
     row.update(flight.dates[date].model_dump())
     return row
@@ -96,20 +95,16 @@ class AirlineTools(ToolKitBase):
 
     def _price_flight(self, flight: dict, cabin: str, num_passengers: int) -> int:
         """Check a new flight segment and fill in its price, origin and
-        destination, as TRACER's tool does. Returns the segment's total price."""
+        destination, as v1 does. Returns the segment's total price."""
         flight_number = flight["flight_number"]
         if flight_number not in self.db.flights:
             raise ValueError(f"flight {flight_number} not found")
         flight_data = self.db.flights[flight_number]
         if flight["date"] not in flight_data.dates:
-            raise ValueError(
-                f"flight {flight_number} not found on date {flight['date']}"
-            )
+            raise ValueError(f"flight {flight_number} not found on date {flight['date']}")
         flight_date_data = flight_data.dates[flight["date"]]
         if flight_date_data.status != "available":
-            raise ValueError(
-                f"flight {flight_number} not available on date {flight['date']}"
-            )
+            raise ValueError(f"flight {flight_number} not available on date {flight['date']}")
         if flight_date_data.available_seats[cabin] < num_passengers:
             raise ValueError(f"not enough seats on flight {flight_number}")
         flight["price"] = flight_date_data.prices[cabin]
@@ -117,19 +112,15 @@ class AirlineTools(ToolKitBase):
         flight["destination"] = flight_data.destination
         return flight["price"] * num_passengers
 
-    def _update_payment_method(
-        self, user_id: str, payment_id: str, total_price: int
-    ) -> Any:
-        """TRACER's payment checks for reservation updates."""
+    def _update_payment_method(self, user_id: str, payment_id: str, total_price: int) -> Any:
+        """v1's payment checks for reservation updates."""
         payment_methods = self.db.users[user_id].payment_methods
         if payment_id not in payment_methods:
             raise ValueError("payment method not found")
         payment_method = payment_methods[payment_id]
         if payment_method.source == "certificate":
             raise ValueError("certificate cannot be used to update reservation")
-        elif (
-            payment_method.source == "gift_card" and payment_method.amount < total_price
-        ):
+        elif payment_method.source == "gift_card" and payment_method.amount < total_price:
             raise ValueError("gift card balance is not enough")
         return payment_method
 
@@ -141,9 +132,9 @@ class AirlineTools(ToolKitBase):
         destination: str,
         flight_type: FlightType,
         cabin: CabinClass,
-        flights: List[FlightInfo],
-        passengers: List[Passenger],
-        payment_methods: List[Payment],
+        flights: List[FlightInfo | dict],
+        passengers: List[Passenger | dict],
+        payment_methods: List[Payment | dict],
         total_baggages: int,
         nonfree_baggages: int,
         insurance: Insurance,
@@ -154,11 +145,14 @@ class AirlineTools(ToolKitBase):
             user_id: The ID of the user to book the reservation, such as 'sara_doe_496'.
             origin: The IATA code for the origin city, such as 'SFO'.
             destination: The IATA code for the destination city, such as 'JFK'.
+            flight_type: The type of flight, 'one_way' or 'round_trip'.
+            cabin: The cabin class, 'basic_economy', 'economy', or 'business'.
             flights: An array of objects containing details about each piece of flight.
             passengers: An array of objects containing details about each passenger.
             payment_methods: An array of objects containing details about each payment method.
             total_baggages: The total number of baggage items included in the reservation.
             nonfree_baggages: The number of non-free baggage items included in the reservation.
+            insurance: Whether the reservation has insurance, 'yes' or 'no'.
 
         Returns:
             The new reservation as JSON.
@@ -167,13 +161,9 @@ class AirlineTools(ToolKitBase):
             raise ValueError("user not found")
         user = self.db.users[user_id]
 
-        # A fourth booking in one task overwrites HATHAV, as in TRACER's tool.
+        # A fourth booking in one task overwrites HATHAV, as in v1.
         reservation_id = next(
-            (
-                rid
-                for rid in NEW_RESERVATION_IDS[:-1]
-                if rid not in self.db.reservations
-            ),
+            (rid for rid in NEW_RESERVATION_IDS[:-1] if rid not in self.db.reservations),
             NEW_RESERVATION_IDS[-1],
         )
 
@@ -195,9 +185,7 @@ class AirlineTools(ToolKitBase):
                 raise ValueError(f"payment method {payment_id} not found")
             if user.payment_methods[payment_id].source in ["gift_card", "certificate"]:
                 if user.payment_methods[payment_id].amount < amount:
-                    raise ValueError(
-                        f"not enough balance in payment method {payment_id}"
-                    )
+                    raise ValueError(f"not enough balance in payment method {payment_id}")
         paid = sum(payment["amount"] for payment in payment_methods)
         if paid != total_price:
             raise ValueError(
@@ -220,7 +208,7 @@ class AirlineTools(ToolKitBase):
             insurance=insurance,
         )
 
-        # TRACER's tool deducts payments but leaves the flights' available seats alone.
+        # v1 deducts payments but leaves the flights' available seats alone.
         for payment_method in payment_methods:
             payment_id = payment_method["payment_id"]
             user_payment_method = user.payment_methods[payment_id]
@@ -280,7 +268,8 @@ class AirlineTools(ToolKitBase):
         """
         if reservation_id in self.db.reservations:
             return _record_json(self.db.reservations[reservation_id])
-        raise ValueError("Reservation id not found")
+        # v1's message for a missing reservation.
+        raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
     def get_user_details(self, user_id: str) -> str:
@@ -293,7 +282,8 @@ class AirlineTools(ToolKitBase):
             The user as JSON.
         """
         if user_id in self.db.users:
-            return _record_json(self.db.users[user_id])
+            # v1's user records have no user_id field.
+            return _record_json(self.db.users[user_id], exclude={"user_id"})
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
@@ -354,10 +344,7 @@ class AirlineTools(ToolKitBase):
                     if "+1" in flight1.scheduled_arrival_time_est
                     else date
                 )
-                if (
-                    flight1.scheduled_arrival_time_est
-                    > flight2.scheduled_departure_time_est
-                ):
+                if flight1.scheduled_arrival_time_est > flight2.scheduled_departure_time_est:
                     continue
                 if date in flight1.dates and date2 in flight2.dates:
                     if (
@@ -366,8 +353,8 @@ class AirlineTools(ToolKitBase):
                     ):
                         result1 = _flight_on_date(flight1, date)
                         result1["date"] = date
-                        # TRACER's tool reads the second flight's status, seats
-                        # and prices for `date`, not `date2`.
+                        # v1 reads the second flight's status, seats and prices
+                        # for `date`, not `date2`.
                         result2 = _flight_on_date(flight2, date)
                         result2["date"] = date2
                         results.append([result1, result2])
@@ -445,18 +432,14 @@ class AirlineTools(ToolKitBase):
         reservation = self.db.reservations[reservation_id]
 
         total_price = 50 * max(0, nonfree_baggages - reservation.nonfree_baggages)
-        payment_method = self._update_payment_method(
-            reservation.user_id, payment_id, total_price
-        )
+        payment_method = self._update_payment_method(reservation.user_id, payment_id, total_price)
 
         reservation.total_baggages = total_baggages
         reservation.nonfree_baggages = nonfree_baggages
         if payment_method.source == "gift_card":
             payment_method.amount -= total_price
         if total_price != 0:
-            reservation.payment_history.append(
-                Payment(payment_id=payment_id, amount=total_price)
-            )
+            reservation.payment_history.append(Payment(payment_id=payment_id, amount=total_price))
         return _record_json(reservation)
 
     @is_tool(ToolType.WRITE)
@@ -464,13 +447,14 @@ class AirlineTools(ToolKitBase):
         self,
         reservation_id: str,
         cabin: CabinClass,
-        flights: List[FlightInfo],
+        flights: List[FlightInfo | dict],
         payment_id: str,
     ) -> str:
         """Update the flight information of a reservation.
 
         Args:
             reservation_id: The reservation ID, such as 'ZFA04Y'.
+            cabin: The cabin class, 'basic_economy', 'economy', or 'business'.
             flights: An array of objects containing details about each piece of flight in the ENTIRE new reservation. Even if the a flight segment is not changed, it should still be included in the array.
             payment_id: The payment id stored in user profile, such as 'credit_card_7815826', 'gift_card_7815826', 'certificate_7815826'.
 
@@ -503,25 +487,20 @@ class AirlineTools(ToolKitBase):
 
         total_price -= sum(f.price for f in reservation.flights) * num_passengers
 
-        payment_method = self._update_payment_method(
-            reservation.user_id, payment_id, total_price
-        )
+        payment_method = self._update_payment_method(reservation.user_id, payment_id, total_price)
         new_flights = [ReservationFlight(**flight) for flight in flights]
 
         if payment_method.source == "gift_card":
             payment_method.amount -= total_price
-        # TRACER's tool keeps the reservation's original cabin and leaves flight
-        # seats alone.
+        # v1 keeps the reservation's original cabin and leaves flight seats alone.
         reservation.flights = new_flights
         if total_price != 0:
-            reservation.payment_history.append(
-                Payment(payment_id=payment_id, amount=total_price)
-            )
+            reservation.payment_history.append(Payment(payment_id=payment_id, amount=total_price))
         return _record_json(reservation)
 
     @is_tool(ToolType.WRITE)
     def update_reservation_passengers(
-        self, reservation_id: str, passengers: List[Passenger]
+        self, reservation_id: str, passengers: List[Passenger | dict]
     ) -> str:
         """Update the passenger information of a reservation.
 

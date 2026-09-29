@@ -1,9 +1,10 @@
-"""Pydantic models for the telehealth domain.
+"""Pydantic models for the v1-derived telehealth domain.
 
-Schema is reverse-engineered from TRACER's telehealth data files
-(tracer/tracer/envs/telehealth/data/) merged into db.json. Many sub-record
-fields are optional because TRACER's data only populates them on a subset of
-records and the tools (e.g. update_medical_record_note, update_prescription_supplier,
+Schema is reverse-engineered from the v1 telehealth data files
+(tau-emotion-bench/tau_emotion_bench/envs/telehealth/data/*.json) merged
+into db.json by scripts/import_v1_db.py. Many sub-record fields are
+optional because v1 only populated them on a subset of records and the
+tools (e.g. update_medical_record_note, update_prescription_supplier,
 schedule_appointment) progressively add fields at write time.
 """
 
@@ -136,9 +137,7 @@ class Appointment(BaseModel):
     time: str
     duration_minutes: int
     type: str
-    status: Literal[
-        "scheduled", "pending_approval", "completed", "cancelled", "no_show"
-    ]
+    status: Literal["scheduled", "pending_approval", "completed", "cancelled", "no_show"]
     chief_complaint: Optional[str] = None
     notes: Optional[str] = ""
     insurance_authorization: Optional[str] = None
@@ -193,7 +192,6 @@ class VitalSigns(BaseModel):
 
 class RecordNote(BaseModel):
     note: str
-    metadata: Optional[Dict[str, Any]] = None
 
 
 class MedicalRecord(BaseModel):
@@ -285,7 +283,7 @@ class MedicationSupplier(BaseModel):
 
 
 # ---------------------------------------------------------------------------
-# Telemetry inventory + uploads (both lists in TRACER's data)
+# Telemetry inventory + uploads (both lists in v1)
 # ---------------------------------------------------------------------------
 
 

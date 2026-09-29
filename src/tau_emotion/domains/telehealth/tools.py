@@ -1,20 +1,19 @@
-"""Toolkit for the telehealth domain, ported from TRACER's environment
-(tracer/tracer/envs/telehealth/).
+"""Toolkit for the telehealth domain (ported from v1 tau-emotion-bench).
 
-23 tools, one per tool module in tracer/tracer/envs/telehealth/tools/,
-including its return text. Conversion rules from TRACER's tools:
+23 tools mirroring v1's `ALL_TOOLS`, including v1's return text. Conversion
+rules from v1:
 
-- `data.get("patients", {})` → `self.db.patients`.
-- Most of TRACER's tools return formatted text, and report lookups that find
-  nothing as a normal message rather than an error; both are kept as-is.
-- `return "Error: ..."`, and any exception TRACER's tool raises (e.g. a KeyError
-  on a missing field), → `raise ValueError("...")`. Both frameworks show exceptions
+- v1 `data.get("patients", {})` → `self.db.patients`.
+- Most v1 tools return formatted text, and report lookups that find nothing as
+  a normal message rather than an error; both are kept as-is.
+- v1 `return "Error: ..."`, and any exception v1 raises (e.g. a KeyError on a
+  missing field), → `raise ValueError("...")`. Both frameworks show exceptions
   to the agent as "Error: <message>".
-- `return json.dumps(record)` → `_record_json(record)`, which leaves out
-  fields the record never had, as TRACER's raw dict would.
-- `key in record` → the field is not None. The seed data has no explicit
+- v1 `return json.dumps(record)` → `_record_json(record)`, which leaves out
+  fields the record never had, as v1's raw dict would.
+- v1 `key in record` → the field is not None. The seed data has no explicit
   nulls for these fields, so the two agree.
-- Free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
+- v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 """
 
 from __future__ import annotations
@@ -72,7 +71,7 @@ class TelehealthTools(ToolKitBase):
     def _provider_available(
         self, provider: Provider, provider_id: str, date: str, time: str
     ) -> Optional[str]:
-        """TRACER's schedule check: a message if the slot is not bookable."""
+        """v1's schedule check: a message if the slot is not bookable."""
         try:
             day_of_week = (
                 datetime.datetime.strptime(date, "%Y-%m-%d").strftime("%A").lower()
@@ -83,9 +82,7 @@ class TelehealthTools(ToolKitBase):
             return f"Provider {provider_id} does not work on {day_of_week.title()}."
         available_times = provider.schedule[day_of_week]
         if time not in available_times:
-            available_times_str = (
-                ", ".join(available_times) if available_times else "None"
-            )
+            available_times_str = ", ".join(available_times) if available_times else "None"
             return (
                 f"Provider {provider_id} is not available at {time} on "
                 f"{day_of_week.title()}. Available times: {available_times_str}"
@@ -218,15 +215,15 @@ class TelehealthTools(ToolKitBase):
             The provider's details as formatted text, or a not-found message.
 
         Raises:
-            ValueError: If the provider has no license number (TRACER's tool
-                fails on these providers too).
+            ValueError: If the provider has no license number (v1 fails on
+                these providers too).
         """
         if provider_id not in self.db.providers:
             return f"Provider with ID {provider_id} not found."
         provider = self.db.providers[provider_id]
         name = provider.name
         if provider.license_number is None:
-            # TRACER's tool indexes provider['license_number'] and raises KeyError.
+            # v1 indexes provider['license_number'] and raises KeyError.
             raise ValueError("'license_number'")
 
         result = (
@@ -267,19 +264,17 @@ class TelehealthTools(ToolKitBase):
 
         Raises:
             ValueError: If the appointment has no chief complaint, as with
-                appointments booked by schedule_appointment (TRACER's tool fails
-                on these too).
+                appointments booked by schedule_appointment (v1 fails on these
+                too).
         """
         if appointment_id not in self.db.appointments:
             return f"Appointment with ID {appointment_id} not found."
         appointment = self.db.appointments[appointment_id]
         provider = self.db.providers.get(appointment.provider_id)
-        provider_name = (
-            f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
-        )
+        provider_name = f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
         provider_specialty = provider.specialty if provider else "Unknown"
         if appointment.chief_complaint is None:
-            # TRACER's tool indexes appointment['chief_complaint'] and raises KeyError.
+            # v1 indexes appointment['chief_complaint'] and raises KeyError.
             raise ValueError("'chief_complaint'")
 
         result = (
@@ -372,11 +367,7 @@ class TelehealthTools(ToolKitBase):
             " ".join(
                 filter(
                     None,
-                    [
-                        provider.name.title,
-                        provider.name.first_name,
-                        provider.name.last_name,
-                    ],
+                    [provider.name.title, provider.name.first_name, provider.name.last_name],
                 )
             )
             if provider
@@ -472,9 +463,7 @@ class TelehealthTools(ToolKitBase):
         def sort_key(item: tuple[str, Appointment]) -> tuple[datetime.datetime, str]:
             appt_id, appt = item
             try:
-                dt_value = datetime.datetime.strptime(
-                    f"{appt.date} {appt.time}", "%Y-%m-%d %H:%M"
-                )
+                dt_value = datetime.datetime.strptime(f"{appt.date} {appt.time}", "%Y-%m-%d %H:%M")
             except ValueError:
                 dt_value = datetime.datetime.min
             return dt_value, appt_id
@@ -488,9 +477,7 @@ class TelehealthTools(ToolKitBase):
         for appt_id, appt in matches:
             provider = self.db.providers.get(appt.provider_id)
             if provider:
-                provider_label = (
-                    f"{provider.name.title or 'Dr.'} {provider.name.last_name}"
-                )
+                provider_label = f"{provider.name.title or 'Dr.'} {provider.name.last_name}"
                 specialty = provider.specialty
             else:
                 provider_label, specialty = "Dr. Unknown", "Unknown Specialty"
@@ -514,15 +501,11 @@ class TelehealthTools(ToolKitBase):
             One line per record, newest first, or a message when the patient
             has no records.
         """
-        records = [
-            r for r in self.db.medical_records.values() if r.patient_id == patient_id
-        ]
+        records = [r for r in self.db.medical_records.values() if r.patient_id == patient_id]
         if not records:
             return f"No medical records found for patient {patient_id}."
 
-        records.sort(
-            key=lambda r: datetime.datetime.strptime(r.date, "%Y-%m-%d"), reverse=True
-        )
+        records.sort(key=lambda r: datetime.datetime.strptime(r.date, "%Y-%m-%d"), reverse=True)
         if limit is not None and limit > 0:
             records = records[:limit]
 
@@ -615,9 +598,7 @@ class TelehealthTools(ToolKitBase):
         """
         canonical = {key.lower(): key for key in self.db.medication_suppliers}
         medication_key = canonical.get(medication.lower())
-        suppliers = (
-            self.db.medication_suppliers.get(medication_key) if medication_key else None
-        )
+        suppliers = self.db.medication_suppliers.get(medication_key) if medication_key else None
         if not suppliers and medication_key is None:
             return (
                 f"No supplier information found for {medication}. "
@@ -627,9 +608,7 @@ class TelehealthTools(ToolKitBase):
             return f"No supplier information found for {medication}."
 
         if country_filter:
-            suppliers = [
-                s for s in suppliers if s.country.lower() == country_filter.lower()
-            ]
+            suppliers = [s for s in suppliers if s.country.lower() == country_filter.lower()]
             if not suppliers:
                 return f"No suppliers in {country_filter} for {medication}."
         suppliers = sorted(suppliers, key=lambda s: s.price_usd)
@@ -662,9 +641,7 @@ class TelehealthTools(ToolKitBase):
         if not inventory:
             return "Telemetry inventory is empty."
         if status_filter:
-            inventory = [
-                d for d in inventory if d.status.lower() == status_filter.lower()
-            ]
+            inventory = [d for d in inventory if d.status.lower() == status_filter.lower()]
             if not inventory:
                 return f"No telemetry devices with status {status_filter}."
         inventory = sorted(inventory, key=lambda d: d.device_id)
@@ -784,9 +761,7 @@ class TelehealthTools(ToolKitBase):
                 f"{display}: severity={det.severity}, risk_score={det.risk_score}, "
                 f"overlap_hours={det.time_overlap_hours}. {det.action}"
             )
-            if severity_rank.get(det.severity, 0) > severity_rank.get(
-                highest_severity, 0
-            ):
+            if severity_rank.get(det.severity, 0) > severity_rank.get(highest_severity, 0):
                 highest_severity = det.severity
                 severity_reason = display
 
@@ -898,7 +873,7 @@ class TelehealthTools(ToolKitBase):
             copay_amount = 0.0
             insurance_auth = None
 
-        # Like TRACER's tool, no chief_complaint is recorded for new appointments.
+        # Like v1, no chief_complaint is recorded for new appointments.
         appointment = Appointment(
             appointment_id=new_id,
             patient_id=patient_id,
@@ -965,13 +940,11 @@ class TelehealthTools(ToolKitBase):
 
         appointment.status = "cancelled"
         appointment.cancellation_reason = "patient_cancelled"
-        # Fixed date keeps replays deterministic (TRACER's tool uses datetime.now()).
+        # Fixed date keeps replays deterministic, as in v1.
         appointment.cancellation_date = CANCELLATION_DATE
 
         provider = self.db.providers.get(appointment.provider_id)
-        provider_name = (
-            f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
-        )
+        provider_name = f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
         return (
             "Appointment successfully cancelled.\n"
             "\n"
@@ -1014,13 +987,11 @@ class TelehealthTools(ToolKitBase):
 
         provider_id = appointment.provider_id
         if provider_id not in self.db.providers:
-            # TRACER's tool indexes providers[provider_id] and raises KeyError.
+            # v1 indexes providers[provider_id] and raises KeyError.
             raise ValueError(repr(provider_id))
         provider = self.db.providers[provider_id]
 
-        unavailable = self._provider_available(
-            provider, provider_id, new_date, new_time
-        )
+        unavailable = self._provider_available(provider, provider_id, new_date, new_time)
         if unavailable:
             return unavailable
         if self._slot_taken(provider_id, new_date, new_time, ignore_id=appointment_id):
@@ -1045,15 +1016,12 @@ class TelehealthTools(ToolKitBase):
         )
 
     @is_tool(ToolType.WRITE)
-    def update_medical_record_note(
-        self, record_id: str, note: str, metadata: Optional[dict] = None
-    ) -> str:
+    def update_medical_record_note(self, record_id: str, note: str) -> str:
         """Append an audit or compliance note to a medical record.
 
         Args:
             record_id: Identifier of the medical record to update
             note: Note text to append
-            metadata: Optional structured metadata to attach
 
         Returns:
             The updated medical record as JSON.
@@ -1065,12 +1033,7 @@ class TelehealthTools(ToolKitBase):
         if not record:
             raise ValueError(f"medical record {record_id} not found")
         # Reassign rather than append so the field counts as set on the record.
-        entry = (
-            RecordNote(note=note, metadata=metadata)
-            if metadata
-            else RecordNote(note=note)
-        )
-        record.notes = [*record.notes, entry]
+        record.notes = [*record.notes, RecordNote(note=note)]
         return _record_json(record)
 
     @is_tool(ToolType.WRITE)
@@ -1106,8 +1069,7 @@ class TelehealthTools(ToolKitBase):
         if not record.prescriptions:
             raise ValueError("medical record has no prescriptions")
 
-        # A dict, as in TRACER's tool: when two prescriptions share a name, the
-        # last wins.
+        # A dict, as in v1: when two prescriptions share a name, the last wins.
         by_name = {p.medication.strip().lower(): p for p in record.prescriptions}
         normalized_name = medication.strip().lower()
         prescription = by_name.get(normalized_name)
@@ -1120,15 +1082,13 @@ class TelehealthTools(ToolKitBase):
         if prescription is None:
             raise ValueError(f"medication {medication} not found in record {record_id}")
 
-        # Build the supplier first, so invalid input leaves the record unchanged.
-        supplier = PrescriptionSupplier(
+        prescription.pharmacy = f"{supplier_company} ({brand_name})"
+        prescription.supplier = PrescriptionSupplier(
             company=supplier_company,
             brand_name=brand_name,
             price_usd=float(price_usd),
             currency=currency,
         )
-        prescription.pharmacy = f"{supplier_company} ({brand_name})"
-        prescription.supplier = supplier
         return _record_json(record)
 
     # ------------------------------------------------------------------

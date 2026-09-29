@@ -4007,34 +4007,43 @@
         },
         {
           "action_id": "58_2",
+          "name": "modify_support_ticket",
+          "arguments": {
+            "ticket_id": "TICKET00076",
+            "status": "in_progress",
+            "priority": "high"
+          }
+        },
+        {
+          "action_id": "58_3",
           "name": "get_service_details",
           "arguments": {
             "service_id": "mobile_unlimited"
           }
         },
         {
-          "action_id": "58_3",
+          "action_id": "58_4",
           "name": "get_senior_discount",
           "arguments": {
             "original_price": "45.00"
           }
         },
         {
-          "action_id": "58_4",
+          "action_id": "58_5",
           "name": "get_billing_details",
           "arguments": {
             "customer_id": "emerson_walker_8800"
           }
         },
         {
-          "action_id": "58_5",
+          "action_id": "58_6",
           "name": "get_device_details",
           "arguments": {
             "device_name": "iPhone 15 Pro"
           }
         },
         {
-          "action_id": "58_6",
+          "action_id": "58_7",
           "name": "troubleshoot_device",
           "arguments": {
             "device_name": "iPhone 15 Pro",
@@ -4042,7 +4051,7 @@
           }
         },
         {
-          "action_id": "58_7",
+          "action_id": "58_8",
           "name": "manage_service",
           "arguments": {
             "customer_id": "emerson_walker_8800",
@@ -4336,7 +4345,7 @@
           "name": "modify_support_ticket",
           "arguments": {
             "ticket_id": "TICKET241",
-            "status": "open",
+            "status": "in_progress",
             "priority": "urgent"
           }
         },

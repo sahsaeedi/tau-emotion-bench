@@ -149,11 +149,13 @@ def test_an_ordinary_tool_call_does_not_end_the_conversation(
 
 
 def test_the_domains_that_tau_bench_stops_on_have_the_tool():
-    """Every domain has a transfer tool, and it ends the conversation."""
+    """Every domain but telecom has a transfer tool, and it ends the conversation.
+
+    Telecom keeps tau2's tool set, which has no transfer tool.
+    """
     for domain in (
         "airline",
         "retail",
-        "telecom",
         "telehealth",
         "bank",
         "basketball",

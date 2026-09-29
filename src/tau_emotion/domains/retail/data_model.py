@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from tau_emotion.domains.retail.utils import RETAIL_DB_PATH
 from tau_emotion.environment.db import DB
 
-# TRACER's tools store amounts exactly as given, so keep ints as ints.
+# v1 stores amounts exactly as given, so keep ints as ints.
 Amount = Union[int, float]
 
 
@@ -131,8 +131,8 @@ OrderStatus = Literal[
     "cancelled",
     "exchange requested",
     "return requested",
-    # TRACER's return/exchange tools write these, and the test database was
-    # generated with them.
+    # v1 tau-emotion-bench's return/exchange tools write these, and the
+    # test database was generated with them.
     "delivered (exchange requested)",
     "delivered (return requested)",
 ]
@@ -147,7 +147,7 @@ class BaseOrder(BaseModel):
     user_id: str = Field(description="Unique identifier for the user")
     address: UserAddress = Field(description="Address of the user")
     items: List[OrderItem] = Field(description="Items in the order")
-    # Any string: TRACER's tools write statuses beyond OrderStatus.
+    # Any string: v1's tools write statuses beyond OrderStatus.
     status: str = Field(description="Status of the order")
     fulfillments: List[OrderFullfilment] = Field(
         description="Fulfillments of the order"
@@ -184,7 +184,7 @@ class Order(BaseModel):
     user_id: str = Field(description="Unique identifier for the user")
     address: UserAddress = Field(description="Address of the user")
     items: List[OrderItem] = Field(description="Items in the order")
-    # Any string: TRACER's tools write statuses beyond OrderStatus.
+    # Any string: v1's tools write statuses beyond OrderStatus.
     status: str = Field(description="Status of the order")
     fulfillments: List[OrderFullfilment] = Field(
         description="Fulfillments of the order"

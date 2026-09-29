@@ -2862,6 +2862,10 @@
               {
                 "payment_id": "credit_card_8191674",
                 "amount": 286
+              },
+              {
+                "payment_id": "credit_card_8191674",
+                "amount": 50
               }
             ],
             "total_baggages": 2,
@@ -5899,6 +5903,10 @@
               {
                 "payment_id": "credit_card_4906704",
                 "amount": 248
+              },
+              {
+                "payment_id": "credit_card_4906704",
+                "amount": 48
               }
             ],
             "total_baggages": 0,

@@ -5,11 +5,10 @@ from pydantic import BaseModel, Field
 from tau_emotion.domains.airline.utils import AIRLINE_DB_PATH
 from tau_emotion.environment.db import DB
 
-FlightType = Literal["one_way", "round_trip"]
-CabinClass = Literal["basic_economy", "economy", "business"]
+FlightType = Literal["round_trip", "one_way"]
+CabinClass = Literal["business", "economy", "basic_economy"]
 Insurance = Literal["yes", "no"]
-# TRACER's tools store amounts exactly as given, so keep ints as ints and allow
-# cents.
+# v1 stores amounts exactly as given, so keep ints as ints and allow cents.
 Amount = Union[int, float]
 
 
@@ -44,11 +43,8 @@ class Address(BaseModel):
 
 # Payment Related Models
 class Payment(BaseModel):
-    payment_id: str = Field(
-        description="The payment id stored in user profile, such as "
-        "'credit_card_7815826', 'gift_card_7815826', 'certificate_7815826'."
-    )
-    amount: Amount = Field(description="The amount to be paid.")
+    payment_id: str = Field(description="Unique identifier for the payment")
+    amount: Amount = Field(description="Payment amount in dollars")
 
 
 class PaymentMethodBase(BaseModel):
@@ -83,16 +79,9 @@ PaymentMethod = Union[CreditCard, GiftCard, Certificate]
 
 
 class Passenger(BaseModel):
-    first_name: str = Field(
-        description="The first name of the passenger, such as 'Noah'."
-    )
-    last_name: str = Field(
-        description="The last name of the passenger, such as 'Brown'."
-    )
-    dob: str = Field(
-        description="The date of birth of the passenger in the format "
-        "'YYYY-MM-DD', such as '1990-01-01'."
-    )
+    first_name: str = Field(description="Passenger's first name")
+    last_name: str = Field(description="Passenger's last name")
+    dob: str = Field(description="Date of birth in YYYY-MM-DD format")
 
 
 SeatPrices = Annotated[
@@ -232,8 +221,8 @@ class User(BaseModel):
 
 
 # Reservation Models
-# flight_type, cabin, insurance and status are plain strings because TRACER's
-# tools store whatever value they are given.
+# flight_type, cabin, insurance and status are plain strings because v1's tools
+# store whatever value they are given.
 class Reservation(BaseModel):
     reservation_id: str = Field(description="Unique identifier for the reservation")
     user_id: str = Field(description="ID of the user who made the reservation")
@@ -256,7 +245,9 @@ class Reservation(BaseModel):
     total_baggages: int = Field(description="Total number of bags in reservation")
     nonfree_baggages: int = Field(description="Number of paid bags in reservation")
     insurance: str = Field(description="Whether travel insurance was purchased")
-    status: Optional[str] = Field(description="Status of the reservation", default=None)
+    status: Optional[str] = Field(
+        description="Status of the reservation", default=None
+    )
 
 
 class FlightDB(DB):
