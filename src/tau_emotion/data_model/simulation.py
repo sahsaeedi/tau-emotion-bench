@@ -191,6 +191,13 @@ class BaseRunConfig(BaseModel):
     ]
 
     # ---- Misc ----
+    no_emotion: Annotated[
+        bool,
+        Field(
+            description="Drop each task's emotion instruction from the user simulator's prompt.",
+            default=False,
+        ),
+    ]
     is_remote: Annotated[
         bool,
         Field(
