@@ -96,16 +96,22 @@ Adds synthetic users to telecom or telehealth. Run before step 3.
 ```bash
 # telecom
 python -m data_extender.telecom 200 --split test
-python -m data_extender.telecom.telecom_stats --path data_extender/generated_telecom --split test
+python -m data_extender.telecom.telecom_stats \
+  --path data_extender/generated_telecom \
+  --split test
 cp data_extender/generated_telecom/test/*.json tracer/envs/telecom/data/test/
 
 # telehealth (LLM writes scenario text; settings in the config)
 python -m data_extender.telehealth.extend_telehealth \
-  --config data_extender/telehealth/extend_telehealth_config.json --split test
+  --config data_extender/telehealth/extend_telehealth_config.json \
+  --split test
 cp -r data_extender/generated_telehealth/* tracer/envs/telehealth/data/
 
 # then copy the database into the benchmark (telehealth: both splits)
-python export_db.py --domain telecom --split test --overwrite
+python export_db.py \
+  --domain telecom \
+  --split test \
+  --overwrite
 ```
 
 - Output goes to `data_extender/generated_*` first; check it before `cp`.
@@ -118,7 +124,10 @@ python export_db.py --domain telecom --split test --overwrite
 One LLM pass per domain decides which tools can follow which.
 
 ```bash
-python graph_builder.py --provider openai --model gpt-5.2 --temperature 0.0 \
+python graph_builder.py \
+  --provider openai \
+  --model gpt-5.2 \
+  --temperature 0.0 \
   --domains airline retail telecom telehealth bank basketball movie restaurant school travel
 ```
 
@@ -131,8 +140,12 @@ Random walks over one domain's graph give tool-call sequences.
 ```bash
 python build_trace.py \
   --graph_json_path output/graphs/openai_gpt-5.2/bank_adjacency_matrix_0.0.json \
-  --num-traces 1000 --walk-steps 2 3 4 --walk-steps-dist 0.5 0.3 0.2 \
-  --num-intents 1 2 3 --num-intents-dist 0.6 0.3 0.1 --random-seed 10
+  --num-traces 1000 \
+  --walk-steps 2 3 4 \
+  --walk-steps-dist 0.5 0.3 0.2 \
+  --num-intents 1 2 3 \
+  --num-intents-dist 0.6 0.3 0.1 \
+  --random-seed 10
 ```
 
 Output: `output/traces/<graph name>_traces.json`
@@ -142,10 +155,14 @@ Output: `output/traces/<graph name>_traces.json`
 Writes and verifies a task per trace. Once per domain; always pass `--split` (default `train`).
 
 ```bash
-python -m tracer.generator --env bank --split test \
+python -m tracer.generator \
+  --env bank \
+  --split test \
   --trace-path output/traces/bank_adjacency_matrix_0.0_traces.json \
   --output-path output/tasks/test/bank_test_tasks.json \
-  --generator-model-provider openai --generator-model gpt-5.2 --tasks-per-trace 2
+  --generator-model-provider openai \
+  --generator-model gpt-5.2 \
+  --tasks-per-trace 2
 ```
 
 Collect valid tasks:
@@ -161,9 +178,12 @@ Output: `output/tasks/test_valid/bank_test_tasks_valid.json`
 Score tasks on the [four criteria](#quality-criteria).
 
 ```bash
-python -m evaluator.runner --domain bank \
+python -m evaluator.runner \
+  --domain bank \
   --input-path output/tasks/test_valid/bank_test_tasks_valid.json \
-  --eval-model gpt-4.1 --eval-model-provider openai --workers 8
+  --eval-model gpt-4.1 \
+  --eval-model-provider openai \
+  --workers 8
 ```
 
 Output: `output/evaluations/bank_test_eval.json`
@@ -171,8 +191,11 @@ Output: `output/evaluations/bank_test_eval.json`
 Or all domains at once:
 
 ```bash
-python -m evaluator.multi_runner --domains all --split test \
-  --eval-model gpt-4.1 --eval-model-provider openai
+python -m evaluator.multi_runner \
+  --domains all \
+  --split test \
+  --eval-model gpt-4.1 \
+  --eval-model-provider openai
 ```
 
 Report:
@@ -222,7 +245,9 @@ From the repo root, with the benchmark's environment.
 cd ..
 uv run python tracer/export_tasks.py \
   tracer/output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json \
-  --domain bank --split test --dry-run
+  --domain bank \
+  --split test \
+  --dry-run
 ```
 
 Then `--overwrite` to write `data/tau_emotion/domains/bank/tasks.json`. Rows without a
@@ -257,17 +282,30 @@ TRACER and in the benchmark alike.
 - `make_prompt.py`: regenerates `tracer/prompts/task_generator_<domain>.py`
   (`--all`, or one domain). Edit the prompts there, not in the generated files.
 
-The generator's flags: `--env`, `--split` (default `train`), `--trace-path`,
-`--output-path`, `--generator-model-provider` / `--generator-model` (default `openai` /
-`gpt-5.2`), `--api-base` for an OpenAI-compatible server, `--tasks-per-trace`
-(default 3), `--start-index` / `--end-index` for a trace range, and `--debug` for every
-agent step on stdout. It checkpoints after every trace, so re-running the same command
-resumes. To run several domains, loop over them:
+Generator flags:
+
+| Flag | Default | Purpose |
+|---|---|---|
+| `--env` | `airline` | Domain |
+| `--split` | `train` | `train` or `test` |
+| `--trace-path` | airline traces | Traces file from step 2 |
+| `--output-path` | — | `output/tasks/<split>/<domain>_<split>_tasks.json` |
+| `--generator-model-provider` | `openai` | LLM provider |
+| `--generator-model` | `gpt-5.2` | LLM model |
+| `--api-base` | — | OpenAI-compatible server URL |
+| `--tasks-per-trace` | `3` | Tasks per trace |
+| `--start-index` / `--end-index` | all | Trace range |
+| `--debug` | off | Every agent step on stdout |
+
+Re-running the same command resumes. For several domains, loop:
 
 ```bash
 for d in bank movie; do
-  python -m tracer.generator --env $d --split test \
+  python -m tracer.generator \
+    --env $d \
+    --split test \
     --trace-path output/traces/${d}_adjacency_matrix_0.0_traces.json \
-    --output-path output/tasks/test/${d}_test_tasks.json --tasks-per-trace 2
+    --output-path output/tasks/test/${d}_test_tasks.json \
+    --tasks-per-trace 2
 done
 ```
