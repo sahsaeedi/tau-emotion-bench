@@ -14,19 +14,24 @@ repository.
 
 ## Domains and tasks
 
-| Domain | Tools | Test tasks | Train tasks |
-|---|---|---|---|
-| airline    | 14 |  70 |  143 |
-| retail     | 16 |  70 |  585 |
-| telecom    | 19 |  70 |  186 |
-| telehealth | 23 |  70 |  584 |
-| bank       | 22 |  50 |  228 |
-| basketball | 20 |  50 |  346 |
-| movie      | 16 |  50 |  231 |
-| restaurant | 15 |  50 |  163 |
-| school     | 14 |  50 |  133 |
-| travel     | 16 |  50 |  124 |
-| **total**  |    | **580** | **2,723** |
+| Domain | Read tools | Write tools | Total tools | Emotions (family/subfamily) | Test tasks | Train tasks |
+|---|---|---|---|---|---|---|
+| airline    |  8 | 6 | 14 | 5/16 |  70 |  143 |
+| retail     |  9 | 7 | 16 | 4/11 |  70 |  585 |
+| telecom    | 12 | 6 | 19 | 5/13 |  70 |  186 |
+| telehealth | 18 | 5 | 23 | 3/8  |  70 |  584 |
+| school     |  9 | 4 | 14 | 4/10 |  50 |  133 |
+| basketball | 17 | 3 | 20 | 1/2  |  50 |  346 |
+| restaurant |  9 | 6 | 15 | 4/8  |  50 |  163 |
+| travel     |  9 | 7 | 16 | 3/8  |  50 |  124 |
+| movie      | 13 | 3 | 16 | 4/10 |  50 |  231 |
+| bank       | 13 | 9 | 22 | 3/8  |  50 |  228 |
+| **total**  |    |   |    |      | **580** | **2,723** |
+
+- **Read tools** are every tool that does not change the database, including
+  `think`, `calculate` and the transfer to a human agent.
+- **Emotions** counts the distinct emotion families and subfamilies across a
+  domain's test tasks.
 
 - **Test tasks** (`tasks.json`) are the benchmark. They run against `db.json`.
 - **Train tasks** (`tasks_train.json`) are separate tasks for training models, run
