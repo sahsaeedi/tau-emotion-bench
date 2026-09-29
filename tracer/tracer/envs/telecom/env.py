@@ -41,4 +41,4 @@ class MockTelecomDomainEnv(Env):
             # endpoint=endpoint,
             user_model_base_url=user_model_base_url,
         )
-        self.terminate_tools = ["transfer_to_human_support"]
+        self.terminate_tools = ["transfer_to_human_agents"]

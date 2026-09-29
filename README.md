@@ -18,13 +18,13 @@ repository.
 |---|---|---|---|
 | airline    | 14 |  70 |  143 |
 | retail     | 16 |  70 |  585 |
-| telecom    | 18 |  70 |  186 |
+| telecom    | 19 |  70 |  186 |
 | telehealth | 23 |  70 |  584 |
 | bank       | 22 |  50 |  228 |
 | basketball | 20 |  50 |  346 |
 | movie      | 16 |  50 |  231 |
 | restaurant | 15 |  50 |  163 |
-| school     | 13 |  50 |  133 |
+| school     | 14 |  50 |  133 |
 | travel     | 16 |  50 |  124 |
 | **total**  |    | **580** | **2,723** |
 

@@ -24,7 +24,7 @@ from tracer.envs.basketball.tools.update_game_status import UpdateGameStatusTool
 
 ALL_TOOLS = [
     # CalculateTool,
-    # TransferToHumanAgentsTool,
+    TransferToHumanAgentsTool,
     GetClubDetailsTool,
     # GetPlayerDetailsTool,
     GetGameDetailsTool,

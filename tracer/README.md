@@ -238,9 +238,9 @@ with the generator's replay of them (criterion 3) or its `in_domain` label
 | 3 | Solvable by ground truth | The judge finds that the ground-truth actions, and their replay, do not accomplish the instruction |
 | 4 | No domain violation | The task is out of domain, but the ground truth acts instead of transferring to a human agent |
 
-Telecom, basketball, movie, restaurant, school and travel register no transfer tool
-in TRACER, so their ground truth can never hand off: a task the judge confirms is
-out of domain fails criterion 4 there.
+Every domain has a transfer tool (`transfer_to_human_support` in telehealth,
+`transfer_to_human_agents` elsewhere), and calling it ends the conversation, in
+TRACER and in the benchmark alike.
 
 ## Batch generation
 

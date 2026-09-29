@@ -1,7 +1,7 @@
 """Toolkit for the school domain, ported from TRACER's environment
 (tracer/tracer/envs/school/).
 
-13 tools: one per tool module in tracer/tracer/envs/school/tools/, plus
+14 tools: one per tool module in tracer/tracer/envs/school/tools/, plus
 `calculate` and `think`. Conversion rules from TRACER's tools:
 
 - `data["courses"]` → `self.db.courses`.
@@ -638,3 +638,19 @@ class SchoolTools(ToolKitBase):
         if not all(char in "0123456789+-*/(). " for char in expression):
             raise ValueError("Invalid characters in expression")
         return str(round(float(eval(expression, {"__builtins__": None}, {})), 2))
+
+    @is_tool(ToolType.GENERIC)
+    def transfer_to_human_agents(self, summary: str) -> str:
+        """
+        Transfer the user to a human agent, with a summary of the user's issue.
+        Only transfer if
+         -  the user explicitly asks for a human agent
+         -  given the policy and the available tools, you cannot solve the user's issue.
+
+        Args:
+            summary: A summary of the user's issue.
+
+        Returns:
+            A message indicating the user has been transferred to a human agent.
+        """
+        return "Transfer successful"

@@ -29,7 +29,7 @@ from tracer.envs.restaurant.tools.transfer_to_human_agents import (
 
 ALL_TOOLS = [
     # CalculateTool,
-    # TransferToHumanAgentsTool,
+    TransferToHumanAgentsTool,
     GetTicketDetailsTool,
     GetDishDetailsTool,
     # GetPatronDetailsTool,

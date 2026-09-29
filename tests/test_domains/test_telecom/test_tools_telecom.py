@@ -36,6 +36,7 @@ EXPECTED_TOOLS = {
     "modify_support_ticket",
     "record_payment",
     "think",
+    "transfer_to_human_agents",
     "troubleshoot_device",
 }
 

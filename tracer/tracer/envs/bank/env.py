@@ -39,3 +39,4 @@ class MockBankDomainEnv(Env):
             user_provider=user_provider,
             task_index=task_index,
         )
+        self.terminate_tools = ["transfer_to_human_agents"]

@@ -1,7 +1,7 @@
 """Toolkit for the telecom domain (account-management CRM), ported from TRACER's
 environment (tracer/tracer/envs/telecom/).
 
-18 tools, one per tool module in tracer/tracer/envs/telecom/tools/, including
+19 tools, one per tool module in tracer/tracer/envs/telecom/tools/, including
 their validation rules and return values. Conversion rules from TRACER's tools:
 
 - `data.get("customers", {})` → `self.db.customers` (typed pydantic).
@@ -653,3 +653,19 @@ class TelecomTools(ToolKitBase):
             An empty string.
         """
         return ""
+
+    @is_tool(ToolType.GENERIC)
+    def transfer_to_human_agents(self, summary: str) -> str:
+        """
+        Transfer the user to a human agent, with a summary of the user's issue.
+        Only transfer if
+         -  the user explicitly asks for a human agent
+         -  given the policy and the available tools, you cannot solve the user's issue.
+
+        Args:
+            summary: A summary of the user's issue.
+
+        Returns:
+            A message indicating the user has been transferred to a human agent.
+        """
+        return "Transfer successful"

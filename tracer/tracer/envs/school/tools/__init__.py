@@ -10,11 +10,13 @@ from tracer.envs.school.tools.list_departments import ListDepartmentsTool
 from tracer.envs.school.tools.pay_registration import PayRegistrationTool
 from tracer.envs.school.tools.register_courses import RegisterCoursesTool
 from tracer.envs.school.tools.search_courses import SearchCoursesTool
+from tracer.envs.school.tools.transfer_to_human_agents import TransferToHumanAgents
 from tracer.envs.school.tools.update_registration_courses import (
     UpdateRegistrationCoursesTool,
 )
 
 ALL_TOOLS = [
+    TransferToHumanAgents,
     # GetStudentDetailsTool,
     GetCourseDetailsTool,
     GetRegistrationDetailsTool,

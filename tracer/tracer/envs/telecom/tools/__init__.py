@@ -1,3 +1,5 @@
+from tracer.envs.telecom.tools.transfer_to_human_agents import TransferToHumanAgents
+
 from .add_device import AddDevice
 from .calculate import Calculate
 from .create_support_ticket import CreateSupportTicket
@@ -18,6 +20,7 @@ from .think import Think
 from .troubleshoot_device import TroubleshootDevice
 
 ALL_TOOLS = [
+    TransferToHumanAgents,
     # Calculate,
     # Think,
     # FindCustomerByEmail,

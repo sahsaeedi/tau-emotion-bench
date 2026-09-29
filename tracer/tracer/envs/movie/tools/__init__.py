@@ -29,5 +29,5 @@ ALL_TOOLS = [
     UpdateBookingSeatsTool,
     GetBookingDetailsTool,
     # Calculate,
-    # TransferToHumanAgents,
+    TransferToHumanAgents,
 ]

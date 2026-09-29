@@ -35,6 +35,7 @@ EXPECTED_TOOLS = {
     "register_courses",
     "search_courses",
     "think",
+    "transfer_to_human_agents",
     "update_registration_courses",
 }
 

@@ -30,6 +30,6 @@ ALL_TOOLS = [
     UpdateBookingTravelersTool,
     UpdateBookingRoomingTool,
     ScheduleAgentMeetingTool,
-    # TransferToHumanAgentsTool,
+    TransferToHumanAgentsTool,
     # CalculateTool,
 ]

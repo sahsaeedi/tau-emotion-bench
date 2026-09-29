@@ -283,9 +283,7 @@ class AirlineTools(ToolKitBase):
         """
         if reservation_id in self.db.reservations:
             return _record_json(self.db.reservations[reservation_id])
-        # TRACER's tool says "Reservation id not found" here; this toolkit says
-        # "user not found".
-        raise ValueError("user not found")
+        raise ValueError("Reservation id not found")
 
     @is_tool(ToolType.READ)
     def get_user_details(self, user_id: str) -> str:
@@ -298,8 +296,7 @@ class AirlineTools(ToolKitBase):
             The user as JSON.
         """
         if user_id in self.db.users:
-            # Left out of the output, although TRACER's tool returns it.
-            return _record_json(self.db.users[user_id], exclude={"user_id"})
+            return _record_json(self.db.users[user_id])
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)

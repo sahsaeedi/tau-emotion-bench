@@ -38,3 +38,4 @@ class MockBasketballDomainEnv(Env):
             task_index=task_index,
             api_base=api_base,
         )
+        self.terminate_tools = ["transfer_to_human_agents"]

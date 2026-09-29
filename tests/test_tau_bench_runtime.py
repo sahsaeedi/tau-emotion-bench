@@ -149,11 +149,24 @@ def test_an_ordinary_tool_call_does_not_end_the_conversation(
 
 
 def test_the_domains_that_tau_bench_stops_on_have_the_tool():
-    """Every transfer tool τ-bench terminates on is named in the config set."""
-    for domain, expected in (
-        ("airline", "transfer_to_human_agents"),
-        ("telehealth", "transfer_to_human_support"),
+    """Every domain has a transfer tool, and it ends the conversation."""
+    for domain in (
+        "airline",
+        "retail",
+        "telecom",
+        "telehealth",
+        "bank",
+        "basketball",
+        "movie",
+        "restaurant",
+        "school",
+        "travel",
     ):
+        expected = (
+            "transfer_to_human_support"
+            if domain == "telehealth"
+            else "transfer_to_human_agents"
+        )
         environment = registry.get_env_constructor(domain)()
         tool_names = {tool.name for tool in environment.get_tools()}
         assert expected in tool_names
