@@ -34,8 +34,8 @@ tool graph ─► traces ─► tasks ─► quality ─► emotions ─► expo
 | 6. Emotions for tasks | Each task gets the persona that fits it best |
 | 7. Export | Tasks are converted into the benchmark's task files |
 
-Separately, the [data extenders](#adding-users-to-a-database) add synthetic users to
-the telecom and telehealth databases, and `export_db.py` writes a domain's database
+Optionally, the [DB extender](#db-extender-optional) adds synthetic users to
+the telecom and telehealth databases before step 3, and `export_db.py` writes a domain's database
 into the benchmark.
 
 ## Layout
@@ -45,12 +45,12 @@ into the benchmark.
 | `graph_builder.py` | Step 1: builds a tool graph per domain with an LLM |
 | `build_trace.py`, `trace_utils.py` | Step 2: samples tool-call traces from a graph |
 | `tracer/` | Step 3: the task generator package: `generator.py`, agents, prompts, and `envs/<domain>/` with each domain's tools, reverse tools, policy (`wiki.md`) and databases |
-| `scripts/taskgen/` | Batch drivers for step 3, a filter for valid tasks, and the generator's shared config |
+| `scripts/taskgen/` | Step 3 helpers: the filter for valid tasks, and the prompt builder |
 | `evaluator/` | Step 4: the four-criteria quality audit |
 | `emotions/` | Step 5: builds the emotion persona bank |
 | `emotion_analysis/` | Step 6: assigns an emotion to each task, and plots the emotion space |
 | `export_tasks.py` | Step 7: writes tasks into the benchmark |
-| `data_extender/` | Adds synthetic customers to the telecom and telehealth databases ([below](#adding-users-to-a-database)) |
+| `data_extender/` | Adds synthetic customers to the telecom and telehealth databases ([DB extender](#db-extender-optional)) |
 | `export_db.py` | Writes a domain's TRACER database into the benchmark's `db.json` / `db_train.json` |
 
 Each domain's database is in `tracer/envs/<domain>/data/`: catalog files shared by
@@ -87,141 +87,146 @@ server (vLLM or a hosted provider):
 
 ## Pipeline
 
-The example builds `bank` test tasks. To build train tasks against the train
-database instead, pass `--split train` to the generator, `filter_valid_tasks.py`,
-`multi_runner` and `export_tasks.py`, and write `train` for `test` in every file path
-of steps 3–7 (`output/tasks/train/bank_train_tasks.json`,
-`output/tasks/train_valid/...`, `output/evaluations/bank_train_*.json`); the other
-commands take their split from the file names.
+Examples build `bank` test tasks. For train, use `--split train` and `train` in the paths.
+
+### DB extender (optional)
+
+Adds synthetic users to telecom or telehealth. Run before step 3.
 
 ```bash
-# 1. Tool graphs: one LLM pass per domain
-#    -> output/graphs/<provider>_<model>/<domain>_adjacency_matrix_<temperature>.json
+# telecom
+python -m data_extender.telecom 200 --split test
+python -m data_extender.telecom.telecom_stats --path data_extender/generated_telecom --split test
+cp data_extender/generated_telecom/test/*.json tracer/envs/telecom/data/test/
+
+# telehealth (LLM writes scenario text; settings in the config)
+python -m data_extender.telehealth.extend_telehealth \
+  --config data_extender/telehealth/extend_telehealth_config.json --split test
+cp -r data_extender/generated_telehealth/* tracer/envs/telehealth/data/
+
+# then copy the database into the benchmark (telehealth: both splits)
+python export_db.py --domain telecom --split test --overwrite
+```
+
+- Output goes to `data_extender/generated_*` first; check it before `cp`.
+- Only adds records, so existing tasks keep working.
+- Skip `export_db.py` and the benchmark lacks the new users.
+- OpenAI-compatible server: `--provider openai-compatible --base-api <url> --model <name>`.
+
+### Step 1: Tool graphs
+
+One LLM pass per domain decides which tools can follow which.
+
+```bash
 python graph_builder.py --provider openai --model gpt-5.2 --temperature 0.0 \
   --domains airline retail telecom telehealth bank basketball movie restaurant school travel
+```
 
-# 2. Traces: random walks over one graph
-#    -> output/traces/<graph name>_traces.json
+Output: `output/graphs/<provider>_<model>/<domain>_adjacency_matrix_<temperature>.json`
+
+### Step 2: Traces
+
+Random walks over one domain's graph give tool-call sequences.
+
+```bash
 python build_trace.py \
   --graph_json_path output/graphs/openai_gpt-5.2/bank_adjacency_matrix_0.0.json \
   --num-traces 1000 --walk-steps 2 3 4 --walk-steps-dist 0.5 0.3 0.2 \
   --num-intents 1 2 3 --num-intents-dist 0.6 0.3 0.1 --random-seed 10
+```
 
-# 3. Tasks: generate, replay the ground-truth actions, check solvability (resumable)
+Output: `output/traces/<graph name>_traces.json`
+
+### Step 3: Tasks
+
+Writes and verifies a task per trace. Once per domain; always pass `--split` (default `train`).
+
+```bash
 python -m tracer.generator --env bank --split test \
   --trace-path output/traces/bank_adjacency_matrix_0.0_traces.json \
   --output-path output/tasks/test/bank_test_tasks.json \
   --generator-model-provider openai --generator-model gpt-5.2 --tasks-per-trace 2
-#    or with the shared settings in scripts/taskgen/configs/generator.json:
-#      python -m tracer.generator --config scripts/taskgen/configs/generator.json --env bank \
-#        --trace-path output/traces/bank_adjacency_matrix_0.0_traces.json \
-#        --output-path output/tasks/test/bank_test_tasks.json
-#    or several domains in sequence: bash scripts/taskgen/run_all.sh bank movie
-python scripts/taskgen/filter_valid_tasks.py --split test
-#    -> output/tasks/test_valid/bank_test_tasks_valid.json
+```
 
-# 4. Quality audit (four criteria below), a summary, and the tasks that passed
+Collect valid tasks:
+
+```bash
+python scripts/taskgen/filter_valid_tasks.py --split test
+```
+
+Output: `output/tasks/test_valid/bank_test_tasks_valid.json`
+
+### Step 4: Quality audit
+
+Score tasks on the [four criteria](#quality-criteria).
+
+```bash
 python -m evaluator.runner --domain bank \
   --input-path output/tasks/test_valid/bank_test_tasks_valid.json \
   --eval-model gpt-4.1 --eval-model-provider openai --workers 8
-#    -> output/evaluations/bank_test_eval.json (resumable)
-#    or every domain with valid tasks, one task per domain in turn:
-#      python -m evaluator.multi_runner --domains all --split test \
-#        --eval-model gpt-4.1 --eval-model-provider openai
-#      (or --config evaluator/config/eval_config_all.json, which lists the
-#       per-domain configs evaluator/config/eval_config_<domain>.json; the model
-#       settings come from the command line or eval_config_all.json)
+```
+
+Output: `output/evaluations/bank_test_eval.json`
+
+Or all domains at once:
+
+```bash
+python -m evaluator.multi_runner --domains all --split test \
+  --eval-model gpt-4.1 --eval-model-provider openai
+```
+
+Report:
+
+```bash
 python -m evaluator.orchestrator \
   --eval-path output/evaluations/bank_test_eval.json \
   --markdown-out output/evaluations/bank_test_report.md
+```
+
+Passed tasks:
+
+```bash
 python -m evaluator.get_passed_tasks \
   --eval-path output/evaluations/bank_test_eval.json \
   --input-path output/tasks/test_valid/bank_test_tasks_valid.json \
   --output-path output/evaluations/bank_test_passed_tasks.json
+```
 
-# 5. Emotion persona bank: an OpenAI Batch API job (up to 24 h), once for all domains.
-#    It needs OPENAI_API_KEY for OpenAI itself: OpenAI-compatible servers usually
-#    have no Batch API.
+### Step 5: Emotion persona bank
+
+Run once for all domains; independent of steps 1–4. OpenAI Batch API, up to 24 h.
+
+```bash
 python emotions/build_emotion_persona_instructions_batch.py submit
 python emotions/build_emotion_persona_instructions_batch.py status
 python emotions/build_emotion_persona_instructions_batch.py wait-download
-#    -> emotions/output/emotion_persona_instructions.json
+```
 
-# 6. Emotions for the tasks. First set inputs.task_paths in emotion_analysis/config.json
-#    to ["output/evaluations/bank_test_passed_tasks.json"], then:
+Output: `emotions/output/emotion_persona_instructions.json`
+
+### Step 6: Emotions for the tasks
+
+Set `inputs.task_paths` in `emotion_analysis/config.json` to the passed-tasks file first.
+
+```bash
 python emotion_analysis/run_all.py --config emotion_analysis/config.json
-#    -> output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json,
-#       plus the trained encoder and emotion-space plots under emotion_analysis/output/
+```
 
-# 7. Export into the benchmark. Run it with the benchmark's environment, so each task
-#    is checked against the benchmark's task schema and the domain's tools:
+Output: `output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json`
+
+### Step 7: Export into the benchmark
+
+From the repo root, with the benchmark's environment.
+
+```bash
 cd ..
 uv run python tracer/export_tasks.py \
   tracer/output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json \
   --domain bank --split test --dry-run
-#    then run it again with --overwrite to replace data/tau_emotion/domains/bank/tasks.json
-#    (--split train writes tasks_train.json; --output <path> writes somewhere else)
 ```
 
-Step 5 is independent of steps 1–4 and only needs to run once. Step 6 needs its
-output.
-
-The export skips failed rows, rows without a `user_id`, and rows without an emotion
-from step 6. It numbers the tasks `<domain>_<split>_0000` onward.
-
-## Adding users to a database
-
-The data extenders grow a domain's database with synthetic records, so there are
-more users for new tasks to be about. They read one split of
-`tracer/envs/<domain>/data/` and write an output directory with the same layout,
-holding the existing records plus the new ones, so you can review it and copy it
-over the original.
-
-```bash
-# Telecom: add 200 customers, with billing and support tickets, to the test split.
-# Deterministic (Faker, --seed); the ranges and weights are in
-# data_extender/telecom/telecom_config.yaml.
-python -m data_extender.telecom 200 --split test
-#    -> data_extender/generated_telecom/test/{customers,billing,support_tickets}.json
-python -m data_extender.telecom.telecom_stats --path data_extender/generated_telecom --split test
-cp data_extender/generated_telecom/test/*.json tracer/envs/telecom/data/test/
-
-# Telehealth: new patients (some in family groups), providers and telemetry devices
-# are generated deterministically; an LLM then writes the scenario text for them.
-# Counts, model and output paths are in the config; any flag overrides it.
-python -m data_extender.telehealth.extend_telehealth \
-  --config data_extender/telehealth/extend_telehealth_config.json --split test
-#    for an OpenAI-compatible server (key from OPENAI_COMPATIBLE_API_KEY), add
-#    --provider openai-compatible --base-api <url> --model <name> --enable-thinking false
-#    -> data_extender/generated_telehealth/ (providers.json and the other catalog
-#       files at the top, the split's files in test/)
-cp -r data_extender/generated_telehealth/* tracer/envs/telehealth/data/
-```
-
-The telehealth scenarios use only the newly generated patients and devices. A
-scenario category with no fitting new record is skipped with a message, and a
-weight of 0 in `scenario_mix` turns a category off.
-
-New ids, account numbers and ticket numbers continue after the existing ones.
-Telehealth providers are catalog records, so new ones appear in both splits.
-
-Then write the database into the benchmark:
-
-```bash
-python export_db.py --domain telecom --split test --dry-run
-#    then run it again with --overwrite to replace ../data/tau_emotion/domains/telecom/db.json
-#    (--split train writes db_train.json)
-```
-
-After a telehealth extension, export both splits, since the provider catalog they
-share has changed:
-
-```bash
-python export_db.py --domain telehealth --split test --overwrite
-python export_db.py --domain telehealth --split train --overwrite
-```
-
-Existing tasks keep working: records are only added, never changed.
+Then `--overwrite` to write `data/tau_emotion/domains/bank/tasks.json`. Rows without a
+`user_id` or an emotion are skipped.
 
 ## Quality criteria
 
@@ -242,27 +247,27 @@ Every domain has a transfer tool (`transfer_to_human_support` in telehealth,
 `transfer_to_human_agents` elsewhere), and calling it ends the conversation, in
 TRACER and in the benchmark alike.
 
-## Batch generation
+## Task generation helpers
 
-`scripts/taskgen/` runs step 3 at scale:
+`scripts/taskgen/` holds two helpers for step 3:
 
-- `configs/generator.json`: the settings every domain shares: split, temperatures,
-  `tasks_per_trace` and the trace range. The model defaults to the generator's own
-  (`openai`, `gpt-5.2`); to use another, add `generator_model_provider`,
-  `generator_model` and, for an OpenAI-compatible server, `api_base` to this file, or
-  pass `--generator-model-provider`, `--generator-model` and `--api-base`. Any flag on
-  the command line overrides the file.
-- `run_all.sh <domains...>`: runs the domains one after another; resumable, and
-  meant to run inside `tmux`. `run_window.sh <domain> <log_dir>` runs one domain, as
-  one tmux window.
-- `status.sh`: one-screen progress.
-- `make_prompt.py`: regenerates `tracer/prompts/task_generator_<domain>.py`.
+- `filter_valid_tasks.py --split <split>`: collects the valid tasks of every domain
+  from `output/tasks/<split>/<domain>_<split>_tasks*.json` into
+  `output/tasks/<split>_valid/`. Name the generator's output that way so it is found.
+- `make_prompt.py`: regenerates `tracer/prompts/task_generator_<domain>.py`
+  (`--all`, or one domain). Edit the prompts there, not in the generated files.
 
-The drivers find each domain's files by name (see `common.sh`): the traces file is
-the one file in `output/traces/` named `<domain>_*traces.json`, and tasks go to
-`output/tasks/<split>/<domain>_<split>_tasks.json`. Change the split, config or
-traces folder with environment variables:
+The generator's flags: `--env`, `--split` (default `train`), `--trace-path`,
+`--output-path`, `--generator-model-provider` / `--generator-model` (default `openai` /
+`gpt-5.2`), `--api-base` for an OpenAI-compatible server, `--tasks-per-trace`
+(default 3), `--start-index` / `--end-index` for a trace range, and `--debug` for every
+agent step on stdout. It checkpoints after every trace, so re-running the same command
+resumes. To run several domains, loop over them:
 
 ```bash
-SPLIT=train TRACE_DIR=output/traces_final bash scripts/taskgen/run_all.sh bank movie
+for d in bank movie; do
+  python -m tracer.generator --env $d --split test \
+    --trace-path output/traces/${d}_adjacency_matrix_0.0_traces.json \
+    --output-path output/tasks/test/${d}_test_tasks.json --tasks-per-trace 2
+done
 ```

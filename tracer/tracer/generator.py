@@ -452,8 +452,8 @@ def main():
         file=sys.stderr,
     )
 
-    # Progress bar on STDERR (stdout carries the verbose per-step log, which run_all.sh
-    # sends to the log file; the terminal shows only this bar).
+    # Progress bar on STDERR (stdout carries the verbose per-step log, which can be
+    # redirected to a log file; the terminal then shows only this bar).
     n_target = len(idxs) * args.tasks_per_trace
     done_ok = [
         r for r in results if not r.get("failed", False) and r["task_id"] in set(idxs)
