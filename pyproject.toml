@@ -5,6 +5,16 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/tau_emotion"]
 
+[tool.hatch.build.targets.sdist]
+# Hatch reads only the root .gitignore, so leave out what tracer/.gitignore ignores.
+exclude = [
+    "tracer/output",
+    "tracer/emotions/output",
+    "tracer/emotion_analysis/output",
+    "tracer/.env",
+    "tracer/data_extender/generated_*",
+]
+
 [project]
 name = "tau-emotion"
 version = "1.0.0"

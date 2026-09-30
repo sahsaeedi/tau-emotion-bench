@@ -99,62 +99,6 @@ def _build_criterion_result(
     )
 
 
-def _evaluate_instruction(
-    instruction: str,
-    instruction_index: int,
-    is_preference_pass: bool,
-    domain: str,
-    goal_agent: GoalOrientationAgent,
-    template_agent: TemplateCheckerAgent,
-) -> InstructionEvaluation:
-    go_result = goal_agent.check(instruction=instruction, domain=domain)
-    tc_result = template_agent.check(
-        instruction=instruction,
-        domain=domain,
-        is_preference_pass=is_preference_pass,
-    )
-
-    # goal_orientation: violation iff task_type == "procedural"
-    go_passed = (
-        go_result.get("task_type") == "goal"
-        if go_result.get("task_type") is not None
-        else None
-    )
-    goal_cr = _build_criterion_result(
-        name="goal_oriented",
-        passed=go_passed,
-        reason=go_result.get("reason", ""),
-        raw_llm_output={k: v for k, v in go_result.items() if k != "trajectory"},
-        layer="llm",
-    )
-
-    # template: violation iff follows_template == False (only definitive on pref pass)
-    follows = tc_result.get("follows_template")
-    if not is_preference_pass:
-        # For raw instructions the preference may legitimately be absent;
-        # only flag a template violation when follows_template is explicitly False AND
-        # has_tool_calling_task is False (no tool task at all).
-        has_tool = tc_result.get("has_tool_calling_task")
-        tc_passed = has_tool if has_tool is not None else None
-    else:
-        tc_passed = follows
-    template_cr = _build_criterion_result(
-        name="template",
-        passed=tc_passed,
-        reason=tc_result.get("reason", ""),
-        raw_llm_output={k: v for k, v in tc_result.items() if k != "trajectory"},
-        layer="llm",
-    )
-
-    return InstructionEvaluation(
-        instruction=instruction,
-        instruction_index=instruction_index,
-        is_preference_pass=is_preference_pass,
-        goal_orientation=goal_cr,
-        template=template_cr,
-    )
-
-
 CRITERIA = [
     "goal_oriented",
     "template",

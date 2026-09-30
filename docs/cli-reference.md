@@ -35,6 +35,7 @@ tau-emotion run \
 | `--user-enable-thinking` / `--no-user-enable-thinking` | Same, for the user model |
 | `--agent` | Agent implementation to use: `llm_agent` (default), `llm_agent_gt`, `llm_agent_solo` |
 | `--user` | User simulator implementation to use: `user_simulator` (default), `dummy_user` |
+| `--no-emotion` | Leave the task's emotion instruction out of the user simulator's prompt (an ablation: the same tasks with a neutral user). Adds `no-emotion` to the default run folder |
 | `--num-trials` | Number of times each task is run (default: `1`) |
 | `--num-tasks` | Number of tasks to evaluate (omit for all tasks) |
 | `--task-ids` | Only run the tasks with these ids (e.g. `airline_test_0000 airline_test_0003`) |
@@ -44,7 +45,7 @@ tau-emotion run \
 | `--max-errors` | Maximum number of tool errors in a run before it is stopped (default: `200`, equal to `--max-steps`, so the cap is effectively off) |
 | `--max-concurrency` | Maximum concurrent simulations (default: `3`) |
 | `--seed` | Random seed for reproducibility (default: `300`) |
-| `--save-to` | Output directory name, saved as `data/simulations/<save_to>/results.json`. Default: `<domain>/<agent model>`, plus suffixes for a non-default agent, thinking/reasoning settings, a non-default user model (`user-<model>`) and the train split (`train`), e.g. `airline/gpt-4.1_user-gpt-4.1`. If the file already exists, the run is resumed |
+| `--save-to` | Output directory name, saved as `data/simulations/<save_to>/results.json`. Default: `<domain>/<agent model>`, plus suffixes for a non-default agent, thinking/reasoning settings, a non-default user model (`user-<model>`), the train split (`train`) and `--no-emotion` (`no-emotion`), e.g. `airline/gpt-4.1_user-gpt-4.1`. An absolute path is used as is. If the file already exists, the run is resumed |
 | `--log-level` | Log level (default: `ERROR`) |
 | `--verbose-logs` | Save detailed logs (LLM calls, per-task logs) |
 | `--llm-log-mode` | LLM log mode when `--verbose-logs` is on: `all` or `latest` (default: `latest`) |
@@ -52,7 +53,7 @@ tau-emotion run \
 | `--retry-delay` | Delay in seconds between retries (default: `1.0`) |
 | `--enforce-communication-protocol` | Enforce protocol rules (e.g. no mixed text + tool call messages) |
 | `--auto-resume` | Automatically resume from existing save file without prompting |
-| `--auto-review` | Automatically run LLM conversation review after each simulation |
+| `--auto-review` | Automatically run LLM conversation review after each simulation. The judge is always `claude-opus-4-5` (needs `ANTHROPIC_API_KEY`); for another judge, run `tau-emotion review --judge-llm ...` after the run |
 | `--review-mode` | Review mode when `--auto-review` is on: `full` or `user` (default: `full`) |
 | `--timeout` | Maximum wallclock time in seconds per simulation (no timeout by default) |
 
@@ -138,7 +139,7 @@ tau-emotion evaluate-trajs <paths...>
 | Option | Description |
 |--------|-------------|
 | `<paths>` | Paths to trajectory files, directories, or glob patterns |
-| `-o`, `--output-dir` | Directory to save updated trajectories. If omitted, only displays metrics |
+| `-o`, `--output-dir` | Directory to save the re-scored results in, one file per input named after its run folder (`updated_<run folder>_results.json`). If omitted, only displays metrics |
 
 ---
 

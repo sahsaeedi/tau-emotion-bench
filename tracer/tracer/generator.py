@@ -186,7 +186,7 @@ def _build_telehealth_env(task: Task, tools_mode: str, split: str = "train") -> 
 
 
 def _combine_instruction(user_id: str, instructions: List[str]) -> str:
-    """Create a single 2nd-person instruction with the goals (same as generate_verify)."""
+    """Create a single 2nd-person instruction with the goals."""
     if len(instructions) == 1:
         goals = f"You want: {instructions[0]}"
     else:
@@ -203,7 +203,7 @@ def _load_config_defaults(config_path: str) -> Dict[str, Any]:
 
 def parse_args():
     p = argparse.ArgumentParser(
-        description="Generate tasks from traces, build env, and compute reward via env.calculate_reward()."
+        description="Generate a task per trace, replay its ground-truth actions in the domain env, and check it is solvable and in domain."
     )
     p.add_argument(
         "--config",
@@ -313,7 +313,7 @@ def main():
     out_p = Path(output_path)
     out_p.parent.mkdir(parents=True, exist_ok=True)
 
-    # Select env-specific data loader, tools, prompts, and env builder (same as generate_verify)
+    # Select env-specific data loader, tools, prompts, and env builder
     preference_system_prompt = None
     format_preference_user_prompt = None
     if args.env == "airline":
@@ -489,10 +489,9 @@ def main():
     )
     bar.set_postfix(tally, refresh=True)
 
-    # Grounding guard. The prompts' format examples quote ids from the SHIPPED data
-    # (ana.silva@example.pt, olivia_smith_4705, ...). A model that copies one yields a
-    # task whose user does not exist in this split; base.py:107 turns the resulting
-    # tool errors into an observation on both sides, so the reward silently PASSES.
+    # Grounding guard. A model that copies an id from the prompt's examples yields a
+    # task whose user does not exist in this split; the env turns the resulting tool
+    # errors into observations, so the replay alone would not catch it.
     # Cheapest complete check: the user_id must occur verbatim in the split's data.
     db_blob = json.dumps(load_data(split), ensure_ascii=False)
 
@@ -503,9 +502,7 @@ def main():
         print(f"Trace idx={idx} (generating {args.tasks_per_trace} tasks)")
         print(f"{'=' * 60}")
 
-        batch_candidates: List[
-            tuple
-        ] = []  # (candidate, reward_result, run, result_dict or None)
+        batch_candidates: List[tuple] = []  # (candidate, run, result_dict)
         trace_changed = False
         for run in range(args.tasks_per_trace):
             key = (idx, run)
@@ -518,7 +515,7 @@ def main():
                 ]
                 failed_keys.discard(key)
             try:
-                # Step 1: Generate task candidate (same as generate_verify)
+                # Step 1: Generate task candidate
                 (
                     candidate,
                     generator_messages,
@@ -571,7 +568,7 @@ def main():
                     instructions=candidate.instructions,
                 )
 
-                # Step 2: Build Task and env (same as generate_verify)
+                # Step 2: Build Task and env
                 task = Task(
                     user_id=candidate.user_id,
                     instruction=combined_instruction,
@@ -583,10 +580,8 @@ def main():
                     tools_mode="forward",
                 )
 
-                # Step 3: Get reward via env.calculate_reward() (replays task.actions internally)
+                # Step 3: Reset the env; the checker (step 5) replays task.actions on it
                 env.reset(task_index=0)
-                # reward_result = env.calculate_reward()
-                # reward_result_dump = reward_result.model_dump()
 
                 result_dict = {
                     "task_id": idx,
@@ -601,7 +596,7 @@ def main():
                     "ground_truth_actions": [
                         a.model_dump() for a in (candidate.actions or [])
                     ],
-                    # "reward_result": reward_result_dump,
+                    "generator_model": args.generator_model,
                     "generator_traj": generator_messages,
                     "llm_usage_generator": llm_usage_generator,
                     "llm_usage_feeling": llm_usage_feeling,

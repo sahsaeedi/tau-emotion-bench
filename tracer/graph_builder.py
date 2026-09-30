@@ -293,7 +293,7 @@ def build_neighbour_chain(
 # ---------------------------------------------------------------------
 # Tau-bench tool collection
 # ---------------------------------------------------------------------
-def get_taubench_tools(skip=["think", "calculate", "transfert_to_agent"]):
+def get_taubench_tools(skip=("think", "calculate")):
     domain_names = [
         "airline",
         "retail",
@@ -324,7 +324,8 @@ def get_taubench_tools(skip=["think", "calculate", "transfert_to_agent"]):
         ],
     ):
         for cls in d_tools.ALL_TOOLS:
-            if cls.__name__.lower() in skip:
+            # By tool name: class names vary (Think, ThinkTool, CalculateTool, ...)
+            if cls.get_info()["function"]["name"] in skip:
                 print(f"Skipping tool: {cls.__name__}")
                 continue
             tool = {
@@ -410,10 +411,6 @@ def main(
     base_url: str | None,
     include_task_context: bool = False,
 ):
-    # still set envs if some downstream code expects them
-    os.environ["model_name"] = model_name
-    os.environ["temperature"] = str(temperature)
-
     neighbour_chain = build_neighbour_chain(provider, model_name, temperature, base_url)
 
     tau_tools = get_taubench_tools()

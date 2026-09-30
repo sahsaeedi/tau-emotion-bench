@@ -23,9 +23,10 @@ Usage:
         --input-dir  output/tasks/test_valid \\
         --output-path output/evaluations/all_passed_tasks.json
 
-Re-run protection: a registry file tracks already-extracted (task_id, run, source)
-keys so re-running never duplicates tasks in the output.
-Delete output/evaluations/.passed_tasks_registry.json to start fresh.
+Re-run protection: a registry file (.passed_tasks_registry.json next to the output)
+tracks already-extracted (source, task_id, run) keys, so re-running appends only newly
+passed tasks and never duplicates one. If an output file is missing (e.g. deleted to
+start over), the registry entries of its sources are dropped and it is rebuilt in full.
 """
 
 import argparse
@@ -224,6 +225,12 @@ def main():
         Path(args.registry_path) if args.registry_path else base_dir / REGISTRY_FILENAME
     )
     registry = _load_registry(registry_path)
+    # The registry only guards outputs that still exist: forget the entries of every
+    # eval file whose output is gone, so it is written again in full.
+    for eval_path, _, output_path in pairs:
+        if not output_path.exists():
+            prefix = f"{eval_path.name}::"
+            registry = {k for k in registry if not k.startswith(prefix)}
 
     # --- Process each pair ---
     total_new = 0

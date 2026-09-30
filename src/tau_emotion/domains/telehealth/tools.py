@@ -1145,7 +1145,7 @@ class TelehealthTools(ToolKitBase):
         except Exception as e:
             raise ValueError(str(e)) from e
 
-    @is_tool(ToolType.WRITE)
+    @is_tool(ToolType.GENERIC)
     def transfer_to_human_support(self, reason: str) -> str:
         """Transfer the patient to human support staff when the request cannot be handled by the automated system.
 

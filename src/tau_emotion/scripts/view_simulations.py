@@ -1,24 +1,18 @@
 #!/usr/bin/env python3
-import json
-import uuid
 from collections import defaultdict
-from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
-from rich.prompt import Confirm, IntPrompt, Prompt
+from rich.prompt import IntPrompt, Prompt
 from rich.table import Table
 from rich.text import Text
 
 from tau_emotion.data_model.simulation import (
-    ErrorSource,
-    ErrorType,
     Results,
-    SimulationNote,
     SimulationRun,
     TerminationReason,
 )
-from tau_emotion.data_model.tasks import Task, TaskIssue, TaskIssueStatus
+from tau_emotion.data_model.tasks import Task
 from tau_emotion.metrics.agent_metrics import compute_metrics, is_successful
 from tau_emotion.utils.display import ConsoleDisplay
 from tau_emotion.utils.utils import DATA_DIR
@@ -345,9 +339,6 @@ def display_available_files(files, sim_dir: Optional[Path] = None):
 def display_simulation_with_task(
     simulation: SimulationRun,
     task: Task,
-    results_file: str,
-    sim_index: int,
-    domain: str,
     show_details: bool = True,
 ):
     """Display a simulation along with its associated task."""
@@ -361,9 +352,6 @@ def display_simulation_with_task(
         simulation,
         show_details=show_details,
     )
-
-    # Show action menu (skip, add notes, or create task issue)
-    handle_post_simulation_action(simulation, task, domain, results_file, sim_index)
 
 
 def parse_key(key: str) -> tuple[str, int]:
@@ -392,419 +380,6 @@ def find_simulation_by_task_id_and_trial(results, task_id, trial):
     )
 
 
-def get_notes_directories() -> list[Path]:
-    """Get list of existing notes directories."""
-    notes_base = Path(DATA_DIR) / "notes"
-    if not notes_base.exists():
-        return []
-    return sorted([d for d in notes_base.iterdir() if d.is_dir()])
-
-
-def prompt_for_notes_directory() -> Optional[Path]:
-    """
-    Prompt user to select an existing notes directory or create a new one.
-
-    Returns:
-        Path to the selected/created notes directory, or None if cancelled.
-    """
-    notes_base = Path(DATA_DIR) / "notes"
-    existing_dirs = get_notes_directories()
-
-    ConsoleDisplay.console.print("\n[bold blue]Select Notes Directory[/]")
-
-    if existing_dirs:
-        ConsoleDisplay.console.print("\nExisting directories:")
-        for i, d in enumerate(existing_dirs, 1):
-            # Count existing notes in directory (only *_note.json files, not *_simulation.json)
-            note_count = len(list(d.glob("*_note.json")))
-            ConsoleDisplay.console.print(f"  {i}. {d.name} ({note_count} notes)")
-        ConsoleDisplay.console.print(
-            f"  {len(existing_dirs) + 1}. [Create new directory]"
-        )
-
-        choice = Prompt.ask(
-            "\nSelect directory number or enter new name",
-            default=str(len(existing_dirs) + 1),
-        )
-
-        # Check if it's a number selecting existing dir
-        try:
-            choice_num = int(choice)
-            if 1 <= choice_num <= len(existing_dirs):
-                return existing_dirs[choice_num - 1]
-            elif choice_num == len(existing_dirs) + 1:
-                # Create new directory
-                new_name = Prompt.ask("Enter new directory name")
-                if not new_name.strip():
-                    ConsoleDisplay.console.print(
-                        "[yellow]Directory name required. Cancelled.[/]"
-                    )
-                    return None
-                new_dir = notes_base / new_name.strip()
-                new_dir.mkdir(parents=True, exist_ok=True)
-                ConsoleDisplay.console.print(f"[green]Created directory: {new_dir}[/]")
-                return new_dir
-            else:
-                ConsoleDisplay.console.print("[red]Invalid selection.[/]")
-                return None
-        except ValueError:
-            # Treat as new directory name
-            new_dir = notes_base / choice.strip()
-            new_dir.mkdir(parents=True, exist_ok=True)
-            ConsoleDisplay.console.print(f"[green]Created directory: {new_dir}[/]")
-            return new_dir
-    else:
-        # No existing directories, prompt for new name
-        ConsoleDisplay.console.print("[dim]No existing notes directories found.[/]")
-        new_name = Prompt.ask("Enter new directory name")
-        if not new_name.strip():
-            ConsoleDisplay.console.print(
-                "[yellow]Directory name required. Cancelled.[/]"
-            )
-            return None
-        new_dir = notes_base / new_name.strip()
-        new_dir.mkdir(parents=True, exist_ok=True)
-        ConsoleDisplay.console.print(f"[green]Created directory: {new_dir}[/]")
-        return new_dir
-
-
-def prompt_for_simulation_note(
-    simulation: SimulationRun, task: Task, results_file: str
-) -> Optional[SimulationNote]:
-    """
-    Prompt user to create a simulation note with structured fields.
-
-    Returns:
-        SimulationNote object, or None if cancelled.
-    """
-    ConsoleDisplay.console.print("\n[bold blue]Create Simulation Note[/]")
-    ConsoleDisplay.console.print(
-        "[dim]Fill in the note details (press Enter to skip optional fields)[/]\n"
-    )
-
-    # Required: note
-    note_text = Prompt.ask("[bold]Note[/] (required)")
-    if not note_text.strip():
-        ConsoleDisplay.console.print("[yellow]Note is required. Cancelled.[/]")
-        return None
-
-    # Error source (optional but recommended)
-    ConsoleDisplay.console.print(
-        "\n[dim]Error source options: agent, user, system (framework/orchestrator)[/]"
-    )
-    error_source_str = Prompt.ask(
-        "[bold]Error source[/]",
-        choices=["agent", "user", "system", ""],
-        default="",
-    )
-    error_source: Optional[ErrorSource] = None
-    if error_source_str:
-        error_source = ErrorSource(error_source_str)
-
-    # Error type (optional)
-    error_type_choices = [e.value for e in ErrorType] + [""]
-    ConsoleDisplay.console.print(
-        "\n[dim]Error type options: logical, hallucination, unresponsive, early_termination[/]"
-    )
-    error_type_str = Prompt.ask(
-        "[bold]Error type[/]",
-        choices=error_type_choices,
-        default="",
-    )
-    error_type: Optional[ErrorType] = None
-    if error_type_str:
-        error_type = ErrorType(error_type_str)
-
-    # Optional: author email
-    author_email = Prompt.ask("[dim]Your email[/]", default="")
-    author_email = author_email.strip() if author_email.strip() else None
-
-    # Generate note ID
-    note_id = f"note_{uuid.uuid4().hex[:8]}"
-
-    return SimulationNote(
-        id=note_id,
-        note=note_text.strip(),
-        author_email=author_email,
-        created_at=datetime.now().isoformat(),
-        simulation_id=simulation.id,
-        task_id=simulation.task_id,
-        trial=simulation.trial,
-        source_results_file=results_file,
-        error_source=error_source,
-        error_type=error_type,
-    )
-
-
-def save_simulation_note(
-    note: SimulationNote,
-    simulation: SimulationRun,
-    notes_dir: Path,
-) -> bool:
-    """
-    Save a simulation note to a directory.
-
-    The saved *_simulation.json files are very large (100K-350K lines) and are
-    gitignored; don't commit them.
-
-    Saves both:
-    1. The note metadata as a JSON file
-    2. The full simulation run as a separate JSON file
-
-    Args:
-        note: The SimulationNote object to save.
-        simulation: The simulation run to save alongside the note.
-        notes_dir: The directory to save the note to.
-
-    Returns:
-        True if saved successfully, False otherwise.
-    """
-    import warnings
-
-    warnings.warn(
-        "save_simulation_note() creates large *_simulation.json files that should not "
-        "be committed to git.",
-        DeprecationWarning,
-        stacklevel=2,
-    )
-    ConsoleDisplay.console.print(
-        "[yellow]⚠ Warning: This saves a large *_simulation.json file. "
-        "These files are gitignored and should not be committed.[/]"
-    )
-    try:
-        # Create filename based on task and note ID
-        base_filename = f"task_{note.task_id}_{note.id}"
-
-        # Save simulation run
-        sim_filename = f"{base_filename}_simulation.json"
-        sim_path = notes_dir / sim_filename
-        with open(sim_path, "w") as f:
-            f.write(simulation.model_dump_json(indent=2))
-
-        # Save note metadata (with reference to simulation file)
-        note_with_sim_ref = note.model_copy()
-        note_filename = f"{base_filename}_note.json"
-        note_path = notes_dir / note_filename
-
-        # Create a dict with note data and simulation file reference
-        note_data = note_with_sim_ref.model_dump()
-        note_data["simulation_file"] = sim_filename
-
-        with open(note_path, "w") as f:
-            json.dump(note_data, f, indent=2)
-
-        ConsoleDisplay.console.print(f"[green]Saved note to: {note_path}[/]")
-        ConsoleDisplay.console.print(f"[green]Saved simulation to: {sim_path}[/]")
-        return True
-
-    except Exception as e:
-        ConsoleDisplay.console.print(f"[red]Error saving note: {e}[/]")
-        return False
-
-
-def prompt_for_task_issue(
-    simulation: SimulationRun, task: Task, domain: str
-) -> Optional[TaskIssue]:
-    """Prompt user to create a task issue with all relevant details."""
-    ConsoleDisplay.console.print("\n[bold blue]Create Task Issue[/]")
-    ConsoleDisplay.console.print(
-        "[dim]Fill in the issue details (press Enter to skip optional fields)[/]\n"
-    )
-
-    # Required: title
-    title = Prompt.ask("[bold]Issue title[/] (required)")
-    if not title.strip():
-        ConsoleDisplay.console.print("[yellow]Issue title is required. Cancelled.[/]")
-        return None
-
-    # Optional: description
-    description = Prompt.ask("[dim]Description[/]", default="")
-    description = description.strip() if description.strip() else None
-
-    # Status (default: open)
-    status_choice = Prompt.ask(
-        "[dim]Status[/]",
-        choices=["open", "resolved", "wont_fix"],
-        default="open",
-    )
-    status = TaskIssueStatus(status_choice)
-
-    # Optional: resolution (more relevant if resolved/wont_fix)
-    resolution = None
-    if status in (TaskIssueStatus.RESOLVED, TaskIssueStatus.WONT_FIX):
-        resolution = Prompt.ask("[dim]Resolution explanation[/]", default="")
-        resolution = resolution.strip() if resolution.strip() else None
-
-    # Optional: author email
-    author_email = Prompt.ask("[dim]Your email[/]", default="")
-    author_email = author_email.strip() if author_email.strip() else None
-
-    # Optional: PR link
-    pr_link = Prompt.ask("[dim]PR link (if any)[/]", default="")
-    pr_link = pr_link.strip() if pr_link.strip() else None
-
-    # Generate issue ID
-    issue_id = f"issue_{uuid.uuid4().hex[:8]}"
-
-    # Create the issue
-    issue = TaskIssue(
-        id=issue_id,
-        title=title.strip(),
-        description=description,
-        status=status,
-        resolution=resolution,
-        created_at=datetime.now().strftime("%Y-%m-%d"),
-        resolved_at=datetime.now().strftime("%Y-%m-%d")
-        if status == TaskIssueStatus.RESOLVED
-        else None,
-        author_email=author_email,
-        pr_link=pr_link,
-        simulation_file=None,  # Will be set if user saves simulation
-    )
-
-    return issue
-
-
-def save_task_issue(
-    issue: TaskIssue,
-    task: Task,
-    domain: str,
-    simulation: Optional[SimulationRun] = None,
-) -> bool:
-    """
-    Save a task issue:
-    1. Optionally save the simulation run to the task_issues directory
-    2. Update the tasks.json file with the new issue
-    """
-    domain_data_dir = Path(DATA_DIR) / "tau_emotion" / "domains" / domain
-    tasks_file = domain_data_dir / "tasks.json"
-
-    if not tasks_file.exists():
-        ConsoleDisplay.console.print(f"[red]Tasks file not found: {tasks_file}[/]")
-        return False
-
-    # Save simulation if provided
-    if simulation is not None:
-        task_issues_dir = domain_data_dir / "task_issues"
-        task_issues_dir.mkdir(exist_ok=True)
-
-        # Create filename based on task and issue
-        sim_filename = f"task_{task.id}_{issue.id}.json"
-        sim_path = task_issues_dir / sim_filename
-
-        # Save simulation run
-        with open(sim_path, "w") as f:
-            f.write(simulation.model_dump_json(indent=2))
-
-        # Update issue with relative path to simulation file
-        issue.simulation_file = f"task_issues/{sim_filename}"
-        ConsoleDisplay.console.print(f"[green]Saved simulation to: {sim_path}[/]")
-
-    # Load existing tasks
-    try:
-        with open(tasks_file, "r") as f:
-            tasks_data = json.load(f)
-    except Exception as e:
-        ConsoleDisplay.console.print(f"[red]Error loading tasks: {e}[/]")
-        return False
-
-    # Find the task and add the issue
-    task_found = False
-    for task_dict in tasks_data:
-        if task_dict.get("id") == task.id:
-            task_found = True
-            # Initialize issues list if not present
-            if task_dict.get("issues") is None:
-                task_dict["issues"] = []
-            # Add the new issue
-            task_dict["issues"].append(issue.model_dump(exclude_none=True))
-            break
-
-    if not task_found:
-        ConsoleDisplay.console.print(f"[red]Task {task.id} not found in tasks.json[/]")
-        return False
-
-    # Save updated tasks
-    try:
-        with open(tasks_file, "w") as f:
-            json.dump(tasks_data, f, indent=4)
-        ConsoleDisplay.console.print(
-            f"[green]Added issue to task {task.id} in tasks.json[/]"
-        )
-        return True
-    except Exception as e:
-        ConsoleDisplay.console.print(f"[red]Error saving tasks: {e}[/]")
-        return False
-
-
-def handle_post_simulation_action(
-    simulation: SimulationRun,
-    task: Task,
-    domain: str,
-    results_file: str,
-    sim_index: int,
-):
-    """Handle the post-simulation action menu: skip, add notes, or create task issue."""
-    ConsoleDisplay.console.print("\n" + "=" * 80)
-    ConsoleDisplay.console.print("[bold blue]Actions:[/]")
-    ConsoleDisplay.console.print("1. Skip (do nothing)")
-    ConsoleDisplay.console.print("2. Add notes")
-    ConsoleDisplay.console.print("3. Create task issue")
-
-    choice = Prompt.ask(
-        "\nWhat would you like to do?",
-        choices=["1", "2", "3"],
-        default="1",
-    )
-
-    if choice == "1":
-        # Skip
-        return
-
-    elif choice == "2":
-        # Add notes - prompt for directory first
-        notes_dir = prompt_for_notes_directory()
-        if notes_dir is None:
-            return
-
-        # Prompt for note details
-        note = prompt_for_simulation_note(simulation, task, results_file)
-        if note is None:
-            return
-
-        # Save the note and simulation
-        success = save_simulation_note(note, simulation, notes_dir)
-
-        if success:
-            ConsoleDisplay.console.print("\n[bold green]Note saved successfully![/]")
-            ConsoleDisplay.console.print(f"  Note ID: {note.id}")
-            ConsoleDisplay.console.print(f"  Directory: {notes_dir.name}")
-
-    elif choice == "3":
-        # Create task issue
-        issue = prompt_for_task_issue(simulation, task, domain)
-        if issue is None:
-            return
-
-        # Ask if user wants to save simulation as example
-        save_sim = Confirm.ask(
-            "\nSave this simulation run as an example for the issue?",
-            default=True,
-        )
-
-        sim_to_save = simulation if save_sim else None
-        success = save_task_issue(issue, task, domain, sim_to_save)
-
-        if success:
-            ConsoleDisplay.console.print(
-                "\n[bold green]Task issue created successfully![/]"
-            )
-            ConsoleDisplay.console.print(f"  Issue ID: {issue.id}")
-            ConsoleDisplay.console.print(f"  Title: {issue.title}")
-            if issue.simulation_file:
-                ConsoleDisplay.console.print(f"  Simulation: {issue.simulation_file}")
-
-
 def main(
     sim_file: Optional[str] = None,
     only_show_failed: bool = False,
@@ -827,7 +402,6 @@ def main(
     results = None
     current_file = None
     current_sim_path = None
-    current_results_file = None  # Full path to results.json for notes
     while True:
         # Show main menu
         ConsoleDisplay.console.print("\n[bold yellow]Main Menu:[/]")
@@ -875,7 +449,6 @@ def main(
 
             if 1 <= file_num <= len(sim_files):
                 try:
-                    current_results_file = str(sim_files[file_num - 1])
                     current_sim_path = sim_files[file_num - 1].parent
                     current_file = current_sim_path.name
                     results = Results.load(sim_files[file_num - 1])
@@ -922,14 +495,10 @@ def main(
             if 1 <= sim_index <= sim_count:
                 sim = results.simulations[sim_index - 1]
                 task = find_task_by_id(results.tasks, sim.task_id)
-                domain = results.info.environment_info.domain_name
                 if task:
                     display_simulation_with_task(
                         sim,
                         task,
-                        current_results_file,
-                        sim_index,
-                        domain=domain,
                         show_details=True,
                     )
                 else:

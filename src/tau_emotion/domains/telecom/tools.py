@@ -1,6 +1,6 @@
 """Toolkit for the telecom domain (account-management CRM ported from v1).
 
-The 18 tools below mirror v1 tau-emotion-bench's telecom `ALL_TOOLS`, including
+The 19 tools below mirror v1 tau-emotion-bench's telecom `ALL_TOOLS`, including
 its validation rules and return values. Conversion rules from v1:
 
 - v1 `data.get("customers", {})` → `self.db.customers` (typed pydantic).
@@ -652,3 +652,19 @@ class TelecomTools(ToolKitBase):
             An empty string.
         """
         return ""
+
+    @is_tool(ToolType.GENERIC)
+    def transfer_to_human_agents(self, summary: str) -> str:
+        """
+        Transfer the user to a human agent, with a summary of the user's issue.
+        Only transfer if
+         -  the user explicitly asks for a human agent
+         -  given the policy and the available tools, you cannot solve the user's issue.
+
+        Args:
+            summary: A summary of the user's issue.
+
+        Returns:
+            A message indicating the user has been transferred to a human agent.
+        """
+        return "Transfer successful"

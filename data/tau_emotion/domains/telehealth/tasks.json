@@ -114,7 +114,7 @@
     "id": "telehealth_test_0002",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Elena Morales, a patient with focal epilepsy and generalized anxiety disorder, preparing for wearable EEG telemetry and seeking to optimize medication costs. You want to check available suppliers for your Lamotrigine prescription to explore more affordable options, and you would like a note added to your medical record confirming this inquiry for future reference. Later, you would like to cancel your scheduled neurology consultation on 2025-07-22 at 10:30 with Dr. Ivankovic first and after cancellation schedule it again to the following Tuesday at 10:30, which better aligns with your preparation timeline for telemetry setup.\n\nUse elena.morales9921@westcare.org for authentication.",
+      "instructions": "You are Elena Morales, a patient with focal epilepsy and generalized anxiety disorder, preparing for wearable EEG telemetry and seeking to optimize medication costs. You want to check available suppliers for your Lamotrigine prescription to explore more affordable options, and you would like a note added to your medical record for future reference that says exactly: 'Patient requested supplier pricing information for Lamotrigine' (with no period at the end). Later, you would like to cancel your scheduled neurology consultation on 2025-07-22 at 10:30 with Dr. Ivankovic first and after cancellation schedule it again to the following Tuesday at 10:30, which better aligns with your preparation timeline for telemetry setup.\n\nUse elena.morales9921@westcare.org for authentication.",
       "emotion_instruction": "You feel an urgent compulsion to get immediate results. There's no time for delay, and you must push relentlessly. Demand updates if there's even the slightest pause. Keep your inquiries sharp and to the point. Question every detail and demand solid proof for every claim the agent makes. You cannot afford blind trust; remain highly skeptical and vigilant at every turn.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -171,7 +171,7 @@
     "id": "telehealth_test_0003",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Shawn Zuniga, and you are considering starting Sertraline for mood support, but due to a high-severity interaction with Warfarin that increases bleeding risk, you want to discuss alternative antidepressants with your care team before proceeding. You would like to reduce the cost of your Atorvastatin prescription and prefer switching to a lower-cost supplier such as Sunrise Biotech (Lipistal, $4.15) from India, which offers significant savings compared to current options. You also want to reschedule your cardiology appointment with Dr. Sims from its current time to the next day at 14:00, as it better fits your schedule, and you plan to confirm this change after reviewing the interaction risks with your provider.\n\nUse shawn.zuniga@tracer-health.org for authentication.",
+      "instructions": "You are Shawn Zuniga, and you are considering starting Sertraline for mood support, but due to a high-severity interaction with Warfarin that increases bleeding risk, you want to discuss alternative antidepressants with your care team before proceeding. You would like to reduce the cost of your Atorvastatin prescription and prefer switching to a lower-cost supplier, VedaRx Labs (Atorveeda, $4.05) from India, which offers significant savings compared to current options. You also want to reschedule your cardiology appointment with Dr. Sims from its current time to the next day at 14:00, as it better fits your schedule, and you plan to confirm this change after reviewing the interaction risks with your provider.\n\nUse shawn.zuniga@tracer-health.org for authentication.",
       "emotion_instruction": "You are composed but have a pressing concern. Speak neutrally and focus on practical issues. Be polite, but don\u2019t take information at face value. Request explanations or supporting details if needed.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -233,7 +233,7 @@
     "id": "telehealth_test_0004",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Renee Freeman, managing care for your children, and you want to reschedule your pediatric consultation with Dr. Nguyen from its current date to next day at 09:00 because it works better with your family's schedule. Later, you would like to cancel your care coordination appointment with Dylan Hampton on the following day, as you will not be able to attend. After that, you would like to confirm the updated details of your rescheduled pediatric appointment and review your full list of scheduled appointments to ensure everything is correct.\n\nUse renee.freeman@tracer-health.org for authentication.",
+      "instructions": "You are Renee Freeman, managing care for your children, and you want to reschedule your pediatric consultation with Dr. Nguyen from its current date to Friday, December 19, 2025 at 09:00 because it works better with your family's schedule. Later, you would like to cancel your care coordination appointment with Dylan Hampton on December 18, 2025, as you will not be able to attend. After that, you would like to confirm the updated details of your rescheduled pediatric appointment and review your full list of scheduled appointments to ensure everything is correct.\n\nUse renee.freeman@tracer-health.org for authentication.",
       "emotion_instruction": "You\u2019re jumpy and need quick reassurance. You ask for help in a straightforward manner, not hiding your anxiety. You place confidence in the agent\u2019s ability to assist you. You expect prompt, actionable replies.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -342,7 +342,7 @@
     "id": "telehealth_test_0006",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Scott Sparks, a patient managing atrial fibrillation and hyperlipidemia, currently taking Warfarin and Atorvastatin. You want to explore more affordable supplier options for your Atorvastatin medication because you are looking to reduce out-of-pocket costs, and VedaRx Labs in India offers a lower-cost alternative. You would like to reschedule your medication review appointment with Dr. Saito, your cardiologist, from the original date to Friday, because it better fits your schedule. After rescheduling, you would like confirmation of the updated appointment details to ensure the change was processed correctly and that your telehealth visit is set for the new time.\n\nUse scott.sparks@tracer-health.org for authentication.",
+      "instructions": "You are Scott Sparks, a patient managing atrial fibrillation and hyperlipidemia, currently taking Warfarin and Atorvastatin. You want to explore more affordable supplier options for your Atorvastatin medication because you are looking to reduce out-of-pocket costs, and VedaRx Labs in India offers a lower-cost alternative. You would like to reschedule your medication review appointment with Dr. Saito, your cardiologist, from the original date to Friday, December 19, 2025 at 09:00, because it better fits your schedule. After rescheduling, you would like confirmation of the updated appointment details to ensure the change was processed correctly and that your telehealth visit is set for the new time.\n\nUse scott.sparks@tracer-health.org for authentication.",
       "emotion_instruction": "You are in a rush and demand immediate updates; there's no time to waste. Abruptly seek clarification and don't hesitate to question every aspect of the situation. Challenge all responses and insist on concrete evidence for any claims. Maintain a distant and businesslike demeanor, keeping personal engagement minimal.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -538,7 +538,7 @@
     "id": "telehealth_test_0010",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Nadia Abbasi (nadia.abbasi@tracer-health.org), a patient with hypertension and type 2 diabetes managing medication costs. You want to cancel your medication review appointment with Dr. Garcia on 2025-11-30 at 09:30 because you prefer to address medication concerns during a routine checkup instead. You would like to schedule a new routine checkup with Dr. Garcia on 2025-12-03 at 10:00 because it aligns with your availability and allows for a comprehensive review. Later, you will reschedule your medication review appointment with Dr. Ortega from 2025-12-01 at 08:00 to 2025-12-02 at 09:00 to better coordinate with your work schedule. After that, you would like to update your medical record to reflect a switch to Mumbai Cardio Pharma for Lisinopril (brand: Lisipril-M, price: $2.80) because it significantly reduces your out-of-pocket costs, and you request a note be added stating 'Patient requested supplier update for cost savings.'\n\nUse nadia.abbasi@tracer-health.org for authentication.",
+      "instructions": "You are Nadia Abbasi (nadia.abbasi@tracer-health.org), a patient with hypertension and type 2 diabetes managing medication costs. You want to cancel your medication review appointment with Dr. Garcia on 2025-11-30 at 09:30 because you prefer to address medication concerns during a routine checkup instead. You would like to schedule a new routine checkup with Dr. Garcia on 2025-12-03 at 10:00 because it aligns with your availability and allows for a comprehensive review. Later, you will reschedule your medication review appointment with Dr. Ortega from 2025-12-01 at 08:00 to 2025-12-02 at 09:00 to better coordinate with your work schedule. After that, you would like to update your medical record REC_tracer_040 to reflect a switch to Mumbai Cardio Pharma for Lisinopril (brand: Lisipril-M, price: $2.80) because it significantly reduces your out-of-pocket costs, and you request a note be added stating 'Patient requested supplier update for cost savings.'\n\nUse nadia.abbasi@tracer-health.org for authentication.",
       "emotion_instruction": "You are consumed with an intense need for immediate certainty. You urgently demand the agent to provide clear evidence and detailed explanations. There is no time for pleasantries or warmth; your tone is curt and detached. You question every aspect of the information aggressively, refusing to accept anything without solid proof. You feel an unyielding skepticism and challenge the agent to justify each claim thoroughly with an unwavering insistence on validation before proceeding.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -659,38 +659,20 @@
         },
         {
           "action_id": "11_2",
-          "name": "cancel_appointment",
-          "arguments": {
-            "appointment_id": "APPT_tracer_176"
-          }
-        },
-        {
-          "action_id": "11_3",
-          "name": "schedule_appointment",
-          "arguments": {
-            "patient_id": "sarah_barnes_tracer_0001",
-            "provider_id": "charles_barajas_primary_care_tracer_0001",
-            "date": "2025-12-24",
-            "time": "09:00",
-            "appointment_type": "medication_review"
-          }
-        },
-        {
-          "action_id": "11_4",
           "name": "list_available_providers",
           "arguments": {
             "specialty": "Cardiology"
           }
         },
         {
-          "action_id": "11_5",
+          "action_id": "11_3",
           "name": "get_provider_details",
           "arguments": {
             "provider_id": "charles_barajas_primary_care_tracer_0001"
           }
         },
         {
-          "action_id": "11_6",
+          "action_id": "11_4",
           "name": "check_drug_interactions",
           "arguments": {
             "primary_medication": "Lisinopril",
@@ -701,7 +683,7 @@
           }
         },
         {
-          "action_id": "11_7",
+          "action_id": "11_5",
           "name": "update_prescription_supplier",
           "arguments": {
             "record_id": "REC_tracer_120",
@@ -881,7 +863,7 @@
     "id": "telehealth_test_0014",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Laurie Carson (laurie.carson@tracer-health.org), a patient with Type 1 Diabetes and Hypothyroidism, who wants to reschedule your endocrinology follow-up appointment with Dr. Caleb Turner (Endocrinology) from its current date to next day at 10:00 because it works better with your schedule. You also want to confirm Dr. Turner's provider details for continuity of care. You would like to verify that switching your Insulin Lispro supplier to Bengal EndoCare (brand: SwiftLis) is safe, which aligns with your current medications and has no interactions. After confirmation, you prefer to update your prescription in your medical record to use the lower-cost supplier to reduce out-of-pocket expenses. Later, you would like to cancel your primary care medication review appointment because the cost discussion will now be covered during your endocrinology visit, and you want to confirm the details of the appointment being cancelled.\n\nUse laurie.carson@tracer-health.org for authentication.",
+      "instructions": "You are Laurie Carson (laurie.carson@tracer-health.org), a patient with Type 1 Diabetes and Hypothyroidism, who wants to reschedule your endocrinology follow-up appointment with Dr. Caleb Turner (Endocrinology) from its current date to next day at 10:00 because it works better with your schedule. You also want to confirm Dr. Turner's provider details for continuity of care. You would like to verify that switching your Insulin Lispro supplier to Bengal EndoCare (brand: SwiftLis) is safe, which aligns with your current medications and has no interactions. After confirmation, you prefer to update your prescription in your medical record REC_tracer_071 to use the lower-cost supplier to reduce out-of-pocket expenses. Later, you would like to cancel your primary care medication review appointment because the cost discussion will now be covered during your endocrinology visit, and you want to confirm the details of the appointment being cancelled.\n\nUse laurie.carson@tracer-health.org for authentication.",
       "emotion_instruction": "You are laser-focused and demanding, approaching this with an urgent need for resolution. You must address your needs immediately and with precision, keeping interactions curt and strictly professional. There is no time for pleasantries or delays; get straight to the point. Question every detail relentlessly, requiring concrete proof before you accept any outcome. Maintain a skeptical eye, as doubt drives your pursuit for the truth. Be prepared to challenge assumptions and demand answers that satisfy your rigorous standards without hesitation.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1251,7 +1233,7 @@
     "id": "telehealth_test_0019",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Nadia Abbasi, a patient managing hypertension and type 2 diabetes, and your email is nadia.abbasi@tracer-health.org. You want to explore more affordable options for your Lisinopril medication because of cost concerns, and you would like to document this inquiry in your medical record. You prefer to switch the supplier for your Lisinopril prescription to Mumbai Cardio Pharma (brand: Lisipril-M) because it is a safe, lower-cost option at $2.80 per month and no drug interactions were found with your current medications, including Metformin. Later, you would like to cancel your scheduled medication review appointment on 2025-12-01 because your prescription update has already been planned and documented. After that, you want to explore available providers for a future telehealth visit to continue managing your chronic conditions, with a preference for specialists experienced in internal or endocrine care.\n\nUse nadia.abbasi@tracer-health.org for authentication.",
+      "instructions": "You are Nadia Abbasi, a patient managing hypertension and type 2 diabetes, and your email is nadia.abbasi@tracer-health.org. You want to explore more affordable options for your Lisinopril medication because of cost concerns, and you would like to document this inquiry in your medical record REC_tracer_034 with the note 'Patient requested supplier pricing information for Lisinopril.' You prefer to switch the supplier for your Lisinopril prescription in REC_tracer_034 to Mumbai Cardio Pharma (brand: Lisipril-M) because it is a safe, lower-cost option at $2.80 per month and no drug interactions were found with your current medications, including Metformin. Later, you would like to cancel your scheduled medication review appointment on 2025-12-01 because your prescription update has already been planned and documented. After that, you want to explore available providers for a future telehealth visit to continue managing your chronic conditions, with a preference for specialists experienced in internal or endocrine care.\n\nUse nadia.abbasi@tracer-health.org for authentication.",
       "emotion_instruction": "You are on edge, feeling the weight of imminent necessity pressing down on you urgently. Communicate in a stark, detached manner, minimizing niceties and keeping interactions brisk and to the point. There is no time for pleasantries or assumptions; demand evidence for every claim, pressing others to substantiate their words beyond mere face value. Question relentlessly, distrust every unverified statement, and require immediate clarification. Act now, without pause, insisting on verification at every critical juncture.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1608,35 +1590,46 @@
         },
         {
           "action_id": "25_4",
+          "name": "update_prescription_supplier",
+          "arguments": {
+            "record_id": "REC_tracer_121",
+            "medication": "Atorvastatin",
+            "supplier_company": "VedaRx Labs",
+            "brand_name": "Atorveeda",
+            "price_usd": 4.05
+          }
+        },
+        {
+          "action_id": "25_5",
           "name": "list_medication_suppliers",
           "arguments": {
             "medication": "Warfarin"
           }
         },
         {
-          "action_id": "25_5",
+          "action_id": "25_6",
           "name": "get_regimen_options",
           "arguments": {
             "patient_id": "scott_sparks_tracer_0001"
           }
         },
         {
-          "action_id": "25_6",
+          "action_id": "25_7",
           "name": "update_medical_record_note",
           "arguments": {
             "record_id": "REC_tracer_121",
-            "note": "Updated prescription suppliers based on cost analysis."
+            "note": "Updated prescription suppliers based on cost analysis"
           }
         },
         {
-          "action_id": "25_7",
+          "action_id": "25_8",
           "name": "get_appointment_details",
           "arguments": {
             "appointment_id": "APPT_tracer_177"
           }
         },
         {
-          "action_id": "25_8",
+          "action_id": "25_9",
           "name": "reschedule_appointment",
           "arguments": {
             "appointment_id": "APPT_tracer_177",
@@ -1645,14 +1638,14 @@
           }
         },
         {
-          "action_id": "25_9",
+          "action_id": "25_10",
           "name": "cancel_appointment",
           "arguments": {
             "appointment_id": "APPT_tracer_126"
           }
         },
         {
-          "action_id": "25_10",
+          "action_id": "25_11",
           "name": "schedule_appointment",
           "arguments": {
             "patient_id": "scott_sparks_tracer_0001",
@@ -1674,7 +1667,7 @@
     "id": "telehealth_test_0026",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Tammy Carr, a patient with Type 2 Diabetes and Hypertension, and your email is tammy.carr@tracer-health.org. You want to reschedule your medication review appointment with your primary care provider, Dr. Charles Lewis, from December 17 to December 18, 2025, at 09:00, because it works better with your schedule. You also want to schedule a new cardiology consultation on December 19, 2025, at 10:00 with Dr. Megan Cook, as she is an available and qualified cardiologist, because you seek a specialist opinion. After confirming the new cardiology appointment, you would like to cancel your original appointment with Dr. Charles Lewis if the new one is confirmed. You prefer to update your Lisinopril prescription to use the lower-cost supplier Mumbai Cardio Pharma (brand: Lisipril-M, $2.80) because it reduces your medication expenses, and you have confirmed that adding Sertraline to your current regimen of Metformin and Lisinopril is safe with no significant interactions.\n\nUse tammy.carr@tracer-health.org for authentication.",
+      "instructions": "You are Tammy Carr, a patient with Type 2 Diabetes and Hypertension, and your email is tammy.carr@tracer-health.org. You want to reschedule your medication review appointment with your primary care provider, Dr. Charles Lewis, from December 17 to December 18, 2025, at 09:00, because it works better with your schedule. You also want to schedule a new specialist consultation (cardiology) on December 19, 2025, at 10:00 with Dr. Megan Cook, as she is an available and qualified cardiologist, because you seek a specialist opinion. After confirming the new cardiology appointment, you would like to cancel your original appointment with Dr. Charles Lewis if the new one is confirmed. You prefer to update your Lisinopril prescription to use the lower-cost supplier Mumbai Cardio Pharma (brand: Lisipril-M, $2.80) because it reduces your medication expenses, and you have confirmed that adding Sertraline to your current regimen of Metformin and Lisinopril is safe with no significant interactions.\n\nUse tammy.carr@tracer-health.org for authentication.",
       "emotion_instruction": "You\u2019re looking forward to a positive result and feel a burst of excitement. You want things to move along, but you\u2019re not pushy. Ask for updates if things stall. Stay on topic and gently double-check what the agent says.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1728,7 +1721,7 @@
           "name": "schedule_appointment",
           "arguments": {
             "patient_id": "tammy_carr_tracer_0001",
-            "provider_id": "dr_smith_cardiology",
+            "provider_id": "megan_cook_cardiology_tracer_0001",
             "date": "2025-12-19",
             "time": "10:00",
             "appointment_type": "specialist_consultation"
@@ -1934,22 +1927,11 @@
         },
         {
           "action_id": "28_2",
-          "name": "schedule_appointment",
-          "arguments": {
-            "patient_id": "michelle_adams_tracer_0001",
-            "provider_id": "nicholas_salinas_primary_care_tracer_0001",
-            "date": "2025-12-17",
-            "time": "08:00",
-            "appointment_type": "medication_review"
-          }
-        },
-        {
-          "action_id": "28_3",
           "name": "list_available_providers",
           "arguments": {}
         },
         {
-          "action_id": "28_4",
+          "action_id": "28_3",
           "name": "reschedule_appointment",
           "arguments": {
             "appointment_id": "APPT_tracer_087",
@@ -1958,14 +1940,14 @@
           }
         },
         {
-          "action_id": "28_5",
+          "action_id": "28_4",
           "name": "get_appointment_details",
           "arguments": {
             "appointment_id": "APPT_tracer_087"
           }
         },
         {
-          "action_id": "28_6",
+          "action_id": "28_5",
           "name": "get_medical_record",
           "arguments": {
             "appointment_id": "APPT_tracer_087"
@@ -2077,7 +2059,7 @@
     "id": "telehealth_test_0030",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Shawn Carter, a patient managing atrial fibrillation and hyperlipidemia through telehealth, and your email is shawn.carter@tracer-health.org. You want to cancel your scheduled medication review appointment because you prefer to streamline your care plan. You would like to reschedule your specialist consultation to the next day in the morning because it better aligns with your availability. After that, you want to book a new routine checkup with Dr. Megan Cook, a cardiologist, on the following day at 09:00 because you prefer continuity with a trusted provider. You also want to compare medication suppliers for Atorvastatin to evaluate cost-effective options. You would like to review your current and optimized regimen plans to understand potential savings and adherence benefits. Additionally, you want to see your cardiac event monitor usage data from the past week to ensure you are meeting compliance targets.\n\nUse shawn.carter@tracer-health.org for authentication.",
+      "instructions": "You are Shawn Carter, a patient managing atrial fibrillation and hyperlipidemia through telehealth, and your email is shawn.carter@tracer-health.org. You want to cancel your scheduled medication review appointment because you prefer to streamline your care plan. You would like to reschedule your specialist consultation to the next day at 10:00 because it better aligns with your availability. After that, you want to book a new routine checkup with Dr. Megan Cook, a cardiologist, on 2025-12-19 at 09:00 because you prefer continuity with a trusted provider. You also want to compare medication suppliers for Atorvastatin to evaluate cost-effective options. You would like to review your current and optimized regimen plans to understand potential savings and adherence benefits. Additionally, you want to see your cardiac event monitor usage data from the past week to ensure you are meeting compliance targets.\n\nUse shawn.carter@tracer-health.org for authentication.",
       "emotion_instruction": "You have a sense of anticipation and are upbeat about what\u2019s next, but you don\u2019t get carried away. You expect timely help, so follow up if answers are slow. Show your interest by engaging, but stay focused and practical. Be attentive to details and check information.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -2218,7 +2200,7 @@
           "name": "update_medical_record_note",
           "arguments": {
             "record_id": "REC_tracer_121",
-            "note": "Patient requested supplier update for cost savings."
+            "note": "Patient requested supplier update for cost savings"
           }
         },
         {
@@ -2478,9 +2460,9 @@
           "arguments": {
             "record_id": "REC012",
             "medication": "Sertraline",
-            "supplier_company": "Gujarat MindCare",
-            "brand_name": "Serenem",
-            "price_usd": 4.65
+            "supplier_company": "Triveni Pharma",
+            "brand_name": "Setrina",
+            "price_usd": 4.55
           }
         },
         {
@@ -2619,7 +2601,7 @@
           "name": "update_medical_record_note",
           "arguments": {
             "record_id": "REC001",
-            "note": "Patient requested supplier change to reduce medication costs."
+            "note": "Patient requested supplier change to reduce medication costs"
           }
         },
         {
@@ -2694,7 +2676,7 @@
           "name": "update_medical_record_note",
           "arguments": {
             "record_id": "REC001",
-            "note": "Patient requested supplier update after interaction check."
+            "note": "Patient requested supplier update after interaction check"
           }
         },
         {
@@ -2863,7 +2845,7 @@
     "id": "telehealth_test_0040",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Kevin Bond (kevin.bond@tracer-health.org), currently on Warfarin and Atorvastatin for atrial fibrillation and hyperlipidemia. You want to check for drug interactions before starting Sertraline for mood support because of potential risks with your current regimen. After learning of the high-severity interaction between Sertraline and Warfarin, you prefer to continue your current medications without adding Sertraline. You would like to update the Warfarin prescription in your medical record (REC_tracer_132) to a lower-cost supplier, VedaRx Labs, using the brand Vedarin at $4.28, to reduce monthly medication expenses. After that update, you want a note added to the same record stating: 'Updated Warfarin supplier to VedaRx Labs (Vedarin) at $4.28 after reviewing drug interaction risks with Sertraline,' to document the change for compliance and continuity of care.\n\nUse kevin.bond@tracer-health.org for authentication.",
+      "instructions": "You are Kevin Bond (kevin.bond@tracer-health.org), currently on Warfarin and Atorvastatin for atrial fibrillation and hyperlipidemia. You want to check for drug interactions before starting Sertraline for mood support because of potential risks with your current regimen. After learning of the high-severity interaction between Sertraline and Warfarin, you prefer to continue your current medications without adding Sertraline. You would like to update the Warfarin prescription in your medical record (REC_tracer_132) to a lower-cost supplier, VedaRx Labs, using the brand Vedarin at $4.28, to reduce monthly medication expenses. After that update, to document the change for compliance and continuity of care, you want a note added to the same record stating exactly: 'Updated Warfarin supplier to VedaRx Labs (Vedarin) at $4.28 after reviewing drug interaction risks with Sertraline.'\n\nUse kevin.bond@tracer-health.org for authentication.",
       "emotion_instruction": "You feel a piercing skepticism as you reach out to support. Your words are sharp, and your tone is as icy as a winter's night. Every response is met with suspicion, demanding solid evidence at every turn. Question their competence openly, leaving no room for trust. While you're not in a race against the clock, you maintain a steady push for answers, insisting they make tangible progress without indulging in any wasted effort. Confirm each action before you take a single step forward, holding everyone accountable with unwavering scrutiny.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2962,7 +2944,7 @@
     "id": "telehealth_test_0042",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Carlos Mendez, a patient with anxiety disorder and chronic pain, and your email is carlos.mendez4521@email.com. You want to schedule a cardiology consultation with Dr. Thomas May on the next available Monday morning, as the 09:00 slot on that day works well with your schedule. You also want to confirm that taking Sertraline along with Ibuprofen and Acetaminophen is safe, which is important for managing both your anxiety and chronic pain without adverse effects. After that, you would like to update the prescription supplier for Sertraline in your medical record to Gujarat MindCare, using the brand name Serenem, because it offers a more affordable option at $4.65 per unit, helping reduce your medication costs.\n\nUse carlos.mendez4521@email.com for authentication.",
+      "instructions": "You are Carlos Mendez, a patient with anxiety disorder and chronic pain, and your email is carlos.mendez4521@email.com. You want to schedule a specialist consultation (cardiology) with Dr. Thomas May on Monday, 2024-06-10, as the 09:00 slot on that day works well with your schedule. You also want to confirm that taking Sertraline along with Ibuprofen and Acetaminophen is safe, which is important for managing both your anxiety and chronic pain without adverse effects. After that, you would like to update the prescription supplier for Sertraline in your medical record to Gujarat MindCare, using the brand name Serenem, because it offers a more affordable option at $4.65 per unit, helping reduce your medication costs.\n\nUse carlos.mendez4521@email.com for authentication.",
       "emotion_instruction": "You are intensely skeptical, glaring at each suggestion with piercing scrutiny. \nYour demeanor is icy; you cut through formalities with curt, dismissive gestures.\nThough urgency is moderate, you insist on immediate comprehension, allowing no room for ambiguity. \nEvery response must be vetted with irrefutable proof, as nothing is taken at face value. \nYour trust is threadbare, demanding clarity and rigor in every interaction, leaving no quarter for missteps or assurances without evidence.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3209,7 +3191,7 @@
     "id": "telehealth_test_0046",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Amanda Martinez, authenticated via amanda.martinez@tracer-health.org, managing Type 1 Diabetes and Hypothyroidism with a Continuous Glucose Monitor and medications including Insulin Lispro and Levothyroxine. You want to review the telemetry data from your Continuous Glucose Monitor for 2025-12-17 because it shows only 7.0 hours of usage, indicating incomplete upload. You also want to check for drug interactions after accidentally taking Sertraline, and upon confirmation of safety, you would like to update your Insulin Lispro prescription to use the more affordable supplier Bengal EndoCare (brand: SwiftLis) to reduce out-of-pocket costs.\n\nUse amanda.martinez@tracer-health.org for authentication.",
+      "instructions": "You are Amanda Martinez, authenticated via amanda.martinez@tracer-health.org, managing Type 1 Diabetes and Hypothyroidism with a Continuous Glucose Monitor and medications including Insulin Lispro and Levothyroxine. You want to review the telemetry data from your Continuous Glucose Monitor for 2025-12-17 because it shows only 7.0 hours of usage, indicating incomplete upload. You also want to check for drug interactions after accidentally taking Sertraline, and upon confirmation of safety, you would like to update your Insulin Lispro prescription in medical record REC_tracer_063 to use the more affordable supplier Bengal EndoCare (brand: SwiftLis) to reduce out-of-pocket costs.\n\nUse amanda.martinez@tracer-health.org for authentication.",
       "emotion_instruction": "You are skeptical and curt, responding with piercing brevity and a frosty demeanor. Your usual pace is maintained, but each interaction drips with doubt, demanding ironclad evidence before considering moving forward. Resist sharing until every question is rigorously answered and your suspicions are firmly laid to rest.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3268,7 +3250,7 @@
     "id": "telehealth_test_0047",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Richard Nelson, authenticated via richard.nelson@tracer-health.org, and you want to first access the details of your upcoming cardiology consultation with Dr. Thompson on December 17, 2025, at 10:00, as well as the associated medical record (REC_tracer_092) that contains the interaction review between Bupropion and Zolpidem, because you need to understand the safety of adding the sleep medication to your current regimen. After that, you would like to schedule a routine primary care checkup on the next day, Thursday, at 09:00, with a primary care provider, as it works better for your schedule and avoids conflict with the specialist visit.\n\nUse richard.nelson@tracer-health.org for authentication.",
+      "instructions": "You are Richard Nelson, authenticated via richard.nelson@tracer-health.org, and you want to first access the details of your upcoming cardiology consultation with Dr. Thompson on December 17, 2025, at 10:00, as well as the associated medical record (REC_tracer_092) that contains the interaction review between Bupropion and Zolpidem, because you need to understand the safety of adding the sleep medication to your current regimen. After that, you would like to schedule a routine primary care checkup on the next day, Thursday, at 09:00, with Dr. Charles Barajas (Primary Care), as it works better for your schedule and avoids conflict with the specialist visit.\n\nUse richard.nelson@tracer-health.org for authentication.",
       "emotion_instruction": "You are distrustful and question every detail presented by the AI. Your skepticism demands compelling evidence because you refuse to accept anything at face value. Speak tersely and with a hint of hostility, minimizing any unnecessary pleasantries. Although there is no immediate rush, keep your inquiries steady and persistent. Assume nothing, challenge everything, and make it clear that proof is not just expected, it is mandatory.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3354,7 +3336,7 @@
             "record_id": "REC001",
             "medication": "Sertraline",
             "supplier_company": "Triveni Pharma",
-            "brand_name": "Serenem",
+            "brand_name": "Setrina",
             "price_usd": 4.55
           }
         }
@@ -3586,19 +3568,11 @@
         },
         {
           "action_id": "53_5",
-          "name": "update_medical_record_note",
-          "arguments": {
-            "record_id": "REC012",
-            "note": "Patient requested drug interaction check and supplier update for Sertraline."
-          }
-        },
-        {
-          "action_id": "53_6",
           "name": "list_telemetry_devices",
           "arguments": {}
         },
         {
-          "action_id": "53_7",
+          "action_id": "53_6",
           "name": "get_telemetry_upload",
           "arguments": {
             "device_id": "WEARAB_tracer_483",
@@ -3606,7 +3580,7 @@
           }
         },
         {
-          "action_id": "53_8",
+          "action_id": "53_7",
           "name": "list_telemetry_uploads",
           "arguments": {
             "device_id": "WEARAB_tracer_483",
@@ -3718,7 +3692,7 @@
     "id": "telehealth_test_0055",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Avery Morgan, a patient with atrial fibrillation and hyperlipidemia managing care through telehealth, and your email is avery.morgan@tracer-health.org. You want to reschedule your follow-up appointment with Dr. Smith from its original date to Monday, December 5th, because of a scheduling conflict, and you would like to review your appointment list and learn more about Dr. Smith\u2019s background and specialty to feel more informed ahead of the visit. Later, after reviewing your cardiac event monitor (CARDIA_tracer_451) data showing 7.0 hours of use on December 1st and discovering you accidentally took Sertraline, you checked for drug interactions and learned there is a high-risk interaction with your current Warfarin regimen, which prompted a change in plans. As a result, you now want to cancel your upcoming appointment with Dr. Saito on December 1st and instead schedule a new follow-up appointment with Dr. Owen Shaw, a cardiologist, on Monday, December 8th at 09:00, because you need urgent clinical guidance to address the medication interaction and discuss device compliance, and this time works well with your schedule.\n\nUse avery.morgan@tracer-health.org for authentication.",
+      "instructions": "You are Avery Morgan, a patient with atrial fibrillation and hyperlipidemia managing care through telehealth, and your email is avery.morgan@tracer-health.org. You want to reschedule your follow-up appointment with Dr. Smith from its original date to Friday, December 5th at 10:00, because of a scheduling conflict, and you would like to review your appointment list and learn more about Dr. Smith\u2019s background and specialty to feel more informed ahead of the visit. Later, after reviewing your cardiac event monitor (CARDIA_tracer_451) data showing 7.0 hours of use on December 1st and discovering you accidentally took Sertraline, you checked for drug interactions and learned there is a high-risk interaction with your current Warfarin regimen, which prompted a change in plans. As a result, you now want to cancel your upcoming appointment with Dr. Saito on December 1st and instead schedule a new follow-up appointment with Dr. Owen Shaw, a cardiologist, on Monday, December 8th at 09:00, because you need urgent clinical guidance to address the medication interaction and discuss device compliance, and this time works well with your schedule.\n\nUse avery.morgan@tracer-health.org for authentication.",
       "emotion_instruction": "You are under extreme pressure and can't afford to waste any time. Demand immediate answers with no patience for pleasantries. Sharply question every detail and express doubt openly, leaving no room for trust without solid evidence. Insist on verification at every step, and dismiss anything or anyone that doesn't meet your high standards. Urgently seek proof and confine your interactions to the bare minimum necessary to get what you need\u2014swiftly and skeptically.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4314,7 +4288,7 @@
     "id": "telehealth_test_0063",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Sharon Baird, a patient managing epilepsy and anxiety through telehealth, with current medications Levetiracetam and Sertraline. You want to schedule a new routine primary care checkup with Dr. Lisa Chen on the next available Monday morning, preferably at 09:00, because it aligns with your weekly schedule. Later, you would like to reschedule your device coaching session with Kimberly Wade from the original date to the following Thursday at 15:00, because the new time better fits your availability. After that, you would like to cancel your upcoming neurology follow-up appointment, because your condition has stabilized and the session is no longer needed. You also want to know if taking Warfarin accidentally could cause a high-risk interaction with your current medications, because you are concerned about potential health risks\u2014this is urgent due to a known high-risk interaction between Warfarin and Sertraline. Additionally, you want to review the usage data for your wearable EEG device (WEARAB_tracer_479) over the past few days to ensure compliance, specifically checking uploads from two days ago through yesterday, because you want to confirm consistent use ahead of any clinical review.\n\nUse sharon.baird@tracer-health.org for authentication.",
+      "instructions": "You are Sharon Baird, a patient managing epilepsy and anxiety through telehealth, with current medications Levetiracetam and Sertraline. You want to schedule a new routine primary care checkup with Dr. Lisa Chen on Monday, 2025-12-15, at 09:00, because it aligns with your weekly schedule. Later, you would like to reschedule your device coaching session with Kimberly Wade from the original date to Thursday, 2025-12-18, at 15:00, because the new time better fits your availability. After that, you would like to cancel your upcoming neurology follow-up appointment, because your condition has stabilized and the session is no longer needed. You also want to know if taking Warfarin accidentally could cause a high-risk interaction with your current medications, because you are concerned about potential health risks\u2014this is urgent due to a known high-risk interaction between Warfarin and Sertraline. Additionally, you want to review the usage data for your wearable EEG device (WEARAB_tracer_479) over the past few days to ensure compliance, specifically checking uploads from two days ago through yesterday, because you want to confirm consistent use ahead of any clinical review.\n\nUse sharon.baird@tracer-health.org for authentication.",
       "emotion_instruction": "You feel anxious and hope the issue can be resolved quickly. Stay friendly in your approach, but your stress is noticeable. Emphasize urgency in your messages. You're careful not to fully open up to the agent.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4425,7 +4399,7 @@
     "id": "telehealth_test_0064",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Michelle Adams (michelle.adams@tracer-health.org), a patient with Type 1 Diabetes and Hypothyroidism, who wants to reorganize your upcoming endocrinology appointments for better convenience and cost efficiency. You want to cancel your scheduled follow-up with Dr. Hector Lane on Friday, 2025-12-19 at 10:00, because it conflicts with a rescheduled visit and a new appointment you prefer to prioritize. You would like to reschedule your follow-up with Dr. Charles Scott from Wednesday, 2025-12-17 at 09:00 to Thursday, 2025-12-18 at 10:00, because the new time better fits your schedule and aligns with Dr. Scott\u2019s availability. After that, you would like to schedule a new follow-up appointment with Dr. Debra Castro, an endocrinologist, on Friday, 2025-12-19 at 09:00, because it is the earliest available slot with a different provider to maintain continuity of care. You prefer to bill your Cigna insurance for this visit. You also want to confirm that switching to Insulin Lispro supplied by Bengal EndoCare (brand SwiftLis, $19.20) is safe, which is supported by no detected drug interactions with your current medications (Insulin Lispro and Levothyroxine). You prefer to update the prescription in your medical record (REC_tracer_077) to reflect this cost-effective supplier change to reduce out-of-pocket expenses. Finally, you would like a note added to the same record stating: 'Updated prescription supplier for Insulin Lispro to Bengal EndoCare (SwiftLis) at $19.20 per unit to reduce patient's out-of-pocket costs. Patient notified and consent obtained,' to ensure audit compliance and documentation of informed consent.\n\nUse michelle.adams@tracer-health.org for authentication.",
+      "instructions": "You are Michelle Adams (michelle.adams@tracer-health.org), a patient with Type 1 Diabetes and Hypothyroidism, who wants to reorganize your upcoming endocrinology appointments for better convenience and cost efficiency. You want to cancel your scheduled follow-up with Dr. Hector Lane on Friday, 2025-12-19 at 10:00, because it conflicts with a rescheduled visit and a new appointment you prefer to prioritize. You would like to reschedule your follow-up with Dr. Charles Scott from Wednesday, 2025-12-17 at 09:00 to Thursday, 2025-12-18 at 10:00, because the new time better fits your schedule and aligns with Dr. Scott\u2019s availability. After that, you would like to schedule a new follow-up appointment with Dr. Debra Castro, an endocrinologist, on Friday, 2025-12-19 at 09:00, because it is the earliest available slot with a different provider to maintain continuity of care. You prefer to bill your Cigna insurance for this visit. You also want to confirm that switching to Insulin Lispro supplied by Bengal EndoCare (brand SwiftLis, $19.20) is safe, which is supported by no detected drug interactions with your current medications (Insulin Lispro and Levothyroxine). You prefer to update the prescription in your medical record (REC_tracer_077) to reflect this cost-effective supplier change to reduce out-of-pocket expenses. Finally, to ensure audit compliance and documentation of informed consent, you would like a note added to the same record stating exactly: 'Updated prescription supplier for Insulin Lispro to Bengal EndoCare (SwiftLis) at $19.20 per unit to reduce patient's out-of-pocket costs. Patient notified and consent obtained.'\n\nUse michelle.adams@tracer-health.org for authentication.",
       "emotion_instruction": "You are nervous and your urgency is clear in your brief messages. Avoid overly friendly language, sticking to the facts. Press for clear timelines and next steps. Only relax your tone if you feel your concerns are truly being addressed.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4542,7 +4516,7 @@
     "id": "telehealth_test_0065",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Laurie Carson, a patient with Type 1 Diabetes and Hypothyroidism, managing your care through telehealth and using a continuous glucose monitor. You want to schedule a new endocrinology follow-up with Dr. Charles Scott on the next day at 13:00 because it aligns with your preferred provider and fits your schedule. Later, you would like to reschedule your existing follow-up with Dr. Tami Robinson from the next day to three days later at 13:00 to better coordinate with your device coaching and medication review. After that, you would like to cancel your medication review appointment on today because you have already addressed cost concerns through updated prescription planning. You prefer to review your medical records, especially the note from your primary care provider about medication cost savings, to confirm the switch to a lower-cost insulin supplier. You are concerned about device compliance and want to address the missing telemetry upload on 2025-12-10 to maintain accurate glucose monitoring. You also want to confirm there are no drug interactions between Insulin Lispro and your current medications, which include Levothyroxine, to ensure safety. You prefer to update your Insulin Lispro prescription to use SwiftLis from Bengal EndoCare at $19.20 per unit for cost efficiency without changing efficacy. Finally, you would like to review your optimized regimen options to improve cost and adherence, particularly through synchronized refills or adherence packaging, to support long-term management of your conditions.\n\nUse laurie.carson@tracer-health.org for authentication.",
+      "instructions": "You are Laurie Carson, a patient with Type 1 Diabetes and Hypothyroidism, managing your care through telehealth and using a continuous glucose monitor. You want to schedule a new endocrinology follow-up with Dr. Charles Scott on 2025-12-18 at 13:00 because it aligns with your preferred provider and fits your schedule. Later, you would like to reschedule your existing follow-up with Dr. Tami Robinson from 2025-12-19 to 2025-12-22 at 13:00 to better coordinate with your device coaching and medication review. After that, you would like to cancel your medication review appointment with Dr. Charles Scott on 2025-12-17 because you have already addressed cost concerns through updated prescription planning. You prefer to review your medical records, especially the note from your primary care provider about medication cost savings, to confirm the switch to a lower-cost insulin supplier. You are concerned about device compliance and want to address the missing telemetry upload on 2025-12-10 to maintain accurate glucose monitoring. You also want to confirm there are no drug interactions between Insulin Lispro and your current medications, which include Levothyroxine, to ensure safety. You prefer to update your Insulin Lispro prescription to use SwiftLis from Bengal EndoCare at $19.20 per unit for cost efficiency without changing efficacy. Finally, you would like to review your optimized regimen options to improve cost and adherence, particularly through synchronized refills or adherence packaging, to support long-term management of your conditions.\n\nUse laurie.carson@tracer-health.org for authentication.",
       "emotion_instruction": "You\u2019re jumpy and need quick reassurance. You ask for help in a straightforward manner, not hiding your anxiety. You place confidence in the agent\u2019s ability to assist you. You expect prompt, actionable replies.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4680,7 +4654,7 @@
     "id": "telehealth_test_0066",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Scott Sparks (scott.sparks@tracer-health.org), a patient with atrial fibrillation and hyperlipidemia, who wants to schedule a follow-up cardiology appointment with Dr. Margaret Thompson on December 18, 2025 at 09:00 because it aligns with your preferred provider and time. You also want to reschedule your existing cardiology follow-up from December 19, 2025 at 10:00 to the same time slot on December 18, 2025 at 09:00 with Dr. Thompson for continuity of care. Later, you would like to cancel your consultation with Dr. Juan Fitzgerald on December 17, 2025 at 14:00 about sleep medication interactions because you no longer need the review. You want to review the details of your appointment on December 19, 2025 at 10:00 with Dr. Bryan Bryant, your complete list of appointments, and your medical record from December 17, 2025 related to medication cost review. You would like to check telemetry uploads for your cardiac monitor on December 14, 2025, which showed no usage that day, and evaluate drug interactions between Warfarin and your current medications, which showed no significant risks. After that, you prefer to update the prescription supplier for Warfarin in your medical record to VedaRx Labs with brand name Vedarin due to lower cost, and finally review your available medication regimen options to assess cost and adherence improvements.\n\nUse scott.sparks@tracer-health.org for authentication.",
+      "instructions": "You are Scott Sparks (scott.sparks@tracer-health.org), a patient with atrial fibrillation and hyperlipidemia, who wants to schedule a follow-up cardiology appointment with Dr. Margaret Thompson on December 18, 2025 at 09:00 because it aligns with your preferred provider and time. You also want to reschedule your existing cardiology follow-up from December 19, 2025 at 10:00 to December 18, 2025 at 10:00 for continuity of care. Later, you would like to cancel your consultation with Dr. Juan Fitzgerald on December 17, 2025 at 14:00 about sleep medication interactions because you no longer need the review. You want to review the details of your appointment on December 18, 2025 at 10:00 with Dr. Bryan Bryant, your complete list of appointments, and your medical record from December 17, 2025 related to medication cost review. You would like to check telemetry uploads for your cardiac monitor on December 14, 2025, which showed no usage that day, and evaluate drug interactions between Warfarin and your current medications, which showed no significant risks. After that, you prefer to update the prescription supplier for Warfarin in your medical record to VedaRx Labs with brand name Vedarin due to lower cost, and finally review your available medication regimen options to assess cost and adherence improvements.\n\nUse scott.sparks@tracer-health.org for authentication.",
       "emotion_instruction": "You approach the conversation with some hesitation, feeling nervous. You ask for updates or next steps without showing too much emotion. You are cautious with your trust and need clear, direct answers. You reply promptly to keep things moving.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4721,7 +4695,7 @@
           "arguments": {
             "appointment_id": "APPT_tracer_163",
             "new_date": "2025-12-18",
-            "new_time": "09:00"
+            "new_time": "10:00"
           }
         },
         {

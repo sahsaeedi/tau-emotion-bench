@@ -1,8 +1,7 @@
-"""Pydantic models for the v1-derived telecom domain (account-management CRM).
+"""Pydantic models for the telecom domain (account-management CRM).
 
-Schema is reverse-engineered from the v1 telecom data files
-(tau-emotion-bench/tau_emotion_bench/envs/telecom/data/*.json) merged into
-db.json by scripts/import_v1_db.py.
+Schema is reverse-engineered from TRACER's telecom data files
+(tracer/tracer/envs/telecom/data/) merged into db.json.
 """
 
 from typing import Any, Dict, List, Literal, Optional

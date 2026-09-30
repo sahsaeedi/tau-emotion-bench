@@ -140,8 +140,7 @@ def _per_criterion_violations(
 def _extract_reason(record: Dict[str, Any], criterion: str) -> str:
     """Pull the evaluator's reason string for a given criterion from a task record."""
     if criterion in ("goal_oriented", "template"):
-        # Check preference_instruction_eval first (most authoritative for template);
-        # fall back to per_instruction[0] if absent.
+        # Criteria 1 and 2 are judged on the preference_instruction.
         pref = record.get("preference_instruction_eval") or {}
         crit_key = "goal_orientation" if criterion == "goal_oriented" else "template"
         crit_data = pref.get(crit_key, {})

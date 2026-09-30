@@ -18,9 +18,9 @@ repository.
 |---|---|---|---|---|---|---|
 | airline    |  8 | 6 | 14 | 5/16 |  70 |  143 |
 | retail     |  9 | 7 | 16 | 4/11 |  70 |  585 |
-| telecom    | 12 | 6 | 19 | 5/13 |  70 |  186 |
+| telecom    | 13 | 6 | 19 | 5/13 |  70 |  186 |
 | telehealth | 18 | 5 | 23 | 3/8  |  70 |  584 |
-| school     |  9 | 4 | 14 | 4/10 |  50 |  133 |
+| school     | 10 | 4 | 14 | 4/10 |  50 |  133 |
 | basketball | 17 | 3 | 20 | 1/2  |  50 |  346 |
 | restaurant |  9 | 6 | 15 | 4/8  |  50 |  163 |
 | travel     |  9 | 7 | 16 | 3/8  |  50 |  124 |
@@ -108,6 +108,7 @@ tau-emotion run --domain airline --agent-llm gpt-4.1 --num-trials 3 \
 | `--num-trials`, `--num-tasks`, `--task-ids` | How many runs of which tasks |
 | `--max-concurrency` | Simulations run in parallel |
 | `--save-to` | Results folder under `data/simulations/` |
+| `--no-emotion` | Leave out the emotion instructions: the same tasks with a neutral user |
 
 All flags are in the [CLI reference](docs/cli-reference.md).
 
@@ -132,7 +133,8 @@ as it ends, and the run prints its metrics when all are done.
 
 - **Run folder:** without `--save-to`, `<run>` is `<domain>/<agent model>`, extended
   with a non-default agent's name, the thinking or reasoning setting, a user model
-  other than the benchmark's (`user-<model>`) and the train split (`train`).
+  other than the benchmark's (`user-<model>`), the train split (`train`) and
+  `--no-emotion` (`no-emotion`).
 - **Resuming:** running the same command again offers to resume the run
   (`--auto-resume` skips the prompt) and retries its infrastructure errors. A higher
   `--num-trials` adds the missing trials.

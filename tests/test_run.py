@@ -290,8 +290,10 @@ def test_run_tasks_env_assertions(domain_name: str, task_with_env_assertions: Ta
     assert len(simulation.messages) > 0
     assert simulation.start_time is not None
     assert simulation.end_time is not None
-    # These assertions can fail if model is not good enough
-    assert simulation.reward_info.reward == 1.0
+    # The DB part of the reward depends on the models: a user simulator that
+    # makes up a task description when the agent offers one fails the DB check.
+    # The env assertion (task_2 is pending) holds either way.
+    assert simulation.reward_info.reward_breakdown[RewardType.ENV_ASSERTION] == 1.0
     assert len(simulation.reward_info.env_assertions) == 1
     assert simulation.reward_info.env_assertions[0].met is True
     # Add an env_assertion that will fail and test that the reward is 0.0

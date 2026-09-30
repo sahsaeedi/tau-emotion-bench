@@ -116,6 +116,7 @@ def evaluate_trajectories(
     # Process each file
     all_files_processed = True
     failed_files = []
+    saved_files: set[Path] = set()
 
     for file_path in files:
         console.print(f"\n📁 {file_path}", style="bold")
@@ -144,8 +145,16 @@ def evaluate_trajectories(
 
             # Save updated results if output directory is provided
             if output_dir:
-                input_filename = Path(file_path).name
-                output_file = output_path / f"updated_{input_filename}"
+                # Every run's file is results.json, so name it after its run
+                # folder, and number any name that is still taken.
+                input_file = Path(file_path)
+                stem = f"updated_{input_file.parent.name}_{input_file.stem}"
+                output_file = output_path / f"{stem}.json"
+                n = 2
+                while output_file in saved_files:
+                    output_file = output_path / f"{stem}_{n}.json"
+                    n += 1
+                saved_files.add(output_file)
                 updated_results.save(output_file)
                 console.print(f"  💾 Saved to: {output_file}", style="blue")
 

@@ -15,7 +15,9 @@ required of the agent, this page is for you.
   in `evaluation_criteria.reward_basis`.
 - Every task of the 10 domains (airline, retail, telecom, telehealth,
   bank, basketball, movie, restaurant, school, travel), test and train,
-  uses `reward_basis: ["DB", "COMMUNICATE"]`.
+  uses `reward_basis: ["DB", "COMMUNICATE"]`. None of them lists
+  `communicate_info`, so COMMUNICATE always gives 1.0 and the database
+  check decides the score.
 - `evaluation_criteria.actions` is **one reference trajectory** that
   solves the task — not the only correct one. It is replayed on a fresh
   "gold" environment to derive a target DB end state, which is then

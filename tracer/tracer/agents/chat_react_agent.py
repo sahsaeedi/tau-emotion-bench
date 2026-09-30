@@ -5,7 +5,11 @@ from typing import Any, Dict, List, Optional, Tuple
 
 from tracer.agents.base import Agent
 from tracer.envs.base import Env
-from tracer.llm_utils import completion_usage_tokens, completion_with_retry
+from tracer.llm_utils import (
+    REACT_MAX_TOKENS,
+    completion_usage_tokens,
+    completion_with_retry,
+)
 from tracer.types import (
     RESPOND_ACTION_FIELD_NAME,
     RESPOND_ACTION_NAME,
@@ -24,6 +28,7 @@ class ChatReActAgent(Agent):
         use_reasoning: bool = True,
         temperature: float = 0.0,
         api_base: Optional[str] = None,
+        max_tokens: Optional[int] = REACT_MAX_TOKENS,
     ) -> None:
         print(
             f"Initializing ChatReActAgent with model={model}, provider={provider}, use_reasoning={use_reasoning}, temperature={temperature}, api_base={api_base}"
@@ -38,6 +43,7 @@ class ChatReActAgent(Agent):
         self.use_reasoning = use_reasoning
         self.tools_info = tools_info
         self.api_base = api_base
+        self.max_tokens = max_tokens
 
     def _extract_first_action(
         self, content: str
@@ -91,44 +97,23 @@ class ChatReActAgent(Agent):
                 return parsed, end
 
             search_from = action_idx + len("Action:")
-        # Scan each Action: block and attempt to parse the first balanced JSON object.
-        parts = content.split("Action:")[1:]
-        for part in parts:
-            start = part.find("{")
-            if start == -1:
-                continue
-            depth = 0
-            end = None
-            for j, ch in enumerate(part[start:], start=start):
-                if ch == "{":
-                    depth += 1
-                elif ch == "}":
-                    depth -= 1
-                    if depth == 0:
-                        end = j + 1
-                        break
-            if end is None:
-                continue
-            candidate = part[start:end].strip()
-            try:
-                parsed = json.loads(candidate)
-            except Exception:
-                continue
-            if isinstance(parsed, dict):
-                return parsed
-        return None
 
     def generate_next_step(
         self, messages: List[Dict[str, Any]]
     ) -> Tuple[
         Dict[str, Any], Action, float, Optional[int], Optional[int], Optional[int], bool
     ]:
+        extra: Dict[str, Any] = {}
+        if self.max_tokens:
+            # A truncated reply still yields its first complete Action below.
+            extra["max_tokens"] = self.max_tokens
         res = completion_with_retry(
             model=self.model,
             custom_llm_provider=self.provider,
             api_base=self.api_base,
             messages=messages,
             temperature=self.temperature,
+            **extra,
         )
         message = res.choices[0].message
         content = message.content or ""

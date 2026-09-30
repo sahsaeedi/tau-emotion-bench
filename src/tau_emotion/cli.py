@@ -180,7 +180,8 @@ def add_run_args(parser):
         required=False,
         help="Where to save the results: data/simulations/<save_to>/results.json. "
         "Default: <domain>/<agent model>, plus suffixes for a non-default agent, "
-        "thinking/reasoning settings, a non-default user model and the train split. "
+        "thinking/reasoning settings, a non-default user model, the train split and "
+        "--no-emotion. "
         "If the file already exists, the run is resumed.",
     )
     parser.add_argument(
@@ -417,9 +418,13 @@ def run_intro():
         "Re-evaluate trajectories and recompute rewards",
     )
     cmd_table.add_row(
+        "tau-emotion convert-results <path>",
+        "Convert results between one JSON file and a directory of files",
+    )
+    cmd_table.add_row(
         "tau-emotion check-data", "Verify data directory is set up correctly"
     )
-    cmd_table.add_row("tau-emotion start", "Start background servers")
+    cmd_table.add_row("tau-emotion start", "Start the API server (port 8001)")
     cmd_table.add_row("tau-emotion intro", "Show this page")
     console.print(cmd_table)
     console.print()
@@ -807,6 +812,11 @@ def run_convert_results(args):
     from tau_emotion.data_model.simulation import Results
 
     path = Path(args.path)
+    # Detect the format from the run's results.json: a run directory would
+    # always count as the directory format, and a monolithic run would load
+    # with no simulations.
+    if path.is_dir():
+        path = path / "results.json"
     current_fmt = Results._detect_format(path)
     target_fmt = args.target_format
 

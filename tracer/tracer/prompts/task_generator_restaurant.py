@@ -11,7 +11,7 @@ METHOD -- in this order
 3. One entity per write. If the trace cancels / finalizes an entity and a later tool modifies or reads one of the same kind, ask the finder for two of that kind (min_*=2 / a status listed twice): its row then names cancel_target and modify_target -- use exactly those two ids. Never act on an entity this task already cancelled; never reference an id that only exists after a write in this task.
 4. Before any write with a price, seat, slot or balance, call the matching read-only preview / price / availability tool with the exact arguments you will use, and copy its numbers.
 5. kwargs use only that tool's schema parameters, all required ones present.
-6. `actions` lists ONLY the trace's tool calls. These reverse tools are for your lookups and must NEVER appear in `actions` (the agent cannot call them; replay fails with "Unknown action"): get_patron_details, get_patron_candidates, think. If a trace tool shares a name with a reverse tool, pass only the parameters of the TRACE schema.
+6. `actions` lists ONLY the trace's tool calls. These reverse tools are for your lookups and must NEVER appear in `actions` (the agent cannot call them; replay fails with "Unknown action"): get_patron_candidates. If a trace tool shares a name with a reverse tool, pass only the parameters of the TRACE schema.
 
 DOMAIN CONSTRAINTS (write-tool preconditions; read tools are self-describing)
 - Only "placed" tickets can be cancelled or modified; one this task cancels is unusable afterwards -- use the patron's OTHER placed ticket (min_placed_tickets=2).

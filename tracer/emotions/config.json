@@ -9,5 +9,7 @@
   "instructions_per_spec": 10,
   "temperature": 0.8,
   "poll_seconds": 30,
-  "max_specs": null
+  "max_specs": null,
+  "api_base": null,
+  "workers": 8
 }

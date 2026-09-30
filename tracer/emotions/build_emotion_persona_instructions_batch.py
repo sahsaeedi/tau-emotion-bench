@@ -1,7 +1,9 @@
 """
-Emotion persona combinatorial batch generator (OpenAI Batch API).
+Emotion persona combinatorial generator.
 
 Defaults are loaded from emotions/config.json (override with --config before subcommand).
+
+OpenAI Batch API (async, batch pricing, up to 24h):
 
   python emotions/build_emotion_persona_instructions_batch.py submit
 
@@ -9,7 +11,12 @@ Defaults are loaded from emotions/config.json (override with --config before sub
 
   python emotions/build_emotion_persona_instructions_batch.py wait-download
 
-Requires OPENAI_API_KEY. Batch pricing applies; completion is typically async (up to 24h).
+Direct mode (same requests through chat completions, for any OpenAI-compatible
+server without the Batch API, e.g. vLLM):
+
+  python emotions/build_emotion_persona_instructions_batch.py run --api-base <url>
+
+Requires OPENAI_API_KEY (the server's key in direct mode).
 """
 
 from __future__ import annotations
@@ -19,6 +26,7 @@ import hashlib
 import json
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from itertools import product
 from pathlib import Path
@@ -30,6 +38,7 @@ if str(_REPO_ROOT) not in sys.path:
 
 from dotenv import load_dotenv
 from openai import OpenAI
+from tqdm import tqdm
 
 from emotions.emotion_batch_prompts import (
     EMOTION_PERSONA_BATCH_SYSTEM_PROMPT,
@@ -54,6 +63,8 @@ def _default_config_values() -> dict[str, Any]:
         "temperature": 0.2,
         "poll_seconds": 30,
         "max_specs": None,
+        "api_base": None,
+        "workers": 8,
     }
 
 
@@ -179,28 +190,35 @@ def _write_state(path: Path, data: dict[str, Any]) -> None:
         f.write("\n")
 
 
-def cmd_submit(args: argparse.Namespace) -> None:
+def _prepare_requests(
+    args: argparse.Namespace,
+) -> tuple[Path, Path, Path, list[dict[str, Any]]]:
+    """Expand the specs, write the request JSONL and the specs snapshot."""
     schema_path = Path(args.schema).resolve()
     work_dir = Path(args.work_dir).resolve()
-    state_path = Path(args.state_path).resolve()
-    schema = load_schema(schema_path)
-    specs = expand_specs(schema)
+    specs = expand_specs(load_schema(schema_path))
     if args.max_specs is not None:
         specs = specs[: max(0, args.max_specs)]
 
     jsonl_path = work_dir / args.batch_input_name
     specs_path = work_dir / args.specs_snapshot_name
-
-    n = write_jsonl(
-        jsonl_path,
+    requests = list(
         iter_batch_request_lines(
             specs,
             model=args.model,
             num_variants=args.instructions_per_spec,
             temperature=args.temperature,
-        ),
+        )
     )
+    write_jsonl(jsonl_path, requests)
     _write_specs_snapshot(specs_path, specs)
+    return schema_path, jsonl_path, specs_path, requests
+
+
+def cmd_submit(args: argparse.Namespace) -> None:
+    state_path = Path(args.state_path).resolve()
+    schema_path, jsonl_path, specs_path, requests = _prepare_requests(args)
+    n = len(requests)
 
     client = OpenAI()
     with jsonl_path.open("rb") as f:
@@ -402,6 +420,40 @@ def cmd_wait_download(args: argparse.Namespace) -> None:
     else:
         text = getattr(content, "text", str(content))
 
+    items, parse_errors = _write_merged(
+        out_path,
+        text,
+        spec_by_id,
+        schema_path=schema_path,
+        batch_id=batch_id,
+        model=state.get("model"),
+        instructions_per_spec=state.get("instructions_per_spec"),
+    )
+
+    state_update = {
+        **state,
+        "batch_status": "completed",
+        "output_file_id": batch.output_file_id,
+        "completed_at": datetime.now(timezone.utc).isoformat(),
+        "output_json_path": str(out_path),
+        "merged_item_count": len(items),
+        "parse_error_count": len(parse_errors),
+    }
+    if state_path.exists():
+        _write_state(state_path, state_update)
+
+
+def _write_merged(
+    out_path: Path,
+    text: str,
+    spec_by_id: dict[str, dict[str, Any]],
+    *,
+    schema_path: Path | None,
+    batch_id: str | None,
+    model: str | None,
+    instructions_per_spec: int | None,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    """Parse Batch-API-shaped output JSONL and write the merged persona bank."""
     items: list[dict[str, Any]] = []
     parse_errors: list[str] = []
     for line in text.splitlines():
@@ -434,8 +486,8 @@ def cmd_wait_download(args: argparse.Namespace) -> None:
         "version": "1.0",
         "source_schema": str(schema_path) if schema_path else None,
         "batch_id": batch_id,
-        "model": state.get("model"),
-        "instructions_per_spec": state.get("instructions_per_spec"),
+        "model": model,
+        "instructions_per_spec": instructions_per_spec,
         "interpretation": (
             "User-side persona instructions for each combinatorial persona spec; "
             "append one instruction block to a base customer-service task prompt."
@@ -449,18 +501,6 @@ def cmd_wait_download(args: argparse.Namespace) -> None:
         json.dump(merged, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    state_update = {
-        **state,
-        "batch_status": "completed",
-        "output_file_id": batch.output_file_id,
-        "completed_at": datetime.now(timezone.utc).isoformat(),
-        "output_json_path": str(out_path),
-        "merged_item_count": len(items),
-        "parse_error_count": len(parse_errors),
-    }
-    if state_path.exists():
-        _write_state(state_path, state_update)
-
     print(f"Wrote {len(items)} items to {out_path}", flush=True)
     if parse_errors:
         print(
@@ -468,6 +508,42 @@ def cmd_wait_download(args: argparse.Namespace) -> None:
             file=sys.stderr,
             flush=True,
         )
+    return items, parse_errors
+
+
+def cmd_run(args: argparse.Namespace) -> None:
+    """Direct mode: send the batch requests through chat completions, no Batch API."""
+    schema_path, jsonl_path, specs_path, requests = _prepare_requests(args)
+    client = OpenAI(base_url=args.api_base) if args.api_base else OpenAI()
+
+    def call(request: dict[str, Any]) -> dict[str, Any]:
+        # Same line shape as a Batch API output file, so the merge is shared.
+        try:
+            resp = client.chat.completions.create(**request["body"])
+        except Exception as e:
+            return {"custom_id": request["custom_id"], "error": {"message": str(e)}}
+        return {
+            "custom_id": request["custom_id"],
+            "response": {"status_code": 200, "body": resp.model_dump()},
+        }
+
+    with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
+        lines = list(
+            tqdm(pool.map(call, requests), total=len(requests), desc="Personas")
+        )
+    output_jsonl = jsonl_path.with_name(jsonl_path.stem + "_output.jsonl")
+    write_jsonl(output_jsonl, lines)
+    print(f"Raw responses: {output_jsonl}", flush=True)
+
+    _write_merged(
+        Path(args.output).resolve(),
+        "\n".join(json.dumps(line, ensure_ascii=False) for line in lines),
+        _load_specs_snapshot(specs_path),
+        schema_path=schema_path,
+        batch_id=None,
+        model=args.model,
+        instructions_per_spec=args.instructions_per_spec,
+    )
 
 
 def build_parser(cfg: dict[str, Any], config_path: Path) -> argparse.ArgumentParser:
@@ -494,33 +570,51 @@ def build_parser(cfg: dict[str, Any], config_path: Path) -> argparse.ArgumentPar
     )
     sub = p.add_subparsers(dest="command", required=True)
 
+    def add_request_args(sp: argparse.ArgumentParser, output_help: str) -> None:
+        sp.add_argument("--schema", type=Path, default=schema_p)
+        sp.add_argument("--work-dir", type=Path, default=work_p)
+        sp.add_argument("--model", default=model)
+        sp.add_argument(
+            "--instructions-per-spec", type=int, default=instructions_per_spec
+        )
+        sp.add_argument("--temperature", type=float, default=temperature)
+        sp.add_argument(
+            "--max-specs", type=int, default=max_specs, help="Cap specs for testing"
+        )
+        sp.add_argument(
+            "--batch-input-name",
+            default=batch_input_name,
+            help="JSONL filename under work-dir",
+        )
+        sp.add_argument(
+            "--specs-snapshot-name",
+            default=specs_snapshot_name,
+            help="Specs JSON filename under work-dir",
+        )
+        sp.add_argument("--output", type=Path, default=merged_p, help=output_help)
+
     ps = sub.add_parser("submit", help="Build JSONL, upload, create batch, write state")
-    ps.add_argument("--schema", type=Path, default=schema_p)
+    add_request_args(
+        ps, "Target path for merged JSON (stored in state for wait-download)"
+    )
     ps.add_argument("--state-path", type=Path, default=state_p)
-    ps.add_argument("--work-dir", type=Path, default=work_p)
-    ps.add_argument("--model", default=model)
-    ps.add_argument("--instructions-per-spec", type=int, default=instructions_per_spec)
-    ps.add_argument("--temperature", type=float, default=temperature)
-    ps.add_argument(
-        "--max-specs", type=int, default=max_specs, help="Cap specs for testing"
-    )
-    ps.add_argument(
-        "--batch-input-name",
-        default=batch_input_name,
-        help="JSONL filename under work-dir",
-    )
-    ps.add_argument(
-        "--specs-snapshot-name",
-        default=specs_snapshot_name,
-        help="Specs JSON filename under work-dir",
-    )
-    ps.add_argument(
-        "--output",
-        type=Path,
-        default=merged_p,
-        help="Target path for merged JSON (stored in state for wait-download)",
-    )
     ps.set_defaults(func=cmd_submit)
+
+    pr = sub.add_parser(
+        "run",
+        help="Direct mode: send the same requests through chat completions "
+        "(no Batch API) and write the merged JSON",
+    )
+    add_request_args(pr, "Target path for merged JSON")
+    pr.add_argument(
+        "--api-base",
+        default=cfg.get("api_base"),
+        help="OpenAI-compatible base URL (default: OpenAI, or OPENAI_BASE_URL)",
+    )
+    pr.add_argument(
+        "--workers", type=int, default=int(cfg["workers"]), help="Parallel requests"
+    )
+    pr.set_defaults(func=cmd_run)
 
     pst = sub.add_parser("status", help="Print batch status from state or --batch-id")
     pst.add_argument("--state-path", type=Path, default=state_p)
@@ -562,7 +656,7 @@ def main() -> None:
     args = parser.parse_args(rest)
     args.config_path = config_path
 
-    if args.command == "submit" and not (args.model or "").strip():
+    if args.command in ("submit", "run") and not (args.model or "").strip():
         parser.error("model is empty; set model in config.json or pass --model")
 
     args.func(args)

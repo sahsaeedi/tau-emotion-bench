@@ -1,8 +1,8 @@
 """Agent that checks whether a task instruction follows the template (Criterion 2).
 
 Criterion: VIOLATION if the instruction does NOT have both a tool-calling task
-AND a user preference. Violations are only definitive on the preference-rewritten
-instruction (`preference_instruction`); the per-raw-instruction pass is informational.
+AND a user preference. evaluator.runner checks the preference-rewritten instruction
+(`preference_instruction`, is_preference_pass=True), where both must be present.
 """
 
 from __future__ import annotations

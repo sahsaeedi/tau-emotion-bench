@@ -15,7 +15,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
@@ -549,16 +548,7 @@ def main() -> None:
     parser.add_argument("--config", default="emotion_analysis/config.json")
     args = parser.parse_args()
 
-    config_path = Path(args.config)
-    if not config_path.is_file():
-        alt = Path("config.json")
-        if alt.is_file():
-            config_path = alt
-        else:
-            print(f"Config not found: {args.config}", file=sys.stderr)
-            sys.exit(1)
-
-    config = load_config(str(config_path))
+    config = load_config(args.config)
     model_cfg = get_embedding_model_cfg(config)
     out_paths = visualize_instruction_vs_task_tsne_knn_regions_for_model(
         config, model_cfg

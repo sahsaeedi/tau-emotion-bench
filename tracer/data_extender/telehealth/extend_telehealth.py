@@ -18,10 +18,10 @@ except ImportError:  # pragma: no cover
 
 
 from data_extender.telehealth.common import repo_root
-from data_extender.telehealth.generate_telehealth_seed import generate_seed_cases
 from data_extender.telehealth.master_data_extender import generate_master_data_cases
 from data_extender.telehealth.pack_telehealth_seed import pack_seed_cases
 from data_extender.telehealth.scenario_blueprints import generate_scenario_blueprints
+from data_extender.telehealth.thinking_fill_blueprints import fill_blueprint_cases
 
 
 def _load_config_defaults(config_path: str) -> dict[str, object]:
@@ -332,7 +332,7 @@ def main() -> int:
         flush=True,
     )
 
-    generate_seed_cases(
+    fill_blueprint_cases(
         blueprint_cases=blueprints,
         provider=args.provider,
         model_id=args.model,

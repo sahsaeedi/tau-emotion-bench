@@ -101,9 +101,10 @@ def make_run_name(config: RunConfig) -> str:
 
     Text runs get one directory per agent model, so the same command resumes
     its run instead of starting a new one: <domain>/<agent model>, with the
-    thinking setting when one is given, a non-default user model and the train
-    split, e.g. airline/qwen3-8b_no-thinking_user-gpt-4.1_train. The trial count
-    is left out, so rerunning with more trials adds them to the same run.
+    thinking setting when one is given, a non-default user model, the train
+    split and no-emotion, e.g. airline/qwen3-8b_no-thinking_user-gpt-4.1_train.
+    The trial count is left out, so rerunning with more trials adds them to the
+    same run.
     """
     parts = [config.llm_agent.replace("/", "_")]
     extra_body = config.llm_args_agent.get("extra_body") or {}
@@ -156,6 +157,7 @@ def get_info(config: RunConfig, **overrides) -> Info:
         llm=config.llm_user,
         llm_args=_without_api_key(config.llm_args_user),
         global_simulation_guidelines=get_global_user_sim_guidelines(),
+        no_emotion=config.no_emotion,
     )
 
     agent_llm = config.llm_agent

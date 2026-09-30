@@ -1,17 +1,19 @@
 """Collect the valid generated tasks of one split into one file per domain.
 
     python scripts/taskgen/filter_valid_tasks.py --split train
+    python scripts/taskgen/filter_valid_tasks.py --split test --domains bank    # one domain
     python scripts/taskgen/filter_valid_tasks.py --split train --overwrite       # refresh a snapshot
     python scripts/taskgen/filter_valid_tasks.py --split train --batch batch2    # only tasks not in earlier batches
 
 Reads   output/tasks/<split>/<domain>_<split>_tasks*.json   (every model's file)
-Writes  output/tasks/<split>_valid/<domain>_<split>_tasks_valid.json
+Writes  output/tasks/<split>_valid/<domain>_<split>_tasks_valid.json   (domains with files only)
         or, with --batch NAME, output/tasks/<split>_valid_NAME/ holding only valid tasks whose
         (task_id, run) is not already in another output/tasks/<split>_valid* folder
 
 A task is valid when it did not crash, has ground-truth actions and a non-empty
 preference_instruction, every action replays without an error, and the checker marked it
-solvable and not out of domain. Each kept task gains `source_file` and `generator_model`.
+solvable and not out of domain. Each kept task gains `source_file` (the generator
+records its model in `generator_model`).
 
 Safe to run while generation is still going: the generators rewrite their file after
 every trace, so a read that lands mid-save is retried.
@@ -36,10 +38,6 @@ DOMAINS = [
     "telehealth",
     "travel",
 ]
-MODEL_BY_TAG = {
-    "qwen3-235b": "qwen3-235b-a22b-instruct-2507",
-    "qwen3.8-27b": "Qwen/Qwen3.8-27B",
-}
 
 
 def is_valid(task):
@@ -68,13 +66,6 @@ def load_json(path, retries=10):
     )
 
 
-def generator_model(filename):
-    for tag, model in MODEL_BY_TAG.items():
-        if f"_{tag}_" in filename:
-            return model
-    return MODEL_BY_TAG["qwen3-235b"]  # untagged file = the original 235B test run
-
-
 def main():
     p = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -86,6 +77,13 @@ def main():
     p.add_argument(
         "--batch",
         help="write only tasks not in earlier <split>_valid* folders, to <split>_valid_BATCH",
+    )
+    p.add_argument(
+        "--domains",
+        nargs="+",
+        choices=DOMAINS,
+        default=DOMAINS,
+        help="domains to collect (default: all)",
     )
     args = p.parse_args()
 
@@ -107,7 +105,12 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
 
     total_gen = total_valid = total_old = 0
-    for d in DOMAINS:
+    for d in args.domains:
+        sources = sorted(
+            glob.glob(f"output/tasks/{args.split}/{d}_{args.split}_tasks*.json")
+        )
+        if not sources:
+            continue
         out = f"{out_dir}/{d}_{args.split}_tasks_valid.json"
         if os.path.exists(out) and not args.overwrite:
             sys.exit(f"{out} exists; pass --overwrite to replace it")
@@ -116,13 +119,9 @@ def main():
             prev = f"{e}/{d}_{args.split}_tasks_valid.json"
             if os.path.exists(prev):
                 batched.update((t["task_id"], t["run"]) for t in load_json(prev))
-        sources = sorted(
-            glob.glob(f"output/tasks/{args.split}/{d}_{args.split}_tasks*.json")
-        )
         keep, seen, generated, old = [], set(), 0, 0
         for src in sources:
             name = os.path.basename(src)
-            model = generator_model(name)
             for task in load_json(src):
                 if task.get("failed"):
                     continue
@@ -138,7 +137,7 @@ def main():
                 if key in batched:
                     old += 1
                     continue
-                keep.append(dict(task, source_file=name, generator_model=model))
+                keep.append(dict(task, source_file=name))
         with open(out, "w", encoding="utf-8") as f:
             json.dump(keep, f, indent=2)
         total_gen += generated

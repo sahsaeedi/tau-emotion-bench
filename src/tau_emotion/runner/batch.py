@@ -551,7 +551,7 @@ def run_tasks(
 
     ConsoleDisplay.console.print(
         "\n[bold green]Successfully completed all simulations![/bold green]\n"
-        "To review the simulations, run: [bold blue]tau_emotion view[/bold blue]"
+        "To review the simulations, run: [bold blue]tau-emotion view[/bold blue]"
     )
     return simulation_results
 

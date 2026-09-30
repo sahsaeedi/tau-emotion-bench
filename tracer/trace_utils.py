@@ -21,7 +21,7 @@ TRACE = List[TURN]  # sequence of turns
 
 def load_graph_tools(json_path: str):
     """
-    Load the tool graph from the JSON file produced by neighbour_app.py.
+    Load the tool graph from the JSON file produced by graph_builder.py.
 
     This populates each Tool with:
       - neighbors: list of neighbor tool indices

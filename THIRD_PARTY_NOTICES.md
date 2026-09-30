@@ -41,9 +41,8 @@ SOFTWARE.
 - Used for: TRACER's airline and retail environments
   (`tracer/tracer/envs/{airline,retail}/`: tools, rules, policy), the environment
   base class, user simulator and `Tool` base class (`tracer/tracer/envs/base.py`,
-  `user.py`, `tool.py`), and the agent classes (`tracer/tracer/agents/`), types,
-  run loop and model utilities (`tracer/tracer/model_utils/`) that the task
-  generator builds on, with modifications.
+  `user.py`, `tool.py`), and the agent classes (`tracer/tracer/agents/`) and types
+  that the task generator builds on, with modifications.
 
 ```
 MIT License

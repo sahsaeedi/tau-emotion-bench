@@ -24,7 +24,3 @@ torch>=2.0
 # Data extender
 Faker>=24.0
 PyYAML>=6.0
-
-# Optional model providers (tracer/model_utils), install only if used:
-# anthropic>=0.75
-# mistralai>=1.9

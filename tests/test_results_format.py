@@ -200,6 +200,24 @@ class TestCrossFormat:
         reloaded = Results.load(json_path)
         assert len(reloaded.simulations) == 2
 
+    @pytest.mark.parametrize("given", ["directory", "file"])
+    def test_convert_results_command_round_trip(self, tmp_path, sample_results, given):
+        """`tau-emotion convert-results` keeps every simulation, whether it is
+        given the run directory or its results.json."""
+        from argparse import Namespace
+
+        from tau_emotion.cli import run_convert_results
+
+        run_dir = tmp_path / "run"
+        sample_results.save(run_dir / "results.json", format="json")
+        path = str(run_dir if given == "directory" else run_dir / "results.json")
+        for target, sims_dir_exists in [("dir", True), ("json", False)]:
+            run_convert_results(
+                Namespace(path=path, target_format=target, no_backup=True)
+            )
+            assert (run_dir / SIMULATIONS_DIR).is_dir() is sims_dir_exists
+            assert len(Results.load(run_dir / "results.json").simulations) == 2
+
 
 # ---- Streaming APIs ----
 

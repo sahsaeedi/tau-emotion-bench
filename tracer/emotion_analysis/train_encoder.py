@@ -7,7 +7,12 @@ from typing import Any, Dict, List, Tuple
 
 import numpy as np
 import pandas as pd
-from utils import get_embedding_model_cfg, load_config, output_dir_for_model
+from utils import (
+    get_embedding_model_cfg,
+    load_config,
+    output_dir_for_model,
+    resolve_project_path,
+)
 
 
 @dataclass
@@ -177,7 +182,9 @@ def train_for_model(config: Dict, model_cfg: Dict) -> Path:
     payload = json.loads(emb_path.read_text(encoding="utf-8"))
     records = payload["records"]
     schema = json.loads(
-        Path(config["inputs"]["emotion_schema_path"]).read_text(encoding="utf-8")
+        resolve_project_path(config["inputs"]["emotion_schema_path"]).read_text(
+            encoding="utf-8"
+        )
     )
     maps = build_label_maps(records, schema)
 

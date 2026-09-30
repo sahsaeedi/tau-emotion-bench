@@ -45,7 +45,8 @@ Each entry in `tasks.json` is a `Task` (see
 `user_scenario` and an `evaluation_criteria` block. Every task's
 `user_scenario` carries an `emotion_instruction`, which the user simulator
 acts out, and `emotion_metadata` labels, used only for analysis. All 10
-domains score with `reward_basis: ["DB", "COMMUNICATE"]`, and a run the
+domains score with `reward_basis: ["DB", "COMMUNICATE"]` (no task lists
+`communicate_info`, so the database check decides), and a run the
 simulated user ends with `###UNSATISFIED###` gets reward -1.
 
 Note: `evaluation_criteria.actions` is

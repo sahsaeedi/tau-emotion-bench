@@ -74,7 +74,7 @@ Set `OPENAI_API_KEY` (and `ANTHROPIC_API_KEY` for Claude models). For models on 
 - **Test tasks:** 580 in `data/tau_emotion/domains/<domain>/tasks.json` (70 each for airline, retail, telecom and telehealth; 50 each for the others). They run against `db.json`. The `base` split (the default) and the `test` split are this same set.
 - **Train tasks:** 2,723 in `tasks_train.json`, selected with `--task-split-name train`. They run against `db_train.json`, which is loaded automatically. They are the tasks a Qwen3.8-27B (thinking) agent solved with reward 1; see [Train tasks](train_tasks.md).
 - **Emotion:** every task's `user_scenario` has an `emotion_instruction` the user simulator acts out, and `emotion_metadata` labels used only for analysis.
-- **Scoring:** all 10 domains score with `reward_basis: [DB, COMMUNICATE]`. A run the simulated user abandons with `###UNSATISFIED###` gets reward -1. See [Task Schema & Evaluation](evaluation.md).
+- **Scoring:** all 10 domains score with `reward_basis: [DB, COMMUNICATE]`; no shipped task lists `communicate_info`, so the score comes down to the final database state. A run the simulated user abandons with `###UNSATISFIED###` gets reward -1. See [Task Schema & Evaluation](evaluation.md).
 
 ## Running Your First Evaluation
 
@@ -94,7 +94,7 @@ tau-emotion run --domain retail --task-ids retail_test_0000 retail_test_0003 \
   --agent-llm gpt-4.1 --user-llm gpt-4.1
 ```
 
-Results are saved to `data/simulations/<domain>/<agent model>/results.json`, with suffixes added to the folder name for a non-default agent, thinking/reasoning settings, a non-default user model and the train split (the first command above saves to `airline/gpt-4.1_user-gpt-4.1`). With `--save-to`, they go to `data/simulations/<save_to>/results.json`. Running the same command again resumes that run.
+Results are saved to `data/simulations/<domain>/<agent model>/results.json`, with suffixes added to the folder name for a non-default agent, thinking/reasoning settings, a non-default user model, the train split and `--no-emotion` (the first command above saves to `airline/gpt-4.1_user-gpt-4.1`). With `--save-to`, they go to `data/simulations/<save_to>/results.json`. Running the same command again resumes that run.
 
 ## Simulation Output Structure
 

@@ -66,7 +66,7 @@ print(f"Average reward: {metrics.avg_reward}")
 
 `TextRunConfig` extends `BaseRunConfig`, which holds shared fields like `domain`, `task_split_name`, `num_trials`, `seed`, etc. `RunConfig` is an alias for `TextRunConfig`. Unset fields take the same defaults as the CLI (`config.py`); `llm_user` defaults to `qwen3-235b-a22b-instruct-2507`.
 
-This handles everything: task loading, filtering, concurrency, checkpointing, metrics display. Results are saved to `data/simulations/<save_to>/results.json`. Without `save_to`, the folder is `make_run_name(config)`: `<domain>/<agent model>`, plus suffixes for a non-default agent, thinking/reasoning settings, a non-default user model and the train split. For the config above that is `airline/openai_gpt-4.1_user-openai_gpt-4.1-mini`.
+This handles everything: task loading, filtering, concurrency, checkpointing, metrics display. Results are saved to `data/simulations/<save_to>/results.json`. Without `save_to`, the folder is `make_run_name(config)`: `<domain>/<agent model>`, plus suffixes for a non-default agent, thinking/reasoning settings, a non-default user model, the train split and `no_emotion`. For the config above that is `airline/openai_gpt-4.1_user-openai_gpt-4.1-mini`.
 
 ### Train tasks
 
@@ -229,7 +229,7 @@ print(f"Reward: {result.reward_info.reward}")
 - **`load_task_splits(task_set_name)`** -- Split name -> task ids for a task set.
 - **`get_environment_info(domain_name, include_tool_info, env_kwargs)`** -- Describe a domain's environment.
 - **`get_info(config, **overrides)`** -- Create run metadata (`Info` object).
-- **`make_run_name(config)`** -- Generate the default run name: `<domain>/<agent model>`, plus suffixes for a non-default agent (as a prefix), thinking/reasoning settings, a non-default user model (`user-<model>`) and the train split (`train`).
+- **`make_run_name(config)`** -- Generate the default run name: `<domain>/<agent model>`, plus suffixes for a non-default agent (as a prefix), thinking/reasoning settings, a non-default user model (`user-<model>`), the train split (`train`) and `no_emotion` (`no-emotion`).
 
 ---
 

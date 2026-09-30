@@ -73,17 +73,24 @@ pip install -r requirements.txt
 Put a `.env` in `tracer/` with the keys you need:
 
 ```bash
-OPENAI_API_KEY=...        # OpenAI models, embeddings, the emotion Batch API job
-HOSTED_VLLM_API_KEY=...   # configs that use the hosted_vllm provider
+OPENAI_API_KEY=...        # OpenAI models, embeddings, the emotion bank (steps 5-6)
+HOSTED_VLLM_API_KEY=...   # --generator-model-provider / --eval-model-provider hosted_vllm
 VLLM_API_KEY=...          # graph_builder.py --provider vllm
 OPENAI_COMPATIBLE_API_KEY=...  # the telehealth extender with --provider openai-compatible
 ```
 
-Every LLM step except the emotion bank (step 5) also runs on an OpenAI-compatible
+Every LLM step also runs on an OpenAI-compatible
 server (vLLM or a hosted provider):
 `graph_builder.py --provider vllm --base-url <url>`, and `--api-base <url>` with
 `--generator-model-provider openai` or `--eval-model-provider openai` (and
 `OPENAI_API_KEY` set to that server's key) for the generator and the evaluator.
+
+The generator's and the evaluator's agents cap each LLM reply at 4096 tokens, so a
+model that keeps repeating its Thought/Action blocks does not run into the timeout.
+Set `TRACER_MAX_TOKENS` to change the cap (`0` removes it), e.g. for a reasoning
+model whose reasoning tokens count toward it.
+The emotion bank (step 5) uses `run --api-base <url>` in place of the Batch API,
+and step 6 takes the embedding server's URL in its config.
 
 ## Pipeline
 
@@ -111,13 +118,22 @@ cp -r data_extender/generated_telehealth/* tracer/envs/telehealth/data/
 python export_db.py \
   --domain telecom \
   --split test \
-  --overwrite
+  --dry-run
 ```
 
 - Output goes to `data_extender/generated_*` first; check it before `cp`.
-- Only adds records, so existing tasks keep working.
-- Skip `export_db.py` and the benchmark lacks the new users.
-- OpenAI-compatible server: `--provider openai-compatible --base-api <url> --model <name>`.
+- Same `--seed` (default 1337), same records; the telehealth scenario text comes
+  from the LLM, so it varies.
+- Only adds records, so existing tasks keep working. One exception: telehealth's
+  new appointments take free provider slots, from two weeks after the latest
+  existing appointment; a task that books one of those slots no longer can.
+- Telehealth's new providers go into `providers.json`, which both splits share.
+- `export_db.py` writes `../data/tau_emotion/domains/<domain>/db.json` (test) or
+  `db_train.json` (train): `--dry-run` lists the changes, `--overwrite` replaces
+  the file, `--output <path>` writes elsewhere. Skip it and the benchmark lacks the
+  new users.
+- OpenAI-compatible server: `--provider openai-compatible --base-api <url> --model <name>`,
+  with `OPENAI_COMPATIBLE_API_KEY` in `.env`.
 
 ### Step 1: Tool graphs
 
@@ -132,6 +148,12 @@ python graph_builder.py \
 ```
 
 Output: `output/graphs/<provider>_<model>/<domain>_adjacency_matrix_<temperature>.json`
+
+- One LLM call per tool; `think` and `calculate` are left out of the graph.
+- `--provider openai` takes `gpt-4.1`, `gpt-4o`, `gpt-5`, `gpt-5.1` or `gpt-5.2`.
+  For an OpenAI-compatible server: `--provider vllm --base-url <url> --model <name>`
+  (key in `VLLM_API_KEY`).
+- Without `--domains` it builds airline, retail, telecom and telehealth only.
 
 ### Step 2: Traces
 
@@ -148,11 +170,20 @@ python build_trace.py \
   --random-seed 10
 ```
 
-Output: `output/traces/<graph name>_traces.json`
+Output: `output/traces/<graph name>_traces.json`, and the settings in
+`<graph name>_traces_config.json`. Duplicate traces are dropped, so there can be
+fewer than `--num-traces`. The file is named after the graph file only, so graphs of
+one domain from two models write the same traces file.
 
 ### Step 3: Tasks
 
 Writes and verifies a task per trace. Once per domain; always pass `--split` (default `train`).
+Each task takes four LLM passes: a ReAct agent reads the split's database through the
+domain's reverse tools and writes the task, then a pass writes the user's `feeling`,
+one rewrites the instructions into a single `preference_instruction`, and a checker
+replays the ground-truth actions in the domain's environment
+(`task_checker_action_replay`) and labels the task `solvable` and `in_domain`.
+Expect several minutes per task.
 
 ```bash
 python -m tracer.generator \
@@ -168,10 +199,12 @@ python -m tracer.generator \
 Collect valid tasks:
 
 ```bash
-python scripts/taskgen/filter_valid_tasks.py --split test
+python scripts/taskgen/filter_valid_tasks.py --split test --domains bank
 ```
 
-Output: `output/tasks/test_valid/bank_test_tasks_valid.json`
+Output: `output/tasks/test_valid/bank_test_tasks_valid.json`. A task is valid when
+it has ground-truth actions and a `preference_instruction`, every action replays
+without an error, and the checker marked it solvable and not out of domain.
 
 ### Step 4: Quality audit
 
@@ -186,7 +219,9 @@ python -m evaluator.runner \
   --workers 8
 ```
 
-Output: `output/evaluations/bank_test_eval.json`
+Output: `output/evaluations/bank_test_eval.json`. Re-running resumes: evaluated
+tasks are skipped, and tasks left inconclusive are retried.
+`--config evaluator/config/eval_config_<domain>.json` sets a domain's test paths.
 
 Or all domains at once:
 
@@ -206,6 +241,9 @@ python -m evaluator.orchestrator \
   --markdown-out output/evaluations/bank_test_report.md
 ```
 
+Output: `output/evaluations/bank_test_eval_summary.json` and the Markdown report.
+Add `--eval-model <model>` to have an LLM group the failure reasons into themes.
+
 Passed tasks:
 
 ```bash
@@ -215,9 +253,13 @@ python -m evaluator.get_passed_tasks \
   --output-path output/evaluations/bank_test_passed_tasks.json
 ```
 
+Output: the full records of the tasks that passed, the input of step 6. Re-running
+appends only newly passed tasks (tracked in `.passed_tasks_registry.json`).
+
 ### Step 5: Emotion persona bank
 
-Run once for all domains; independent of steps 1–4. OpenAI Batch API, up to 24 h.
+Run once for all domains; independent of steps 1–4. With the OpenAI Batch API
+(up to 24 h):
 
 ```bash
 python emotions/build_emotion_persona_instructions_batch.py submit
@@ -225,17 +267,31 @@ python emotions/build_emotion_persona_instructions_batch.py status
 python emotions/build_emotion_persona_instructions_batch.py wait-download
 ```
 
-Output: `emotions/output/emotion_persona_instructions.json`
+Or directly, on an OpenAI-compatible server without the Batch API:
+
+```bash
+python emotions/build_emotion_persona_instructions_batch.py run \
+  --api-base <url> \
+  --model <model> \
+  --workers 16
+```
+
+Output: `emotions/output/emotion_persona_instructions.json`. Settings (model,
+variants per spec, `max_specs` for a test run) are in `emotions/config.json`; see
+[`emotions/README.md`](emotions/README.md).
 
 ### Step 6: Emotions for the tasks
 
-Set `inputs.task_paths` in `emotion_analysis/config.json` to the passed-tasks file first.
+Set `inputs.task_paths` in `emotion_analysis/config.json` to the passed-tasks file
+first, and `embedding_model` to your embedding model (`model`, `api_base`; see
+[`emotion_analysis/README.md`](emotion_analysis/README.md)).
 
 ```bash
 python emotion_analysis/run_all.py --config emotion_analysis/config.json
 ```
 
-Output: `output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json`
+Output: `output/evaluations/bank_test_passed_tasks_with_emotion_predictions.json`,
+plus the trained classifier and t-SNE plots under `emotion_analysis/output/`.
 
 ### Step 7: Export into the benchmark
 
@@ -251,16 +307,19 @@ python tracer/export_tasks.py \
   --dry-run
 ```
 
-Then `--overwrite` to write `data/tau_emotion/domains/bank/tasks.json`. Rows without a
-`user_id` or an emotion are skipped.
+Then `--overwrite` to write `data/tau_emotion/domains/bank/tasks.json`
+(`tasks_train.json` for `--split train`), or `--output <path>` to write elsewhere.
+Rows without a `user_id` or an emotion are skipped. Before writing, every task is
+checked against the benchmark's `Task` schema and the domain's tool names.
 
 ## Quality criteria
 
 `evaluator/` scores every generated task and passes it only if all four hold.
 Criteria 1 and 2 look at the rewritten `preference_instruction`. Criteria 3 and 4
 are always decided by the judge LLM, which sees the ground-truth actions together
-with the generator's replay of them (criterion 3) or its `in_domain` label
-(criterion 4).
+with the generator's replay of them (criterion 3) or its `in_domain` label and the
+domain's rules (criterion 4). A task the judge gives no verdict on (an error or a
+malformed answer) is inconclusive: it does not pass, and a re-run retries it.
 
 | # | Criterion | Violated when |
 |---|---|---|
@@ -278,8 +337,9 @@ TRACER and in the benchmark alike.
 `scripts/taskgen/` holds two helpers for step 3:
 
 - `filter_valid_tasks.py --split <split>`: collects the valid tasks of every domain
-  from `output/tasks/<split>/<domain>_<split>_tasks*.json` into
-  `output/tasks/<split>_valid/`. Name the generator's output that way so it is found.
+  (or of `--domains ...`) from `output/tasks/<split>/<domain>_<split>_tasks*.json`
+  into `output/tasks/<split>_valid/`. Name the generator's output that way so it is
+  found. An existing output file is only replaced with `--overwrite`.
 - `make_prompt.py`: regenerates `tracer/prompts/task_generator_<domain>.py`
   (`--all`, or one domain). Edit the prompts there, not in the generated files.
 
@@ -290,13 +350,18 @@ Generator flags:
 | `--env` | `airline` | Domain |
 | `--split` | `train` | `train` or `test` |
 | `--trace-path` | airline traces | Traces file from step 2 |
-| `--output-path` | — | `output/tasks/<split>/<domain>_<split>_tasks.json` |
-| `--generator-model-provider` | `openai` | LLM provider |
-| `--generator-model` | `gpt-5.2` | LLM model |
+| `--output-path` | next to the traces | Use `output/tasks/<split>/<domain>_<split>_tasks.json` |
+| `--generator-model-provider` | `openai` | LLM provider (a LiteLLM provider name) |
+| `--generator-model` | `gpt-5.2` | LLM model, used by all four passes |
+| `--generator-temperature` | `0.2` | Temperature of the task writer (`gpt-5*`: 1) |
+| `--feeling-temperature` | `0.9` | Temperature of the feeling pass |
 | `--api-base` | — | OpenAI-compatible server URL |
 | `--tasks-per-trace` | `3` | Tasks per trace |
 | `--start-index` / `--end-index` | all | Trace range |
+| `--task-ids` | — | Only these trace indices |
+| `--config` | — | JSON file of flag defaults (keys are the flag names with `_`) |
 | `--debug` | off | Every agent step on stdout |
+| `--print-thoughts` | off | With `--debug`, also the agent's thoughts |
 
 Re-running the same command resumes. For several domains, loop:
 

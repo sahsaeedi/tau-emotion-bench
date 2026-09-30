@@ -2,7 +2,9 @@
 
 Runnable examples showing how to create and evaluate custom tau-emotion agents. They
 run on the mock domain with `openai/gpt-4.1-mini` as the agent and the user
-simulator, so they need `OPENAI_API_KEY`.
+simulator, so they need `OPENAI_API_KEY`. To use another model, replace
+`openai/gpt-4.1-mini` in the example; `openai/<name>` with `OPENAI_API_BASE` set
+reaches a model on an OpenAI-compatible server (see [models](../../docs/models.md)).
 
 ## Examples
 

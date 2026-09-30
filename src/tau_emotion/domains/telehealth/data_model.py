@@ -1,9 +1,9 @@
-"""Pydantic models for the v1-derived telehealth domain.
+"""Pydantic models for the telehealth domain.
 
-Schema is reverse-engineered from the v1 telehealth data files
-(tau-emotion-bench/tau_emotion_bench/envs/telehealth/data/*.json) merged
-into db.json by scripts/import_v1_db.py. Many sub-record fields are
-optional because v1 only populated them on a subset of records and the
+Schema is reverse-engineered from TRACER's telehealth data files
+(tracer/tracer/envs/telehealth/data/) merged into db.json. Many sub-record
+fields are optional because TRACER's data only populates them on a subset of
+records and the
 tools (e.g. update_medical_record_note, update_prescription_supplier,
 schedule_appointment) progressively add fields at write time.
 """

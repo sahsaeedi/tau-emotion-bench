@@ -6,7 +6,7 @@ from tau_emotion.cli import add_run_args
 from tau_emotion.data_model.simulation import TextRunConfig
 from tau_emotion.run import get_tasks
 from tau_emotion.runner.build import build_environment, build_user
-from tau_emotion.runner.helpers import make_run_name
+from tau_emotion.runner.helpers import get_info, make_run_name
 
 
 def parse(*argv: str) -> argparse.Namespace:
@@ -41,3 +41,9 @@ def test_no_emotion_runs_save_separately():
         "_no-emotion"
     )
     assert "no-emotion" not in make_run_name(TextRunConfig(domain="airline"))
+
+
+def test_no_emotion_is_saved_with_the_run():
+    """The results record the setting, so a resume can't mix both kinds of run."""
+    assert get_info(TextRunConfig(domain="mock", no_emotion=True)).user_info.no_emotion
+    assert not get_info(TextRunConfig(domain="mock")).user_info.no_emotion

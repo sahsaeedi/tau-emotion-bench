@@ -1,5 +1,6 @@
 import json
 from dataclasses import dataclass
+from pathlib import Path
 from typing import TYPE_CHECKING, List, Optional
 
 from rich.console import Console
@@ -152,23 +153,28 @@ class ConsoleDisplay:
         agent_model_str = effective_agent_model
 
         # Build compact header with all key info
-        task_ids_str = (
-            ", ".join(map(str, config.task_ids)) if config.task_ids else "All"
-        )
+        if config.task_ids:
+            task_ids_str = ", ".join(map(str, config.task_ids))
+        elif config.num_tasks is not None:
+            task_ids_str = f"first {config.num_tasks}"
+        else:
+            task_ids_str = "All"
         task_set_str = config.task_set_name if config.task_set_name else "Default"
 
         header_lines = [
-            f"[{c.label}]Domain:[/] {config.domain}  [{c.label}]Task Set:[/] {task_set_str}  [{c.label}]Tasks:[/] {task_ids_str}",
+            f"[{c.label}]Domain:[/] {config.domain}  [{c.label}]Task Set:[/] {task_set_str}  [{c.label}]Split:[/] {config.task_split_name}  [{c.label}]Tasks:[/] {task_ids_str}",
             f"[{c.label}]Trials:[/] {config.num_trials}  [{c.label}]Max Steps:[/] {effective_max_steps}  [{c.label}]Max Errors:[/] {config.max_errors}",
             "",
             f"[{c.section_header}]Agent:[/] {effective_agent} → {agent_model_str}",
-            f"[{c.section_header}]User:[/]  {effective_user} → {effective_user_model}",
+            f"[{c.section_header}]User:[/]  {effective_user} → {effective_user_model}"
+            + ("  (no emotion instructions)" if config.no_emotion else ""),
         ]
 
         # Add save/run settings on one line
         from tau_emotion.runner.helpers import make_run_name
 
-        save_to = f"data/simulations/{config.save_to or make_run_name(config)}"
+        # An absolute save_to is used as is (the runner joins it the same way)
+        save_to = Path("data/simulations") / (config.save_to or make_run_name(config))
         header_lines.append("")
         header_lines.append(
             f"[{c.label}]Save:[/] {save_to}  [{c.label}]Concurrency:[/] {config.max_concurrency}  [{c.label}]Verbose:[/] {config.verbose_logs}"
@@ -852,17 +858,12 @@ class ConsoleDisplay:
         # LLM Judge Review Errors
         table.add_row("[cyan]═══ LLM Judge Review ═══[/]", "")
 
-        # Check if review was run
-        has_review = (
-            metrics.sims_with_agent_errors > 0
-            or metrics.sims_with_user_errors > 0
-            or metrics.total_agent_errors > 0
-            or metrics.total_user_errors > 0
-            or any(metrics.agent_error_tags_by_severity)
-            or any(metrics.user_error_tags_by_severity)
+        # Every reviewed simulation is counted in the sims-by-severity tallies
+        has_review = any(metrics.sims_by_max_agent_severity.values()) or any(
+            metrics.sims_by_max_user_severity.values()
         )
 
-        if has_review or metrics.total_simulations > 0:
+        if has_review:
             # Agent errors - total by severity
             agent_err_color = "green" if metrics.sims_with_agent_errors == 0 else "red"
             agent_sev_parts = []
@@ -988,7 +989,7 @@ class ConsoleDisplay:
                     if parts:
                         table.add_row(f"   {tag}", ", ".join(parts))
         else:
-            table.add_row("", "[dim]No review data available[/]")
+            table.add_row("", "[dim]Not reviewed (see tau-emotion review)[/]")
 
         # Create and display panel
         metrics_panel = Panel(

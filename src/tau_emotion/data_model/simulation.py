@@ -552,93 +552,6 @@ class ErrorType(str, Enum):
     EARLY_TERMINATION = "early_termination"  # Ended conversation prematurely
 
 
-class SimulationNote(BaseModel):
-    """
-    A note about a simulation run.
-    Used to record observations, comments, or annotations about specific simulation runs.
-    Unlike TaskIssue, this does NOT modify the task definition.
-    """
-
-    id: str = Field(description="Unique identifier for the note.")
-    note: Annotated[
-        str,
-        Field(description="The note/observation about the simulation."),
-    ]
-    author_email: Annotated[
-        Optional[str],
-        Field(
-            description="Email of the person who created this note.",
-            default=None,
-        ),
-    ]
-    created_at: Annotated[
-        Optional[str],
-        Field(
-            description="ISO datetime when the note was created.",
-            default=None,
-        ),
-    ]
-    # Simulation metadata
-    simulation_id: Annotated[
-        str,
-        Field(description="ID of the simulation this note is about."),
-    ]
-    task_id: Annotated[
-        str,
-        Field(description="ID of the task for this simulation."),
-    ]
-    trial: Annotated[
-        int,
-        Field(description="Trial number of the simulation."),
-    ]
-    # Source location
-    source_results_file: Annotated[
-        Optional[str],
-        Field(
-            description="Path to the original results file where the simulation was found.",
-            default=None,
-        ),
-    ]
-    simulation_file: Annotated[
-        Optional[str],
-        Field(
-            description="Path to the simulation JSON file associated with this note.",
-            default=None,
-        ),
-    ]
-    # Qualitative analysis fields
-    error_source: Annotated[
-        Optional[ErrorSource],
-        Field(
-            description="Source of the error: agent, user, or system (framework/orchestrator).",
-            default=None,
-        ),
-    ]
-    error_type: Annotated[
-        Optional[ErrorType],
-        Field(
-            description="Type of error: logical, hallucination, unresponsive, or early_termination.",
-            default=None,
-        ),
-    ]
-
-    def __str__(self) -> str:
-        lines = []
-        lines.append(
-            f"📝 [{self.id}] {self.note[:50]}{'...' if len(self.note) > 50 else ''}"
-        )
-        lines.append(
-            f"  Simulation: {self.simulation_id} (Task: {self.task_id}, Trial: {self.trial})"
-        )
-        if self.source_results_file:
-            lines.append(f"  Source: {self.source_results_file}")
-        if self.author_email:
-            lines.append(f"  Author: {self.author_email}")
-        if self.created_at:
-            lines.append(f"  Created: {self.created_at}")
-        return "\n".join(lines)
-
-
 class RewardInfo(BaseModel):
     """
     The reward received by the agent.
@@ -770,6 +683,11 @@ class UserInfo(BaseModel):
     )
     global_simulation_guidelines: Optional[str] = Field(
         description="The global simulation guidelines for the user.", default=None
+    )
+    no_emotion: bool = Field(
+        description="Whether the user was run without the tasks' emotion "
+        "instructions (--no-emotion).",
+        default=False,
     )
 
 

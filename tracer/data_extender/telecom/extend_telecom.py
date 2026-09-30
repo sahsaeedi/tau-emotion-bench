@@ -412,9 +412,8 @@ def _gen_devices(
     # TV devices
     tv_services = [s for s in services_list if service_catalog[s].category == "tv"]
     for tvs in tv_services:
-        # Cable box common
-        if "HD Cable Box" in device_names_by_cat.get("tv", []) or True:
-            add_device("HD Cable Box", tvs)
+        # Every TV service comes with a cable box
+        add_device("HD Cable Box", tvs)
         # Sometimes a TV set
         if rng.random() < float(dev_cfg["tv_additional_set_probability"]):
             tv_set = _pick_device_name(

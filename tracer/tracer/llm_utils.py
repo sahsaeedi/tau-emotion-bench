@@ -6,10 +6,18 @@ handle rate-limit errors without manual sleep/retry loops.
 
 from __future__ import annotations
 
+import os
 from typing import Any, Dict, Optional, Tuple
 
 from litellm import Router
 from litellm.router import RetryPolicy
+
+# Output cap for the ReAct agents' LLM calls. A normal step (Thought + one Action, or
+# the final JSON) stays far below it; without it some models repeat Thought/Action
+# blocks until the context is full and each call runs into the timeout.
+# TRACER_MAX_TOKENS=0 removes the cap (raise it for reasoning models, whose reasoning
+# tokens count toward it).
+REACT_MAX_TOKENS = int(os.getenv("TRACER_MAX_TOKENS", "4096"))
 
 # One Router instance per (full_model_key, api_base).
 # Routers are cheap to create but hold retry state, so caching them lets the
