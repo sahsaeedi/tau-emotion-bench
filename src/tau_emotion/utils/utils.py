@@ -7,10 +7,12 @@ from datetime import datetime
 from pathlib import Path
 
 from deepdiff import DeepDiff
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 from loguru import logger
 
-res = load_dotenv()
+# The .env in the working directory (or a parent), else the one in the
+# repository this package was installed from.
+res = load_dotenv(find_dotenv(usecwd=True)) or load_dotenv()
 if not res:
     logger.warning("No .env file found")
 

@@ -69,8 +69,8 @@ def load_tasks(
 def task_splits(test_path: Path, train_path: Path) -> dict[str, list[str]]:
     """Split-name -> task-id mapping, derived from the task files.
 
-    'base' is the shipped benchmark set; 'train' is empty until the training
-    tasks are built.
+    'base' and 'test' are the benchmark set (tasks.json); 'train' is
+    tasks_train.json.
     """
     splits: dict[str, list[str]] = {"train": [], "test": [], "base": []}
     for t in load_file(test_path):

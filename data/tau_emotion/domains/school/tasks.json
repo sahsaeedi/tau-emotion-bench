@@ -113,7 +113,7 @@
     "id": "school_test_0002",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Ethan O'Connor (student ID RHCKH5L), and you want to cancel your 2025-FALL registration (AEG1JPT) because of scheduling conflicts, and you expect all prior payments to be refunded according to policy. Later, you would like to add the course 'Introduction to Drawing' (ART-1101) to your 2025-SPRING registration (B3ZYS67) to fulfill your arts requirement, and you prefer the tuition difference to be charged to your saved Mastercard ending in 6666.\n\nUse ethan.o'connor8446@univ.edu for authentication.",
+      "instructions": "You are Ethan O'Connor (student ID RHCKH5L), and you want to cancel your 2025-FALL registration (AEG1JPT) because of scheduling conflicts, and you expect all prior payments to be refunded according to policy. Later, you would like to add the course 'Introduction to Drawing' (ART-1101) to your 2025-SPRING registration (B3ZYS67) to fulfill your arts requirement, and you prefer the tuition difference to be charged to your saved Mastercard ending in 6666. You want every course you are keeping on that registration to stay on the grading option it already has, exactly as it is recorded in the system, since you did not ask to change it.\n\nUse ethan.o'connor8446@univ.edu for authentication.",
       "emotion_instruction": "You\u2019re buzzing with excitement and can\u2019t stand waiting. Use brief, sharp instructions. Trust the agent, but expect them to act quickly and efficiently.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -155,6 +155,10 @@
               "XNMQ98S"
             ],
             "drop_course_ids": [],
+            "grading_options": {
+              "N7HLYB5": "pass_fail",
+              "1U4FBQ4": "pass_fail"
+            },
             "payment_id": "7I03UNJ"
           }
         }
@@ -266,7 +270,7 @@
     "id": "school_test_0005",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Liam Nguyen, student ID M66CPIN, an undergraduate student, and you want to cancel your 2025-FALL registration (2FXXA0T) because you are adjusting your academic plans. Later, you would like to update your 2025-SPRING registration (XTXT5AY) by adding the course 'Introduction to Drawing' (ART-1101), which fits your schedule and academic interests. You also want Geographic Information Systems (GEOG-2305), which you are keeping, to stay on the grading option it already has on that registration, exactly as it is recorded in the system, since you did not ask to change it. After the update, you need to make a payment of $1500 to finalize the addition, and you prefer to pay using your saved Chase bank account ending in 5769 for convenience and record consistency.\n\nUse liam.nguyen1627@univ.edu for authentication.",
+      "instructions": "You are Liam Nguyen, student ID M66CPIN, an undergraduate student, and you want to cancel your 2025-FALL registration (2FXXA0T) because you are adjusting your academic plans. Later, you would like to update your 2025-SPRING registration (XTXT5AY) by adding the course 'Introduction to Drawing' (ART-1101), which fits your schedule and academic interests. You also want Geographic Information Systems (GEOG-2305), which you are keeping, to stay on the grading option it already has on that registration, exactly as it is recorded in the system, since you did not ask to change it. You believe that after the update you will still need to make a separate payment of $1500 to finalize the addition, and you prefer that any payment for the addition be made with your saved Chase bank account ending in 5769 for convenience and record consistency.\n\nUse liam.nguyen1627@univ.edu for authentication.",
       "emotion_instruction": "You feel nervous about this situation and your tone is tense. You need help quickly, but you're unsure if the agent will resolve your issue. Ask direct questions and double-check any answers. Don't reveal full trust until you feel reassured.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -740,24 +744,13 @@
         },
         {
           "action_id": "11_3",
-          "name": "pay_registration",
-          "arguments": {
-            "registration_id": "AH2ZJKP",
-            "payment": {
-              "payment_id": "1C8UBDL",
-              "amount": -100
-            }
-          }
-        },
-        {
-          "action_id": "11_4",
           "name": "get_registration_details",
           "arguments": {
             "registration_id": "AH2ZJKP"
           }
         },
         {
-          "action_id": "11_5",
+          "action_id": "11_4",
           "name": "cancel_registration",
           "arguments": {
             "registration_id": "AV6XFBI"
@@ -1005,17 +998,6 @@
           "name": "get_course_details",
           "arguments": {
             "course_id": "PDJMO1C"
-          }
-        },
-        {
-          "action_id": "15_2",
-          "name": "pay_registration",
-          "arguments": {
-            "registration_id": "B7PJYBO",
-            "payment": {
-              "payment_id": "W7ZLJFN",
-              "amount": -500
-            }
           }
         }
       ],
@@ -1303,29 +1285,18 @@
         },
         {
           "action_id": "19_1",
-          "name": "pay_registration",
-          "arguments": {
-            "registration_id": "QVGFD7Y",
-            "payment": {
-              "payment_id": "CBPMFNB",
-              "amount": -1000
-            }
-          }
-        },
-        {
-          "action_id": "19_2",
           "name": "list_departments",
           "arguments": {}
         },
         {
-          "action_id": "19_3",
+          "action_id": "19_2",
           "name": "list_courses_by_term",
           "arguments": {
             "term": "2025-SPRING"
           }
         },
         {
-          "action_id": "19_4",
+          "action_id": "19_3",
           "name": "update_registration_courses",
           "arguments": {
             "registration_id": "QVGFD7Y",
@@ -1338,7 +1309,7 @@
           }
         },
         {
-          "action_id": "19_5",
+          "action_id": "19_4",
           "name": "search_courses",
           "arguments": {
             "term": "2025-SPRING",
@@ -2280,24 +2251,13 @@
       "actions": [
         {
           "action_id": "31_0",
-          "name": "pay_registration",
-          "arguments": {
-            "registration_id": "91Z37LW",
-            "payment": {
-              "payment_id": "DMN03VB",
-              "amount": -1000
-            }
-          }
-        },
-        {
-          "action_id": "31_1",
           "name": "get_registration_details",
           "arguments": {
             "registration_id": "91Z37LW"
           }
         },
         {
-          "action_id": "31_2",
+          "action_id": "31_1",
           "name": "get_course_meeting_status",
           "arguments": {
             "course_id": "E9KON6B",
@@ -2676,31 +2636,20 @@
       "actions": [
         {
           "action_id": "37_0",
-          "name": "pay_registration",
-          "arguments": {
-            "registration_id": "OZ6WVZV",
-            "payment": {
-              "payment_id": "SE6HKVA",
-              "amount": -1592
-            }
-          }
-        },
-        {
-          "action_id": "37_1",
           "name": "get_registration_details",
           "arguments": {
             "registration_id": "OZ6WVZV"
           }
         },
         {
-          "action_id": "37_2",
+          "action_id": "37_1",
           "name": "list_courses_by_term",
           "arguments": {
             "term": "2025-SPRING"
           }
         },
         {
-          "action_id": "37_3",
+          "action_id": "37_2",
           "name": "search_courses",
           "arguments": {
             "term": "2025-SPRING",

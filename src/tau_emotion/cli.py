@@ -23,10 +23,18 @@ from tau_emotion.config import (
 from tau_emotion.data_model.simulation import TextRunConfig
 from tau_emotion.run import get_options, run_domain
 
+# Registered for the tests only (the mock domain and its solo-mode agent and
+# user), so the CLI doesn't offer them.
+TEST_ONLY_OPTIONS = {"mock", "llm_agent_solo", "dummy_user"}
+
+
+def _public(options: list[str]) -> list[str]:
+    return [o for o in options if o not in TEST_ONLY_OPTIONS]
+
 
 def add_run_args(parser):
     """Add run arguments to a parser."""
-    domains = get_options().domains
+    domains = _public(get_options().domains)
     parser.add_argument(
         "--domain",
         "-d",
@@ -44,7 +52,7 @@ def add_run_args(parser):
         "--agent",
         type=str,
         default=DEFAULT_AGENT_IMPLEMENTATION,
-        choices=get_options().agents,
+        choices=_public(get_options().agents),
         help=f"The agent implementation to use. Default is {DEFAULT_AGENT_IMPLEMENTATION}.",
     )
     parser.add_argument(
@@ -79,8 +87,8 @@ def add_run_args(parser):
         type=str,
         default=None,
         help="API key for the agent's server. Default: the provider's env var "
-        "(OPENAI_API_KEY for bare and openai/ model names), or no key when --agent-api-base "
-        "is given, so the key isn't sent to another server. Not saved in the results.",
+        "(OPENAI_API_KEY for bare and openai/ model names), or the placeholder EMPTY when "
+        "--agent-api-base is given, so the key isn't sent to another server. Not saved in the results.",
     )
     parser.add_argument(
         "--agent-enable-thinking",
@@ -92,7 +100,7 @@ def add_run_args(parser):
     parser.add_argument(
         "--user",
         type=str,
-        choices=get_options().users,
+        choices=_public(get_options().users),
         default=DEFAULT_USER_IMPLEMENTATION,
         help=f"The user implementation to use. Default is {DEFAULT_USER_IMPLEMENTATION}.",
     )
@@ -121,8 +129,8 @@ def add_run_args(parser):
         type=str,
         default=None,
         help="API key for the user's server. Default: the provider's env var "
-        "(OPENAI_API_KEY for bare and openai/ model names), or no key when --user-api-base "
-        "is given, so the key isn't sent to another server. Not saved in the results.",
+        "(OPENAI_API_KEY for bare and openai/ model names), or the placeholder EMPTY when "
+        "--user-api-base is given, so the key isn't sent to another server. Not saved in the results.",
     )
     parser.add_argument(
         "--user-enable-thinking",
@@ -135,7 +143,7 @@ def add_run_args(parser):
         "--task-set-name",
         type=str,
         default=None,
-        choices=get_options().task_sets,
+        choices=_public(get_options().task_sets),
         help="The task set to run the simulation on. If not provided, will load default task set for the domain.",
     )
     parser.add_argument(
@@ -390,7 +398,6 @@ def run_intro():
         "bank",
         "Account, card, loan and beneficiary management, and transfers",
     )
-    domain_table.add_row("mock", "Lightweight test domain for development")
     console.print(domain_table)
     console.print()
 
@@ -541,7 +548,7 @@ def main():
     domain_parser.add_argument(
         "domain",
         type=str,
-        help="Name of the domain to show documentation for (e.g., 'airline', 'mock')",
+        help="Name of the domain to show documentation for (e.g., 'airline', 'bank')",
     )
     domain_parser.set_defaults(func=lambda args: run_show_domain(args))
 
@@ -651,7 +658,7 @@ def main():
         type=str,
         default=None,
         help="API key for the judge's server. Default: the provider's env var, "
-        "or no key when --judge-api-base is given.",
+        "or the placeholder EMPTY when --judge-api-base is given.",
     )
     review_parser.add_argument(
         "--judge-enable-thinking",

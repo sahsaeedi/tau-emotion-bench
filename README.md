@@ -1,6 +1,6 @@
 # τ-emotion-bench
 
-[![python](https://img.shields.io/badge/Python-3.12%2B-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+[![python](https://img.shields.io/badge/Python-3.12%E2%80%933.13-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 A benchmark for customer-service agents talking to **emotional users**. Every task
@@ -26,12 +26,12 @@ repository.
 | travel     |  9 | 7 | 16 | 3/8  |  50 |  124 |
 | movie      | 13 | 3 | 16 | 4/10 |  50 |  231 |
 | bank       | 13 | 9 | 22 | 3/8  |  50 |  228 |
-| **total**  |    |   |    |      | **580** | **2,723** |
+| **total**  | **119** | **56** | **175** | **5/20** | **580** | **2,723** |
 
 - **Read tools** are every tool that does not change the database, including
   `think`, `calculate` and the transfer to a human agent.
 - **Emotions** counts the distinct emotion families and subfamilies across a
-  domain's test tasks.
+  domain's test tasks; the total counts them across all domains.
 
 - **Test tasks** (`tasks.json`) are the benchmark. They run against `db.json`.
 - **Train tasks** (`tasks_train.json`) are separate tasks for training models, run
@@ -59,7 +59,7 @@ conversation runs.
 
 ## Installation
 
-Requires Python 3.12. With [uv](https://docs.astral.sh/uv/getting-started/installation/):
+Requires Python 3.12 or 3.13. With [uv](https://docs.astral.sh/uv/getting-started/installation/):
 
 ```bash
 git clone https://github.com/sahsaeedi/tau-emotion-bench.git
@@ -179,7 +179,8 @@ This repository is released under the [Apache License 2.0](LICENSE).
 We thank the authors of [τ-bench](https://github.com/sierra-research/tau-bench) and
 [τ²-bench](https://github.com/sierra-research/tau2-bench). τ-emotion-bench follows
 τ-bench's conventions for running and scoring conversations, and its code is
-organized in τ²-bench's format. TRACER's domain environments and model utilities
-build on [τ-trait](https://github.com/collinear-ai/tau-trait). All three are
+organized in τ²-bench's format. TRACER's airline and retail environments build on
+τ-bench, and its telecom and telehealth environments on
+[τ-trait](https://github.com/collinear-ai/tau-trait). All three are
 MIT-licensed; their licence notices, and which parts of this repository use them,
 are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

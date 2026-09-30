@@ -150,7 +150,7 @@ Follow these instructions exactly.
 
 # ---------------------------------------------------------------------
 # Optional: representative benchmark task categories per domain
-# (aligned to tracer/envs/{telecom,telehealth,airline,retail}/tasks_test.py — soft guidance only)
+# (soft guidance only)
 # ---------------------------------------------------------------------
 TASK_CONTEXT_TELECOM = """
 • Identity / lookup: find customer by email or phone; load customer/account details.

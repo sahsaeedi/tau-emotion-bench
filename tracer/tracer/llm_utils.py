@@ -28,9 +28,8 @@ _routers: Dict[Tuple[str, Optional[str]], Router] = {}
 def _get_router(full_model: str, api_base: Optional[str]) -> Router:
     key = (full_model, api_base)
     if key not in _routers:
-        # Hard per-request timeout. Without it a dropped VPN/proxy connection stays
-        # ESTABLISHED with zero bytes and the job waits forever (seen: 6 jobs stalled
-        # 30+ min). A normal ReAct step is 10-90 s; 300 s leaves room for a 30k-token
+        # Hard per-request timeout. Without it a dropped connection can stay open
+        # with no data and the job waits forever. A normal ReAct step is 10-90 s; 300 s leaves room for a 30k-token
         # context, and TimeoutErrorRetries below retries on a fresh connection.
         litellm_params: Dict[str, Any] = {"model": full_model, "timeout": 300}
         if api_base:
@@ -51,8 +50,8 @@ def _get_router(full_model: str, api_base: Optional[str]) -> Router:
             ),
             num_retries=6,
             retry_after=30,  # minimum seconds between retries
-            timeout=300,  # Router-level too: the litellm_params timeout alone did
-            # not fire on a stalled connection (9 jobs idle 70 min)
+            timeout=300,  # Router-level too: the litellm_params timeout alone
+            # does not fire on a stalled connection
             disable_cooldowns=True,  # cooldowns require multiple deployments; with one model they block all calls
         )
     return _routers[key]

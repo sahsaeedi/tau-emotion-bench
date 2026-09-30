@@ -1,15 +1,16 @@
-"""Toolkit for the airline domain (ported from v1 tau-emotion-bench).
+"""Toolkit for the airline domain (ported from TRACER's
+`tracer/tracer/envs/airline/tools/`).
 
-14 tools mirroring v1's `ALL_TOOLS`, including v1's checks, database writes and
-return values. Conversion rules from v1:
+14 tools mirroring TRACER's `ALL_TOOLS`, including TRACER's checks, database writes and
+return values. Conversion rules from TRACER:
 
-- v1 `data["reservations"]` → `self.db.reservations`.
-- v1 `return "Error: ..."`, and any exception v1 raises (e.g. a KeyError), →
+- TRACER `data["reservations"]` → `self.db.reservations`.
+- TRACER `return "Error: ..."`, and any exception TRACER raises (e.g. a KeyError), →
   an exception with the same message. Both frameworks show exceptions to the
   agent as "Error: <message>".
-- v1 `return json.dumps(record)` → `_record_json(record)`, which leaves out
-  fields the record never had, as v1's raw dict would.
-- v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
+- TRACER `return json.dumps(record)` → `_record_json(record)`, which leaves out
+  fields the record never had, as TRACER's raw dict would.
+- TRACER free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 
 Unlike upstream tau2-bench, booking does not take seats off the flight, a
 flight change keeps the reservation's original cabin, and one-stop search
@@ -38,7 +39,7 @@ from tau_emotion.domains.airline.data_model import (
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
 CREATED_AT = "2024-05-15T15:00:00"
-# v1 assumes each task makes at most 3 reservations and sends at most 3
+# TRACER assumes each task makes at most 3 reservations and sends at most 3
 # certificates.
 NEW_RESERVATION_IDS = ["HATHAT", "HATHAU", "HATHAV"]
 NEW_CERTIFICATE_NUMBERS = [3221322, 3221323, 3221324]
@@ -79,7 +80,7 @@ def _as_dicts(items: List[Any]) -> List[dict]:
 
 
 def _flight_on_date(flight: Flight, date: str) -> dict:
-    """v1's search row: the flight without `dates`, plus that date's status."""
+    """TRACER's search row: the flight without `dates`, plus that date's status."""
     row = flight.model_dump(exclude={"dates"})
     row.update(flight.dates[date].model_dump())
     return row
@@ -95,7 +96,7 @@ class AirlineTools(ToolKitBase):
 
     def _price_flight(self, flight: dict, cabin: str, num_passengers: int) -> int:
         """Check a new flight segment and fill in its price, origin and
-        destination, as v1 does. Returns the segment's total price."""
+        destination, as TRACER does. Returns the segment's total price."""
         flight_number = flight["flight_number"]
         if flight_number not in self.db.flights:
             raise ValueError(f"flight {flight_number} not found")
@@ -119,7 +120,7 @@ class AirlineTools(ToolKitBase):
     def _update_payment_method(
         self, user_id: str, payment_id: str, total_price: int
     ) -> Any:
-        """v1's payment checks for reservation updates."""
+        """TRACER's payment checks for reservation updates."""
         payment_methods = self.db.users[user_id].payment_methods
         if payment_id not in payment_methods:
             raise ValueError("payment method not found")
@@ -169,7 +170,7 @@ class AirlineTools(ToolKitBase):
             raise ValueError("user not found")
         user = self.db.users[user_id]
 
-        # A fourth booking in one task overwrites HATHAV, as in v1.
+        # A fourth booking in one task overwrites HATHAV, as in TRACER.
         reservation_id = next(
             (
                 rid
@@ -222,7 +223,7 @@ class AirlineTools(ToolKitBase):
             insurance=insurance,
         )
 
-        # v1 deducts payments but leaves the flights' available seats alone.
+        # TRACER deducts payments but leaves the flights' available seats alone.
         for payment_method in payment_methods:
             payment_id = payment_method["payment_id"]
             user_payment_method = user.payment_methods[payment_id]
@@ -368,7 +369,7 @@ class AirlineTools(ToolKitBase):
                     ):
                         result1 = _flight_on_date(flight1, date)
                         result1["date"] = date
-                        # v1 reads the second flight's status, seats and prices
+                        # TRACER reads the second flight's status, seats and prices
                         # for `date`, not `date2`.
                         result2 = _flight_on_date(flight2, date)
                         result2["date"] = date2
@@ -513,7 +514,7 @@ class AirlineTools(ToolKitBase):
 
         if payment_method.source == "gift_card":
             payment_method.amount -= total_price
-        # v1 keeps the reservation's original cabin and leaves flight seats alone.
+        # TRACER keeps the reservation's original cabin and leaves flight seats alone.
         reservation.flights = new_flights
         if total_price != 0:
             reservation.payment_history.append(

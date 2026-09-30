@@ -1,7 +1,7 @@
 """Toolkit for the movie domain, ported from TRACER's environment
 (tracer/tracer/envs/movie/).
 
-16 tools: one per tool module in tracer/tracer/envs/movie/tools/, plus `think`.
+16 tools: one per tool module in tracer/tracer/envs/movie/tools/.
 Conversion rules from TRACER's tools:
 
 - `data["theaters"]` → `self.db.theaters`.

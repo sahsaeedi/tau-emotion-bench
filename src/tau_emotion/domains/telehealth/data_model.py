@@ -285,7 +285,7 @@ class MedicationSupplier(BaseModel):
 
 
 # ---------------------------------------------------------------------------
-# Telemetry inventory + uploads (both lists in v1)
+# Telemetry inventory + uploads (both lists in TRACER)
 # ---------------------------------------------------------------------------
 
 

@@ -1,7 +1,7 @@
 """Toolkit for the travel domain, ported from TRACER's environment
 (tracer/tracer/envs/travel/).
 
-16 tools: one per tool module in tracer/tracer/envs/travel/tools/, plus `think`.
+16 tools: one per tool module in tracer/tracer/envs/travel/tools/.
 Conversion rules from TRACER's tools:
 
 - `data["packages"]` → `self.db.packages`.

@@ -60,7 +60,7 @@ def test_manage_billing_writes_billing_record_only(tools: TelecomTools):
 
     result = json.loads(
         tools.manage_billing(
-            CUSTOMER_ID, paperless=False, auto_pay=True, billing_cycle="weekly"
+            CUSTOMER_ID, paperless=False, auto_pay=True, billing_cycle="quarterly"
         )
     )
 
@@ -68,19 +68,27 @@ def test_manage_billing_writes_billing_record_only(tools: TelecomTools):
     assert (billing.paperless, billing.auto_pay, billing.billing_cycle) == (
         False,
         True,
-        "weekly",
+        "quarterly",
     )
     assert result["customer_id"] == CUSTOMER_ID
-    assert result["billing"]["billing_cycle"] == "weekly"
+    assert result["billing"]["billing_cycle"] == "quarterly"
     assert (
         tools.db.customers[CUSTOMER_ID].billing_preferences.model_dump() == prefs_before
     )
+    with pytest.raises(ValueError, match="Invalid billing cycle"):
+        tools.manage_billing(
+            CUSTOMER_ID, paperless=False, auto_pay=True, billing_cycle="weekly"
+        )
 
 
-def test_modify_support_ticket_accepts_any_status(tools: TelecomTools):
-    tools.modify_support_ticket(TICKET_ID, status="pending", priority="whenever")
+def test_modify_support_ticket_accepts_only_listed_values(tools: TelecomTools):
+    tools.modify_support_ticket(TICKET_ID, status="pending", priority="urgent")
     ticket = tools.db.support_tickets[TICKET_ID]
-    assert (ticket.status, ticket.priority) == ("pending", "whenever")
+    assert (ticket.status, ticket.priority) == ("pending", "urgent")
+    with pytest.raises(ValueError, match="Invalid priority"):
+        tools.modify_support_ticket(TICKET_ID, status="pending", priority="whenever")
+    with pytest.raises(ValueError, match="Invalid status"):
+        tools.modify_support_ticket(TICKET_ID, status="Closed", priority="low")
 
 
 def test_record_payment_returns_tracer_summary(tools: TelecomTools):
@@ -121,7 +129,7 @@ def test_troubleshoot_device_follows_tracer(tools: TelecomTools):
     )
     with pytest.raises(ValueError, match="not a valid Issue"):
         tools.troubleshoot_device("No Such Device", "overheating")
-    with pytest.raises(ValueError, match="NO_SIGNAL"):
+    with pytest.raises(ValueError, match="No troubleshooting steps"):
         tools.troubleshoot_device("HD Cable Box", "slow_speeds")
 
 

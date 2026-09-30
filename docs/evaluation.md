@@ -26,8 +26,8 @@ required of the agent, this page is for you.
   tool calls that produces an equivalent DB end state passes the DB
   check.
 - The agent is required to match `actions` *only* when `RewardType.ACTION`
-  is in `reward_basis`. No task of the 10 domains uses it; only a few
-  `mock` test fixtures do. When that flag is set, the listed actions are
+  is in `reward_basis`. No task of the 10 domains uses it. When that flag
+  is set, the listed actions are
   treated as the assumed-unique correct trajectory — which is a strong
   assumption and is why the benchmark tasks deliberately do not use it.
 - This was a deliberate design choice upstream in τ²-bench (see
@@ -82,8 +82,10 @@ is always 1.0 and the score comes down to the DB check.
 
 ### Train tasks
 
-Train tasks (`tasks_train.json`, `split: "train"`) reference records that
-exist only in `db_train.json`. The runner builds both the predicted and
+Train tasks (`tasks_train.json`, `split: "train"`) run on `db_train.json`.
+For bank, basketball, movie, restaurant, school and travel it holds records
+that exist only there; for the other four domains it is a copy of
+`db.json`. The runner builds both the predicted and
 the gold environment on that database for them, so they are scored the
 same way as test tasks.
 
@@ -98,6 +100,12 @@ The evaluator first looks at why the conversation ended
 | `user_unsatisfied`: the simulated user wrote `###UNSATISFIED###`, giving up because the agent ignored their emotional needs, eroded trust, or created friction | **-1** (`USER_UNSATISFIED_REWARD`), no other check runs |
 | `user_stop` (`###STOP###` and the other user stop tokens) or `agent_stop` (including a call to a transfer tool such as `transfer_to_human_agents`, which ends the conversation) | scored with `reward_basis` as described above |
 | anything else (`max_steps`, `too_many_errors`, `timeout`, errors) | **0** |
+
+This includes the agent model's own failures: tool-call arguments that are
+not valid JSON end the run as `agent_error`, and a conversation longer than
+its context window as `context_window_exceeded`. Other exceptions (API
+outages, rate limits) are retried, and a run that still fails is saved as
+`infrastructure_error`, left out of the metrics and run again on resume.
 
 The -1 sits below the 0 of a run that simply failed or ran out of steps,
 so an agent that drives an emotional user away scores worse than one that
@@ -237,8 +245,7 @@ termination rules above) and is not changed by these diagnostic options.
 ## When does `RewardType.ACTION` get used?
 
 None of the 10 domains' tasks put `ACTION` in `reward_basis`; their
-evaluation is end-state only, by design. It appears only in a few tasks
-of the `mock` test fixture.
+evaluation is end-state only, by design.
 
 If you build your own domain or task and want the agent's tool calls to
 be a hard requirement (not just a side-effect on the DB), you can put

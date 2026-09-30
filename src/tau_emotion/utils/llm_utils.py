@@ -60,8 +60,6 @@ llm_log_dir: ContextVar[Optional[Path]] = ContextVar("llm_log_dir", default=None
 # Context variable to store the LLM logging mode ("all" or "latest")
 llm_log_mode: ContextVar[str] = ContextVar("llm_log_mode", default="latest")
 
-# litellm._turn_on_debug()
-
 logging.getLogger("LiteLLM").setLevel(logging.WARNING)
 
 if USE_LANGFUSE:
@@ -73,12 +71,6 @@ litellm.drop_params = True
 # Stops litellm printing its provider list and help links to stdout; the
 # exceptions it raises still carry the details.
 litellm.suppress_debug_info = True
-
-warnings.filterwarnings(
-    "ignore",
-    message="Pydantic serializer warnings:",
-    category=UserWarning,
-)
 
 if LLM_CACHE_ENABLED:
     if DEFAULT_LLM_CACHE_TYPE == "redis":
@@ -151,30 +143,6 @@ def get_response_usage(response: ModelResponse) -> Optional[dict]:
         "completion_tokens": usage.completion_tokens,
         "prompt_tokens": usage.prompt_tokens,
     }
-
-
-def to_tau_emotion_messages(
-    messages: list[dict], ignore_roles: set[str] = set()
-) -> list[Message]:
-    """
-    Convert a list of messages from a dictionary to a list of Tau-Emotion messages.
-    """
-    tau_emotion_messages = []
-    for message in messages:
-        role = message["role"]
-        if role in ignore_roles:
-            continue
-        if role == "user":
-            tau_emotion_messages.append(UserMessage(**message))
-        elif role == "assistant":
-            tau_emotion_messages.append(AssistantMessage(**message))
-        elif role == "tool":
-            tau_emotion_messages.append(ToolMessage(**message))
-        elif role == "system":
-            tau_emotion_messages.append(SystemMessage(**message))
-        else:
-            raise ValueError(f"Unknown message type: {role}")
-    return tau_emotion_messages
 
 
 def _reasoning_content(message: AssistantMessage) -> Optional[str]:
@@ -335,7 +303,7 @@ def _write_llm_log(
         request_data: Dictionary containing request information
         response_data: Dictionary containing response information
         call_name: Optional name identifying the purpose of this LLM call
-                   (e.g., "detect_interrupt", "generate_agent_message")
+                   (e.g., "generate_agent_message")
     """
     log_dir = llm_log_dir.get()
 
@@ -441,11 +409,11 @@ def generate(
         tools: The tools to use.
         tool_choice: The tool choice to use.
         call_name: Optional name identifying the purpose of this LLM call
-                   (e.g., "detect_interrupt", "generate_agent_message").
+                   (e.g., "generate_agent_message").
                    Used for logging and debugging.
         **kwargs: Additional arguments to pass to the model.
 
-    Returns: A tuple containing the message and the cost.
+    Returns: The assistant message, with its cost and usage.
     """
     validate_message_history(messages)
     model = resolve_model(model)
@@ -562,22 +530,6 @@ def get_cost(messages: list[Message]) -> tuple[float, float] | None:
             logger.warning(f"Message {message.role}: {message.content} has no cost")
             return None
     return agent_cost, user_cost
-
-
-def get_token_usage(messages: list[Message]) -> dict:
-    """
-    Get the token usage of the interaction between the agent and the user.
-    """
-    usage = {"completion_tokens": 0, "prompt_tokens": 0}
-    for message in messages:
-        if isinstance(message, ToolMessage):
-            continue
-        if message.usage is None:
-            logger.warning(f"Message {message.role}: {message.content} has no usage")
-            continue
-        usage["completion_tokens"] += message.usage["completion_tokens"]
-        usage["prompt_tokens"] += message.usage["prompt_tokens"]
-    return usage
 
 
 def extract_json_from_llm_response(response: str) -> str:

@@ -73,7 +73,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "domain",
         type=str,
-        help="Name of the domain to show documentation for (e.g., 'airline', 'mock')",
+        help="Name of the domain to show documentation for (e.g., 'airline', 'bank')",
     )
     args = parser.parse_args()
     main(domain=args.domain)

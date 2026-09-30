@@ -124,7 +124,7 @@ class Billing(BaseModel):
     payment_history: List[PaymentRecord] = Field(default_factory=list)
     auto_pay: bool = False
     paperless: bool = False
-    # Set by manage_billing, which (like v1) writes the cycle here rather than
+    # Set by manage_billing, which (like TRACER) writes the cycle here rather than
     # to the customer's billing_preferences.
     billing_cycle: Optional[str] = None
 
@@ -137,7 +137,7 @@ class Billing(BaseModel):
 class SupportTicket(BaseModel):
     ticket_id: str
     customer_id: str
-    # Free-form: v1's modify_support_ticket stores any status and priority.
+    # Free-form strings; modify_support_ticket accepts only the listed values.
     status: str
     priority: str
     # Added at creation time by the create_support_ticket tool; absent on

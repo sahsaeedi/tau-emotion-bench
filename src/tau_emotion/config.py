@@ -54,8 +54,6 @@ DEFAULT_LLM_LOG_MODE = "latest"  # Options: "all", "latest"
 DEFAULT_MAX_RETRIES = 3
 DEFAULT_RETRY_ATTEMPTS = 3
 DEFAULT_RETRY_MIN_WAIT = 1.0  # seconds
-DEFAULT_RETRY_MAX_WAIT = 10.0  # seconds
-DEFAULT_RETRY_MULTIPLIER = 1.0  # exponential backoff multiplier
 
 # LiteLLM cache
 LLM_CACHE_ENABLED = False
@@ -75,7 +73,7 @@ USE_LANGFUSE = False
 # =============================================================================
 # API SERVICE (fixed)
 # =============================================================================
-API_PORT = 8000
+API_PORT = 8001
 
 # =============================================================================
 # DISPLAY

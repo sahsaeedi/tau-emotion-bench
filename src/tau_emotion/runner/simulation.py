@@ -41,14 +41,17 @@ def run_simulation(
         SimulationRun with reward_info attached.
 
     Example:
-        # Build your own instances (no registry needed):
+        # Build your own instances (the domain must still be registered,
+        # since scoring rebuilds its environment):
         env = MyEnvironment()
         agent = MyAgent(tools=env.get_tools(), domain_policy=env.get_policy())
-        user = UserSimulator(llm="gpt-4.1", instructions=task.user_scenario,
-                             tools=env.get_user_tools())
+        user = UserSimulator(
+            llm="gpt-4.1",
+            instructions=task.user_scenario.to_tau_bench_instruction(),
+            tools=env.get_user_tools(),
+        )
         orchestrator = Orchestrator(
-            domain="airline", agent=agent, user=user,
-            environment=env, task=task, max_steps=100,
+            domain="airline", agent=agent, user=user, environment=env, task=task,
         )
         result = run_simulation(orchestrator)
         print(result.reward_info.reward)

@@ -68,58 +68,6 @@ class ToolCall(BaseModel):
         lines.append(f"arguments:\n{json.dumps(self.arguments, indent=2)}")
         return "\n".join(lines)
 
-    @classmethod
-    def from_string(cls, string: str) -> "ToolCall":
-        """
-        Inverse of above __str__ method.
-        Parses a string representation back into a ToolCall object.
-        Format expected:
-            ToolCall (from <requestor>)
-            id: <id>
-            name: <name>
-            arguments:
-            {json}
-        """
-        lines = string.strip().split("\n")
-
-        # Parse first line for requestor
-        first_line = lines[0]
-        if "from assistant" in first_line:
-            requestor = "assistant"
-        elif "from user" in first_line:
-            requestor = "user"
-        else:
-            requestor = "assistant"  # default
-
-        # Parse remaining lines
-        tool_id = ""
-        name = ""
-        arguments = {}
-
-        i = 1
-        while i < len(lines):
-            line = lines[i]
-
-            if line.startswith("id: "):
-                tool_id = line[4:].strip()
-            elif line.startswith("name: "):
-                name = line[6:].strip()
-            elif line.startswith("arguments:"):
-                # Collect all remaining lines as JSON
-                json_lines = lines[i + 1 :]
-                json_str = "\n".join(json_lines)
-                arguments = json.loads(json_str)
-                break
-
-            i += 1
-
-        return cls(
-            id=tool_id,
-            name=name,
-            arguments=arguments,
-            requestor=requestor,
-        )
-
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, ToolCall):
             return False

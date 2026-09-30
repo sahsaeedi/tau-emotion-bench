@@ -77,7 +77,7 @@ def get_tasks(
 def get_tasks_split() -> dict[str, list[str]]:
     """Split-name -> task-id mapping, derived from the task files.
 
-    'base' is the shipped benchmark set; 'train' is empty until the training
-    tasks are built.
+    'base' and 'test' are the benchmark set (tasks.json); 'train' is
+    tasks_train.json.
     """
     return task_splits(RETAIL_TASK_SET_PATH, RETAIL_TRAIN_TASK_SET_PATH)

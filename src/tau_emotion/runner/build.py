@@ -40,7 +40,7 @@ def build_environment(
         solo_mode: If True, environment is built in solo mode (agent gets
             access to both agent and user tools).
         env_kwargs: Additional keyword arguments passed to the environment
-            constructor (currently unused — kept for forward compatibility).
+            constructor, e.g. {"db_split": "train"} for a train task.
 
     Returns:
         A fully constructed Environment instance.

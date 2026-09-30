@@ -1,3 +1,4 @@
+import json
 import time
 import uuid
 from abc import ABC, abstractmethod
@@ -6,6 +7,7 @@ from datetime import datetime, timedelta
 from enum import Enum
 from typing import Any, Generic, Optional, TypeVar
 
+from litellm.exceptions import ContextWindowExceededError
 from loguru import logger
 
 from tau_emotion.agent.base_agent import (
@@ -14,7 +16,7 @@ from tau_emotion.agent.base_agent import (
     is_valid_agent_history_message,
 )
 from tau_emotion.agent.llm_agent import LLMSoloAgent
-from tau_emotion.config import TERMINATE_TOOLS
+from tau_emotion.config import DEFAULT_MAX_ERRORS, DEFAULT_MAX_STEPS, TERMINATE_TOOLS
 from tau_emotion.data_model.message import (
     AssistantMessage,
     Message,
@@ -25,7 +27,7 @@ from tau_emotion.data_model.message import (
 )
 from tau_emotion.data_model.simulation import SimulationRun, TerminationReason
 from tau_emotion.data_model.tasks import EnvFunctionCall, InitializationData, Task
-from tau_emotion.environment.environment import Environment, EnvironmentInfo
+from tau_emotion.environment.environment import Environment
 from tau_emotion.orchestrator.modes import CommunicationMode
 from tau_emotion.user.user_simulator import DummyUser, UserSimulator, UserState
 from tau_emotion.user.user_simulator_base import (
@@ -90,8 +92,8 @@ class BaseOrchestrator(ABC, Generic[BaseAgentT, BaseUserT, TrajectoryItemT]):
         user: BaseUserT,
         environment: Environment,
         task: Task,
-        max_steps: int = 100,
-        max_errors: int = 10,
+        max_steps: int = DEFAULT_MAX_STEPS,
+        max_errors: int = DEFAULT_MAX_ERRORS,
         seed: Optional[int] = None,
         simulation_id: Optional[str] = None,
         timeout: Optional[float] = None,
@@ -231,8 +233,8 @@ class BaseOrchestrator(ABC, Generic[BaseAgentT, BaseUserT, TrajectoryItemT]):
     def _cleanup(self) -> None:
         """Best-effort cleanup of agent and user resources.
 
-        Called from the ``finally`` block of :meth:`run` so that WebSocket
-        connections, background threads, and other resources are released
+        Called from the ``finally`` block of :meth:`run` so that background
+        threads and other resources are released
         even when ``step()`` raises an unexpected exception.
 
         On the normal (non-error) path ``_finalize()`` handles cleanup
@@ -361,10 +363,6 @@ class BaseOrchestrator(ABC, Generic[BaseAgentT, BaseUserT, TrajectoryItemT]):
             return MultiToolMessage(role="tool", tool_messages=tool_results)
         return tool_results[0]
 
-    def _get_environment_info(self) -> EnvironmentInfo:
-        """Get the environment info."""
-        return self.environment.get_info()
-
 
 class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
     """
@@ -417,8 +415,8 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
         user: UserT,
         environment: Environment,
         task: Task,
-        max_steps: int = 100,
-        max_errors: int = 10,
+        max_steps: int = DEFAULT_MAX_STEPS,
+        max_errors: int = DEFAULT_MAX_ERRORS,
         seed: Optional[int] = None,
         solo_mode: bool = False,
         simulation_id: Optional[str] = None,
@@ -869,9 +867,23 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
         elif (
             self.from_role == Role.USER or self.from_role == Role.ENV
         ) and self.to_role == Role.AGENT:
-            agent_msg, self.agent_state = self.agent.generate_next_message(
-                self.message, self.agent_state
-            )
+            try:
+                agent_msg, self.agent_state = self.agent.generate_next_message(
+                    self.message, self.agent_state
+                )
+            except (json.JSONDecodeError, ContextWindowExceededError) as e:
+                # The agent model's own failure (unparsable tool arguments, or a
+                # conversation longer than its context): the run scores 0, as in
+                # τ-bench, instead of being retried and left out of the metrics
+                # as an infrastructure error.
+                logger.warning(f"Agent error, ending the simulation: {e}")
+                self.done = True
+                self.termination_reason = (
+                    TerminationReason.CONTEXT_WINDOW_EXCEEDED
+                    if isinstance(e, ContextWindowExceededError)
+                    else TerminationReason.AGENT_ERROR
+                )
+                return
             self._apply_tau_bench_message_conventions(agent_msg)
             if self.agent.is_stop(agent_msg):
                 self.done = True
@@ -961,7 +973,10 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
                     num_expected_tool_messages = len(msg.tool_calls)
                     requestor = msg.role
                 else:
-                    num_expected_tool_messages == 0
+                    if num_expected_tool_messages > 0:
+                        raise ValueError(
+                            f"{num_expected_tool_messages} tool messages are missing. Got {msg.role} message."
+                        )
                     requestor = None
             elif isinstance(msg, ToolMessage):
                 if num_expected_tool_messages == 0 or requestor is None:
@@ -973,14 +988,6 @@ class Orchestrator(BaseOrchestrator[AgentT, UserT, Message]):
                 num_expected_tool_messages -= 1
             else:
                 raise ValueError(f"Invalid message type: {type(msg)}")
-
-    def _count_errors(self, message_history: list[Message]) -> int:
-        """
-        Count the number of errors in the message history.
-        """
-        return sum(
-            1 for msg in message_history if isinstance(msg, ToolMessage) and msg.error
-        )
 
     def _add_timestamps(
         self, message_history: list[Message]

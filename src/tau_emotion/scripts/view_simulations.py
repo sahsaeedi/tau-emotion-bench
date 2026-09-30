@@ -354,30 +354,12 @@ def display_simulation_with_task(
     )
 
 
-def parse_key(key: str) -> tuple[str, int]:
-    """Parse a key into a task ID and trial number."""
-    task_id, trial = key.split("-")
-    return task_id, int(trial)
-
-
 def find_task_by_id(tasks, task_id):
     """Find a task in the task list by its ID."""
     for task in tasks:
         if task.id == task_id:
             return task
     return None
-
-
-def find_simulation_by_task_id_and_trial(results, task_id, trial):
-    """Get a simulation by its task ID and trial number."""
-    return next(
-        (
-            sim
-            for sim in results.simulations
-            if sim.task_id == task_id and sim.trial == trial
-        ),
-        None,
-    )
 
 
 def main(

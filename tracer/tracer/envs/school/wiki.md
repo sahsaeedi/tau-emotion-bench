@@ -38,7 +38,7 @@ Then collect:
 - Term (format YYYY-TERM, e.g., 2025-SPRING).
 - Study level: undergraduate, graduate, or continuing_ed.
 - Desired courses (course_ids). If the user needs help, use the course search filters to propose options for the provided term.
-- Grading option for each course: letter (default), pass/fail, or audit. If not specified, default is letter.
+- Grading option for each course: letter (default), pass_fail, or audit. If not specified, default is letter.
 - Health insurance choice (yes/no). Health insurance adds a $300 fee if yes.
 
 Constraints and system checks:

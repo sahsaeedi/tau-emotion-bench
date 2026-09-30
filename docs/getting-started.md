@@ -5,7 +5,7 @@ This guide walks you through installing τ-emotion-bench, configuring API keys, 
 ## Prerequisites
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/) — Python package and project manager
-- Python 3.12+ (uv will download it automatically if not present)
+- Python 3.12 or 3.13 (uv will download it automatically if not present)
 
 ## Installation
 
@@ -19,7 +19,7 @@ cd tau-emotion-bench
 ### 2. Install τ-emotion-bench
 
 ```bash
-uv sync                        # core: all 10 domains (+ the mock test fixture)
+uv sync                        # core: all 10 domains
 ```
 
 This creates a virtual environment in `.venv`, installs the core dependencies from the lockfile, and installs the `tau-emotion` command there. The Python version is pinned via `.python-version` (3.12); uv downloads it if needed. Activate the environment so that `tau-emotion` is on your `PATH`:
@@ -70,7 +70,7 @@ Set `OPENAI_API_KEY` (and `ANTHROPIC_API_KEY` for Claude models). For models on 
 
 ## The Benchmark in Brief
 
-- **Domains (10):** `airline`, `retail`, `telecom`, `telehealth`, `bank`, `basketball`, `movie`, `restaurant`, `school`, `travel`. The `mock` domain is a small fixture used only by the tests.
+- **Domains (10):** `airline`, `retail`, `telecom`, `telehealth`, `bank`, `basketball`, `movie`, `restaurant`, `school`, `travel`.
 - **Test tasks:** 580 in `data/tau_emotion/domains/<domain>/tasks.json` (70 each for airline, retail, telecom and telehealth; 50 each for the others). They run against `db.json`. The `base` split (the default) and the `test` split are this same set.
 - **Train tasks:** 2,723 in `tasks_train.json`, selected with `--task-split-name train`. They run against `db_train.json`, which is loaded automatically. They are the tasks a Qwen3.8-27B (thinking) agent solved with reward 1; see [Train tasks](train_tasks.md).
 - **Emotion:** every task's `user_scenario` has an `emotion_instruction` the user simulator acts out, and `emotion_metadata` labels used only for analysis.

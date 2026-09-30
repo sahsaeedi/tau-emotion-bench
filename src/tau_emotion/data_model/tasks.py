@@ -4,10 +4,9 @@ import json
 import textwrap
 import uuid
 from enum import Enum
-from typing import Literal, Optional
+from typing import Annotated, Literal, Optional
 
 from pydantic import BaseModel, Field
-from typing_extensions import Annotated
 
 from tau_emotion.data_model.message import Message, ToolCall, ToolRequestor
 
@@ -478,7 +477,7 @@ class EvaluationCriteria(BaseModel):
         ),
     ]
 
-    communicate_info: Annotated[  # TODO: Deprecate this
+    communicate_info: Annotated[
         Optional[list[str]],
         Field(
             description=(

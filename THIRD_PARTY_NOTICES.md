@@ -8,8 +8,10 @@ Their copyright and permission notices are reproduced here, as that license requ
 
 - Source: https://github.com/sierra-research/tau2-bench
 - Used for: the evaluation framework in `src/tau_emotion/` (agent, user simulator,
-  orchestrator, environment, evaluator, runner, CLI), the `mock` domain, and the
-  tests in `tests/`, with modifications.
+  orchestrator, environment, evaluator, runner, CLI) and the tests and their
+  fixtures, with modifications. τ²-bench's `Tool` class
+  (`src/tau_emotion/environment/tool.py`) is itself adapted from
+  appl (`appl/core/tool.py`, linked in that file).
 
 ```
 MIT License

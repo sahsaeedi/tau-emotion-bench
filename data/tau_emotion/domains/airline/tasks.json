@@ -3,7 +3,7 @@
     "id": "airline_test_0000",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Ethan Nguyen (ethan_nguyen_6045) with two sequential travel requests for the same itinerary. First, you want to book a one-way economy flight from LGA to SFO on 2024-05-28 for Ethan Nguyen, with a one-stop connection via PHX. The preferred itinerary departs LGA in the early morning (around midnight) on flight HAT245 and continues from PHX to SFO in the evening on flight HAT283, due to the single viable one-stop option on this date. You prefer to charge this booking to the Visa card ending in 3303, with 0 checked bags and no insurance. After that, you would like to update the existing round-trip reservation L1QGWV (originally LGA to PHL) to instead fly the same one-stop itinerary from LGA to SFO on 2024-05-28, but in business class. You prefer this change to be applied to the outbound leg only, with the return remaining as originally booked, and any fare difference to be charged to the same Visa card ending in 3303.\n\nUse ethan_nguyen_6045 for authentication.",
+      "instructions": "You are assisting Ethan Nguyen (ethan_nguyen_6045) with two sequential travel requests for the same itinerary. First, you want to book a one-way economy flight from LGA to SFO on 2024-05-28 for Ethan Nguyen, with a one-stop connection via PHX. The preferred itinerary departs LGA in the early morning (around midnight) on flight HAT245 and continues from PHX to SFO in the evening on flight HAT283, due to the single viable one-stop option on this date. You prefer to charge this booking to the Visa card ending in 3303, with 0 checked bags and no insurance. After that, you would like to update the existing round-trip reservation L1QGWV (originally LGA to PHL) to instead fly the same one-stop itinerary from LGA to SFO on 2024-05-28, but in business class. You prefer this change to be applied to the outbound leg only, with the return remaining as originally booked, and any fare difference to be charged to the same Visa card ending in 3303. If the agent says this change to L1QGWV is not possible, accept that and do not ask for any other change to L1QGWV.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse ethan_nguyen_6045 for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -60,25 +60,6 @@
             "nonfree_baggages": 0,
             "insurance": "no"
           }
-        },
-        {
-          "action_id": "0_2",
-          "name": "update_reservation_flights",
-          "arguments": {
-            "reservation_id": "L1QGWV",
-            "cabin": "business",
-            "flights": [
-              {
-                "flight_number": "HAT245",
-                "date": "2024-05-28"
-              },
-              {
-                "flight_number": "HAT283",
-                "date": "2024-05-28"
-              }
-            ],
-            "payment_id": "credit_card_8005628"
-          }
         }
       ],
       "communicate_info": [],
@@ -92,7 +73,7 @@
     "id": "airline_test_0001",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Omar Davis, a regular customer, who initially wanted to explore one-stop flight options from Orlando (MCO) to Las Vegas (LAS) on 2024-05-25 but ultimately prefers a direct flight. You would like to book a direct overnight flight from MCO to LAS on 2024-05-25 for two passengers: Juan Ahmed and Anya Thomas, as saved in your account. You prefer economy class, with 2 checked bags included (no non-free bags) and no travel insurance. You prefer to pay using your saved Visa card ending in 7803.\n\nUse omar_davis_3817 for authentication.",
+      "instructions": "You are Omar Davis, a regular customer, who initially wanted to explore one-stop flight options from Orlando (MCO) to Las Vegas (LAS) on 2024-05-25 but ultimately prefers a direct flight. You would like to book the cheapest direct overnight flight from MCO to LAS on 2024-05-25 for two passengers: Juan Ahmed and Anya Thomas, as saved in your account. You prefer economy class, with 2 checked bags included (no non-free bags) and no travel insurance. You prefer to pay using your saved Visa card ending in 7803.\n\nUse omar_davis_3817 for authentication.",
       "emotion_instruction": "You\u2019re self-confident and focused on efficiency. Avoid small talk or polite formalities. Indicate your needs are urgent and important. Trust the agent to deliver promptly.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -213,7 +194,7 @@
     "id": "airline_test_0003",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are to first search for direct flights from BOS to CLT on 2024-05-22. You would then like to book a one-way business class flight from BOS to CLT on 2024-05-22 for passenger Harper Thomas (DOB 1991-03-20), specifically flight HAT277, which departs in the evening at 19:00, because it matches your preferred travel time and direct routing. You will not be carrying anything. You prefer to pay using your credit card ending in 2008.\n\nUse harper_thomas_8641 for authentication.",
+      "instructions": "You are to first search for direct flights from BOS to CLT on 2024-05-22. You would then like to book a one-way business class flight from BOS to CLT on 2024-05-22 for passenger Harper Thomas (DOB 1991-03-20), specifically flight HAT277, which departs in the evening at 19:00, because it matches your preferred travel time and direct routing. You will not be carrying anything, and you do not want travel insurance. You prefer to pay using your credit card ending in 2008.\n\nUse harper_thomas_8641 for authentication.",
       "emotion_instruction": "You\u2019re really eager to see the outcome and want things sorted now. Communication is brisk and to the point. You trust the agent\u2019s abilities. Push for swift action.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -279,7 +260,7 @@
     "id": "airline_test_0004",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Anya Sanchez, and you want to upgrade your existing PHX to DFW trip on 2024-05-19 (reservation DGLJTR) from economy to business class for both flights HAT156 and HAT055, because you prefer a more comfortable experience on this journey. You also want to add one extra checked bag to this reservation, bringing the total to three bags (one paid), to accommodate your travel needs. You prefer to charge any fare difference to your credit card ending in 3097. Later, you would like to book a new one-way economy flight from PHX to LGA on 2024-05-20 for two passengers (Anya Sanchez and Liam Anderson (dob-1995-03-22), specifically on flight HAT256, which departs in the afternoon, because it fits your schedule. You prefer to use the same credit card ending in 3097 for this booking. Simultaneously, you want to cancel your other reservation LVNBYN (DEN to BOS round trip) and receive a refund to the same card, as your travel plans have changed. After that, you would like to explore one-stop flight options from PHX to LGA on 2024-05-20 as alternatives, in case the direct flight is not ideal, with preferences including early morning, mid-morning, overnight, and late evening departures depending on connection times.\n\nUse anya_sanchez_5251 for authentication.",
+      "instructions": "You are Anya Sanchez, and you want to upgrade your existing PHX to DFW trip on 2024-05-19 (reservation DGLJTR) from economy to business class for both flights HAT156 and HAT055, because you prefer a more comfortable experience on this journey. You also want to add one extra checked bag to this reservation, bringing the total to three bags (one of which you expect to pay for), to accommodate your travel needs. You prefer to charge any fare difference to your credit card ending in 3097. Later, you would like to book a new one-way economy flight from PHX to LGA on 2024-05-20 for two passengers (Anya Sanchez and Liam Anderson (dob-1995-03-22), specifically on flight HAT256, which departs in the afternoon, because it fits your schedule. You prefer to use the same credit card ending in 3097 for this booking, with two checked bags in total and no travel insurance. Simultaneously, you want to cancel your other reservation LVNBYN (DEN to BOS round trip) and receive a refund to the same card, as your travel plans have changed. After that, you would like to explore one-stop flight options from PHX to LGA on 2024-05-20 as alternatives, in case the direct flight is not ideal, with preferences including early morning, mid-morning, overnight, and late evening departures depending on connection times. For those one-stop alternatives, you only want to see the options; you will decide later and do not want to book any of them in this conversation.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse anya_sanchez_5251 for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -304,7 +285,7 @@
           "arguments": {
             "reservation_id": "DGLJTR",
             "total_baggages": 3,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_2382743"
           }
         },
@@ -402,7 +383,7 @@
     "id": "airline_test_0005",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Isabella Khan, and you want to update your existing reservation I3EHXC for a one-way business class flight from PHX to LGA on 2024-05-21. First, you want to add one checked bag, increasing total bags to two with one paid, because you need extra luggage. You prefer to charge the additional bag fee to your Visa card ending in 4156, as it's your primary payment method. Then, you want to change your flight to a morning departure on 2024-05-21 from PHX to LGA, specifically flight HAT226 departing at 08:00, to better fit your schedule, and you prefer to use the same Visa card ending in 4156 for any fare difference. Later, you would like to book a new one-way economy class flight from PHX to LGA on 2024-05-20 for two passengers: yourself (Isabella Khan) and Juan Thomas. You prefer the overnight flight HAT051 departing at 01:00, as it aligns with your travel plans, and you want to include one free checked bag with no insurance. You prefer to pay for this booking with your Visa card ending in 4156. After that, you would like to explore available one-stop flight options from PHX to LGA on 2024-05-20 to compare alternatives, even though you have already selected a direct flight.\n\nUse isabella_khan_3247 for authentication.",
+      "instructions": "You are Isabella Khan, and you want to update your existing reservation I3EHXC for a one-way business class flight from PHX to LGA on 2024-05-21. First, you want to add one checked bag, increasing total bags to two, one of which you expect to pay for, because you need extra luggage. You prefer to charge any bag fee to your Visa card ending in 4156, as it's your primary payment method. Then, you want to change your flight to a morning departure on 2024-05-21 from PHX to LGA, specifically flight HAT226 departing at 08:00, to better fit your schedule, and you prefer to use the same Visa card ending in 4156 for any fare difference. Later, you would like to book a new one-way economy class flight from PHX to LGA on 2024-05-20 for two passengers: yourself (Isabella Khan) and Juan Thomas. You prefer the overnight flight HAT051 departing at 01:00, as it aligns with your travel plans, and you want to include one free checked bag with no insurance. You prefer to pay for this booking with your Visa card ending in 4156. After that, you would like to explore available one-stop flight options from PHX to LGA on 2024-05-20 to compare alternatives, even though you have already selected a direct flight. For those one-stop alternatives, you only want to see the options; you will decide later and do not want to book any of them in this conversation.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse isabella_khan_3247 for authentication.",
       "emotion_instruction": "You\u2019re self-confident and focused on efficiency. Avoid small talk or polite formalities. Indicate your needs are urgent and important. Trust the agent to deliver promptly.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -427,7 +408,7 @@
           "arguments": {
             "reservation_id": "I3EHXC",
             "total_baggages": 2,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_2364106"
           }
         },
@@ -495,13 +476,6 @@
         },
         {
           "action_id": "5_5",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "I3EHXC"
-          }
-        },
-        {
-          "action_id": "5_6",
           "name": "search_onestop_flight",
           "arguments": {
             "origin": "PHX",
@@ -521,7 +495,7 @@
     "id": "airline_test_0006",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Lei Patel, a silver member, and you want to book a one-way economy flight from JFK to MIA on 2024-05-20 for yourself in the evening, specifically flight HAT126, because it fits your revised travel plans. You prefer to pay using your Mastercard ending in 1592 and want to include 1 total baggage with no non-free charges and no insurance. Later, you want to update the baggage allowance on your existing reservation C2HHXF (JFK to CLT via DTW on 2024-05-25 for passenger Fatima Moore) to 3 total bags with 1 non-free bag, charging the difference to your Mastercard ending in 1592, because you initially increased your luggage needs. After that, you want to cancel reservation C2HHXF due to a scheduling conflict. Since the flight was cancelled by you and it carried one passenger, you would like a $100 compensation certificate as per policy.\n\nUse lei_patel_4666 for authentication.",
+      "instructions": "You are Lei Patel, a silver member, and you want to book a one-way economy flight from JFK to MIA on 2024-05-20 for yourself in the evening, specifically flight HAT126, because it fits your revised travel plans. You prefer to pay using your Mastercard ending in 1592 and want to include 1 total baggage with no non-free charges and no insurance. Later, you want to update the baggage allowance on your existing reservation C2HHXF (JFK to CLT via DTW on 2024-05-25 for passenger Fatima Moore) to 3 total bags, one of which you expect to pay for, charging any fee to your Mastercard ending in 1592, because you initially increased your luggage needs. After that, you want to cancel reservation C2HHXF due to a scheduling conflict. Since the flight was cancelled by you and it carried one passenger, you would like a $100 compensation certificate as per policy.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse lei_patel_4666 for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -604,16 +578,8 @@
           "arguments": {
             "reservation_id": "C2HHXF",
             "total_baggages": 3,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_8391262"
-          }
-        },
-        {
-          "action_id": "6_6",
-          "name": "send_certificate",
-          "arguments": {
-            "user_id": "lei_patel_4666",
-            "amount": 100
           }
         }
       ],
@@ -628,7 +594,7 @@
     "id": "airline_test_0007",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Sophia Patel, who had a one-way flight from JFK to SEA (reservation IPG6ZS) that was cancelled, making her eligible for a compensation certificate. You want to issue a compensation certificate for this cancelled flight. You would like to book a new one-way flight from JFK to ATL on 2024-05-20 in economy class for two passengers: Sophia Patel and Chen Smith, preferring the evening flight (HAT136 departing at 7:00 PM) because it matches her requested flight number and timing. You prefer to use her Mastercard ending in 7741 for this booking. Later, you will update reservation V7KTOK for the DTW-MCO round trip, even though it is already in business class on flights HAT111 and HAT071 (outbound on 2024-05-26), because the passenger name needs to be changed from Anya Moore to Chen Smith. You also want to add one checked bag for this reservation. You prefer all charges to be billed to her Mastercard ending in 7741.\n\nUse sophia_patel_6859 for authentication.",
+      "instructions": "You are assisting Sophia Patel, who had a one-way flight from JFK to SEA (reservation IPG6ZS) that was cancelled, making her eligible for a compensation certificate. You want to issue a compensation certificate for this cancelled flight. You would like to book a new one-way flight from JFK to ATL on 2024-05-20 in economy class for two passengers: Sophia Patel and Chen Smith, preferring the evening flight (HAT136 departing at 7:00 PM) because it matches her requested flight number and timing. You prefer to use her Mastercard ending in 7741 for this booking, with one checked bag in total and no travel insurance. Later, you will update reservation V7KTOK for the DTW-MCO round trip, even though it is already in business class on flights HAT111 and HAT071 (outbound on 2024-05-26), because the passenger name needs to be changed from Anya Moore to Chen Smith. You also want to add one checked bag for this reservation. You prefer all charges to be billed to her Mastercard ending in 7741.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse sophia_patel_6859 for authentication.",
       "emotion_instruction": "You can barely wait for results and need things resolved at once. Speak in clipped, clear sentences. There\u2019s no time for niceties, but you trust the agent\u2019s help.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -735,7 +701,7 @@
           "arguments": {
             "reservation_id": "V7KTOK",
             "total_baggages": 1,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_5278427"
           }
         },
@@ -765,7 +731,7 @@
     "id": "airline_test_0008",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Harper Ito (harper_ito_2309), who wants to book a direct evening flight from DTW to CLT on 2024-05-20 (flight HAT168) for three passengers: Harper Ito, Yara Jackson, and Evelyn Davis, all in economy class, because they found it available during their search. You prefer to charge this booking to the Visa card ending in 7986, which is on file. Later, you want to update your existing reservation MCO2H9 by upgrading both connecting flights\u2014HAT263 from DTW to JFK and HAT126 from JFK to MIA\u2014on 2024-05-17 from economy to business class, because you value added comfort for this trip, and you prefer to use the same Visa card ending in 7986 for any fare difference. After that, you would like to review the updated itinerary details to confirm the changes. Subsequently, you need to cancel your business-class reservation N76PP0 for the flight from JFK to ORD on 2024-05-27, because your plans have changed, and you request a refund to the same Visa card ending in 7986, as it was used for the original purchase and the reservation includes insurance. Later, you would like to receive a compensation certificate for a service issue you experienced, to formally acknowledge the inconvenience. Finally, you want to search for one-stop flight options from DTW on 2024-05-25 for future travel planning, although no direct connection to SFO is available on that date.\n\nUse harper_ito_2309 for authentication.",
+      "instructions": "You are assisting Harper Ito (harper_ito_2309), who wants to book a direct evening flight from DTW to CLT on 2024-05-20 (flight HAT168) for three passengers: Harper Ito, Yara Jackson, and Evelyn Davis, all in economy class, because they found it available during their search. You prefer to charge this booking to the Visa card ending in 7986, which is on file, with three checked bags in total (one per passenger) and no travel insurance. Later, you want to update your existing reservation MCO2H9 by upgrading both connecting flights\u2014HAT263 from DTW to JFK and HAT126 from JFK to MIA\u2014on 2024-05-17 from economy to business class, because you value added comfort for this trip, and you prefer to use the same Visa card ending in 7986 for any fare difference. After that, you would like to review the updated itinerary details to confirm the changes. Subsequently, you need to cancel your business-class reservation N76PP0 for the flight from JFK to ORD on 2024-05-27, because your plans have changed, and you request a refund to the same Visa card ending in 7986, as it was used for the original purchase and the reservation includes insurance. Later, you would like to receive a compensation certificate for a service issue you experienced, to formally acknowledge the inconvenience. Finally, you want to search for one-stop flight options from DTW on 2024-05-25 for future travel planning, although no direct connection to SFO is available on that date.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse harper_ito_2309 for authentication.",
       "emotion_instruction": "Your excitement makes you a bit impatient, wanting things handled right away. You speak in short, enthusiastic sentences. You expect the agent to be capable and responsive. Remain positive but press for quick results.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -883,7 +849,7 @@
     "id": "airline_test_0009",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are updating reservation 7WKBKD for Daiki Patel and Ethan Taylor. First, you want to add one checked bag, increasing the total to three bags with one paid bag, charged to your credit card ending in 1765, because you need additional luggage for the trip. Then, you want to change your outbound flights from PHX to JFK on 2024-05-22 to a one-stop itinerary: a business class flight from PHX to SEA on HAT251 in the afternoon, followed by a business class flight from SEA to JFK on HAT276 in the evening, because the new timing better suits your schedule. You prefer to keep the return flights unchanged. You confirm the passenger details: Daiki Patel (born 1968-04-24) and Ethan Taylor (born 1979-09-13). Later, you would like a compensation certificate for reservation 0W60LB, which was a cancelled business class flight from SFO to PHL on 2024-05-14, because you experienced an inconvenience due to the cancellation.\n\nUse daiki_patel_1917 for authentication.",
+      "instructions": "You are updating reservation 7WKBKD for Daiki Patel and Ethan Taylor. First, you want to add checked bags so that the total is three bags, one of which you expect to pay for, with any fee charged to your credit card ending in 1765, because you need additional luggage for the trip. Then, you want to change your outbound flights from PHX to JFK on 2024-05-22 to a one-stop itinerary: a business class flight from PHX to SEA on HAT251 in the afternoon, followed by a business class flight from SEA to JFK on HAT276 in the evening, because the new timing better suits your schedule. You prefer to keep the return flights unchanged. You confirm the passenger details: Daiki Patel (born 1968-04-24) and Ethan Taylor (born 1979-09-13). Later, you would like a compensation certificate for reservation 0W60LB, which was a cancelled business class flight from SFO to PHL on 2024-05-14, because you experienced an inconvenience due to the cancellation.\n\nUse daiki_patel_1917 for authentication.",
       "emotion_instruction": "You value your achievements and hope they\u2019re noticed during this interaction. Express yourself matter-of-factly, asking for what you need. You\u2019re attentive to timing, seeking a reasonable pace. Show caution and don\u2019t fully accept the agent\u2019s input until it\u2019s clear.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -908,7 +874,7 @@
           "arguments": {
             "reservation_id": "7WKBKD",
             "total_baggages": 3,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_4327297"
           }
         },
@@ -1102,7 +1068,7 @@
     "id": "airline_test_0011",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Raj Gonzalez (DOB 1993-08-27), and you want to cancel your round-trip economy reservation MTCVDL from LAS to DTW (with return via PHX) due to a change in plans, and receive a refund to your credit card ending in 5736502. Later, you would like to book a new one-way business flight from MSP to MCO on 2024-05-20, specifically flight HAT071 departing in the late evening, for one passenger (yourself), with one total baggage (all non-free), no insurance, and pay using the same credit card. After that, you want to update your existing business reservation V3CQW0 to change the first leg from MSP to MCO to flight HAT036 on 2024-05-19, which departs in the afternoon, while keeping the second leg as flight HAT048 from MCO to PHX on the same day, departing in the evening, and you agree to pay any fare difference using your credit card ending in 5736502. Finally, you would like to change the passenger name on reservation V3CQW0 from Raj Gonzalez to Liam Sanchez (DOB 1966-03-26), as the trip is now for him instead.\n\nUse raj_gonzalez_7490 for authentication.",
+      "instructions": "You are Raj Gonzalez (DOB 1993-08-27), and you want to cancel your round-trip economy reservation MTCVDL from LAS to DTW (with return via PHX) due to a change in plans, and receive a refund to your credit card ending in 5736502. Later, you would like to book a new one-way business flight from MSP to MCO on 2024-05-20, specifically flight HAT071 departing in the late evening, for one passenger (yourself), with one total baggage (which you expect to pay for), no insurance, and pay using the same credit card. After that, you want to update your existing business reservation V3CQW0 to change the first leg from MSP to MCO to flight HAT036 on 2024-05-19, which departs in the afternoon, while keeping the second leg as flight HAT048 from MCO to PHX on the same day, departing in the evening, and you agree to pay any fare difference using your credit card ending in 5736502. Finally, you would like to change the passenger name on reservation V3CQW0 from Raj Gonzalez to Liam Sanchez (DOB 1966-03-26), as the trip is now for him instead.\n\nUse raj_gonzalez_7490 for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1116,13 +1082,6 @@
       "actions": [
         {
           "action_id": "11_0",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "MTCVDL"
-          }
-        },
-        {
-          "action_id": "11_1",
           "name": "book_reservation",
           "arguments": {
             "user_id": "raj_gonzalez_7490",
@@ -1155,7 +1114,7 @@
           }
         },
         {
-          "action_id": "11_2",
+          "action_id": "11_1",
           "name": "update_reservation_flights",
           "arguments": {
             "reservation_id": "V3CQW0",
@@ -1174,7 +1133,7 @@
           }
         },
         {
-          "action_id": "11_3",
+          "action_id": "11_2",
           "name": "update_reservation_passengers",
           "arguments": {
             "reservation_id": "V3CQW0",
@@ -1188,14 +1147,14 @@
           }
         },
         {
-          "action_id": "11_4",
+          "action_id": "11_3",
           "name": "get_reservation_details",
           "arguments": {
             "reservation_id": "MTCVDL"
           }
         },
         {
-          "action_id": "11_5",
+          "action_id": "11_4",
           "name": "search_direct_flight",
           "arguments": {
             "origin": "LAS",
@@ -1204,20 +1163,12 @@
           }
         },
         {
-          "action_id": "11_6",
+          "action_id": "11_5",
           "name": "search_onestop_flight",
           "arguments": {
             "origin": "LAS",
             "destination": "DTW",
             "date": "2024-05-20"
-          }
-        },
-        {
-          "action_id": "11_7",
-          "name": "send_certificate",
-          "arguments": {
-            "user_id": "raj_gonzalez_7490",
-            "amount": 200
           }
         }
       ],
@@ -1232,7 +1183,7 @@
     "id": "airline_test_0012",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Emma Jackson, and you want to cancel your one-way business class reservation KDBNYP for a trip from ORD to EWR on 2024-05-27 via IAH because you no longer need the travel. You would like the refund processed to your Mastercard ending in 8086, which was the original payment method. Later, you would like to book a new one-way economy flight for three passengers\u2014yourself (Emma Jackson), Amelia Lee, and Ivan Johansson\u2014from ORD to IAH on 2024-05-20, preferring the morning flight HAT147 that departs at 09:00, as it fits your updated travel plans. After that, you would like to update the passenger list on your existing reservation YKCIBO (BOS to BOS via MIA on 2024-05-20) by replacing passenger Lei Martin with Ivan Johansson (DOB 1977-04-08), as he is now joining you on this trip instead.\n\nUse emma_jackson_2190 for authentication.",
+      "instructions": "You are Emma Jackson, and you want to cancel your one-way business class reservation KDBNYP for a trip from ORD to EWR on 2024-05-27 via IAH because you no longer need the travel. You would like the refund processed to your Mastercard ending in 8086, which was the original payment method. Later, you would like to book a new one-way economy flight for three passengers\u2014yourself (Emma Jackson), Amelia Lee, and Ivan Johansson\u2014from ORD to IAH on 2024-05-20, preferring the morning flight HAT147 that departs at 09:00, as it fits your updated travel plans. For this booking you want one checked bag in total and no travel insurance, and you prefer to pay with the same Mastercard that the KDBNYP refund goes back to. After that, you would like to update the passenger list on your existing reservation YKCIBO (BOS to BOS via MIA on 2024-05-20) by replacing passenger Lei Martin with Ivan Johansson (DOB 1977-04-08), as he is now joining you on this trip instead.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse emma_jackson_2190 for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1374,7 +1325,7 @@
     "id": "airline_test_0013",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Isabella Khan, who had her previous business class flight from CLT to LGA cancelled and is requesting a compensation certificate for that disruption and to cancel reservation. You want to rebook a new trip for Isabella Khan, Ivan Nguyen, and Raj Lopez, as they are traveling together. If asked for more information, say to check the complete profile. You would like to book a direct business class flight from CLT to DEN on 2024-05-20 for these three passengers, preferring an afternoon flight, which aligns with the available HAT262 departure. You prefer to pay using the credit card ending in 3445, which is already on file. After booking, you want to verify the availability of direct flights on the same route and date to ensure the booking was successful and no alternatives were missed.\n\nUse isabella_khan_4151 for authentication.",
+      "instructions": "You are assisting Isabella Khan, who had her previous business class flight from CLT to LGA cancelled and is requesting a compensation certificate for that disruption and to cancel reservation. You want to rebook a new trip for Isabella Khan, Ivan Nguyen, and Raj Lopez, as they are traveling together. If asked for more information, say to check the complete profile. You would like to book a direct business class flight from CLT to DEN on 2024-05-20 for these three passengers, preferring an afternoon flight, which aligns with the available HAT262 departure. You prefer to pay using the credit card ending in 3445, which is already on file. You want three checked bags in total (one per passenger) and no travel insurance for this booking. After booking, you want to verify the availability of direct flights on the same route and date to ensure the booking was successful and no alternatives were missed.\n\nUse isabella_khan_4151 for authentication.",
       "emotion_instruction": "You\u2019re confident in your status and expect the agent to treat your issue seriously. You speak with minimal warmth, focusing only on facts. Fast action is required. You're alert to any sign the agent might not deliver.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1520,7 +1471,7 @@
     "id": "airline_test_0014",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Lucas Thomas, representing passenger Amelia Nguyen, and you want compensation in the form of a certificate due to the cancellation of reservation MIC7D1 for a business class flight from MIA to JFK on 2024-05-10. You would like to cancel that original reservation and book a new business class flight from MIA to JFK on 2024-05-20 for one passenger carrying no bags, Amelia Nguyen (1996-08-07), departing in the early morning (flight HAT198), because it aligns with your preferred travel time and cabin class. You prefer to pay using your Mastercard ending in 9094, as it is your designated payment method. After booking, you would like to see alternative direct and one-stop flight options from MIA to JFK on 2024-05-20 to compare departure times and pricing for potential future adjustments.\n\nUse lucas_thomas_9373 for authentication.",
+      "instructions": "You are Lucas Thomas, representing passenger Amelia Nguyen, and you want compensation in the form of a certificate due to the cancellation of reservation MIC7D1 for a business class flight from MIA to JFK on 2024-05-10. You would like to cancel that original reservation and book a new business class flight from MIA to JFK on 2024-05-20 for one passenger carrying no bags, Amelia Nguyen (her details are the same as on the MIC7D1 reservation), departing in the early morning (flight HAT198), because it aligns with your preferred travel time and cabin class. You prefer to pay using your Mastercard ending in 9094, as it is your designated payment method, and you do not want travel insurance. After booking, you would like to see alternative direct and one-stop flight options from MIA to JFK on 2024-05-20 to compare departure times and pricing for potential future adjustments. For those alternative flights, you only want to see the options; you will decide later and do not want to book any of them in this conversation.\n\nUse lucas_thomas_9373 for authentication.",
       "emotion_instruction": "You\u2019re feeling tense and fidgety, afraid of delays. You get straight to the point, requesting urgent assistance. You show trust by following the agent\u2019s advice closely. Your language is curt but not rude.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -1610,7 +1561,7 @@
     "id": "airline_test_0015",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Aarav and want to cancel the existing round-trip economy reservation G72XE6 from PHX to JFK via SEA on 2024-05-19, as your plans have changed. Subsequently, you are to book a new one-stop outbound journey in economy class for one passenger (Evelyn Ito) from PHX to JFK on 2024-05-20, consisting of flight HAT156 from PHX to SEA departing in the morning and flight HAT100 from SEA to JFK departing in the afternoon, to ensure a same-day connection. You prefer to use the saved Mastercard ending in 9323 for payment, as it is the customer\u2019s preferred method. You also prefer to decline travel insurance and include 0 checked bags for the new booking, in line with the customer\u2019s explicit choices.\n\nUse aarav_davis_1257 for authentication.",
+      "instructions": "You are Aarav and want to cancel the existing round-trip economy reservation G72XE6 from PHX to JFK via SEA on 2024-05-19, as your plans have changed. Subsequently, you are to book a new one-stop outbound journey in economy class for one passenger (Evelyn Ito) from PHX to JFK on 2024-05-20, consisting of flight HAT156 from PHX to SEA departing in the morning and flight HAT100 from SEA to JFK departing in the afternoon, to ensure a same-day connection. You prefer to use the saved Mastercard ending in 9323 for payment, as it is the customer\u2019s preferred method. You also prefer to decline travel insurance and include 0 checked bags for the new booking, in line with the customer\u2019s explicit choices. If the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse aarav_davis_1257 for authentication.",
       "emotion_instruction": "You\u2019re feeling anxious and stressed, wanting this resolved as soon as possible. You state your needs clearly and avoid small talk. You are wary of missteps, so you confirm any details the agent provides. You expect prompt, straightforward help.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -1683,13 +1634,6 @@
             "nonfree_baggages": 0,
             "insurance": "no"
           }
-        },
-        {
-          "action_id": "15_4",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "G72XE6"
-          }
         }
       ],
       "communicate_info": [],
@@ -1703,7 +1647,7 @@
     "id": "airline_test_0016",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Raj Moore, and you want to cancel your one-way business class reservation U21HRK from LAX to CLT on 2024-05-19 due to changed plans, with a refund issued to the credit card ending in 7019543. Later, you would like to modify your round-trip reservation 71A70N by changing the outbound JFK to DTW flight on 2024-05-21 to the overnight flight HAT092 in economy class, because it is the only direct option available on that date. You also want to add one additional checked bag (making a total of two, with one being paid) and have any associated fees charged to the same credit card. You requested a search for other direct flight options from JFK to DTW on 2024-05-21, but no alternatives were found beyond HAT092 so don't book.\n\nUse raj_moore_3967 for authentication.",
+      "instructions": "You are Raj Moore, and you want to cancel your one-way business class reservation U21HRK from LAX to CLT on 2024-05-19 due to changed plans, with a refund issued to the credit card ending in 7019543. Later, you would like to modify your round-trip reservation 71A70N by changing the outbound JFK to DTW flight on 2024-05-21 to the overnight flight HAT092 in economy class, because it is the only direct option available on that date. You also want to add one additional checked bag (making a total of two, one of which you expect to pay for) and have any associated fees charged to the same credit card. You requested a search for other direct flight options from JFK to DTW on 2024-05-21, but no alternatives were found beyond HAT092 so don't book. For those other direct flights, you only want to see the options; you will decide later and do not want to book any of them in this conversation.\n\nUse raj_moore_3967 for authentication.",
       "emotion_instruction": "You are quite on edge and your responses are short and urgent. You reply quickly, seeking immediate assistance. Be wary and ask for clarification if something seems unclear. Make it known that you need this fixed now.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -1735,7 +1679,7 @@
           "arguments": {
             "reservation_id": "71A70N",
             "total_baggages": 2,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_7019543"
           }
         },
@@ -1749,6 +1693,14 @@
               {
                 "flight_number": "HAT092",
                 "date": "2024-05-21"
+              },
+              {
+                "flight_number": "HAT240",
+                "date": "2024-05-21"
+              },
+              {
+                "flight_number": "HAT092",
+                "date": "2024-05-26"
               },
               {
                 "flight_number": "HAT263",
@@ -1779,7 +1731,7 @@
     "id": "airline_test_0017",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are James Kovacs, and you want to book a one-way flight from LGA to PHL on 2024-05-20 for one passenger in economy class. You prefer the late evening flight (HAT264) departing at 23:00, and you want to pay using your Mastercard ending in 6023. After that, you would like to upgrade your existing reservation T2PY2S (LGA to EWR via CLT) from economy to business class for both connecting flights on 2024-05-20, as business seats are available and you value added comfort. Later, you decide to cancel that upgraded reservation and instead search for alternative one-stop flight options from LGA to EWR on 2024-05-20, indicating a change in travel plans and preference for different routing.\n\nUse james_kovacs_6640 for authentication.",
+      "instructions": "You are James Kovacs, and you want to book a one-way flight from LGA to PHL on 2024-05-20 for one passenger in economy class. You prefer the late evening flight (HAT264) departing at 23:00, and you want to pay using your Mastercard ending in 6023, with no checked bags and no travel insurance. After that, you would like to upgrade your existing reservation T2PY2S (LGA to EWR via CLT) from economy to business class for both connecting flights on 2024-05-20, as business seats are available and you value added comfort. Later, you decide to cancel that upgraded reservation and instead search for alternative one-stop flight options from LGA to EWR on 2024-05-20, indicating a change in travel plans and preference for different routing. For those one-stop alternatives, you only want to see the options; you will decide later and do not want to book any of them in this conversation.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse james_kovacs_6640 for authentication.",
       "emotion_instruction": "You can barely wait for results and need things resolved at once. Speak in clipped, clear sentences. There\u2019s no time for niceties, but you trust the agent\u2019s help.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -1880,7 +1832,7 @@
     "id": "airline_test_0018",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Sophia Patel, and you want a compensation certificate for your cancelled one-way basic economy flight from JFK to SEA on 2024-05-11 (reservation IPG6ZS), as it was disrupted through no fault of your own. Later, you would like to cancel your upcoming business-class round-trip reservation V7KTOK from DTW to MCO with a stop in MSP, as your plans have changed. Instead, you want to book a new one-way economy flight from DTW to MSP on 2024-05-20 for your colleague Anya Moore, preferring flight HAT254 departing in the afternoon, with 1 checked bag included, no insurance, and the cost charged to your Mastercard ending in 7741. After that, you would like to update your existing basic economy round-trip reservation NASS9T from CLT to EWR for yourself and Chen Smith to add 2 checked bags, with 1 being non-free, and have the applicable fee charged to the same Mastercard ending in 7741.\n\nUse sophia_patel_6859 for authentication.",
+      "instructions": "You are Sophia Patel, and you want a compensation certificate for your cancelled one-way basic economy flight from JFK to SEA on 2024-05-11 (reservation IPG6ZS), as it was disrupted through no fault of your own. Later, you would like to cancel your upcoming business-class round-trip reservation V7KTOK from DTW to MCO with a stop in MSP, as your plans have changed. Instead, you want to book a new one-way economy flight from DTW to MSP on 2024-05-20 for your colleague Anya Moore, preferring flight HAT254 departing in the afternoon, with 1 checked bag included, no insurance, and the cost charged to your Mastercard ending in 7741. After that, you would like to update your existing basic economy round-trip reservation NASS9T from CLT to EWR for yourself and Chen Smith to add 2 checked bags, one of which you expect to pay for, and have any fee charged to the same Mastercard ending in 7741.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse sophia_patel_6859 for authentication.",
       "emotion_instruction": "You\u2019re feeling nervous and your tone is curt. Don\u2019t sugarcoat your words; just state what you need. Assume the agent can help, but demand they act fast. Keep your communication factual.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -1953,7 +1905,7 @@
           "arguments": {
             "reservation_id": "NASS9T",
             "total_baggages": 2,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_5278427"
           }
         }
@@ -1969,7 +1921,7 @@
     "id": "airline_test_0019",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Mei Wilson (DOB: 1984-11-22), a gold member, and you want to modify your existing round-trip reservation V5DSYK from PHL to BOS. First, you want to search for direct and one-stop flight options from PHL to BOS on 2024-05-19 to explore better timing or routing alternatives. After that, you would like to book a new one-way flight from PHL to SFO on 2024-05-20 in economy class for one passenger (yourself), preferring an early morning departure around 03:00 AM, as flight HAT291 operates at that time and has availability. As you are alone and will be travelling light, you need only 1 bag. You prefer to use your saved Mastercard ending in 7039 for this booking. Subsequently, you want to update your original reservation V5DSYK to increase your total checked baggage to two (with one additional non-free bag), and you prefer this charge to also be applied to your Mastercard ending in 7039.\n\nUse mei_wilson_7043 for authentication.",
+      "instructions": "You are Mei Wilson (DOB: 1984-11-22), a gold member, and you want to modify your existing round-trip reservation V5DSYK from PHL to BOS. First, you want to search for direct and one-stop flight options from PHL to BOS on 2024-05-19 to explore better timing or routing alternatives. After that, you would like to book a new one-way flight from PHL to SFO on 2024-05-20 in economy class for one passenger (yourself), preferring an early morning departure around 03:00 AM, as flight HAT291 operates at that time and has availability. As you are alone and will be travelling light, you need only 1 bag, and you do not want travel insurance. You prefer to use your saved Mastercard ending in 7039 for this booking. Subsequently, you want to update your original reservation V5DSYK to increase your total checked baggage to two (one of which you expect to pay for), and you prefer any charge to also be applied to your Mastercard ending in 7039.\n\nUse mei_wilson_7043 for authentication.",
       "emotion_instruction": "You\u2019re feeling uneasy and in a rush, needing reassurance right away. You are cooperative and forthright, trusting the agent will assist you. You keep your questions short and to the point.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2045,7 +1997,7 @@
           "arguments": {
             "reservation_id": "V5DSYK",
             "total_baggages": 2,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_7535171"
           }
         }
@@ -2082,6 +2034,13 @@
         },
         {
           "action_id": "20_1",
+          "name": "cancel_reservation",
+          "arguments": {
+            "reservation_id": "0Y69KK"
+          }
+        },
+        {
+          "action_id": "20_2",
           "name": "search_direct_flight",
           "arguments": {
             "origin": "ORD",
@@ -2090,7 +2049,7 @@
           }
         },
         {
-          "action_id": "20_2",
+          "action_id": "20_3",
           "name": "book_reservation",
           "arguments": {
             "user_id": "raj_muller_5942",
@@ -2211,7 +2170,7 @@
     "id": "airline_test_0022",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Daiki Johnson (user_id daiki_johnson_1294) and you want to book a one-way flight from IAH to JFK on 2024-05-20 in economy class for yourself, as it is a morning flight that fits your travel schedule. You won't be carrying anything. You prefer to use your saved Mastercard ending in 2867 for payment, as it is your default card on file. Later, you would like to update the passenger name on reservation OQU7IJ from Daiki Johnson to Daisuke Johnson (same DOB) to correct a spelling error in your name. After that, you would like to cancel the entire reservation OQU7IJ due to changed travel plans and receive a full refund back to your Mastercard ending in 2867.\n\nUse daiki_johnson_1294 for authentication.",
+      "instructions": "You are Daiki Johnson (user_id daiki_johnson_1294) and you want to book a one-way flight from IAH to JFK on 2024-05-20 in economy class for yourself, on the earliest direct flight that departs at or after 6:00 AM, as a morning flight fits your travel schedule. You won't be carrying anything, and you do not want travel insurance. You prefer to use your saved Mastercard ending in 2867 for payment, as it is your default card on file. Later, you would like to update the passenger name on reservation OQU7IJ from Daiki Johnson to Daisuke Johnson (same DOB) to correct a spelling error in your name. After that, you would like to cancel the entire reservation OQU7IJ due to changed travel plans and receive a full refund back to your Mastercard ending in 2867.\n\nUse daiki_johnson_1294 for authentication.",
       "emotion_instruction": "You feel a tight sense of anxiety and need the problem fixed soon. You communicate briskly, focusing on the essentials. You hold back a bit, wary about accepting answers at face value. You seek clarity and prompt responses from the agent.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2321,13 +2280,6 @@
               }
             ]
           }
-        },
-        {
-          "action_id": "22_6",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "OQU7IJ"
-          }
         }
       ],
       "communicate_info": [],
@@ -2341,7 +2293,7 @@
     "id": "airline_test_0023",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Yusuf Gonzalez, who wants to book a one-way business class flight from PHL to DEN on 2024-05-21 for himself and Mohamed Wilson, specifically flight HAT076, which departs in the afternoon. You are then to update his existing round-trip reservation DOBSMB to change both the outbound and return flights to match this new itinerary on 2024-05-21, keep the cabin as business class, and update the passenger list to replace Mohamed Wilson with Lei Hernandez (1961-08-16). You prefer to use the Visa card ending in 6613 on file for any fare difference or additional charges. After that, you want to view the updated reservation details for DOBSMB, proceed to cancel it, and explore alternative one-stop flight options from PHL to DEN on 2024-05-23 as a backup, though no direct one-stop options to DEN are currently available in the system.\n\nUse yusuf_gonzalez_6436 for authentication.",
+      "instructions": "You are assisting Yusuf Gonzalez, who wants to book a one-way business class flight from PHL to DEN on 2024-05-21 for himself and Mohamed Wilson, specifically flight HAT076, which departs in the afternoon. For this booking you want two checked bags in total and no travel insurance, and you prefer to pay the whole amount with your Visa card. You are then to update his existing round-trip reservation DOBSMB to move its outbound flight to this same flight HAT076 on 2024-05-21 while keeping the return flight as originally booked, keep the cabin as business class, and update the passenger list to replace Isabella Garcia with Lei Hernandez (1961-08-16). You prefer to use the Visa card ending in 6613 on file for any fare difference or additional charges. After that, you want to view the updated reservation details for DOBSMB, proceed to cancel it, and explore alternative one-stop flight options from PHL to DEN on 2024-05-23 as a backup, though no direct one-stop options to DEN are currently available in the system. For those one-stop alternatives, you only want to see the options; you will decide later and do not want to book any of them in this conversation.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse yusuf_gonzalez_6436 for authentication.",
       "emotion_instruction": "You\u2019re on edge and communicate with a sense of urgency. Your responses are concise and you avoid chit-chat. Show concern and ask for reassurance before following instructions. Don\u2019t fully relax until the issue is solved.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2413,7 +2365,7 @@
               },
               {
                 "flight_number": "HAT158",
-                "date": "2024-05-21"
+                "date": "2024-05-25"
               }
             ],
             "payment_id": "credit_card_8843042"
@@ -2473,7 +2425,7 @@
     "id": "airline_test_0024",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are to first book a one-way one-stop business class flight from Chicago (ORD) to New York (JFK) on 2024-05-20 for passenger Evelyn Rossi, with a connection in Atlanta (ATL) on an early morning departure, as no direct connection via Detroit (DTW) is available but this is the only viable business class option to the New York area. You prefer to pay using your Mastercard ending in 1195. Then you want to update update passenger in reservation BANTW5 to Rossie Evelyn (1961-12-11), and want the agnet to confirm this update once more. Later you would like to cancel the same reservation, as it includes travel insurance and you no longer need the trip, and you prefer a full refund to be issued back to your Mastercard ending in 1195.\n\nUse amelia_nguyen_8708 for authentication.",
+      "instructions": "You are to first book a one-way one-stop business class flight from Chicago (ORD) to New York (JFK) on 2024-05-20 for passenger Evelyn Rossi, with a connection in Atlanta (ATL) on an early morning departure; among the Atlanta connections you want the one that arrives in New York earliest, because you need to be there as early as possible. You prefer to pay using your Mastercard ending in 1195, with no checked bags and no travel insurance. Then you want to update update passenger in reservation BANTW5 to Evelyn Rossi (1961-12-11), and want the agnet to confirm this update once more. Later you would like to cancel the same reservation, as it includes travel insurance and you no longer need the trip, and you prefer a full refund to be issued back to your Mastercard ending in 1195.\n\nUse amelia_nguyen_8708 for authentication.",
       "emotion_instruction": "You feel a sense of urgency driven by anxiety. You want information and action immediately. You assume the agent can help and rely on their guidance. Your tone is quick and straightforward.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2514,11 +2466,11 @@
             "cabin": "business",
             "flights": [
               {
-                "flight_number": "HAT230",
+                "flight_number": "HAT093",
                 "date": "2024-05-20"
               },
               {
-                "flight_number": "HAT240",
+                "flight_number": "HAT285",
                 "date": "2024-05-20"
               }
             ],
@@ -2532,7 +2484,7 @@
             "payment_methods": [
               {
                 "payment_id": "credit_card_2427893",
-                "amount": 640
+                "amount": 775
               }
             ],
             "total_baggages": 0,
@@ -2556,32 +2508,13 @@
         },
         {
           "action_id": "24_4",
-          "name": "update_reservation_flights",
-          "arguments": {
-            "reservation_id": "BANTW5",
-            "cabin": "business",
-            "flights": [
-              {
-                "flight_number": "HAT230",
-                "date": "2024-05-20"
-              },
-              {
-                "flight_number": "HAT240",
-                "date": "2024-05-20"
-              }
-            ],
-            "payment_id": "credit_card_2427893"
-          }
-        },
-        {
-          "action_id": "24_5",
           "name": "get_reservation_details",
           "arguments": {
             "reservation_id": "BANTW5"
           }
         },
         {
-          "action_id": "24_6",
+          "action_id": "24_5",
           "name": "cancel_reservation",
           "arguments": {
             "reservation_id": "BANTW5"
@@ -2599,7 +2532,7 @@
     "id": "airline_test_0025",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Isabella Anderson, traveling with Lei Kim, and you want to book a new one-way economy flight from LAX to ORD on 2024-05-20, departing in the morning (around 10:00 AM), because it fits your travel schedule. You prefer to pay using your credit card ending in 7228, as it is your preferred payment method. Later, you realized your existing business class reservation (I5QZWG) from LAX to CLT via EWR was cancelled by the airline, so you would like to request a compensation certificate for the inconvenience. After that, you are interested in exploring one-stop flight options from LAX to BOS on 2024-05-25, with a preference for a morning departure from LAX and a same-day arrival in BOS, such as the connection via SFO departing LAX at 04:00 AM and arriving in BOS by 13:00 PM, to accommodate future travel plans.\n\nUse isabella_anderson_9682 for authentication.",
+      "instructions": "You are Isabella Anderson, traveling with Lei Kim, and you want to book a new one-way economy flight from LAX to ORD on 2024-05-20, departing in the morning (around 10:00 AM), because it fits your travel schedule. You prefer to pay using your credit card ending in 7228, as it is your preferred payment method, with no checked bags and no travel insurance. Later, you realized your existing business class reservation (I5QZWG) from LAX to CLT via EWR was cancelled by the airline, so you would like to request a compensation certificate for the inconvenience. You are only asking for compensation; you do not want any other change to I5QZWG (such as cancelling or rebooking it) in this conversation. After that, you are interested in exploring one-stop flight options from LAX to BOS on 2024-05-25, with a preference for a morning departure from LAX and a same-day arrival in BOS, such as the connection via SFO departing LAX at 04:00 AM and arriving in BOS by 13:00 PM, to accommodate future travel plans.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse isabella_anderson_9682 for authentication.",
       "emotion_instruction": "You\u2019re worried and feel the need to act quickly. You state your issue plainly and expect prompt attention. You have faith in the agent\u2019s competence. You avoid unnecessary conversation.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2660,28 +2593,13 @@
         },
         {
           "action_id": "25_2",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "I5QZWG"
-          }
-        },
-        {
-          "action_id": "25_3",
           "name": "get_reservation_details",
           "arguments": {
             "reservation_id": "I5QZWG"
           }
         },
         {
-          "action_id": "25_4",
-          "name": "send_certificate",
-          "arguments": {
-            "user_id": "isabella_anderson_9682",
-            "amount": 200
-          }
-        },
-        {
-          "action_id": "25_5",
+          "action_id": "25_3",
           "name": "search_onestop_flight",
           "arguments": {
             "origin": "LAX",
@@ -2701,7 +2619,7 @@
     "id": "airline_test_0026",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Lucas Thomas (user_id: lucas_thomas_9373), who wants to book a one-way flight from Miami to Los Angeles on 2024-05-20 in the afternoon (flight HAT232, economy class) for two passengers: Lucas Thomas and Daiki Ahmed, because he has planned a trip for himself and his companion. You prefer to pay using the Mastercard ending in 9916, as it is his selected payment method, and you want a total of 2 checked bags with no insurance. Later, you want to cancel the existing reservation NYHIHA for a trip from Miami to Detroit, as it is no longer needed. After that, you would like to update reservation 6S9Q4I by changing the passenger name from Lucas Thomas to Lucas Smith (same date of birth) and adding one additional checked bag (total 2, with 1 paid), using the same Mastercard ending in 9916 for the baggage fee, because the passenger details need correction and extra luggage is required.\n\nUse lucas_thomas_9373 for authentication.",
+      "instructions": "You are assisting Lucas Thomas (user_id: lucas_thomas_9373), who wants to book a one-way flight from Miami to Los Angeles on 2024-05-20 in the afternoon (flight HAT232, economy class) for two passengers: Lucas Thomas and Daiki Ahmed, because he has planned a trip for himself and his companion. You prefer to pay using the Mastercard ending in 9916, as it is his selected payment method, and you want a total of 2 checked bags with no insurance. Later, you want to cancel the existing reservation NYHIHA for a trip from Miami to Detroit, as it is no longer needed. After that, you would like to update reservation 6S9Q4I by changing the passenger name from Lucas Thomas to Lucas Smith (same date of birth) and adding one additional checked bag (total 2, one of which you expect to pay for), using the same Mastercard ending in 9916 for any baggage fee, because the passenger details need correction and extra luggage is required.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse lucas_thomas_9373 for authentication.",
       "emotion_instruction": "You\u2019re anxious and in a hurry to get things sorted out. You keep your language factual and to the point. You treat the agent\u2019s responses with some skepticism until you\u2019re convinced. You expect fast, clear solutions.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2762,30 +2680,23 @@
         },
         {
           "action_id": "26_2",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "NYHIHA"
-          }
-        },
-        {
-          "action_id": "26_3",
           "name": "get_reservation_details",
           "arguments": {
             "reservation_id": "6S9Q4I"
           }
         },
         {
-          "action_id": "26_4",
+          "action_id": "26_3",
           "name": "update_reservation_baggages",
           "arguments": {
             "reservation_id": "6S9Q4I",
             "total_baggages": 2,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_2926284"
           }
         },
         {
-          "action_id": "26_5",
+          "action_id": "26_4",
           "name": "update_reservation_passengers",
           "arguments": {
             "reservation_id": "6S9Q4I",
@@ -2810,7 +2721,7 @@
     "id": "airline_test_0027",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Chen Rossi, and you want to book a one-way economy flight from DEN to DFW on 2024-05-20, departing overnight (around 00:00), for two passengers: yourself and Isabella Rossi with two bags. After booking, you would like to add one checked bag, increasing the total to three bags with one paid, to accommodate luggage needs. After this, you want to change Isabella to Anya Gonzalez because you think she will be better company. You prefer to pay using your Mastercard ending in 1609, which is on file. At last, you want to cancel your original round-trip business class reservation GBCZYE from DEN to LGA via PHL and return via CLT, because it is no longer needed, and you expect a full refund to be issued back to the same Mastercard used for the original purchase.\n\nUse chen_rossi_8135 for authentication.",
+      "instructions": "You are Chen Rossi, and you want to book a one-way economy flight from DEN to DFW on 2024-05-20, departing overnight (around 00:00), for two passengers: yourself and Isabella Rossi with two bags and no travel insurance. After booking, you would like to add one checked bag, increasing the total to three bags, one of which you expect to pay for, to accommodate luggage needs. After this, you want to change Isabella to Anya Gonzalez because you think she will be better company. You prefer to pay using your Mastercard ending in 1609, which is on file. At last, you want to cancel your original round-trip business class reservation GBCZYE from DEN to LGA via PHL and return via CLT, because it is no longer needed, and you expect a full refund to be issued back to the same Mastercard used for the original purchase.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse chen_rossi_8135 for authentication.",
       "emotion_instruction": "You\u2019re feeling anxious and stressed, wanting this resolved as soon as possible. You state your needs clearly and avoid small talk. You are wary of missteps, so you confirm any details the agent provides. You expect prompt, straightforward help.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2875,7 +2786,7 @@
           "arguments": {
             "reservation_id": "HATHAT",
             "total_baggages": 3,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_8191674"
           }
         },
@@ -3078,7 +2989,7 @@
     "id": "airline_test_0030",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Lei Rossi (lei_rossi_4874) and you want to book a one-way flight from CLT to BOS on 2024-05-20 in economy class for yourself and Isabella Jackson (DOB 2000-09-09) carrying one bag each, preferring the morning flight (HAT287) departing around 09:00, because it matches your requested flight and is available. You prefer to pay with your Visa ending in 7279. After booking, you want to cancel your previous reservation 15EN70 from CLT to LGA on 2024-05-04 in basic_economy, which was cancelled, to finalize your travel plans. Later, you would like to update your active reservation H0HHXO (from IAH to EWR) to add one checked bag, making total_baggages=1 and nonfree_baggages=1, and charge the fee to the same Visa ending in 7279, to accommodate your travel needs. Additionally, since your flight on reservation 15EN70 was cancelled, you would like to receive a compensation certificate as per airline policy.\n\nUse lei_rossi_4874 for authentication.",
+      "instructions": "You are Lei Rossi (lei_rossi_4874) and you want to book a one-way flight from CLT to BOS on 2024-05-20 in economy class for yourself and Isabella Jackson (DOB 2000-09-09) carrying one bag each and with no travel insurance, preferring the morning flight (HAT287) departing around 09:00, because it matches your requested flight and is available. You prefer to pay with your Visa ending in 7279. After booking, you want to cancel your previous reservation 15EN70 from CLT to LGA on 2024-05-04 in basic_economy, which was cancelled, to finalize your travel plans. Later, you would like to update your active reservation H0HHXO (from IAH to EWR) to add one checked bag, which you expect to pay for, and charge any fee to the same Visa ending in 7279, to accommodate your travel needs. Additionally, since your flight on reservation 15EN70 was cancelled, you would like to receive a compensation certificate as per airline policy.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse lei_rossi_4874 for authentication.",
       "emotion_instruction": "You\u2019re experiencing mounting frustration and want immediate action. Limit small talk and keep the conversation focused. Express doubt when the agent offers solutions, seeking reassurances. Let your urgency show in your requests.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -3166,7 +3077,7 @@
           "arguments": {
             "reservation_id": "H0HHXO",
             "total_baggages": 1,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_9623492"
           }
         },
@@ -3277,7 +3188,7 @@
     "id": "airline_test_0032",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Lei Rossi (user_id: lei_rossi_4874) who wants to cancel her existing basic economy reservation H0HHXO for a one-way flight from IAH to EWR on 2024-05-28 due to a schedule conflict. After that, you want to book a new one-way flight in economy class from IAH to EWR on 2024-05-20 for two passengers: Lei Rossi and Liam Brown, using her saved credit card ending in 7279, with no checked bags and no insurance. The preferred flight is HAT195, which departs in the afternoon, as it aligns with the confirmed booking. Later, you would like to search for and compare all available direct and one-stop connecting flight options from IAH to EWR on 2024-05-20 to evaluate alternatives, even though the afternoon flight HAT195 has already been selected and booked.\n\nUse lei_rossi_4874 for authentication.",
+      "instructions": "You are assisting Lei Rossi (user_id: lei_rossi_4874) who wants to cancel her existing basic economy reservation H0HHXO for a one-way flight from IAH to EWR on 2024-05-28 due to a schedule conflict. After that, you want to book a new one-way flight in economy class from IAH to EWR on 2024-05-20 for two passengers: Lei Rossi and Liam Brown, using her saved credit card ending in 7279, with no checked bags and no insurance. The preferred flight is HAT195, which departs in the afternoon, as it aligns with the confirmed booking. Later, you would like to search for and compare all available direct and one-stop connecting flight options from IAH to EWR on 2024-05-20 to evaluate alternatives, even though the afternoon flight HAT195 has already been selected and booked. For those alternative flights, you only want to see the options; you will decide later and do not want to book any of them in this conversation. If the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse lei_rossi_4874 for authentication.",
       "emotion_instruction": "You\u2019re in a hurry and strongly want to defend your side, but you approach the agent warmly. You speak firmly and push for immediate action, yet you believe the agent is on your side. Keep your tone direct but always respectful and trusting. Make your urgency clear.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -3291,13 +3202,6 @@
       "actions": [
         {
           "action_id": "32_0",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "H0HHXO"
-          }
-        },
-        {
-          "action_id": "32_1",
           "name": "book_reservation",
           "arguments": {
             "user_id": "lei_rossi_4874",
@@ -3335,7 +3239,7 @@
           }
         },
         {
-          "action_id": "32_2",
+          "action_id": "32_1",
           "name": "search_direct_flight",
           "arguments": {
             "origin": "IAH",
@@ -3344,7 +3248,7 @@
           }
         },
         {
-          "action_id": "32_3",
+          "action_id": "32_2",
           "name": "search_onestop_flight",
           "arguments": {
             "origin": "IAH",
@@ -3364,7 +3268,7 @@
     "id": "airline_test_0033",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are to book a new one-way flight from LGA to PHX on 2024-05-20 for passenger Liam Ito, using flight HAT201 in economy class, departing early morning, because the user specifically selected this flight. You will be carrying no bags. You prefer to pay with your Mastercard ending in 5754, as it is your default card on file. After that, you want to cancel your existing reservation LWTEDF because you no longer need it. Later, you would like to request a compensation certificate for the delay on the flight associated with reservation LWTEDF, as it departed late compared to the scheduled time.\n\nUse liam_ito_4473 for authentication.",
+      "instructions": "You are to book a new one-way flight from LGA to PHX on 2024-05-20 for passenger Liam Ito, using flight HAT201 in economy class, departing early morning, because the user specifically selected this flight. You will be carrying no bags and do not want travel insurance. You prefer to pay with your Mastercard ending in 5754, as it is your default card on file. After that, you want to cancel your existing reservation LWTEDF because you no longer need it. Later, you would like to request a compensation certificate for the delay on the flight associated with reservation LWTEDF, as it has been delayed.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse liam_ito_4473 for authentication.",
       "emotion_instruction": "You\u2019re annoyed but don\u2019t show hostility, just firm politeness. Make your expectations clear without being rude. Communicate that you\u2019re watching how the situation is handled. Seek a prompt and satisfactory response.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -3417,21 +3321,6 @@
             "nonfree_baggages": 0,
             "insurance": "no"
           }
-        },
-        {
-          "action_id": "33_2",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "LWTEDF"
-          }
-        },
-        {
-          "action_id": "33_3",
-          "name": "send_certificate",
-          "arguments": {
-            "user_id": "liam_ito_4473",
-            "amount": 50
-          }
         }
       ],
       "communicate_info": [],
@@ -3445,7 +3334,7 @@
     "id": "airline_test_0034",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Mei Brown, traveling with Fatima Patel, Mason Garcia, and Yusuf Silva, and you want to request a compensation certificate due to the significant delay on your original flight HAT045 from PHX to SEA on 2024-05-15. You would like to update your reservation 3JA7XV to change the first leg of your journey from PHX to SEA on 2024-05-15 to a new flight on 2024-05-16 in business class, preferring the noon flight (HAT251) for better alignment with your revised travel plans. You also want to increase your total checked bags to three, with one paid bag, and you prefer to charge the additional baggage fee to your Visa card ending in 1663.\n\nUse mei_brown_7075 for authentication.",
+      "instructions": "You are Mei Brown, traveling with Fatima Patel, Mason Garcia, and Yusuf Silva, and you want to request a compensation certificate due to the significant delay on your original flight HAT045 from PHX to SEA on 2024-05-15. You would like to update your reservation 3JA7XV to change the first leg of your journey from PHX to SEA on 2024-05-15 to a new flight on 2024-05-16 in business class, preferring the noon flight (HAT251) for better alignment with your revised travel plans. You also want to increase your total checked bags to three, one of which you expect to pay for, and you prefer to charge any baggage fee to your Visa card ending in 1663. You also want any fare difference or refund from the flight change to go to that same Visa card.\n\nUse mei_brown_7075 for authentication.",
       "emotion_instruction": "You\u2019re feeling bothered by the issue and demand a prompt response. Avoid chit-chat and get straight to the point. Show trust in the agent by letting them take charge.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -3505,7 +3394,7 @@
           "arguments": {
             "reservation_id": "3JA7XV",
             "total_baggages": 3,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_4920843"
           }
         }
@@ -3618,7 +3507,7 @@
     "id": "airline_test_0036",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Ivan Taylor (user_id: ivan_taylor_6615), and you want to receive a compensation certificate for your cancelled flight from ATL to LAS on 2024-05-08 (reservation 06K2QN), as it was disrupted through no fault of your own. Later, you would like to book a new flight from ATL to LAS on 2024-05-20 (flight HAT281) in economy class for two passengers\u2014Ivan Taylor and Aarav Kim, carrying no bags\u2014because your original travel plans were interrupted. You prefer this flight as it departs in the late evening, aligning with your updated schedule. You prefer to pay using your Visa card ending in 1656, which is on file. After that, you want to cancel your other reservation WGMKL8 (from MCO to LAS and MCO to MSP) due to a scheduling conflict that makes the trip unfeasible. Subsequently, you would like to update your business class reservation PK9XO8 (LAX to IAH via SFO) to increase the total checked bags to three, with one additional paid bag, to accommodate your luggage needs for the trip. You prefer to use the same Visa card ending in 1656 for this baggage fee.\n\nUse ivan_taylor_6615 for authentication.",
+      "instructions": "You are Ivan Taylor (user_id: ivan_taylor_6615), and you want to receive a compensation certificate for your cancelled flight from ATL to LAS on 2024-05-08 (reservation 06K2QN), as it was disrupted through no fault of your own. Later, you would like to book a new flight from ATL to LAS on 2024-05-20 (flight HAT281) in economy class for two passengers\u2014Ivan Taylor and Aarav Kim (his details are saved in your account), carrying no bags and with no travel insurance\u2014because your original travel plans were interrupted. You prefer this flight as it departs in the late evening, aligning with your updated schedule. You prefer to pay using your Visa card ending in 1656, which is on file. After that, you want to cancel your other reservation WGMKL8 (from MCO to LAS and MCO to MSP) due to a scheduling conflict that makes the trip unfeasible. Subsequently, you would like to update your business class reservation PK9XO8 (LAX to IAH via SFO) to increase the total checked bags to three, one of which you expect to pay for, to accommodate your luggage needs for the trip. You prefer to use the same Visa card ending in 1656 for any baggage fee. If the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse ivan_taylor_6615 for authentication.",
       "emotion_instruction": "Impatience is taking over, so your responses are brief and urgent. Make it clear you\u2019re annoyed and need help now. Skip niceties and depend on the agent\u2019s ability.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -3669,9 +3558,9 @@
                 "dob": "1970-02-21"
               },
               {
-                "first_name": "Ivan",
-                "last_name": "Jackson",
-                "dob": "1983-02-26"
+                "first_name": "Aarav",
+                "last_name": "Kim",
+                "dob": "1962-10-28"
               }
             ],
             "payment_methods": [
@@ -3687,25 +3576,18 @@
         },
         {
           "action_id": "36_3",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "WGMKL8"
-          }
-        },
-        {
-          "action_id": "36_4",
           "name": "get_reservation_details",
           "arguments": {
             "reservation_id": "PK9XO8"
           }
         },
         {
-          "action_id": "36_5",
+          "action_id": "36_4",
           "name": "update_reservation_baggages",
           "arguments": {
             "reservation_id": "PK9XO8",
             "total_baggages": 3,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_1885633"
           }
         }
@@ -3721,7 +3603,7 @@
     "id": "airline_test_0037",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Isabella Muller, and you want to cancel your one-way business class reservation PGAGLM from LAX to ATL on 2024-05-24 because you no longer need the trip. Then, you want to update your round-trip reservation UL436B from DTW to EWR on 2024-05-17 to change the outbound flights: you prefer to take flight HAT210 from DTW to MSP in the morning (departing at 06:00) followed by flight HAT141 from MSP to EWR in the afternoon (departing at 14:00), both in business class, because you want a more convenient connection via MSP. You prefer to use your Visa card ending in 3014 for any fare difference. Later, you want to book a new one-way business class flight from LAX to EWR on 2024-05-20, specifically flight HAT012 departing at 12:00, for passenger Isabella Muller carrying no bags and with no insurance, because you need to travel for another trip. You prefer to pay using the same Visa card ending in 3014. After booking, you would like to add one checked baggage to the new reservation because you will have luggage for the trip.\n\nUse isabella_muller_2311 for authentication.",
+      "instructions": "You are Isabella Muller, and you want to cancel your one-way business class reservation PGAGLM from LAX to ATL on 2024-05-24 because you no longer need the trip. Then, you want to update your round-trip reservation UL436B from DTW to EWR on 2024-05-17 to change the outbound flights: you prefer to take flight HAT210 from DTW to MSP in the morning (departing at 06:00) followed by flight HAT141 from MSP to EWR in the afternoon (departing at 14:00), both in business class, because you want a more convenient connection via MSP. You prefer to use your Visa card ending in 3014 for any fare difference. Later, you want to book a new one-way business class flight from LAX to EWR on 2024-05-20, specifically flight HAT012 departing at 12:00, for passenger Isabella Muller carrying no bags and with no insurance, because you need to travel for another trip. You prefer to pay using the same Visa card ending in 3014. After booking, you would like to add one checked baggage to the new reservation because you will have luggage for the trip.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse isabella_muller_2311 for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -3761,6 +3643,14 @@
               {
                 "flight_number": "HAT141",
                 "date": "2024-05-17"
+              },
+              {
+                "flight_number": "HAT215",
+                "date": "2024-05-18"
+              },
+              {
+                "flight_number": "HAT167",
+                "date": "2024-05-18"
               }
             ],
             "payment_id": "credit_card_2655640"
@@ -3812,9 +3702,9 @@
           "action_id": "37_5",
           "name": "update_reservation_baggages",
           "arguments": {
-            "reservation_id": "BMH70T",
+            "reservation_id": "HATHAT",
             "total_baggages": 1,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_2655640"
           }
         }
@@ -3886,7 +3776,7 @@
     "id": "airline_test_0039",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Lucas Thomas, user lucas_thomas_9373, and you had a business class flight from MIA to JFK on 2024-05-10 (reservation MIC7D1) cancelled, which caused travel inconvenience, so you want a compensation certificate for this disruption. Later, you would like to update the passenger name on the same reservation from Amelia Nguyen to Noah Smith for accurate record-keeping. After that, you would like to rebook your travel and are interested in a direct overnight flight from MIA to JFK on 2024-05-25, as it is the only available option on that date. But at last, you will choose not to book.\n\nUse lucas_thomas_9373 for authentication.",
+      "instructions": "You are Lucas Thomas, user lucas_thomas_9373, and you had a business class flight from MIA to JFK on 2024-05-10 (reservation MIC7D1) cancelled, which caused travel inconvenience, so you want a compensation certificate for this disruption. Later, you would like to update the passenger name on the same reservation from Amelia Nguyen to Noah Smith (date of birth 1990-01-15) for accurate record-keeping. After that, you would like to rebook your travel and are interested in a direct overnight flight from MIA to JFK on 2024-05-25, as it is the only available option on that date. But at last, you will choose not to book.\n\nUse lucas_thomas_9373 for authentication.",
       "emotion_instruction": "Your frustration is mounting, and you want progress made quickly. Address the agent respectfully but without small talk. Show that you trust their support, and stay focused on the main concern.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -4147,7 +4037,7 @@
     "id": "airline_test_0042",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Sophia Patel (sophia_patel_6859), who had her one-way basic_economy flight from JFK to SEA on 2024-05-11 (reservation IPG6ZS, flight HAT069) cancelled and would like a compensation certificate as a result. You want to issue a $100 compensation certificate to her account. Later, you would like to book a one-way basic_economy flight from JFK to SEA for Sophia Patel (DOB 1981-12-25) on 2024-05-20, with no checked bags or insurance, using her saved Mastercard ending in 7741. After that, you would like to cancel her round-trip business-class reservation V7KTOK from DTW to MCO (departing 2024-05-26, returning 2024-05-30) for passenger Anya Moore, and process a full refund back to her Mastercard ending in 7741.\n\nUse sophia_patel_6859 for authentication.",
+      "instructions": "You are assisting Sophia Patel (sophia_patel_6859), who had her one-way basic_economy flight from JFK to SEA on 2024-05-11 (reservation IPG6ZS, flight HAT069) cancelled and would like a compensation certificate as a result. You want to issue a $100 compensation certificate to her account. Later, you would like to book a one-way basic_economy flight from JFK to SEA for Sophia Patel (DOB 1981-12-25) on 2024-05-20 on the cheapest direct flight that day, with no checked bags or insurance, using her saved Mastercard ending in 7741. After that, you would like to cancel her round-trip business-class reservation V7KTOK from DTW to MCO (departing 2024-05-26, returning 2024-05-30) for passenger Anya Moore, and process a full refund back to her Mastercard ending in 7741.\n\nUse sophia_patel_6859 for authentication.",
       "emotion_instruction": "You feel worn down by the unresolved problem and want action. Address the agent neutrally but with emphasis on urgency. Trust their willingness to assist. Communicate frustrations without blame.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -4220,42 +4110,13 @@
         },
         {
           "action_id": "42_4",
-          "name": "update_reservation_passengers",
-          "arguments": {
-            "reservation_id": "IPG6ZS",
-            "passengers": [
-              {
-                "first_name": "Sophia",
-                "last_name": "Patel",
-                "dob": "1981-12-25"
-              }
-            ]
-          }
-        },
-        {
-          "action_id": "42_5",
-          "name": "update_reservation_flights",
-          "arguments": {
-            "reservation_id": "IPG6ZS",
-            "cabin": "basic_economy",
-            "flights": [
-              {
-                "flight_number": "HAT069",
-                "date": "2024-05-20"
-              }
-            ],
-            "payment_id": "credit_card_5278427"
-          }
-        },
-        {
-          "action_id": "42_6",
           "name": "get_reservation_details",
           "arguments": {
             "reservation_id": "IPG6ZS"
           }
         },
         {
-          "action_id": "42_7",
+          "action_id": "42_5",
           "name": "cancel_reservation",
           "arguments": {
             "reservation_id": "V7KTOK"
@@ -4495,7 +4356,7 @@
     "id": "airline_test_0047",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Ava Li (ava_li_8840) regarding her reservation EJTH83 for three passengers\u2014Liam Kovacs, Yara Silva, and Mason Kovacs\u2014for a business class one-way flight from Denver to Philadelphia on 2024-05-14, originally scheduled as flight HAT080 but cancelled. You want to confirm the cancellation status and verify the reservation details. You would like to just explore (not book), alternative flight options from Denver to Philadelphia on 2024-05-14; however, no direct or one-stop flights are available on that date. Later, you will request a compensation certificate for the cancelled flight, which affected three passengers, and you prefer the certificate to be issued for $300 as recognition of the disruption.\n\nUse ava_li_8840 for authentication.",
+      "instructions": "You are assisting Ava Li (ava_li_8840) regarding her reservation EJTH83 for three passengers\u2014Liam Kovacs, Yara Silva, and Mason Kovacs\u2014for a business class one-way flight from Denver to Philadelphia on 2024-05-14, originally scheduled as flight HAT080 but cancelled. You want to confirm the cancellation status and verify the reservation details. You would like to just explore (not book), alternative flight options from Denver to Philadelphia on 2024-05-14; however, no direct or one-stop flights are available on that date. For those alternative flights, you only want to see the options; you will decide later and do not want to book any of them in this conversation. Later, you will request a compensation certificate for the cancelled flight, which affected three passengers, and you prefer the certificate to be issued for $300 as recognition of the disruption. Finally, in this same conversation, you also want to cancel reservation EJTH83, because the airline cancelled its flight.\n\nUse ava_li_8840 for authentication.",
       "emotion_instruction": "You feel a strong distaste for the situation and want it resolved quickly. Express your concerns warmly but don't go overboard with trust. Be clear about your disappointment yet stay courteous. Make it clear you expect swift action.",
       "emotion_metadata": {
         "emotion_family": "disgust",
@@ -4623,7 +4484,7 @@
     "id": "airline_test_0049",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Ivan Taylor (user_id: ivan_taylor_6615), and you want to cancel your reservation WGMKL8 for a round-trip from MCO to LAS on 2024-05-23 because your plans have changed. After cancellation, you would just like to explore alternative flight options for a one-way trip from MCO to LAS on the same date, 2024-05-23. You prefer a direct flight, and the only available option is an overnight flight departing MCO around midnight and arriving in LAS early the next morning. You are also open to one-stop options if they better suit your schedule, particularly those connecting through PHX. Additionally, you had a prior reservation 06K2QN for a flight from ATL to LAS on 2024-05-08 that was cancelled by the airline, affecting two passengers, and you would like to receive a compensation certificate for the inconvenience. You prefer any refund or compensation to be issued to your Visa ending in 1656 or as a travel certificate, as per your payment preferences on file.\n\nUse ivan_taylor_6615 for authentication.",
+      "instructions": "You are Ivan Taylor (user_id: ivan_taylor_6615), and you want to cancel your reservation WGMKL8 for a round-trip from MCO to LAS on 2024-05-23 because your plans have changed. After that, you would just like to explore alternative flight options for a one-way trip from MCO to LAS on the same date, 2024-05-23. You prefer a direct flight, and the only available option is an overnight flight departing MCO around midnight and arriving in LAS early the next morning. You are also open to one-stop options if they better suit your schedule, particularly those connecting through PHX. For those alternative flights, you only want to see the options; you will decide later and do not want to book any of them in this conversation. Additionally, you had a prior reservation 06K2QN for a flight from ATL to LAS on 2024-05-08 that was cancelled by the airline, affecting two passengers, and you would like to receive a compensation certificate for the inconvenience. You prefer any refund or compensation to be issued to your Visa ending in 1656 or as a travel certificate, as per your payment preferences on file.\n\nUse ivan_taylor_6615 for authentication.",
       "emotion_instruction": "The situation gives you a sense of distaste, and you want resolution with no delay. Use a kind, considerate tone and be transparent about your feelings. Show confidence in the agent's ability to solve the problem quickly.",
       "emotion_metadata": {
         "emotion_family": "disgust",
@@ -4644,13 +4505,6 @@
         },
         {
           "action_id": "49_1",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "WGMKL8"
-          }
-        },
-        {
-          "action_id": "49_2",
           "name": "search_onestop_flight",
           "arguments": {
             "origin": "MCO",
@@ -4659,7 +4513,7 @@
           }
         },
         {
-          "action_id": "49_3",
+          "action_id": "49_2",
           "name": "search_direct_flight",
           "arguments": {
             "origin": "MCO",
@@ -4668,7 +4522,7 @@
           }
         },
         {
-          "action_id": "49_4",
+          "action_id": "49_3",
           "name": "send_certificate",
           "arguments": {
             "user_id": "ivan_taylor_6615",
@@ -4848,7 +4702,7 @@
     "id": "airline_test_0052",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Daiki Patel (user_id: daiki_patel_1917) with two main requests. First, you want to request a compensation certificate for the cancelled one-way business class flight from SFO to PHL on 2024-05-14 (reservation 0W60LB), because the flight was cancelled by the airline. Later, you will update the round-trip reservation 7WKBKD from PHX to JFK and back. For this update, you would like to change the passenger name from Ethan Taylor to Noah Brown (DOB 1990-01-01), because the original passenger is no longer traveling. You also want to add one checked bag (non-free) to the reservation, to accommodate additional luggage needs. Additionally, you prefer to change the outbound journey to a direct flight from PHX to LGA (New York) on 2024-05-22, specifically flight HAT226, which departs in the morning at 08:00, because it is a convenient and available direct option to the New York area. You also want to review available direct flights from PHX to JFK on 2024-05-22 for comparison, but note that no such flights are currently offered; the only direct flights from PHX on that date are to LAS, SFO, and SEA.\n\nUse daiki_patel_1917 for authentication.",
+      "instructions": "You are assisting Daiki Patel (user_id: daiki_patel_1917) with two main requests. First, you want to request a compensation certificate for the cancelled one-way business class flight from SFO to PHL on 2024-05-14 (reservation 0W60LB), because the flight was cancelled by the airline. Later, you will update the round-trip reservation 7WKBKD from PHX to JFK and back. For this update, you would like to change the passenger name from Ethan Taylor to Noah Brown (DOB 1990-01-01), because the original passenger is no longer traveling. You also want to add one checked bag (which you expect to pay for) to the reservation, to accommodate additional luggage needs. Additionally, you prefer to change the outbound journey to a direct flight from PHX to LGA (New York) on 2024-05-22, specifically flight HAT226, which departs in the morning at 08:00, because it is a convenient and available direct option to the New York area. You also want to review available direct flights from PHX to JFK on 2024-05-22 for comparison, but note that no such flights are currently offered; the only direct flights from PHX on that date are to LAS, SFO, and SEA.\n\nUse daiki_patel_1917 for authentication.",
       "emotion_instruction": "You dislike what you\u2019re experiencing and need it resolved quickly. Keep your responses short and to the point. Be neutral but let your urgency show. Double-check what the agent says.",
       "emotion_metadata": {
         "emotion_family": "disgust",
@@ -4900,39 +4754,12 @@
           "arguments": {
             "reservation_id": "7WKBKD",
             "total_baggages": 1,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_4327297"
           }
         },
         {
           "action_id": "52_4",
-          "name": "update_reservation_flights",
-          "arguments": {
-            "reservation_id": "7WKBKD",
-            "cabin": "business",
-            "flights": [
-              {
-                "flight_number": "HAT226",
-                "date": "2024-05-22"
-              },
-              {
-                "flight_number": "HAT240",
-                "date": "2024-05-22"
-              },
-              {
-                "flight_number": "HAT033",
-                "date": "2024-05-25"
-              },
-              {
-                "flight_number": "HAT035",
-                "date": "2024-05-25"
-              }
-            ],
-            "payment_id": "credit_card_4327297"
-          }
-        },
-        {
-          "action_id": "52_5",
           "name": "search_direct_flight",
           "arguments": {
             "origin": "PHX",
@@ -4952,7 +4779,7 @@
     "id": "airline_test_0053",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Isabella Khan (user_id isabella_khan_4151) with rebooking travel disrupted by a prior cancellation. You want to book a new business class flight from CLT to LGA on 2024-05-16 for three passengers\u2014Isabella Khan, Ivan Nguyen (1952-05-06), and Raj Lopez\u2014preferring an evening departure (flight HAT087 at 17:00) because it is the only direct business option available that day and fits their schedule. You prefer to pay using the credit card ending in 3445 (payment_id credit_card_4651498), which is already on file. Later, you would like to cancel the original reservation 8POIJI for the flight on 2024-05-09 and request a refund to the same credit card because the flight was cancelled by the airline. After that, you would like to search for one-stop flight options from CLT to LGA on 2024-05-16 for future consideration, in case a different routing might offer better timing or value. Finally, you would like to receive a compensation certificate for the inconvenience caused by the cancellation of reservation 8POIJI, as it disrupted your original travel plans.\n\nUse isabella_khan_4151 for authentication.",
+      "instructions": "You are assisting Isabella Khan (user_id isabella_khan_4151) with rebooking travel disrupted by a prior cancellation. You want to book a new business class flight from CLT to LGA on 2024-05-16 for three passengers\u2014Isabella Khan, Ivan Nguyen (1952-05-06), and Raj Lopez\u2014with 3 checked bags in total and no travel insurance, preferring an evening departure (flight HAT087 at 17:00) because it is the only direct business option available that day and fits their schedule. You prefer to pay using the credit card ending in 3445 (payment_id credit_card_4651498), which is already on file. Later, you would like to cancel the original reservation 8POIJI for the flight on 2024-05-09 and request a refund to the same credit card because the flight was cancelled by the airline. After that, you would like to search for one-stop flight options from CLT to LGA on 2024-05-16 for future consideration, in case a different routing might offer better timing or value. Finally, you would like to receive a compensation certificate for the inconvenience caused by the cancellation of reservation 8POIJI, as it disrupted your original travel plans.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse isabella_khan_4151 for authentication.",
       "emotion_instruction": "You feel embittered and require urgent resolution. Don\u2019t hide your displeasure, but remain businesslike. Trust the agent\u2019s capability to help. Insist that your problem be prioritized.",
       "emotion_metadata": {
         "emotion_family": "disgust",
@@ -5059,7 +4886,7 @@
     "id": "airline_test_0054",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Noah Khan (user_id: noah_khan_8166) regarding a cancelled flight and rebooking request. The original reservation LUA6DF was for a business class one-way flight from LAS to IAH on 2024-05-13 (flight HAT175), which was cancelled. You want to receive a compensation certificate for this cancellation, as is standard for disrupted travel due to airline cancellation. Later, you would like to update the reservation to rebook the same route (from LAS to IAH) on 2024-05-17, using flight HAT175 again, in business class, as seats are available and the schedule aligns with the original plan. You also want to add two checked bags to the new booking, one of which will be charged as a non-free bag since the original reservation included none. You prefer to pay any associated bag fees using your credit card ending in 9691, which is already on file in your account.\n\nUse noah_khan_8166 for authentication.",
+      "instructions": "You are assisting Noah Khan (user_id: noah_khan_8166) regarding a cancelled flight and rebooking request. The original reservation LUA6DF was for a business class one-way flight from LAS to IAH on 2024-05-13 (flight HAT175), which was cancelled. You want to receive a compensation certificate for this cancellation, as is standard for disrupted travel due to airline cancellation. Later, you would like to update the reservation to rebook the same route (from LAS to IAH) on 2024-05-17, using flight HAT175 again, in business class, as seats are available and the schedule aligns with the original plan. You also want to add two checked bags to the new booking, one of which you expect to pay for since the original reservation included none. You prefer to pay any associated bag fees using your credit card ending in 9691, which is already on file in your account, and you want any fare difference or refund from the flight change to go to that same card.\n\nUse noah_khan_8166 for authentication.",
       "emotion_instruction": "You dislike what you\u2019re experiencing and need it resolved quickly. Keep your responses short and to the point. Be neutral but let your urgency show. Double-check what the agent says.",
       "emotion_metadata": {
         "emotion_family": "disgust",
@@ -5107,7 +4934,7 @@
           "arguments": {
             "reservation_id": "LUA6DF",
             "total_baggages": 2,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_5669132"
           }
         }
@@ -5123,7 +4950,7 @@
     "id": "airline_test_0055",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Evelyn Nguyen, user evelyn_nguyen_4236, and you want to cancel your reservation ZIDDZH for the PHX to PHL business trip originally scheduled on 2024-05-18 and 2024-05-19, because your plans changed. You prefer the refund to be processed back to your credit card ending in 6318653. Later, you would like to update your reservation SXSTJB for the BOS to LAX business trip by changing the flights to a morning departure from BOS to MIA on 2024-05-18 (flight HAT086) followed by an afternoon connecting flight from MIA to LAX on the same day (flight HAT200), because you need to adjust your travel dates. You also want to add one checked bag, increasing total baggage to four, with one non-free bag, and you prefer this change to be charged to the same credit card. After that, you would like to receive a compensation certificate for the inconvenience caused by the cancellation of your PHX to PHL trip.\n\nUse evelyn_nguyen_4236 for authentication.",
+      "instructions": "You are Evelyn Nguyen, user evelyn_nguyen_4236, and you want to cancel your reservation ZIDDZH for the PHX to PHL business trip originally scheduled on 2024-05-18 and 2024-05-19, because your plans changed. You prefer the refund to be processed back to your credit card ending in 6318653. Later, you would like to update your reservation SXSTJB for the BOS to LAX business trip by changing the flights to a morning departure from BOS to MIA on 2024-05-18 (flight HAT086) followed by an afternoon connecting flight from MIA to LAX on the same day (flight HAT200), because you need to adjust your travel dates. You also want to add one checked bag, increasing total baggage to four, one of which you expect to pay for, and you prefer this change to be charged to the same credit card. After that, you would like to receive a compensation certificate for the inconvenience caused by the cancellation of your PHX to PHL trip.\n\nUse evelyn_nguyen_4236 for authentication.",
       "emotion_instruction": "You\u2019ve had an unpleasant experience and want it sorted right away. Though you use polite language, your lack of trust is evident. Don\u2019t let the agent dodge specifics. Insist on fast, concrete answers.",
       "emotion_metadata": {
         "emotion_family": "disgust",
@@ -5173,7 +5000,7 @@
           "arguments": {
             "reservation_id": "SXSTJB",
             "total_baggages": 4,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_6318653"
           }
         },
@@ -5208,7 +5035,7 @@
     "id": "airline_test_0056",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Anya Sanchez, who wants to cancel her one-way reservation DGLJTR from PHX to DFW on 2024-05-19 due to changed plans, and have the refund processed back to her Mastercard ending in 3097. Later, you are to update her round-trip reservation 4SAGZV for passengers Mason Moore and Amelia Khan, changing the outbound flight from PHL to LGA on 2024-05-26 to the early morning flight HAT096, upgrading to business class since seats are available, and adding one checked bag (making two total, with one paid), charging any additional costs to her Mastercard ending in 1642. After that, you are to issue a compensation certificate for the inconvenience caused by the cancellation of reservation DGLJTR.\n\nUse anya_sanchez_5251 for authentication.",
+      "instructions": "You are assisting Anya Sanchez, who wants to cancel her one-way reservation DGLJTR from PHX to DFW on 2024-05-19 due to changed plans, and have the refund processed back to her Mastercard ending in 3097. Later, you are to update her round-trip reservation 4SAGZV for passengers Mason Moore and Amelia Khan, changing the outbound flight from PHL to LGA on 2024-05-26 to the early morning flight HAT096, upgrading to business class since seats are available, and adding one checked bag (making two total, one of which you expect to pay for), charging any additional costs to her Mastercard ending in 1642. After that, you are to issue a compensation certificate for the inconvenience caused by the cancellation of reservation DGLJTR.\n\nUse anya_sanchez_5251 for authentication.",
       "emotion_instruction": "You\u2019re not happy with the current circumstances and want immediate assistance. Your tone is straightforward, focusing on getting results. You rely on the agent\u2019s expertise to fix the problem. You express your dislike clearly but keep it professional.",
       "emotion_metadata": {
         "emotion_family": "disgust",
@@ -5222,13 +5049,6 @@
       "actions": [
         {
           "action_id": "56_0",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "DGLJTR"
-          }
-        },
-        {
-          "action_id": "56_1",
           "name": "search_direct_flight",
           "arguments": {
             "origin": "PHX",
@@ -5237,7 +5057,7 @@
           }
         },
         {
-          "action_id": "56_2",
+          "action_id": "56_1",
           "name": "search_onestop_flight",
           "arguments": {
             "origin": "PHX",
@@ -5246,28 +5066,28 @@
           }
         },
         {
-          "action_id": "56_3",
+          "action_id": "56_2",
           "name": "get_reservation_details",
           "arguments": {
             "reservation_id": "4SAGZV"
           }
         },
         {
-          "action_id": "56_4",
+          "action_id": "56_3",
           "name": "update_reservation_baggages",
           "arguments": {
             "reservation_id": "4SAGZV",
             "total_baggages": 2,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_1699800"
           }
         },
         {
-          "action_id": "56_5",
+          "action_id": "56_4",
           "name": "update_reservation_flights",
           "arguments": {
             "reservation_id": "4SAGZV",
-            "cabin": "economy",
+            "cabin": "business",
             "flights": [
               {
                 "flight_number": "HAT096",
@@ -5674,7 +5494,7 @@
     "id": "airline_test_0063",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Mohamed Silva (user_id: mohamed_silva_4301), and you want to book a one-way flight from LGA to SFO on 2024-05-20 with a connection in PHX, departing LGA in the early morning (around 03:00) on flight HAT201 and departing PHX in the evening (around 17:00) on flight HAT009, both in economy class for one passenger (Mohamed Silva), because you need to travel to SFO that day. You prefer to pay using your Mastercard ending in 7526. Later, you want to update your existing reservation 72T71H (LGA to EWR round-trip via CLT) to change the passenger name from Mohamed Silva to Chen Johansson and add one checked bag, because the trip is now for Chen and requires luggage. You prefer to use the same card for the bag fee. After that, you would like to cancel reservation 72T71H and receive a refund to the same Mastercard, because of schedule conflicts that make the trip unfeasible.\n\nUse mohamed_silva_4301 for authentication.",
+      "instructions": "You are Mohamed Silva (user_id: mohamed_silva_4301), and you want to book a one-way flight from LGA to SFO on 2024-05-20 with a connection in PHX, departing LGA in the early morning (around 03:00) on flight HAT201 and departing PHX in the evening (around 17:00) on flight HAT009, both in economy class for one passenger (Mohamed Silva) with one checked bag and no travel insurance, because you need to travel to SFO that day. You prefer to pay using your Mastercard ending in 7526. Later, you want to update your existing reservation 72T71H (LGA to EWR round-trip via CLT) to change the passenger name from Mohamed Silva to Chen Johansson and add one checked bag, because the trip is now for Chen and requires luggage. You prefer to use the same card for any bag fee. After that, you would like to cancel reservation 72T71H and receive a refund to the same Mastercard, because of schedule conflicts that make the trip unfeasible.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse mohamed_silva_4301 for authentication.",
       "emotion_instruction": "Keep your composure and communicate with a sense of internal peace. However, make it clear that your needs are urgent. Be curt and to the point, showing little trust in the agent\u2019s capability.",
       "emotion_metadata": {
         "emotion_family": "sadness",
@@ -5759,15 +5579,8 @@
           "arguments": {
             "reservation_id": "72T71H",
             "total_baggages": 1,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_5297893"
-          }
-        },
-        {
-          "action_id": "63_5",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "72T71H"
           }
         }
       ],
@@ -5839,7 +5652,7 @@
     "id": "airline_test_0065",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Evelyn Garcia, who had her flight HAT195 from IAH to EWR on 2024-05-11 cancelled, and she is requesting a compensation certificate for the inconvenience. You want to issue a compensation certificate for this cancelled reservation (5264D4) involving passengers Evelyn Garcia and Mei Lee. Later, you would like to book a new flight for Evelyn Garcia and Mei Lee from IAH to SFO on 2024-05-20 in economy class, as flight HAT180 is available that day with morning departure. After that, you would like to update the reservation to instead fly from IAH to LAS on 2024-05-21 in economy class on flight HAT286, which departs in the late evening, keeping the same two passengers. You prefer to use the Visa card ending in 3459 on file for all applicable charges, as this was the requested payment method.\n\nUse evelyn_garcia_6211 for authentication.",
+      "instructions": "You are assisting Evelyn Garcia, who had her flight HAT195 from IAH to EWR on 2024-05-11 cancelled, and she is requesting a compensation certificate for the inconvenience. You want to issue a compensation certificate for this cancelled reservation (5264D4) involving passengers Evelyn Garcia and Mei Lee. Later, you would like to book a new flight for Evelyn Garcia and Mei Lee from IAH to SFO on 2024-05-20 in economy class with no checked bags and no travel insurance, as flight HAT180 is available that day with morning departure. After that, you would like to update the reservation to instead fly from IAH to LAS on 2024-05-21 in economy class on flight HAT286, which departs in the late evening, keeping the same two passengers. You do not want to cancel that new booking in this conversation. You prefer to use the Visa card ending in 3459 on file for all applicable charges, as this was the requested payment method.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse evelyn_garcia_6211 for authentication.",
       "emotion_instruction": "You\u2019re feeling low and want a solution urgently. State your concerns in a straightforward, clear manner. Trust the agent\u2019s professionalism and show you\u2019re counting on them. Push for a quick response without being rude.",
       "emotion_metadata": {
         "emotion_family": "sadness",
@@ -5905,21 +5718,6 @@
             "nonfree_baggages": 0,
             "insurance": "no"
           }
-        },
-        {
-          "action_id": "65_3",
-          "name": "update_reservation_flights",
-          "arguments": {
-            "reservation_id": "HATHAT",
-            "cabin": "economy",
-            "flights": [
-              {
-                "flight_number": "HAT286",
-                "date": "2024-05-21"
-              }
-            ],
-            "payment_id": "credit_card_4906704"
-          }
         }
       ],
       "communicate_info": [],
@@ -5933,7 +5731,7 @@
     "id": "airline_test_0066",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Noah Sanchez, who has a round-trip reservation from BOS to LGA for four passengers (Noah Sanchez, Daiki Moore, Mei Garcia, Yara Kim) on May 21 and May 23, 2024, in economy class. You want to first update the reservation to add one additional checked bag, resulting in four total bags with one paid bag, and charge the payment method on file\u2014a Visa card ending in 9338\u2014for the baggage fee. After that, you would like to explore upgrading all passengers to business class on the same route and dates, but only if space is available for everyone. Since business class does not have enough availability for all four passengers, you prefer to keep the current economy class flights. Later, you have decided to cancel the entire reservation VE2NTF.\n\nUse noah_sanchez_4225 for authentication.",
+      "instructions": "You are assisting Noah Sanchez, who has a round-trip reservation from BOS to LGA for four passengers (Noah Sanchez, Daiki Moore, Mei Garcia, Yara Kim) on May 21 and May 23, 2024, in economy class. You want to first update the reservation to add one additional checked bag, resulting in four total bags, one of which you expect to pay for, and charge the payment method on file\u2014a Visa card ending in 9338\u2014for any baggage fee. After that, you would like to explore upgrading all passengers to business class on the same route and dates, but only if space is available for everyone. Since business class does not have enough availability for all four passengers, you prefer to keep the current economy class flights. Later, you have decided to cancel the entire reservation VE2NTF because your plans have changed.\n\nUse noah_sanchez_4225 for authentication.",
       "emotion_instruction": "With a sense of hopelessness, you find it hard to believe things might improve. Avoid sounding rude, but don\u2019t go out of your way to be polite. Keep urgency moderate; you need help but aren\u2019t insisting. Question responses before accepting them.",
       "emotion_metadata": {
         "emotion_family": "sadness",
@@ -5958,7 +5756,7 @@
           "arguments": {
             "reservation_id": "VE2NTF",
             "total_baggages": 4,
-            "nonfree_baggages": 1,
+            "nonfree_baggages": 0,
             "payment_id": "credit_card_8798553"
           }
         },
@@ -5987,13 +5785,6 @@
               }
             ],
             "payment_id": "credit_card_8798553"
-          }
-        },
-        {
-          "action_id": "66_3",
-          "name": "cancel_reservation",
-          "arguments": {
-            "reservation_id": "VE2NTF"
           }
         }
       ],
@@ -6065,7 +5856,7 @@
     "id": "airline_test_0068",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Lucas Thomas, and you want compensation in the form of a certificate for your cancelled business class flight from MIA to JFK on 2024-05-10 (reservation MIC7D1) because it was unexpectedly cancelled. Later, you want to cancel that reservation entirely. After that, you would like to book a new one-way business class flight from MIA to LAX on 2024-05-20, departing in the late afternoon, for yourself, because you need to travel to Los Angeles. Subsequently, you want to update your existing reservation 5KCJWY to change the itinerary from CLT to DFW to a new one-stop route via DEN on 2024-05-27: first, a flight from CLT to DEN in the early afternoon (HAT262), followed by a connecting flight from DEN to DFW in the late evening (HAT241), both in economy class, for yourself and two other passengers (Ethan Jackson and Liam Thomas), because you prefer a more direct connection on the same day. You prefer to use your Mastercard ending in 9094 for all applicable charges and updates.\n\nUse lucas_thomas_9373 for authentication.",
+      "instructions": "You are Lucas Thomas, and you want compensation in the form of a certificate for your cancelled business class flight from MIA to JFK on 2024-05-10 (reservation MIC7D1) because it was unexpectedly cancelled. Later, you want to cancel that reservation entirely. After that, you would like to book a new one-way business class flight from MIA to LAX on 2024-05-20, departing in the late afternoon at 17:00 (if more than one direct flight leaves then, you want the cheaper one), for yourself, with no checked bags and no travel insurance, because you need to travel to Los Angeles. Subsequently, you want to update your existing reservation 5KCJWY to change the itinerary from CLT to DFW to a new one-stop route via DEN on 2024-05-27: first, a flight from CLT to DEN in the early afternoon (HAT262), followed by a connecting flight from DEN to DFW in the late evening (HAT241), both in economy class, for yourself and two other passengers (Ethan Jackson and Liam Thomas), because you prefer a more direct connection on the same day. You prefer to use your Mastercard ending in 9094 for all applicable charges and updates.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse lucas_thomas_9373 for authentication.",
       "emotion_instruction": "You\u2019re quite frustrated by the situation and need urgent support. Keep your tone warm and open, showing you trust the agent. Be clear about how important a fast resolution is to you. Ask for help without sounding harsh.",
       "emotion_metadata": {
         "emotion_family": "sadness",
@@ -6103,21 +5894,21 @@
             "cabin": "business",
             "flights": [
               {
-                "flight_number": "HAT185",
+                "flight_number": "HAT200",
                 "date": "2024-05-20"
               }
             ],
             "passengers": [
               {
-                "first_name": "Amelia",
-                "last_name": "Nguyen",
-                "dob": "1966-08-07"
+                "first_name": "Lucas",
+                "last_name": "Thomas",
+                "dob": "1972-02-07"
               }
             ],
             "payment_methods": [
               {
                 "payment_id": "credit_card_1382059",
-                "amount": 490
+                "amount": 308
               }
             ],
             "total_baggages": 0,
@@ -6163,7 +5954,7 @@
     "id": "airline_test_0069",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Liam Johnson (liam_johnson_6488) and want to cancel the existing round-trip business class reservation from LAS to MCO due to a change in plans. After that, you want to search for both direct and one-stop flight options from LAS to MCO on 2024-05-20. Subsequently, you would like to book a new one-way economy flight from LAS to MCO on 2024-05-20 for two passengers: Liam Johnson and Juan Lee, preferring an early morning departure, if asked for any more details, say to check my past reservations. You prefer to use your Mastercard ending in 1271 for payment and do not require any checked bags or travel insurance. Later, you would like to receive a compensation certificate for the inconvenience caused by the cancellation of your original reservation.\n\nUse liam_johnson_6488 for authentication.",
+      "instructions": "You are Liam Johnson (liam_johnson_6488) and want to cancel the existing round-trip business class reservation from LAS to MCO due to a change in plans. After that, you want to search for both direct and one-stop flight options from LAS to MCO on 2024-05-20. Subsequently, you would like to book a new one-way economy flight from LAS to MCO on 2024-05-20 for two passengers: Liam Johnson and Juan Lee, preferring an early morning direct flight at 07:00 (if more than one leaves then, you want the cheaper one), if asked for any more details, say to check my past reservations. You prefer to use your Mastercard ending in 1271 for payment and do not require any checked bags or travel insurance. Later, you would like to receive a compensation certificate for the inconvenience caused by the cancellation of your original reservation.\n\nIf the agent asks you for information you don't know (for example a date of birth), say you don't know it and ask the agent to check your account.\n\nUse liam_johnson_6488 for authentication.",
       "emotion_instruction": "You don\u2019t like what\u2019s going on, but you make an effort to stay courteous and kind. State your dissatisfaction plainly, but don\u2019t get confrontational. Keep the pace of conversation slow and measured. You\u2019re hesitant to trust the agent fully.",
       "emotion_metadata": {
         "emotion_family": "sadness",
@@ -6236,47 +6027,6 @@
             "total_baggages": 0,
             "nonfree_baggages": 0,
             "insurance": "no"
-          }
-        },
-        {
-          "action_id": "69_4",
-          "name": "update_reservation_baggages",
-          "arguments": {
-            "reservation_id": "BWHHHG",
-            "total_baggages": 2,
-            "nonfree_baggages": 2,
-            "payment_id": "credit_card_7726435"
-          }
-        },
-        {
-          "action_id": "69_5",
-          "name": "update_reservation_flights",
-          "arguments": {
-            "reservation_id": "BWHHHG",
-            "cabin": "business",
-            "flights": [
-              {
-                "flight_number": "HAT077",
-                "date": "2024-05-18"
-              },
-              {
-                "flight_number": "HAT010",
-                "date": "2024-05-18"
-              },
-              {
-                "flight_number": "HAT299",
-                "date": "2024-05-28"
-              }
-            ],
-            "payment_id": "credit_card_7726435"
-          }
-        },
-        {
-          "action_id": "69_6",
-          "name": "send_certificate",
-          "arguments": {
-            "user_id": "liam_johnson_6488",
-            "amount": 200
           }
         }
       ],

@@ -23,18 +23,18 @@ tau-emotion run \
 
 | Option | Description |
 |--------|-------------|
-| `--domain`, `-d` | Domain to evaluate: `airline`, `retail`, `telecom`, `telehealth`, `bank`, `basketball`, `movie`, `restaurant`, `school`, `travel` (`mock` is a test fixture) |
+| `--domain`, `-d` | Domain to evaluate: `airline`, `retail`, `telecom`, `telehealth`, `bank`, `basketball`, `movie`, `restaurant`, `school`, `travel` |
 | `--agent-llm` | LLM model for the agent (default: `gpt-4.1-2025-04-14`) |
 | `--user-llm` | LLM model for the user simulator (default: `qwen3-235b-a22b-instruct-2507`) |
 | `--agent-llm-args` | JSON dict of extra args for the agent LLM (default: `'{"temperature": 0.0}'`) |
 | `--user-llm-args` | JSON dict of extra args for the user LLM (default: `'{"temperature": 0.7}'`) |
 | `--agent-temperature` | The agent LLM's temperature. Overrides the temperature in `--agent-llm-args` (default `0.0`) |
 | `--agent-api-base`, `--user-api-base` | Base URL of that side's OpenAI-compatible server, e.g. `http://localhost:8000/v1`. Default: the provider's (`OPENAI_API_BASE` for bare and `openai/` model names) |
-| `--agent-api-key`, `--user-api-key` | API key for that side's server. Default: the provider's env var (`OPENAI_API_KEY` for bare and `openai/` model names), or no key when the matching `--*-api-base` is given, so the key isn't sent to another server. Not saved in the results |
+| `--agent-api-key`, `--user-api-key` | API key for that side's server. Default: the provider's env var (`OPENAI_API_KEY` for bare and `openai/` model names), or the placeholder key `EMPTY` when the matching `--*-api-base` is given, so the key isn't sent to another server. Not saved in the results |
 | `--agent-enable-thinking` / `--no-agent-enable-thinking` | Turn the agent model's thinking on or off through its chat template (vLLM `chat_template_kwargs.enable_thinking`). Default: the model's own default |
 | `--user-enable-thinking` / `--no-user-enable-thinking` | Same, for the user model |
-| `--agent` | Agent implementation to use: `llm_agent` (default), `llm_agent_gt`, `llm_agent_solo` |
-| `--user` | User simulator implementation to use: `user_simulator` (default), `dummy_user` |
+| `--agent` | Agent implementation to use: `llm_agent` (default), `llm_agent_gt` |
+| `--user` | User simulator implementation to use: `user_simulator` (default) |
 | `--no-emotion` | Leave the task's emotion instruction out of the user simulator's prompt (an ablation: the same tasks with a neutral user). Adds `no-emotion` to the default run folder |
 | `--num-trials` | Number of times each task is run (default: `1`) |
 | `--num-tasks` | Number of tasks to evaluate (omit for all tasks) |
@@ -164,7 +164,7 @@ tau-emotion review <path>
 | `--judge-llm` | The LLM used as the review judge (default: `claude-opus-4-5`). A bare model name (e.g. `qwen3-235b-a22b-instruct-2507`) goes to `OPENAI_API_BASE` |
 | `--judge-llm-args` | The arguments to pass to the judge LLM, as JSON (default: `'{}'`) |
 | `--judge-api-base` | Base URL of the judge's OpenAI-compatible server. Default: the provider's (`OPENAI_API_BASE` for bare and `openai/` model names) |
-| `--judge-api-key` | API key for the judge's server. Default: the provider's env var, or no key when `--judge-api-base` is given |
+| `--judge-api-key` | API key for the judge's server. Default: the provider's env var, or the placeholder key `EMPTY` when `--judge-api-base` is given |
 | `--judge-enable-thinking` / `--no-judge-enable-thinking` | Turn the judge model's thinking on or off through its chat template. Default: the model's own default |
 | `--log-llm` | Log LLM request/response for each review call |
 
@@ -248,7 +248,3 @@ tau-emotion run \
   --agent-llm gpt-4.1 \
   --user-llm gpt-4.1
 ```
-
-### No-user mode
-
-The agent is given a task ticket and all tools up front, with no user (`--agent llm_agent_solo --user dummy_user`). Only the `mock` domain supports it: the 10 benchmark domains don't support solo mode and their tasks carry no ticket.

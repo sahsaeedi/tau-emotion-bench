@@ -40,13 +40,15 @@ async def get_tasks_api(
 
 
 @app.post("/api/v1/run_domain")
-async def run_domain_api(
+def run_domain_api(
     request: RunConfig,
 ) -> Results:
-    """ """
+    """Run a domain. A plain def, so FastAPI runs it in a worker thread and the
+    server keeps answering while it runs. An existing run is resumed without
+    prompting."""
 
     try:
-        results = run_domain(request)
+        results = run_domain(request.model_copy(update={"auto_resume": True}))
         return results
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

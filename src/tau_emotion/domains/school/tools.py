@@ -1,8 +1,8 @@
 """Toolkit for the school domain, ported from TRACER's environment
 (tracer/tracer/envs/school/).
 
-14 tools: one per tool module in tracer/tracer/envs/school/tools/, plus
-`calculate` and `think`. Conversion rules from TRACER's tools:
+14 tools: one per tool module in tracer/tracer/envs/school/tools/.
+Conversion rules from TRACER's tools:
 
 - `data["courses"]` → `self.db.courses`.
 - `return json.dumps(x)` → return the pydantic record.
@@ -358,7 +358,7 @@ class SchoolTools(ToolKitBase):
             course_ids: List of course IDs to register.
             study_level: Study level, one of 'undergraduate', 'graduate', 'continuing_ed'.
             grading_options: Optional map from course_id to grading option
-                ('letter', 'pass/fail', 'audit'). Defaults to 'letter'.
+                ('letter', 'pass_fail', 'audit'). Defaults to 'letter'.
             health_insurance: Whether the student elects health insurance
                 through the school, 'yes' or 'no'.
             payment_methods: List of payment method entries (payment_id, amount)
@@ -467,7 +467,10 @@ class SchoolTools(ToolKitBase):
             registration_id: Existing registration ID.
             add_course_ids: Course IDs to add.
             drop_course_ids: Course IDs to drop.
-            grading_options: Optional map from course_id to grading option.
+            grading_options: Optional map from course_id to grading option
+                ('letter', 'pass_fail', 'audit'). Applies to every course on
+                the updated registration, kept ones included: a course left
+                out goes back to 'letter'.
             payment_id: Student's saved payment method ID to use for additional charges.
 
         Returns:

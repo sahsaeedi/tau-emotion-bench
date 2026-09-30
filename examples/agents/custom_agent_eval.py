@@ -99,7 +99,7 @@ class VerboseAgent(HalfDuplexAgent[list]):
 
 
 # =============================================================================
-# Build and run manually (no registry needed)
+# Build and run manually (no build helpers)
 # =============================================================================
 
 if __name__ == "__main__":
@@ -112,15 +112,15 @@ if __name__ == "__main__":
         run_simulation,
     )
 
-    # Load a task from the mock domain
-    tasks = get_tasks("mock", task_ids=["create_task_1"])
+    # Load a task from the airline domain
+    tasks = get_tasks("airline", task_ids=["airline_test_0000"])
     task = tasks[0]
     print(f"Task: {task.id}")
     print(f"User scenario: {task.user_scenario.instructions[:100]}...")
     print()
 
     # Build the environment
-    env = build_environment("mock")
+    env = build_environment("airline")
     print(f"Domain policy: {env.get_policy()[:100]}...")
     print(f"Available tools: {[t.name for t in env.get_tools()]}")
     print()
@@ -142,13 +142,11 @@ if __name__ == "__main__":
 
     # Wire into an orchestrator
     orchestrator = Orchestrator(
-        domain="mock",
+        domain="airline",
         agent=agent,
         user=user,
         environment=env,
         task=task,
-        max_steps=20,
-        max_errors=5,
         seed=42,
     )
 

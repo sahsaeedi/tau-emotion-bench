@@ -1,7 +1,7 @@
 """Toolkit for the bank domain, ported from TRACER's environment
 (tracer/tracer/envs/bank/).
 
-22 tools: one per tool module in tracer/tracer/envs/bank/tools/, plus `think`.
+22 tools: one per tool module in tracer/tracer/envs/bank/tools/.
 Conversion rules from TRACER's tools:
 
 - `data["clients"]` → `self.db.clients`.
@@ -566,6 +566,7 @@ class BankTools(ToolKitBase):
     # ------------------------------------------------------------------
 
     @is_tool(ToolType.WRITE)
+    @_hide_params("beneficiary_id")
     def add_beneficiary(
         self,
         client_id: str,

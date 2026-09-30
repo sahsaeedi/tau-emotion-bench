@@ -1163,38 +1163,6 @@ class MarkdownDisplay:
         return "\n\n".join(output)
 
     @classmethod
-    def display_result(
-        cls,
-        task: Task,
-        sim: SimulationRun,
-        reward: Optional[float] = None,
-        show_task_id: bool = False,
-    ) -> str:
-        """Display a single result with all its components in markdown format."""
-        output = [
-            f"## Task {task.id}" if show_task_id else "## Task",
-            "\n### User Instruction",
-            task.user_scenario.instructions,
-            "\n### Ground Truth Actions",
-            cls.display_actions(task.evaluation_criteria.actions),
-        ]
-
-        if task.evaluation_criteria.communicate_info:
-            output.extend(
-                [
-                    "\n### Communicate Info",
-                    "```\n" + str(task.evaluation_criteria.communicate_info) + "\n```",
-                ]
-            )
-
-        if reward is not None:
-            output.extend(["\n### Reward", f"**{reward:.3f}**"])
-
-        output.extend(["\n### Simulation", cls.display_simulation(sim)])
-
-        return "\n".join(output)
-
-    @classmethod
     def display_message(cls, msg: Message) -> str:
         """Display a single message in markdown format."""
         # Common message components

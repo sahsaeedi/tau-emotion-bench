@@ -6,12 +6,11 @@ and modified to fit the needs of the project.
 import inspect
 from abc import ABC, abstractmethod
 from inspect import Signature
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional, override
 
 from docstring_parser import parse
 from loguru import logger
 from pydantic import BaseModel, ConfigDict, Field, create_model, field_serializer
-from typing_extensions import override
 
 
 def _with_resolved_annotations(sig: Signature, func: Callable) -> Signature:

@@ -1,6 +1,6 @@
 # Tau-Emotion Domains
 
-This folder contains the domains for the Tau-Emotion project: the 10 benchmark domains, ported from TRACER's environments (`tracer/tracer/envs/`), and the `mock` domain used by the tests.
+This folder contains the domains for the Tau-Emotion project: the 10 benchmark domains, ported from TRACER's environments (`tracer/tracer/envs/`).
 
 ## Domain Structure
 
@@ -8,11 +8,11 @@ Each domain has its own folder with the following structure:
 
 - `data_model.py`: Defines the data models for the domain. 
     - Implements a subclass of `DB` (e.g. `FlightDB(DB)`) which is the base class for all domain databases (defined in `src/tau_emotion/environment/db.py`).
-- `user_data_model.py`: Defines the data models for the user data for the domain. (Optional; only `mock` has one)
+- `user_data_model.py`: Defines the data models for the user data for the domain. (Optional; none of the 10 domains has one)
     - Implements a subclass of `DB` for the domain's user database.
 - `tools.py`: Defines the tools for the domain. 
     - Implements a subclass of `ToolKitBase` (e.g. `AirlineTools(ToolKitBase)`) which is the base class for all domain toolkits (defined in `src/tau_emotion/environment/toolkit.py`). 
-- `user_tools.py`: Defines the user tools for the domain. (Optional; only `mock` has one)
+- `user_tools.py`: Defines the user tools for the domain. (Optional; none of the 10 domains has one)
     - Implements a subclass of `ToolKitBase` for user-facing tools. 
 - `environment.py`: Defines the environment for the domain. 
     - Implements `get_environment()` function that returns an `Environment` instance for the domain. In the 10 benchmark domains it takes `db_split` (`"test"` for `db.json`, the default, or `"train"` for `db_train.json`).
@@ -36,8 +36,6 @@ Splits are derived from these files, with no split file:
 - `base` (the default) and `test`: the tasks in `tasks.json`, run on `db.json`.
 - `train`: the tasks in `tasks_train.json`, run on `db_train.json`, which the runner selects automatically.
 
-The `mock` domain keeps the upstream layout: `tasks.json`, `split_tasks.json` (split name -> task IDs, with a `base` split), `policy.md`, `policy_solo.md`, `db.json` and `user_db.json`.
-
 ## Task Schema and Evaluation
 
 Each entry in `tasks.json` is a `Task` (see
@@ -59,7 +57,6 @@ the full breakdown.
 ## Tests
 All the tests for the domain are stored in the `tests/test_domains/test_<domain_name>` folder.
 - `test_tools_<domain_name>.py`: Contains tests for the tools for the domain.
-- `mock` is the only domain with user tools; `test_mock/test_tools_mock.py` tests them too.
 
 `tests/test_domains/test_emotion_tasks.py` checks the task files shared by the 10 domains.
 
@@ -82,7 +79,6 @@ pytest tests/test_domains/test_<domain_name>
 | `restaurant` | Ticket lookup, order modification, cancellation, and tips |
 | `school` | Course registration, schedule changes, and tuition payments |
 | `travel` | Package search, trip booking, and itinerary changes |
-| `mock` | Lightweight test fixture, used only by the tests |
 
 ## Registering your domain
 To make it easy for people to use your domain, you need to register your `get_environment`, `get_tasks`, and `get_tasks_split` functions in Tau-Emotion `registry.py` file.

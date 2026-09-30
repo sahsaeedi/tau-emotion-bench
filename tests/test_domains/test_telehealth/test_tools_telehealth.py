@@ -67,15 +67,14 @@ def test_patient_details_are_formatted_text(tools: TelehealthTools):
     assert "- Primary Care Copay: $" in details
 
 
-def test_provider_without_license_fails_like_tracer(tools: TelehealthTools):
+def test_provider_without_license(tools: TelehealthTools):
     assert tools.get_provider_details(PROVIDER_ID).startswith(
         f"Provider Details (ID: {PROVIDER_ID})\n\nName: MD Adrian Christensen"
     )
-    with pytest.raises(ValueError, match="license_number"):
-        tools.get_provider_details(UNLICENSED_PROVIDER_ID)
+    assert "License Number: N/A\n" in tools.get_provider_details(UNLICENSED_PROVIDER_ID)
 
 
-def test_schedule_then_details_fails_like_tracer(tools: TelehealthTools):
+def test_schedule_then_details(tools: TelehealthTools):
     confirmation = tools.schedule_appointment(
         PATIENT_ID, PROVIDER_ID, MONDAY, MONDAY_SLOT, "follow_up"
     )
@@ -94,9 +93,8 @@ def test_schedule_then_details_fails_like_tracer(tools: TelehealthTools):
         f"Provider {PROVIDER_ID} already has an appointment scheduled at "
         f"{MONDAY_SLOT} on {MONDAY}."
     )
-    # TRACER's tool never records a chief complaint for new appointments, then reads it.
-    with pytest.raises(ValueError, match="chief_complaint"):
-        tools.get_appointment_details(appointment_id)
+    # New appointments have no chief complaint.
+    assert "- Chief Complaint: N/A\n" in tools.get_appointment_details(appointment_id)
 
 
 def test_record_updates_return_the_raw_record(tools: TelehealthTools):

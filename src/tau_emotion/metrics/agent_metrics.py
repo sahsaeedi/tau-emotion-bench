@@ -87,10 +87,6 @@ class AgentMetrics(BaseModel):
         return sum(v for k, v in self.sims_by_max_user_severity.items() if k != "none")
 
     @property
-    def sims_with_critical_agent_errors(self) -> int:
-        return self.sims_by_max_agent_severity.get("critical", 0)
-
-    @property
     def sims_with_critical_user_errors(self) -> int:
         return self.sims_by_max_user_severity.get(
             "critical_helped", 0

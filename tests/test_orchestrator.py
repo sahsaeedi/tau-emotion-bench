@@ -512,3 +512,51 @@ def test_validate_communication_allows_valid_messages(
     # Should initialize successfully with valid message
     assert orchestrator.done is False
     assert orchestrator.termination_reason is None
+
+
+@pytest.mark.parametrize(
+    "error, reason",
+    [
+        ("json", "agent_error"),
+        ("context", "context_window_exceeded"),
+    ],
+)
+def test_agent_model_failure_ends_the_run(
+    domain_name: str,
+    user_simulator: UserSimulator,
+    agent: LLMAgent,
+    base_task: Task,
+    get_environment: Callable[[], Environment],
+    monkeypatch: pytest.MonkeyPatch,
+    error: str,
+    reason: str,
+):
+    """Unparsable tool arguments or a context overflow end the run with a
+    failure that scores 0, instead of raising (which would be retried and then
+    left out of the metrics as an infrastructure error)."""
+    import json
+
+    from litellm.exceptions import ContextWindowExceededError
+
+    def fail(*args, **kwargs):
+        if error == "json":
+            json.loads("{not json")
+        raise ContextWindowExceededError("too long", model="m", llm_provider="openai")
+
+    orchestrator = Orchestrator(
+        domain=domain_name,
+        user=user_simulator,
+        agent=agent,
+        environment=get_environment(),
+        task=base_task,
+    )
+    orchestrator.initialize()
+    monkeypatch.setattr(agent, "generate_next_message", fail)
+    orchestrator.from_role = Role.USER
+    orchestrator.to_role = Role.AGENT
+    orchestrator.message = UserMessage(role="user", content="Hi")
+
+    orchestrator.step()
+
+    assert orchestrator.done is True
+    assert orchestrator.termination_reason.value == reason

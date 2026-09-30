@@ -8,7 +8,7 @@ The runner framework is organized into three layers:
 
 | Layer | Module | Purpose |
 |-------|--------|---------|
-| **Layer 1** | `runner.simulation` | Execute a pre-built orchestrator. No registry, no config. |
+| **Layer 1** | `runner.simulation` | Execute a pre-built orchestrator. No config; scoring looks the domain up in the registry. |
 | **Layer 2** | `runner.build` | Build instances (environment, agent, user, orchestrator) from names/config via the registry. |
 | **Layer 3** | `runner.batch` | Batch execution with concurrency, checkpointing, retries, logging, and side effects. |
 
@@ -124,7 +124,7 @@ print(f"Task {result.task_id}: reward={result.reward_info.reward}")
 ## Level 3: Instance-Based Python API (Power User)
 
 For maximum control, build instances yourself and use `run_simulation()`. This is ideal for:
-- Custom agents or environments not in the registry
+- Custom agents not in the registry
 - Fine-grained control over agent/user construction
 - Testing and development
 - Integration into custom pipelines
@@ -160,7 +160,7 @@ user = build_user("user_simulator", env, task, llm="openai/gpt-4.1-mini")
 
 For a train task, the environment must use the train database: `build_environment("airline", env_kwargs={"db_split": "train"})` (`build_orchestrator` already does this for a task whose `split` is `"train"`). Pass the same `env_kwargs` to `run_simulation()` as well, so the run is scored against that database. `run_single_task` and `run_domain` handle both steps.
 
-### Fully custom instances (no registry needed)
+### Fully custom instances (no build helpers)
 
 ```python
 from tau_emotion.runner import run_simulation
@@ -211,7 +211,7 @@ print(f"Reward: {result.reward_info.reward}")
 
 - **`build_environment(domain, *, solo_mode=False, env_kwargs=None)`** -- Build an environment from a domain name.
 - **`build_agent(agent_name, environment, *, llm, llm_args, task, solo_mode)`** -- Build an agent from a registered name.
-- **`build_user(user_name, environment, task, *, llm, llm_args, solo_mode)`** -- Build a half-duplex user from a registered name.
+- **`build_user(user_name, environment, task, *, llm, llm_args, solo_mode, no_emotion)`** -- Build a half-duplex user from a registered name.
 - **`build_text_orchestrator(config, task, *, seed, simulation_id)`** -- Build a half-duplex `Orchestrator` from a `TextRunConfig`.
 - **`build_orchestrator(config, task, *, seed, simulation_id)`** -- Same as `build_text_orchestrator`.
 

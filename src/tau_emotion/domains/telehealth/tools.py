@@ -1,19 +1,20 @@
-"""Toolkit for the telehealth domain (ported from v1 tau-emotion-bench).
+"""Toolkit for the telehealth domain (ported from TRACER's
+`tracer/tracer/envs/telehealth/tools/`).
 
-23 tools mirroring v1's `ALL_TOOLS`, including v1's return text. Conversion
-rules from v1:
+23 tools mirroring TRACER's `ALL_TOOLS`, including TRACER's return text. Conversion
+rules from TRACER:
 
-- v1 `data.get("patients", {})` → `self.db.patients`.
-- Most v1 tools return formatted text, and report lookups that find nothing as
+- TRACER `data.get("patients", {})` → `self.db.patients`.
+- Most TRACER tools return formatted text, and report lookups that find nothing as
   a normal message rather than an error; both are kept as-is.
-- v1 `return "Error: ..."`, and any exception v1 raises (e.g. a KeyError on a
+- TRACER `return "Error: ..."`, and any exception TRACER raises (e.g. a KeyError on a
   missing field), → `raise ValueError("...")`. Both frameworks show exceptions
   to the agent as "Error: <message>".
-- v1 `return json.dumps(record)` → `_record_json(record)`, which leaves out
-  fields the record never had, as v1's raw dict would.
-- v1 `key in record` → the field is not None. The seed data has no explicit
+- TRACER `return json.dumps(record)` → `_record_json(record)`, which leaves out
+  fields the record never had, as TRACER's raw dict would.
+- TRACER `key in record` → the field is not None. The seed data has no explicit
   nulls for these fields, so the two agree.
-- v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
+- TRACER free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 """
 
 from __future__ import annotations
@@ -71,7 +72,7 @@ class TelehealthTools(ToolKitBase):
     def _provider_available(
         self, provider: Provider, provider_id: str, date: str, time: str
     ) -> Optional[str]:
-        """v1's schedule check: a message if the slot is not bookable."""
+        """TRACER's schedule check: a message if the slot is not bookable."""
         try:
             day_of_week = (
                 datetime.datetime.strptime(date, "%Y-%m-%d").strftime("%A").lower()
@@ -215,25 +216,18 @@ class TelehealthTools(ToolKitBase):
 
         Returns:
             The provider's details as formatted text, or a not-found message.
-
-        Raises:
-            ValueError: If the provider has no license number (v1 fails on
-                these providers too).
         """
         if provider_id not in self.db.providers:
             return f"Provider with ID {provider_id} not found."
         provider = self.db.providers[provider_id]
         name = provider.name
-        if provider.license_number is None:
-            # v1 indexes provider['license_number'] and raises KeyError.
-            raise ValueError("'license_number'")
 
         result = (
             f"Provider Details (ID: {provider_id})\n"
             "\n"
             f"Name: {name.title or 'Dr.'} {name.first_name} {name.last_name}\n"
             f"Specialty: {provider.specialty}\n"
-            f"License Number: {provider.license_number}\n"
+            f"License Number: {provider.license_number or 'N/A'}\n"
             f"Credentials: {', '.join(provider.credentials)}\n"
             f"Years of Experience: {provider.years_experience}\n"
             "\n"
@@ -263,11 +257,6 @@ class TelehealthTools(ToolKitBase):
         Returns:
             The appointment's details as formatted text, or a not-found
             message.
-
-        Raises:
-            ValueError: If the appointment has no chief complaint, as with
-                appointments booked by schedule_appointment (v1 fails on these
-                too).
         """
         if appointment_id not in self.db.appointments:
             return f"Appointment with ID {appointment_id} not found."
@@ -277,9 +266,6 @@ class TelehealthTools(ToolKitBase):
             f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
         )
         provider_specialty = provider.specialty if provider else "Unknown"
-        if appointment.chief_complaint is None:
-            # v1 indexes appointment['chief_complaint'] and raises KeyError.
-            raise ValueError("'chief_complaint'")
 
         result = (
             f"Appointment Details (ID: {appointment_id})\n"
@@ -297,7 +283,7 @@ class TelehealthTools(ToolKitBase):
             f"- Status: {_readable(appointment.status)}\n"
             "\n"
             "Clinical Information:\n"
-            f"- Chief Complaint: {appointment.chief_complaint}\n"
+            f"- Chief Complaint: {appointment.chief_complaint or 'N/A'}\n"
             f"- Notes: {appointment.notes}\n"
             "\n"
             "Billing Information:\n"
@@ -897,7 +883,7 @@ class TelehealthTools(ToolKitBase):
             copay_amount = 0.0
             insurance_auth = None
 
-        # Like v1, no chief_complaint is recorded for new appointments.
+        # Like TRACER, no chief_complaint is recorded for new appointments.
         appointment = Appointment(
             appointment_id=new_id,
             patient_id=patient_id,
@@ -964,7 +950,7 @@ class TelehealthTools(ToolKitBase):
 
         appointment.status = "cancelled"
         appointment.cancellation_reason = "patient_cancelled"
-        # Fixed date keeps replays deterministic, as in v1.
+        # Fixed date keeps replays deterministic, as in TRACER.
         appointment.cancellation_date = CANCELLATION_DATE
 
         provider = self.db.providers.get(appointment.provider_id)
@@ -1013,7 +999,7 @@ class TelehealthTools(ToolKitBase):
 
         provider_id = appointment.provider_id
         if provider_id not in self.db.providers:
-            # v1 indexes providers[provider_id] and raises KeyError.
+            # TRACER indexes providers[provider_id] and raises KeyError.
             raise ValueError(repr(provider_id))
         provider = self.db.providers[provider_id]
 
@@ -1097,7 +1083,7 @@ class TelehealthTools(ToolKitBase):
         if not record.prescriptions:
             raise ValueError("medical record has no prescriptions")
 
-        # A dict, as in v1: when two prescriptions share a name, the last wins.
+        # A dict, as in TRACER: when two prescriptions share a name, the last wins.
         by_name = {p.medication.strip().lower(): p for p in record.prescriptions}
         normalized_name = medication.strip().lower()
         prescription = by_name.get(normalized_name)

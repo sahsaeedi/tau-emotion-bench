@@ -8,7 +8,7 @@ from tau_emotion.environment.db import DB
 FlightType = Literal["round_trip", "one_way"]
 CabinClass = Literal["business", "economy", "basic_economy"]
 Insurance = Literal["yes", "no"]
-# v1 stores amounts exactly as given, so keep ints as ints and allow cents.
+# TRACER stores amounts exactly as given, so keep ints as ints and allow cents.
 Amount = Union[int, float]
 
 
@@ -221,7 +221,7 @@ class User(BaseModel):
 
 
 # Reservation Models
-# flight_type, cabin, insurance and status are plain strings because v1's tools
+# flight_type, cabin, insurance and status are plain strings because TRACER's tools
 # store whatever value they are given.
 class Reservation(BaseModel):
     reservation_id: str = Field(description="Unique identifier for the reservation")

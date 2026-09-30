@@ -2,8 +2,6 @@
 User module exports.
 """
 
-import warnings
-
 from tau_emotion.user.user_simulator import DummyUser, UserSimulator
 from tau_emotion.user.user_simulator_base import (
     HalfDuplexUser,

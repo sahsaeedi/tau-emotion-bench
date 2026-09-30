@@ -3,7 +3,7 @@
 Minimal custom agent example.
 
 This example shows how to create the simplest possible tau-emotion agent,
-register it, and run it against the mock domain -- all in one file.
+register it, and run it on an airline task -- all in one file.
 
 Needs OPENAI_API_KEY (the agent and user simulator use openai/gpt-4.1-mini).
 
@@ -13,7 +13,7 @@ Usage:
 What this does:
     1. Defines a custom agent that wraps an LLM with a system prompt
     2. Registers it with the tau-emotion registry
-    3. Runs it on a single mock task
+    3. Runs it on a single airline task
     4. Prints the result
 """
 
@@ -133,10 +133,10 @@ if __name__ == "__main__":
     registry.register_agent_factory(create_minimal_agent, "minimal_agent")
 
     # --- Option A: Run a single task programmatically ---
-    tasks = get_tasks("mock", task_ids=["create_task_1"])
+    tasks = get_tasks("airline", task_ids=["airline_test_0000"])
     result = run_single_task(
         TextRunConfig(
-            domain="mock",
+            domain="airline",
             agent="minimal_agent",
             llm_agent="openai/gpt-4.1-mini",
             llm_user="openai/gpt-4.1-mini",
@@ -148,12 +148,12 @@ if __name__ == "__main__":
     print(f"Reward: {result.reward_info.reward}")
     print(f"Messages: {len(result.messages)}")
 
-    # --- Option B: Run all mock tasks via run_domain ---
+    # --- Option B: Run all airline tasks via run_domain ---
     # Uncomment to run a full evaluation:
     #
     # results = run_domain(
     #     TextRunConfig(
-    #         domain="mock",
+    #         domain="airline",
     #         agent="minimal_agent",
     #         llm_agent="openai/gpt-4.1-mini",
     #         llm_user="openai/gpt-4.1-mini",

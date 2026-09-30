@@ -9,9 +9,8 @@ movie, restaurant, school and travel.
 Tasks are generated and verified in TRACER's own environments,
 `tracer/envs/<domain>/`: the tools, the policy (`wiki.md`) and the database of each
 domain, following τ-bench's conventions. The benchmark's tools in
-`../src/tau_emotion/domains/` reproduce these environments (every TRACER tool is
-there; some domains add a few, such as `think` or user lookups), so a task that is
-solvable here is solvable in the benchmark.
+`../src/tau_emotion/domains/` reproduce these environments, with the same tools in
+every domain, so a task that is solvable here is solvable in the benchmark.
 
 No generated outputs ship with it: no tool graphs, traces, emotion bank or trained
 models. Each run creates its own under `output/`, `emotions/output/` and

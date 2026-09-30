@@ -5,8 +5,10 @@ import sys
 
 from loguru import logger
 
+from tau_emotion.config import API_PORT
+
 HOST = "127.0.0.1"
-PORT = 8001
+PORT = API_PORT
 
 
 def port_in_use(host: str, port: int) -> bool:

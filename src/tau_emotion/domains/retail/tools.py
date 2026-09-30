@@ -1,15 +1,16 @@
-"""Toolkit for the retail domain (ported from v1 tau-emotion-bench).
+"""Toolkit for the retail domain (ported from TRACER's
+`tracer/tracer/envs/retail/tools/`).
 
-16 tools mirroring v1's `ALL_TOOLS`, including v1's checks, database writes and
-return values. Conversion rules from v1:
+16 tools mirroring TRACER's `ALL_TOOLS`, including TRACER's checks, database writes and
+return values. Conversion rules from TRACER:
 
-- v1 `data["orders"]` → `self.db.orders`.
-- v1 `return "Error: ..."`, and any exception v1 raises (e.g. a KeyError), →
+- TRACER `data["orders"]` → `self.db.orders`.
+- TRACER `return "Error: ..."`, and any exception TRACER raises (e.g. a KeyError), →
   an exception with the same message. Both frameworks show exceptions to the
   agent as "Error: <message>".
-- v1 `return json.dumps(record)` → `_record_json(record)`, which leaves out
-  fields the record never had, as v1's raw dict would.
-- v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
+- TRACER `return json.dumps(record)` → `_record_json(record)`, which leaves out
+  fields the record never had, as TRACER's raw dict would.
+- TRACER free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 
 Unlike upstream tau2-bench, the request is appended to the order status
 ("pending (item modified)", "delivered (return requested)", "delivered (exchange
@@ -53,7 +54,7 @@ class RetailTools(ToolKitBase):  # Tools
     def _price_difference(
         self, order: Order, item_ids: List[str], new_item_ids: List[str]
     ) -> float:
-        """v1's shared checks for exchanging or modifying items. Returns the
+        """TRACER's shared checks for exchanging or modifying items. Returns the
         total price difference (new minus old)."""
         all_item_ids = [item.item_id for item in order.items]
         for item_id in item_ids:

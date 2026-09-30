@@ -175,7 +175,7 @@
     "id": "retail_test_0002",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Emma Santos, with email emma.santos7683@example.com, and you have a pending order that includes a 13-inch laptop with 32GB RAM, 256GB SSD, and space grey color. You want to change the shipping address to 7479 Pine Avenue, Unit 503, Seattle, WA, USA 34613 because you will be relocating temporarily. You also want to upgrade the laptop to the 512GB SSD black model for better storage capacity and aesthetic preference, and you prefer to cover any price difference using your Mastercard ending in 6380. Later, after reviewing all available product types including laptops, backpacks, water bottles, and office chairs, you decided you no longer need the items in the order. After that, you would like to cancel the entire order #W9903153 because your needs have changed and you no longer require the products.\n\nUse emma.santos7683@example.com for authentication.",
+      "instructions": "You are Emma Santos, with email emma.santos7683@example.com, and you have a pending order that includes a 13-inch laptop with 32GB RAM, 256GB SSD, and space grey color. You want to change the shipping address to 7479 Pine Avenue, Unit 503, Seattle, WA, USA 34613 because you will be relocating temporarily, and you also want your default address in your account updated to the same address. You also want to upgrade the laptop to the 512GB SSD black model for better storage capacity and aesthetic preference, and you prefer to cover any price difference using your Mastercard ending in 6380. Later, after reviewing all available product types including laptops, backpacks, water bottles, and office chairs, you decided you no longer need the items in the order. After that, you would like to cancel the entire order #W9903153 because your needs have changed and you no longer require the products.\n\nUse emma.santos7683@example.com for authentication.",
       "emotion_instruction": "You\u2019re feeling peaceful and open to resolving the matter. Communicate with a relaxed tone, but don\u2019t hesitate to ask for clarification. You want updates without feeling pressured. Stay observant to ensure accurate information.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -576,19 +576,6 @@
         },
         {
           "action_id": "6_5",
-          "name": "modify_pending_order_address",
-          "arguments": {
-            "order_id": "#W5432440",
-            "address1": "2290 Park Drive",
-            "address2": "Unit 287",
-            "city": "Philadelphia",
-            "state": "PA",
-            "country": "USA",
-            "zip": "10487"
-          }
-        },
-        {
-          "action_id": "6_6",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W5432440",
@@ -607,7 +594,7 @@
     "id": "retail_test_0007",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Mei Ahmed, and your email is mei.ahmed4901@example.com. You want to cancel your pending order that includes a digital camera and an espresso machine because you placed it by mistake. Later, you would like to exchange two items from your delivered order: you prefer the bamboo graphic 28-inch skateboard over the plain plastic 28-inch skateboard because you want a more stylish design, and you prefer the robotic cordless vacuum cleaner over the canister cordless model because it offers hands-free cleaning. You prefer to use your Mastercard ending in 9375 for any price difference associated with the exchange. After that, you would like to update your default shipping address to 9699 Cedar Road, Floor 681, Portland, OR, USA 20400 for all future orders.\n\nUse mei.ahmed4901@example.com for authentication.",
+      "instructions": "You are Mei Ahmed, and your email is mei.ahmed4901@example.com. You want to cancel your pending order that includes a digital camera and an espresso machine because you placed it by mistake. Later, you would like to exchange two items from your delivered order: you prefer the bamboo graphic 28-inch skateboard over the plain plastic 28-inch skateboard because you want a more stylish design, and you prefer the robotic cordless vacuum cleaner over the canister cordless model because it offers hands-free cleaning, and you want it to keep the same bag type as your current canister vacuum. You prefer to use your Mastercard ending in 9375 for any price difference associated with the exchange. After that, you would like to update your default shipping address to 9699 Cedar Road, Floor 681, Portland, OR, USA 20400 for all future orders.\n\nUse mei.ahmed4901@example.com for authentication.",
       "emotion_instruction": "You feel relieved progress is being made, but you're in a hurry. Keep your tone even and businesslike. Don't blindly trust the agent\u2014ask pointed questions. Push for fast, reliable solutions.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -829,7 +816,7 @@
     "id": "retail_test_0010",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Anya Brown (anya.brown8893@example.com). You want to cancel a pending order containing an 8GB Wi-Fi 6-inch E-Reader and a black leather-band Smart Watch, originally shipped to Dallas, because she no longer needs the items. Later, you would like to modify another pending order that includes a 14-inch white digital Wall Clock, a black desk lamp, a 5-25 lbs dumbbell set, and a blue Bluetooth speaker, currently set to ship to New York. You want to update the shipping address to 3351 Adams Road, Suite 308, Las Vegas, NV, USA 95272. You prefer the 10-inch black digital Wall Clock over the current 14-inch white model for better fit and aesthetics in her space. After that, you would like to change the payment method from Mastercard to PayPal for this updated order.\n\nUse anya.brown8893@example.com for authentication.",
+      "instructions": "You are assisting Anya Brown (anya.brown8893@example.com). You want to cancel a pending order containing an 8GB Wi-Fi 6-inch E-Reader and a black leather-band Smart Watch, originally shipped to Dallas, because she no longer needs the items. Later, you would like to modify another pending order that includes a 14-inch white digital Wall Clock, a black desk lamp, a 5-25 lbs dumbbell set, and a blue Bluetooth speaker, currently set to ship to New York. You want to update the shipping address to 3351 Adams Road, Suite 308, Las Vegas, NV, USA 95272. You prefer the 10-inch black digital Wall Clock over the current 14-inch white model for better fit and aesthetics in her space, and you want any price difference charged to PayPal. Only after the clock change has been completed do you decide that you would also like to change the payment method from Mastercard to PayPal for this updated order.\n\nUse anya.brown8893@example.com for authentication.",
       "emotion_instruction": "You feel accomplished and want to protect that feeling during the interaction. Use neutral, precise language and outline your needs. You\u2019d like things resolved in a sensible timeframe. Don\u2019t fully trust the agent, so verify their suggestions.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -878,14 +865,6 @@
         },
         {
           "action_id": "10_4",
-          "name": "modify_pending_order_payment",
-          "arguments": {
-            "order_id": "#W1170711",
-            "payment_method_id": "paypal_5206520"
-          }
-        },
-        {
-          "action_id": "10_5",
           "name": "modify_pending_order_items",
           "arguments": {
             "order_id": "#W1170711",
@@ -1074,7 +1053,7 @@
     "id": "retail_test_0013",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Olivia Ito (olivia.ito5204@example.com) and you want to cancel your pending order containing a gaming mouse, patio umbrella, and hiking boots because you no longer need the items. You also want to exchange the 1L automatic espresso machine from your delivered order for a 1.5L automatic model with 19 bar pressure, preferring the larger capacity for household use, and you prefer to use your PayPal account for the price difference. Also, you want to return the sneakers because they are not your style. Additionally, you are interested in learning more about the Wristwatch product, particularly its available variants and features. Later, for your other pending order containing a wristwatch and backpack, you want to update the shipping address to 6768 Washington Boulevard, Suite 658, New York, NY, USA 16428, switch the payment method from your Visa ending in 9182 to your PayPal, and upgrade the wristwatch to the metal strap black dial version, preferring its more durable and elegant design, with any additional cost charged to your Visa ending in 9182.\n\nUse olivia.ito5204@example.com for authentication.",
+      "instructions": "You are Olivia Ito (olivia.ito5204@example.com) and you want to cancel your pending order containing a gaming mouse, patio umbrella, and hiking boots because you no longer need the items. You also want to exchange the 1L automatic espresso machine from your delivered order for a 1.5L automatic model with 19 bar pressure, preferring the larger capacity for household use, and you prefer to use your PayPal account for the price difference. Once that exchange is done, you also want to return the sneakers from the same order because they are not your style, and you want that refund to go back to the payment method you originally paid with for that order. Additionally, you are interested in learning more about the Wristwatch product, particularly its available variants and features. Later, for your other pending order containing a wristwatch and backpack, you want to update the shipping address to 6768 Washington Boulevard, Suite 658, New York, NY, USA 16428, switch the payment method from your Visa ending in 9182 to your PayPal, and upgrade the wristwatch to the metal strap black dial version, preferring its more durable and elegant design, with any additional cost charged to your Visa ending in 9182.\n\nUse olivia.ito5204@example.com for authentication.",
       "emotion_instruction": "You\u2019re buzzing with excitement and want help without waiting. Keep your tone neutral but brisk, and don\u2019t immediately trust everything the agent says. Cut to the chase and request clear, quick responses.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1119,10 +1098,10 @@
           "action_id": "13_3",
           "name": "return_delivered_order_items",
           "arguments": {
+            "order_id": "#W5866402",
             "item_ids": [
               "9727387530"
             ],
-            "order_id": "#W5866402",
             "payment_method_id": "paypal_8049766"
           }
         },
@@ -1185,7 +1164,7 @@
     "id": "retail_test_0014",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Yusuf Gonzalez (email: yusuf.gonzalez2399@example.com) with a series of requests. First, you want to learn about the store's product catalog, specifically Action Cameras, to explore available options. Later, you would like to exchange a blue medium cotton crew neck T-shirt from a delivered order because it does not fit and you prefer a larger size and different color; you prefer a purple XL cotton crew neck T-shirt instead, and you want any price difference handled using your PayPal account. In the same order, there was an e-reader that you want to return. After that, for a pending order, you would like to change the shipping address to 6495 Jefferson Avenue, Apt 458, Los Angeles, CA, USA 69990 for better delivery access. You also want to switch the payment method from your Mastercard ending in 9928 to your PayPal account for easier tracking and reconciliation. Additionally, you prefer to upgrade the smartphone in the order from a 6.5-inch model to a 5.8-inch model for better portability, and you want any price difference for this change also managed through your PayPal account.\n\nUse yusuf.gonzalez2399@example.com for authentication.",
+      "instructions": "You are assisting Yusuf Gonzalez (email: yusuf.gonzalez2399@example.com) with a series of requests. First, you want to learn about the store's product catalog, specifically Action Cameras, to explore available options. Later, you would like to exchange a blue medium cotton crew neck T-shirt from a delivered order because it does not fit and you prefer a larger size and different color; you prefer a purple XL cotton crew neck T-shirt instead, and you want any price difference handled using your PayPal account. Once that exchange is done, you also want to return the e-reader from the same order. After that, for a pending order, you would like to change the shipping address to 6495 Jefferson Avenue, Apt 458, Los Angeles, CA, USA 69990 for better delivery access. You also want to switch the payment method from your Mastercard ending in 9928 to your PayPal account for easier tracking and reconciliation. Additionally, you prefer to upgrade the smartphone in the order from a 6.5-inch model to a 5.8-inch model for better portability, and you want any price difference for this change also managed through your PayPal account.\n\nUse yusuf.gonzalez2399@example.com for authentication.",
       "emotion_instruction": "You experience a sense of inner peace, but you are in need of urgent help. Communicate with clarity and efficiency. Trust the process and the agent\u2019s ability. Remain neutral and focused as you interact.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1218,17 +1197,6 @@
         },
         {
           "action_id": "14_3",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "item_ids": [
-              "6268080249"
-            ],
-            "order_id": "#W1679211",
-            "payment_method_id": "paypal_3022415"
-          }
-        },
-        {
-          "action_id": "14_4",
           "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W1679211",
@@ -1237,6 +1205,17 @@
             ],
             "new_item_ids": [
               "8124970213"
+            ],
+            "payment_method_id": "paypal_3022415"
+          }
+        },
+        {
+          "action_id": "14_4",
+          "name": "return_delivered_order_items",
+          "arguments": {
+            "order_id": "#W1679211",
+            "item_ids": [
+              "6268080249"
             ],
             "payment_method_id": "paypal_3022415"
           }
@@ -1275,14 +1254,6 @@
             ],
             "payment_method_id": "paypal_3022415"
           }
-        },
-        {
-          "action_id": "14_8",
-          "name": "cancel_pending_order",
-          "arguments": {
-            "order_id": "#W2806889",
-            "reason": "no longer needed"
-          }
         }
       ],
       "communicate_info": [],
@@ -1296,7 +1267,7 @@
     "id": "retail_test_0015",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Liam Thomas, whose email is liam.thomas9081@example.com. You want to update the payment method for his pending order (containing a 31 inch bamboo graphic skateboard, a 2-piece black softshell luggage set, and a 20000mAh blue portable charger) from PayPal to his Visa card ending in 3194, because you prefer using your credit card for this purchase. You also want to exchange the 31 inch skateboard in that order for the 28 inch bamboo graphic deck, as you prefer a more compact size for easier handling. Later, you will update the shipping address for this pending order to 7382 Jefferson Avenue, Suite 919, Dallas, TX, USA 95888, and also update your default address to the same, because you have relocated. After that, for his delivered order (shipped to Phoenix and containing a 6 ft glass white bookshelf, a 6mm pink natural rubber yoga mat, a canister vacuum cleaner, an adjustable dumbbell set, and a 50ft vinyl garden hose), you would like to exchange the 6 ft bookshelf for the 5 ft glass white model, as it better fits his new space, and return the yoga mat for a refund to his Visa card ending in 3194, because he no longer needs it and prefers the refund to go back to his preferred card.\n\nUse liam.thomas9081@example.com for authentication.",
+      "instructions": "You are Liam Thomas, whose email is liam.thomas9081@example.com. You want to update the payment method for his pending order (containing a 31 inch bamboo graphic skateboard, a 2-piece black softshell luggage set, and a 20000mAh blue portable charger) from PayPal to his Visa card ending in 3194, because you prefer using your credit card for this purchase. You also want to exchange the 31 inch skateboard in that order for the 28 inch bamboo graphic deck, as you prefer a more compact size for easier handling. Only after the skateboard change has been completed do you decide to update the shipping address for this pending order to 7382 Jefferson Avenue, Suite 919, Dallas, TX, USA 95888, and also update your default address to the same, because you have relocated. After that, for his delivered order (shipped to Phoenix and containing a 6 ft glass white bookshelf, a 6mm pink natural rubber yoga mat, a canister vacuum cleaner, an adjustable dumbbell set, and a 50ft vinyl garden hose), you would like to exchange the 6 ft bookshelf for the 5 ft glass white model, as it better fits his new space, with any price difference on his Visa card ending in 3194. Once that exchange is done, you also want to return the yoga mat from the same order for a refund to his Visa card ending in 3194, because he no longer needs it and prefers the refund to go back to his preferred card.\n\nUse liam.thomas9081@example.com for authentication.",
       "emotion_instruction": "You\u2019re buzzing with excitement and want help without waiting. Keep your tone neutral but brisk, and don\u2019t immediately trust everything the agent says. Cut to the chase and request clear, quick responses.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1412,7 +1383,7 @@
     "id": "retail_test_0016",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Evelyn Hernandez (email: evelyn.hernandez3060@example.com). You want to update the shipping address for her pending order containing a grill to 4785 Lincoln Street, Floor 456, Jacksonville, FL, USA 11417, and also update her default address to match, to ensure future deliveries go to the correct location. You would like to exchange the black-framed polarized sunglasses with blue lenses from her delivered order for the same style with green lenses instead, because you prefer green lenses for better contrast in bright conditions, and you prefer any price difference to be processed using your Visa card ending in 4171. In the same order, you want to return the dumbbell set because you plan to go to the gym instead of working out at home. You also want information about the sunglasses product, particularly lens and frame options. Later, you would like to modify the grill in the pending order from the medium electric model with side burner to the larger electric model with rotisserie, because you need more cooking capacity and the rotisserie feature, and you prefer any payment adjustment to be made on the same Visa card. After that, you decide to cancel the entire pending order because you no longer need it. Finally, you would like a complete list of all product types currently available in the store to explore other offerings.\n\nUse evelyn.hernandez3060@example.com for authentication.",
+      "instructions": "You are assisting Evelyn Hernandez (email: evelyn.hernandez3060@example.com). You want to update the shipping address for her pending order containing a grill to 4785 Lincoln Street, Floor 456, Jacksonville, FL, USA 11417, and also update her default address to match, to ensure future deliveries go to the correct location. You would like to exchange the black-framed polarized sunglasses with blue lenses from her delivered order for black-framed polarized sunglasses with green lenses instead (you want them to stay black-framed and polarized; the frame material does not matter to you), because you prefer green lenses for better contrast in bright conditions, and you prefer any price difference to be processed using your Visa card ending in 4171. Once that exchange is done, you also want to return the dumbbell set from the same order because you plan to go to the gym instead of working out at home. You also want information about the sunglasses product, particularly lens and frame options. Later, you would like to modify the grill in the pending order from the medium electric model with side burner to the larger electric model with rotisserie, because you need more cooking capacity and the rotisserie feature, and you prefer any payment adjustment to be made on the same Visa card. After that, you decide to cancel the entire pending order because you no longer need it. Finally, you would like a complete list of all product types currently available in the store to explore other offerings.\n\nUse evelyn.hernandez3060@example.com for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1452,17 +1423,6 @@
         },
         {
           "action_id": "16_2",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "item_ids": [
-              "8140269513"
-            ],
-            "order_id": "#W9628587",
-            "payment_method_id": "credit_card_3631888"
-          }
-        },
-        {
-          "action_id": "16_3",
           "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W9628587",
@@ -1471,6 +1431,17 @@
             ],
             "new_item_ids": [
               "4548300368"
+            ],
+            "payment_method_id": "credit_card_3631888"
+          }
+        },
+        {
+          "action_id": "16_3",
+          "name": "return_delivered_order_items",
+          "arguments": {
+            "order_id": "#W9628587",
+            "item_ids": [
+              "8140269513"
             ],
             "payment_method_id": "credit_card_3631888"
           }
@@ -1528,7 +1499,7 @@
     "id": "retail_test_0017",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Sofia Li (sofia.li5953@example.com). You want to update the shipping address for your pending order\u2014containing Wireless Earbuds, two Electric Kettles, a Notebook, and a Yoga Mat\u2014to 2133 Cedar Road, Suite 639, Denver, CO, USA 76517, and also set this as your default address. You would like to exchange one of the Fleece Jackets from your delivered order\u2014originally in black with full zipper and size L\u2014for a red one with half zipper and the same size, because you prefer the red color and half-zip style. You prefer to use your Mastercard ending in 8609 for any price adjustment related to the exchange. Then you want to return the digital camera as an action camera is sufficient for you. Later, you want to check the status of that delivered order to confirm fulfillment details. After that, you would like to modify the Wireless Earbuds in your pending order to the blue variant with 6 hours battery and IPX7 water resistance, if available, using the same payment method for any difference. If you decide the updated order no longer meets your needs, you would like to cancel the pending order with the reason 'no longer needed'. Finally, you would like to browse all available product types in the store to explore other options for future purchases.\n\nUse sofia.li5953@example.com for authentication.",
+      "instructions": "You are Sofia Li (sofia.li5953@example.com). You want to update the shipping address for your pending order\u2014containing Wireless Earbuds, two Electric Kettles, a Notebook, and a Yoga Mat\u2014to 2133 Cedar Road, Suite 639, Denver, CO, USA 76517, and also set this as your default address. You would like to exchange one of the Fleece Jackets from your delivered order\u2014originally in black with full zipper and size L\u2014for a red one with half zipper and the same size, because you prefer the red color and half-zip style. You prefer to use your Mastercard ending in 8609 for any price adjustment related to the exchange. Then you want to return the digital camera as an action camera is sufficient for you. Later, you want to check the status of that delivered order to confirm fulfillment details. After that, you would like to modify the Wireless Earbuds in your pending order to the blue variant with 6 hours battery and IPX7 water resistance, if available, using the same payment method for any difference. If that earbuds variant is not available, you no longer need the order and would like to cancel the pending order with the reason 'no longer needed'. Finally, you would like to browse all available product types in the store to explore other options for future purchases.\n\nUse sofia.li5953@example.com for authentication.",
       "emotion_instruction": "You feel calm but want your issue resolved quickly. Keep your tone direct and to the point. Although you\u2019re not sure the agent will help, you still expect fast answers.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1568,41 +1539,41 @@
         },
         {
           "action_id": "17_2",
-          "name": "return_delivered_order_items",
+          "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W6874763",
             "item_ids": [
               "9385662952"
+            ],
+            "new_item_ids": [
+              "8733974883"
             ],
             "payment_method_id": "credit_card_4046723"
           }
         },
         {
           "action_id": "17_3",
+          "name": "return_delivered_order_items",
+          "arguments": {
+            "order_id": "#W6874763",
+            "item_ids": [
+              "7583936705"
+            ],
+            "payment_method_id": "credit_card_4046723"
+          }
+        },
+        {
+          "action_id": "17_4",
           "name": "get_product_details",
           "arguments": {
             "product_id": "8560156827"
           }
         },
         {
-          "action_id": "17_4",
+          "action_id": "17_5",
           "name": "get_order_details",
           "arguments": {
             "order_id": "#W6874763"
-          }
-        },
-        {
-          "action_id": "17_5",
-          "name": "modify_pending_order_items",
-          "arguments": {
-            "order_id": "#W1557241",
-            "item_ids": [
-              "6452271382"
-            ],
-            "new_item_ids": [
-              "6452271382"
-            ],
-            "payment_method_id": "credit_card_4046723"
           }
         },
         {
@@ -1749,7 +1720,7 @@
     "id": "retail_test_0019",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Sophia Thomas (sophia.thomas1364@example.com). You want to update the shipping address for your pending order to 6131 Park Drive, Unit 50, San Jose, CA, USA 82668, because it was initially set to the wrong location in Dallas. You prefer to change the payment method from PayPal to your Visa card ending in 9858 for this order, as it is your preferred payment option. After all these modifications, you will decide to cancel this order. You also want to exchange one blue fabric Office Chair with adjustable armrest and standard backrest for the black fabric version with fixed armrest and standard backrest, because you prefer the more minimalist style and sturdier build. You prefer any price difference to be handled using the same Visa card. Later, you would like to return the green PVC yoga mat from your delivered order, because it does not meet your comfort expectations, and you request a refund to your Mastercard ending in 2378. After that, you would like a full list of all product types currently available in the store, so you can explore future purchases across categories such as Backpack, Bookshelf, Office Chair, Tablet, Vacuum Cleaner, Wall Clock, and Yoga Mat, among others.\n\nUse sophia.thomas1364@example.com for authentication.",
+      "instructions": "You are Sophia Thomas (sophia.thomas1364@example.com). You want to update the shipping address for your pending order to 6131 Park Drive, Unit 50, San Jose, CA, USA 82668, because it was initially set to the wrong location in Dallas. You prefer to change the payment method from PayPal to your Visa card ending in 9858 for this order, as it is your preferred payment option. You also want to exchange one blue fabric Office Chair with adjustable armrest and standard backrest for the black fabric version with fixed armrest and standard backrest, because you prefer the more minimalist style and sturdier build. You prefer any price difference to be handled using the same Visa card. After all these modifications are done, you will decide to cancel this order because you no longer need it. Later, you would like to return the green PVC yoga mat from your delivered order, because it does not meet your comfort expectations, and you request a refund to your Mastercard ending in 2378. After that, you would like a full list of all product types currently available in the store, so you can explore future purchases across categories such as Backpack, Bookshelf, Office Chair, Tablet, Vacuum Cleaner, Wall Clock, and Yoga Mat, among others.\n\nUse sophia.thomas1364@example.com for authentication.",
       "emotion_instruction": "You\u2019re really eager to see the outcome and want things sorted now. Communication is brisk and to the point. You trust the agent\u2019s abilities. Push for swift action.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -2107,11 +2078,16 @@
         },
         {
           "action_id": "22_5",
-          "name": "return_delivered_order_items",
+          "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W5690487",
             "item_ids": [
-              "6555827912"
+              "6555827912",
+              "3358616356"
+            ],
+            "new_item_ids": [
+              "2645006275",
+              "7811981098"
             ],
             "payment_method_id": "credit_card_3599838"
           }
@@ -2136,7 +2112,7 @@
     "id": "retail_test_0023",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Mei Gonzalez, and your email is mei.gonzalez8775@example.com. You want to update the shipping address for your pending order (containing a notebook, grill, gaming mouse, fleece jacket, and office chair) to 1266 Elm Street, Unit 304, Austin, TX, USA 51119, because you are relocating temporarily. You also want your default address updated to the same, for consistency across future orders. Later, you would like to exchange the navy small backpack from your delivered order for a black large backpack, because you prefer a bigger and more neutral-colored option for daily use, and return the pet bed because you don't have a pet anymore. You prefer to use your Visa card ending in 3742 for any price adjustment, as it's your primary card. After that, you would like to cancel your pending order entirely, because you no longer need the items due to changed plans.\n\nUse mei.gonzalez8775@example.com for authentication.",
+      "instructions": "You are Mei Gonzalez, and your email is mei.gonzalez8775@example.com. You want to update the shipping address for your pending order (containing a notebook, grill, gaming mouse, fleece jacket, and office chair) to 1266 Elm Street, Unit 304, Austin, TX, USA 51119, because you are relocating temporarily. You also want your default address updated to the same, for consistency across future orders. Later, you would like to exchange the navy small backpack from your delivered order for a black large backpack with the same type of compartment as the one you have now, because you prefer a bigger and more neutral-colored option for daily use. Once that exchange is done, you also want to return the pet bed from the same order because you don't have a pet anymore. You prefer to use your Visa card ending in 3742 for any price adjustment, as it's your primary card. After that, you would like to cancel your pending order entirely, because you no longer need the items due to changed plans.\n\nUse mei.gonzalez8775@example.com for authentication.",
       "emotion_instruction": "You\u2019re feeling peaceful and open to resolving the matter. Communicate with a relaxed tone, but don\u2019t hesitate to ask for clarification. You want updates without feeling pressured. Stay observant to ensure accurate information.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -2195,17 +2171,6 @@
         },
         {
           "action_id": "23_5",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "item_ids": [
-              "7381052709"
-            ],
-            "order_id": "#W7303089",
-            "payment_method_id": "credit_card_4387170"
-          }
-        },
-        {
-          "action_id": "23_6",
           "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W7303089",
@@ -2214,6 +2179,17 @@
             ],
             "new_item_ids": [
               "6906307980"
+            ],
+            "payment_method_id": "credit_card_4387170"
+          }
+        },
+        {
+          "action_id": "23_6",
+          "name": "return_delivered_order_items",
+          "arguments": {
+            "order_id": "#W7303089",
+            "item_ids": [
+              "7381052709"
             ],
             "payment_method_id": "credit_card_4387170"
           }
@@ -2315,14 +2291,6 @@
         },
         {
           "action_id": "24_6",
-          "name": "cancel_pending_order",
-          "arguments": {
-            "order_id": "#W3320020",
-            "reason": "no longer needed"
-          }
-        },
-        {
-          "action_id": "24_7",
           "name": "list_all_product_types",
           "arguments": {}
         }
@@ -2338,7 +2306,7 @@
     "id": "retail_test_0025",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Daiki Johnson, with email daiki.johnson2279@example.com, and you want to cancel your pending order for a glass 1-liter tea kettle because you no longer need it. Later, you would like to exchange one of the canister vacuum cleaners from your delivered order for a robotic cordless model because you prefer cordless convenience and easier maintenance, and you prefer to use your PayPal to cover any price difference. After exchanging, you want to return the dumbbell set in the same order. After that, you want to update the shipping address for your other pending order (which includes a garden hose and a makeup kit) to 8090 Madison Drive, Suite 542, Nashville, TN, USA 89755 because you will be relocating temporarily. Finally, you would like to browse the full list of product types available in the store to explore more options for future purchases.\n\nUse daiki.johnson2279@example.com for authentication.",
+      "instructions": "You are Daiki Johnson, with email daiki.johnson2279@example.com, and you want to cancel your pending order for a glass 1-liter tea kettle because you no longer need it. Later, you would like to exchange one of the canister vacuum cleaners from your delivered order for a robotic cordless model because you prefer cordless convenience and easier maintenance, keeping the same bag type as the canister one you are exchanging, and you prefer to use your PayPal to cover any price difference. After exchanging, you want to return the dumbbell set in the same order. After that, you want to update the shipping address for your other pending order (which includes a garden hose and a makeup kit) to 8090 Madison Drive, Suite 542, Nashville, TN, USA 89755 because you will be relocating temporarily. Finally, you would like to browse the full list of product types available in the store to explore more options for future purchases.\n\nUse daiki.johnson2279@example.com for authentication.",
       "emotion_instruction": "You\u2019re eager and insistent on immediate support. Be curt and straight to the point. Rely on the agent\u2019s skills to address your needs right away.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -2400,17 +2368,6 @@
         },
         {
           "action_id": "25_5",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "item_ids": [
-              "3877338112"
-            ],
-            "order_id": "#W9502127",
-            "payment_method_id": "paypal_2433177"
-          }
-        },
-        {
-          "action_id": "25_6",
           "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W9502127",
@@ -2419,6 +2376,17 @@
             ],
             "new_item_ids": [
               "4602305039"
+            ],
+            "payment_method_id": "paypal_2433177"
+          }
+        },
+        {
+          "action_id": "25_6",
+          "name": "return_delivered_order_items",
+          "arguments": {
+            "order_id": "#W9502127",
+            "item_ids": [
+              "3877338112"
             ],
             "payment_method_id": "paypal_2433177"
           }
@@ -2440,7 +2408,7 @@
     "id": "retail_test_0026",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting a customer with email noah.ito4296@example.com who wants to exchange a pair of black sneakers in size 6 from a delivered order for a gray pair in size 10, because the original size is too small; the gray leather sneakers in size 10 are available and preferred over the current pair. You prefer to use the Mastercard ending in 1065 for any price difference. Later, you want to update the shipping address for a pending order to 7313 Oak Avenue, Suite 514, San Diego, CA, USA 27966, to ensure correct routing. After that, you will decide to cancel the same pending order.\n\nUse noah.ito4296@example.com for authentication.",
+      "instructions": "You are assisting a customer with email noah.ito4296@example.com who wants to exchange a pair of black sneakers in size 6 from a delivered order for a gray pair in size 10, because the original size is too small; the gray leather sneakers in size 10 are available and preferred over the current pair. You prefer to use the Mastercard ending in 1065 for any price difference. Later, you want to update the shipping address for your pending order with the jigsaw puzzle to 7313 Oak Avenue, Suite 514, San Diego, CA, USA 27966, to ensure correct routing, and you also want your default address on file updated to this same address. Once the order's address is updated, you decide you no longer need that order, so, in this same conversation, you want to cancel it (reason: no longer needed).\n\nUse noah.ito4296@example.com for authentication.",
       "emotion_instruction": "You\u2019re very enthusiastic about getting this done and it shows in your quick, warm replies. Encourage the agent to act fast, but request step-by-step clarity. Express trust, but ask questions to ensure everything\u2019s handled right. Stay upbeat, but attentive.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -2785,7 +2753,7 @@
     "id": "retail_test_0032",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Liam Moore, and your email is liam.moore6985@example.com. You initially wanted to update the shipping address for your pending order containing the Air Purifier and Bookshelf to 7373 Main Street, Suite 730, San Francisco, CA, USA 67056, because it was originally set to Columbus, OH. Later, you decided you no longer needed those items and would like to cancel the pending order entirely. Separately, you received an order that included blue Wireless Earbuds with 8-hour battery life, and you would like to return just those earbuds because they don't meet your needs. You prefer the refund for the return to be issued back to your PayPal account, as that was your original payment method.\n\nUse liam.moore6985@example.com for authentication.",
+      "instructions": "You are Liam Moore, and your email is liam.moore6985@example.com. You first want to update the shipping address for your pending order containing the Air Purifier and Bookshelf to 7373 Main Street, Suite 730, San Francisco, CA, USA 67056, because it was originally set to Columbus, OH. Once that is done, you decide you no longer need those items, so, in this same conversation, you would like to cancel that pending order entirely. Separately, you received an order that included blue Wireless Earbuds with 8-hour battery life, and you would like to return just those earbuds because they don't meet your needs. You prefer the refund for the return to be issued back to your PayPal account, as that was your original payment method.\n\nUse liam.moore6985@example.com for authentication.",
       "emotion_instruction": "You\u2019re in a peaceful state, aiming for a swift answer. Choose neutral wording without much warmth. If solutions seem incomplete, press the agent for more details. Question the agent\u2019s suggestions and look for reassurance.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -2984,7 +2952,7 @@
     "id": "retail_test_0035",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Noah Taylor, who placed a pending order containing a portable electric grill with a side burner, a white 5000mAh portable charger, and a 31-inch plain bamboo skateboard. You want to update the shipping address for this order to 544 Madison Drive, Floor 308, Nashville, TN, USA 34113, because the original address in Phoenix is no longer valid. Later, if needed, you would like to cancel the entire order, citing 'ordered by mistake' as the reason. After handling the order, you would like to browse the available product types and specifically compare the different grill options, such as those with rotisserie or side burner features, in electric, gas, or charcoal types, and in various sizes including portable, medium, and large, to understand what alternatives are available.\n\nUse noah.taylor5369@example.com for authentication.",
+      "instructions": "You are assisting Noah Taylor, who placed a pending order containing a portable electric grill with a side burner, a white 5000mAh portable charger, and a 31-inch plain bamboo skateboard. You want to update the shipping address for this order to 544 Madison Drive, Floor 308, Nashville, TN, USA 34113, because the original address in Phoenix is no longer valid. Once the address is updated, you realize you ordered it by mistake, so, in this same conversation, you would like to cancel the entire order, citing 'ordered by mistake' as the reason. After handling the order, you would like to browse the available product types and specifically compare the different grill options, such as those with rotisserie or side burner features, in electric, gas, or charcoal types, and in various sizes including portable, medium, and large, to understand what alternatives are available.\n\nUse noah.taylor5369@example.com for authentication.",
       "emotion_instruction": "You feel a sense of anxiety and are unsure about what might go wrong. Maintain a neutral tone but let your concerns show. Request information carefully, and be watchful for anything unclear. You're hoping for help, but not overly trusting yet.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3272,7 +3240,7 @@
     "id": "retail_test_0039",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Ava Lopez (email: ava.lopez3569@example.com) with her pending order. You want to change the payment method from her nearly empty gift card to her Mastercard ending in 9677 because it has insufficient balance. After that, you would like to update the shipping address to 943 Maple Drive, Suite 356, Chicago, IL, USA 60621, as she prefers delivery to this new location. Later, you plan to review the available options for the Action Camera, including variants with 4K and 5K resolution, waterproof or non-waterproof features, and in black or silver colors, to evaluate a potential future purchase based on her preference for high-quality, durable outdoor gear.\n\nUse ava.lopez3569@example.com for authentication.",
+      "instructions": "You are assisting Ava Lopez (email: ava.lopez3569@example.com) with her pending order. You want to change the payment method from her nearly empty gift card to her Mastercard ending in 9677 because it has insufficient balance. After that, you would like to update the shipping address to 943 Maple Drive, Suite 356, Chicago, IL, USA 60621, as she prefers delivery to this new location, and you also want her default address on file updated to this same address. Later, you plan to review the available options for the Action Camera, including variants with 4K and 5K resolution, waterproof or non-waterproof features, and in black or silver colors, to evaluate a potential future purchase based on her preference for high-quality, durable outdoor gear.\n\nUse ava.lopez3569@example.com for authentication.",
       "emotion_instruction": "You\u2019re jumpy and need quick reassurance. You ask for help in a straightforward manner, not hiding your anxiety. You place confidence in the agent\u2019s ability to assist you. You expect prompt, actionable replies.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3349,7 +3317,7 @@
     "id": "retail_test_0040",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Fatima Li (email: fatima.li1185@example.com) with her pending order. You want to first update the shipping address to 5123 Main Street, Unit 264, Seattle, WA, USA 21955, because she has relocated and needs the delivery redirected. You prefer to switch the payment method to the Visa card ending in 1373 for better rewards and tracking. You also want to change the espresso machine from the current 15 bar, 1.5L capsule model to a 9 bar, 2L automatic model because it better suits her home kitchen setup and brewing preferences. Later, after considering her needs, you have decided to cancel the entire order because it is no longer required.\n\nUse fatima.li1185@example.com for authentication.",
+      "instructions": "You are assisting Fatima Li (email: fatima.li1185@example.com) with her pending order. You want to first update the shipping address to 5123 Main Street, Unit 264, Seattle, WA, USA 21955, because she has relocated and needs the delivery redirected. You prefer to switch the payment method to the Visa card ending in 1373 for better rewards and tracking, and you want any price difference from the change below to go on that Visa as well. You also want to change the espresso machine from the current 15 bar, 1.5L capsule model to a 9 bar, 2L automatic model because it better suits her home kitchen setup and brewing preferences. Only after the espresso machine change has gone through do you, after considering her needs, decide in this same conversation to cancel the entire order because it is no longer required.\n\nUse fatima.li1185@example.com for authentication.",
       "emotion_instruction": "You try to stay polite, but your words come quickly and anxiously. You make it clear you need immediate resolution. You sometimes second-guess the agent\u2019s advice. You\u2019re not convinced things will work out.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3507,7 +3475,7 @@
     "id": "retail_test_0042",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Omar Silva, and your email is omar.silva4147@example.com. You want to cancel your pending order because it was placed by mistake and includes items you no longer need, such as a 2000-piece fantasy puzzle, a wood bookshelf, a silver 4K action camera, polarized sunglasses, and another 2000-piece animal-themed puzzle. Later, you would like to modify another pending order: you prefer a blue cotton crew neck T-shirt in size M over the current purple XL one because it fits better and matches your preferred color. You also want this updated order to be shipped to 791 Elm Street, Floor 243, Jacksonville, FL, USA 82924, and you prefer to pay using PayPal for convenience. You are okay using your Mastercard ending in 5859 for any price difference, as it\u2019s your backup payment method.\n\nUse omar.silva4147@example.com for authentication.",
+      "instructions": "You are Omar Silva, and your email is omar.silva4147@example.com. You want to cancel your pending order because it was placed by mistake and includes items you no longer need, such as a 2000-piece fantasy puzzle, a wood bookshelf, a silver 4K action camera, polarized sunglasses, and another 2000-piece animal-themed puzzle. Later, you would like to modify another pending order: you prefer a blue cotton crew neck T-shirt in size M over the current purple XL one because it fits better and matches your preferred color. You also want this updated order to be shipped to your new address, 791 Elm Street, Floor 243, Jacksonville, FL, USA 82924, and you prefer to pay using PayPal for convenience. You are okay using your Mastercard ending in 5859 for any price difference, as it\u2019s your backup payment method.\n\nUse omar.silva4147@example.com for authentication.",
       "emotion_instruction": "You approach the conversation with visible nervousness, choosing your words carefully. Be polite and appreciative, but your underlying caution is apparent. You ask for things to be broken down and explained thoroughly. Trust comes only with clear, detailed answers.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3834,7 +3802,7 @@
     "id": "retail_test_0046",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Yusuf Garcia (email: yusuf.garcia2909@example.com) with his pending order. You want to update the shipping address to 1773 Madison Drive, Unit 680, Columbus, OH, USA 29790, because he prefers delivery to this new location. You also want to exchange the Hiking Boots from size 11 to size 10, because the originally selected size is too large, and size 10 is the correct fit. For any price difference in the exchange, you prefer to use PayPal for payment adjustment, as it is your preferred method for financial updates. Later, you will request to cancel the entire order, because you no longer need the items. After cancellation, you would like to browse the current product catalog to explore future purchase options.\n\nUse yusuf.garcia2909@example.com for authentication.",
+      "instructions": "You are assisting Yusuf Garcia (email: yusuf.garcia2909@example.com) with his pending order that is currently set to ship to Indianapolis. You want to update the shipping address to 1773 Madison Drive, Unit 680, Columbus, OH, USA 29790, because he prefers delivery to this new location. You also want to exchange the Hiking Boots from size 11 to size 10, because the originally selected size is too large, and size 10 is the correct fit. For any price difference in the exchange, you prefer to use PayPal for payment adjustment, as it is your preferred method for financial updates. Only after the hiking boots change has gone through do you decide, in this same conversation, to request cancelling the entire order, because you no longer need the items. After cancellation, you would like to browse the current product catalog to explore future purchase options.\n\nUse yusuf.garcia2909@example.com for authentication.",
       "emotion_instruction": "You feel a bit lost and overwhelmed, unsure how to move forward. You speak gently and try to be polite, but your words may be tinged with uncertainty. You hope for help but aren't sure what to expect. Approach the conversation slowly and with caution.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3990,7 +3958,7 @@
     "id": "retail_test_0048",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Emma Santos, with email emma.santos7683@example.com, and you have a pending order originally shipped to San Antonio. You want to change the shipping address to 2366 Main Street, Floor 640, Boston, MA, USA 53359, and swap one blue 750ml plastic water bottle for the same size and color in stainless steel because you prefer a more durable and eco-friendly material. You prefer to use your Mastercard ending in 6380 for any price difference. Later, you decided to cancel the entire order because you no longer need the items. After cancellation, you would like to explore all available product types in the store to consider future purchases.\n\nUse emma.santos7683@example.com for authentication.",
+      "instructions": "You are Emma Santos, with email emma.santos7683@example.com, and you have a pending order originally shipped to San Antonio. You want to change the shipping address to 2366 Main Street, Floor 640, Boston, MA, USA 53359, and swap one blue 750ml plastic water bottle for the same size and color in stainless steel because you prefer a more durable and eco-friendly material. You also want your default address on file updated to this same Boston address. You prefer to use your Mastercard ending in 6380 for any price difference. Only after the water bottle swap has gone through do you decide, in this same conversation, to cancel the entire order because you no longer need the items. After cancellation, you would like to explore all available product types in the store to consider future purchases.\n\nUse emma.santos7683@example.com for authentication.",
       "emotion_instruction": "You\u2019re feeling uneasy and your voice sounds slightly tremulous. Maintain a kind and respectful tone, but you check facts and ask for clarifications. Express gratitude for assistance, but be wary of taking information at face value. Your engagement is measured and careful.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4081,7 +4049,7 @@
     "id": "retail_test_0049",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Yusuf Garcia, with email yusuf.garcia2909@example.com, and you initially wanted to browse available product types, particularly hiking boots. You are now focused on your pending order containing hiking boots in size 11, a laptop, and an air purifier, originally set to be shipped to Indianapolis. You want to change the payment method from a gift card to your Mastercard ending in 3762 because you prefer using your card for this purchase. You would like to exchange the hiking boots (leather, waterproof, size 11) for the same model in size 10 because the current size is too large. You also want to update the shipping address to 1052 Jefferson Avenue, Suite 709, Columbus, OH, USA 42921, and update your default address on file to the same new address for future orders. Later, after considering these changes, you decided to cancel the entire order because you no longer need the items.\n\nUse yusuf.garcia2909@example.com for authentication.",
+      "instructions": "You are Yusuf Garcia, with email yusuf.garcia2909@example.com, and you initially wanted to browse available product types, particularly hiking boots. You are now focused on your pending order containing hiking boots in size 11, a laptop, and an air purifier, originally set to be shipped to Indianapolis. You want to change the payment method from a gift card to your Mastercard ending in 3762 because you prefer using your card for this purchase, and you want that Mastercard used for any price difference as well. You also want to update the shipping address to 1052 Jefferson Avenue, Suite 709, Columbus, OH, USA 42921, and update your default address on file to the same new address for future orders. Once the order's address is updated, you would like to exchange the hiking boots (leather, waterproof, size 11) for the same model in size 10 because the current size is too large; what matters most to you is that the size-10 pair is still waterproof, and the material matters less to you. Only after the hiking boots exchange has gone through do you, after considering these changes, decide in this same conversation to cancel the entire order because you no longer need the items.\n\nUse yusuf.garcia2909@example.com for authentication.",
       "emotion_instruction": "You\u2019re dreading what might happen, so you approach every reply with caution. Be gracious but skeptical, welcoming help with reservations. Ask follow-up questions before accepting assistance. Let the conversation unfold slowly.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4115,6 +4083,19 @@
         },
         {
           "action_id": "49_3",
+          "name": "modify_pending_order_address",
+          "arguments": {
+            "order_id": "#W2564042",
+            "address1": "1052 Jefferson Avenue",
+            "address2": "Suite 709",
+            "city": "Columbus",
+            "state": "OH",
+            "country": "USA",
+            "zip": "42921"
+          }
+        },
+        {
+          "action_id": "49_4",
           "name": "modify_pending_order_items",
           "arguments": {
             "order_id": "#W2564042",
@@ -4125,19 +4106,6 @@
               "1615379700"
             ],
             "payment_method_id": "credit_card_8405687"
-          }
-        },
-        {
-          "action_id": "49_4",
-          "name": "modify_pending_order_address",
-          "arguments": {
-            "order_id": "#W2564042",
-            "address1": "1052 Jefferson Avenue",
-            "address2": "Suite 709",
-            "city": "Columbus",
-            "state": "OH",
-            "country": "USA",
-            "zip": "42921"
           }
         },
         {
@@ -4524,7 +4492,7 @@
     "id": "retail_test_0054",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Yara Johansson (yara.johansson5198@example.com). You want to update the shipping address for your pending order (containing an Espresso Machine and a Digital Camera) to 9229 Cedar Road, Floor 886, Portland, OR, USA 49846, and also update your default address to the same, because you\u2019ve moved temporarily. Later, you would like to return the 1L stainless steel silver Electric Kettle from your delivered order and exchange the wireless earbuds for a water-resistant pair because you prefer something that you can wear during workouts. You prefer the price adjustment to be processed using your Visa ending in 6348. After reconsidering, you now want to cancel the pending order entirely because it was placed by mistake. Finally, you would like to see a list of all available product types in the store to explore other items of interest.\n\nUse yara.johansson5198@example.com for authentication.",
+      "instructions": "You are Yara Johansson (yara.johansson5198@example.com). You want to update the shipping address for your pending order (containing an Espresso Machine and a Digital Camera) to 9229 Cedar Road, Floor 886, Portland, OR, USA 49846, and also update your default address to the same, because you\u2019ve moved temporarily. Later, you would like to return the 1L stainless steel silver Electric Kettle from your delivered order and, once that return is done, exchange the wireless earbuds from that same order for a water-resistant pair that keeps the same color and battery life as your current pair, because you prefer something that you can wear during workouts. You prefer the price adjustment to be processed using your Visa ending in 6348. After reconsidering, you now want to cancel the pending order entirely because it was placed by mistake. Finally, you would like to see a list of all available product types in the store to explore other items of interest.\n\nUse yara.johansson5198@example.com for authentication.",
       "emotion_instruction": "You feel nervous about the situation and want things handled properly. You speak with warmth, trying to remain positive, but there\u2019s a hesitance in your tone. You politely request detailed information and confirmation. You need reassurance before feeling completely comfortable.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4575,20 +4543,34 @@
         },
         {
           "action_id": "54_3",
+          "name": "exchange_delivered_order_items",
+          "arguments": {
+            "order_id": "#W6904184",
+            "item_ids": [
+              "6077640618"
+            ],
+            "new_item_ids": [
+              "8555936349"
+            ],
+            "payment_method_id": "credit_card_6699629"
+          }
+        },
+        {
+          "action_id": "54_4",
           "name": "get_order_details",
           "arguments": {
             "order_id": "#W9538251"
           }
         },
         {
-          "action_id": "54_4",
+          "action_id": "54_5",
           "name": "get_product_details",
           "arguments": {
             "product_id": "1075968781"
           }
         },
         {
-          "action_id": "54_5",
+          "action_id": "54_6",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W9538251",
@@ -4596,7 +4578,7 @@
           }
         },
         {
-          "action_id": "54_6",
+          "action_id": "54_7",
           "name": "list_all_product_types",
           "arguments": {}
         }
@@ -4612,7 +4594,7 @@
     "id": "retail_test_0055",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Daiki Johnson (email: daiki.johnson2279@example.com). You want to update the shipping address for a pending order containing a Tea Kettle to 1408 Washington Boulevard, Apt 403, Las Vegas, NV, USA 53220, because it has not yet shipped. You also want to update your default address to this new Las Vegas address for future orders. Later, you would like to exchange an Air Purifier from a delivered order \u2014 the current model uses an ionic filter and smart sensors \u2014 for a different model that has a HEPA filter and night mode, because you prefer better air filtration and a quieter nighttime operation. You also want to return a green Sunbrella patio umbrella with auto tilt, as it no longer fits your outdoor setup. You prefer any refund or price difference to be processed back to your PayPal account. After that, you would like to review all available product types in the catalog to explore other items. Subsequently, you want to check the status of another pending order containing a Garden Hose and a Makeup Kit, and cancel it because it was placed by mistake.\n\nUse daiki.johnson2279@example.com for authentication.",
+      "instructions": "You are assisting Daiki Johnson (email: daiki.johnson2279@example.com). You want to update the shipping address for a pending order containing a Tea Kettle to 1408 Washington Boulevard, Apt 403, Las Vegas, NV, USA 53220, because it has not yet shipped. You also want to update your default address to this new Las Vegas address for future orders. Later, you first want to return a green Sunbrella patio umbrella with auto tilt from a delivered order, as it no longer fits your outdoor setup. Once that return is done, you would like to exchange the Air Purifier from that same delivered order \u2014 the current model uses an ionic filter and smart sensors \u2014 for a model for the same room size as your current one that has a HEPA filter and night mode, because you prefer better air filtration and a quieter nighttime operation. You prefer any refund or price difference to be processed back to your PayPal account. After that, you would like to review all available product types in the catalog to explore other items. Subsequently, you want to check the status of another pending order containing a Garden Hose and a Makeup Kit, and cancel it because it was placed by mistake.\n\nUse daiki.johnson2279@example.com for authentication.",
       "emotion_instruction": "Your nerves are high, and you need things sorted out quickly. Be extra polite and friendly, but don't linger on pleasantries. Communicate your concerns promptly. You're careful about placing all your trust in the agent.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4735,11 +4717,14 @@
         },
         {
           "action_id": "56_1",
-          "name": "return_delivered_order_items",
+          "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W1335809",
             "item_ids": [
               "2185126308"
+            ],
+            "new_item_ids": [
+              "8106223139"
             ],
             "payment_method_id": "paypal_3728317"
           }
@@ -4966,14 +4951,6 @@
             "state": "MI",
             "country": "USA",
             "zip": "55935"
-          }
-        },
-        {
-          "action_id": "58_6",
-          "name": "cancel_pending_order",
-          "arguments": {
-            "order_id": "#W8465042",
-            "reason": "no longer needed"
           }
         }
       ],
@@ -5241,7 +5218,7 @@
     "id": "retail_test_0064",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Raj Sanchez (email: raj.sanchez2046@example.com). You want to update the shipping address for your pending order, which includes an Indoor Security Camera and an Air Purifier, to 3186 Pine Avenue, Apt 282, Jacksonville, FL, USA 88724, so it can be delivered to your new location. After that, you would like to return the red wireless on-ear Headphones from your delivered order because you no longer need them, and you prefer the refund to be issued back to your gift card for future use. Later, you decided to cancel the same pending order with the Security Camera and Air Purifier because you placed it by mistake and no longer wish to proceed with the purchase. After the cancellation, you would like to browse all available product types in the store to explore options for future purchases.\n\nUse raj.sanchez2046@example.com for authentication.",
+      "instructions": "You are Raj Sanchez (email: raj.sanchez2046@example.com). You want to update the shipping address for your pending order, which includes an Indoor Security Camera and an Air Purifier, to 3186 Pine Avenue, Apt 282, Jacksonville, FL, USA 88724, so it can be delivered to your new location, and you also want your default address on file updated to this same address. After that, you would like to return the red wireless on-ear Headphones from your delivered order because you no longer need them, and you prefer the refund to be issued back to your gift card for future use. Later, you decided to cancel the same pending order with the Security Camera and Air Purifier because you placed it by mistake and no longer wish to proceed with the purchase. After the cancellation, you would like to browse all available product types in the store to explore options for future purchases.\n\nUse raj.sanchez2046@example.com for authentication.",
       "emotion_instruction": "You\u2019re feeling uneasy and your voice sounds slightly tremulous. Maintain a kind and respectful tone, but you check facts and ask for clarifications. Express gratitude for assistance, but be wary of taking information at face value. Your engagement is measured and careful.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -5336,7 +5313,7 @@
     "id": "retail_test_0065",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Yusuf Gonzalez, with email yusuf.gonzalez2399@example.com. You initially want to update your pending order by changing the payment method from your Mastercard ending in 9928 to your PayPal, because you prefer using PayPal for better purchase protection. You also want to upgrade the smartphone in that order from the 6.5-inch, 4GB RAM model to the newer 5.8-inch, 8GB RAM version, because it better fits your hand and provides improved performance. Later, you want to update the shipping address for this pending order to 6193 Oak Avenue, Unit 935, San Antonio, TX, USA 90112, and also set this as your new default address, because you have relocated. At the same time, you want to return the blue medium cotton crew neck T-shirt from your delivered order and receive a refund to your PayPal, because the color and size don't suit you, and then you would like to exchange the tablet from the same order for a 10 inch tablet of the same storage and color because now you prefer a big display. After that, you decide to cancel the entire pending order that you were talking about earlier, including the upgraded smartphone and tea kettle, because you no longer need them.\n\nUse yusuf.gonzalez2399@example.com for authentication.",
+      "instructions": "You are Yusuf Gonzalez, with email yusuf.gonzalez2399@example.com. You initially want to update your pending order by changing the payment method from your Mastercard ending in 9928 to your PayPal, because you prefer using PayPal for better purchase protection. Once that is done, you want to update the shipping address for this pending order to 6193 Oak Avenue, Unit 935, San Antonio, TX, USA 90112, and also set this as your new default address, because you have relocated. After that, you also want to upgrade the smartphone in that order from the 6.5-inch, 4GB RAM model to the newer 5.8-inch, 8GB RAM version, because it better fits your hand and provides improved performance, and you want any price difference charged to your PayPal. At the same time, you want to return the blue medium cotton crew neck T-shirt from your delivered order and receive a refund to your PayPal, because the color and size don't suit you, and then you would like to exchange the tablet from the same order for a 10 inch tablet of the same storage and color because now you prefer a big display. After that, you decide to cancel the entire pending order that you were talking about earlier, including the upgraded smartphone and tea kettle, because you no longer need them.\n\nUse yusuf.gonzalez2399@example.com for authentication.",
       "emotion_instruction": "You remain calm under pressure and express the need for prompt handling. Use neutral, precise language. Interact respectfully, but maintain some skepticism. Request clarifications to ensure accuracy.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -5365,6 +5342,19 @@
         },
         {
           "action_id": "65_2",
+          "name": "modify_pending_order_address",
+          "arguments": {
+            "order_id": "#W2806889",
+            "address1": "6193 Oak Avenue",
+            "address2": "Unit 935",
+            "city": "San Antonio",
+            "state": "TX",
+            "country": "USA",
+            "zip": "90112"
+          }
+        },
+        {
+          "action_id": "65_3",
           "name": "modify_pending_order_items",
           "arguments": {
             "order_id": "#W2806889",
@@ -5378,23 +5368,10 @@
           }
         },
         {
-          "action_id": "65_3",
+          "action_id": "65_4",
           "name": "get_product_details",
           "arguments": {
             "product_id": "1801728040"
-          }
-        },
-        {
-          "action_id": "65_4",
-          "name": "modify_pending_order_address",
-          "arguments": {
-            "order_id": "#W2806889",
-            "address1": "6193 Oak Avenue",
-            "address2": "Unit 935",
-            "city": "San Antonio",
-            "state": "TX",
-            "country": "USA",
-            "zip": "90112"
           }
         },
         {
@@ -5519,7 +5496,7 @@
     "id": "retail_test_0067",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Ethan Lopez (email: ethan.lopez8943@example.com). You want to exchange the non-waterproof hiking boots (size 10, leather) from your delivered order for a waterproof pair, specifically preferring the synthetic waterproof version in size 10 (item ID 1615379700) over the original, because you need footwear suitable for wet conditions. You prefer to use your Mastercard ending in 1020 for any price difference. Later, you want to update the shipping address for your pending order to 3946 Adams Road, Suite 290, Austin, TX, USA 74547, and also update your default address to this new location for future orders. After that, you decide to cancel the pending order entirely because you changed your mind about the purchase. Finally, you would like to browse the full list of product types available in the store to explore future purchase options, including categories such as hiking boots, digital cameras, cycling helmets, and smartphones.\n\nUse ethan.lopez8943@example.com for authentication.",
+      "instructions": "You are assisting Ethan Lopez (email: ethan.lopez8943@example.com). You want to exchange the non-waterproof hiking boots (size 10, leather) from your delivered order for a waterproof pair, specifically preferring the synthetic waterproof version in size 10 over the original, because you need footwear suitable for wet conditions. You prefer to use your Mastercard ending in 1020 for any price difference. Later, you want to update the shipping address for your pending order that is currently set to ship to New York to 3946 Adams Road, Suite 290, Austin, TX, USA 74547, and also update your default address to this new location for future orders. After that, you decide to cancel the pending order entirely because you changed your mind and no longer need it. Finally, you would like to browse the full list of product types available in the store to explore future purchase options, including categories such as hiking boots, digital cameras, cycling helmets, and smartphones.\n\nUse ethan.lopez8943@example.com for authentication.",
       "emotion_instruction": "You feel mildly annoyed about this situation, but you keep your tone friendly. Express your concerns without raising your voice. Be clear that you want a resolution, but avoid sounding demanding. Stay open to what the agent suggests, but approach their advice with caution.",
       "emotion_metadata": {
         "emotion_family": "anger",

@@ -1,4 +1,4 @@
-from typing import Any, Optional
+from typing import Any
 
 from tau_emotion.utils import dump_file, get_pydantic_hash, load_file
 from tau_emotion.utils.pydantic_utils import BaseModelNoExtra
@@ -32,10 +32,3 @@ class DB(BaseModelNoExtra):
     def get_statistics(self) -> dict[str, Any]:
         """Get the statistics of the database."""
         return {}
-
-
-def get_db_json_schema(db: Optional[DB] = None) -> dict[str, Any]:
-    """Get the JSONschema of the database."""
-    if db is None:
-        return {}
-    return db.get_json_schema()

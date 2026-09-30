@@ -18,7 +18,6 @@ from tau_emotion.data_model.tasks import (
     EnvFunctionCall,
     InitializationData,
 )
-from tau_emotion.environment.db import DB
 from tau_emotion.environment.tool import Tool
 from tau_emotion.environment.toolkit import (
     ToolKitBase,
@@ -104,25 +103,6 @@ class Environment:
         if self.user_tools is None:
             raise ValueError("User tools not available")
         return list(self.user_tools.get_tools(include=include).values())
-
-    def get_tools_description(
-        self, env_type: Literal["user", "assistant"]
-    ) -> Optional[str]:
-        """
-        Return a description of the user tools.
-        """
-        if env_type == "user":
-            tool_kit = self.user_tools
-        elif env_type == "assistant":
-            tool_kit = self.tools
-        else:
-            raise ValueError(f"Invalid environment type: {env_type}")
-        if tool_kit is None:
-            return None
-        tools = sorted(tool_kit.get_tools().values(), key=lambda x: x.name)
-        return "\n\n".join(
-            [f"{i + 1}. {t.name}\n{t.short_desc}" for i, t in enumerate(tools)]
-        )
 
     def _has_tool(self, tool_name: str) -> bool:
         """Check if a tool exists in the environment.
@@ -211,7 +191,7 @@ class Environment:
             tool_kit = self.tools
         else:
             raise ValueError(f"Invalid environment type: {env_type}")
-        func = getattr(tool_kit, func_name)
+        func = getattr(tool_kit, func_name, None)
         if func is None:
             raise ValueError(f"Function {func_name} not found in {env_type} tools")
         res = func(**env_function_call.arguments)
@@ -238,17 +218,6 @@ class Environment:
             assert assert_pass, assertion.message or f"Assertion failed: {assertion}"
         return assert_pass
 
-    def run_env_function_calls(self, env_function_calls: list[EnvFunctionCall]) -> None:
-        """
-        Run a list of environment function calls. If the function call is an assertion,
-        an assertion check will be performed.
-        """
-        for env_function_call in env_function_calls:
-            if isinstance(env_function_call, EnvAssertion):
-                self.run_env_assertion(env_function_call, raise_assertion_error=True)
-            else:
-                self.run_env_function_call(env_function_call)
-
     def get_info(self, include_tool_info: bool = False) -> EnvironmentInfo:
         """
         Get environment information.
@@ -267,18 +236,6 @@ class Environment:
                 else None
             ),
         )
-
-    def check_db(self, reference: DB) -> bool:
-        """
-        Compare the agent database with the reference
-        """
-        return self.get_db_hash() == reference.get_hash()
-
-    def check_user_db(self, reference: DB) -> bool:
-        """
-        Compare the user database with the reference
-        """
-        return self.get_user_db_hash() == reference.get_hash()
 
     def get_db_hash(self) -> Optional[str]:
         """
@@ -370,9 +327,8 @@ class Environment:
                 # change, so replay it as a no-op. The agent's subsequent
                 # recovery (if any) will still be replayed and determine
                 # the final state. Repeated hallucination is bounded
-                # upstream by the orchestrator's max_errors guard, which
-                # ends the live sim with TerminationReason.TOO_MANY_ERRORS
-                # before evaluation runs.
+                # upstream by the orchestrator's max_steps (and max_errors,
+                # if --max-errors lowers it).
                 logger.debug(
                     f"Skipping unknown tool '{tool_call.name}' during replay "
                     "(no-op, matching live env behavior on hallucinated tools)."

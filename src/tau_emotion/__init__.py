@@ -4,8 +4,6 @@ Tau-Emotion: Conversational Agent Benchmark Framework
 Main exports for easy access to key components.
 """
 
-import warnings
-
 # Runner package: clean API for simulation execution
 # - Layer 1: run_simulation (execute pre-built orchestrator)
 # - Layer 2: build_* functions (construct instances from config/names)

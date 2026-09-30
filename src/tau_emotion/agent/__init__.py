@@ -1,5 +1,3 @@
-import warnings
-
 from tau_emotion.agent.base.llm_config import LLMConfigMixin
 from tau_emotion.agent.base.participant import HalfDuplexParticipant
 from tau_emotion.agent.base_agent import (

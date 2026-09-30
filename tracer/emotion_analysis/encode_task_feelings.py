@@ -176,7 +176,7 @@ def predict_for_model(config: Dict, model_cfg: Dict) -> Dict[str, str]:
     )
 
     output_suffix = config["inference"].get(
-        "task_output_suffix", "_with_novel_emotion_predictions.json"
+        "task_output_suffix", "_with_emotion_predictions.json"
     )
     written_paths: List[str] = []
     for task_path_str in config["inputs"]["task_paths"]:

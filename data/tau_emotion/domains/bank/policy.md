@@ -66,7 +66,7 @@ Important: Before any WRITE call, list the exact details (who/what/amounts/ids/m
 
 2) Add beneficiary (add_beneficiary)
 - Purpose: create a new beneficiary for transfers.
-- Inputs required: client_id; beneficiary_id; type (individual/business); name fields (display_name/first/last or business_name); bank details (bank_name, account_number_masked, optional routing_number/iban/swift_bic); full address; allowed_from_account_ids (must belong to this client); per_transfer_limit; daily_limit; verification_method (default document).
+- Inputs required: client_id; type (individual/business); name fields (display_name/first/last or business_name); bank details (bank_name, account_number_masked, optional routing_number/iban/swift_bic); full address; allowed_from_account_ids (must belong to this client); per_transfer_limit; daily_limit; verification_method (default document).
 - Constraints:
   - All allowed_from_account_ids must belong to the authenticated client.
 - Result: beneficiary created with verification.status = pending and status = active; added to client’s beneficiary_ids.

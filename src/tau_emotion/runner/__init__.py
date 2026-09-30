@@ -2,7 +2,7 @@
 tau_emotion.runner -- Simulation execution framework.
 
 Three-layer architecture:
-- Layer 1 (simulation.py): run_simulation() -- execute a pre-built orchestrator, no registry
+- Layer 1 (simulation.py): run_simulation() -- execute a pre-built orchestrator (scoring looks the domain up in the registry)
 - Layer 2 (build.py): build_* functions -- turn config/names into live instances
 - Layer 3 (batch.py): run_domain(), run_tasks(), run_single_task() -- batch execution with
   concurrency, checkpointing, retries, logging, and side effects

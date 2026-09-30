@@ -540,7 +540,7 @@ def run_tasks(
         )
         monitor.stop()
 
-        # Force-exit: background threads (litellm, websocket loops, etc.)
+        # Force-exit: background threads (litellm's, etc.)
         # hold the process alive and produce noisy errors during interpreter
         # shutdown.  All completed results are already on disk via save_fn.
         os._exit(130)

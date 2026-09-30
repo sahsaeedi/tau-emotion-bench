@@ -1,7 +1,7 @@
 # Agent Examples
 
 Runnable examples showing how to create and evaluate custom tau-emotion agents. They
-run on the mock domain with `openai/gpt-4.1-mini` as the agent and the user
+run an airline task with `openai/gpt-4.1-mini` as the agent and the user
 simulator, so they need `OPENAI_API_KEY`. To use another model, replace
 `openai/gpt-4.1-mini` in the example; `openai/<name>` with `OPENAI_API_BASE` set
 reaches a model on an OpenAI-compatible server (see [models](../../docs/models.md)).
@@ -10,12 +10,12 @@ reaches a model on an OpenAI-compatible server (see [models](../../docs/models.m
 
 ### `minimal_text_agent.py` -- Start here
 
-A single-file example that creates a minimal agent, registers it, and runs it against the mock domain. Shows:
+A single-file example that creates a minimal agent, registers it, and runs it on an airline task. Shows:
 
 - Implementing `HalfDuplexAgent` (the two required methods)
 - Writing a factory function
 - Registering with the registry
-- Running one task via `run_single_task` (a `run_domain` call for all mock tasks is
+- Running one task via `run_single_task` (a `run_domain` call for all airline tasks is
   left commented out)
 
 ```bash

@@ -85,16 +85,6 @@ class HalfDuplexAgent(
 # =============================================================================
 
 
-def validate_message_format(
-    message: AssistantMessage, solo: bool = False
-) -> tuple[bool, str]:
-    """Validate the message format for the agent."""
-    if solo:
-        return validate_message_format_solo(message)
-    else:
-        return validate_message_format_default(message)
-
-
 def validate_message_format_default(message: AssistantMessage) -> tuple[bool, str]:
     """Validate the message format for the agent."""
     has_content = message.has_text_content()

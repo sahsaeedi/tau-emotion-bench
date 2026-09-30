@@ -1,6 +1,6 @@
 """
-The LLM used by the conversation review judges (review, user-only review,
-auth classification, hallucination check).
+The LLM used by the conversation review judges (review, user-only review and
+auth classification).
 
 Defaults to DEFAULT_LLM_EVAL_USER_SIMULATOR. The review CLI calls
 set_judge_llm() to use another model, e.g. a bare model name on the hosted
@@ -24,10 +24,6 @@ def set_judge_llm(model: Optional[str] = None, llm_args: Optional[dict] = None):
         _judge_model = model
     if llm_args is not None:
         _judge_llm_args = dict(llm_args)
-
-
-def get_judge_model() -> str:
-    return _judge_model
 
 
 def judge_generate(

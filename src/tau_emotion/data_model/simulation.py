@@ -3,11 +3,10 @@ from collections.abc import Iterator
 from copy import deepcopy
 from enum import Enum
 from pathlib import Path
-from typing import Literal, Optional
+from typing import Annotated, Literal, Optional
 
 import pandas as pd
 from pydantic import BaseModel, Field
-from typing_extensions import Annotated
 
 from tau_emotion.config import (
     DEFAULT_LLM_AGENT,
@@ -781,7 +780,7 @@ class SimulationRun(BaseModel):
         )
     )
     policy: Optional[str] = Field(
-        description="The policy/system prompt used for this simulation (knowledge domain only).",
+        description="The policy/system prompt used for this simulation.",
         default=None,
     )
 
@@ -821,8 +820,7 @@ class Results(BaseModel):
       checkpointing for large simulation files).
 
     Use load()/save() for full round-trip. Use load_metadata() for fast metadata
-    access, iter_simulations() for streaming, and df_from_path() for streaming
-    DataFrame construction.
+    access and iter_simulations() for streaming.
     """
 
     timestamp: Optional[str] = Field(
@@ -1117,23 +1115,5 @@ class Results(BaseModel):
             row = self._sim_to_row(sim, self.info)
             task = next(t for t in self.tasks if t.id == sim.task_id)
             row.update(self._task_metrics(task))
-            rows.append(row)
-        return pd.DataFrame(rows)
-
-    @classmethod
-    def df_from_path(cls, path: Path) -> pd.DataFrame:
-        """Build a metrics DataFrame by streaming simulations from disk.
-
-        Like to_df() but loads simulations one at a time, keeping peak memory
-        bounded by the size of a single simulation. Works with both formats.
-        """
-        metadata = cls.load_metadata(path)
-        tasks_by_id = {t.id: t for t in metadata.tasks}
-        rows = []
-        for sim in cls.iter_simulations(path):
-            row = cls._sim_to_row(sim, metadata.info)
-            task = tasks_by_id.get(sim.task_id)
-            if task:
-                row.update(cls._task_metrics(task))
             rows.append(row)
         return pd.DataFrame(rows)

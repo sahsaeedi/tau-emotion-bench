@@ -5,12 +5,10 @@ litellm>=1.78
 openai>=2.6
 langchain-core>=1.2
 langchain-openai>=1.1
-tiktoken>=0.12
 
 # Core
 pydantic>=2.0
 python-dotenv>=1.0
-requests>=2.31
 tqdm>=4.66
 
 # Emotion analysis (encoder training, emotion-space plots)

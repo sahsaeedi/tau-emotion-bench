@@ -1,9 +1,8 @@
 import json
-from typing import Any, Optional
+from typing import Annotated, Any, Optional
 
 from fastapi import FastAPI, HTTPException
 from pydantic import create_model
-from typing_extensions import Annotated
 
 from tau_emotion.environment.environment import Environment
 from tau_emotion.environment.toolkit import get_tool_signatures
