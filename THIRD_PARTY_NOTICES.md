@@ -1,8 +1,9 @@
 # Third-party notices
 
 This repository is licensed under the Apache License 2.0 (see [LICENSE](LICENSE)).
-It includes code from the projects below, which are licensed under the MIT License.
-Their copyright and permission notices are reproduced here, as that license requires.
+It includes code and data from the projects below: τ²-bench, τ-bench and τ-trait
+under the MIT License, and ToolOrchestra under the Apache License 2.0. Their
+copyright and permission notices are reproduced here, as those licenses require.
 
 ## τ²-bench
 
@@ -99,4 +100,30 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
+
+## ToolOrchestra
+
+- Source: https://github.com/NVlabs/ToolOrchestra
+- Used for: the bank, basketball, movie, restaurant, school and travel domains
+  (the ToolScale domains in `data/tau2/domains/` and
+  `evaluation/tau2-bench/tau2/domains/`): their tools, policies and databases, in
+  TRACER's environments (`tracer/tracer/envs/{bank,basketball,movie,restaurant,school,travel}/`)
+  and the benchmark (`src/tau_emotion/domains/` and `data/tau_emotion/domains/`),
+  with modifications.
+
+```
+Copyright 2025 Hanrong Ye
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```

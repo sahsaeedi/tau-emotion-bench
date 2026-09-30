@@ -181,6 +181,9 @@ We thank the authors of [τ-bench](https://github.com/sierra-research/tau-bench)
 τ-bench's conventions for running and scoring conversations, and its code is
 organized in τ²-bench's format. TRACER's airline and retail environments build on
 τ-bench, and its telecom and telehealth environments on
-[τ-trait](https://github.com/collinear-ai/tau-trait). All three are
-MIT-licensed; their licence notices, and which parts of this repository use them,
-are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+[τ-trait](https://github.com/collinear-ai/tau-trait). All three are MIT-licensed.
+The bank, basketball, movie, restaurant, school and travel domains (tools, policies
+and data) build on the ToolScale domains of
+[ToolOrchestra](https://github.com/NVlabs/ToolOrchestra), licensed under Apache 2.0.
+Their licence notices, and which parts of this repository use them, are in
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
