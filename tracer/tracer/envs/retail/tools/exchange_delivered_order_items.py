@@ -23,12 +23,20 @@ class ExchangeDeliveredOrderItems(Tool):
         order = orders[order_id]
         if not order["status"].startswith("delivered"):
             return "Error: non-delivered order cannot be exchanged"
+        if "exchange requested" in order["status"]:
+            return "Error: an exchange has already been requested for this order"
 
         # check the items to be exchanged exist
         all_item_ids = [item["item_id"] for item in order["items"]]
+        return_items = order.get("return_items", [])
         for item_id in item_ids:
             if item_ids.count(item_id) > all_item_ids.count(item_id):
                 return f"Error: {item_id} not found"
+            # each unit can be in only one request: units already being returned cannot be exchanged
+            if item_ids.count(item_id) + return_items.count(
+                item_id
+            ) > all_item_ids.count(item_id):
+                return f"Error: {item_id} is already part of a return request"
 
         # check new items exist and match old items and are available
         if len(item_ids) != len(new_item_ids):
@@ -64,7 +72,7 @@ class ExchangeDeliveredOrderItems(Tool):
             )
 
         # modify the order
-        order["status"] = "delivered (exchange requested)"
+        order["status"] = order["status"] + " (exchange requested)"
         order["exchange_items"] = sorted(item_ids)
         order["exchange_new_items"] = sorted(new_item_ids)
         order["exchange_payment_method_id"] = payment_method_id
@@ -80,7 +88,8 @@ class ExchangeDeliveredOrderItems(Tool):
                 "name": "exchange_delivered_order_items",
                 "description": (
                     "Exchange items in a delivered order to new items of the same product type. "
-                    "For a delivered order, return or exchange can be only done once by the agent. "
+                    "A delivered order (status 'delivered', possibly with an existing return request) can have at most one exchange request, "
+                    "and an item that is already part of a return request cannot be exchanged. ' (exchange requested)' is added to the order status. "
                     "The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed."
                 ),
                 "parameters": {

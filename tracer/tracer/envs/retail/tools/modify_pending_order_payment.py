@@ -19,8 +19,10 @@ class ModifyPendingOrderPayment(Tool):
         if order_id not in orders:
             return "Error: order not found"
         order = orders[order_id]
-        if order["status"] != "pending":
+        if not order["status"].startswith("pending"):
             return "Error: non-pending order cannot be modified"
+        if "item modified" in order["status"]:
+            return "Error: the payment method cannot be changed after the items have been modified"
 
         # Check if the payment method exists
         if payment_method_id not in data["users"][order["user_id"]]["payment_methods"]:
@@ -90,7 +92,7 @@ class ModifyPendingOrderPayment(Tool):
             "type": "function",
             "function": {
                 "name": "modify_pending_order_payment",
-                "description": "Modify the payment method of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+                "description": "Modify the payment method of a pending order. The payment method cannot be changed after the order's items have been modified. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
                 "parameters": {
                     "type": "object",
                     "properties": {

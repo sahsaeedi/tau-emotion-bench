@@ -14,7 +14,7 @@ class CancelPendingOrder(Tool):
         if order_id not in orders:
             return "Error: order not found"
         order = orders[order_id]
-        if order["status"] != "pending":
+        if not order["status"].startswith("pending"):
             return "Error: non-pending order cannot be cancelled"
 
         # check reason
@@ -52,7 +52,7 @@ class CancelPendingOrder(Tool):
             "function": {
                 "name": "cancel_pending_order",
                 "description": (
-                    "Cancel a pending order. If the order is already processed or delivered, "
+                    "Cancel a pending order (status 'pending' or 'pending (item modified)'). If the order is already processed or delivered, "
                     "it cannot be cancelled. The agent needs to explain the cancellation detail "
                     "and ask for explicit user confirmation (yes/no) to proceed. If the user confirms, "
                     "the order status will be changed to 'cancelled' and the payment will be refunded. "

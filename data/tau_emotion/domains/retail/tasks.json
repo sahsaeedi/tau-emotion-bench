@@ -486,29 +486,18 @@
         },
         {
           "action_id": "5_3",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "order_id": "#W6679257",
-            "item_ids": [
-              "5996159312"
-            ],
-            "payment_method_id": "credit_card_9513926"
-          }
-        },
-        {
-          "action_id": "5_4",
           "name": "list_all_product_types",
           "arguments": {}
         },
         {
-          "action_id": "5_5",
+          "action_id": "5_4",
           "name": "get_product_details",
           "arguments": {
             "product_id": "8940227892"
           }
         },
         {
-          "action_id": "5_6",
+          "action_id": "5_5",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W4776164",
@@ -527,7 +516,7 @@
     "id": "retail_test_0006",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Emma Martin (emma.martin1207@example.com) and you want to first browse the full catalog of available product types. You would like to exchange the Makeup Kit in your delivered order \u2014 which is a professional-sized kit from Brand A in medium skin tone \u2014 for the same style and brand but in dark skin tone, because it better matches your skin. You prefer the exchange to be processed with the price difference handled via your PayPal account. You also want to update your default shipping address to 2290 Park Drive, Unit 287, Philadelphia, PA, for all future orders. Later, you would like to cancel your pending order containing a navy XL fleece jacket, red XXL cotton T-shirt, gold 128GB smartphone, a professional dark skin tone Makeup Kit from Brand B, and a 20000mAh black portable charger, because you no longer need those items.\n\nUse emma.martin1207@example.com for authentication.",
+      "instructions": "You are Emma Martin (emma.martin1207@example.com) and you want to first browse the full catalog of available product types. You would like to exchange the Makeup Kit in your delivered order \u2014 which is a professional-sized kit from Brand A in medium skin tone \u2014 for the same style and brand but in dark skin tone, because it better matches your skin. You prefer the exchange to be processed with the price difference handled via your PayPal account. You also want to update your default shipping address to 2290 Park Drive, Unit 287, Philadelphia, PA, USA 10487, for all future orders. Later, you would like to cancel your pending order containing a navy XL fleece jacket, red XXL cotton T-shirt, gold 128GB smartphone, a professional dark skin tone Makeup Kit from Brand B, and a 20000mAh black portable charger, because you no longer need those items.\n\nUse emma.martin1207@example.com for authentication.",
       "emotion_instruction": "You feel calm and content, eager to resolve your issue quickly. You express yourself warmly and are quick to trust the agent. You ask for help right away, believing the agent will guide you smoothly. Your tone remains relaxed but you make it clear time matters.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1085,7 +1074,7 @@
     "id": "retail_test_0013",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Olivia Ito (olivia.ito5204@example.com) and you want to cancel your pending order containing a gaming mouse, patio umbrella, and hiking boots because you no longer need the items. You also want to exchange the 1L automatic espresso machine from your delivered order for a 1.5L automatic model with 19 bar pressure, preferring the larger capacity for household use, and you prefer to use your PayPal account for the price difference. Also, you want to return the sneakers because they are not your style. Additionally, you are interested in learning more about the Wristwatch product, particularly its available variants and features. Later, for your other pending order containing a wristwatch and backpack, you want to update the shipping address to a new location in New York, switch the payment method from your Visa ending in 9182 to your PayPal, and upgrade the wristwatch to the metal strap black dial version, preferring its more durable and elegant design, with any additional cost charged to your Visa ending in 9182.\n\nUse olivia.ito5204@example.com for authentication.",
+      "instructions": "You are Olivia Ito (olivia.ito5204@example.com) and you want to cancel your pending order containing a gaming mouse, patio umbrella, and hiking boots because you no longer need the items. You also want to exchange the 1L automatic espresso machine from your delivered order for a 1.5L automatic model with 19 bar pressure, preferring the larger capacity for household use, and you prefer to use your PayPal account for the price difference. Also, you want to return the sneakers because they are not your style. Additionally, you are interested in learning more about the Wristwatch product, particularly its available variants and features. Later, for your other pending order containing a wristwatch and backpack, you want to update the shipping address to 6768 Washington Boulevard, Suite 658, New York, NY, USA 16428, switch the payment method from your Visa ending in 9182 to your PayPal, and upgrade the wristwatch to the metal strap black dial version, preferring its more durable and elegant design, with any additional cost charged to your Visa ending in 9182.\n\nUse olivia.ito5204@example.com for authentication.",
       "emotion_instruction": "You\u2019re buzzing with excitement and want help without waiting. Keep your tone neutral but brisk, and don\u2019t immediately trust everything the agent says. Cut to the chase and request clear, quick responses.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -1365,12 +1354,12 @@
           "name": "modify_pending_order_address",
           "arguments": {
             "order_id": "#W3295833",
-            "address1": "5520 Lincoln Street",
-            "address2": "Unit 188",
+            "address1": "7382 Jefferson Avenue",
+            "address2": "Suite 919",
             "city": "Dallas",
             "state": "TX",
             "country": "USA",
-            "zip": "53305"
+            "zip": "95888"
           }
         },
         {
@@ -1378,12 +1367,12 @@
           "name": "modify_user_address",
           "arguments": {
             "user_id": "liam_thomas_7882",
-            "address1": "5520 Lincoln Street",
-            "address2": "Unit 188",
+            "address1": "7382 Jefferson Avenue",
+            "address2": "Suite 919",
             "city": "Dallas",
             "state": "TX",
             "country": "USA",
-            "zip": "53305"
+            "zip": "95888"
           }
         },
         {
@@ -1590,34 +1579,20 @@
         },
         {
           "action_id": "17_3",
-          "name": "exchange_delivered_order_items",
-          "arguments": {
-            "order_id": "#W6874763",
-            "item_ids": [
-              "9385662952"
-            ],
-            "new_item_ids": [
-              "8733974883"
-            ],
-            "payment_method_id": "credit_card_4046723"
-          }
-        },
-        {
-          "action_id": "17_4",
           "name": "get_product_details",
           "arguments": {
             "product_id": "8560156827"
           }
         },
         {
-          "action_id": "17_5",
+          "action_id": "17_4",
           "name": "get_order_details",
           "arguments": {
             "order_id": "#W6874763"
           }
         },
         {
-          "action_id": "17_6",
+          "action_id": "17_5",
           "name": "modify_pending_order_items",
           "arguments": {
             "order_id": "#W1557241",
@@ -1631,7 +1606,7 @@
           }
         },
         {
-          "action_id": "17_7",
+          "action_id": "17_6",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W1557241",
@@ -1639,7 +1614,7 @@
           }
         },
         {
-          "action_id": "17_8",
+          "action_id": "17_7",
           "name": "list_all_product_types",
           "arguments": {}
         }
@@ -1856,20 +1831,6 @@
         },
         {
           "action_id": "19_7",
-          "name": "exchange_delivered_order_items",
-          "arguments": {
-            "order_id": "#W1867876",
-            "item_ids": [
-              "7510236436"
-            ],
-            "new_item_ids": [
-              "7510236436"
-            ],
-            "payment_method_id": "credit_card_1034663"
-          }
-        },
-        {
-          "action_id": "19_8",
           "name": "list_all_product_types",
           "arguments": {}
         }
@@ -2036,17 +1997,6 @@
         },
         {
           "action_id": "21_2",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "item_ids": [
-              "1262139877"
-            ],
-            "order_id": "#W1654332",
-            "payment_method_id": "credit_card_4056740"
-          }
-        },
-        {
-          "action_id": "21_3",
           "name": "exchange_delivered_order_items",
           "arguments": {
             "order_id": "#W1654332",
@@ -2060,26 +2010,26 @@
           }
         },
         {
-          "action_id": "21_4",
+          "action_id": "21_3",
           "name": "get_product_details",
           "arguments": {
             "product_id": "1656367028"
           }
         },
         {
-          "action_id": "21_5",
+          "action_id": "21_4",
           "name": "list_all_product_types",
           "arguments": {}
         },
         {
-          "action_id": "21_6",
+          "action_id": "21_5",
           "name": "get_order_details",
           "arguments": {
             "order_id": "#W9527030"
           }
         },
         {
-          "action_id": "21_7",
+          "action_id": "21_6",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W9527030",
@@ -2168,22 +2118,6 @@
         },
         {
           "action_id": "22_6",
-          "name": "exchange_delivered_order_items",
-          "arguments": {
-            "order_id": "#W5690487",
-            "item_ids": [
-              "6555827912",
-              "3358616356"
-            ],
-            "new_item_ids": [
-              "2645006275",
-              "7811981098"
-            ],
-            "payment_method_id": "credit_card_3599838"
-          }
-        },
-        {
-          "action_id": "22_7",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W8268610",
@@ -2443,12 +2377,12 @@
           "name": "modify_pending_order_address",
           "arguments": {
             "order_id": "#W5282037",
-            "address1": "291 Jefferson Avenue",
-            "address2": "Unit 185",
-            "city": "Oklahoma City",
-            "state": "OK",
+            "address1": "8090 Madison Drive",
+            "address2": "Suite 542",
+            "city": "Nashville",
+            "state": "TN",
             "country": "USA",
-            "zip": "77044"
+            "zip": "89755"
           }
         },
         {
@@ -2541,29 +2475,18 @@
         },
         {
           "action_id": "26_2",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "order_id": "#W3445693",
-            "item_ids": [
-              "6477915553"
-            ],
-            "payment_method_id": "credit_card_1620755"
-          }
-        },
-        {
-          "action_id": "26_3",
           "name": "list_all_product_types",
           "arguments": {}
         },
         {
-          "action_id": "26_4",
+          "action_id": "26_3",
           "name": "get_product_details",
           "arguments": {
             "product_id": "7471004230"
           }
         },
         {
-          "action_id": "26_5",
+          "action_id": "26_4",
           "name": "modify_pending_order_address",
           "arguments": {
             "order_id": "#W4219264",
@@ -2576,7 +2499,7 @@
           }
         },
         {
-          "action_id": "26_6",
+          "action_id": "26_5",
           "name": "modify_user_address",
           "arguments": {
             "user_id": "noah_ito_3850",
@@ -2589,7 +2512,7 @@
           }
         },
         {
-          "action_id": "26_7",
+          "action_id": "26_6",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W4219264",
@@ -2862,7 +2785,7 @@
     "id": "retail_test_0032",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Liam Moore, and your email is liam.moore6985@example.com. You initially wanted to update the shipping address for your pending order containing the Air Purifier and Bookshelf to 7373 Main Street, Suite 730, San Francisco, CA, because it was originally set to Columbus, OH. Later, you decided you no longer needed those items and would like to cancel the pending order entirely. Separately, you received an order that included blue Wireless Earbuds with 8-hour battery life, and you would like to return just those earbuds because they don't meet your needs. You prefer the refund for the return to be issued back to your PayPal account, as that was your original payment method.\n\nUse liam.moore6985@example.com for authentication.",
+      "instructions": "You are Liam Moore, and your email is liam.moore6985@example.com. You initially wanted to update the shipping address for your pending order containing the Air Purifier and Bookshelf to 7373 Main Street, Suite 730, San Francisco, CA, USA 67056, because it was originally set to Columbus, OH. Later, you decided you no longer needed those items and would like to cancel the pending order entirely. Separately, you received an order that included blue Wireless Earbuds with 8-hour battery life, and you would like to return just those earbuds because they don't meet your needs. You prefer the refund for the return to be issued back to your PayPal account, as that was your original payment method.\n\nUse liam.moore6985@example.com for authentication.",
       "emotion_instruction": "You\u2019re in a peaceful state, aiming for a swift answer. Choose neutral wording without much warmth. If solutions seem incomplete, press the agent for more details. Question the agent\u2019s suggestions and look for reassurance.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -3426,7 +3349,7 @@
     "id": "retail_test_0040",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are assisting Fatima Li (email: fatima.li1185@example.com) with her pending order. You want to first update the shipping address to 5123 Main Street, Unit 264, Seattle, WA, because she has relocated and needs the delivery redirected. You prefer to switch the payment method to the Visa card ending in 1373 for better rewards and tracking. You also want to change the espresso machine from the current 15 bar, 1.5L capsule model to a 9 bar, 2L automatic model because it better suits her home kitchen setup and brewing preferences. Later, after considering her needs, you have decided to cancel the entire order because it is no longer required.\n\nUse fatima.li1185@example.com for authentication.",
+      "instructions": "You are assisting Fatima Li (email: fatima.li1185@example.com) with her pending order. You want to first update the shipping address to 5123 Main Street, Unit 264, Seattle, WA, USA 21955, because she has relocated and needs the delivery redirected. You prefer to switch the payment method to the Visa card ending in 1373 for better rewards and tracking. You also want to change the espresso machine from the current 15 bar, 1.5L capsule model to a 9 bar, 2L automatic model because it better suits her home kitchen setup and brewing preferences. Later, after considering her needs, you have decided to cancel the entire order because it is no longer required.\n\nUse fatima.li1185@example.com for authentication.",
       "emotion_instruction": "You try to stay polite, but your words come quickly and anxiously. You make it clear you need immediate resolution. You sometimes second-guess the agent\u2019s advice. You\u2019re not convinced things will work out.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3584,7 +3507,7 @@
     "id": "retail_test_0042",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Omar Silva, and your email is omar.silva4147@example.com. You want to cancel your pending order because it was placed by mistake and includes items you no longer need, such as a 2000-piece fantasy puzzle, a wood bookshelf, a silver 4K action camera, polarized sunglasses, and another 2000-piece animal-themed puzzle. Later, you would like to modify another pending order: you prefer a blue cotton crew neck T-shirt in size M over the current purple XL one because it fits better and matches your preferred color. You also want this updated order to be shipped to a new address in Jacksonville, and you prefer to pay using PayPal for convenience. You are okay using your Mastercard ending in 5859 for any price difference, as it\u2019s your backup payment method.\n\nUse omar.silva4147@example.com for authentication.",
+      "instructions": "You are Omar Silva, and your email is omar.silva4147@example.com. You want to cancel your pending order because it was placed by mistake and includes items you no longer need, such as a 2000-piece fantasy puzzle, a wood bookshelf, a silver 4K action camera, polarized sunglasses, and another 2000-piece animal-themed puzzle. Later, you would like to modify another pending order: you prefer a blue cotton crew neck T-shirt in size M over the current purple XL one because it fits better and matches your preferred color. You also want this updated order to be shipped to 791 Elm Street, Floor 243, Jacksonville, FL, USA 82924, and you prefer to pay using PayPal for convenience. You are okay using your Mastercard ending in 5859 for any price difference, as it\u2019s your backup payment method.\n\nUse omar.silva4147@example.com for authentication.",
       "emotion_instruction": "You approach the conversation with visible nervousness, choosing your words carefully. Be polite and appreciative, but your underlying caution is apparent. You ask for things to be broken down and explained thoroughly. Trust comes only with clear, detailed answers.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -4652,34 +4575,20 @@
         },
         {
           "action_id": "54_3",
-          "name": "exchange_delivered_order_items",
-          "arguments": {
-            "order_id": "#W6904184",
-            "item_ids": [
-              "8142779083"
-            ],
-            "new_item_ids": [
-              "4064702754"
-            ],
-            "payment_method_id": "credit_card_6699629"
-          }
-        },
-        {
-          "action_id": "54_4",
           "name": "get_order_details",
           "arguments": {
             "order_id": "#W9538251"
           }
         },
         {
-          "action_id": "54_5",
+          "action_id": "54_4",
           "name": "get_product_details",
           "arguments": {
             "product_id": "1075968781"
           }
         },
         {
-          "action_id": "54_6",
+          "action_id": "54_5",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W9538251",
@@ -4687,7 +4596,7 @@
           }
         },
         {
-          "action_id": "54_7",
+          "action_id": "54_6",
           "name": "list_all_product_types",
           "arguments": {}
         }
@@ -4837,27 +4746,13 @@
         },
         {
           "action_id": "56_2",
-          "name": "exchange_delivered_order_items",
-          "arguments": {
-            "order_id": "#W1335809",
-            "item_ids": [
-              "2185126308"
-            ],
-            "new_item_ids": [
-              "8106223139"
-            ],
-            "payment_method_id": "paypal_3728317"
-          }
-        },
-        {
-          "action_id": "56_3",
           "name": "get_product_details",
           "arguments": {
             "product_id": "7363354090"
           }
         },
         {
-          "action_id": "56_4",
+          "action_id": "56_3",
           "name": "modify_pending_order_address",
           "arguments": {
             "order_id": "#W3176007",
@@ -4870,7 +4765,7 @@
           }
         },
         {
-          "action_id": "56_5",
+          "action_id": "56_4",
           "name": "modify_user_address",
           "arguments": {
             "user_id": "anya_lee_8315",
@@ -4883,12 +4778,12 @@
           }
         },
         {
-          "action_id": "56_6",
+          "action_id": "56_5",
           "name": "list_all_product_types",
           "arguments": {}
         },
         {
-          "action_id": "56_7",
+          "action_id": "56_6",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W2989580",
@@ -4984,18 +4879,6 @@
         },
         {
           "action_id": "57_6",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "order_id": "#W1867876",
-            "item_ids": [
-              "6906307980",
-              "7510236436"
-            ],
-            "payment_method_id": "credit_card_1034663"
-          }
-        },
-        {
-          "action_id": "57_7",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W4862767",
@@ -5049,29 +4932,18 @@
         },
         {
           "action_id": "58_2",
-          "name": "return_delivered_order_items",
-          "arguments": {
-            "order_id": "#W7764382",
-            "item_ids": [
-              "5067898160"
-            ],
-            "payment_method_id": "paypal_6982172"
-          }
-        },
-        {
-          "action_id": "58_3",
           "name": "list_all_product_types",
           "arguments": {}
         },
         {
-          "action_id": "58_4",
+          "action_id": "58_3",
           "name": "get_product_details",
           "arguments": {
             "product_id": "2747247837"
           }
         },
         {
-          "action_id": "58_5",
+          "action_id": "58_4",
           "name": "modify_pending_order_address",
           "arguments": {
             "order_id": "#W8465042",
@@ -5084,7 +4956,7 @@
           }
         },
         {
-          "action_id": "58_6",
+          "action_id": "58_5",
           "name": "modify_user_address",
           "arguments": {
             "user_id": "ethan_thomas_1791",
@@ -5097,7 +4969,7 @@
           }
         },
         {
-          "action_id": "58_7",
+          "action_id": "58_6",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W8465042",
@@ -5420,34 +5292,20 @@
         },
         {
           "action_id": "64_3",
-          "name": "exchange_delivered_order_items",
-          "arguments": {
-            "order_id": "#W7736708",
-            "item_ids": [
-              "3104857380"
-            ],
-            "new_item_ids": [
-              "3104857380"
-            ],
-            "payment_method_id": "credit_card_3362387"
-          }
-        },
-        {
-          "action_id": "64_4",
           "name": "get_order_details",
           "arguments": {
             "order_id": "#W4566809"
           }
         },
         {
-          "action_id": "64_5",
+          "action_id": "64_4",
           "name": "get_product_details",
           "arguments": {
             "product_id": "6992792935"
           }
         },
         {
-          "action_id": "64_6",
+          "action_id": "64_5",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W4566809",
@@ -5455,14 +5313,14 @@
           }
         },
         {
-          "action_id": "64_7",
+          "action_id": "64_6",
           "name": "get_order_details",
           "arguments": {
             "order_id": "#W4566809"
           }
         },
         {
-          "action_id": "64_8",
+          "action_id": "64_7",
           "name": "list_all_product_types",
           "arguments": {}
         }
@@ -5478,7 +5336,7 @@
     "id": "retail_test_0065",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Yusuf Gonzalez, with email yusuf.gonzalez2399@example.com. You initially want to update your pending order by changing the payment method from your Mastercard ending in 9928 to your PayPal, because you prefer using PayPal for better purchase protection. You also want to upgrade the smartphone in that order from the 6.5-inch, 4GB RAM model to the newer 5.8-inch, 8GB RAM version, because it better fits your hand and provides improved performance. Later, you want to update the shipping address for this pending order to 6193 Oak Avenue, Unit 935, San Antonio, TX, and also set this as your new default address, because you have relocated. At the same time, you want to return the blue medium cotton crew neck T-shirt from your delivered order and receive a refund to your PayPal, because the color and size don't suit you, and then you would like to exchange the tablet from the same order for a 10 inch tablet of the same storage and color because now you prefer a big display. After that, you decide to cancel the entire pending order that you were talking about earlier, including the upgraded smartphone and tea kettle, because you no longer need them.\n\nUse yusuf.gonzalez2399@example.com for authentication.",
+      "instructions": "You are Yusuf Gonzalez, with email yusuf.gonzalez2399@example.com. You initially want to update your pending order by changing the payment method from your Mastercard ending in 9928 to your PayPal, because you prefer using PayPal for better purchase protection. You also want to upgrade the smartphone in that order from the 6.5-inch, 4GB RAM model to the newer 5.8-inch, 8GB RAM version, because it better fits your hand and provides improved performance. Later, you want to update the shipping address for this pending order to 6193 Oak Avenue, Unit 935, San Antonio, TX, USA 90112, and also set this as your new default address, because you have relocated. At the same time, you want to return the blue medium cotton crew neck T-shirt from your delivered order and receive a refund to your PayPal, because the color and size don't suit you, and then you would like to exchange the tablet from the same order for a 10 inch tablet of the same storage and color because now you prefer a big display. After that, you decide to cancel the entire pending order that you were talking about earlier, including the upgraded smartphone and tea kettle, because you no longer need them.\n\nUse yusuf.gonzalez2399@example.com for authentication.",
       "emotion_instruction": "You remain calm under pressure and express the need for prompt handling. Use neutral, precise language. Interact respectfully, but maintain some skepticism. Request clarifications to ensure accuracy.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -5565,20 +5423,6 @@
         },
         {
           "action_id": "65_7",
-          "name": "exchange_delivered_order_items",
-          "arguments": {
-            "item_ids": [
-              "4913411651"
-            ],
-            "new_item_ids": [
-              "3788616824"
-            ],
-            "order_id": "#W1679211",
-            "payment_method_id": "paypal_3022415"
-          }
-        },
-        {
-          "action_id": "65_8",
           "name": "cancel_pending_order",
           "arguments": {
             "order_id": "#W2806889",

@@ -137,7 +137,9 @@ class Appointment(BaseModel):
     time: str
     duration_minutes: int
     type: str
-    status: Literal["scheduled", "pending_approval", "completed", "cancelled", "no_show"]
+    status: Literal[
+        "scheduled", "pending_approval", "completed", "cancelled", "no_show"
+    ]
     chief_complaint: Optional[str] = None
     notes: Optional[str] = ""
     insurance_authorization: Optional[str] = None

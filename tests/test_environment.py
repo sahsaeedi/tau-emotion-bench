@@ -610,9 +610,8 @@ def test_environment_evaluator_hallucinated_only_scores_zero(
     assert not reward_info.db_check.db_match
 
 
-def test_tool_results_turn_numbers_into_strings():
-    # Like tau2, numbers and booleans in tool results become strings.
+def test_tool_results_keep_numbers_as_numbers():
     result = {"score": 8, "ratio": 0.5, "final": True, "rows": [1, None, "a"]}
     assert Environment.to_json_str(result) == (
-        '{"score": "8", "ratio": "0.5", "final": "True", "rows": ["1", null, "a"]}'
+        '{"score": 8, "ratio": 0.5, "final": true, "rows": [1, null, "a"]}'
     )

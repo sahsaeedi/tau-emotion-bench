@@ -11,14 +11,16 @@ return values. Conversion rules from v1:
   fields the record never had, as v1's raw dict would.
 - v1 free-function `invoke(data, ...)` → instance method with `@is_tool(...)`.
 
-Unlike upstream tau2-bench, returns and exchanges set "delivered (return
-requested)" / "delivered (exchange requested)" and accept any order whose status
-starts with "delivered", and modifying items leaves an order "pending", so it
-can still be cancelled or modified again.
+Unlike upstream tau2-bench, the request is appended to the order status
+("pending (item modified)", "delivered (return requested)", "delivered (exchange
+requested)", or both requests). An order's items can be modified once, after
+which its address can still change and it can still be cancelled but its
+payment method cannot. A delivered order can have one return and one exchange
+request, and no unit can be in both.
 """
 
 import json
-from typing import List, Literal, Optional
+from typing import List, Literal
 
 from pydantic import BaseModel
 
@@ -31,8 +33,8 @@ from tau_emotion.domains.retail.data_model import (
 from tau_emotion.environment.toolkit import ToolKitBase, ToolType, is_tool
 
 
-def _record_json(record: BaseModel, exclude: Optional[set[str]] = None) -> str:
-    return json.dumps(record.model_dump(exclude_unset=True, exclude=exclude))
+def _record_json(record: BaseModel) -> str:
+    return json.dumps(record.model_dump(exclude_unset=True))
 
 
 class RetailTools(ToolKitBase):  # Tools
@@ -87,7 +89,7 @@ class RetailTools(ToolKitBase):  # Tools
     def cancel_pending_order(
         self, order_id: str, reason: Literal["no longer needed", "ordered by mistake"]
     ) -> str:
-        """Cancel a pending order. If the order is already processed or delivered, it cannot be cancelled. The agent needs to explain the cancellation detail and ask for explicit user confirmation (yes/no) to proceed. If the user confirms, the order status will be changed to 'cancelled' and the payment will be refunded. The refund will be added to the user's gift card balance immediately if the payment was made using a gift card, otherwise the refund would take 5-7 business days to process. The function returns the order details after the cancellation.
+        """Cancel a pending order (status 'pending' or 'pending (item modified)'). If the order is already processed or delivered, it cannot be cancelled. The agent needs to explain the cancellation detail and ask for explicit user confirmation (yes/no) to proceed. If the user confirms, the order status will be changed to 'cancelled' and the payment will be refunded. The refund will be added to the user's gift card balance immediately if the payment was made using a gift card, otherwise the refund would take 5-7 business days to process. The function returns the order details after the cancellation.
 
         Args:
             order_id: The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.
@@ -97,7 +99,7 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after the cancellation, as JSON.
         """
         order = self._get_order(order_id)
-        if order.status != "pending":
+        if not order.status.startswith("pending"):
             raise ValueError("non-pending order cannot be cancelled")
         if reason not in ["no longer needed", "ordered by mistake"]:
             raise ValueError("invalid reason")
@@ -113,7 +115,9 @@ class RetailTools(ToolKitBase):  # Tools
                 )
             )
             if "gift_card" in payment_id:  # refund to gift card immediately
-                payment_method = self.db.users[order.user_id].payment_methods[payment_id]
+                payment_method = self.db.users[order.user_id].payment_methods[
+                    payment_id
+                ]
                 payment_method.balance += payment.amount
                 payment_method.balance = round(payment_method.balance, 2)
 
@@ -130,7 +134,7 @@ class RetailTools(ToolKitBase):  # Tools
         new_item_ids: List[str],
         payment_method_id: str,
     ) -> str:
-        """Exchange items in a delivered order to new items of the same product type. For a delivered order, return or exchange can be only done once by the agent. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.
+        """Exchange items in a delivered order to new items of the same product type. A delivered order (status 'delivered', possibly with an existing return request) can have at most one exchange request, and an item that is already part of a return request cannot be exchanged. ' (exchange requested)' is added to the order status. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.
 
         Args:
             order_id: The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.
@@ -142,9 +146,21 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after the exchange, as JSON.
         """
         order = self._get_order(order_id)
-        # v1 accepts any "delivered..." status, so an order can be exchanged again.
         if not order.status.startswith("delivered"):
             raise ValueError("non-delivered order cannot be exchanged")
+        if "exchange requested" in order.status:
+            raise ValueError("an exchange has already been requested for this order")
+
+        # Each unit can be in only one request.
+        all_item_ids = [item.item_id for item in order.items]
+        return_items = order.return_items or []
+        for item_id in item_ids:
+            if item_ids.count(item_id) > all_item_ids.count(item_id):
+                raise ValueError(f"{item_id} not found")
+            if item_ids.count(item_id) + return_items.count(
+                item_id
+            ) > all_item_ids.count(item_id):
+                raise ValueError(f"{item_id} is already part of a return request")
 
         diff_price = round(self._price_difference(order, item_ids, new_item_ids), 2)
 
@@ -153,9 +169,11 @@ class RetailTools(ToolKitBase):  # Tools
             raise ValueError("payment method not found")
         payment_method = payment_methods[payment_method_id]
         if payment_method.source == "gift_card" and payment_method.balance < diff_price:
-            raise ValueError("insufficient gift card balance to pay for the price difference")
+            raise ValueError(
+                "insufficient gift card balance to pay for the price difference"
+            )
 
-        order.status = "delivered (exchange requested)"
+        order.status = order.status + " (exchange requested)"
         order.exchange_items = sorted(item_ids)
         order.exchange_new_items = sorted(new_item_ids)
         order.exchange_payment_method_id = payment_method_id
@@ -178,7 +196,9 @@ class RetailTools(ToolKitBase):  # Tools
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
-    def find_user_id_by_name_zip(self, first_name: str, last_name: str, zip: str) -> str:
+    def find_user_id_by_name_zip(
+        self, first_name: str, last_name: str, zip: str
+    ) -> str:
         """Find user id by first name, last name, and zip code. If the user is not found, the function will return an error message. By default, find user id by email, and only call this function if the user is not found by email or cannot remember email.
 
         Args:
@@ -235,8 +255,7 @@ class RetailTools(ToolKitBase):  # Tools
             The user details, as JSON.
         """
         if user_id in self.db.users:
-            # v1's user records have no user_id field.
-            return _record_json(self.db.users[user_id], exclude={"user_id"})
+            return _record_json(self.db.users[user_id])
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
@@ -262,7 +281,7 @@ class RetailTools(ToolKitBase):  # Tools
         country: str,
         zip: str,
     ) -> str:
-        """Modify the shipping address of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.
+        """Modify the shipping address of a pending order (status 'pending' or 'pending (item modified)'). The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.
 
         Args:
             order_id: The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.
@@ -277,7 +296,7 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after the modification, as JSON.
         """
         order = self._get_order(order_id)
-        if order.status != "pending":
+        if not order.status.startswith("pending"):
             raise ValueError("non-pending order cannot be modified")
         order.address = UserAddress(
             address1=address1,
@@ -297,7 +316,7 @@ class RetailTools(ToolKitBase):  # Tools
         new_item_ids: List[str],
         payment_method_id: str,
     ) -> str:
-        """Modify items in a pending order to new items of the same product type. For a pending order, this function can only be called once. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.
+        """Modify items in a pending order to new items of the same product type. For a pending order, this function can only be called once: the order status then becomes 'pending (item modified)', after which its items and payment method can no longer be changed, but its shipping address can still be modified and it can still be cancelled. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.
 
         Args:
             order_id: The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.
@@ -309,8 +328,10 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after the modification, as JSON.
         """
         order = self._get_order(order_id)
-        if order.status != "pending":
+        if not order.status.startswith("pending"):
             raise ValueError("non-pending order cannot be modified")
+        if "item modified" in order.status:
+            raise ValueError("the items of this order have already been modified")
 
         diff_price = self._price_difference(order, item_ids, new_item_ids)
 
@@ -339,13 +360,14 @@ class RetailTools(ToolKitBase):  # Tools
             item.item_id = new_item_id
             item.price = variant.price
             item.options = variant.options
-        # v1 leaves the order "pending", so it can still be cancelled or modified.
-        order.status = "pending"
+        order.status = order.status + " (item modified)"
         return _record_json(order)
 
     @is_tool(ToolType.WRITE)
-    def modify_pending_order_payment(self, order_id: str, payment_method_id: str) -> str:
-        """Modify the payment method of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.
+    def modify_pending_order_payment(
+        self, order_id: str, payment_method_id: str
+    ) -> str:
+        """Modify the payment method of a pending order. The payment method cannot be changed after the order's items have been modified. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.
 
         Args:
             order_id: The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.
@@ -355,8 +377,12 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after the modification, as JSON.
         """
         order = self._get_order(order_id)
-        if order.status != "pending":
+        if not order.status.startswith("pending"):
             raise ValueError("non-pending order cannot be modified")
+        if "item modified" in order.status:
+            raise ValueError(
+                "the payment method cannot be changed after the items have been modified"
+            )
 
         payment_methods = self.db.users[order.user_id].payment_methods
         if payment_method_id not in payment_methods:
@@ -369,7 +395,9 @@ class RetailTools(ToolKitBase):  # Tools
             raise ValueError("there should be exactly one payment for a pending order")
         old_payment_method_id = order.payment_history[0].payment_method_id
         if old_payment_method_id == payment_method_id:
-            raise ValueError("the new payment method should be different from the current one")
+            raise ValueError(
+                "the new payment method should be different from the current one"
+            )
 
         amount = order.payment_history[0].amount
         payment_method = payment_methods[payment_method_id]
@@ -435,13 +463,13 @@ class RetailTools(ToolKitBase):  # Tools
             country=country,
             zip=zip,
         )
-        return _record_json(user, exclude={"user_id"})
+        return _record_json(user)
 
     @is_tool(ToolType.WRITE)
     def return_delivered_order_items(
         self, order_id: str, item_ids: List[str], payment_method_id: str
     ) -> str:
-        """Return some items of a delivered order. The order status will be changed to 'return requested'. The agent needs to explain the return detail and ask for explicit user confirmation (yes/no) to proceed. The user will receive follow-up email for how and where to return the item.
+        """Return some items of a delivered order (status 'delivered', possibly with an existing exchange request). ' (return requested)' is added to the order status. An order can have at most one return request, and an item that is already part of an exchange request cannot be returned. The agent needs to explain the return detail and ask for explicit user confirmation (yes/no) to proceed. The user will receive follow-up email for how and where to return the item.
 
         Args:
             order_id: The order id, such as '#W0000000'. Be careful there is a '#' symbol at the beginning of the order id.
@@ -452,9 +480,10 @@ class RetailTools(ToolKitBase):  # Tools
             The order details after requesting the return, as JSON.
         """
         order = self._get_order(order_id)
-        # v1 accepts any "delivered..." status, so an order can be returned again.
         if not order.status.startswith("delivered"):
             raise ValueError("non-delivered order cannot be returned")
+        if "return requested" in order.status:
+            raise ValueError("a return has already been requested for this order")
 
         if payment_method_id not in self.db.users[order.user_id].payment_methods:
             raise ValueError("payment method not found")
@@ -466,12 +495,18 @@ class RetailTools(ToolKitBase):  # Tools
                 "payment method should be either the original payment method or a gift card"
             )
 
+        # Each unit can be in only one request.
         all_item_ids = [item.item_id for item in order.items]
+        exchange_items = order.exchange_items or []
         for item_id in item_ids:
             if item_ids.count(item_id) > all_item_ids.count(item_id):
                 raise ValueError("some item not found")
+            if item_ids.count(item_id) + exchange_items.count(
+                item_id
+            ) > all_item_ids.count(item_id):
+                raise ValueError(f"{item_id} is already part of an exchange request")
 
-        order.status = "delivered (return requested)"
+        order.status = order.status + " (return requested)"
         order.return_items = sorted(item_ids)
         order.return_payment_method_id = payment_method_id
         return _record_json(order)

@@ -67,8 +67,8 @@ AIRPORTS = {
 }
 
 
-def _record_json(record: BaseModel, exclude: Optional[set[str]] = None) -> str:
-    return json.dumps(record.model_dump(exclude_unset=True, exclude=exclude))
+def _record_json(record: BaseModel) -> str:
+    return json.dumps(record.model_dump(exclude_unset=True))
 
 
 def _as_dicts(items: List[Any]) -> List[dict]:
@@ -101,10 +101,14 @@ class AirlineTools(ToolKitBase):
             raise ValueError(f"flight {flight_number} not found")
         flight_data = self.db.flights[flight_number]
         if flight["date"] not in flight_data.dates:
-            raise ValueError(f"flight {flight_number} not found on date {flight['date']}")
+            raise ValueError(
+                f"flight {flight_number} not found on date {flight['date']}"
+            )
         flight_date_data = flight_data.dates[flight["date"]]
         if flight_date_data.status != "available":
-            raise ValueError(f"flight {flight_number} not available on date {flight['date']}")
+            raise ValueError(
+                f"flight {flight_number} not available on date {flight['date']}"
+            )
         if flight_date_data.available_seats[cabin] < num_passengers:
             raise ValueError(f"not enough seats on flight {flight_number}")
         flight["price"] = flight_date_data.prices[cabin]
@@ -112,7 +116,9 @@ class AirlineTools(ToolKitBase):
         flight["destination"] = flight_data.destination
         return flight["price"] * num_passengers
 
-    def _update_payment_method(self, user_id: str, payment_id: str, total_price: int) -> Any:
+    def _update_payment_method(
+        self, user_id: str, payment_id: str, total_price: int
+    ) -> Any:
         """v1's payment checks for reservation updates."""
         payment_methods = self.db.users[user_id].payment_methods
         if payment_id not in payment_methods:
@@ -120,7 +126,9 @@ class AirlineTools(ToolKitBase):
         payment_method = payment_methods[payment_id]
         if payment_method.source == "certificate":
             raise ValueError("certificate cannot be used to update reservation")
-        elif payment_method.source == "gift_card" and payment_method.amount < total_price:
+        elif (
+            payment_method.source == "gift_card" and payment_method.amount < total_price
+        ):
             raise ValueError("gift card balance is not enough")
         return payment_method
 
@@ -163,7 +171,11 @@ class AirlineTools(ToolKitBase):
 
         # A fourth booking in one task overwrites HATHAV, as in v1.
         reservation_id = next(
-            (rid for rid in NEW_RESERVATION_IDS[:-1] if rid not in self.db.reservations),
+            (
+                rid
+                for rid in NEW_RESERVATION_IDS[:-1]
+                if rid not in self.db.reservations
+            ),
             NEW_RESERVATION_IDS[-1],
         )
 
@@ -185,7 +197,9 @@ class AirlineTools(ToolKitBase):
                 raise ValueError(f"payment method {payment_id} not found")
             if user.payment_methods[payment_id].source in ["gift_card", "certificate"]:
                 if user.payment_methods[payment_id].amount < amount:
-                    raise ValueError(f"not enough balance in payment method {payment_id}")
+                    raise ValueError(
+                        f"not enough balance in payment method {payment_id}"
+                    )
         paid = sum(payment["amount"] for payment in payment_methods)
         if paid != total_price:
             raise ValueError(
@@ -268,8 +282,7 @@ class AirlineTools(ToolKitBase):
         """
         if reservation_id in self.db.reservations:
             return _record_json(self.db.reservations[reservation_id])
-        # v1's message for a missing reservation.
-        raise ValueError("user not found")
+        raise ValueError("Reservation id not found")
 
     @is_tool(ToolType.READ)
     def get_user_details(self, user_id: str) -> str:
@@ -282,8 +295,7 @@ class AirlineTools(ToolKitBase):
             The user as JSON.
         """
         if user_id in self.db.users:
-            # v1's user records have no user_id field.
-            return _record_json(self.db.users[user_id], exclude={"user_id"})
+            return _record_json(self.db.users[user_id])
         raise ValueError("user not found")
 
     @is_tool(ToolType.READ)
@@ -344,7 +356,10 @@ class AirlineTools(ToolKitBase):
                     if "+1" in flight1.scheduled_arrival_time_est
                     else date
                 )
-                if flight1.scheduled_arrival_time_est > flight2.scheduled_departure_time_est:
+                if (
+                    flight1.scheduled_arrival_time_est
+                    > flight2.scheduled_departure_time_est
+                ):
                     continue
                 if date in flight1.dates and date2 in flight2.dates:
                     if (
@@ -432,14 +447,18 @@ class AirlineTools(ToolKitBase):
         reservation = self.db.reservations[reservation_id]
 
         total_price = 50 * max(0, nonfree_baggages - reservation.nonfree_baggages)
-        payment_method = self._update_payment_method(reservation.user_id, payment_id, total_price)
+        payment_method = self._update_payment_method(
+            reservation.user_id, payment_id, total_price
+        )
 
         reservation.total_baggages = total_baggages
         reservation.nonfree_baggages = nonfree_baggages
         if payment_method.source == "gift_card":
             payment_method.amount -= total_price
         if total_price != 0:
-            reservation.payment_history.append(Payment(payment_id=payment_id, amount=total_price))
+            reservation.payment_history.append(
+                Payment(payment_id=payment_id, amount=total_price)
+            )
         return _record_json(reservation)
 
     @is_tool(ToolType.WRITE)
@@ -487,7 +506,9 @@ class AirlineTools(ToolKitBase):
 
         total_price -= sum(f.price for f in reservation.flights) * num_passengers
 
-        payment_method = self._update_payment_method(reservation.user_id, payment_id, total_price)
+        payment_method = self._update_payment_method(
+            reservation.user_id, payment_id, total_price
+        )
         new_flights = [ReservationFlight(**flight) for flight in flights]
 
         if payment_method.source == "gift_card":
@@ -495,7 +516,9 @@ class AirlineTools(ToolKitBase):
         # v1 keeps the reservation's original cabin and leaves flight seats alone.
         reservation.flights = new_flights
         if total_price != 0:
-            reservation.payment_history.append(Payment(payment_id=payment_id, amount=total_price))
+            reservation.payment_history.append(
+                Payment(payment_id=payment_id, amount=total_price)
+            )
         return _record_json(reservation)
 
     @is_tool(ToolType.WRITE)

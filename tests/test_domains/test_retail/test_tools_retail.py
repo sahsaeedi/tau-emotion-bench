@@ -278,8 +278,7 @@ def get_user_details_call() -> ToolCall:
 
 def test_get_user_details(environment: Environment, get_user_details_call: ToolCall):
     response = environment.get_response(get_user_details_call)
-    # Like tau2, user details do not include a user_id field.
-    assert "user_id" not in json.loads(response.content)
+    assert json.loads(response.content)["user_id"] == "sara_doe_496"
     # Test with non-existent user
     get_user_details_call.arguments["user_id"] = "NONEXISTENT"
     response = environment.get_response(get_user_details_call)
@@ -359,15 +358,41 @@ def test_modify_pending_order_items(
     order = environment.tools.db.orders[
         modify_pending_order_items_call.arguments["order_id"]
     ]
-    # Like TRACER's tools, the order stays pending, so it can be modified again
-    # or cancelled.
-    assert order.status == "pending"
+    assert order.status == "pending (item modified)"
     assert order.items[0].item_id == "1008292231"
+    # The items can be modified only once...
     modify_pending_order_items_call.arguments["item_ids"] = ["1008292231"]
     modify_pending_order_items_call.arguments["new_item_ids"] = ["1008292230"]
     response = environment.get_response(modify_pending_order_items_call)
+    assert (
+        response.content == "Error: the items of this order have already been modified"
+    )
+    # ...but the order can still be re-addressed and cancelled.
+    response = environment.get_response(
+        ToolCall(
+            id="mod-addr",
+            name="modify_pending_order_address",
+            arguments={
+                "order_id": order.order_id,
+                "address1": "1 New St",
+                "address2": "",
+                "city": "Austin",
+                "state": "TX",
+                "country": "USA",
+                "zip": "73301",
+            },
+        )
+    )
     assert not response.error
-    assert order.items[0].item_id == "1008292230"
+    response = environment.get_response(
+        ToolCall(
+            id="cancel",
+            name="cancel_pending_order",
+            arguments={"order_id": order.order_id, "reason": "no longer needed"},
+        )
+    )
+    assert not response.error
+    assert order.status == "cancelled"
     # Test with non-pending order
     order.status = "delivered"
     response = environment.get_response(modify_pending_order_items_call)
@@ -463,9 +488,25 @@ def test_return_delivered_order_items(
     assert order.status == "delivered (return requested)"
     assert order.return_items == ["1008292230"]
     assert order.return_payment_method_id == "credit_card_0000000"
-    # Like TRACER's tools, any "delivered..." order can be returned again.
+    # One return request per order.
     response = environment.get_response(return_delivered_order_items_call)
-    assert not response.error
+    assert (
+        response.content == "Error: a return has already been requested for this order"
+    )
+    # An item that is being returned cannot also be exchanged.
+    response = environment.get_response(
+        ToolCall(
+            id="exchange-returned",
+            name="exchange_delivered_order_items",
+            arguments={
+                "order_id": order.order_id,
+                "item_ids": ["1008292230"],
+                "new_item_ids": ["1008292231"],
+                "payment_method_id": "credit_card_0000000",
+            },
+        )
+    )
+    assert response.content == "Error: 1008292230 is already part of a return request"
     # Test with non-delivered order
     order.status = "pending"
     response = environment.get_response(return_delivered_order_items_call)

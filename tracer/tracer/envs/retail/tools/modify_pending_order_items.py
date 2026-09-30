@@ -21,8 +21,10 @@ class ModifyPendingOrderItems(Tool):
         if order_id not in orders:
             return "Error: order not found"
         order = orders[order_id]
-        if order["status"] != "pending":
+        if not order["status"].startswith("pending"):
             return "Error: non-pending order cannot be modified"
+        if "item modified" in order["status"]:
+            return "Error: the items of this order have already been modified"
 
         # Check if the items to be modified exist
         all_item_ids = [item["item_id"] for item in order["items"]]
@@ -82,7 +84,7 @@ class ModifyPendingOrderItems(Tool):
             item["options"] = products[item["product_id"]]["variants"][new_item_id][
                 "options"
             ]
-        order["status"] = "pending"
+        order["status"] = order["status"] + " (item modified)"
 
         return json.dumps(order)
 
@@ -92,7 +94,7 @@ class ModifyPendingOrderItems(Tool):
             "type": "function",
             "function": {
                 "name": "modify_pending_order_items",
-                "description": "Modify items in a pending order to new items of the same product type. For a pending order, this function can only be called once. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.",
+                "description": "Modify items in a pending order to new items of the same product type. For a pending order, this function can only be called once: the order status then becomes 'pending (item modified)', after which its items and payment method can no longer be changed, but its shipping address can still be modified and it can still be cancelled. The agent needs to explain the exchange detail and ask for explicit user confirmation (yes/no) to proceed.",
                 "parameters": {
                     "type": "object",
                     "properties": {

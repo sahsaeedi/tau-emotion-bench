@@ -245,9 +245,7 @@ class Reservation(BaseModel):
     total_baggages: int = Field(description="Total number of bags in reservation")
     nonfree_baggages: int = Field(description="Number of paid bags in reservation")
     insurance: str = Field(description="Whether travel insurance was purchased")
-    status: Optional[str] = Field(
-        description="Status of the reservation", default=None
-    )
+    status: Optional[str] = Field(description="Status of the reservation", default=None)
 
 
 class FlightDB(DB):

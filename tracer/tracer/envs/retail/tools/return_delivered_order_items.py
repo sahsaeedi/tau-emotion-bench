@@ -19,6 +19,8 @@ class ReturnDeliveredOrderItems(Tool):
         order = orders[order_id]
         if not order["status"].startswith("delivered"):
             return "Error: non-delivered order cannot be returned"
+        if "return requested" in order["status"]:
+            return "Error: a return has already been requested for this order"
 
         # Check if the payment method exists and is either the original payment method or a gift card
         if payment_method_id not in data["users"][order["user_id"]]["payment_methods"]:
@@ -31,12 +33,18 @@ class ReturnDeliveredOrderItems(Tool):
 
         # Check if the items to be returned exist (there could be duplicate items in either list)
         all_item_ids = [item["item_id"] for item in order["items"]]
+        exchange_items = order.get("exchange_items", [])
         for item_id in item_ids:
             if item_ids.count(item_id) > all_item_ids.count(item_id):
                 return "Error: some item not found"
+            # each unit can be in only one request: units already being exchanged cannot be returned
+            if item_ids.count(item_id) + exchange_items.count(
+                item_id
+            ) > all_item_ids.count(item_id):
+                return f"Error: {item_id} is already part of an exchange request"
 
         # Update the order status
-        order["status"] = "delivered (return requested)"
+        order["status"] = order["status"] + " (return requested)"
         order["return_items"] = sorted(item_ids)
         order["return_payment_method_id"] = payment_method_id
 
@@ -49,7 +57,9 @@ class ReturnDeliveredOrderItems(Tool):
             "function": {
                 "name": "return_delivered_order_items",
                 "description": (
-                    "Return some items of a delivered order. The order status will be changed to 'return requested'. "
+                    "Return some items of a delivered order (status 'delivered', possibly with an existing exchange request). "
+                    "' (return requested)' is added to the order status. An order can have at most one return request, "
+                    "and an item that is already part of an exchange request cannot be returned. "
                     "The agent needs to explain the return detail and ask for explicit user confirmation (yes/no) to proceed. "
                     "The user will receive follow-up email for how and where to return the item."
                 ),

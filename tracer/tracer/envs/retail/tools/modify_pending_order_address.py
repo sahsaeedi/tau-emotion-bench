@@ -23,7 +23,7 @@ class ModifyPendingOrderAddress(Tool):
         if order_id not in orders:
             return "Error: order not found"
         order = orders[order_id]
-        if order["status"] != "pending":
+        if not order["status"].startswith("pending"):
             return "Error: non-pending order cannot be modified"
 
         # Modify the address
@@ -43,7 +43,7 @@ class ModifyPendingOrderAddress(Tool):
             "type": "function",
             "function": {
                 "name": "modify_pending_order_address",
-                "description": "Modify the shipping address of a pending order. The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
+                "description": "Modify the shipping address of a pending order (status 'pending' or 'pending (item modified)'). The agent needs to explain the modification detail and ask for explicit user confirmation (yes/no) to proceed.",
                 "parameters": {
                     "type": "object",
                     "properties": {

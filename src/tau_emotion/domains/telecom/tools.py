@@ -160,7 +160,9 @@ class TelecomTools(ToolKitBase):
         """
         target = "".join(ch for ch in phone if ch.isdigit())
         for customer_id, customer in self.db.customers.items():
-            normalized = "".join(ch for ch in customer.demographics.phone if ch.isdigit())
+            normalized = "".join(
+                ch for ch in customer.demographics.phone if ch.isdigit()
+            )
             if normalized == target:
                 return customer_id
         raise ValueError(f"No customer found with phone number: {phone}")
@@ -393,9 +395,7 @@ class TelecomTools(ToolKitBase):
             # Like v1, each device is checked and attached in turn, so devices
             # before an unknown id stay attached when the call fails.
             for did in devices_ids or []:
-                device = next(
-                    (d for d in customer.devices if d.device_id == did), None
-                )
+                device = next((d for d in customer.devices if d.device_id == did), None)
                 if device is None:
                     raise ValueError(
                         f"Device not found: {did} in devices "
@@ -470,7 +470,9 @@ class TelecomTools(ToolKitBase):
         billing.paperless = paperless
         billing.auto_pay = auto_pay
         billing.billing_cycle = billing_cycle
-        return json.dumps({"customer_id": customer_id, "billing": _record_dict(billing)})
+        return json.dumps(
+            {"customer_id": customer_id, "billing": _record_dict(billing)}
+        )
 
     @is_tool(ToolType.WRITE)
     def create_support_ticket(
@@ -512,15 +514,10 @@ class TelecomTools(ToolKitBase):
             priority=priority,
             category=category,
         )
-        return (
-            f"Success: Created support ticket {ticket_id} for customer "
-            f"{customer_id}"
-        )
+        return f"Success: Created support ticket {ticket_id} for customer {customer_id}"
 
     @is_tool(ToolType.WRITE)
-    def modify_support_ticket(
-        self, ticket_id: str, status: str, priority: str
-    ) -> str:
+    def modify_support_ticket(self, ticket_id: str, status: str, priority: str) -> str:
         """Modify the status and priority of a support ticket.
 
         Args:

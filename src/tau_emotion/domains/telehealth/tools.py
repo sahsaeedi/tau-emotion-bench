@@ -82,7 +82,9 @@ class TelehealthTools(ToolKitBase):
             return f"Provider {provider_id} does not work on {day_of_week.title()}."
         available_times = provider.schedule[day_of_week]
         if time not in available_times:
-            available_times_str = ", ".join(available_times) if available_times else "None"
+            available_times_str = (
+                ", ".join(available_times) if available_times else "None"
+            )
             return (
                 f"Provider {provider_id} is not available at {time} on "
                 f"{day_of_week.title()}. Available times: {available_times_str}"
@@ -271,7 +273,9 @@ class TelehealthTools(ToolKitBase):
             return f"Appointment with ID {appointment_id} not found."
         appointment = self.db.appointments[appointment_id]
         provider = self.db.providers.get(appointment.provider_id)
-        provider_name = f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
+        provider_name = (
+            f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
+        )
         provider_specialty = provider.specialty if provider else "Unknown"
         if appointment.chief_complaint is None:
             # v1 indexes appointment['chief_complaint'] and raises KeyError.
@@ -367,7 +371,11 @@ class TelehealthTools(ToolKitBase):
             " ".join(
                 filter(
                     None,
-                    [provider.name.title, provider.name.first_name, provider.name.last_name],
+                    [
+                        provider.name.title,
+                        provider.name.first_name,
+                        provider.name.last_name,
+                    ],
                 )
             )
             if provider
@@ -463,7 +471,9 @@ class TelehealthTools(ToolKitBase):
         def sort_key(item: tuple[str, Appointment]) -> tuple[datetime.datetime, str]:
             appt_id, appt = item
             try:
-                dt_value = datetime.datetime.strptime(f"{appt.date} {appt.time}", "%Y-%m-%d %H:%M")
+                dt_value = datetime.datetime.strptime(
+                    f"{appt.date} {appt.time}", "%Y-%m-%d %H:%M"
+                )
             except ValueError:
                 dt_value = datetime.datetime.min
             return dt_value, appt_id
@@ -477,7 +487,9 @@ class TelehealthTools(ToolKitBase):
         for appt_id, appt in matches:
             provider = self.db.providers.get(appt.provider_id)
             if provider:
-                provider_label = f"{provider.name.title or 'Dr.'} {provider.name.last_name}"
+                provider_label = (
+                    f"{provider.name.title or 'Dr.'} {provider.name.last_name}"
+                )
                 specialty = provider.specialty
             else:
                 provider_label, specialty = "Dr. Unknown", "Unknown Specialty"
@@ -501,11 +513,15 @@ class TelehealthTools(ToolKitBase):
             One line per record, newest first, or a message when the patient
             has no records.
         """
-        records = [r for r in self.db.medical_records.values() if r.patient_id == patient_id]
+        records = [
+            r for r in self.db.medical_records.values() if r.patient_id == patient_id
+        ]
         if not records:
             return f"No medical records found for patient {patient_id}."
 
-        records.sort(key=lambda r: datetime.datetime.strptime(r.date, "%Y-%m-%d"), reverse=True)
+        records.sort(
+            key=lambda r: datetime.datetime.strptime(r.date, "%Y-%m-%d"), reverse=True
+        )
         if limit is not None and limit > 0:
             records = records[:limit]
 
@@ -598,7 +614,9 @@ class TelehealthTools(ToolKitBase):
         """
         canonical = {key.lower(): key for key in self.db.medication_suppliers}
         medication_key = canonical.get(medication.lower())
-        suppliers = self.db.medication_suppliers.get(medication_key) if medication_key else None
+        suppliers = (
+            self.db.medication_suppliers.get(medication_key) if medication_key else None
+        )
         if not suppliers and medication_key is None:
             return (
                 f"No supplier information found for {medication}. "
@@ -608,7 +626,9 @@ class TelehealthTools(ToolKitBase):
             return f"No supplier information found for {medication}."
 
         if country_filter:
-            suppliers = [s for s in suppliers if s.country.lower() == country_filter.lower()]
+            suppliers = [
+                s for s in suppliers if s.country.lower() == country_filter.lower()
+            ]
             if not suppliers:
                 return f"No suppliers in {country_filter} for {medication}."
         suppliers = sorted(suppliers, key=lambda s: s.price_usd)
@@ -641,7 +661,9 @@ class TelehealthTools(ToolKitBase):
         if not inventory:
             return "Telemetry inventory is empty."
         if status_filter:
-            inventory = [d for d in inventory if d.status.lower() == status_filter.lower()]
+            inventory = [
+                d for d in inventory if d.status.lower() == status_filter.lower()
+            ]
             if not inventory:
                 return f"No telemetry devices with status {status_filter}."
         inventory = sorted(inventory, key=lambda d: d.device_id)
@@ -761,7 +783,9 @@ class TelehealthTools(ToolKitBase):
                 f"{display}: severity={det.severity}, risk_score={det.risk_score}, "
                 f"overlap_hours={det.time_overlap_hours}. {det.action}"
             )
-            if severity_rank.get(det.severity, 0) > severity_rank.get(highest_severity, 0):
+            if severity_rank.get(det.severity, 0) > severity_rank.get(
+                highest_severity, 0
+            ):
                 highest_severity = det.severity
                 severity_reason = display
 
@@ -944,7 +968,9 @@ class TelehealthTools(ToolKitBase):
         appointment.cancellation_date = CANCELLATION_DATE
 
         provider = self.db.providers.get(appointment.provider_id)
-        provider_name = f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
+        provider_name = (
+            f"Dr. {provider.name.last_name if provider else 'Unknown Provider'}"
+        )
         return (
             "Appointment successfully cancelled.\n"
             "\n"
@@ -991,7 +1017,9 @@ class TelehealthTools(ToolKitBase):
             raise ValueError(repr(provider_id))
         provider = self.db.providers[provider_id]
 
-        unavailable = self._provider_available(provider, provider_id, new_date, new_time)
+        unavailable = self._provider_available(
+            provider, provider_id, new_date, new_time
+        )
         if unavailable:
             return unavailable
         if self._slot_taken(provider_id, new_date, new_time, ignore_id=appointment_id):

@@ -45,7 +45,7 @@ As an airline agent, you can help users book, modify, or cancel flight reservati
 
 - Change cabin: all reservations, including basic economy, can change cabin without changing the flights. Cabin changes require the user to pay for the difference between their current cabin and the new cabin class. Cabin class must be the same across all the flights in the same reservation; changing cabin for just one flight segment is not possible.
 
-- Change baggage and insurance: The user can add but not remove checked bags. The user cannot add insurance after initial booking.
+- Change baggage and insurance: The user can add but not remove checked bags. The free checked bag allowance applies only to bags included when the reservation is booked; each bag added after booking is a non-free bag and costs 50 dollars. The user cannot add insurance after initial booking.
 
 - Change passengers: The user can modify passengers but cannot modify the number of passengers. This is something that even a human agent cannot assist with.
 
