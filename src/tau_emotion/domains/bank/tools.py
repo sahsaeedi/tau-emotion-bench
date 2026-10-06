@@ -566,7 +566,6 @@ class BankTools(ToolKitBase):
     # ------------------------------------------------------------------
 
     @is_tool(ToolType.WRITE)
-    @_hide_params("beneficiary_id")
     def add_beneficiary(
         self,
         client_id: str,
