@@ -499,7 +499,10 @@ class MovieTools(ToolKitBase):
             )
         self._validate_seats_available(theater, show, seats)
 
-        booked_seats = self._build_booked_seats(show, theater, seats)
+        # Stored in seat_id order: the DB hash keeps list order, so "B4, B3" must equal "B3, B4".
+        booked_seats = self._build_booked_seats(
+            show, theater, sorted(seats, key=lambda s: s["seat_id"])
+        )
         lines = self._concession_lines(theater, concessions or [])
         breakdown = self._price(theater, booked_seats, lines)
         breakdown["ticket_count"] = len(booked_seats)
@@ -558,7 +561,10 @@ class MovieTools(ToolKitBase):
             )
         self._validate_seats_available(theater, show, seats)
 
-        booked_seats = self._build_booked_seats(show, theater, seats)
+        # Stored in seat_id order: the DB hash keeps list order, so "B4, B3" must equal "B3, B4".
+        booked_seats = self._build_booked_seats(
+            show, theater, sorted(seats, key=lambda s: s["seat_id"])
+        )
         lines = self._concession_lines(theater, concessions or [])
         breakdown = self._price(theater, booked_seats, lines)
         grand_total = breakdown["grand_total"]
@@ -695,7 +701,10 @@ class MovieTools(ToolKitBase):
             theater, show, seats, already_held=current_seat_ids
         )
 
-        new_seats = self._build_booked_seats(show, theater, seats)
+        # Stored in seat_id order: the DB hash keeps list order, so "B4, B3" must equal "B3, B4".
+        new_seats = self._build_booked_seats(
+            show, theater, sorted(seats, key=lambda s: s["seat_id"])
+        )
         breakdown = self._price(theater, new_seats, booking.concessions)
         diff = round(breakdown["grand_total"] - float(booking.totals.grand_total), 2)
 

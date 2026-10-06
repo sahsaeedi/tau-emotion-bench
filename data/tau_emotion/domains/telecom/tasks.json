@@ -77,7 +77,7 @@
     "id": "telecom_test_0001",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Morgan Lewis (morgan.lewis1592@email.com). You are experiencing no service on your iPhone 15 Pro, so you want troubleshooting because the device is essential for daily communication. You prefer Apple devices, specifically the iPhone 15 Pro, and would like a medium-priority support ticket created in the mobile category for ongoing assistance since the issue persists after basic steps. Later, you would like to pay your outstanding balance of $106.76 by credit card to clear your account on 2025-10-25. After that, you prefer to enable auto-pay for convenience while keeping paperless billing and the monthly billing cycle to maintain control and reduce manual effort.\n\nUse morgan.lewis1592@email.com for authentication.",
+      "instructions": "You are Morgan Lewis (morgan.lewis1592@email.com). You are experiencing no service on your iPhone 15 Pro, so you want troubleshooting because the device is essential for daily communication. You prefer Apple devices, specifically the iPhone 15 Pro, and would like a support ticket created for ongoing assistance since the issue persists after basic steps; you believe the problem lies with your mobile service rather than the handset itself, and you consider it a standard issue rather than an emergency. Later, you would like to pay your outstanding balance of $106.76 by credit card to clear your account on 2025-10-25. After that, you prefer to enable auto-pay for convenience while keeping paperless billing and the monthly billing cycle to maintain control and reduce manual effort.\n\nUse morgan.lewis1592@email.com for authentication.",
       "emotion_instruction": "You approach the interaction peacefully, using supportive language while maintaining a healthy skepticism. Request updates and clarify points as needed. Indicate moderate urgency without appearing stressed.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -166,7 +166,7 @@
     "id": "telecom_test_0002",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are reese_clark_1767, authenticated via email reese.clark7888@email.com. You want to add a new mobile phone to your account, preferring Apple devices, specifically the iPhone 14, because you are expanding your device options. You would like to add the Unlimited Mobile Plan without attaching any devices to it, as mobile_basic plan does not meet your growing usage needs; you want to keep your existing Basic Mobile Plan for your Samsung Galaxy A54. You want to review your billing details because your current balance is $31.62, and you prefer to keep your account in good standing. You would like to update your billing preferences to enable auto-pay with credit card and maintain paperless billing for convenience and reliability. You prefer to make a payment of $31.62 using credit card on 2025-10-18 to clear your outstanding balance and avoid late fees. After that, you would like to create a support ticket for your device issues with medium priority because your Samsung Galaxy A54 is currently experiencing no service, which affects your connectivity. You also want troubleshooting assistance for the Samsung Galaxy A54 because it is your primary mobile device and losing service disrupts your daily communication.\n\nUse reese.clark7888@email.com for authentication.",
+      "instructions": "You are reese_clark_1767, authenticated via email reese.clark7888@email.com. You want to add a new mobile phone to your account, preferring Apple devices, specifically the iPhone 14, because you are expanding your device options. You would like to add the Unlimited Mobile Plan to support this new device, as mobile_basic plan does not meet your growing usage needs; you want to keep your existing Basic Mobile Plan for your Samsung Galaxy A54. You want to review your billing details because your current balance is $31.62, and you prefer to keep your account in good standing. You would like to update your billing preferences to enable auto-pay with credit card and maintain paperless billing for convenience and reliability. You prefer to make a payment of $31.62 using credit card on 2025-10-18 to clear your outstanding balance and avoid late fees. After that, you would like to create a support ticket for your device issues with medium priority because your Samsung Galaxy A54 is currently experiencing no service, which affects your connectivity. You also want troubleshooting assistance for the Samsung Galaxy A54 because it is your primary mobile device and losing service disrupts your daily communication.\n\nUse reese.clark7888@email.com for authentication.",
       "emotion_instruction": "You feel a sense of calm but want your issue resolved soon. Speak in a clear, steady tone without being overly friendly. Keep your questions direct, but don\u2019t rush the conversation. You\u2019re not fully convinced the agent will solve your problem yet.",
       "emotion_metadata": {
         "emotion_family": "enjoyment",
@@ -192,7 +192,10 @@
           "arguments": {
             "customer_id": "reese_clark_1767",
             "action": "add",
-            "service_id": "mobile_unlimited"
+            "service_id": "mobile_unlimited",
+            "devices_ids": [
+              "3"
+            ]
           }
         },
         {
@@ -1293,7 +1296,7 @@
     "id": "telecom_test_0019",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are kendall_white_9831. You want to add an iPhone 15 Pro to your account because you prefer Apple devices for their ecosystem integration and this model supports your usage needs. You are experiencing battery drain issues with the device, so you would like troubleshooting guidance to resolve performance problems that affect daily usability. You want to review your current billing details to ensure accuracy and transparency in your monthly charges. You would like a support ticket created for the ongoing device issue so it can be formally tracked and addressed, and you prefer medium priority since the device is important but not mission-critical. You also want to manage your telecom services to optimize your plan, starting with your current Basic Mobile Plan, Cable Internet 500MB, and Basic TV Package, with the possibility of upgrading for better value or performance in future. You will not make any changes to your services today.\n\nUse kendall.white6804@email.com for authentication.",
+      "instructions": "You are kendall_white_9831. You want to add an iPhone 15 Pro to your account because you prefer Apple devices for their ecosystem integration and this model supports your usage needs. You are experiencing battery drain issues with the device, so you would like troubleshooting guidance to resolve performance problems that affect daily usability. You want to review your current billing details to ensure accuracy and transparency in your monthly charges. You would like a support ticket created for the ongoing device issue so it can be formally tracked and addressed, and you prefer medium priority since the device is important but not mission-critical. You also want to manage your telecom services to optimize your plan, starting with your current Basic Mobile Plan, Cable Internet 500MB, and Basic TV Package, with the possibility of upgrading for better value or performance in future. You will not make any changes to your services or plans today.\n\nUse kendall.white6804@email.com for authentication.",
       "emotion_instruction": "You\u2019re frustrated and want the issue addressed without delays. Speak plainly, focusing on the facts and your need for solutions. Don\u2019t hesitate to challenge unclear information from the agent. Stay attentive and verify each response.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -1411,7 +1414,7 @@
     "id": "telecom_test_0021",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Emerson Walker (emerson.walker5879@email.com). You want to add your new iPhone 14 to your account for full service integration. Since the device is experiencing significant battery drain, you would like troubleshooting guidance because the battery does not last through your workday. You prefer Apple devices for their ecosystem compatibility, and specifically the iPhone 14 for its performance. After reviewing initial steps, you would like a support ticket created in the device category with medium priority to formally track the issue and ensure resolution, as this phone is important for business communications.\n\nUse emerson.walker5879@email.com for authentication.",
+      "instructions": "You are Emerson Walker (emerson.walker5879@email.com). You want to add your new iPhone 14 to your account for full service integration. Since the device is experiencing significant battery drain, you would like troubleshooting guidance because the battery does not last through your workday. You prefer Apple devices for their ecosystem compatibility, and specifically the iPhone 14 for its performance. After reviewing initial steps, you would like a support ticket created in the device category to formally track the issue and ensure resolution, as this phone is critical for business communications and the issue needs to be handled within 24 hours.\n\nUse emerson.walker5879@email.com for authentication.",
       "emotion_instruction": "You\u2019re frustrated and want the matter resolved soon. Keep your communication straightforward, avoiding excessive politeness. Approach each response from the agent with care and question inconsistencies. Ask for step-by-step guidance if necessary.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -1444,7 +1447,8 @@
           "name": "create_support_ticket",
           "arguments": {
             "customer_id": "emerson_walker_8800",
-            "category": "device"
+            "category": "device",
+            "priority": "urgent"
           }
         }
       ],
@@ -1615,7 +1619,7 @@
     "id": "telecom_test_0025",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Quinn Clark (quinn.clark9299@email.com), a senior customer experiencing battery drain on your Samsung Galaxy A54, which is your primary mobile device and essential for daily communication. You want troubleshooting guidance for the battery issue because the phone does not last through the day. After troubleshooting, you would like a medium-priority support ticket opened for the device issue to ensure resolution. You want to add one more Samsung A54 as you prefer Samsung devices, specifically the Galaxy A54, and rely on it for connectivity. Later, you would like to review all available services to understand potential upgrades or changes, followed by specific details about your current Senior Mobile Plan to confirm its benefits. You also want to update your billing preferences to switch from a monthly to a quarterly billing cycle for better alignment with your pension schedule, while keeping paperless billing and auto-pay enabled for convenience and reliability. After that, you would like a list of all services currently on your account to verify your subscriptions. You want the senior discount applied to your Senior Mobile Plan, which reduces the $45.00 monthly cost to $40.00, because you are eligible and want to ensure accurate billing. Finally, you would like to review your full billing details, including current balance, payment history, and charges, to maintain financial oversight and confirm all settings are correct. You prefer to pay by credit card and have autopay enabled for seamless service continuity.\n\nUse quinn.clark9299@email.com for authentication.",
+      "instructions": "You are Quinn Clark (quinn.clark9299@email.com), a senior customer experiencing battery drain on your Samsung Galaxy A54, which is your primary mobile device and essential for daily communication. You want troubleshooting guidance for the battery issue because the phone does not last through the day. If troubleshooting fails, you would like a support ticket opened for the device issue to ensure resolution. You want to add one more Samsung A54 as you prefer Samsung devices, specifically the Galaxy A54, and rely on it for connectivity. Later, you would like to review all available services to understand potential upgrades or changes, followed by specific details about your current Senior Mobile Plan to confirm its benefits. You also want to update your billing preferences to switch from a monthly to a quarterly billing cycle for better alignment with your pension schedule, while keeping paperless billing and auto-pay enabled for convenience and reliability. After that, you would like a list of all services currently on your account to verify your subscriptions. You want the senior discount applied to your Senior Mobile Plan, which reduces the $45.00 monthly cost to $40.00, because you are eligible and want to ensure accurate billing. Finally, you would like to review your full billing details, including current balance, payment history, and charges, to maintain financial oversight and confirm all settings are correct. You prefer to pay by credit card and have autopay enabled for seamless service continuity.\n\nUse quinn.clark9299@email.com for authentication.",
       "emotion_instruction": "You feel frustrated by recent issues and want answers. Speak clearly and directly, without sugarcoating your concerns. Expect the agent to resolve things but remain cautious about promises. Ask for clarity and don\u2019t hesitate to question vague responses.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -1707,7 +1711,7 @@
     "id": "telecom_test_0026",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are elliot.wilson5839@email.com. You own an Apple iPhone 15, which is your primary mobile device, and you are experiencing no service connectivity, making the phone unusable for calls and data. Because the issue persists and affects daily communication, you want troubleshooting guidance to resolve the connectivity problem. After that, you would like a support ticket created under the device category with medium priority to formally track the issue for technical investigation, ensuring a permanent fix is provided.\n\nUse elliot.wilson5839@email.com for authentication.",
+      "instructions": "You are elliot.wilson5839@email.com. You own an Apple iPhone 15, which is your primary mobile device, and you are experiencing no service connectivity, making the phone unusable for calls and data. Because the issue persists and affects daily communication, you want troubleshooting guidance to resolve the connectivity problem. After that, you would like a support ticket created under the device category, as a standard issue rather than an emergency, to formally track and escalate the issue for technical investigation, ensuring a permanent fix is provided.\n\nUse elliot.wilson5839@email.com for authentication.",
       "emotion_instruction": "You\u2019re frustrated and want the matter resolved soon. Keep your communication straightforward, avoiding excessive politeness. Approach each response from the agent with care and question inconsistencies. Ask for step-by-step guidance if necessary.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -1855,7 +1859,7 @@
     "id": "telecom_test_0029",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Casey Lee (casey.lee1335@email.com). You want to learn about the Fiber Internet 1GB service because you want faster and more reliable speeds. You would like to switch your billing to quarterly cycle, and you prefer to disable both paperless billing and auto-pay so you can review each bill manually and maintain control over payment timing. You want to add the Fiber Internet 1GB service to your account, keeping your cable internet and attaching no devices, to benefit from gigabit speeds. You prefer Samsung devices, so you would like to add a Samsung 65\" Smart TV to your account for a seamless brand-integrated home entertainment experience. Since you are experiencing slow internet speeds during the transition, you would like to create a support ticket in the internet category to resolve performance issues promptly; you consider it a standard issue rather than an emergency.\n\nUse casey.lee1335@email.com for authentication.",
+      "instructions": "You are Casey Lee (casey.lee1335@email.com). You want to learn about the Fiber Internet 1GB service because you are upgrading from cable internet for faster and more reliable speeds. You would like to switch your billing to quarterly cycle, and you prefer to disable both paperless billing and auto-pay so you can review each bill manually and maintain control over payment timing. You want to switch from your current cable internet service to the Fiber Internet 1GB service to benefit from gigabit speeds, and you want the router you currently use with your cable service moved over to the new fiber service. You prefer Samsung devices, so you would like to add a Samsung 65\" Smart TV to your account for a seamless brand-integrated home entertainment experience. Since you are experiencing slow internet speeds during the transition, you would like to create a support ticket in the internet category to resolve performance issues promptly; you consider it a standard issue rather than an emergency.\n\nUse casey.lee1335@email.com for authentication.",
       "emotion_instruction": "You\u2019re annoyed and fed up, but you make an effort to stay polite. You ask questions directly and expect transparency. You\u2019d like a solution without too much delay. You\u2019re attentive to whether the agent truly helps.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -1885,12 +1889,24 @@
           }
         },
         {
+          "action_id": "29_new1",
+          "name": "manage_service",
+          "arguments": {
+            "customer_id": "casey_lee_7980",
+            "action": "remove",
+            "service_id": "internet_cable_100mb"
+          }
+        },
+        {
           "action_id": "29_2",
           "name": "manage_service",
           "arguments": {
             "customer_id": "casey_lee_7980",
             "action": "add",
-            "service_id": "internet_fiber_1gb"
+            "service_id": "internet_fiber_1gb",
+            "devices_ids": [
+              "2"
+            ]
           }
         },
         {
@@ -2088,7 +2104,7 @@
     "id": "telecom_test_0033",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Quinn Wilson (quinn.wilson5782@email.com), a business customer with an outstanding balance of $152.22. You want to add a WiFi 6 Router to your account. You prefer networking equipment from TechCorp, and specifically the WiFi6-Pro model, to support high-speed connectivity. You would also like a medium-priority device support ticket created for ongoing slow internet speeds affecting your Standard WiFi Router, as reliable performance is important for daily operations. After that, you want to update your billing preferences to paperless and enable auto-pay with a monthly billing cycle to streamline account management and avoid late fees. You prefer to pay by credit card and intend to apply a payment of $152.22 on October 5, 2025, to clear your current balance. Later, you would like to review the details of your newly added WiFi 6 Router to confirm its specifications. You also want troubleshooting steps for the Standard WiFi Router regarding slow speeds to attempt resolution before further escalation. Finally, you would like a list of all active services on your account, including the Fiber Internet 2GB and Business Mobile - 10 Lines plans, to verify your current service setup.\n\nUse quinn.wilson5782@email.com for authentication.",
+      "instructions": "You are Quinn Wilson (quinn.wilson5782@email.com), a business customer with an outstanding balance of $152.22. You want to add a WiFi 6 Router to your account. You prefer networking equipment from TechCorp, and specifically the WiFi6-Pro model, to support high-speed connectivity. You would also like a support ticket created for ongoing slow internet speeds affecting your Standard WiFi Router, which you suspect is a problem with the router hardware itself rather than your internet service; reliable performance is critical for daily operations, so it needs to be handled within 24 hours. After that, you want to update your billing preferences to paperless and enable auto-pay with a monthly billing cycle to streamline account management and avoid late fees. You prefer to pay by credit card and intend to apply a payment of $152.22 on October 5, 2025, to clear your current balance. Later, you would like to review the details of your newly added WiFi 6 Router to confirm its specifications. You also want troubleshooting steps for the Standard WiFi Router regarding slow speeds to attempt resolution before further escalation. Finally, you would like a list of all active services on your account, including the Fiber Internet 2GB and Business Mobile - 10 Lines plans, to verify your current service setup.\n\nUse quinn.wilson5782@email.com for authentication.",
       "emotion_instruction": "You approach the interaction peacefully, using supportive language while maintaining a healthy skepticism. Request updates and clarify points as needed. Indicate moderate urgency without appearing stressed.",
       "emotion_metadata": {
         "emotion_family": "anger",
@@ -2114,7 +2130,7 @@
           "arguments": {
             "customer_id": "quinn_wilson_5555",
             "category": "device",
-            "priority": "medium"
+            "priority": "urgent"
           }
         },
         {
@@ -2380,7 +2396,7 @@
     "id": "telecom_test_0036",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Quinn Wilson (quinn.wilson5782@email.com), a business customer with the mobile_business_10lines and internet_fiber_2gb services. You want to verify the specifications of your iPhone 15 Pro because you are experiencing issues with the device and need to confirm its details before proceeding. You would like to create a support ticket for the iPhone 15 Pro to report a device issue with medium priority, as it is important for your business operations. Later, you want to check the status of your existing support ticket TICKET00076, which is currently open with low priority, without changing it. You also want to review your billing details and see that your current balance is $152.22, with paperless billing and auto-pay disabled and a monthly billing cycle. After reviewing, you prefer to update your billing preferences to enable paperless billing and auto-pay with a quarterly billing cycle for better financial tracking and to avoid late fees, as your previous payment was marked late. Finally, you would like to make a payment of $152.22 today (2025-10-05 that is today) using your credit card to clear the outstanding balance and bring your account current.\n\nUse quinn.wilson5782@email.com for authentication.",
+      "instructions": "You are Quinn Wilson (quinn.wilson5782@email.com), a business customer with the mobile_business_10lines and internet_fiber_2gb services. You want to verify the specifications of your iPhone 15 Pro because you are experiencing issues with the device and need to confirm its details before proceeding. You would like to create a support ticket for the iPhone 15 Pro to report a device issue, as it is critical for your business operations and needs to be handled within 24 hours. Later, you want to check the status of your existing support ticket TICKET00076, which is currently open with low priority, because you need faster resolution due to ongoing performance problems; for now you only want to know its status and do not want that ticket changed in this conversation. You also want to review your billing details and see that your current balance is $152.22, with paperless billing and auto-pay disabled and a monthly billing cycle. After reviewing, you prefer to update your billing preferences to enable paperless billing and auto-pay with a quarterly billing cycle for better financial tracking and to avoid late fees, as your previous payment was marked late. Finally, you would like to make a payment of $152.22 today (2025-10-05 that is today) using your credit card to clear the outstanding balance and bring your account current.\n\nUse quinn.wilson5782@email.com for authentication.",
       "emotion_instruction": "You approach the agent with a cautious mindset, feeling anxious about what\u2019s happening. Keep your questions focused and direct, avoiding unnecessary details. Show some nerves in your requests, and double-check any information you receive. You\u2019re not ready to fully trust the agent yet.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2404,7 +2420,8 @@
           "name": "create_support_ticket",
           "arguments": {
             "customer_id": "quinn_wilson_5555",
-            "category": "device"
+            "category": "device",
+            "priority": "urgent"
           }
         },
         {
@@ -2737,7 +2754,7 @@
     "id": "telecom_test_0042",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Rowan Walker (rowan_walker_5808), a residential customer in Phoenix, AZ. You want to review the details of your Unlimited Mobile Plan because you're evaluating your current service package. You have an open support ticket (TICKET00081) with medium priority, and you would like to escalate it to urgent priority because the issue is time-sensitive. After that, you would like to create a new high-priority support ticket for a device issue to address ongoing concerns with your new phone. You prefer Apple devices, so you recently acquired an iPhone 14 and want it added to your account. You are experiencing battery drain on the iPhone 14, so you need troubleshooting guidance because the device does not last through the day. You would like to change your billing preferences to quarterly billing with paperless billing on and auto-pay disabled because you prefer manual control over your payments and receive statements digitally. You also want to review your current services, which include Unlimited Mobile Plan, Cable Internet 500 Mbps, and Premium TV, to assess potential adjustments. You inquired about the senior discount, which reduces a $45.00 plan to $40.00, possibly for a family member, even though you are not on the senior plan.\n\nUse rowan.walker8488@email.com for authentication.",
+      "instructions": "You are Rowan Walker (rowan_walker_5808), a residential customer in Phoenix, AZ. You want to review the details of your Unlimited Mobile Plan because you're evaluating your current service package. You have an open support ticket (TICKET00081) with medium priority, and you would like to escalate it to urgent priority because the issue is time-sensitive. After that, you would like to create a new support ticket for a device issue, which you consider important but not critical, to address ongoing concerns with your new phone. You prefer Apple devices, so you recently acquired an iPhone 14 and want it added to your account. You are experiencing battery drain on the iPhone 14, so you need troubleshooting guidance because the device does not last through the day. You would like to change your billing preferences to quarterly billing with paperless billing and auto-pay disabled because you prefer manual control over your payments and receive statements digitally. You also want to review your current services, which include Unlimited Mobile Plan, Cable Internet 500 Mbps, and Premium TV, to assess potential adjustments. You inquired about the senior discount, which reduces a $45.00 plan to $40.00, possibly for a family member, even though you are not on the senior plan.\n\nUse rowan.walker8488@email.com for authentication.",
       "emotion_instruction": "You feel nervous and wary, pushing for a swift answer. Keep your questions focused and to the point. Politely request confirmation for each step. Hold back trust until the agent proves reliable.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -2944,7 +2961,7 @@
     "id": "telecom_test_0044",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are rowan.lee9322@email.com. You are on the Senior Mobile Plan, which costs $45.00, and you want to confirm that the senior discount of $5.00 is applied, resulting in a final price of $40.00, to ensure you are receiving the correct senior benefit. You also want to review the details of your Fiber Internet 500MB service, which costs $60.00, because you want it removed to reduce monthly expenses. You have an outstanding balance of $52.44 that includes a $25 late fee, and you want to pay it off using bank transfer today (2025-10-26) to clear your account. You would like a support ticket created for the late fee dispute, which you consider a standard issue rather than an urgent one, because you believe it was applied in error and want it reviewed. After payment, you would like to update your billing preferences to enable paperless billing and auto-pay with bank transfer to avoid future late fees and ensure convenience, while keeping your billing cycle monthly. You are experiencing battery drain on your iPhone SE (3rd gen), a device made by Apple, and you need troubleshooting steps because the battery does not last through the day, affecting your daily usage.\n\nUse rowan.lee9322@email.com for authentication.",
+      "instructions": "You are rowan.lee9322@email.com. You are on the Senior Mobile Plan, which costs $45.00, and you want to confirm that the senior discount of $5.00 is applied, resulting in a final price of $40.00, to ensure you are receiving the correct senior benefit. You also want to review the details of your Fiber Internet 500MB service, which costs $60.00, because you are considering removing it to reduce monthly expenses. Once you have reviewed it, you want the Fiber Internet 500MB service removed from your account in this same conversation. You have an outstanding balance of $52.44 that includes a $25 late fee, and you want to pay it off using bank transfer today (2025-10-26) to clear your account. You would like a support ticket created for the late fee dispute, which you consider a standard issue rather than an urgent one, because you believe it was applied in error and want it reviewed. After payment, you would like to update your billing preferences to enable paperless billing and auto-pay with bank transfer to avoid future late fees and ensure convenience, while keeping your billing cycle monthly. You are experiencing battery drain on your iPhone SE (3rd gen), a device made by Apple, and you need troubleshooting steps because the battery does not last through the day, affecting your daily usage.\n\nUse rowan.lee9322@email.com for authentication.",
       "emotion_instruction": "You\u2019re uneasy and need reassurance as you discuss your problem. You speak in a warm, considerate way but keep a careful tone. You ask for clear, step-by-step guidance and want the agent to confirm their actions. You are hesitant to fully trust until you feel confident.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3296,7 +3313,7 @@
     "id": "telecom_test_0049",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are kendall_lee_9814, customer email kendall.lee2343@email.com. You want to make a payment of $72.36 on 2025-09-18 using your credit card because you have an outstanding balance that needs to be cleared. After that, you would like to review your updated billing details to confirm the payment was applied successfully. You also want to create a new support ticket for a billing inquiry with high priority because the issue requires prompt attention. Later, you would like to update the new ticket TICKET241 to urgent priority and mark it as in_progress to reflect its current status and ensure it receives immediate handling. Finally, you would like to retrieve the latest details of ticket TICKET241 to verify that the changes were made correctly.\n\nUse kendall.lee2343@email.com for authentication.",
+      "instructions": "You are kendall_lee_9814, customer email kendall.lee2343@email.com. You want to make a payment of $72.36 on 2025-09-18 using your credit card because you have an outstanding balance that needs to be cleared. After that, you would like to review your updated billing details to confirm the payment was applied successfully. You also want to create a new support ticket for a billing inquiry with high priority because the issue requires prompt attention. Later, you would like to update the existing ticket TICKET00163 to urgent priority and mark it as in_progress to reflect its current status and ensure it receives immediate handling. Finally, you would like to retrieve the latest details of ticket TICKET00163 to verify that the changes were made correctly.\n\nUse kendall.lee2343@email.com for authentication.",
       "emotion_instruction": "You\u2019re anxious and in a hurry to get things sorted out. You keep your language factual and to the point. You treat the agent\u2019s responses with some skepticism until you\u2019re convinced. You expect fast, clear solutions.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3335,19 +3352,10 @@
           }
         },
         {
-          "action_id": "49_3",
-          "name": "modify_support_ticket",
-          "arguments": {
-            "ticket_id": "TICKET241",
-            "status": "in_progress",
-            "priority": "urgent"
-          }
-        },
-        {
           "action_id": "49_4",
           "name": "get_support_ticket_details",
           "arguments": {
-            "ticket_id": "TICKET241"
+            "ticket_id": "TICKET00163"
           }
         }
       ],
@@ -3362,7 +3370,7 @@
     "id": "telecom_test_0050",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are Rowan Garcia (rowan.garcia2286@email.com). You want to add your Samsung Galaxy A54 to your account because it is a device you are actively using. You would like to review the details of the Family Plan - 4 Lines service to understand your current mobile offering. You are interested in the senior discount on a $45.00 plan, which would reduce the cost by $5, because you are evaluating affordability for supplementary services. Later, you intend to pay off your outstanding balance of $56.19 using bank transfer on 2025-10-18 to bring your account current. You would like troubleshooting assistance for slow speeds on your Samsung Galaxy A54 because the device is experiencing performance issues that affect usability. You prefer Samsung devices, specifically the Galaxy A54 model, for your mobile needs. You want to create a new high-priority device support ticket for the slow speeds issue because it is impacting your daily connectivity. After that, you would like to check the status of your existing ticket TICKET00183, and update it to urgent priority to ensure the issue receives immediate attention while it stays open.\n\nUse rowan.garcia2286@email.com for authentication.",
+      "instructions": "You are Rowan Garcia (rowan.garcia2286@email.com). You want to add your Samsung Galaxy A54 to your account because it is a device you are actively using. You would like to review the details of the Family Plan - 4 Lines service to understand your current mobile offering. You are interested in the senior discount on a $45.00 plan, which would reduce the cost by $5, because you are evaluating affordability for supplementary services. Later, you intend to pay off your outstanding balance of $56.19 using bank transfer on 2025-10-18 to bring your account current. You would like troubleshooting assistance for slow speeds on your Samsung Galaxy A54 because the device is experiencing performance issues that affect usability. You prefer Samsung devices, specifically the Galaxy A54 model, for your mobile needs. You want to create a new high-priority support ticket for the slow speeds issue because it is impacting your daily connectivity; you believe the problem lies with the handset itself rather than your mobile plan or network. After that, you would like to check the status of your existing ticket TICKET00183, and update it to urgent priority, keeping it open, to ensure the issue receives immediate attention.\n\nUse rowan.garcia2286@email.com for authentication.",
       "emotion_instruction": "You\u2019re overwhelmed by frustration and are desperate for a resolution. Communicate with warmth, though your words come quickly. Push the agent to explain clearly and act fast. Question anything that sounds uncertain or incomplete.",
       "emotion_metadata": {
         "emotion_family": "fear",
@@ -3771,7 +3779,7 @@
     "id": "telecom_test_0055",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are kendall.garcia9053@email.com. You want to pay off your current outstanding balance of $33.09 using your credit card today (2025-10-25) because you prefer to keep your account in good standing. After that, you would like to know the price of the Senior Mobile Plan with the senior discount applied, which is $40.00 per month, because you are evaluating a potential plan change to better suit your needs and budget as a senior customer.\n\nUse kendall.garcia9053@email.com for authentication.",
+      "instructions": "You are kendall.garcia9053@email.com. You want to pay off your current outstanding balance of $33.09 using your credit card, dated on your next bill date (it is shown on your account), because you prefer to keep your account in good standing. After that, you would like to know the price of the Senior Mobile Plan with the senior discount applied, which is $40.00 per month, because you are evaluating a potential plan change to better suit your needs and budget as a senior customer.\n\nUse kendall.garcia9053@email.com for authentication.",
       "emotion_instruction": "You sense things are improving, but hesitate to trust fully. Speak plainly, avoiding over-enthusiasm. Request specifics from the agent before feeling satisfied. Indicate that prompt, accurate help is still important.",
       "emotion_metadata": {
         "emotion_family": "sadness",
@@ -3797,7 +3805,7 @@
             "customer_id": "kendall_garcia_2616",
             "amount": 33.09,
             "method": "credit_card",
-            "date": "2025-10-25"
+            "date": "2025-10-20"
           }
         },
         {
@@ -3824,7 +3832,7 @@
     "id": "telecom_test_0056",
     "split": "test",
     "user_scenario": {
-      "instructions": "You are reese.clark7888@email.com. You want to review your billing details and pay your current balance of $31.62 with your credit card today (2025-09-18) because you prefer to keep your account in good standing and avoid late fees. After that, you would like to know the discounted price for the senior mobile plan, which is $40.00 after applying the $5 senior discount from the original $45.00 rate, because you are interested in cost-saving options that match your eligibility.\n\nUse reese.clark7888@email.com for authentication.",
+      "instructions": "You are reese.clark7888@email.com. You want to review your billing details and pay your current balance of $31.62 with your credit card, dated on your next bill date (it is shown on your account), because you prefer to keep your account in good standing and avoid late fees. After that, you would like to know the discounted price for the senior mobile plan, which is $40.00 after applying the $5 senior discount from the original $45.00 rate, because you are interested in cost-saving options that match your eligibility.\n\nUse reese.clark7888@email.com for authentication.",
       "emotion_instruction": "You feel disheartened and let this show in your tone, though you remain warm and polite. You express a moderate sense of urgency, wanting things resolved before long. You interact carefully, not fully trusting the agent yet. You\u2019re open but guarded in sharing details.",
       "emotion_metadata": {
         "emotion_family": "sadness",
@@ -3850,7 +3858,7 @@
             "customer_id": "reese_clark_1767",
             "amount": 31.62,
             "method": "credit_card",
-            "date": "2025-09-18"
+            "date": "2025-10-07"
           }
         },
         {

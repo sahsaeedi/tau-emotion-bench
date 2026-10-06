@@ -358,7 +358,7 @@ class SchoolTools(ToolKitBase):
             course_ids: List of course IDs to register.
             study_level: Study level, one of 'undergraduate', 'graduate', 'continuing_ed'.
             grading_options: Optional map from course_id to grading option
-                ('letter', 'pass_fail', 'audit'). Defaults to 'letter'.
+                ('letter', 'pass/fail', 'audit'). Defaults to 'letter'.
             health_insurance: Whether the student elects health insurance
                 through the school, 'yes' or 'no'.
             payment_methods: List of payment method entries (payment_id, amount)
@@ -467,10 +467,7 @@ class SchoolTools(ToolKitBase):
             registration_id: Existing registration ID.
             add_course_ids: Course IDs to add.
             drop_course_ids: Course IDs to drop.
-            grading_options: Optional map from course_id to grading option
-                ('letter', 'pass_fail', 'audit'). Applies to every course on
-                the updated registration, kept ones included: a course left
-                out goes back to 'letter'.
+            grading_options: Optional map from course_id to grading option.
             payment_id: Student's saved payment method ID to use for additional charges.
 
         Returns:

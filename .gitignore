@@ -217,3 +217,10 @@ data/simulations/.credentials/
 
 # Instructions for AI coding agents (kept locally, not published)
 AGENTS.md
+CLAUDE.md
+
+# Local backups of data files (e.g. tasks.json.bak_2026-09-30_rewrite_sync)
+*.bak_*
+
+# Superseded task sets kept locally (e.g. tasks_old.json)
+tasks_old*.json
