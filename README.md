@@ -17,16 +17,16 @@ repository.
 | Domain | Read tools | Write tools | Total tools | Emotions (family/subfamily) | Test tasks | Train tasks |
 |---|---|---|---|---|---|---|
 | airline    |  8 | 6 | 14 | 5/16 |  70 |  143 |
-| retail     |  9 | 7 | 16 | 4/11 |  70 |  585 |
+| retail     |  9 | 7 | 16 | 5/17 |  70 |  585 |
 | telecom    | 13 | 6 | 19 | 5/13 |  70 |  186 |
 | telehealth | 18 | 5 | 23 | 3/8  |  70 |  584 |
 | school     | 10 | 4 | 14 | 4/10 |  50 |  133 |
 | basketball | 17 | 3 | 20 | 1/2  |  50 |  346 |
-| restaurant |  9 | 6 | 15 | 4/8  |  50 |  163 |
-| travel     |  9 | 7 | 16 | 3/8  |  50 |  124 |
-| movie      | 13 | 3 | 16 | 4/10 |  50 |  231 |
+| restaurant |  9 | 6 | 15 | 2/6  |  50 |  163 |
+| travel     |  9 | 7 | 16 | 2/6  |  50 |  124 |
+| movie      | 13 | 3 | 16 | 3/7  |  50 |  231 |
 | bank       | 13 | 9 | 22 | 3/8  |  50 |  228 |
-| **total**  | **119** | **56** | **175** | **5/20** | **580** | **2,723** |
+| **total**  | **119** | **56** | **175** | **5/21** | **580** | **2,723** |
 
 - **Read tools** are every tool that does not change the database, including
   `think`, `calculate` and the transfer to a human agent.
