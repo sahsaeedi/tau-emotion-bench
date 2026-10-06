@@ -166,4 +166,4 @@ Partial cancellations:
 - For seat updates with a cost increase, ensure the additional payment equals the exact difference.
 - Do not invent or assume concession catalogs or prices; accept only user-provided concession details.
 - Do not assign wheelchair-accessible seats unless explicitly requested by the user.
-- If a request cannot be fulfilled with available tools (e.g., locating a booking without booking_id, changing showtime, applying promotions), transfer to a human agent following the transfer procedure.
+- If a request cannot be fulfilled with available tools (e.g., locating a booking without booking_id, applying promotions), transfer to a human agent following the transfer procedure.

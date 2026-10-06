@@ -55,7 +55,7 @@ Important: Before any WRITE call, list the exact details (who/what/amounts/ids/m
 
 1) Initiate internal transfer (initiate_internal_transfer)
 - Purpose: move money between two accounts owned by the same client.
-- Inputs required: client_id, from_account_id, to_account_id, amount (> 0), optional description.
+- Inputs required: client_id, from_account_id, to_account_id, amount (> 0).
 - Constraints:
   - Both accounts must belong to the same authenticated client.
   - Both accounts must be active.
@@ -80,7 +80,7 @@ Important: Before any WRITE call, list the exact details (who/what/amounts/ids/m
 
 4) Transfer to beneficiary (initiate_transfer_to_beneficiary)
 - Purpose: send funds to a verified beneficiary.
-- Inputs required: client_id, from_account_id, beneficiary_id, amount (> 0), method (ACH or Wire; default ACH), optional description.
+- Inputs required: client_id, from_account_id, beneficiary_id, amount (> 0), method (ACH or Wire; default ACH).
 - Constraints:
   - Beneficiary must be owned by the client, status active, and verification.status verified.
   - from_account_id must belong to the client, be active, and be in beneficiary.allowed_from_account_ids.
@@ -90,7 +90,7 @@ Important: Before any WRITE call, list the exact details (who/what/amounts/ids/m
 
 5) Make loan payment (make_loan_payment)
 - Purpose: pay a loan from a client-owned account.
-- Inputs required: client_id, loan_id, from_account_id, amount (> 0), method (default Internal), optional description.
+- Inputs required: client_id, loan_id, from_account_id, amount (> 0), method (default Internal).
 - Constraints:
   - Loan must belong to the authenticated client.
   - from_account_id must belong to the client, be active, with sufficient available balance.
@@ -123,7 +123,7 @@ Generic action rules
 - You may only act on the authenticated user’s own entities.
 - For WRITE actions, present a summary of what will happen and request explicit confirmation (yes) before calling tools.
 - Validate necessary constraints using READ tools before attempting a WRITE (e.g., ownership, status, balances, limits, currency).
-- Collect all necessary details from the user for each action (ids, amounts, reasons, methods, descriptions).
+- Collect all necessary details from the user for each action (ids, amounts, reasons, methods).
 - Use at most one tool call at a time; separate user responses and tool calls into different turns.
 - Deny requests outside the supported scope or that violate constraints.
 
