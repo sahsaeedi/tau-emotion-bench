@@ -168,7 +168,10 @@ class CreateBookingTool(Tool):
         if conflict:
             return f"Error: Seats not available: {sorted(conflict)}"
 
-        booked_seats = _build_booked_seats(show, theater, seats)
+        # Stored in seat_id order: the DB hash keeps list order, so "B4, B3" must equal "B3, B4".
+        booked_seats = _build_booked_seats(
+            show, theater, sorted(seats, key=lambda s: s["seat_id"])
+        )
         cons_lines = _compute_concession_lines(theater, concessions)
 
         tickets_subtotal = round(sum(s["price"] for s in booked_seats), 2)

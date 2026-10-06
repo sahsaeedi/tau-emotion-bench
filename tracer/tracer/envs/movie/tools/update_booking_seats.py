@@ -131,7 +131,10 @@ class UpdateBookingSeatsTool(Tool):
             return f"Error: Seats not available: {sorted(unavailable)}"
 
         # Build new seats and recompute totals
-        new_booked_seats = _build_booked_seats(show, theater, seats)
+        # Stored in seat_id order: the DB hash keeps list order, so "B4, B3" must equal "B3, B4".
+        new_booked_seats = _build_booked_seats(
+            show, theater, sorted(seats, key=lambda s: s["seat_id"])
+        )
         new_tickets_subtotal = round(sum(s["price"] for s in new_booked_seats), 2)
         new_ticket_fees_total = round(
             sum(s["convenience_fee"] for s in new_booked_seats), 2
