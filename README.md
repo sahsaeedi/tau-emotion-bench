@@ -223,18 +223,16 @@ make check-all     # ruff lint and format
 Set `TAU_EMOTION_TEST_LLM` to run the LLM tests on a model other than `gpt-4.1-mini`.
 With `OPENAI_API_BASE` set, that model must be one the server there serves.
 
-## License and acknowledgements
+## Acknowledgements
 
-This repository is released under the [Apache License 2.0](LICENSE).
+We thank the authors of the following projects, which this work builds on:
 
-We thank the authors of [τ-bench](https://github.com/sierra-research/tau-bench) and
-[τ²-bench](https://github.com/sierra-research/tau2-bench). τ-emotion-bench follows
-τ-bench's conventions for running and scoring conversations, and its code is
-organized in τ²-bench's format. Tracer's airline and retail environments build on
-τ-bench, and its telecom and telehealth environments on
-[τ-trait](https://github.com/collinear-ai/tau-trait). All three are MIT-licensed.
-The bank, basketball, movie, restaurant, school and travel domains (tools, policies
-and data) build on the ToolScale domains of
-[ToolOrchestra](https://github.com/NVlabs/ToolOrchestra), licensed under Apache 2.0.
-Their licence notices, and which parts of this repository use them, are in
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+- [τ-bench](https://github.com/sierra-research/tau-bench) and [τ²-bench](https://github.com/sierra-research/tau2-bench): the evaluation framework, and the airline and retail environments
+- [τ-trait](https://github.com/collinear-ai/tau-trait): the telecom and telehealth environments
+- [ToolOrchestra](https://github.com/NVlabs/ToolOrchestra): the bank, basketball, movie, restaurant, school and travel domains
+
+Third-party license notices are in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
+## License
+
+This project is released under the [Apache License 2.0](LICENSE).
