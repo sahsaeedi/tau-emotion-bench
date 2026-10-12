@@ -1,24 +1,24 @@
-# τ-emotion-bench
-
-[![python](https://img.shields.io/badge/Python-3.12%E2%80%933.13-blue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
-[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+<div align="center">
+  <img src="docs/assets/logo.png" alt="τ-Emotion-Bench logo" width="96">
+  <h1>τ-Emotion-Bench: Exposing the Interaction Fragility of LLM Agents<br>through Real-World User Emotions</h1>
+</div>
 
 <p align="center">
-  <img src="docs/assets/hero.png" alt="Average accuracy of LLM agents on τ-Emotion-Bench over three runs" width="100%">
-  <br>
-  <em>Average accuracy of LLM agents on τ-Emotion-Bench over three runs.</em>
+  <a href="https://arxiv.org/abs/XXXX.XXXXX">Paper</a> •
+  <a href="https://tau-emotion-bench.github.io">Website</a> •
+  <a href="https://huggingface.co/tau-emotion-bench">Hugging Face</a>
 </p>
 
-A benchmark for customer-service agents talking to **emotional users**. Every task
-pairs a tool-use goal (cancel a reservation, move a loan payment, reschedule an
-appointment) with an emotional persona the simulated user acts out: curt, anxious,
-distrustful, in a hurry. It measures whether an agent still completes the task when
-the user is hard to deal with.
+<p align="center">
+  <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3.12%E2%80%933.13-blue.svg?style=flat&logo=python&logoColor=white" alt="python"></a>
+  <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="Ruff"></a>
+</p>
 
-The tasks were generated with [TRACER](tracer/README.md), which is also in this
-repository.
+## News
 
-## Abstract
+- [2026-10] The τ-Emotion-Bench code, dataset and models are released.
+
+## Introduction
 
 In long-horizon tool-calling tasks, LLM agents can fail not only because of
 tool-use errors, but also because of ineffective interaction with users. Yet
@@ -40,6 +40,15 @@ to unseen domains, external benchmarks, and different user simulators. Overall,
 τ-Emotion-Bench and Tracer provide a scalable framework for evaluating agent
 reliability under diverse user behaviors and improving tool-calling agents through
 transferable supervision.
+
+The tasks were generated with [TRACER](tracer/README.md), which is also in this
+repository.
+
+<p align="center">
+  <img src="docs/assets/hero.png" alt="Average accuracy of LLM agents on τ-Emotion-Bench over three runs" width="100%">
+  <br>
+  <em>Average accuracy of LLM agents on τ-Emotion-Bench over three runs.</em>
+</p>
 
 ## Domains and tasks
 
