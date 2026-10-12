@@ -43,7 +43,7 @@ to unseen domains, external benchmarks, and different user simulators. Overall,
 reliability under diverse user behaviors and improving tool-calling agents through
 transferable supervision.
 
-The tasks were generated with [TRACER](tracer/README.md), which is also in this
+The tasks were generated with [Tracer](tracer/README.md), which is also in this
 repository.
 
 <p align="center">
@@ -210,7 +210,7 @@ severity. The judge is `claude-opus-4-5` unless you pick another with `--judge-l
 - [Running simulations from Python](docs/running_simulations.md)
 - [Train tasks](docs/train_tasks.md)
 - [Custom agents](examples/agents/README.md)
-- [TRACER: generating and evaluating tasks](tracer/README.md)
+- [Tracer: generating and evaluating tasks](tracer/README.md)
 
 ## Development
 
@@ -230,7 +230,7 @@ This repository is released under the [Apache License 2.0](LICENSE).
 We thank the authors of [τ-bench](https://github.com/sierra-research/tau-bench) and
 [τ²-bench](https://github.com/sierra-research/tau2-bench). τ-emotion-bench follows
 τ-bench's conventions for running and scoring conversations, and its code is
-organized in τ²-bench's format. TRACER's airline and retail environments build on
+organized in τ²-bench's format. Tracer's airline and retail environments build on
 τ-bench, and its telecom and telehealth environments on
 [τ-trait](https://github.com/collinear-ai/tau-trait). All three are MIT-licensed.
 The bank, basketball, movie, restaurant, school and travel domains (tools, policies

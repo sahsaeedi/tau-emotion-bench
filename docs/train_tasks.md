@@ -7,7 +7,7 @@ the test set.
 
 ## Where they come from
 
-The training tasks were generated with [TRACER](../tracer/README.md), like the
+The training tasks were generated with [Tracer](../tracer/README.md), like the
 test tasks, and converted into the same task format, so a training task is shaped
 exactly like a benchmark task. The set was then filtered in three steps:
 
@@ -25,11 +25,11 @@ exactly like a benchmark task. The set was then filtered in three steps:
 
 40 tasks that step 2 dropped were solved with reward 1 anyway, so they were
 added back. For the 31 retail and bank tasks the gold actions were edited: each
-fix removes calls that failed in TRACER's environment and changed nothing there,
+fix removes calls that failed in Tracer's environment and changed nothing there,
 so the gold actions reach the state the solved run was scored against. The 9
 telecom tasks needed no edit. Every restored task was checked by replaying that
 run's successful tool calls on the train database: the final database equals
-the gold's, and the agent said every output TRACER's task expects (the shipped
+the gold's, and the agent said every output Tracer's task expects (the shipped
 tasks don't score this).
 
 | Domain | tasks | why they were dropped | fix |
@@ -58,7 +58,7 @@ policy makes the agent refuse it.
 | **total**  | **2723** |
 
 A task id is `<domain>_train_<source>_<index>`. `source` (also a field on the
-task) names the TRACER generation batch the task came from, `original` for
+task) names the Tracer generation batch the task came from, `original` for
 airline, retail, telecom and telehealth and `new` for the other six, and the index
 is the task's position in that batch.
 
@@ -69,7 +69,7 @@ run on:
 
 - **airline, retail, telecom, telehealth:** a copy of `db.json`. Their test and
   train tasks were written against the same database.
-- **bank, basketball, movie, restaurant, school, travel:** TRACER's train database
+- **bank, basketball, movie, restaurant, school, travel:** Tracer's train database
   (`tracer/tracer/envs/<domain>/data/train/`), since their train tasks reference
   customers that exist only there.
 

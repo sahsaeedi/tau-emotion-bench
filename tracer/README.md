@@ -1,6 +1,6 @@
-# TRACER
+# Tracer
 
-TRACER generates the benchmark's tasks. It turns each domain's tools into tasks
+Tracer generates the benchmark's tasks. It turns each domain's tools into tasks
 with verified ground-truth actions and an emotion for the simulated user, in the
 format the benchmark reads (`../data/tau_emotion/domains/<domain>/tasks*.json`).
 It covers all 10 domains: airline, retail, telecom, telehealth, bank, basketball,
@@ -8,7 +8,7 @@ movie, restaurant, school and travel. The last six build on the ToolScale domain
 of [ToolOrchestra](https://github.com/NVlabs/ToolOrchestra) (see
 [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)).
 
-Tasks are generated and verified in TRACER's own environments,
+Tasks are generated and verified in Tracer's own environments,
 `tracer/envs/<domain>/`: the tools, the policy (`wiki.md`) and the database of each
 domain, following τ-bench's conventions. The benchmark's tools in
 `../src/tau_emotion/domains/` reproduce these environments, with the same tools in
@@ -52,7 +52,7 @@ into the benchmark.
 | `emotion_analysis/` | Step 6: assigns an emotion to each task, and plots the emotion space |
 | `export_tasks.py` | Step 7: writes tasks into the benchmark |
 | `data_extender/` | Adds synthetic customers to the telecom and telehealth databases ([DB extender](#db-extender-optional)) |
-| `export_db.py` | Writes a domain's TRACER database into the benchmark's `db.json` / `db_train.json` |
+| `export_db.py` | Writes a domain's Tracer database into the benchmark's `db.json` / `db_train.json` |
 
 Each domain's database is in `tracer/envs/<domain>/data/`: catalog files shared by
 both splits at the top, and each split's own records (users, orders, ...) in
@@ -62,7 +62,7 @@ split with `--split`.
 
 ## Setup
 
-TRACER has its own dependencies. Use a separate environment (Python 3.10+), and run
+Tracer has its own dependencies. Use a separate environment (Python 3.10+), and run
 every command from this folder:
 
 ```bash
@@ -333,7 +333,7 @@ malformed answer) is inconclusive: it does not pass, and a re-run retries it.
 
 Every domain has a transfer tool (`transfer_to_human_support` in telehealth,
 `transfer_to_human_agents` elsewhere), and calling it ends the conversation, in
-TRACER and in the benchmark alike.
+Tracer and in the benchmark alike.
 
 ## Task generation helpers
 

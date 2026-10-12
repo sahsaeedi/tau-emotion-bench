@@ -187,4 +187,4 @@ make clean
 - [Agent Developer Guide](../src/tau_emotion/agent/README.md) — build and evaluate your own agent
 - [Domain Documentation](../src/tau_emotion/domains/README.md) — understand the available domains
 - [Communication Modes](../src/tau_emotion/orchestrator/README.md) — half-duplex (turn-based) orchestration
-- [TRACER](../tracer/README.md) — the pipeline that generates the tasks
+- [Tracer](../tracer/README.md) — the pipeline that generates the tasks
