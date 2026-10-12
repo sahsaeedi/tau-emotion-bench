@@ -61,20 +61,38 @@ tau-emotion run \
 
 ```bash
 # Standard text evaluation on five test tasks
-tau-emotion run --domain airline --agent-llm gpt-4.1 --user-llm gpt-4.1 --num-trials 1 --num-tasks 5
+tau-emotion run \
+  --domain airline \
+  --agent-llm gpt-4.1 \
+  --user-llm gpt-4.1 \
+  --num-trials 1 \
+  --num-tasks 5
 
 # Specific tasks, three trials each
-tau-emotion run --domain retail --task-ids retail_test_0000 retail_test_0003 \
-  --agent-llm gpt-4.1 --user-llm gpt-4.1 --num-trials 3
+tau-emotion run \
+  --domain retail \
+  --task-ids retail_test_0000 retail_test_0003 \
+  --agent-llm gpt-4.1 \
+  --user-llm gpt-4.1 \
+  --num-trials 3
 
 # Train tasks (db_train.json is loaded automatically)
-tau-emotion run --domain bank --task-split-name train \
-  --agent-llm gpt-4.1 --user-llm gpt-4.1 --num-tasks 5
+tau-emotion run \
+  --domain bank \
+  --task-split-name train \
+  --agent-llm gpt-4.1 \
+  --user-llm gpt-4.1 \
+  --num-tasks 5
 
 # A model served locally by an OpenAI-compatible server, with thinking off
-tau-emotion run --domain telehealth --agent-llm <served_model_name> \
-  --agent-api-base http://localhost:8000/v1 --no-agent-enable-thinking \
-  --user-llm gpt-4.1 --max-concurrency 8 --auto-resume
+tau-emotion run \
+  --domain telehealth \
+  --agent-llm <served_model_name> \
+  --agent-api-base http://localhost:8000/v1 \
+  --no-agent-enable-thinking \
+  --user-llm gpt-4.1 \
+  --max-concurrency 8 \
+  --auto-resume
 ```
 
 ---
@@ -171,7 +189,8 @@ tau-emotion review <path>
 Example:
 
 ```bash
-tau-emotion review data/simulations/airline/gpt-4.1 --failed-only \
+tau-emotion review data/simulations/airline/gpt-4.1 \
+  --failed-only \
   --judge-llm qwen3-235b-a22b-instruct-2507
 ```
 

@@ -36,8 +36,11 @@ pass `--user-api-base`/`--user-api-key` (or `--agent-api-base`/`--agent-api-key`
 for the side on the other server:
 
 ```bash
-tau-emotion run --domain airline --agent-llm gpt-4.1 \
-  --user-api-base <url> --user-api-key <key>
+tau-emotion run \
+  --domain airline \
+  --agent-llm gpt-4.1 \
+  --user-api-base <url> \
+  --user-api-key <key>
 ```
 
 ## The user simulator

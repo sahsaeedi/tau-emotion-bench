@@ -87,16 +87,24 @@ sends every OpenAI model, `gpt-4.1` included, to that server.
 Five airline tasks, with only an OpenAI key:
 
 ```bash
-tau-emotion run --domain airline --agent-llm gpt-4.1 --user-llm gpt-4.1 \
-  --num-trials 1 --num-tasks 5
+tau-emotion run \
+  --domain airline \
+  --agent-llm gpt-4.1 \
+  --user-llm gpt-4.1 \
+  --num-trials 1 \
+  --num-tasks 5
 ```
 
 A full domain, three trials, with a `gpt-4.1` agent and the benchmark's user
 simulator on another server:
 
 ```bash
-tau-emotion run --domain airline --agent-llm gpt-4.1 --num-trials 3 \
-  --user-api-base <url> --user-api-key <key>
+tau-emotion run \
+  --domain airline \
+  --agent-llm gpt-4.1 \
+  --num-trials 3 \
+  --user-api-base <url> \
+  --user-api-key <key>
 ```
 
 | Flag | What it does |
@@ -117,7 +125,10 @@ All flags are in the [CLI reference](docs/cli-reference.md).
 flags:
 
 ```bash
-./run_eval.sh --domain bank --output runs/qwen3-8b/bank --agent-model qwen3-8b
+./run_eval.sh \
+  --domain bank \
+  --output runs/qwen3-8b/bank \
+  --agent-model qwen3-8b
 ```
 
 It sets the user simulator to temperature 0.0; pass `--user-temperature 0.7` for the

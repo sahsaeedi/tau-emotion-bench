@@ -22,15 +22,26 @@ The fastest way to run simulations is through the `tau-emotion run` command:
 
 ```bash
 # Run all airline test tasks with GPT-4.1
-tau-emotion run --domain airline --agent llm_agent --agent-llm openai/gpt-4.1
+tau-emotion run \
+  --domain airline \
+  --agent llm_agent \
+  --agent-llm openai/gpt-4.1
 
 # Run specific tasks with multiple trials
-tau-emotion run --domain retail --agent llm_agent --agent-llm openai/gpt-4.1 \
-    --task-ids retail_test_0000 retail_test_0003 --num-trials 3
+tau-emotion run \
+  --domain retail \
+  --agent llm_agent \
+  --agent-llm openai/gpt-4.1 \
+  --task-ids retail_test_0000 retail_test_0003 \
+  --num-trials 3
 
 # Run with concurrency and auto-resume
-tau-emotion run --domain telecom --agent llm_agent --agent-llm openai/gpt-4.1 \
-    --max-concurrency 4 --auto-resume
+tau-emotion run \
+  --domain telecom \
+  --agent llm_agent \
+  --agent-llm openai/gpt-4.1 \
+  --max-concurrency 4 \
+  --auto-resume
 ```
 
 See `tau-emotion run --help` or [CLI Reference](cli-reference.md) for all options.

@@ -81,8 +81,12 @@ Set `OPENAI_API_KEY` (and `ANTHROPIC_API_KEY` for Claude models). For models on 
 ### Standard text-based evaluation (half-duplex)
 
 ```bash
-tau-emotion run --domain airline --agent-llm gpt-4.1 --user-llm gpt-4.1 \
-  --num-trials 1 --num-tasks 5
+tau-emotion run \
+  --domain airline \
+  --agent-llm gpt-4.1 \
+  --user-llm gpt-4.1 \
+  --num-trials 1 \
+  --num-tasks 5
 ```
 
 Leave out `--user-llm` to use the benchmark's user simulator (`qwen3-235b-a22b-instruct-2507` at temperature 0.7). Reported scores use it, so use it when comparing against them. OpenAI and Anthropic don't serve it, so pass `--user-api-base <url> --user-api-key <key>` for an OpenAI-compatible server that does, such as your own vLLM server or a hosted provider.
@@ -90,8 +94,11 @@ Leave out `--user-llm` to use the benchmark's user simulator (`qwen3-235b-a22b-i
 To run specific tasks, pass their ids:
 
 ```bash
-tau-emotion run --domain retail --task-ids retail_test_0000 retail_test_0003 \
-  --agent-llm gpt-4.1 --user-llm gpt-4.1
+tau-emotion run \
+  --domain retail \
+  --task-ids retail_test_0000 retail_test_0003 \
+  --agent-llm gpt-4.1 \
+  --user-llm gpt-4.1
 ```
 
 Results are saved to `data/simulations/<domain>/<agent model>/results.json`, with suffixes added to the folder name for a non-default agent, thinking/reasoning settings, a non-default user model, the train split and `--no-emotion` (the first command above saves to `airline/gpt-4.1_user-gpt-4.1`). With `--save-to`, they go to `data/simulations/<save_to>/results.json`. Running the same command again resumes that run.

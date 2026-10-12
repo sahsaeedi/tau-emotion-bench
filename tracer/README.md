@@ -200,7 +200,9 @@ python -m tracer.generator \
 Collect valid tasks:
 
 ```bash
-python scripts/taskgen/filter_valid_tasks.py --split test --domains bank
+python scripts/taskgen/filter_valid_tasks.py \
+  --split test \
+  --domains bank
 ```
 
 Output: `output/tasks/test_valid/bank_test_tasks_valid.json`. A task is valid when
