@@ -4,9 +4,10 @@
 </div>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/XXXX.XXXXX">Paper</a> •
-  <a href="https://tau-emotion-bench.github.io">Website</a> •
-  <a href="https://huggingface.co/tau-emotion-bench">Hugging Face</a>
+  <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white" alt="Paper"></a>
+  <a href="https://tau-emotion-bench.github.io"><img src="https://img.shields.io/badge/Website-Project_Page-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website"></a>
+  <a href="https://huggingface.co/tau-emotion-bench/datasets"><img src="https://img.shields.io/badge/Dataset-Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=000" alt="Dataset"></a>
+  <a href="https://huggingface.co/tau-emotion-bench/models"><img src="https://img.shields.io/badge/Model-Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=000" alt="Model"></a>
 </p>
 
 <p align="center">
@@ -16,6 +17,7 @@
 
 ## News
 
+- [2026-10] τ-Emotion-Bench is accepted to the **[NeurIPS 2026 Workshop on Grounded User Simulation for Model Evaluation and Training (UserSim)](https://neurips.cc/virtual/2026/workshop/137636)**!
 - [2026-10] The τ-Emotion-Bench code, dataset and models are released.
 
 ## Introduction
