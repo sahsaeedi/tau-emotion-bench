@@ -6,8 +6,8 @@
 <p align="center">
   <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv&logoColor=white" alt="Paper"></a>
   <a href="https://tau-emotion-bench.github.io"><img src="https://img.shields.io/badge/Website-Project_Page-4285F4?logo=googlechrome&logoColor=white" alt="Website"></a>
-  <a href="https://huggingface.co/tau-emotion-bench/datasets"><img src="https://img.shields.io/badge/Dataset-Hugging_Face-FFD21E?logo=huggingface&logoColor=000" alt="Dataset"></a>
-  <a href="https://huggingface.co/tau-emotion-bench/models"><img src="https://img.shields.io/badge/Model-Hugging_Face-FFD21E?logo=huggingface&logoColor=000" alt="Model"></a>
+  <a href="https://huggingface.co/tau-emotion-bench/datasets"><img src="https://img.shields.io/badge/Dataset-Hugging_Face-FFD21E?logo=huggingface&logoColor=FFD21E" alt="Dataset"></a>
+  <a href="https://huggingface.co/tau-emotion-bench/models"><img src="https://img.shields.io/badge/Model-Hugging_Face-FFD21E?logo=huggingface&logoColor=FFD21E" alt="Model"></a>
 </p>
 
 <p align="center">
