@@ -65,7 +65,7 @@ tool-calling agents through transferable supervision.
 ## Domains and tasks
 
 | Domain | Read tools | Write tools | Total tools | Emotions (family/subfamily) | Test tasks | Train tasks |
-|---|---|---|---|---|---|---|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | airline    |  8 | 6 | 14 | 5/16 |  70 |  143 |
 | retail     |  9 | 7 | 16 | 5/17 |  70 |  585 |
 | telecom    | 13 | 6 | 19 | 5/13 |  70 |  186 |
