@@ -24,7 +24,6 @@
 - [Installation](#installation)
 - [Running the benchmark](#running-the-benchmark)
 - [Results](#results)
-- [Documentation](#documentation)
 - [Development](#development)
 - [Acknowledgements](#acknowledgements)
 - [License](#license)
@@ -123,7 +122,8 @@ tau-emotion check-data
 
 Without uv, create the environment with
 `python3.12 -m venv .venv && source .venv/bin/activate && pip install -e .` instead
-of `uv sync`.
+of `uv sync`. [docs/getting-started.md](docs/getting-started.md) walks through
+installation, API keys and a first run step by step.
 
 **The benchmark's user simulator is `qwen3-235b-a22b-instruct-2507` at temperature
 0.7**, the default when you leave out `--user-llm`. Use it when you compare against
@@ -187,6 +187,8 @@ benchmark's usual setting.
 
 To benchmark your own agent instead of a model behind the built-in one, see
 [examples/agents/](examples/agents/README.md).
+To run simulations from Python instead of the CLI, see
+[docs/running_simulations.md](docs/running_simulations.md).
 
 ## Results
 
@@ -211,17 +213,6 @@ tau-emotion review data/simulations/<run>/results.json   # LLM judge of agent an
 
 `review` has an LLM judge label each conversation's agent and user errors by
 severity. The judge is `claude-opus-4-5` unless you pick another with `--judge-llm`.
-
-## Documentation
-
-- [Getting started](docs/getting-started.md)
-- [CLI reference](docs/cli-reference.md)
-- [Models and endpoints](docs/models.md)
-- [Scoring and how a conversation runs](docs/evaluation.md)
-- [Running simulations from Python](docs/running_simulations.md)
-- [Train tasks](docs/train_tasks.md)
-- [Custom agents](examples/agents/README.md)
-- [Tracer: generating and evaluating tasks](tracer/README.md)
 
 ## Development
 
