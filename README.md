@@ -235,6 +235,8 @@ We thank the authors of the following projects, which this work builds on:
 
 Their license notices are at the end of [LICENSE](LICENSE).
 
+We thank the Research Computing (RC) at Arizona State University (ASU) for their generous support in providing [computing resources](https://dl.acm.org/doi/10.1145/3785462.3815814).
+
 ## License
 
 This project is released under the [Apache License 2.0](LICENSE).
