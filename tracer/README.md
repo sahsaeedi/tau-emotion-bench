@@ -6,7 +6,7 @@ format the benchmark reads (`../data/tau_emotion/domains/<domain>/tasks*.json`).
 It covers all 10 domains: airline, retail, telecom, telehealth, bank, basketball,
 movie, restaurant, school and travel. The last six build on the ToolScale domains
 of [ToolOrchestra](https://github.com/NVlabs/ToolOrchestra) (see
-[THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md)).
+[LICENSE](../LICENSE)).
 
 Tasks are generated and verified in Tracer's own environments,
 `tracer/envs/<domain>/`: the tools, the policy (`wiki.md`) and the database of each
