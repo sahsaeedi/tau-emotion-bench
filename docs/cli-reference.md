@@ -27,7 +27,7 @@ tau-emotion run \
 | `--agent-llm` | LLM model for the agent (default: `gpt-4.1-2025-04-14`) |
 | `--user-llm` | LLM model for the user simulator (default: `qwen3-235b-a22b-instruct-2507`) |
 | `--agent-llm-args` | JSON dict of extra args for the agent LLM (default: `'{"temperature": 0.0}'`) |
-| `--user-llm-args` | JSON dict of extra args for the user LLM (default: `'{"temperature": 0.7}'`) |
+| `--user-llm-args` | JSON dict of extra args for the user LLM (default: `'{"temperature": 0.0}'`) |
 | `--agent-temperature` | The agent LLM's temperature. Overrides the temperature in `--agent-llm-args` (default `0.0`) |
 | `--agent-api-base`, `--user-api-base` | Base URL of that side's OpenAI-compatible server, e.g. `http://localhost:8000/v1`. Default: the provider's (`OPENAI_API_BASE` for bare and `openai/` model names) |
 | `--agent-api-key`, `--user-api-key` | API key for that side's server. Default: the provider's env var (`OPENAI_API_KEY` for bare and `openai/` model names), or the placeholder key `EMPTY` when the matching `--*-api-base` is given, so the key isn't sent to another server. Not saved in the results |

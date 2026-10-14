@@ -46,7 +46,7 @@ tau-emotion run \
 ## The user simulator
 
 The benchmark's user simulator is `qwen3-235b-a22b-instruct-2507` at temperature
-0.7, the default when you leave out `--user-llm`. Use it when you compare against
+0.0, the default when you leave out `--user-llm`. Use it when you compare against
 reported scores. OpenAI and Anthropic don't serve it, so it needs
 `--user-api-base` (or `OPENAI_API_BASE`, see above) pointing at a server that does.
 

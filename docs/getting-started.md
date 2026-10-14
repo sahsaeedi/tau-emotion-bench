@@ -89,7 +89,7 @@ tau-emotion run \
   --num-tasks 5
 ```
 
-Leave out `--user-llm` to use the benchmark's user simulator (`qwen3-235b-a22b-instruct-2507` at temperature 0.7). Reported scores use it, so use it when comparing against them. OpenAI and Anthropic don't serve it, so pass `--user-api-base <url> --user-api-key <key>` for an OpenAI-compatible server that does, such as your own vLLM server or a hosted provider.
+Leave out `--user-llm` to use the benchmark's user simulator (`qwen3-235b-a22b-instruct-2507` at temperature 0.0). Reported scores use it, so use it when comparing against them. OpenAI and Anthropic don't serve it, so pass `--user-api-base <url> --user-api-key <key>` for an OpenAI-compatible server that does, such as your own vLLM server or a hosted provider.
 
 To run specific tasks, pass their ids:
 

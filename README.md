@@ -126,7 +126,7 @@ of `uv sync`. [docs/getting-started.md](docs/getting-started.md) walks through
 installation, API keys and a first run step by step.
 
 **The benchmark's user simulator is `qwen3-235b-a22b-instruct-2507` at temperature
-0.7**, the default when you leave out `--user-llm`. Use it when you compare against
+0.0**, the default when you leave out `--user-llm`. Use it when you compare against
 reported scores. OpenAI and Anthropic don't serve it, so run it on an
 OpenAI-compatible server that does (your own vLLM server or a hosted provider) and
 pass `--user-api-base <url> --user-api-key <key>`. Setting `OPENAI_API_BASE` instead
@@ -181,9 +181,6 @@ flags:
   --output runs/qwen3-8b/bank \
   --agent-model qwen3-8b
 ```
-
-It sets the user simulator to temperature 0.0; pass `--user-temperature 0.7` for the
-benchmark's usual setting.
 
 To benchmark your own agent instead of a model behind the built-in one, see
 [examples/agents/](examples/agents/README.md).

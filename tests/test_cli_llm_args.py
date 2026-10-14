@@ -15,7 +15,7 @@ def parse(*argv: str) -> argparse.Namespace:
 def test_defaults_leave_llm_args_alone():
     args = parse()
     assert _llm_args(args, "agent") == {"temperature": 0.0}
-    assert _llm_args(args, "user") == {"temperature": 0.7}
+    assert _llm_args(args, "user") == {"temperature": 0.0}
 
 
 def test_agent_temperature_overrides_llm_args():
@@ -28,7 +28,7 @@ def test_agent_temperature_overrides_llm_args():
     assert _llm_args(args, "agent") == {"temperature": 0.6, "top_p": 0.9}
 
 
-@pytest.mark.parametrize("side, temperature", [("agent", 0.0), ("user", 0.7)])
+@pytest.mark.parametrize("side, temperature", [("agent", 0.0), ("user", 0.0)])
 def test_api_base_without_key_sends_no_real_key(side: str, temperature: float):
     args = parse(f"--{side}-api-base", "http://localhost:8000/v1")
     assert _llm_args(args, side) == {
@@ -58,7 +58,7 @@ def test_api_key_and_thinking_merge_into_llm_args():
         },
     }
     # The flags don't leak into the other side.
-    assert _llm_args(args, "user") == {"temperature": 0.7}
+    assert _llm_args(args, "user") == {"temperature": 0.0}
 
 
 def test_api_key_is_not_saved():
