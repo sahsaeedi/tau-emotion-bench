@@ -9,7 +9,7 @@ and you open a pull request with it. The flow follows
 
 `tau-emotion submit` checks all of these and rejects a submission that misses one.
 
-- **Every domain:** all 10 domains, each run once.
+- **Every domain:** all 10 domains, each run once per user simulator.
 - **Every task:** the full test split (`--task-split-name base`, the default). Don't
   use `--num-tasks` or `--task-ids`.
 - **At least 3 trials:** `--num-trials 3` or more. Pass^1–3 are computed the same
@@ -54,11 +54,19 @@ done
 
 Results are saved in `data/simulations/<domain>/<run>/`.
 
+For the optional GLM tab, run every domain again with `--user-llm glm-5.2` (and that
+model's `--user-api-base` and `--user-api-key`). These runs are saved in their own
+folders, `data/simulations/<domain>/<run>_user-glm-5.2/` (the user model's name as
+you passed it, with `/` replaced by `_`).
+
 ## 2. Prepare the submission
 
 ```bash
 tau-emotion submit prepare data/simulations/*/<run> --output my_submission
 ```
+
+With GLM runs, pass those folders too:
+`data/simulations/*/<run> data/simulations/*/<run>_user-glm-5.2`.
 
 It checks the runs against the requirements, computes Pass^1–3 and the average
 reward for every domain and overall, and asks for the model name, organizations,
@@ -78,8 +86,8 @@ organization, so the leaderboard keeps linking to them.
 tau-emotion submit validate my_submission/submission.json data/simulations/*/<run>
 ```
 
-This repeats the checks and confirms the scores in `submission.json` match the
-trajectories. We run the same command on the trajectories you share.
+Pass the same folders as in step 2. This repeats the checks and confirms the scores
+in `submission.json` match the trajectories. We run the same command on the trajectories you share.
 
 ## 5. Open a pull request
 
