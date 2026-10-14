@@ -1,6 +1,8 @@
 # Everything the pipeline generates stays out of git.
 output/
-emotions/output/
+!emotions/output/
+emotions/output/*
+!emotions/output/emotion_persona_instructions.json
 emotion_analysis/output/
 .env
 data_extender/generated_*
