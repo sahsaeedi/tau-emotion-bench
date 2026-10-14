@@ -30,8 +30,8 @@
 
 ## News
 
-- [2026-10] τ-Emotion-Bench is accepted to the **[NeurIPS 2026 Workshop on Grounded User Simulation for Model Evaluation and Training (UserSim)](https://neurips.cc/virtual/2026/workshop/137636)**!
-- [2026-10] The τ-Emotion-Bench code, dataset and models are released.
+- [2026-10]: :tada: τ-Emotion-Bench has been accepted to the **[UserSim Workshop at NeurIPS 2026](https://usersim-workshop.github.io/)**!
+- [2026-10]: The τ-Emotion-Bench code, dataset and models are released.
 
 ## Abstract
 
