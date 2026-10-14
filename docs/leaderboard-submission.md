@@ -77,7 +77,17 @@ It writes `my_submission/submission.json`.
 
 The trajectories are the run folders from step 1. Upload them to a public place,
 preferably a Hugging Face dataset, at the link you gave in step 2. They don't go in
-the pull request. After review we copy them to the `tau-emotion-bench` Hugging Face
+the pull request. With the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli),
+which creates the dataset on the first upload:
+
+```bash
+for domain in airline retail telecom telehealth bank basketball travel movie restaurant school; do
+  hf upload <user>/<dataset> data/simulations/$domain/<run> $domain/<run> --repo-type dataset
+done
+```
+
+Upload the GLM folders the same way if you have them. Any other public link (Google
+Drive, institutional storage) works too, as long as it keeps the folder structure. After review we copy them to the `tau-emotion-bench` Hugging Face
 organization, so the leaderboard keeps linking to them.
 
 ## 4. Check it
@@ -93,6 +103,9 @@ in `submission.json` match the trajectories. We run the same command on the traj
 
 Copy `submission.json` to `submissions/<model>_<organization>_<date>/submission.json`
 (lowercase letters, digits, hyphens and underscores, e.g.
-`qwen3-8b_qwen_2026-10-20`) and open a pull request with only that file. In the
-description, describe the model, link the trajectories, and for a custom submission
-explain what you changed.
+`qwen3-8b_qwen_2026-10-20`) and open a pull request with only that file, using the
+submission template: add `?template=leaderboard_submission.md` to the pull request
+URL, e.g.
+`https://github.com/sahsaeedi/tau-emotion-bench/compare/main...<your-fork>:<branch>?template=leaderboard_submission.md`.
+The template asks for the model, the trajectories link, a checklist, and for a custom
+submission what you changed.
