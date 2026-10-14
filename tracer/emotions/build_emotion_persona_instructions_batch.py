@@ -484,8 +484,6 @@ def _write_merged(
 
     merged = {
         "version": "1.0",
-        "source_schema": str(schema_path) if schema_path else None,
-        "batch_id": batch_id,
         "model": model,
         "instructions_per_spec": instructions_per_spec,
         "interpretation": (
