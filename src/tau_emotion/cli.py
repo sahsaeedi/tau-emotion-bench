@@ -703,6 +703,32 @@ def main():
     )
     convert_parser.set_defaults(func=lambda args: run_convert_results(args))
 
+    # Leaderboard submission commands
+    submit_parser = subparsers.add_parser(
+        "submit", help="Prepare or validate a leaderboard submission"
+    )
+    submit_subparsers = submit_parser.add_subparsers(
+        dest="submit_command", required=True
+    )
+    prepare_parser = submit_subparsers.add_parser(
+        "prepare", help="Write submission.json from run results"
+    )
+    prepare_parser.add_argument(
+        "paths", nargs="+", help="Run results: files, directories, or glob patterns"
+    )
+    prepare_parser.add_argument(
+        "-o", "--output", required=True, help="Directory to write submission.json to"
+    )
+    prepare_parser.set_defaults(func=lambda args: run_submit_prepare(args))
+    validate_parser = submit_subparsers.add_parser(
+        "validate", help="Check a submission.json against its trajectories"
+    )
+    validate_parser.add_argument("submission", help="Path to submission.json")
+    validate_parser.add_argument(
+        "paths", nargs="+", help="Trajectories: files, directories, or glob patterns"
+    )
+    validate_parser.set_defaults(func=lambda args: run_submit_validate(args))
+
     args = parser.parse_args()
     if not hasattr(args, "func"):
         run_intro()
@@ -750,6 +776,24 @@ def run_evaluate_trajectories(args):
     logger.configure(handlers=[{"sink": sys.stderr, "level": "ERROR"}])
 
     evaluate_trajectories(args.paths, args.output_dir)
+
+
+def run_submit_prepare(args):
+    import sys
+
+    from tau_emotion.scripts.submission import prepare
+
+    if not prepare(args.paths, args.output):
+        sys.exit(1)
+
+
+def run_submit_validate(args):
+    import sys
+
+    from tau_emotion.scripts.submission import validate
+
+    if not validate(args.submission, args.paths):
+        sys.exit(1)
 
 
 def run_review(args):
