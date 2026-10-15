@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  <a href="https://arxiv.org/abs/XXXX.XXXXX"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv&logoColor=white" alt="Paper"></a>
+  <a href="https://arxiv.org/abs/2610.19560"><img src="https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv&logoColor=white" alt="Paper"></a>
   <a href="https://tau-emotion-bench.github.io"><img src="https://img.shields.io/badge/Website-Project_Page-4285F4?logo=googlechrome&logoColor=white" alt="Website"></a>
   <a href="https://huggingface.co/tau-emotion-bench/datasets"><img src="https://img.shields.io/badge/Dataset-Hugging_Face-FFD21E?logo=huggingface&logoColor=FFD21E" alt="Dataset"></a>
   <a href="https://huggingface.co/tau-emotion-bench/models"><img src="https://img.shields.io/badge/Model-Hugging_Face-FFD21E?logo=huggingface&logoColor=FFD21E" alt="Model"></a>
@@ -26,6 +26,7 @@
 - [Results](#results)
 - [Development](#development)
 - [Acknowledgements](#acknowledgements)
+- [Citation](#citation)
 - [License](#license)
 
 ## News
@@ -236,6 +237,20 @@ We thank the authors of the following projects, which this work builds on:
 Their license notices are at the end of [LICENSE](LICENSE).
 
 We thank the Research Computing (RC) at Arizona State University (ASU) for their generous support in providing [computing resources](https://dl.acm.org/doi/10.1145/3785462.3815814).
+
+## Citation
+
+If you use τ-Emotion-Bench, please cite [our paper](https://arxiv.org/abs/2610.19560):
+
+```bibtex
+@article{singh2026tauemotionbench,
+  title={$\tau$-Emotion-Bench: Exposing the Interaction Fragility of LLM Agents through Real-World User Emotions},
+  author={Singh, Rishitosh Kumar and Saeidi, Amir and Hegde, Shamanthak and Kumbhar, Shrinidhi and Baral, Chitta},
+  journal={arXiv preprint arXiv:2610.19560},
+  year={2026},
+  url={https://arxiv.org/abs/2610.19560}
+}
+```
 
 ## License
 
