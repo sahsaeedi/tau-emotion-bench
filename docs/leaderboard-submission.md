@@ -39,25 +39,10 @@ No submission may change the tasks, the policies, the user simulator or the scor
 
 ## 1. Run the benchmark
 
-Run each domain with the same settings
-([models](models.md) explains how to reach the user simulator):
-
-```bash
-for domain in airline retail telecom telehealth bank basketball travel movie restaurant school; do
-  tau-emotion run \
-    --domain $domain \
-    --agent-llm <your model> \
-    --num-trials 3 \
-    --user-api-base <url> --user-api-key <key>
-done
-```
-
-Results are saved in `data/simulations/<domain>/<run>/`.
-
-For the optional GLM tab, run every domain again with `--user-llm glm-5.2` (and that
-model's `--user-api-base` and `--user-api-key`). These runs are saved in their own
-folders, `data/simulations/<domain>/<run>_user-glm-5.2/` (the user model's name as
-you passed it, with `/` replaced by `_`).
+Run all 10 domains as in [Running the benchmark](../README.md#running-the-benchmark),
+with the settings above. For the optional GLM tab, run them again with
+`--user-llm glm-5.2`. Each run is saved in `data/simulations/<domain>/<run>/`, a
+GLM run in `data/simulations/<domain>/<run>_user-glm-5.2/`.
 
 ## 2. Prepare the submission
 
