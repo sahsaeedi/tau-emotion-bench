@@ -70,42 +70,34 @@ With GLM runs, pass those folders too:
 
 It checks the runs against the requirements, computes Pass^1–3 and the average
 reward for every domain, and Avg@3 (the mean of the domains' Pass^1) and Avg^3
-(the mean of their Pass^3), and asks for the model name, organizations,
-contact, where you will share the trajectories, and who served the user simulator.
-It writes `my_submission/submission.json`.
+(the mean of their Pass^3), and asks for the model name, organizations, contact,
+and who served the user simulator. It writes `my_submission/submission.json` and
+your trajectories, every conversation behind the scores, as
+`my_submission/trajectories.zip`: about 15 MB for a full run. When they are over
+GitHub's 25 MB limit for an attachment, it splits them into `trajectories-1.zip`,
+`trajectories-2.zip`, and so on.
 
-## 3. Share the trajectories
-
-The trajectories are the run folders from step 1, every conversation behind your
-scores; we score them again to check the submission. They are too large to attach,
-so upload them to a public place, preferably a Hugging Face dataset, at the link you
-gave in step 2. With the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli),
-which creates the dataset on the first upload:
+## 3. Check it
 
 ```bash
-for domain in airline retail telecom telehealth bank basketball travel movie restaurant school; do
-  hf upload <user>/<dataset> data/simulations/$domain/<run> $domain/<run> --repo-type dataset
-done
+tau-emotion submit validate my_submission/submission.json my_submission/*.zip
 ```
 
-Upload the GLM folders the same way if you have them. Any other public link (Google
-Drive, institutional storage) works too, as long as it keeps the folder structure. After review we copy them to the `tau-emotion-bench` Hugging Face
-organization, so the leaderboard keeps linking to them.
+This repeats the checks, scores every conversation again, and confirms the scores
+in `submission.json` match.
 
-## 4. Check it
-
-```bash
-tau-emotion submit validate my_submission/submission.json data/simulations/*/<run>
-```
-
-Pass the same folders as in step 2. This repeats the checks, scores every
-conversation again, and confirms the scores in `submission.json` match. We run the
-same command on the trajectories you share, and also check a sample of the user
-turns against the user simulator.
-
-## 5. Submit
+## 4. Submit
 
 Open the [submission form](https://github.com/sahsaeedi/tau-emotion-bench/issues/new?template=leaderboard_submission.yml),
-paste `submission.json` into it, and give the trajectories link. For a custom
-submission, also say what you changed. We check the trajectories and add the model
-to the leaderboard.
+paste `submission.json` into it, and drag in the zip files. For a custom
+submission, also say what you changed.
+
+Within about 15 minutes a check runs the same validation on your zip files and
+comments the result on the issue. If it finds problems, fix them and edit the
+issue (new zip files or `submission.json`) to check it again. We also check a
+sample of the user turns against the user simulator, then add the model to the
+leaderboard, with your trajectories downloadable from it.
+
+`prepare` tells you if a single zip is still over 25 MB, which takes far longer
+conversations than usual. Upload that one somewhere public instead and put its
+direct-download link in the form's *Trajectories link* field.

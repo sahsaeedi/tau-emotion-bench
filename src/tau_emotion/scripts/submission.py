@@ -1,11 +1,16 @@
 """Leaderboard submissions, following tau2-bench's text submission flow.
 
-`tau-emotion submit prepare` turns a model's run results into submission.json, and
-`tau-emotion submit validate` checks a submission.json against its trajectories.
-See docs/leaderboard-submission.md.
+`tau-emotion submit prepare` turns a model's run results into submission.json and
+zips of the trajectories, `tau-emotion submit validate` checks a submission.json
+against its trajectories, and `tau-emotion submit leaderboard` gathers the accepted
+submissions into submissions/leaderboard.json. See docs/leaderboard-submission.md.
 """
 
+import json
 import os
+import re
+import zipfile
+import zlib
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
 from datetime import date
@@ -17,12 +22,14 @@ from pydantic import BaseModel
 from rich.console import Console
 from rich.prompt import Prompt
 
+from tau_emotion.data_model.message import ParticipantMessageBase, UserMessage
 from tau_emotion.data_model.simulation import Results, TerminationReason
 from tau_emotion.metrics.agent_metrics import AgentMetrics, compute_metrics
 from tau_emotion.registry import registry
 from tau_emotion.scripts.evaluate_trajectories import compute_simulation_rewards
 from tau_emotion.user.user_simulator import get_global_user_sim_guidelines
 from tau_emotion.utils.io_utils import expand_paths
+from tau_emotion.utils.llm_utils import _reasoning_content
 from tau_emotion.utils.pydantic_utils import get_pydantic_hash
 from tau_emotion.utils.utils import get_dict_hash, get_tau_emotion_version
 
@@ -42,6 +49,9 @@ SUBMISSION_FORM_URL = (
     "https://github.com/sahsaeedi/tau-emotion-bench/issues/new"
     "?template=leaderboard_submission.yml"
 )
+# GitHub takes files up to 25 MB on an issue; zips stay under this.
+ATTACHMENT_LIMIT = 24_000_000
+MAX_UNZIPPED = 4_000_000_000
 
 
 class DomainResults(BaseModel):
@@ -79,10 +89,12 @@ class Submission(BaseModel):
     submission_date: str
     submission_type: Literal["standard", "custom"] = "standard"
     contact: Contact
-    trajectories_url: str
     # user simulator -> scores
     results: dict[str, UserSimResults]
     methodology: Methodology
+    # Set when the submission is accepted
+    trajectories_url: Optional[str] = None
+    validated: Optional[bool] = None  # whether `validate` passed
 
 
 def user_llm_name(llm: Optional[str]) -> str:
@@ -101,7 +113,71 @@ def benchmark_domains() -> list[str]:
 
 
 def load_results(paths: list[str]) -> list[Results]:
-    return [Results.load(Path(p)) for p in expand_paths(paths, extension=".json")]
+    """Runs from results files, run directories, glob patterns, or trajectory zips."""
+    zips = [p for p in paths if p.endswith(".zip")]
+    others = [p for p in paths if not p.endswith(".zip")]
+    runs = [Results.load(Path(p)) for p in expand_paths(others, extension=".json")]
+    return runs + [r for z in zips for r in read_trajectories(z)]
+
+
+def slim(results: Results) -> Results:
+    """The run without the raw API responses saved in its messages, which scoring
+    doesn't use; the user simulator's reasoning, which its check reads, stays."""
+    results = results.model_copy(deep=True)
+    for sim in results.simulations:
+        for m in sim.messages or []:
+            if not isinstance(m, ParticipantMessageBase):
+                continue
+            reasoning = _reasoning_content(m) if isinstance(m, UserMessage) else None
+            m.raw_data = (
+                {"choices": [{"message": {"reasoning_content": reasoning}}]}
+                if reasoning
+                else None
+            )
+    return results
+
+
+def write_trajectories(
+    all_results: list[Results],
+    out_dir: Path,
+    name: str = "trajectories",
+    limit: Optional[int] = ATTACHMENT_LIMIT,
+) -> list[Path]:
+    """Zip the runs, one per entry (<user simulator>/<domain>.json), into as many
+    zips as keep each under `limit`: <name>.zip, or <name>-1.zip, <name>-2.zip, ..."""
+    entries = []
+    for results in all_results:
+        user = user_llm_name(results.info.user_info.llm)
+        domain = results.info.environment_info.domain_name
+        data = slim(results).model_dump_json().encode()
+        entries.append((f"{user}/{domain}.json", data, len(zlib.compress(data))))
+
+    parts: list[list] = [[]]
+    size = 0
+    for entry in entries:
+        if parts[-1] and limit is not None and size + entry[2] > limit:
+            parts.append([])
+            size = 0
+        parts[-1].append(entry)
+        size += entry[2]
+
+    paths = []
+    for i, part in enumerate(parts, 1):
+        path = out_dir / (f"{name}.zip" if len(parts) == 1 else f"{name}-{i}.zip")
+        with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
+            for entry_name, data, _ in part:
+                z.writestr(entry_name, data)
+        paths.append(path)
+    return paths
+
+
+def read_trajectories(path: str) -> list[Results]:
+    """The runs in a zip that write_trajectories wrote."""
+    with zipfile.ZipFile(path) as z:
+        entries = [i for i in z.infolist() if i.filename.endswith(".json")]
+        if sum(i.file_size for i in entries) > MAX_UNZIPPED:
+            raise ValueError(f"{path} unzips to more than {MAX_UNZIPPED:,} bytes")
+        return [Results.model_validate_json(z.read(i)) for i in entries]
 
 
 def check_results(all_results: list[Results]) -> list[str]:
@@ -279,7 +355,6 @@ def prepare(paths: list[str], output_dir: str) -> bool:
         contact=Contact(
             name=Prompt.ask("Contact name"), email=Prompt.ask("Contact email")
         ),
-        trajectories_url=Prompt.ask("Link where you will share the trajectories"),
         results=compute_results(all_results),
         methodology=Methodology(
             benchmark_version=get_tau_emotion_version(),
@@ -295,29 +370,40 @@ def prepare(paths: list[str], output_dir: str) -> bool:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     (out / "submission.json").write_text(submission.model_dump_json(indent=2) + "\n")
+    zips = write_trajectories(all_results, out)
     console.print(f"✅ Wrote {out / 'submission.json'}", style="green")
-    console.print(f"Submit it with the form at {SUBMISSION_FORM_URL}")
+    for path in zips:
+        console.print(
+            f"✅ Wrote {path} ({path.stat().st_size / 1e6:.1f} MB)", style="green"
+        )
+    console.print(
+        f"Submit with the form at {SUBMISSION_FORM_URL}: paste submission.json "
+        "and attach the zip files."
+    )
+    if too_big := [p.name for p in zips if p.stat().st_size > 25_000_000]:
+        console.print(
+            f"{', '.join(too_big)} is over GitHub's 25 MB limit: upload it somewhere "
+            "public and give its download link in the form instead.",
+            style="yellow",
+        )
     return True
 
 
-def validate(
-    submission_path: str,
-    paths: list[str],
+def check_submission(
+    submission: Submission,
+    all_results: list[Results],
     check_user_sim: bool = False,
     sample: int = 10,
     api_base: Optional[str] = None,
     api_key: Optional[str] = None,
-) -> bool:
-    """Check submission.json against the trajectories it reports, scoring the
-    trajectories again rather than trusting their saved rewards."""
-    console = Console()
-    submission = Submission.model_validate_json(Path(submission_path).read_text())
-    all_results = load_results(paths)
+) -> tuple[list[str], Optional[dict[str, UserSimResults]]]:
+    """The problems with a submission, checked against its trajectories, which are
+    scored again rather than trusted; and the scores they give, if they can be
+    scored."""
     errors = check_results(all_results)
     if errors:
         # Scores can't be computed reliably from runs that miss the requirements.
-        _print_errors(console, errors)
-        return False
+        return errors, None
 
     all_results, changed = rescore(all_results)
     if changed:
@@ -358,9 +444,57 @@ def validate(
         errors += check_user_simulator(
             all_results, sample=sample, api_base=api_base, api_key=api_key
         )
+    return errors, computed
 
+
+def validate(
+    submission_path: str,
+    paths: list[str],
+    check_user_sim: bool = False,
+    sample: int = 10,
+    api_base: Optional[str] = None,
+    api_key: Optional[str] = None,
+) -> bool:
+    """Check submission.json against its trajectories; print the problems found."""
+    console = Console()
+    submission = Submission.model_validate_json(Path(submission_path).read_text())
+    errors, _ = check_submission(
+        submission,
+        load_results(paths),
+        check_user_sim=check_user_sim,
+        sample=sample,
+        api_base=api_base,
+        api_key=api_key,
+    )
     if errors:
         _print_errors(console, errors)
         return False
     console.print("✅ Submission is valid", style="green")
     return True
+
+
+def submission_id(submission: Submission) -> str:
+    """The submission's folder name: <model>_<organization>_<date>."""
+    parts = (
+        submission.model_name,
+        submission.model_organization,
+        submission.submission_date,
+    )
+    return "_".join(re.sub(r"[^a-z0-9-]+", "-", p.lower()).strip("-") for p in parts)
+
+
+def write_leaderboard(submissions_dir: str = "submissions") -> Path:
+    """Gather the accepted submissions into leaderboard.json, which the
+    leaderboard page reads; best Avg@3 with the required user simulator first."""
+    entries = []
+    for path in sorted(Path(submissions_dir).glob("*/submission.json")):
+        submission = Submission.model_validate_json(path.read_text())
+        entries.append(
+            {"id": path.parent.name} | submission.model_dump(exclude={"contact"})
+        )
+    entries.sort(
+        key=lambda e: -e["results"].get(REQUIRED_USER_LLM, {}).get("avg_at_3", 0.0)
+    )
+    out = Path(submissions_dir) / "leaderboard.json"
+    out.write_text(json.dumps(entries, indent=2, ensure_ascii=False) + "\n")
+    return out

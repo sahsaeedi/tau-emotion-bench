@@ -1,0 +1,29 @@
+# Rebuilds submissions/leaderboard.json when a submission is added, changed or
+# removed by hand. (The accept workflow rebuilds it itself: its pushes don't
+# start workflows.)
+name: Update leaderboard
+
+on:
+  push:
+    branches: [main]
+    paths: ["submissions/*/submission.json"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: submission-accept
+
+jobs:
+  leaderboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run tau-emotion submit leaderboard
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add submissions/leaderboard.json
+          git diff --cached --quiet || { git commit -m "update leaderboard.json" && git push; }

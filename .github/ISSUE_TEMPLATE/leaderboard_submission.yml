@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Fill this in after following the [submission guide](https://github.com/sahsaeedi/tau-emotion-bench/blob/main/docs/leaderboard-submission.md).
-        We check your trajectories and add the model to the leaderboard.
+        A check scores your trajectories and comments here within about 15 minutes; edit the issue to check again.
   - type: input
     id: model
     attributes:
@@ -24,13 +24,6 @@ body:
         - custom
     validations:
       required: true
-  - type: input
-    id: trajectories
-    attributes:
-      label: Trajectories link
-      description: The public link to your run folders, the same as `trajectories_url` in submission.json
-    validations:
-      required: true
   - type: textarea
     id: submission
     attributes:
@@ -39,6 +32,16 @@ body:
       render: json
     validations:
       required: true
+  - type: textarea
+    id: trajectories
+    attributes:
+      label: Trajectories
+      description: Drag in the zip file(s) that `tau-emotion submit prepare` wrote (trajectories.zip, or trajectories-1.zip, trajectories-2.zip, ...)
+  - type: input
+    id: trajectories-link
+    attributes:
+      label: Trajectories link
+      description: Only for a zip over GitHub's 25 MB limit, which `prepare` tells you about. A public direct-download link to it.
   - type: textarea
     id: custom
     attributes:
@@ -49,9 +52,7 @@ body:
     attributes:
       label: Checklist
       options:
-        - label: "`tau-emotion submit validate` passes on the trajectories I shared"
-          required: true
-        - label: The trajectories link is public and keeps the run folders as they are
+        - label: "`tau-emotion submit validate` passes on these zip files"
           required: true
         - label: The model was not trained on τ-Emotion-Bench or Tracer tasks, or this is a custom submission
           required: true

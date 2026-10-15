@@ -725,7 +725,9 @@ def main():
     )
     validate_parser.add_argument("submission", help="Path to submission.json")
     validate_parser.add_argument(
-        "paths", nargs="+", help="Trajectories: files, directories, or glob patterns"
+        "paths",
+        nargs="+",
+        help="Trajectories: zips, files, directories, or glob patterns",
     )
     validate_parser.add_argument(
         "--check-user-sim",
@@ -747,6 +749,14 @@ def main():
         "--user-api-key", help="API key for that server (default OPENAI_API_KEY)"
     )
     validate_parser.set_defaults(func=lambda args: run_submit_validate(args))
+    leaderboard_parser = submit_subparsers.add_parser(
+        "leaderboard",
+        help="Gather the accepted submissions into submissions/leaderboard.json",
+    )
+    leaderboard_parser.add_argument(
+        "--submissions-dir", default="submissions", help="Default is submissions"
+    )
+    leaderboard_parser.set_defaults(func=lambda args: run_submit_leaderboard(args))
 
     args = parser.parse_args()
     if not hasattr(args, "func"):
@@ -820,6 +830,12 @@ def run_submit_validate(args):
         api_key=args.user_api_key,
     ):
         sys.exit(1)
+
+
+def run_submit_leaderboard(args):
+    from tau_emotion.scripts.submission import write_leaderboard
+
+    print(f"Wrote {write_leaderboard(args.submissions_dir)}")
 
 
 def run_review(args):

@@ -1,0 +1,28 @@
+# Adding the `accepted` label to a submission issue adds it to submissions/, puts
+# its trajectories on the `submissions` release, and closes the issue. It doesn't
+# need the check to have passed.
+name: Accept leaderboard submission
+
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: submission-accept
+
+jobs:
+  accept:
+    if: github.event.label.name == 'accepted'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run python .github/scripts/submission_issue.py accept
+        env:
+          GH_TOKEN: ${{ github.token }}

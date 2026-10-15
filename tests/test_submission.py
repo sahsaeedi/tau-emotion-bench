@@ -1,3 +1,7 @@
+import importlib.util
+import json
+from pathlib import Path
+
 from tau_emotion.data_model.message import (
     AssistantMessage,
     ToolCall,
@@ -24,8 +28,12 @@ from tau_emotion.scripts.submission import (
     benchmark_domains,
     check_results,
     compute_results,
+    load_results,
     rescore,
+    submission_id,
     user_llm_name,
+    write_leaderboard,
+    write_trajectories,
 )
 from tau_emotion.user.user_simulator import get_global_user_sim_guidelines
 
@@ -229,3 +237,81 @@ def test_score_simulation_counts_top_choices_in_user_turns(monkeypatch):
     # Words of the two user turns, less the first of each, which shares a token
     # with the role tag before it
     assert (n_tokens, n_top, missing) == (9, 7, 0)
+
+
+def test_trajectory_zips_round_trip(tmp_path):
+    airline, retail = domain_run("airline"), domain_run("retail")
+    reasoning = {"choices": [{"message": {"reasoning_content": "Be curt."}}]}
+    airline.simulations[0].messages = [
+        AssistantMessage(role="assistant", content="Hi!", raw_data={"id": "x"}),
+        UserMessage(role="user", content="Cancel it.", raw_data=reasoning),
+    ]
+    (path,) = write_trajectories([airline, retail], tmp_path)
+    assert path.name == "trajectories.zip"
+    loaded = {r.info.environment_info.domain_name: r for r in load_results([str(path)])}
+    assert loaded.keys() == {"airline", "retail"}
+    messages = loaded["airline"].simulations[0].messages
+    # The raw responses are dropped, all but the user simulator's reasoning.
+    assert messages[0].raw_data is None and messages[1].raw_data == reasoning
+    assert loaded["retail"].simulations == retail.simulations
+    assert check_results(list(loaded.values())) == check_results([airline, retail])
+
+    parts = write_trajectories([airline, retail], tmp_path, limit=1)
+    assert [p.name for p in parts] == ["trajectories-1.zip", "trajectories-2.zip"]
+    assert len(load_results([str(p) for p in parts])) == 2
+
+
+def test_leaderboard_lists_submissions_best_first(tmp_path):
+    runs = [domain_run("airline")]
+    worse = _submission(runs, "standard")
+    better = _submission(runs, "standard")
+    better.model_name = "Better Model 2"
+    better.results[REQUIRED_USER_LLM].avg_at_3 = 99.0
+    for entry in (worse, better):
+        path = tmp_path / submission_id(entry) / "submission.json"
+        path.parent.mkdir()
+        path.write_text(entry.model_dump_json())
+    entries = json.loads(write_leaderboard(str(tmp_path)).read_text())
+    assert [e["id"] for e in entries] == [
+        "better-model-2_qwen_2026-10-14",
+        "qwen3-8b_qwen_2026-10-14",
+    ]
+    assert "contact" not in entries[0]
+
+
+def submission_issue_script():
+    path = Path(__file__).parents[1] / ".github/scripts/submission_issue.py"
+    spec = importlib.util.spec_from_file_location("submission_issue", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_issue_form_is_parsed():
+    script = submission_issue_script()
+    body = """### Model
+
+Qwen3-8B, Qwen
+
+### submission.json
+
+```json
+{"model_name": "qwen3-8b"}
+```
+
+### Trajectories
+
+[trajectories-1.zip](https://github.com/user-attachments/files/123/trajectories-1.zip)
+[trajectories-2.zip](https://github.com/user-attachments/files/124/trajectories-2.zip)
+
+### Trajectories link
+
+_No response_
+"""
+    fields = script.parse_form(body)
+    assert fields["Model"] == "Qwen3-8B, Qwen"
+    assert json.loads(script.submission_json(fields)) == {"model_name": "qwen3-8b"}
+    assert script.trajectory_urls(fields) == [
+        "https://github.com/user-attachments/files/123/trajectories-1.zip",
+        "https://github.com/user-attachments/files/124/trajectories-2.zip",
+    ]
