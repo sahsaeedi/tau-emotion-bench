@@ -20,7 +20,7 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel
 from rich.console import Console
-from rich.prompt import Prompt
+from rich.prompt import Confirm, Prompt
 
 from tau_emotion.data_model.message import ParticipantMessageBase, UserMessage
 from tau_emotion.data_model.simulation import Results, TerminationReason
@@ -88,6 +88,7 @@ class Submission(BaseModel):
     submitting_organization: str
     submission_date: str
     submission_type: Literal["standard", "custom"] = "standard"
+    thinking: bool = False  # whether the model reasons before it answers
     contact: Contact
     # user simulator -> scores
     results: dict[str, UserSimResults]
@@ -319,6 +320,18 @@ def rescore(all_results: list[Results]) -> tuple[list[Results], int]:
     return rescored, changed
 
 
+def _thinking(llm_args: Optional[dict]) -> bool:
+    """Whether the agent's arguments turn its model's thinking on (the run name's
+    thinking settings, runner/helpers.py make_run_name)."""
+    extra_body = (llm_args or {}).get("extra_body") or {}
+    kwargs = extra_body.get("chat_template_kwargs") or {}
+    return bool(
+        kwargs.get("enable_thinking")
+        or kwargs.get("thinking_mode")
+        or extra_body.get("reasoning_effort")
+    )
+
+
 def _print_errors(console: Console, errors: list[str]) -> None:
     console.print(f"❌ {len(errors)} problem(s):", style="red")
     for error in errors:
@@ -346,12 +359,17 @@ def prepare(paths: list[str], output_dir: str) -> bool:
     references = []
     if submission_type == "custom":
         references = [Prompt.ask("Link to the code or paper")]
+    thinking = Confirm.ask(
+        "Does the model think (reason) before it answers?",
+        default=_thinking(all_results[0].info.agent_info.llm_args),
+    )
     submission = Submission(
         model_name=Prompt.ask("Model name", default=all_results[0].info.agent_info.llm),
         model_organization=Prompt.ask("Model organization"),
         submitting_organization=Prompt.ask("Submitting organization"),
         submission_date=date.today().isoformat(),
         submission_type=submission_type,
+        thinking=thinking,
         contact=Contact(
             name=Prompt.ask("Contact name"), email=Prompt.ask("Contact email")
         ),

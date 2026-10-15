@@ -212,8 +212,8 @@ tau-emotion review data/simulations/<run>/results.json   # LLM judge of agent an
 `review` has an LLM judge label each conversation's agent and user errors by
 severity. The judge is `claude-opus-4-5` unless you pick another with `--judge-llm`.
 
-To put your model on the leaderboard, see the
-[submission guide](docs/leaderboard-submission.md).
+The [leaderboard](https://tau-emotion-bench.github.io/leaderboard.html) ranks agents with each user simulator. To put your model
+on it, see the [submission guide](docs/leaderboard-submission.md).
 
 ## Development
 

@@ -1,7 +1,8 @@
 # Leaderboard submissions
 
 Each accepted submission is a folder here, `<model>_<organization>_<date>/submission.json`,
-and `leaderboard.json` gathers them all for the leaderboard page. Each submission's
+and `leaderboard.json` gathers them all for the
+[leaderboard page](https://tau-emotion-bench.github.io/leaderboard.html). Each submission's
 trajectories are a zip on the [`submissions` release](https://github.com/sahsaeedi/tau-emotion-bench/releases/tag/submissions),
 linked from its `trajectories_url`.
 
