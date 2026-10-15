@@ -1,0 +1,31 @@
+# Checks a leaderboard submission issue against its attached trajectories and
+# comments the result. Runs again when the issue is edited.
+name: Check leaderboard submission
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: submission-check-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    if: >-
+      github.event.issue.state == 'open' &&
+      (contains(github.event.issue.labels.*.name, 'submission') ||
+       startsWith(github.event.issue.title, '[Submission]'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run python .github/scripts/submission_issue.py check
+        env:
+          GH_TOKEN: ${{ github.token }}

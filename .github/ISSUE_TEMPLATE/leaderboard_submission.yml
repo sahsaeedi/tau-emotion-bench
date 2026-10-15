@@ -1,0 +1,58 @@
+name: Leaderboard submission
+description: Submit your model's τ-Emotion-Bench results to the leaderboard
+title: "[Submission] <model name>"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this in after following the [submission guide](https://github.com/sahsaeedi/tau-emotion-bench/blob/main/docs/leaderboard-submission.md).
+        A check scores your trajectories and comments here within about 15 minutes; edit the issue to check again.
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: Name, organization, and a link to the model card or API docs
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Submission type
+      options:
+        - standard
+        - custom
+    validations:
+      required: true
+  - type: textarea
+    id: submission
+    attributes:
+      label: submission.json
+      description: Paste the whole file that `tau-emotion submit prepare` wrote
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: trajectories
+    attributes:
+      label: Trajectories
+      description: Drag in the zip file(s) that `tau-emotion submit prepare` wrote (trajectories.zip, or trajectories-1.zip, trajectories-2.zip, ...)
+  - type: input
+    id: trajectories-link
+    attributes:
+      label: Trajectories link
+      description: Only for a zip over GitHub's 25 MB limit, which `prepare` tells you about. A public direct-download link to it.
+  - type: textarea
+    id: custom
+    attributes:
+      label: Custom submissions only
+      description: What you changed and why, and a link to the code or paper at a fixed commit
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: "`tau-emotion submit validate` passes on these zip files"
+          required: true
+        - label: The model was not trained on τ-Emotion-Bench or Tracer tasks, or this is a custom submission
+          required: true

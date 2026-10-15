@@ -703,6 +703,61 @@ def main():
     )
     convert_parser.set_defaults(func=lambda args: run_convert_results(args))
 
+    # Leaderboard submission commands
+    submit_parser = subparsers.add_parser(
+        "submit", help="Prepare or validate a leaderboard submission"
+    )
+    submit_subparsers = submit_parser.add_subparsers(
+        dest="submit_command", required=True
+    )
+    prepare_parser = submit_subparsers.add_parser(
+        "prepare", help="Write submission.json from run results"
+    )
+    prepare_parser.add_argument(
+        "paths", nargs="+", help="Run results: files, directories, or glob patterns"
+    )
+    prepare_parser.add_argument(
+        "-o", "--output", required=True, help="Directory to write submission.json to"
+    )
+    prepare_parser.set_defaults(func=lambda args: run_submit_prepare(args))
+    validate_parser = submit_subparsers.add_parser(
+        "validate", help="Check a submission.json against its trajectories"
+    )
+    validate_parser.add_argument("submission", help="Path to submission.json")
+    validate_parser.add_argument(
+        "paths",
+        nargs="+",
+        help="Trajectories: zips, files, directories, or glob patterns",
+    )
+    validate_parser.add_argument(
+        "--check-user-sim",
+        action="store_true",
+        help="Also check a sample of user turns against the user simulators "
+        "(calls them through --user-api-base)",
+    )
+    validate_parser.add_argument(
+        "--sample",
+        type=int,
+        default=10,
+        help="Conversations per run for --check-user-sim. Default is 10.",
+    )
+    validate_parser.add_argument(
+        "--user-api-base",
+        help="Server of the user simulators (default OPENAI_API_BASE)",
+    )
+    validate_parser.add_argument(
+        "--user-api-key", help="API key for that server (default OPENAI_API_KEY)"
+    )
+    validate_parser.set_defaults(func=lambda args: run_submit_validate(args))
+    leaderboard_parser = submit_subparsers.add_parser(
+        "leaderboard",
+        help="Gather the accepted submissions into submissions/leaderboard.json",
+    )
+    leaderboard_parser.add_argument(
+        "--submissions-dir", default="submissions", help="Default is submissions"
+    )
+    leaderboard_parser.set_defaults(func=lambda args: run_submit_leaderboard(args))
+
     args = parser.parse_args()
     if not hasattr(args, "func"):
         run_intro()
@@ -750,6 +805,37 @@ def run_evaluate_trajectories(args):
     logger.configure(handlers=[{"sink": sys.stderr, "level": "ERROR"}])
 
     evaluate_trajectories(args.paths, args.output_dir)
+
+
+def run_submit_prepare(args):
+    import sys
+
+    from tau_emotion.scripts.submission import prepare
+
+    if not prepare(args.paths, args.output):
+        sys.exit(1)
+
+
+def run_submit_validate(args):
+    import sys
+
+    from tau_emotion.scripts.submission import validate
+
+    if not validate(
+        args.submission,
+        args.paths,
+        check_user_sim=args.check_user_sim,
+        sample=args.sample,
+        api_base=args.user_api_base,
+        api_key=args.user_api_key,
+    ):
+        sys.exit(1)
+
+
+def run_submit_leaderboard(args):
+    from tau_emotion.scripts.submission import write_leaderboard
+
+    print(f"Wrote {write_leaderboard(args.submissions_dir)}")
 
 
 def run_review(args):
