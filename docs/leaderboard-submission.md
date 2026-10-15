@@ -2,7 +2,7 @@
 
 Submit your model's results to the τ-Emotion-Bench leaderboard. You run the
 benchmark, `tau-emotion submit prepare` turns the results into a `submission.json`,
-and you open a pull request with it. The flow follows
+and you paste it into a submission form on GitHub. The flow follows
 [τ²-bench's](https://github.com/sierra-research/tau2-bench/blob/main/docs/leaderboard-submission.md).
 
 ## Requirements
@@ -69,15 +69,17 @@ With GLM runs, pass those folders too:
 `data/simulations/*/<run> data/simulations/*/<run>_user-glm-5.2`.
 
 It checks the runs against the requirements, computes Pass^1–3 and the average
-reward for every domain and overall, and asks for the model name, organizations,
+reward for every domain, and Avg@3 (the mean of the domains' Pass^1) and Avg^3
+(the mean of their Pass^3), and asks for the model name, organizations,
 contact, where you will share the trajectories, and who served the user simulator.
 It writes `my_submission/submission.json`.
 
 ## 3. Share the trajectories
 
-The trajectories are the run folders from step 1. Upload them to a public place,
-preferably a Hugging Face dataset, at the link you gave in step 2. They don't go in
-the pull request. With the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli),
+The trajectories are the run folders from step 1, every conversation behind your
+scores; we score them again to check the submission. They are too large to attach,
+so upload them to a public place, preferably a Hugging Face dataset, at the link you
+gave in step 2. With the [Hugging Face CLI](https://huggingface.co/docs/huggingface_hub/guides/cli),
 which creates the dataset on the first upload:
 
 ```bash
@@ -96,16 +98,14 @@ organization, so the leaderboard keeps linking to them.
 tau-emotion submit validate my_submission/submission.json data/simulations/*/<run>
 ```
 
-Pass the same folders as in step 2. This repeats the checks and confirms the scores
-in `submission.json` match the trajectories. We run the same command on the trajectories you share.
+Pass the same folders as in step 2. This repeats the checks, scores every
+conversation again, and confirms the scores in `submission.json` match. We run the
+same command on the trajectories you share, and also check a sample of the user
+turns against the user simulator.
 
-## 5. Open a pull request
+## 5. Submit
 
-Copy `submission.json` to `submissions/<model>_<organization>_<date>/submission.json`
-(lowercase letters, digits, hyphens and underscores, e.g.
-`qwen3-8b_qwen_2026-10-20`) and open a pull request with only that file, using the
-submission template: add `?template=leaderboard_submission.md` to the pull request
-URL, e.g.
-`https://github.com/sahsaeedi/tau-emotion-bench/compare/main...<your-fork>:<branch>?template=leaderboard_submission.md`.
-The template asks for the model, the trajectories link, a checklist, and for a custom
-submission what you changed.
+Open the [submission form](https://github.com/sahsaeedi/tau-emotion-bench/issues/new?template=leaderboard_submission.yml),
+paste `submission.json` into it, and give the trajectories link. For a custom
+submission, also say what you changed. We check the trajectories and add the model
+to the leaderboard.

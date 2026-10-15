@@ -1,0 +1,57 @@
+name: Leaderboard submission
+description: Submit your model's τ-Emotion-Bench results to the leaderboard
+title: "[Submission] <model name>"
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Fill this in after following the [submission guide](https://github.com/sahsaeedi/tau-emotion-bench/blob/main/docs/leaderboard-submission.md).
+        We check your trajectories and add the model to the leaderboard.
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      description: Name, organization, and a link to the model card or API docs
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Submission type
+      options:
+        - standard
+        - custom
+    validations:
+      required: true
+  - type: input
+    id: trajectories
+    attributes:
+      label: Trajectories link
+      description: The public link to your run folders, the same as `trajectories_url` in submission.json
+    validations:
+      required: true
+  - type: textarea
+    id: submission
+    attributes:
+      label: submission.json
+      description: Paste the whole file that `tau-emotion submit prepare` wrote
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: custom
+    attributes:
+      label: Custom submissions only
+      description: What you changed and why, and a link to the code or paper at a fixed commit
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: "`tau-emotion submit validate` passes on the trajectories I shared"
+          required: true
+        - label: The trajectories link is public and keeps the run folders as they are
+          required: true
+        - label: The model was not trained on τ-Emotion-Bench or Tracer tasks, or this is a custom submission
+          required: true

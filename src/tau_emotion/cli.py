@@ -727,6 +727,25 @@ def main():
     validate_parser.add_argument(
         "paths", nargs="+", help="Trajectories: files, directories, or glob patterns"
     )
+    validate_parser.add_argument(
+        "--check-user-sim",
+        action="store_true",
+        help="Also check a sample of user turns against the user simulators "
+        "(calls them through --user-api-base)",
+    )
+    validate_parser.add_argument(
+        "--sample",
+        type=int,
+        default=10,
+        help="Conversations per run for --check-user-sim. Default is 10.",
+    )
+    validate_parser.add_argument(
+        "--user-api-base",
+        help="Server of the user simulators (default OPENAI_API_BASE)",
+    )
+    validate_parser.add_argument(
+        "--user-api-key", help="API key for that server (default OPENAI_API_KEY)"
+    )
     validate_parser.set_defaults(func=lambda args: run_submit_validate(args))
 
     args = parser.parse_args()
@@ -792,7 +811,14 @@ def run_submit_validate(args):
 
     from tau_emotion.scripts.submission import validate
 
-    if not validate(args.submission, args.paths):
+    if not validate(
+        args.submission,
+        args.paths,
+        check_user_sim=args.check_user_sim,
+        sample=args.sample,
+        api_base=args.user_api_base,
+        api_key=args.user_api_key,
+    ):
         sys.exit(1)
 
 

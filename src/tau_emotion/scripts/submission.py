@@ -5,18 +5,22 @@
 See docs/leaderboard-submission.md.
 """
 
+import os
 from collections import Counter
+from concurrent.futures import ProcessPoolExecutor
 from datetime import date
 from pathlib import Path
+from statistics import mean
 from typing import Literal, Optional
 
 from pydantic import BaseModel
 from rich.console import Console
 from rich.prompt import Prompt
 
-from tau_emotion.data_model.simulation import Results
-from tau_emotion.metrics.agent_metrics import compute_metrics
+from tau_emotion.data_model.simulation import Results, TerminationReason
+from tau_emotion.metrics.agent_metrics import AgentMetrics, compute_metrics
 from tau_emotion.registry import registry
+from tau_emotion.scripts.evaluate_trajectories import compute_simulation_rewards
 from tau_emotion.user.user_simulator import get_global_user_sim_guidelines
 from tau_emotion.utils.io_utils import expand_paths
 from tau_emotion.utils.pydantic_utils import get_pydantic_hash
@@ -26,10 +30,18 @@ from tau_emotion.utils.utils import get_dict_hash, get_tau_emotion_version
 # the required user simulator; runs with an optional one fill a second leaderboard tab.
 REQUIRED_USER_LLM = "qwen3-235b-a22b-instruct-2507"
 OPTIONAL_USER_LLMS = {"glm-5.2"}
+# Other names of these models, e.g. on the ASU API
+USER_LLM_ALIASES = {"glm-5-2": "glm-5.2"}
 USER_LLM_ARGS = {"temperature": 0.0}
 MIN_TRIALS = 3
 MAX_STEPS = 200
 TASK_SPLIT = "base"
+# Standard submissions run this agent; any other agent makes a custom submission.
+STANDARD_AGENT = "llm_agent"
+SUBMISSION_FORM_URL = (
+    "https://github.com/sahsaeedi/tau-emotion-bench/issues/new"
+    "?template=leaderboard_submission.yml"
+)
 
 
 class DomainResults(BaseModel):
@@ -37,6 +49,13 @@ class DomainResults(BaseModel):
     pass_2: float
     pass_3: float
     avg_reward: float
+
+
+class UserSimResults(BaseModel):
+    # Means over the domains, each domain counting once
+    avg_at_3: float  # Avg@3: mean of the domains' Pass^1
+    avg_hat_3: float  # Avg^3: mean of the domains' Pass^3
+    domains: dict[str, DomainResults]
 
 
 class Contact(BaseModel):
@@ -47,6 +66,7 @@ class Contact(BaseModel):
 class Methodology(BaseModel):
     benchmark_version: str
     benchmark_commit: str
+    agent_implementation: str
     user_simulator_provider: str
     notes: str = ""
     references: list[str] = []
@@ -60,14 +80,15 @@ class Submission(BaseModel):
     submission_type: Literal["standard", "custom"] = "standard"
     contact: Contact
     trajectories_url: str
-    # user simulator -> "overall" and each domain -> scores
-    results: dict[str, dict[str, DomainResults]]
+    # user simulator -> scores
+    results: dict[str, UserSimResults]
     methodology: Methodology
 
 
 def user_llm_name(llm: Optional[str]) -> str:
     """The model name without its provider prefix, lowercased: openai/Qwen/X -> x."""
-    return (llm or "").rsplit("/", 1)[-1].lower()
+    name = (llm or "").rsplit("/", 1)[-1].lower()
+    return USER_LLM_ALIASES.get(name, name)
 
 
 def _without_api_base(llm_args: Optional[dict]) -> dict:
@@ -139,7 +160,16 @@ def check_results(all_results: list[Results]) -> list[str]:
             )
         elif changed := [tid for tid in official if official[tid] != submitted[tid]]:
             errors.append(f"{where}: {len(changed)} tasks modified")
-        trials = Counter(sim.task_id for sim in results.simulations)
+        # Scoring leaves out simulations that never ran, so they can't count as trials.
+        infra = TerminationReason.INFRASTRUCTURE_ERROR
+        if n_infra := sum(s.termination_reason == infra for s in results.simulations):
+            errors.append(
+                f"{where}: {n_infra} simulations hit infrastructure errors; "
+                "rerun the same command to redo them"
+            )
+        trials = Counter(
+            s.task_id for s in results.simulations if s.termination_reason != infra
+        )
         if wrong := [tid for tid in official if trials[tid] != info.num_trials]:
             errors.append(
                 f"{where}: {len(wrong)} tasks without {info.num_trials} trials"
@@ -170,39 +200,47 @@ def check_results(all_results: list[Results]) -> list[str]:
     return errors
 
 
-def _scores(pass_hat_ks: dict[int, float], avg_reward: float) -> DomainResults:
+def _scores(metrics: AgentMetrics) -> DomainResults:
     return DomainResults(
-        pass_1=round(100 * pass_hat_ks[1], 2),
-        pass_2=round(100 * pass_hat_ks[2], 2),
-        pass_3=round(100 * pass_hat_ks[3], 2),
-        avg_reward=round(avg_reward, 4),
+        pass_1=round(100 * metrics.pass_hat_ks[1], 2),
+        pass_2=round(100 * metrics.pass_hat_ks[2], 2),
+        pass_3=round(100 * metrics.pass_hat_ks[3], 2),
+        avg_reward=round(metrics.avg_reward, 4),
     )
 
 
-def compute_results(all_results: list[Results]) -> dict[str, dict[str, DomainResults]]:
-    """Scores per user simulator, for each domain and overall (over all tasks)."""
-    by_user: dict[str, dict] = {}
+def compute_results(all_results: list[Results]) -> dict[str, UserSimResults]:
+    """Scores per user simulator: each domain's, and Avg@3 and Avg^3 over domains."""
+    by_user: dict[str, dict[str, AgentMetrics]] = {}
     for results in all_results:
         user = user_llm_name(results.info.user_info.llm)
         domain = results.info.environment_info.domain_name
-        by_user.setdefault(user, {})[domain] = (
-            len(results.tasks),
-            compute_metrics(results),
-        )
+        by_user.setdefault(user, {})[domain] = compute_metrics(results)
 
     out = {}
-    for user, domains in by_user.items():
-        total = sum(n for n, _ in domains.values())
-        overall_k = {
-            k: sum(n * m.pass_hat_ks[k] for n, m in domains.values()) / total
-            for k in (1, 2, 3)
-        }
-        overall_reward = sum(n * m.avg_reward for n, m in domains.values()) / total
-        out[user] = {"overall": _scores(overall_k, overall_reward)} | {
-            d: _scores(m.pass_hat_ks, m.avg_reward)
-            for d, (_, m) in sorted(domains.items())
-        }
+    for user, metrics in by_user.items():
+        out[user] = UserSimResults(
+            avg_at_3=round(mean(100 * m.pass_hat_ks[1] for m in metrics.values()), 2),
+            avg_hat_3=round(mean(100 * m.pass_hat_ks[3] for m in metrics.values()), 2),
+            domains={d: _scores(m) for d, m in sorted(metrics.items())},
+        )
     return out
+
+
+def rescore(all_results: list[Results]) -> tuple[list[Results], int]:
+    """The runs with every simulation scored again by our evaluator, and how many
+    simulations' saved rewards differ from the new ones."""
+    # About half a second per simulation, so the runs are scored in parallel.
+    Console().print(f"Scoring {len(all_results)} runs again...")
+    with ProcessPoolExecutor(min(len(all_results), os.cpu_count() or 1)) as pool:
+        rescored = list(pool.map(compute_simulation_rewards, all_results))
+    changed = sum(
+        abs(old.reward_info.reward - new.reward_info.reward) > 1e-6
+        for before, after in zip(all_results, rescored)
+        for old, new in zip(before.simulations, after.simulations)
+        if old.reward_info is not None
+    )
+    return rescored, changed
 
 
 def _print_errors(console: Console, errors: list[str]) -> None:
@@ -219,9 +257,16 @@ def prepare(paths: list[str], output_dir: str) -> bool:
         _print_errors(console, errors)
         return False
 
-    submission_type = Prompt.ask(
-        "Submission type", choices=["standard", "custom"], default="standard"
-    )
+    agent = all_results[0].info.agent_info.implementation
+    if agent == STANDARD_AGENT:
+        submission_type = Prompt.ask(
+            "Submission type", choices=["standard", "custom"], default="standard"
+        )
+    else:
+        console.print(
+            f"The runs use the {agent} agent, so this is a custom submission."
+        )
+        submission_type = "custom"
     references = []
     if submission_type == "custom":
         references = [Prompt.ask("Link to the code or paper")]
@@ -239,6 +284,7 @@ def prepare(paths: list[str], output_dir: str) -> bool:
         methodology=Methodology(
             benchmark_version=get_tau_emotion_version(),
             benchmark_commit=all_results[0].info.git_commit,
+            agent_implementation=agent,
             user_simulator_provider=Prompt.ask(
                 "Who served the user simulator (e.g. own vLLM, OpenRouter)"
             ),
@@ -250,31 +296,68 @@ def prepare(paths: list[str], output_dir: str) -> bool:
     out.mkdir(parents=True, exist_ok=True)
     (out / "submission.json").write_text(submission.model_dump_json(indent=2) + "\n")
     console.print(f"✅ Wrote {out / 'submission.json'}", style="green")
+    console.print(f"Submit it with the form at {SUBMISSION_FORM_URL}")
     return True
 
 
-def validate(submission_path: str, paths: list[str]) -> bool:
-    """Check submission.json against the trajectories it reports."""
+def validate(
+    submission_path: str,
+    paths: list[str],
+    check_user_sim: bool = False,
+    sample: int = 10,
+    api_base: Optional[str] = None,
+    api_key: Optional[str] = None,
+) -> bool:
+    """Check submission.json against the trajectories it reports, scoring the
+    trajectories again rather than trusting their saved rewards."""
     console = Console()
     submission = Submission.model_validate_json(Path(submission_path).read_text())
     all_results = load_results(paths)
     errors = check_results(all_results)
+    if errors:
+        # Scores can't be computed reliably from runs that miss the requirements.
+        _print_errors(console, errors)
+        return False
 
+    all_results, changed = rescore(all_results)
+    if changed:
+        errors.append(
+            f"{changed} simulations' saved rewards differ from scoring them again"
+        )
     computed = compute_results(all_results)
     for user in submission.results.keys() - computed.keys():
         errors.append(f"{user}: in submission.json but no trajectories")
-    for user, scores in computed.items():
-        for name, expected in scores.items():
-            reported = submission.results.get(user, {}).get(name)
-            if reported != expected:
+    for user, expected in computed.items():
+        if (reported := submission.results.get(user)) is None:
+            errors.append(f"{user}: trajectories but no scores in submission.json")
+            continue
+        for name in ("avg_at_3", "avg_hat_3"):
+            if getattr(reported, name) != getattr(expected, name):
                 errors.append(
-                    f"{user} {name}: reported {reported}, trajectories give {expected}"
+                    f"{user} {name}: reported {getattr(reported, name)}, "
+                    f"trajectories give {getattr(expected, name)}"
+                )
+        for domain in sorted(reported.domains.keys() | expected.domains.keys()):
+            got, want = reported.domains.get(domain), expected.domains.get(domain)
+            if got != want:
+                errors.append(
+                    f"{user} {domain}: reported {got}, trajectories give {want}"
                 )
 
+    agent = all_results[0].info.agent_info.implementation
+    if submission.submission_type == "standard" and agent != STANDARD_AGENT:
+        errors.append(f"the runs use the {agent} agent, so the submission is custom")
     if submission.submission_type == "custom" and not (
         submission.methodology.notes and submission.methodology.references
     ):
         errors.append("custom submissions need methodology notes and a reference link")
+
+    if check_user_sim:
+        from tau_emotion.scripts.user_sim_check import check_user_simulator
+
+        errors += check_user_simulator(
+            all_results, sample=sample, api_base=api_base, api_key=api_key
+        )
 
     if errors:
         _print_errors(console, errors)
