@@ -315,3 +315,11 @@ _No response_
         "https://github.com/user-attachments/files/123/trajectories-1.zip",
         "https://github.com/user-attachments/files/124/trajectories-2.zip",
     ]
+
+
+def test_thinking_default_comes_from_the_agent_args():
+    thinking = {"extra_body": {"chat_template_kwargs": {"enable_thinking": True}}}
+    assert submission._thinking(thinking)
+    assert submission._thinking({"extra_body": {"reasoning_effort": "high"}})
+    assert not submission._thinking({"temperature": 0.0})
+    assert not submission._thinking(None)

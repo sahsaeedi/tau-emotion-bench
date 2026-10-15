@@ -1,6 +1,7 @@
 # Leaderboard submissions
 
-Submit your model's results to the τ-Emotion-Bench leaderboard. You run the
+Submit your model's results to the τ-Emotion-Bench
+[leaderboard](https://tau-emotion-bench.github.io/leaderboard.html). You run the
 benchmark, `tau-emotion submit prepare` turns the results into a `submission.json`,
 and you paste it into a submission form on GitHub. The flow follows
 [τ²-bench's](https://github.com/sierra-research/tau2-bench/blob/main/docs/leaderboard-submission.md).
@@ -54,13 +55,13 @@ With GLM runs, pass those folders too:
 `data/simulations/*/<run> data/simulations/*/<run>_user-glm-5.2`.
 
 It checks the runs against the requirements, computes Pass^1–3 and the average
-reward for every domain, and Avg@3 (the mean of the domains' Pass^1) and Avg^3
-(the mean of their Pass^3), and asks for the model name, organizations, contact,
-and who served the user simulator. It writes `my_submission/submission.json` and
-your trajectories, every conversation behind the scores, as
-`my_submission/trajectories.zip`: about 15 MB for a full run. When they are over
-GitHub's 25 MB limit for an attachment, it splits them into `trajectories-1.zip`,
-`trajectories-2.zip`, and so on.
+reward for every domain, and Avg@3 (the mean of the domains' Pass^1) and Avg^3 (the
+mean of their Pass^3), and asks for the model name, organizations, contact, whether
+the model thinks before it answers, and who served the user simulator. It writes
+`my_submission/submission.json` and your trajectories, every conversation behind the
+scores, as `my_submission/trajectories.zip`: about 15 MB for a full run. When they
+are over GitHub's 25 MB limit for an attachment, it splits them into
+`trajectories-1.zip`, `trajectories-2.zip`, and so on.
 
 ## 3. Check it
 
