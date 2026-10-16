@@ -1,0 +1,156 @@
+{
+  "model_name": "mimo-v2-6-flash",
+  "model_organization": "xiaomi",
+  "submitting_organization": "self",
+  "submission_date": "2026-10-16",
+  "submission_type": "standard",
+  "thinking": true,
+  "contact": {
+    "name": "Rishitosh Singh",
+    "email": "rishitoshs@gmail.com"
+  },
+  "results": {
+    "glm-5.2": {
+      "avg_at_3": 80.59,
+      "avg_hat_3": 66.89,
+      "domains": {
+        "airline": {
+          "pass_1": 82.38,
+          "pass_2": 76.19,
+          "pass_3": 72.86,
+          "avg_reward": 0.8238
+        },
+        "bank": {
+          "pass_1": 91.33,
+          "pass_2": 84.0,
+          "pass_3": 78.0,
+          "avg_reward": 0.9133
+        },
+        "basketball": {
+          "pass_1": 78.0,
+          "pass_2": 68.0,
+          "pass_3": 62.0,
+          "avg_reward": 0.7733
+        },
+        "movie": {
+          "pass_1": 80.67,
+          "pass_2": 66.67,
+          "pass_3": 58.0,
+          "avg_reward": 0.8067
+        },
+        "restaurant": {
+          "pass_1": 81.33,
+          "pass_2": 70.67,
+          "pass_3": 62.0,
+          "avg_reward": 0.8133
+        },
+        "retail": {
+          "pass_1": 94.29,
+          "pass_2": 90.48,
+          "pass_3": 88.57,
+          "avg_reward": 0.9429
+        },
+        "school": {
+          "pass_1": 60.67,
+          "pass_2": 54.67,
+          "pass_3": 50.0,
+          "avg_reward": 0.6
+        },
+        "telecom": {
+          "pass_1": 69.52,
+          "pass_2": 62.38,
+          "pass_3": 58.57,
+          "avg_reward": 0.6952
+        },
+        "telehealth": {
+          "pass_1": 79.05,
+          "pass_2": 69.05,
+          "pass_3": 62.86,
+          "avg_reward": 0.7905
+        },
+        "travel": {
+          "pass_1": 88.67,
+          "pass_2": 81.33,
+          "pass_3": 76.0,
+          "avg_reward": 0.8867
+        }
+      }
+    },
+    "qwen3-235b-a22b-instruct-2507": {
+      "avg_at_3": 54.02,
+      "avg_hat_3": 32.34,
+      "domains": {
+        "airline": {
+          "pass_1": 58.1,
+          "pass_2": 45.71,
+          "pass_3": 38.57,
+          "avg_reward": 0.5095
+        },
+        "bank": {
+          "pass_1": 74.67,
+          "pass_2": 60.0,
+          "pass_3": 48.0,
+          "avg_reward": 0.7333
+        },
+        "basketball": {
+          "pass_1": 69.33,
+          "pass_2": 56.67,
+          "pass_3": 48.0,
+          "avg_reward": 0.66
+        },
+        "movie": {
+          "pass_1": 52.67,
+          "pass_2": 31.33,
+          "pass_3": 24.0,
+          "avg_reward": 0.5267
+        },
+        "restaurant": {
+          "pass_1": 48.67,
+          "pass_2": 31.33,
+          "pass_3": 24.0,
+          "avg_reward": 0.4733
+        },
+        "retail": {
+          "pass_1": 69.52,
+          "pass_2": 53.33,
+          "pass_3": 41.43,
+          "avg_reward": 0.6762
+        },
+        "school": {
+          "pass_1": 47.33,
+          "pass_2": 38.67,
+          "pass_3": 34.0,
+          "avg_reward": 0.3933
+        },
+        "telecom": {
+          "pass_1": 35.71,
+          "pass_2": 24.29,
+          "pass_3": 21.43,
+          "avg_reward": 0.3429
+        },
+        "telehealth": {
+          "pass_1": 42.86,
+          "pass_2": 27.62,
+          "pass_3": 20.0,
+          "avg_reward": 0.4095
+        },
+        "travel": {
+          "pass_1": 41.33,
+          "pass_2": 29.33,
+          "pass_3": 24.0,
+          "avg_reward": 0.4133
+        }
+      }
+    }
+  },
+  "methodology": {
+    "benchmark_version": "1.0.0",
+    "benchmark_commit": "287ebfce6181b4e141f778661b3455c2c3f03859",
+    "agent_implementation": "llm_agent",
+    "user_simulator_provider": "own vllm",
+    "notes": "",
+    "references": []
+  },
+  "trajectories_url": "https://github.com/sahsaeedi/tau-emotion-bench/releases/download/submissions/mimo-v2-6-flash_xiaomi_2026-10-16.zip",
+  "validated": true
+}
