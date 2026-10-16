@@ -32,6 +32,7 @@ from tau_emotion.scripts.submission import (
     rescore,
     submission_id,
     user_llm_name,
+    with_task_results,
     write_leaderboard,
     write_trajectories,
 )
@@ -126,6 +127,10 @@ def test_scores_per_domain_and_averages():
     # Each domain counts once, whatever its number of tasks.
     assert scores.avg_at_3 == round((200 / 3 + 100) / 2, 2)
     assert scores.avg_hat_3 == 50.0
+    # Trials solved per task, every task of every domain
+    assert len(scores.tasks) == len(airline.tasks) + len(retail.tasks)
+    assert scores.tasks[airline.tasks[0].id] == 2
+    assert scores.tasks[retail.tasks[0].id] == 3
 
 
 def test_rescore_catches_edited_rewards():
@@ -323,3 +328,28 @@ def test_thinking_default_comes_from_the_agent_args():
     assert submission._thinking({"extra_body": {"reasoning_effort": "high"}})
     assert not submission._thinking({"temperature": 0.0})
     assert not submission._thinking(None)
+
+
+def test_accepting_takes_task_results_from_the_trajectories():
+    airline = domain_run("airline")
+    scores = compute_results([airline])[REQUIRED_USER_LLM]
+    # The submitter's file claims every task was solved three times
+    claimed = scores.model_copy(update={"tasks": {t: 3 for t in scores.tasks}})
+    submission = Submission(
+        model_name="m",
+        model_organization="o",
+        submitting_organization="self",
+        submission_date="2026-01-01",
+        contact=Contact(name="n", email="e@x.org"),
+        results={REQUIRED_USER_LLM: claimed},
+        methodology=Methodology(
+            benchmark_version="1",
+            benchmark_commit="abc",
+            agent_implementation="llm_agent",
+            user_simulator_provider="own",
+        ),
+    )
+    accepted = with_task_results(submission, [airline])
+    assert accepted.results[REQUIRED_USER_LLM].tasks == scores.tasks
+    assert accepted.results[REQUIRED_USER_LLM].tasks[airline.tasks[0].id] == 2
+    assert accepted.results[REQUIRED_USER_LLM].domains == scores.domains

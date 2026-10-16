@@ -24,7 +24,11 @@ from rich.prompt import Confirm, Prompt
 
 from tau_emotion.data_model.message import ParticipantMessageBase, UserMessage
 from tau_emotion.data_model.simulation import Results, TerminationReason
-from tau_emotion.metrics.agent_metrics import AgentMetrics, compute_metrics
+from tau_emotion.metrics.agent_metrics import (
+    AgentMetrics,
+    compute_metrics,
+    is_successful,
+)
 from tau_emotion.registry import registry
 from tau_emotion.scripts.evaluate_trajectories import compute_simulation_rewards
 from tau_emotion.user.user_simulator import get_global_user_sim_guidelines
@@ -66,6 +70,8 @@ class UserSimResults(BaseModel):
     avg_at_3: float  # Avg@3: mean of the domains' Pass^1
     avg_hat_3: float  # Avg^3: mean of the domains' Pass^3
     domains: dict[str, DomainResults]
+    # task id -> trials the agent solved, for the leaderboard's task matrix
+    tasks: dict[str, int] = {}
 
 
 class Contact(BaseModel):
@@ -286,13 +292,25 @@ def _scores(metrics: AgentMetrics) -> DomainResults:
     )
 
 
+def solved_per_task(results: Results) -> dict[str, int]:
+    """Task id -> how many of its trials the agent solved, in task order."""
+    solved = {t.id: 0 for t in results.tasks}
+    for sim in results.simulations:
+        if sim.reward_info is not None and is_successful(sim.reward_info.reward):
+            solved[sim.task_id] = solved.get(sim.task_id, 0) + 1
+    return solved
+
+
 def compute_results(all_results: list[Results]) -> dict[str, UserSimResults]:
-    """Scores per user simulator: each domain's, and Avg@3 and Avg^3 over domains."""
+    """Scores per user simulator: each domain's, Avg@3 and Avg^3 over domains,
+    and the trials solved per task."""
     by_user: dict[str, dict[str, AgentMetrics]] = {}
+    tasks_by_user: dict[str, dict[str, dict[str, int]]] = {}
     for results in all_results:
         user = user_llm_name(results.info.user_info.llm)
         domain = results.info.environment_info.domain_name
         by_user.setdefault(user, {})[domain] = compute_metrics(results)
+        tasks_by_user.setdefault(user, {})[domain] = solved_per_task(results)
 
     out = {}
     for user, metrics in by_user.items():
@@ -300,6 +318,11 @@ def compute_results(all_results: list[Results]) -> dict[str, UserSimResults]:
             avg_at_3=round(mean(100 * m.pass_hat_ks[1] for m in metrics.values()), 2),
             avg_hat_3=round(mean(100 * m.pass_hat_ks[3] for m in metrics.values()), 2),
             domains={d: _scores(m) for d, m in sorted(metrics.items())},
+            tasks={
+                task: n
+                for d, solved in sorted(tasks_by_user[user].items())
+                for task, n in solved.items()
+            },
         )
     return out
 
@@ -447,6 +470,15 @@ def check_submission(
                 errors.append(
                     f"{user} {domain}: reported {got}, trajectories give {want}"
                 )
+        # Submissions from before the task matrix have no per-task results
+        if reported.tasks and reported.tasks != expected.tasks:
+            differ = [
+                t for t in expected.tasks if reported.tasks.get(t) != expected.tasks[t]
+            ]
+            errors.append(
+                f"{user}: the trials solved per task differ from the trajectories "
+                f"for {len(differ)} tasks, e.g. {differ[:3]}"
+            )
 
     agent = all_results[0].info.agent_info.implementation
     if submission.submission_type == "standard" and agent != STANDARD_AGENT:
@@ -489,6 +521,16 @@ def validate(
         return False
     console.print("✅ Submission is valid", style="green")
     return True
+
+
+def with_task_results(submission: Submission, all_results: list[Results]) -> Submission:
+    """The submission with the trials solved per task taken from its trajectories,
+    whatever its submission.json says, for the leaderboard's task matrix."""
+    submission = submission.model_copy(deep=True)
+    for user, computed in compute_results(all_results).items():
+        if user in submission.results:
+            submission.results[user].tasks = computed.tasks
+    return submission
 
 
 def submission_id(submission: Submission) -> str:

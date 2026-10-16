@@ -55,8 +55,9 @@ With GLM runs, pass those folders too:
 `data/simulations/*/<run> data/simulations/*/<run>_user-glm-5.2`.
 
 It checks the runs against the requirements, computes Pass^1–3 and the average
-reward for every domain, and Avg@3 (the mean of the domains' Pass^1) and Avg^3 (the
-mean of their Pass^3), and asks for the model name, organizations, contact, whether
+reward for every domain, Avg@3 (the mean of the domains' Pass^1) and Avg^3 (the
+mean of their Pass^3), and how many trials each task was solved in (the
+leaderboard's task matrix), and asks for the model name, organizations, contact, whether
 the model thinks before it answers, and who served the user simulator. It writes
 `my_submission/submission.json` and your trajectories, every conversation behind the
 scores, as `my_submission/trajectories.zip`: about 15 MB for a full run. When they

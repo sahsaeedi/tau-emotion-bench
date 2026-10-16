@@ -26,6 +26,7 @@ from tau_emotion.scripts.submission import (
     check_submission,
     load_results,
     submission_id,
+    with_task_results,
     write_leaderboard,
     write_trajectories,
 )
@@ -192,6 +193,8 @@ def accept(event: dict, repo: str) -> None:
             )
             sys.exit(1)
         name = submission_id(submission)
+        # The task matrix comes from the trajectories, not from the submitter's file
+        submission = with_task_results(submission, all_results)
         (archive,) = write_trajectories(all_results, Path(directory), name, limit=None)
 
         if subprocess.run(["gh", "release", "view", RELEASE]).returncode != 0:
