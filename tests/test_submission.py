@@ -131,6 +131,33 @@ def test_scores_per_domain_and_averages():
     assert len(scores.tasks) == len(airline.tasks) + len(retail.tasks)
     assert scores.tasks[airline.tasks[0].id] == 2
     assert scores.tasks[retail.tasks[0].id] == 3
+    # No message records its usage, so no tokens are reported
+    assert scores.prompt_tokens is None
+    assert scores.domains["airline"].prompt_tokens is None
+
+
+def test_tokens_are_summed_from_the_assistant_messages():
+    airline = domain_run("airline")
+    for sim in airline.simulations:
+        sim.messages = [
+            UserMessage(role="user", content="hi"),
+            AssistantMessage(
+                role="assistant",
+                content="hello",
+                usage={"prompt_tokens": 100, "completion_tokens": 10},
+            ),
+            AssistantMessage(role="assistant", content="bye", usage=None),
+        ]
+    scores = compute_results([airline])[REQUIRED_USER_LLM]
+    n = len(airline.simulations)
+    assert scores.domains["airline"].prompt_tokens == 100 * n
+    assert scores.domains["airline"].completion_tokens == 10 * n
+    assert scores.prompt_tokens == 100 * n
+    # A user-level total needs every domain's usage
+    retail = domain_run("retail")
+    both = compute_results([airline, retail])[REQUIRED_USER_LLM]
+    assert both.domains["airline"].prompt_tokens == 100 * n
+    assert both.prompt_tokens is None
 
 
 def test_rescore_catches_edited_rewards():

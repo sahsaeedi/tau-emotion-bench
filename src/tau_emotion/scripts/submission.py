@@ -63,6 +63,9 @@ class DomainResults(BaseModel):
     pass_2: float
     pass_3: float
     avg_reward: float
+    # The agent's tokens over the domain's runs, from the messages' usage
+    prompt_tokens: Optional[int] = None
+    completion_tokens: Optional[int] = None
 
 
 class UserSimResults(BaseModel):
@@ -72,6 +75,9 @@ class UserSimResults(BaseModel):
     domains: dict[str, DomainResults]
     # task id -> trials the agent solved, for the leaderboard's task matrix
     tasks: dict[str, int] = {}
+    # The agent's tokens over every domain, for the leaderboard's cost estimate
+    prompt_tokens: Optional[int] = None
+    completion_tokens: Optional[int] = None
 
 
 class Contact(BaseModel):
@@ -88,6 +94,15 @@ class Methodology(BaseModel):
     references: list[str] = []
 
 
+class Pricing(BaseModel):
+    """List prices in US dollars per million tokens, for the leaderboard's cost
+    estimate (the trajectories record tokens, not what the submitter paid)."""
+
+    input_per_million: float
+    output_per_million: float
+    source: str = ""  # where the prices come from, e.g. the provider's page
+
+
 class Submission(BaseModel):
     model_name: str
     model_organization: str
@@ -95,6 +110,7 @@ class Submission(BaseModel):
     submission_date: str
     submission_type: Literal["standard", "custom"] = "standard"
     thinking: bool = False  # whether the model reasons before it answers
+    pricing: Optional[Pricing] = None
     contact: Contact
     # user simulator -> scores
     results: dict[str, UserSimResults]
@@ -283,12 +299,30 @@ def check_results(all_results: list[Results]) -> list[str]:
     return errors
 
 
-def _scores(metrics: AgentMetrics) -> DomainResults:
+def agent_tokens(results: Results) -> tuple[Optional[int], Optional[int]]:
+    """The agent's prompt and completion tokens over the run, summed from the
+    assistant messages' usage; None when no message records it."""
+    prompt, completion, seen = 0, 0, False
+    for sim in results.simulations:
+        for m in sim.messages or []:
+            usage = getattr(m, "usage", None)
+            if m.role != "assistant" or not usage:
+                continue
+            seen = True
+            prompt += int(usage.get("prompt_tokens") or 0)
+            completion += int(usage.get("completion_tokens") or 0)
+    return (prompt, completion) if seen else (None, None)
+
+
+def _scores(metrics: AgentMetrics, results: Results) -> DomainResults:
+    prompt, completion = agent_tokens(results)
     return DomainResults(
         pass_1=round(100 * metrics.pass_hat_ks[1], 2),
         pass_2=round(100 * metrics.pass_hat_ks[2], 2),
         pass_3=round(100 * metrics.pass_hat_ks[3], 2),
         avg_reward=round(metrics.avg_reward, 4),
+        prompt_tokens=prompt,
+        completion_tokens=completion,
     )
 
 
@@ -304,25 +338,41 @@ def solved_per_task(results: Results) -> dict[str, int]:
 def compute_results(all_results: list[Results]) -> dict[str, UserSimResults]:
     """Scores per user simulator: each domain's, Avg@3 and Avg^3 over domains,
     and the trials solved per task."""
-    by_user: dict[str, dict[str, AgentMetrics]] = {}
+    by_user: dict[str, dict[str, DomainResults]] = {}
+    pass_ks: dict[str, dict[str, AgentMetrics]] = {}
     tasks_by_user: dict[str, dict[str, dict[str, int]]] = {}
     for results in all_results:
         user = user_llm_name(results.info.user_info.llm)
         domain = results.info.environment_info.domain_name
-        by_user.setdefault(user, {})[domain] = compute_metrics(results)
+        metrics = compute_metrics(results)
+        pass_ks.setdefault(user, {})[domain] = metrics
+        by_user.setdefault(user, {})[domain] = _scores(metrics, results)
         tasks_by_user.setdefault(user, {})[domain] = solved_per_task(results)
 
     out = {}
-    for user, metrics in by_user.items():
+    for user, domains in by_user.items():
+        metrics = pass_ks[user]
+        counted = [d for d in domains.values() if d.prompt_tokens is not None]
         out[user] = UserSimResults(
             avg_at_3=round(mean(100 * m.pass_hat_ks[1] for m in metrics.values()), 2),
             avg_hat_3=round(mean(100 * m.pass_hat_ks[3] for m in metrics.values()), 2),
-            domains={d: _scores(m) for d, m in sorted(metrics.items())},
+            domains=dict(sorted(domains.items())),
             tasks={
                 task: n
                 for d, solved in sorted(tasks_by_user[user].items())
                 for task, n in solved.items()
             },
+            # Only complete when every domain's runs record their usage
+            prompt_tokens=(
+                sum(d.prompt_tokens for d in counted)
+                if len(counted) == len(domains)
+                else None
+            ),
+            completion_tokens=(
+                sum(d.completion_tokens for d in counted)
+                if len(counted) == len(domains)
+                else None
+            ),
         )
     return out
 
@@ -386,6 +436,16 @@ def prepare(paths: list[str], output_dir: str) -> bool:
         "Does the model think (reason) before it answers?",
         default=_thinking(all_results[0].info.agent_info.llm_args),
     )
+    pricing = None
+    if Confirm.ask(
+        "Give the model's list prices, for the leaderboard's cost estimate?",
+        default=True,
+    ):
+        pricing = Pricing(
+            input_per_million=float(Prompt.ask("Input price, $ per million tokens")),
+            output_per_million=float(Prompt.ask("Output price, $ per million tokens")),
+            source=Prompt.ask("Where the prices are listed (URL)", default=""),
+        )
     submission = Submission(
         model_name=Prompt.ask("Model name", default=all_results[0].info.agent_info.llm),
         model_organization=Prompt.ask("Model organization"),
@@ -393,6 +453,7 @@ def prepare(paths: list[str], output_dir: str) -> bool:
         submission_date=date.today().isoformat(),
         submission_type=submission_type,
         thinking=thinking,
+        pricing=pricing,
         contact=Contact(
             name=Prompt.ask("Contact name"), email=Prompt.ask("Contact email")
         ),
@@ -466,6 +527,14 @@ def check_submission(
                 )
         for domain in sorted(reported.domains.keys() | expected.domains.keys()):
             got, want = reported.domains.get(domain), expected.domains.get(domain)
+            if got is not None and want is not None:
+                # Tokens are taken from the trajectories when a submission is accepted
+                got = got.model_copy(
+                    update={
+                        "prompt_tokens": want.prompt_tokens,
+                        "completion_tokens": want.completion_tokens,
+                    }
+                )
             if got != want:
                 errors.append(
                     f"{user} {domain}: reported {got}, trajectories give {want}"
@@ -524,12 +593,20 @@ def validate(
 
 
 def with_task_results(submission: Submission, all_results: list[Results]) -> Submission:
-    """The submission with the trials solved per task taken from its trajectories,
-    whatever its submission.json says, for the leaderboard's task matrix."""
+    """The submission with the trials solved per task and the agent's tokens taken
+    from its trajectories, whatever its submission.json says, for the
+    leaderboard's task matrix and cost estimate."""
     submission = submission.model_copy(deep=True)
     for user, computed in compute_results(all_results).items():
-        if user in submission.results:
-            submission.results[user].tasks = computed.tasks
+        if (reported := submission.results.get(user)) is None:
+            continue
+        reported.tasks = computed.tasks
+        reported.prompt_tokens = computed.prompt_tokens
+        reported.completion_tokens = computed.completion_tokens
+        for domain, scores in computed.domains.items():
+            if domain in reported.domains:
+                reported.domains[domain].prompt_tokens = scores.prompt_tokens
+                reported.domains[domain].completion_tokens = scores.completion_tokens
     return submission
 
 

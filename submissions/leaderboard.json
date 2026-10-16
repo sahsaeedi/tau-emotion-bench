@@ -7,6 +7,11 @@
     "submission_date": "2026-10-16",
     "submission_type": "standard",
     "thinking": true,
+    "pricing": {
+      "input_per_million": 0.14,
+      "output_per_million": 0.28,
+      "source": "https://www.requesty.ai/model/xiaomi/mimo-v2.6-flash"
+    },
     "results": {
       "glm-5.2": {
         "avg_at_3": 80.59,
@@ -16,61 +21,81 @@
             "pass_1": 82.38,
             "pass_2": 76.19,
             "pass_3": 72.86,
-            "avg_reward": 0.8238
+            "avg_reward": 0.8238,
+            "prompt_tokens": 24056933,
+            "completion_tokens": 1166929
           },
           "bank": {
             "pass_1": 91.33,
             "pass_2": 84.0,
             "pass_3": 78.0,
-            "avg_reward": 0.9133
+            "avg_reward": 0.9133,
+            "prompt_tokens": 34710684,
+            "completion_tokens": 743474
           },
           "basketball": {
             "pass_1": 78.0,
             "pass_2": 68.0,
             "pass_3": 62.0,
-            "avg_reward": 0.7733
+            "avg_reward": 0.7733,
+            "prompt_tokens": 73486015,
+            "completion_tokens": 1014103
           },
           "movie": {
             "pass_1": 80.67,
             "pass_2": 66.67,
             "pass_3": 58.0,
-            "avg_reward": 0.8067
+            "avg_reward": 0.8067,
+            "prompt_tokens": 94304163,
+            "completion_tokens": 1533930
           },
           "restaurant": {
             "pass_1": 81.33,
             "pass_2": 70.67,
             "pass_3": 62.0,
-            "avg_reward": 0.8133
+            "avg_reward": 0.8133,
+            "prompt_tokens": 18290414,
+            "completion_tokens": 766866
           },
           "retail": {
             "pass_1": 94.29,
             "pass_2": 90.48,
             "pass_3": 88.57,
-            "avg_reward": 0.9429
+            "avg_reward": 0.9429,
+            "prompt_tokens": 40309696,
+            "completion_tokens": 987304
           },
           "school": {
             "pass_1": 60.67,
             "pass_2": 54.67,
             "pass_3": 50.0,
-            "avg_reward": 0.6
+            "avg_reward": 0.6,
+            "prompt_tokens": 50555391,
+            "completion_tokens": 1254949
           },
           "telecom": {
             "pass_1": 69.52,
             "pass_2": 62.38,
             "pass_3": 58.57,
-            "avg_reward": 0.6952
+            "avg_reward": 0.6952,
+            "prompt_tokens": 16829097,
+            "completion_tokens": 601515
           },
           "telehealth": {
             "pass_1": 79.05,
             "pass_2": 69.05,
             "pass_3": 62.86,
-            "avg_reward": 0.7905
+            "avg_reward": 0.7905,
+            "prompt_tokens": 26662894,
+            "completion_tokens": 833506
           },
           "travel": {
             "pass_1": 88.67,
             "pass_2": 81.33,
             "pass_3": 76.0,
-            "avg_reward": 0.8867
+            "avg_reward": 0.8867,
+            "prompt_tokens": 29646542,
+            "completion_tokens": 959524
           }
         },
         "tasks": {
@@ -654,7 +679,9 @@
           "travel_test_0097": 3,
           "travel_test_0098": 3,
           "travel_test_0099": 2
-        }
+        },
+        "prompt_tokens": 408851829,
+        "completion_tokens": 9862100
       },
       "qwen3-235b-a22b-instruct-2507": {
         "avg_at_3": 54.02,
@@ -664,61 +691,81 @@
             "pass_1": 58.1,
             "pass_2": 45.71,
             "pass_3": 38.57,
-            "avg_reward": 0.5095
+            "avg_reward": 0.5095,
+            "prompt_tokens": 26279081,
+            "completion_tokens": 1322828
           },
           "bank": {
             "pass_1": 74.67,
             "pass_2": 60.0,
             "pass_3": 48.0,
-            "avg_reward": 0.7333
+            "avg_reward": 0.7333,
+            "prompt_tokens": 33010576,
+            "completion_tokens": 716094
           },
           "basketball": {
             "pass_1": 69.33,
             "pass_2": 56.67,
             "pass_3": 48.0,
-            "avg_reward": 0.66
+            "avg_reward": 0.66,
+            "prompt_tokens": 89680836,
+            "completion_tokens": 1164016
           },
           "movie": {
             "pass_1": 52.67,
             "pass_2": 31.33,
             "pass_3": 24.0,
-            "avg_reward": 0.5267
+            "avg_reward": 0.5267,
+            "prompt_tokens": 84306433,
+            "completion_tokens": 1284381
           },
           "restaurant": {
             "pass_1": 48.67,
             "pass_2": 31.33,
             "pass_3": 24.0,
-            "avg_reward": 0.4733
+            "avg_reward": 0.4733,
+            "prompt_tokens": 18092931,
+            "completion_tokens": 790104
           },
           "retail": {
             "pass_1": 69.52,
             "pass_2": 53.33,
             "pass_3": 41.43,
-            "avg_reward": 0.6762
+            "avg_reward": 0.6762,
+            "prompt_tokens": 41579455,
+            "completion_tokens": 1087705
           },
           "school": {
             "pass_1": 47.33,
             "pass_2": 38.67,
             "pass_3": 34.0,
-            "avg_reward": 0.3933
+            "avg_reward": 0.3933,
+            "prompt_tokens": 42949545,
+            "completion_tokens": 1201006
           },
           "telecom": {
             "pass_1": 35.71,
             "pass_2": 24.29,
             "pass_3": 21.43,
-            "avg_reward": 0.3429
+            "avg_reward": 0.3429,
+            "prompt_tokens": 18722857,
+            "completion_tokens": 800068
           },
           "telehealth": {
             "pass_1": 42.86,
             "pass_2": 27.62,
             "pass_3": 20.0,
-            "avg_reward": 0.4095
+            "avg_reward": 0.4095,
+            "prompt_tokens": 31042836,
+            "completion_tokens": 943424
           },
           "travel": {
             "pass_1": 41.33,
             "pass_2": 29.33,
             "pass_3": 24.0,
-            "avg_reward": 0.4133
+            "avg_reward": 0.4133,
+            "prompt_tokens": 28116670,
+            "completion_tokens": 954763
           }
         },
         "tasks": {
@@ -1302,7 +1349,9 @@
           "travel_test_0097": 2,
           "travel_test_0098": 0,
           "travel_test_0099": 0
-        }
+        },
+        "prompt_tokens": 413781220,
+        "completion_tokens": 10264389
       }
     },
     "methodology": {
