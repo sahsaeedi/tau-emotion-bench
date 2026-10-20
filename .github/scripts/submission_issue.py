@@ -178,6 +178,40 @@ def check(event: dict, repo: str) -> None:
     subprocess.run(["gh", "issue", "edit", number, "--remove-label", remove])
 
 
+def git(*args: str) -> None:
+    subprocess.run(["git", *args], check=True)
+
+
+def commit_submission(
+    submission: Submission, name: str, message: str, attempts: int = 5
+) -> None:
+    """Add the submission and the rebuilt leaderboard to main and push them.
+
+    Each attempt starts from main as it is now, not from the commit the run
+    checked out: another submission accepted meanwhile has moved main on, and
+    pushing on top of the old commit would be rejected."""
+    git("config", "user.name", "github-actions[bot]")
+    git(
+        "config",
+        "user.email",
+        "41898282+github-actions[bot]@users.noreply.github.com",
+    )
+    path = Path("submissions") / name / "submission.json"
+    for _ in range(attempts):
+        git("fetch", "origin", "main")
+        git("reset", "--hard", "origin/main")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(submission.model_dump_json(indent=2) + "\n")
+        write_leaderboard()
+        git("add", "submissions")
+        if subprocess.run(["git", "diff", "--cached", "--quiet"]).returncode == 0:
+            return  # already on main as it is
+        git("commit", "-m", message)
+        if subprocess.run(["git", "push", "origin", "HEAD:main"]).returncode == 0:
+            return
+    raise RuntimeError(f"couldn't push {path} to main in {attempts} attempts")
+
+
 def accept(event: dict, repo: str) -> None:
     issue = event["issue"]
     number = str(issue["number"])
@@ -213,23 +247,9 @@ def accept(event: dict, repo: str) -> None:
         f"https://github.com/{repo}/releases/download/{RELEASE}/{name}.zip"
     )
     submission.validated = any(label["name"] == "valid" for label in issue["labels"])
-    path = Path("submissions") / name / "submission.json"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(submission.model_dump_json(indent=2) + "\n")
-    write_leaderboard()
-
-    for args in (
-        ["config", "user.name", "github-actions[bot]"],
-        [
-            "config",
-            "user.email",
-            "41898282+github-actions[bot]@users.noreply.github.com",
-        ],
-        ["add", "submissions"],
-        ["commit", "-m", f"add leaderboard submission {name} (#{number})"],
-        ["push"],
-    ):
-        subprocess.run(["git", *args], check=True)
+    commit_submission(
+        submission, name, f"add leaderboard submission {name} (#{number})"
+    )
 
     gh(
         "issue",

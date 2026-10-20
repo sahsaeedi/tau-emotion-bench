@@ -11,8 +11,9 @@ permissions:
   contents: write
   issues: write
 
-concurrency:
-  group: submission-accept
+# No concurrency group: it would cancel a waiting run when a third submission is
+# accepted. Runs accepted together each start again from main if their push is
+# rejected (commit_submission in the script).
 
 jobs:
   accept:
